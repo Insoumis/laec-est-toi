@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/flowerRed.png-17c06c724312830262fa7615129824f0.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/flowerRed.png"
+dest_files=[ "res://.import/flowerRed.png-17c06c724312830262fa7615129824f0.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

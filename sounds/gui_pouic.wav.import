@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gui_pouic.wav-2d0e12731546e9779415810083a8d744.sample"
+
+[deps]
+
+source_file="res://sounds/gui_pouic.wav"
+dest_files=[ "res://.import/gui_pouic.wav-2d0e12731546e9779415810083a8d744.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

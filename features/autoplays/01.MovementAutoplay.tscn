@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+
+[node name="01MovementAutoplay" instance=ExtResource( 1 )]
+title = "level.01.MovementAutoplay.title"
+excerpt = "level.01.MovementAutoplay.excerpt"
+link = "level.01.MovementAutoplay.link"
+solution_a = "6666666666339914444974139"
+
+[node name="HexagonalTileMap" parent="." index="1"]
+cell_custom_transform = Transform2D( 64, 0, 0, 55.4256, -32, -27.7128 )
+tile_data = PoolIntArray( -65538, 22, 0, -65537, 22, 0, -131072, 22, 0, -131071, 22, 0, -131070, 22, 0, -3, 22, 0, -2, 22, 0, -1, 22, 0, -65536, 22, 0, -65535, 22, 0, -65534, 22, 0, 65533, 22, 0, 65534, 22, 0, 65535, 22, 0, 0, 22, 0, 1, 22, 0, 2, 22, 0, 3, 22, 0, 131069, 22, 0, 131070, 22, 0, 131071, 22, 0, 65536, 22, 0, 65537, 22, 0, 65538, 22, 0, 196606, 22, 0, 196607, 22, 0, 131072, 22, 0, 131073, 22, 0, 131074, 22, 0 )
+
+[node name="Guard" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( 0, -9.2276 )
+concept_name = "guard"
+is_you = true
+
+[node name="Laec" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( -128, -9.2375 )
+concept_name = "laec"
+cell_position = Vector2( -2, 0 )
+tile_position = Vector2( -2, 0 )
+is_win = true
+
+[node name="GuardText" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( 320, -120.089 )
+is_text = true
+concept_name = "guard"
+cell_position = Vector2( 6, -2 )
+tile_position = Vector2( 5, -2 )
+
+[node name="IsText" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( 384, -120.089 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 7, -2 )
+tile_position = Vector2( 6, -2 )
+
+[node name="YouText" parent="Items" index="4" instance=ExtResource( 3 )]
+position = Vector2( 448, -120.089 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 8, -2 )
+tile_position = Vector2( 7, -2 )
+
+[node name="LaecText" parent="Items" index="5" instance=ExtResource( 3 )]
+position = Vector2( 320, 101.614 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( 4, 2 )
+tile_position = Vector2( 5, 2 )
+
+[node name="IsText2" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( 384, 101.614 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 5, 2 )
+tile_position = Vector2( 6, 2 )
+
+[node name="WinText" parent="Items" index="7" instance=ExtResource( 3 )]
+position = Vector2( 448, 101.614 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 6, 2 )
+tile_position = Vector2( 7, 2 )

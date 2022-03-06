@@ -1,0 +1,248 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/laec-is-you/entity/Item.gd" type="Script" id=2]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+
+[node name="Extinction02Level" instance=ExtResource( 1 )]
+title = "level.Extinction02Level.title"
+excerpt = "level.Extinction02Level.excerpt"
+link = "level.Extinction02Level.link"
+title_custom = "Abeilles Arctiques"
+excerpt_custom = "\"Si on meurt, on vous emmène avec nous.\"
+
+-- Les Abeilles"
+solution_a = "11155397977"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -196609, 38, 0, -262144, 38, 0, -262143, 38, 0, -131077, 38, 0, -131076, 38, 0, -131075, 38, 0, -131074, 38, 0, -131073, 38, 0, -196608, 38, 0, -196607, 38, 0, -196606, 38, 0, -196605, 38, 0, -196604, 38, 0, -65541, 38, 0, -65540, 38, 0, -65539, 38, 0, -65538, 44, 0, -65537, 44, 0, -131072, 44, 0, -131071, 44, 0, -131068, 38, 0, -131067, 38, 0, -6, 38, 0, -1, 42, 0, -65536, 42, 0, -65535, 42, 0, -65534, 43, 0, -65533, 43, 0, -65532, 42, 0, 65532, 43, 0, 65533, 43, 0, 65534, 42, 0, 0, 42, 0, 1, 42, 0, 3, 42, 0, 4, 42, 0, 131067, 43, 0, 131068, 43, 0, 131069, 43, 0, 131070, 43, 0, 131071, 43, 0, 65536, 43, 0, 65538, 43, 0, 196603, 43, 0, 196604, 43, 0, 196605, 43, 0, 196606, 43, 0, 196607, 43, 0, 131072, 43, 0, 131073, 43, 0, 131074, 43, 0, 262139, 43, 0, 262140, 43, 0, 262141, 43, 0, 262142, 43, 0, 262143, 43, 0, 196608, 43, 0, 327676, 43, 0, 327677, 43, 0, 327678, 43, 0, 327679, 43, 0, 262144, 43, 0, 327680, 31, 0, 327681, 31, 0, 327682, 31, 0, 327683, 31, 0, 393217, 31, 0, 393218, 31, 0, 393219, 31, 0, 458753, 31, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="Undefined" type="Node2D" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( 32, 219.67 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "wave"
+cell_position = Vector2( -2, 5 )
+tile_position = Vector2( 0, 5 )
+direction = "top_left"
+
+[node name="Undefined2" type="Node2D" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( -192, -7.57464 )
+script = ExtResource( 2 )
+concept_name = "wave"
+cell_position = Vector2( -3, 0 )
+tile_position = Vector2( -3, 0 )
+is_win = true
+is_void = true
+
+[node name="Undefined3" type="Node2D" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( -128, 174.221 )
+script = ExtResource( 2 )
+concept_name = "wave"
+cell_position = Vector2( -4, 4 )
+tile_position = Vector2( -2, 4 )
+direction = "bottom_left"
+is_win = true
+is_void = true
+
+[node name="Undefined4" type="Node2D" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( -192, 83.3234 )
+script = ExtResource( 2 )
+concept_name = "wave"
+cell_position = Vector2( -4, 2 )
+tile_position = Vector2( -3, 2 )
+direction = "left"
+is_win = true
+is_void = true
+
+[node name="Undefined5" type="Node2D" parent="Items" index="4" instance=ExtResource( 3 )]
+position = Vector2( 160, 37.8744 )
+script = ExtResource( 2 )
+concept_name = "wave"
+cell_position = Vector2( 2, 1 )
+tile_position = Vector2( 2, 1 )
+direction = "bottom_right"
+is_win = true
+is_void = true
+
+[node name="Undefined6" type="Node2D" parent="Items" index="5" instance=ExtResource( 3 )]
+position = Vector2( 288, -53.0237 )
+script = ExtResource( 2 )
+concept_name = "wave"
+cell_position = Vector2( 5, -1 )
+tile_position = Vector2( 4, -1 )
+is_win = true
+is_void = true
+
+[node name="Undefined7" type="Node2D" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( -288, 128.772 )
+script = ExtResource( 2 )
+concept_name = "wave"
+cell_position = Vector2( -6, 3 )
+tile_position = Vector2( -5, 3 )
+direction = "top_left"
+is_win = true
+is_void = true
+
+[node name="Undefined8" type="Node2D" parent="Items" index="7" instance=ExtResource( 3 )]
+position = Vector2( -128, 265.119 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "void"
+cell_position = Vector2( -5, 6 )
+tile_position = Vector2( -2, 6 )
+direction = "left"
+
+[node name="Undefined9" type="Node2D" parent="Items" index="8" instance=ExtResource( 3 )]
+position = Vector2( -288, -234.82 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -2, -5 )
+tile_position = Vector2( -5, -5 )
+direction = "top_right"
+
+[node name="Undefined10" type="Node2D" parent="Items" index="9" instance=ExtResource( 3 )]
+position = Vector2( -352, -234.82 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "bee"
+cell_position = Vector2( -3, -5 )
+tile_position = Vector2( -6, -5 )
+
+[node name="Undefined11" type="Node2D" parent="Items" index="10" instance=ExtResource( 3 )]
+position = Vector2( 32, -53.0139 )
+script = ExtResource( 2 )
+concept_name = "bee"
+cell_position = Vector2( 1, -1 )
+tile_position = Vector2( 0, -1 )
+direction = "bottom_right"
+is_you = true
+
+[node name="Undefined12" type="Node2D" parent="Items" index="11" instance=ExtResource( 3 )]
+position = Vector2( -224, -234.82 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -1, -5 )
+tile_position = Vector2( -4, -5 )
+direction = "bottom_left"
+
+[node name="Undefined13" type="Node2D" parent="Items" index="12" instance=ExtResource( 3 )]
+position = Vector2( 96, 219.67 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -1, 5 )
+tile_position = Vector2( 1, 5 )
+direction = "bottom_left"
+
+[node name="Undefined14" type="Node2D" parent="Items" index="13" instance=ExtResource( 3 )]
+position = Vector2( 128, 174.221 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "more"
+cell_position = Vector2( 0, 4 )
+tile_position = Vector2( 2, 4 )
+direction = "left"
+
+[node name="Undefined15" type="Node2D" parent="Items" index="14" instance=ExtResource( 3 )]
+position = Vector2( -192, 265.119 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -6, 6 )
+tile_position = Vector2( -3, 6 )
+direction = "left"
+
+[node name="Undefined16" type="Node2D" parent="Items" index="15" instance=ExtResource( 3 )]
+position = Vector2( -256, 265.119 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "wave"
+cell_position = Vector2( -7, 6 )
+tile_position = Vector2( -4, 6 )
+
+[node name="Undefined17" type="Node2D" parent="Items" index="16" instance=ExtResource( 3 )]
+position = Vector2( -352, -53.0237 )
+script = ExtResource( 2 )
+concept_name = "tree"
+cell_position = Vector2( -5, -1 )
+tile_position = Vector2( -6, -1 )
+direction = "top_right"
+is_void = true
+is_more = true
+
+[node name="Undefined18" type="Node2D" parent="Items" index="17" instance=ExtResource( 3 )]
+position = Vector2( 64, 265.119 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "tree"
+cell_position = Vector2( -2, 6 )
+tile_position = Vector2( 1, 6 )
+direction = "bottom_right"
+
+[node name="Undefined19" type="Node2D" parent="Items" index="18" instance=ExtResource( 3 )]
+position = Vector2( 64, 174.221 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -1, 4 )
+tile_position = Vector2( 1, 4 )
+direction = "left"
+
+[node name="Undefined20" type="Node2D" parent="Items" index="19" instance=ExtResource( 3 )]
+position = Vector2( 160, 219.67 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 0, 5 )
+tile_position = Vector2( 2, 5 )
+direction = "bottom_left"
+
+[node name="Undefined21" type="Node2D" parent="Items" index="20" instance=ExtResource( 3 )]
+position = Vector2( 0, 174.221 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "tree"
+cell_position = Vector2( -2, 4 )
+tile_position = Vector2( 0, 4 )
+direction = "top_left"
+
+[node name="Undefined22" type="Node2D" parent="Items" index="21" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -32, 128.772 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "wave"
+cell_position = Vector2( -2, 3 )
+tile_position = Vector2( -1, 3 )
+direction = "top_left"
+is_lit = false
+
+[node name="Undefined23" type="Node2D" parent="Items" index="22" instance=ExtResource( 3 )]
+position = Vector2( 128, 265.119 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -1, 6 )
+tile_position = Vector2( 2, 6 )
+direction = "bottom_right"
+
+[node name="Undefined24" type="Node2D" parent="Items" index="23" instance=ExtResource( 3 )]
+position = Vector2( 192, 265.119 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "void"
+cell_position = Vector2( 0, 6 )
+tile_position = Vector2( 3, 6 )

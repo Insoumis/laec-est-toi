@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gui_move.wav-35cbd56215aa0a80963b0c77e0b04f4c.sample"
+
+[deps]
+
+source_file="res://sounds/gui_move.wav"
+dest_files=[ "res://.import/gui_move.wav-35cbd56215aa0a80963b0c77e0b04f4c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

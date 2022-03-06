@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://sprites/background/paint_stains_black_and_white_blurry.png" type="Texture" id=1]
+[ext_resource path="res://effects/pause_menu.tres" type="Shader" id=2]
+
+[resource]
+shader = ExtResource( 2 )
+shader_param/primary_color = Color( 0.27451, 0.27451, 0.768627, 1 )
+shader_param/secondary_color = Color( 1, 1, 1, 1 )
+shader_param/ternary_color = Color( 0.827451, 0.329412, 0.329412, 1 )
+shader_param/primary_limit = 0.33
+shader_param/primary_speed = 0.8
+shader_param/primary_amplitude = 0.1
+shader_param/secondary_limit = 0.718
+shader_param/secondary_speed = 0.6
+shader_param/secondary_amplitude = 0.1
+shader_param/primary_texture = ExtResource( 1 )

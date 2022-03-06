@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/tileMagic.png-a61fc9d6342cb5d4e6a6b3a2b08ce3c5.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/tileMagic.png"
+dest_files=[ "res://.import/tileMagic.png-a61fc9d6342cb5d4e6a6b3a2b08ce3c5.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

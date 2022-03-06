@@ -1,0 +1,272 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=3]
+[ext_resource path="res://core/Sign.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+trigger_on_turn_if = "not 1 justice"
+trigger_on_victory_if = ""
+snake_identifier = "no_justice"
+title = ""
+title_custom = "Y'a pas d'justice !"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 3 )
+trigger_on_turn_if = "two jlm"
+trigger_on_victory_if = ""
+snake_identifier = "many_jlm"
+title = ""
+title_custom = "La relève est là !"
+
+[node name="Lotd20220228" instance=ExtResource( 1 )]
+title = "level.Lotd20220228.title"
+excerpt = "level.Lotd20220228.excerpt"
+link = "level.Lotd20220228.link"
+title_custom = "Justice est Clef"
+excerpt_custom = "- \"C'est une révolte ?\"
+
+- \"Non, sire, c'est une révolution.\""
+achievement_a = SubResource( 1 )
+achievement_b = SubResource( 2 )
+solution_a = "666699544111397996653144414474747963144166663977663314993144666633314444479999674999"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -262144, 9, 0, -262141, 17, 0, -262140, 17, 0, -131077, 12, 0, -131076, 21, 0, -131075, 4, 0, -131073, 9, 0, -196606, 4, 0, -196605, 21, 0, -196604, 12, 0, -65541, 4, 0, -65540, 21, 0, -65538, 4, 0, -65537, 1, 0, -131072, 1, 0, -131071, 1, 0, -131070, 4, 0, -131069, 21, 0, -131068, 21, 0, -131067, 4, 0, -6, 4, 0, -5, 21, 0, -4, 21, 0, -3, 21, 0, -2, 1, 0, -1, 4, 0, -65536, 4, 0, -65535, 1, 0, -65534, 4, 0, -65532, 21, 0, -65531, 4, 0, 65531, 4, 0, 65532, 4, 0, 65533, 4, 0, 65534, 1, 0, 65535, 4, 0, 0, 12, 0, 1, 4, 0, 2, 1, 0, 3, 4, 0, 4, 19, 0, 5, 4, 0, 131069, 1, 0, 131070, 1, 0, 131071, 4, 0, 65536, 4, 0, 65537, 1, 0, 65538, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 262141, 4, 0, 262143, 1, 0, 196608, 1, 0, 196610, 4, 0, 327677, 4, 0, 262147, 4, 0, 393213, 4, 0, 393214, 4, 0, 393215, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+tile_data = PoolIntArray( -983069, 32, 0, -1048542, 8, 0, -851936, 31, 0 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="IsText" parent="Items" index="0" instance=ExtResource( 2 )]
+position = Vector2( -160, -234.82 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 0, -5 )
+tile_position = Vector2( -3, -5 )
+direction = "bottom_left"
+
+[node name="YouText" parent="Items" index="1" instance=ExtResource( 2 )]
+position = Vector2( 256, -98.4729 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 5, -2 )
+tile_position = Vector2( 4, -2 )
+direction = "left"
+
+[node name="LaecText" parent="Items" index="2" instance=ExtResource( 2 )]
+position = Vector2( -224, -234.82 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( -1, -5 )
+tile_position = Vector2( -4, -5 )
+
+[node name="Laec" parent="Items" index="3" instance=ExtResource( 2 )]
+position = Vector2( 0, -189.371 )
+concept_name = "laec"
+cell_position = Vector2( 2, -4 )
+tile_position = Vector2( 0, -4 )
+direction = "top_left"
+is_win = true
+
+[node name="WinText" parent="Items" index="4" instance=ExtResource( 2 )]
+position = Vector2( -96, -234.82 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 1, -5 )
+tile_position = Vector2( -2, -5 )
+direction = "left"
+
+[node name="IsText2" parent="Items" index="5" instance=ExtResource( 2 )]
+position = Vector2( 320, 83.3232 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 4, 2 )
+tile_position = Vector2( 5, 2 )
+direction = "bottom_right"
+
+[node name="Jlm" parent="Items" index="6" instance=ExtResource( 2 )]
+position = Vector2( 0, -7.56484 )
+concept_name = "jlm"
+is_you = true
+
+[node name="IsText3" parent="Items" index="7" instance=ExtResource( 2 )]
+position = Vector2( 192, -98.4729 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 4, -2 )
+tile_position = Vector2( 3, -2 )
+direction = "left"
+
+[node name="Lobby" parent="Items" index="8" instance=ExtResource( 2 )]
+position = Vector2( -128, 83.3233 )
+concept_name = "lobby"
+cell_position = Vector2( -3, 2 )
+tile_position = Vector2( -2, 2 )
+is_sink = true
+
+[node name="MonarcText" parent="Items" index="9" instance=ExtResource( 2 )]
+position = Vector2( -448, 83.3232 )
+is_text = true
+concept_name = "monarc"
+cell_position = Vector2( -8, 2 )
+tile_position = Vector2( -7, 2 )
+direction = "top_left"
+
+[node name="IsText4" parent="Items" index="10" instance=ExtResource( 2 )]
+position = Vector2( 320, 174.221 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 3, 4 )
+tile_position = Vector2( 5, 4 )
+direction = "bottom_left"
+
+[node name="ShutText" parent="Items" index="11" instance=ExtResource( 2 )]
+position = Vector2( -320, 83.3232 )
+is_text = true
+concept_name = "shut"
+cell_position = Vector2( -6, 2 )
+tile_position = Vector2( -5, 2 )
+direction = "left"
+
+[node name="Monarc" parent="Items" index="12" instance=ExtResource( 2 )]
+position = Vector2( -32, -143.922 )
+concept_name = "monarc"
+cell_position = Vector2( 1, -3 )
+tile_position = Vector2( -1, -3 )
+is_shut = true
+
+[node name="JusticeText" parent="Items" index="13" instance=ExtResource( 2 )]
+position = Vector2( 256, 83.3232 )
+is_text = true
+concept_name = "justice"
+cell_position = Vector2( 3, 2 )
+tile_position = Vector2( 4, 2 )
+direction = "bottom_right"
+
+[node name="IsText5" parent="Items" index="14" instance=ExtResource( 2 )]
+position = Vector2( -384, 83.3232 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -7, 2 )
+tile_position = Vector2( -6, 2 )
+direction = "bottom_left"
+
+[node name="OpenText" parent="Items" index="15" instance=ExtResource( 2 )]
+position = Vector2( -288, 128.772 )
+is_text = true
+concept_name = "open"
+cell_position = Vector2( -6, 3 )
+tile_position = Vector2( -5, 3 )
+direction = "left"
+
+[node name="Justice" parent="Items" index="16" instance=ExtResource( 2 )]
+position = Vector2( -160, 128.772 )
+concept_name = "justice"
+cell_position = Vector2( -4, 3 )
+tile_position = Vector2( -3, 3 )
+direction = "bottom_right"
+is_push = true
+is_open = true
+
+[node name="JusticeText2" parent="Items" index="17" instance=ExtResource( 2 )]
+position = Vector2( -416, 128.772 )
+is_text = true
+concept_name = "justice"
+cell_position = Vector2( -8, 3 )
+tile_position = Vector2( -7, 3 )
+
+[node name="IsText6" parent="Items" index="18" instance=ExtResource( 2 )]
+position = Vector2( -352, 128.772 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -7, 3 )
+tile_position = Vector2( -6, 3 )
+direction = "top_right"
+
+[node name="PushText" parent="Items" index="19" instance=ExtResource( 2 )]
+position = Vector2( 384, 83.3232 )
+is_text = true
+concept_name = "push"
+cell_position = Vector2( 5, 2 )
+tile_position = Vector2( 6, 2 )
+direction = "bottom_right"
+
+[node name="SinkText" parent="Items" index="20" instance=ExtResource( 2 )]
+position = Vector2( 384, 174.221 )
+is_text = true
+concept_name = "sink"
+cell_position = Vector2( 4, 4 )
+tile_position = Vector2( 6, 4 )
+direction = "top_right"
+
+[node name="SinkText2" parent="Items" index="21" instance=ExtResource( 2 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 448, 174.221 )
+is_text = true
+concept_name = "sink"
+cell_position = Vector2( 5, 4 )
+tile_position = Vector2( 7, 4 )
+direction = "top_right"
+is_lit = false
+
+[node name="SinkText3" parent="Items" index="22" instance=ExtResource( 2 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 352, 219.67 )
+is_text = true
+concept_name = "sink"
+cell_position = Vector2( 3, 5 )
+tile_position = Vector2( 5, 5 )
+direction = "top_left"
+is_lit = false
+
+[node name="LobbyText" parent="Items" index="23" instance=ExtResource( 2 )]
+position = Vector2( 256, 174.221 )
+is_text = true
+concept_name = "lobby"
+cell_position = Vector2( 2, 4 )
+tile_position = Vector2( 4, 4 )
+direction = "left"
+
+[node name="JlmText" parent="Items" index="24" instance=ExtResource( 2 )]
+position = Vector2( 128, -98.4729 )
+is_text = true
+concept_name = "jlm"
+cell_position = Vector2( 3, -2 )
+tile_position = Vector2( 2, -2 )
+direction = "left"
+
+[node name="MakeText" parent="Items" index="25" instance=ExtResource( 2 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -256, -7.57484 )
+is_text = true
+concept_name = "make"
+cell_position = Vector2( -4, 0 )
+tile_position = Vector2( -4, 0 )
+is_lit = false
+
+[node name="PeopleText" parent="Items" index="26" instance=ExtResource( 2 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 160, 37.8742 )
+is_text = true
+concept_name = "people"
+cell_position = Vector2( 2, 1 )
+tile_position = Vector2( 2, 1 )
+direction = "top_left"
+is_lit = false
+
+[node name="Undefined" parent="Items" index="27" instance=ExtResource( 4 )]
+position = Vector2( -288, -143.922 )
+cell_position = Vector2( -3, -3 )
+tile_position = Vector2( -5, -3 )
+contents = "Ils ont les milliards,
+On est des milliards."

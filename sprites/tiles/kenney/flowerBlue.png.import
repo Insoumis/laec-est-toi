@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/flowerBlue.png-aed2f0a16e4b7a64e4c94217ff383151.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/flowerBlue.png"
+dest_files=[ "res://.import/flowerBlue.png-aed2f0a16e4b7a64e4c94217ff383151.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

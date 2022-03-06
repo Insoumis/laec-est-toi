@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=1]
+[ext_resource path="res://menus/TutorialMenu.gd" type="Script" id=2]
+
+[node name="TutorialMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.312
+anchor_right = 1.0
+anchor_bottom = 0.688
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 110.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center][shake]Voulez vous commencer le tutoriel ?[/shake][/center]"
+text = "Voulez vous commencer le tutoriel ?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 114.0
+margin_right = 1024.0
+margin_bottom = 225.0
+size_flags_vertical = 3
+
+[node name="YesButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 510.0
+margin_bottom = 111.0
+size_flags_horizontal = 3
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/YesButton"]
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.75
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center][shake]Oui[/shake][/center]"
+text = "Oui"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="NoButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 111.0
+size_flags_horizontal = 3
+flat = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/NoButton"]
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.75
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center][shake]Non[/shake][/center]"
+text = "Non"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/YesButton" to="." method="_on_YesButton_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/NoButton" to="." method="_on_NoButton_button_down"]

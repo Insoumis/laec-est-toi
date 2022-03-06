@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Portal.tscn" type="PackedScene" id=4]
+
+[node name="VenerMap" instance=ExtResource( 1 )]
+title = "level.VenerMap.title"
+excerpt = "level.VenerMap.excerpt"
+link = "level.VenerMap.link"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -196610, 10, 0, -196609, 10, 0, -262143, 7, 0, -262142, 10, 0, -131076, 10, 0, -131075, 10, 0, -131074, 10, 0, -196608, 7, 0, -196607, 7, 0, -196606, 10, 0, -196605, 10, 0, -65540, 10, 0, -65539, 10, 0, -65538, 10, 0, -65537, 10, 0, -131072, 7, 0, -131071, 7, 0, -131070, 10, 0, -131069, 10, 0, -131068, 10, 0, -5, 10, 0, -4, 10, 0, -3, 10, 0, -2, 10, 0, -1, 7, 0, -65536, 10, 0, -65535, 7, 0, -65534, 10, 0, -65533, 10, 0, -65532, 10, 0, 65532, 10, 0, 65533, 10, 0, 65534, 10, 0, 65535, 7, 0, 0, 4, 0, 1, 10, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 131068, 10, 0, 131069, 7, 0, 131070, 7, 0, 131071, 7, 0, 65536, 7, 0, 65537, 7, 0, 65538, 7, 0, 65539, 10, 0, 196604, 7, 0, 196605, 7, 0, 196606, 7, 0, 196607, 7, 0, 131072, 10, 0, 131073, 10, 0, 131074, 7, 0, 131075, 10, 0, 262140, 10, 0, 262141, 11, 0, 262142, 7, 0, 262143, 10, 0, 196608, 10, 0, 196609, 10, 0, 196610, 7, 0, 196611, 10, 0, 327677, 10, 0, 327678, 7, 0, 327679, 10, 0, 262144, 10, 0, 262145, 10, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="PeopleText" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( -384, -189.371 )
+is_text = true
+concept_name = "people"
+cell_position = Vector2( -4, -4 )
+tile_position = Vector2( -6, -4 )
+
+[node name="People" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( 0, -7.56484 )
+concept_name = "people"
+is_you = true
+
+[node name="IsText" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( -320, -189.371 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, -4 )
+tile_position = Vector2( -5, -4 )
+
+[node name="YouText" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( -256, -189.371 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -2, -4 )
+tile_position = Vector2( -4, -4 )
+
+[node name="Portal" parent="Items" index="4" instance=ExtResource( 4 )]
+position = Vector2( 96, -53.0239 )
+cell_position = Vector2( 2, -1 )
+tile_position = Vector2( 1, -1 )
+level_path = "res://levels/vener/Rebellion01Level.tscn"
+title = "Révolte"
+
+[node name="Portal4" parent="Items" index="5" instance=ExtResource( 4 )]
+position = Vector2( 64, -189.371 )
+cell_position = Vector2( 3, -4 )
+tile_position = Vector2( 1, -4 )
+level_path = "res://levels/vener/03CrushMonarchy.tscn"
+title = "Révolte"
+
+[node name="Portal3" parent="Items" index="6" instance=ExtResource( 4 )]
+position = Vector2( 32, -143.922 )
+cell_position = Vector2( 2, -3 )
+tile_position = Vector2( 0, -3 )
+level_path = "res://levels/vener/Rebellion03Level.tscn"
+title = "Révolte"
+
+[node name="Portal2" parent="Items" index="7" instance=ExtResource( 4 )]
+position = Vector2( 64, -98.4729 )
+cell_position = Vector2( 2, -2 )
+tile_position = Vector2( 1, -2 )
+level_path = "res://levels/vener/Rebellion02Level.tscn"
+title = "Révolution"

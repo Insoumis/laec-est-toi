@@ -1,0 +1,194 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/laec-is-you-main-screen/TutorialPanel.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Hack_Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 51
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_color = Color( 1, 1, 1, 0.745098 )
+extra_spacing_top = -1
+extra_spacing_bottom = -1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="YouMakeLaec" type="ScrollContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialPanel" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="TutorialPanel"]
+margin_right = 1024.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 70 )
+custom_fonts/font = SubResource( 1 )
+text = "LAEC IS YOU! (click me to play)"
+
+[node name="Control" type="Control" parent="TutorialPanel"]
+margin_top = 74.0
+margin_right = 1024.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="TextEdit" parent="TutorialPanel"]
+margin_top = 98.0
+margin_right = 1024.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 0, 150 )
+custom_colors/font_color_readonly = Color( 0.792157, 0.792157, 0.792157, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Welcome to the world of LAEC IS YOU!
+
+Bienvenue dans l'arrière-guichet de LAEC EST VOUS !"
+readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="TutorialPanel"]
+margin_top = 252.0
+margin_right = 1024.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 0, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowLevelTutorial" type="Button" parent="TutorialPanel"]
+visible = false
+margin_top = 276.0
+margin_right = 1524.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 0, 80 )
+custom_fonts/font = SubResource( 3 )
+text = "HOW TO MAKE A NEW LEVEL"
+
+[node name="ShowItemTutorial" type="Button" parent="TutorialPanel"]
+visible = false
+margin_top = 276.0
+margin_right = 1536.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 0, 80 )
+custom_fonts/font = SubResource( 3 )
+text = "HOW TO MAKE A NEW ITEM"
+
+[node name="Control3" type="Control" parent="TutorialPanel"]
+visible = false
+margin_top = 276.0
+margin_right = 1536.0
+margin_bottom = 296.0
+rect_min_size = Vector2( 0, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="TextEdit" parent="TutorialPanel"]
+visible = false
+margin_top = 300.0
+margin_right = 1536.0
+margin_bottom = 430.0
+rect_min_size = Vector2( 0, 130 )
+custom_colors/font_color_readonly = Color( 0.792157, 0.792157, 0.792157, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Already informed?
+
+Proceed and"
+readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control4" type="Control" parent="TutorialPanel"]
+margin_top = 276.0
+margin_right = 1024.0
+margin_bottom = 296.0
+rect_min_size = Vector2( 0, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateNewLevel" type="Button" parent="TutorialPanel"]
+margin_top = 300.0
+margin_right = 1024.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 0, 80 )
+custom_fonts/font = SubResource( 3 )
+text = "CREATE A NEW LEVEL"
+
+[node name="RunFeatures" type="Button" parent="TutorialPanel"]
+margin_top = 384.0
+margin_right = 1024.0
+margin_bottom = 464.0
+rect_min_size = Vector2( 0, 80 )
+custom_fonts/font = SubResource( 3 )
+text = "Run the Features"
+
+[node name="Control5" type="Control" parent="TutorialPanel"]
+margin_top = 468.0
+margin_right = 1024.0
+margin_bottom = 488.0
+rect_min_size = Vector2( 0, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="TutorialPanel"]
+visible = false
+margin_top = 566.0
+margin_right = 1536.0
+margin_bottom = 646.0
+
+[node name="Label4" type="TextEdit" parent="TutorialPanel/CenterContainer"]
+margin_left = 723.0
+margin_right = 813.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 90, 80 )
+custom_colors/font_color_readonly = Color( 0.792157, 0.792157, 0.792157, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "or"
+readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control6" type="Control" parent="TutorialPanel"]
+visible = false
+margin_top = 566.0
+margin_right = 1536.0
+margin_bottom = 586.0
+rect_min_size = Vector2( 0, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateNewItem" type="Button" parent="TutorialPanel"]
+visible = false
+margin_top = 590.0
+margin_right = 1536.0
+margin_bottom = 670.0
+rect_min_size = Vector2( 0, 80 )
+custom_fonts/font = SubResource( 3 )
+text = "CREATE A NEW ITEM"

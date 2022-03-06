@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/vendors/title_background.png" type="Texture" id=1]
+[ext_resource path="res://sprites/vendors/title_with_outline.png" type="Texture" id=2]
+[ext_resource path="res://menus/TitleScreen.gd" type="Script" id=3]
+[ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=4]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 160, 428 )
+scale = Vector2( 0.551473, 0.551473 )
+texture = ExtResource( 1 )
+offset = Vector2( 638.749, -233.548 )
+
+[node name="Title" type="Sprite" parent="."]
+position = Vector2( 529, 287 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+vframes = 3
+
+[node name="PressStartShadow" type="RichTextLabel" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -86.0
+margin_right = 2.0
+margin_bottom = 2.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center][shake]Appuyez pour Continuer[/shake][/center]"
+text = "Appuyez pour Continuer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressStart" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -88.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center][shake]Appuyez pour Continuer[/shake][/center]"
+text = "Appuyez pour Continuer"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/alienBlue.png-cc9ba68aea1e50bbcfbb68d8b7576e57.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/alienBlue.png"
+dest_files=[ "res://.import/alienBlue.png-cc9ba68aea1e50bbcfbb68d8b7576e57.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

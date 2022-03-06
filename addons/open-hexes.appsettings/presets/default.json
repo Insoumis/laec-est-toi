@@ -1,0 +1,45 @@
+{
+	"video": {
+		"screen": {
+			"fullscreen": {
+				"title": "Fullscreen",
+				"type": "boolean",
+				"default": false
+			},
+			"resolution": {
+				"title": "Resolution",
+				"type": "select",
+				"options": [
+					{
+						"title": "800x600",
+						"value": "(800, 600)"
+					},
+					{
+						"title": "1024x768",
+						"value": "(1024, 768)"
+					},
+					{
+						"title": "1280x1024",
+						"value": "(1280, 1024)"
+					}
+				],
+				"default": "(1024, 768)"
+			}
+		}
+	},
+	"audio":
+	{
+		"volume":
+		{
+			"master":
+              {
+                  "title": "master volume",
+                  "type": "range",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "step": 1,
+				  "default": 40,
+              },
+		},
+	},
+}

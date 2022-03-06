@@ -1,0 +1,19 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform sampler2D mask;
+uniform bool flip_h;
+
+void fragment(){
+	float flip_float = float(int(flip_h));
+	if (((textureLod(mask, vec2(flip_float-UV.x, UV.y), 1.0).a > 0.5)
+			&& flip_h) || ((textureLod(mask, UV, 1.0).a > 0.5) && ! flip_h))
+	{
+		COLOR = textureLod(TEXTURE, UV, 1.0);
+	}
+	else {
+		COLOR = vec4(0.0)
+	}
+}"

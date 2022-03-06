@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/hint_undo_2.png-1964debee60e12e33a3a2fc6eebe6662.res"
+group_file="res://sprites/gui/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/gui/hint_undo_2.png"
+dest_files=[ "res://.import/hint_undo_2.png-1964debee60e12e33a3a2fc6eebe6662.res" ]
+
+[params]
+
+atlas_file="res://sprites/gui/atlas.png"
+import_mode=0
+crop_to_region=false

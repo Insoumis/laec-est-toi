@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://menus/InputMapperMenu.gd" type="Script" id=1]
+[ext_resource path="res://sprites/background/frise_spaciale.png" type="Texture" id=2]
+[ext_resource path="res://guis/TextureScrollerMaterial.tres" type="Material" id=3]
+[ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=4]
+
+[node name="InputMapperMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+material = ExtResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 48.0

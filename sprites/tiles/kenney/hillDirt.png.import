@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/hillDirt.png-d8103b06c52b50358b2e0aaa187d7abf.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/hillDirt.png"
+dest_files=[ "res://.import/hillDirt.png-d8103b06c52b50358b2e0aaa187d7abf.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

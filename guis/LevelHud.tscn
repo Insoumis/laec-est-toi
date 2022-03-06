@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://guis/HexagonGui.tscn" type="PackedScene" id=1]
+
+[node name="Hud" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HexagonGui" parent="." instance=ExtResource( 1 )]
+visible = false

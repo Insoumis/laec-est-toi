@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/laec-is-you/node/HexagonalTileMap.gd" type="Script" id=1]
+[ext_resource path="res://tests/HexDraft.gd" type="Script" id=2]
+[ext_resource path="res://tilesets/GroundTileSet.tres" type="TileSet" id=3]
+[ext_resource path="res://guis/HexagonGui.tscn" type="PackedScene" id=4]
+
+[node name="HexDraft" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="HexagonalTileMap" type="TileMap" parent="."]
+mode = 2
+tile_set = ExtResource( 3 )
+cell_custom_transform = Transform2D( 64, 0, 0, 55.4256, -32, -27.7128 )
+cell_half_offset = 0
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( -262147, 8, 0, -327678, 8, 0, -196610, 8, 0, -262142, 8, 0, -131074, 8, 0, -196607, 8, 0, -65537, 8, 0, -131071, 8, 0, -1, 0, 0, -65536, 0, 0, 65531, 8, 0, 65532, 8, 0, 65533, 8, 0, 65534, 8, 0, 65535, 0, 0, 0, 5, 0, 1, 0, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 131071, 0, 0, 65536, 0, 0, 196607, 8, 0, 131073, 8, 0, 262142, 8, 0, 196609, 8, 0, 327678, 8, 0, 262146, 8, 0, 393213, 8, 0, 327682, 8, 0 )
+script = ExtResource( 1 )
+
+[node name="HexagonGui" parent="." instance=ExtResource( 4 )]
+visible = false
+modulate = Color( 0.333333, 0.882353, 0.368627, 1 )
+scale = Vector2( 0.9, 0.9 )
+
+[node name="HexagonGui2" parent="." instance=ExtResource( 4 )]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="HexagonGuiOk" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.498039, 0.905882, 0.270588, 1 )

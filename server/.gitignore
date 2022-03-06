@@ -1,0 +1,6 @@
+# Database
+*.db
+
+# You can store your custom ENV configuration in .env.local
+# It will override the one in .env
+.env.local

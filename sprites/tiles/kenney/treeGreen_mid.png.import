@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/treeGreen_mid.png-e81fda5dba28bc7a63492da1cb630d08.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/treeGreen_mid.png"
+dest_files=[ "res://.import/treeGreen_mid.png-e81fda5dba28bc7a63492da1cb630d08.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

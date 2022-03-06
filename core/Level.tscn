@@ -1,0 +1,186 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://addons/laec-is-you/node/HexagonalTileMap.gd" type="Script" id=1]
+[ext_resource path="res://addons/laec-is-you/entity/Level.gd" type="Script" id=2]
+[ext_resource path="res://guis/LevelHud.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tilesets/GroundTileSet.tres" type="TileSet" id=4]
+[ext_resource path="res://guis/UndoGuiButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://guis/HomeGuiButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://guis/PortalSelectionHint.tscn" type="PackedScene" id=7]
+[ext_resource path="res://guis/LimboHint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://effects/terrain.shader" type="Shader" id=9]
+[ext_resource path="res://tilesets/DecoTileSet.tres" type="TileSet" id=10]
+[ext_resource path="res://sprites/background/paint_stains_dark_filled.png" type="Texture" id=11]
+[ext_resource path="res://sprites/background/paint_stains_black_and_white.png" type="Texture" id=12]
+[ext_resource path="res://sprites/background/paint_stains_black_and_white_blurry.png" type="Texture" id=13]
+[ext_resource path="res://effects/default_level_background_shader.shader" type="Shader" id=14]
+[ext_resource path="res://sprites/specials/sherpas/bee_right_0.png" type="Texture" id=15]
+[ext_resource path="res://sprites/specials/sherpas/bee_right_1.png" type="Texture" id=16]
+[ext_resource path="res://sprites/specials/sherpas/bee_right_2.png" type="Texture" id=17]
+[ext_resource path="res://core/Sherpa.gd" type="Script" id=18]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 14 )
+shader_param/time_multiplier = 0.003
+shader_param/texture_time_multiplier = 0.003
+shader_param/strength_time_multiplier = 1.0
+shader_param/strength_offset = 0.692
+shader_param/strength_multiplier = 0.2
+shader_param/blurry_multiplier_texture = ExtResource( 13 )
+shader_param/multiplier_texture = ExtResource( 12 )
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 9 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+title = "level.Level.title"
+excerpt = "level.Level.excerpt"
+link = "level.Level.link"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="GemClusterBackground" type="TextureRect" parent="BackgroundLayer"]
+modulate = Color( 0.27451, 0.27451, 0.27451, 1 )
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HexagonalTileMap" type="TileMap" parent="."]
+material = SubResource( 1 )
+mode = 2
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 64, 52 )
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+cell_half_offset = 0
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, 65535, 4, 0, 0, 12, 0, 1, 4, 0, 131071, 4, 0, 65536, 4, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": "Terrain TileMap.
+Items will only be able to move on tiles with terrain.  (any terrain works, even water)"
+}
+aspect_ratio = 0.82
+
+[node name="MiniDecorFarTileMap" type="TileMap" parent="."]
+scale = Vector2( 0.618, 0.618 )
+mode = 2
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 13 )
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+cell_half_offset = 0
+cell_y_sort = true
+format = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": "Miniature decor in the far distance."
+}
+hex_size = 16.0
+aspect_ratio = 0.82
+
+[node name="DecorTileMap" type="TileMap" parent="."]
+mode = 2
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 8, 6 )
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+cell_half_offset = 0
+cell_y_sort = true
+format = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": "Decor, stuff we don't interact with."
+}
+hex_size = 8.0
+aspect_ratio = 0.82
+
+[node name="MiniDecorNearTileMap" type="TileMap" parent="."]
+scale = Vector2( 0.618, 0.618 )
+mode = 2
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 13 )
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+cell_half_offset = 0
+cell_y_sort = true
+format = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": "Miniature decor in the close distance."
+}
+hex_size = 16.0
+aspect_ratio = 0.82
+
+[node name="Groundlings" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Items" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": "We disabled the sort for now.
+Perhaps we'll remove the YSort type altogether at some point."
+}
+
+[node name="Effects" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sherpa" type="AnimatedSprite" parent="Effects"]
+visible = false
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 4 )
+script = ExtResource( 18 )
+__meta__ = {
+"_editor_description_": "Starts hidden.  Shows the way of the solution."
+}
+
+[node name="Hud" parent="." instance=ExtResource( 3 )]
+
+[node name="Dialogs" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GuiLayer" type="CanvasLayer" parent="."]
+
+[node name="UndoGuiButton" parent="GuiLayer" instance=ExtResource( 5 )]
+
+[node name="HomeGuiButton" parent="GuiLayer" instance=ExtResource( 6 )]
+
+[node name="PortalSelectionHint" parent="GuiLayer" instance=ExtResource( 7 )]
+
+[node name="LimboHint" parent="GuiLayer" instance=ExtResource( 8 )]

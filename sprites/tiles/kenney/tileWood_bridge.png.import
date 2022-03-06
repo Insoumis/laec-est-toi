@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/tileWood_bridge.png-246fd8d54e9b1f1f94b41cdebf389b92.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/tileWood_bridge.png"
+dest_files=[ "res://.import/tileWood_bridge.png-246fd8d54e9b1f1f94b41cdebf389b92.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

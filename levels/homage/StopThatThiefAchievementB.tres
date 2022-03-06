@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://core/Achievement.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+trigger_on_turn_if = ""
+trigger_on_victory_if = "not 1 monarc"
+snake_identifier = "default_achievement"
+title = "level.StopThatThief.default_achievement.title"
+title_custom = "Ma-cron, dé-mis-sion !"

@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/ignored_0.png-d28eb261a49c20318ab161bce3eb58e7.res"
+group_file="res://sprites/gui/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/gui/ignored_0.png"
+dest_files=[ "res://.import/ignored_0.png-d28eb261a49c20318ab161bce3eb58e7.res" ]
+
+[params]
+
+atlas_file="res://sprites/gui/atlas.png"
+import_mode=0
+crop_to_region=false

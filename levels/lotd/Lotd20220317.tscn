@@ -1,0 +1,186 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+
+[node name="Lotd20220317" instance=ExtResource( 1 )]
+title = "level.Lotd20220317.title"
+excerpt = "level.Lotd20220317.excerpt"
+link = "level.Lotd20220317.link"
+title_custom = "Niveau du 17 Mars 2022"
+excerpt_custom = "La domination économique
+Ne cèdera rien à l'envol démocratique.
+
+Gel, saisie et confiscation des avoirs criminels
+Volés aux communs par les crapules.
+"
+solution_a = "666369979743999641144114791369663997969"
+
+[node name="Camera2D" parent="." index="0"]
+zoom = Vector2( 1.0618, 1.0618 )
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -262146, 0, 0, -327680, 0, 0, -196610, 10, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -131075, 10, 0, -131074, 10, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 10, 0, -65537, 10, 0, -131072, 10, 0, -131071, 0, 0, -5, 0, 0, -3, 0, 0, -2, 10, 0, -1, 10, 0, -65536, 10, 0, -65535, 10, 0, -65534, 0, 0, 65531, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 10, 0, 1, 10, 0, 2, 10, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 10, 0, 131072, 0, 0, 131073, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262143, 0, 0, 196608, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="People" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( -352, 128.782 )
+concept_name = "people"
+cell_position = Vector2( -7, 3 )
+tile_position = Vector2( -6, 3 )
+is_you = true
+is_melt = true
+is_poet = true
+
+[node name="PeopleText" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( 288, 37.8742 )
+is_text = true
+concept_name = "people"
+cell_position = Vector2( 4, 1 )
+tile_position = Vector2( 4, 1 )
+direction = "top_right"
+
+[node name="IsText" parent="Items" index="2" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -320, -98.4729 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, -2 )
+tile_position = Vector2( -5, -2 )
+is_lit = false
+
+[node name="YouText" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( 416, -53.0239 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 7, -1 )
+tile_position = Vector2( 6, -1 )
+direction = "top_right"
+
+[node name="WinText" parent="Items" index="4" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -288, -53.0239 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( -4, -1 )
+tile_position = Vector2( -5, -1 )
+is_lit = false
+
+[node name="6 EmeText" parent="Items" index="5" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -384, -98.4729 )
+is_text = true
+concept_name = "6eme"
+cell_position = Vector2( -5, -2 )
+tile_position = Vector2( -6, -2 )
+is_lit = false
+
+[node name="6 Eme" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( 128, -189.371 )
+concept_name = "6eme"
+cell_position = Vector2( 4, -4 )
+tile_position = Vector2( 2, -4 )
+
+[node name="Deluxe" parent="Items" index="7" instance=ExtResource( 3 )]
+position = Vector2( 96, -143.922 )
+concept_name = "deluxe"
+cell_position = Vector2( 3, -3 )
+tile_position = Vector2( 1, -3 )
+
+[node name="IsText2" parent="Items" index="8" instance=ExtResource( 3 )]
+position = Vector2( 352, 37.8742 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 5, 1 )
+tile_position = Vector2( 5, 1 )
+direction = "top_right"
+
+[node name="HotText" parent="Items" index="9" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -96, 128.772 )
+is_text = true
+concept_name = "hot"
+cell_position = Vector2( -3, 3 )
+tile_position = Vector2( -2, 3 )
+direction = "left"
+is_lit = false
+
+[node name="PeopleText2" parent="Items" index="10" instance=ExtResource( 3 )]
+position = Vector2( -32, 37.8742 )
+is_text = true
+concept_name = "people"
+cell_position = Vector2( -1, 1 )
+tile_position = Vector2( -1, 1 )
+direction = "top_right"
+
+[node name="IsText3" parent="Items" index="11" instance=ExtResource( 3 )]
+position = Vector2( 32, 37.8742 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 0, 1 )
+tile_position = Vector2( 0, 1 )
+direction = "top_right"
+
+[node name="MeltText" parent="Items" index="12" instance=ExtResource( 3 )]
+position = Vector2( 416, 37.8742 )
+is_text = true
+concept_name = "melt"
+cell_position = Vector2( 6, 1 )
+tile_position = Vector2( 6, 1 )
+direction = "top_right"
+
+[node name="PoetText" parent="Items" index="13" instance=ExtResource( 3 )]
+position = Vector2( 96, 37.8742 )
+is_text = true
+concept_name = "poet"
+cell_position = Vector2( 1, 1 )
+tile_position = Vector2( 1, 1 )
+direction = "top_right"
+
+[node name="IsText4" parent="Items" index="14" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -128, 83.3232 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, 2 )
+tile_position = Vector2( -2, 2 )
+direction = "bottom_left"
+is_lit = false
+
+[node name="PeopleText3" parent="Items" index="15" instance=ExtResource( 3 )]
+position = Vector2( 288, -53.0239 )
+is_text = true
+concept_name = "people"
+cell_position = Vector2( 5, -1 )
+tile_position = Vector2( 4, -1 )
+direction = "top_right"
+
+[node name="IsText5" parent="Items" index="16" instance=ExtResource( 3 )]
+position = Vector2( 352, -53.0239 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 6, -1 )
+tile_position = Vector2( 5, -1 )
+direction = "top_right"
+
+[node name="Deluxe2" parent="Items" index="17" instance=ExtResource( 3 )]
+position = Vector2( -224, 37.8742 )
+concept_name = "deluxe"
+cell_position = Vector2( -4, 1 )
+tile_position = Vector2( -4, 1 )
+direction = "left"
+
+[node name="Deluxe3" parent="Items" index="18" instance=ExtResource( 3 )]
+position = Vector2( 64, -189.371 )
+concept_name = "deluxe"
+cell_position = Vector2( 3, -4 )
+tile_position = Vector2( 1, -4 )

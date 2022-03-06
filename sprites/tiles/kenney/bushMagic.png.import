@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/bushMagic.png-6b14b9d24425f82784b149c82f160165.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/bushMagic.png"
+dest_files=[ "res://.import/bushMagic.png-6b14b9d24425f82784b149c82f160165.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

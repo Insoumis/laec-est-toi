@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://core/Achievement.gd" type="Script" id=1]
+[ext_resource path="res://sprites/items/text_move_2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/items/text_move_1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/items/text_move_0.png" type="Texture" id=4]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 3
+fps = 13.0
+frame_0/texture = ExtResource( 4 )
+frame_1/texture = ExtResource( 3 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 2 )
+frame_2/delay_sec = 0.0
+
+[resource]
+script = ExtResource( 1 )
+trigger_on_turn_if = ""
+trigger_on_victory_if = "2 laec & not 1 laec on laec & 2 laec on 6eme"
+image = SubResource( 1 )
+snake_identifier = "very_style"
+title = "level.LearnMove.very_style.title"
+title_custom = "Législature vivace ; tu gères !"

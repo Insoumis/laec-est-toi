@@ -1,0 +1,174 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/open-hexes.appsettings/presets/default/video/screen/fullscreen.gd" type="Script" id=3]
+
+[node name="Panel" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AppSettingsContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AppSettingsColumn0" type="VBoxContainer" parent="AppSettingsContainer"]
+margin_right = 338.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VideoScreenFullscreenSetting" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="@@2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="@@3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="AppSettingsColumn1" type="VBoxContainer" parent="AppSettingsContainer"]
+margin_left = 342.0
+margin_right = 681.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VideoScreenFullscreenSetting" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn1"]
+margin_right = 339.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn1/VideoScreenFullscreenSetting"]
+margin_top = 13.0
+margin_right = 210.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn1/VideoScreenFullscreenSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn1/VideoScreenFullscreenSetting"]
+margin_left = 214.0
+margin_right = 230.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn1/VideoScreenFullscreenSetting"]
+margin_left = 234.0
+margin_right = 339.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="AppSettingsColumn2" type="VBoxContainer" parent="AppSettingsContainer"]
+margin_left = 685.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VideoScreenFullscreenSetting" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn2"]
+margin_right = 339.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn2/VideoScreenFullscreenSetting"]
+margin_top = 13.0
+margin_right = 210.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn2/VideoScreenFullscreenSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn2/VideoScreenFullscreenSetting"]
+margin_left = 214.0
+margin_right = 230.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn2/VideoScreenFullscreenSetting"]
+margin_left = 234.0
+margin_right = 339.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}

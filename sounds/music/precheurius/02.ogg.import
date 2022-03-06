@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/02.ogg-f0a1a9b223fbd5f8c8990d52c08a7313.oggstr"
+
+[deps]
+
+source_file="res://sounds/music/precheurius/02.ogg"
+dest_files=[ "res://.import/02.ogg-f0a1a9b223fbd5f8c8990d52c08a7313.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

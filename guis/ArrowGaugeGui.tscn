@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://sprites/gui/gauge_arrow_outline_0.png" type="Texture" id=1]
+[ext_resource path="res://sprites/gui/gauge_arrow_fill_1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/gui/gauge_arrow_fill_3.png" type="Texture" id=3]
+[ext_resource path="res://guis/ArrowGaugeGui.gd" type="Script" id=4]
+[ext_resource path="res://sprites/gui/gauge_arrow_fill_2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/gui/gauge_arrow_fill_4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/gui/gauge_arrow_fill_5.png" type="Texture" id=7]
+[ext_resource path="res://sprites/gui/gauge_arrow_fill_6.png" type="Texture" id=8]
+[ext_resource path="res://sprites/gui/gauge_arrow_fill_0.png" type="Texture" id=9]
+[ext_resource path="res://sprites/gui/gauge_arrow_outline_2.png" type="Texture" id=10]
+[ext_resource path="res://sprites/gui/gauge_arrow_outline_1.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "gauge_4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauge_5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "gauge_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "gauge_3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "gauge_0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "gauge_6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "gauge_1",
+"speed": 5.0
+} ]
+
+[node name="ArrowGaugeGui" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="ArrowOutline" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="ArrowFill" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 2 )
+animation = "gauge_6"

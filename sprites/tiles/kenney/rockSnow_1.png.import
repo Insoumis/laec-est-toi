@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/rockSnow_1.png-3de36d004e84dd4849f92dc3d7b27717.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/rockSnow_1.png"
+dest_files=[ "res://.import/rockSnow_1.png-3de36d004e84dd4849f92dc3d7b27717.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

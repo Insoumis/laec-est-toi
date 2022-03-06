@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/arrow_bottom_left_0.png-faf9e187ffa55c252393f429961dbb57.res"
+group_file="res://sprites/gui/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/gui/arrow_bottom_left_0.png"
+dest_files=[ "res://.import/arrow_bottom_left_0.png-faf9e187ffa55c252393f429961dbb57.res" ]
+
+[params]
+
+atlas_file="res://sprites/gui/atlas.png"
+import_mode=0
+crop_to_region=false

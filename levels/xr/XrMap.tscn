@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Portal.tscn" type="PackedScene" id=4]
+
+[node name="XrMap" instance=ExtResource( 1 )]
+title = "level.XrMap.title"
+excerpt = "level.XrMap.excerpt"
+link = "level.XrMap.link"
+
+[node name="Camera2D" parent="." index="0"]
+zoom = Vector2( 1.2, 1.2 )
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -262147, 4, 0, -262146, 4, 0, -262145, 4, 0, -327680, 4, 0, -327679, 4, 0, -327678, 4, 0, -196611, 10, 0, -196610, 4, 0, -262142, 4, 0, -262141, 10, 0, -131076, 10, 0, -131074, 4, 0, -196607, 4, 0, -196605, 10, 0, -65540, 10, 0, -65537, 4, 0, -131071, 4, 0, -131068, 10, 0, -5, 10, 0, -1, 19, 0, -65536, 19, 0, -65532, 10, 0, 65532, 10, 0, 0, 19, 0, 4, 10, 0, 131067, 10, 0, 131071, 19, 0, 65536, 19, 0, 65540, 10, 0, 196604, 10, 0, 196607, 4, 0, 131073, 4, 0, 131076, 10, 0, 262140, 10, 0, 262142, 4, 0, 196609, 4, 0, 196611, 10, 0, 327677, 10, 0, 327678, 4, 0, 262146, 4, 0, 262147, 10, 0, 393213, 4, 0, 393214, 4, 0, 393215, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( -512, -7.57484 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( -8, 0 )
+tile_position = Vector2( -8, 0 )
+
+[node name="Laec" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( 0, -7.56484 )
+concept_name = "laec"
+is_you = true
+
+[node name="IsText" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( -448, -7.57484 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -7, 0 )
+tile_position = Vector2( -7, 0 )
+
+[node name="YouText" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( -384, -7.57484 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -6, 0 )
+tile_position = Vector2( -6, 0 )
+
+[node name="Portal" parent="Items" index="4" instance=ExtResource( 4 )]
+position = Vector2( -32, -53.0239 )
+cell_position = Vector2( 0, -1 )
+tile_position = Vector2( -1, -1 )
+level_path = "res://levels/xr/Extinction01Level.tscn"
+title = "Extinction: Tsunami"

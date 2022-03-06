@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/hexagon_filling_3.png-33c1627a748e739dd06720c790796993.res"
+group_file="res://sprites/gui/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/gui/hexagon_filling_3.png"
+dest_files=[ "res://.import/hexagon_filling_3.png-33c1627a748e739dd06720c790796993.res" ]
+
+[params]
+
+atlas_file="res://sprites/gui/atlas.png"
+import_mode=0
+crop_to_region=false

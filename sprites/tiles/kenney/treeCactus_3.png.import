@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/treeCactus_3.png-9d556c4fd883d6a3914d2543c9b05b1c.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/treeCactus_3.png"
+dest_files=[ "res://.import/treeCactus_3.png-9d556c4fd883d6a3914d2543c9b05b1c.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

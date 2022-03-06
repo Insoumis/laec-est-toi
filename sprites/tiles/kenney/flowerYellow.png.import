@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/flowerYellow.png-07c03900d49aff8fecf6555d84778319.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/flowerYellow.png"
+dest_files=[ "res://.import/flowerYellow.png-07c03900d49aff8fecf6555d84778319.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

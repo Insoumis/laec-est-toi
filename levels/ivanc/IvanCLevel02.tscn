@@ -1,0 +1,147 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=2]
+
+[node name="IvanCLevel02" instance=ExtResource( 1 )]
+title = "level.IvanCLevel02.title"
+excerpt = "level.IvanCLevel02.excerpt"
+link = "level.IvanCLevel02.link"
+title_custom = "Vive l'AEC"
+excerpt_custom = "L'AEC est un programme unique comparé au travail et aux propositions des autres formations politiques. Sa création et son existence sont en soi une victoire idéologique et citoyenne."
+solution_a = "97436694"
+
+[node name="Camera2D" parent="." index="0"]
+zoom = Vector2( 0.8, 0.8 )
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -131076, 14, 0, -131075, 14, 0, -131074, 14, 0, -131073, 14, 0, -196608, 14, 0, -196607, 14, 0, -196606, 20, 0, -196605, 11, 0, -65540, 14, 0, -65539, 14, 0, -65538, 14, 0, -65537, 14, 0, -131072, 14, 0, -131071, 14, 0, -131070, 20, 0, -131069, 11, 0, -131068, 11, 0, -5, 14, 0, -4, 14, 0, -3, 14, 0, -2, 14, 0, -1, 14, 0, -65536, 14, 0, -65535, 20, 0, -65534, 11, 0, -65533, 11, 0, -65532, 11, 0, 65532, 14, 0, 65533, 14, 0, 65534, 14, 0, 65535, 14, 0, 0, 14, 0, 1, 20, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 131068, 14, 0, 131069, 14, 0, 131070, 14, 0, 131071, 14, 0, 65536, 14, 0, 65537, 20, 0, 65538, 11, 0, 65539, 11, 0, 196605, 14, 0, 196606, 14, 0, 196607, 14, 0, 131072, 14, 0, 131073, 14, 0, 131074, 20, 0, 131075, 11, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="LaecText" parent="Items" index="0" instance=ExtResource( 2 )]
+position = Vector2( -192, -98.4729 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( -2, -2 )
+tile_position = Vector2( -3, -2 )
+
+[node name="IsText" parent="Items" index="1" instance=ExtResource( 2 )]
+position = Vector2( -128, -98.4729 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -1, -2 )
+tile_position = Vector2( -2, -2 )
+
+[node name="YouText" parent="Items" index="2" instance=ExtResource( 2 )]
+position = Vector2( -64, -98.4729 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 0, -2 )
+tile_position = Vector2( -1, -2 )
+
+[node name="France" parent="Items" index="3" instance=ExtResource( 2 )]
+position = Vector2( 224, -53.0238 )
+concept_name = "france"
+cell_position = Vector2( 4, -1 )
+tile_position = Vector2( 3, -1 )
+is_win = true
+
+[node name="FranceText" parent="Items" index="4" instance=ExtResource( 2 )]
+position = Vector2( -192, -7.57484 )
+is_text = true
+concept_name = "france"
+cell_position = Vector2( -3, 0 )
+tile_position = Vector2( -3, 0 )
+
+[node name="IsText2" parent="Items" index="5" instance=ExtResource( 2 )]
+position = Vector2( -128, -7.57484 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -2, 0 )
+tile_position = Vector2( -2, 0 )
+
+[node name="WinText" parent="Items" index="6" instance=ExtResource( 2 )]
+position = Vector2( -64, -7.57484 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( -1, 0 )
+tile_position = Vector2( -1, 0 )
+
+[node name="Wave" parent="Items" index="7" instance=ExtResource( 2 )]
+position = Vector2( 160, -143.922 )
+concept_name = "wave"
+cell_position = Vector2( 4, -3 )
+tile_position = Vector2( 2, -3 )
+is_void = true
+
+[node name="Wave2" parent="Items" index="8" instance=ExtResource( 2 )]
+position = Vector2( 128, -98.4728 )
+concept_name = "wave"
+cell_position = Vector2( 3, -2 )
+tile_position = Vector2( 2, -2 )
+is_void = true
+
+[node name="Wave3" parent="Items" index="9" instance=ExtResource( 2 )]
+position = Vector2( 96, -53.0238 )
+concept_name = "wave"
+cell_position = Vector2( 2, -1 )
+tile_position = Vector2( 1, -1 )
+is_void = true
+
+[node name="Wave4" parent="Items" index="10" instance=ExtResource( 2 )]
+position = Vector2( 64, -7.57474 )
+concept_name = "wave"
+cell_position = Vector2( 1, 0 )
+tile_position = Vector2( 1, 0 )
+is_void = true
+
+[node name="Wave5" parent="Items" index="11" instance=ExtResource( 2 )]
+position = Vector2( 96, 37.8743 )
+concept_name = "wave"
+cell_position = Vector2( 1, 1 )
+tile_position = Vector2( 1, 1 )
+is_void = true
+
+[node name="Wave6" parent="Items" index="12" instance=ExtResource( 2 )]
+position = Vector2( 128, 83.3233 )
+concept_name = "wave"
+cell_position = Vector2( 1, 2 )
+tile_position = Vector2( 2, 2 )
+is_void = true
+
+[node name="Laec" parent="Items" index="13" instance=ExtResource( 2 )]
+position = Vector2( -128, 83.3332 )
+concept_name = "laec"
+cell_position = Vector2( -3, 2 )
+tile_position = Vector2( -2, 2 )
+is_you = true
+
+[node name="WaveText" parent="Items" index="14" instance=ExtResource( 2 )]
+position = Vector2( -128, 174.221 )
+is_text = true
+concept_name = "wave"
+cell_position = Vector2( -4, 4 )
+tile_position = Vector2( -2, 4 )
+
+[node name="IsText3" parent="Items" index="15" instance=ExtResource( 2 )]
+position = Vector2( -64, 174.221 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, 4 )
+tile_position = Vector2( -1, 4 )
+
+[node name="VoidText" parent="Items" index="16" instance=ExtResource( 2 )]
+position = Vector2( 0, 174.221 )
+is_text = true
+concept_name = "void"
+cell_position = Vector2( -2, 4 )
+tile_position = Vector2( 0, 4 )

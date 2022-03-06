@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Eolienne.png-dd2a080f2f66c5c1589bd197327178f7.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/deco/niwatori/Eolienne.png"
+dest_files=[ "res://.import/Eolienne.png-dd2a080f2f66c5c1589bd197327178f7.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

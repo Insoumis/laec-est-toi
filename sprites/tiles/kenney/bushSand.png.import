@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/bushSand.png-a9017342d82776077ce99ba9ab14617b.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/bushSand.png"
+dest_files=[ "res://.import/bushSand.png-a9017342d82776077ce99ba9ab14617b.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

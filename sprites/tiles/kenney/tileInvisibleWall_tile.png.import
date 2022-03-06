@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/tileInvisibleWall_tile.png-e5c6a59c1755a79e0badf472d44eca6b.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/tileInvisibleWall_tile.png"
+dest_files=[ "res://.import/tileInvisibleWall_tile.png-e5c6a59c1755a79e0badf472d44eca6b.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

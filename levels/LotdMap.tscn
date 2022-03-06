@@ -1,0 +1,259 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Portal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://guis/MobileThemeMicro.tres" type="Theme" id=4]
+
+[node name="LotdMap" instance=ExtResource( 1 )]
+title = "level.LotdMap.title"
+excerpt = "level.LotdMap.excerpt"
+link = "level.LotdMap.link"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -196610, 4, 0, -196609, 4, 0, -262144, 4, 0, -262143, 4, 0, -262142, 4, 0, -262141, 4, 0, -131076, 4, 0, -131075, 4, 0, -196605, 4, 0, -65540, 4, 0, -65539, 4, 0, -65538, 4, 0, -131071, 4, 0, -131070, 4, 0, -131069, 4, 0, -4, 4, 0, -3, 4, 0, -65536, 4, 0, 0, 4, 0, 2, 4, 0, 3, 4, 0, 65536, 4, 0, 65537, 4, 0, 65539, 4, 0, 196606, 4, 0, 196607, 4, 0, 131076, 4, 0, 262140, 4, 0, 262141, 4, 0, 262143, 4, 0, 196608, 4, 0, 196609, 4, 0, 196611, 4, 0, 327674, 0, 0, 327676, 22, 0, 262146, 4, 0, 262147, 4, 0, 393210, 0, 0, 393211, 0, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="Portal31" parent="Items" index="0" instance=ExtResource( 2 )]
+position = Vector2( -352, 219.67 )
+cell_position = Vector2( -8, 5 )
+tile_position = Vector2( -6, 5 )
+level_path = "res://levels/lotd/Lotd20121217.tscn"
+daily = true
+title = "Fin du monde"
+
+[node name="Portal30" parent="Items" index="1" instance=ExtResource( 2 )]
+position = Vector2( -288, 219.67 )
+cell_position = Vector2( -7, 5 )
+tile_position = Vector2( -5, 5 )
+daily = true
+title = "level.Lotd20220212.title"
+
+[node name="Portal" parent="Items" index="2" instance=ExtResource( 2 )]
+position = Vector2( -160, 128.772 )
+cell_position = Vector2( -4, 3 )
+tile_position = Vector2( -3, 3 )
+level_path = "res://levels/lotd/Lotd20220315.tscn"
+daily = true
+title = "NIveau du 15 Mars"
+
+[node name="Portal2" parent="Items" index="3" instance=ExtResource( 2 )]
+position = Vector2( -128, 83.3232 )
+cell_position = Vector2( -3, 2 )
+tile_position = Vector2( -2, 2 )
+level_path = "res://levels/lotd/Lotd20220316.tscn"
+daily = true
+title = "Niveau du 16 Mars 2022"
+
+[node name="Portal3" parent="Items" index="4" instance=ExtResource( 2 )]
+position = Vector2( -64, 83.3232 )
+cell_position = Vector2( -2, 2 )
+tile_position = Vector2( -1, 2 )
+level_path = "res://levels/lotd/Lotd20220317.tscn"
+daily = true
+title = "Niveau du 17 Mars 2022"
+
+[node name="Portal4" parent="Items" index="5" instance=ExtResource( 2 )]
+position = Vector2( -32, 128.772 )
+cell_position = Vector2( -2, 3 )
+tile_position = Vector2( -1, 3 )
+daily = true
+
+[node name="Portal5" parent="Items" index="6" instance=ExtResource( 2 )]
+position = Vector2( 32, 128.772 )
+cell_position = Vector2( -1, 3 )
+tile_position = Vector2( 0, 3 )
+daily = true
+
+[node name="Portal6" parent="Items" index="7" instance=ExtResource( 2 )]
+position = Vector2( 96, 128.772 )
+cell_position = Vector2( 0, 3 )
+tile_position = Vector2( 1, 3 )
+daily = true
+
+[node name="Portal7" parent="Items" index="8" instance=ExtResource( 2 )]
+position = Vector2( 128, 174.221 )
+cell_position = Vector2( 0, 4 )
+tile_position = Vector2( 2, 4 )
+daily = true
+
+[node name="Portal8" parent="Items" index="9" instance=ExtResource( 2 )]
+position = Vector2( 192, 174.221 )
+cell_position = Vector2( 1, 4 )
+tile_position = Vector2( 3, 4 )
+daily = true
+
+[node name="Portal9" parent="Items" index="10" instance=ExtResource( 2 )]
+position = Vector2( 224, 128.772 )
+cell_position = Vector2( 2, 3 )
+tile_position = Vector2( 3, 3 )
+daily = true
+
+[node name="Portal10" parent="Items" index="11" instance=ExtResource( 2 )]
+position = Vector2( 256, 83.3232 )
+cell_position = Vector2( 3, 2 )
+tile_position = Vector2( 4, 2 )
+daily = true
+
+[node name="Portal11" parent="Items" index="12" instance=ExtResource( 2 )]
+position = Vector2( 224, 37.8742 )
+cell_position = Vector2( 3, 1 )
+tile_position = Vector2( 3, 1 )
+daily = true
+
+[node name="Portal12" parent="Items" index="13" instance=ExtResource( 2 )]
+position = Vector2( 192, -7.57484 )
+cell_position = Vector2( 3, 0 )
+tile_position = Vector2( 3, 0 )
+daily = true
+
+[node name="Portal13" parent="Items" index="14" instance=ExtResource( 2 )]
+position = Vector2( 128, -7.57484 )
+cell_position = Vector2( 2, 0 )
+tile_position = Vector2( 2, 0 )
+daily = true
+
+[node name="Portal14" parent="Items" index="15" instance=ExtResource( 2 )]
+position = Vector2( 96, 37.8742 )
+cell_position = Vector2( 1, 1 )
+tile_position = Vector2( 1, 1 )
+daily = true
+
+[node name="Portal15" parent="Items" index="16" instance=ExtResource( 2 )]
+position = Vector2( 32, 37.8742 )
+cell_position = Vector2( 0, 1 )
+tile_position = Vector2( 0, 1 )
+daily = true
+
+[node name="Portal16" parent="Items" index="17" instance=ExtResource( 2 )]
+position = Vector2( 0, -7.57484 )
+daily = true
+
+[node name="Portal17" parent="Items" index="18" instance=ExtResource( 2 )]
+position = Vector2( 32, -53.0239 )
+cell_position = Vector2( 1, -1 )
+tile_position = Vector2( 0, -1 )
+daily = true
+
+[node name="Portal18" parent="Items" index="19" instance=ExtResource( 2 )]
+position = Vector2( 64, -98.4729 )
+cell_position = Vector2( 2, -2 )
+tile_position = Vector2( 1, -2 )
+daily = true
+
+[node name="Portal19" parent="Items" index="20" instance=ExtResource( 2 )]
+position = Vector2( 128, -98.4729 )
+cell_position = Vector2( 3, -2 )
+tile_position = Vector2( 2, -2 )
+daily = true
+
+[node name="Portal20" parent="Items" index="21" instance=ExtResource( 2 )]
+position = Vector2( 192, -98.4729 )
+cell_position = Vector2( 4, -2 )
+tile_position = Vector2( 3, -2 )
+daily = true
+
+[node name="Portal21" parent="Items" index="22" instance=ExtResource( 2 )]
+position = Vector2( 224, -143.922 )
+cell_position = Vector2( 5, -3 )
+tile_position = Vector2( 3, -3 )
+daily = true
+
+[node name="Portal22" parent="Items" index="23" instance=ExtResource( 2 )]
+position = Vector2( 192, -189.371 )
+cell_position = Vector2( 5, -4 )
+tile_position = Vector2( 3, -4 )
+daily = true
+
+[node name="Portal23" parent="Items" index="24" instance=ExtResource( 2 )]
+position = Vector2( 128, -189.371 )
+cell_position = Vector2( 4, -4 )
+tile_position = Vector2( 2, -4 )
+daily = true
+
+[node name="Portal24" parent="Items" index="25" instance=ExtResource( 2 )]
+position = Vector2( 64, -189.371 )
+cell_position = Vector2( 3, -4 )
+tile_position = Vector2( 1, -4 )
+daily = true
+
+[node name="Portal25" parent="Items" index="26" instance=ExtResource( 2 )]
+position = Vector2( 0, -189.371 )
+cell_position = Vector2( 2, -4 )
+tile_position = Vector2( 0, -4 )
+daily = true
+
+[node name="Portal26" parent="Items" index="27" instance=ExtResource( 2 )]
+position = Vector2( -64, -189.371 )
+cell_position = Vector2( 1, -4 )
+tile_position = Vector2( -1, -4 )
+daily = true
+
+[node name="Portal27" parent="Items" index="28" instance=ExtResource( 2 )]
+position = Vector2( -128, -189.371 )
+cell_position = Vector2( 0, -4 )
+tile_position = Vector2( -2, -4 )
+daily = true
+
+[node name="Portal28" parent="Items" index="29" instance=ExtResource( 2 )]
+position = Vector2( -160, -143.922 )
+cell_position = Vector2( -1, -3 )
+tile_position = Vector2( -3, -3 )
+daily = true
+
+[node name="Portal29" parent="Items" index="30" instance=ExtResource( 2 )]
+position = Vector2( -192, -98.4729 )
+cell_position = Vector2( -2, -2 )
+tile_position = Vector2( -3, -2 )
+daily = true
+
+[node name="LaecText" parent="Items" index="31" instance=ExtResource( 3 )]
+position = Vector2( -416, 37.8742 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( -7, 1 )
+tile_position = Vector2( -7, 1 )
+
+[node name="Laec" parent="Items" index="32" instance=ExtResource( 3 )]
+position = Vector2( -224, 128.782 )
+concept_name = "laec"
+cell_position = Vector2( -5, 3 )
+tile_position = Vector2( -4, 3 )
+is_you = true
+
+[node name="IsText" parent="Items" index="33" instance=ExtResource( 3 )]
+position = Vector2( -352, 37.8742 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -6, 1 )
+tile_position = Vector2( -6, 1 )
+
+[node name="YouText" parent="Items" index="34" instance=ExtResource( 3 )]
+position = Vector2( -288, 37.8742 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -5, 1 )
+tile_position = Vector2( -5, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GuiLayer" index="4"]
+margin_left = 9.0
+margin_top = 10.0
+margin_right = 269.0
+margin_bottom = 105.0
+theme = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[shake rate=8 level=2]Un nouveau niveau se débloque chaque jour ![/shake]"
+text = "Un nouveau niveau se débloque chaque jour !"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}

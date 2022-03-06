@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/hexagon_mouse_left_2.png-b0a34cd5cc6c138d510533398b70350a.res"
+group_file="res://sprites/gui/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/gui/hexagon_mouse_left_2.png"
+dest_files=[ "res://.import/hexagon_mouse_left_2.png-b0a34cd5cc6c138d510533398b70350a.res" ]
+
+[params]
+
+atlas_file="res://sprites/gui/atlas.png"
+import_mode=0
+crop_to_region=false

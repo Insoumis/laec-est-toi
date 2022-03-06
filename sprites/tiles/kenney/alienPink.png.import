@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/alienPink.png-af74f8563334089967064e5a0c95d7d4.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/alienPink.png"
+dest_files=[ "res://.import/alienPink.png-af74f8563334089967064e5a0c95d7d4.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

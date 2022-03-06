@@ -1,0 +1,47 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://spiros/SpirographResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+animation_speed = 1.0
+draw_speed = 6.0
+amount_of_samples = 1024.0
+amount_of_circles = 4
+initial_center = Vector2( 0, 0 )
+circle_00_radius = 25.15
+circle_00_radius_variation = 3.75
+circle_00_radius_frequency = 0.04045
+circle_00_phase = 0.0
+circle_00_phase_variation = 0.0
+circle_00_phase_frequency = 0.0
+circle_00_speed = 0.04
+circle_00_speed_variation = 0.0
+circle_00_speed_frequency = 0.0
+circle_01_radius = 6.1
+circle_01_radius_variation = 5.8
+circle_01_radius_frequency = 0.519378
+circle_01_phase = 0.0
+circle_01_phase_variation = 2.3185
+circle_01_phase_frequency = 0.022652
+circle_01_speed = 0.136
+circle_01_speed_variation = 0.01575
+circle_01_speed_frequency = 0.1
+circle_02_radius = 0.0
+circle_02_radius_variation = 0.0
+circle_02_radius_frequency = 0.0
+circle_02_phase = 0.0
+circle_02_phase_variation = 0.0
+circle_02_phase_frequency = 0.0
+circle_02_speed = 0.018
+circle_02_speed_variation = 0.0
+circle_02_speed_frequency = 0.0
+circle_03_radius = 0.0
+circle_03_radius_variation = 0.0
+circle_03_radius_frequency = 0.0
+circle_03_phase = 0.0
+circle_03_phase_variation = 0.0
+circle_03_phase_frequency = 0.0
+circle_03_speed = 0.0
+circle_03_speed_variation = 0.0
+circle_03_speed_frequency = 0.0

@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/smallRockDirt.png-bb9e5a87fadcd4cbad056197367eb829.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/smallRockDirt.png"
+dest_files=[ "res://.import/smallRockDirt.png-bb9e5a87fadcd4cbad056197367eb829.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

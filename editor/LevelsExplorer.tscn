@@ -1,0 +1,206 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://editor/LevelsExplorer.gd" type="Script" id=1]
+[ext_resource path="res://guis/CodeTheme.tres" type="Theme" id=2]
+[ext_resource path="res://core/behaviors/PhiuClipboardMirrorBehavior.gd" type="Script" id=3]
+[ext_resource path="res://sprites/gui/window_background.png" type="Texture" id=4]
+[ext_resource path="res://guis/MobileThemeMicro.tres" type="Theme" id=5]
+[ext_resource path="res://guis/MobileThemeMini.tres" type="Theme" id=6]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 10, 54, 182, 180 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.203922, 0.203922, 0.203922, 0.584314 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.521569 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends RichTextLabel
+
+
+func _ready():
+	if OS.has_feature('JavaScript'):
+		show()
+	else:
+		hide()
+"
+
+[node name="LevelsExplorer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+texture = SubResource( 2 )
+expand = true
+
+[node name="Layout" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="Layout"]
+margin_right = 82.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 80, 0 )
+theme = ExtResource( 6 )
+
+[node name="NewButton" type="Button" parent="Layout/Menu"]
+margin_right = 82.0
+margin_bottom = 197.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "New"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpenButton" type="Button" parent="Layout/Menu"]
+margin_top = 201.0
+margin_right = 82.0
+margin_bottom = 398.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Open"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="Layout/Menu"]
+margin_top = 402.0
+margin_right = 82.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Exit"
+
+[node name="Filesystem" type="VBoxContainer" parent="Layout"]
+margin_left = 86.0
+margin_right = 553.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="FilesystemHelp" type="RichTextLabel" parent="Layout/Filesystem"]
+margin_right = 467.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 0, 85 )
+bbcode_enabled = true
+bbcode_text = "[center]
+Double-click on any level file below to open it.[/center]"
+text = "
+Double-click on any level file below to open it."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelsList" type="ItemList" parent="Layout/Filesystem"]
+margin_top = 89.0
+margin_right = 467.0
+margin_bottom = 600.0
+hint_tooltip = "Double click on any file to open it."
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+custom_styles/bg_focus = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dock" type="Control" parent="Layout"]
+margin_left = 557.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ImportDock" type="VBoxContainer" parent="Layout/Dock"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Help" type="RichTextLabel" parent="Layout/Dock/ImportDock"]
+margin_right = 467.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 120 )
+bbcode_enabled = true
+bbcode_text = "[center]
+Drag & Drop an level file from your filesystem or paste a level export string (φ=U…) in the field below to load that level.[/center]"
+text = "
+Drag & Drop an level file from your filesystem or paste a level export string (φ=U…) in the field below to load that level."
+
+[node name="HelpHtml5" type="RichTextLabel" parent="Layout/Dock/ImportDock"]
+visible = false
+margin_top = 124.0
+margin_right = 468.0
+margin_bottom = 374.0
+rect_min_size = Vector2( 0, 250 )
+bbcode_enabled = true
+bbcode_text = "[center]
+Paste using [b]FIRST[/b] middle mouse click or Browser > Edit > Paste.
+
+And THEN use CTRL+V.
+
+This limitation is due to the experimental nature of HTML5 builds.
+You should download and play the binary instead.
+
+You can even run the raw source code if you don't trust our binaries.
+It is the POWER of OPEN SOURCE, my friends.     Welcome !
+[/center]"
+text = "
+Paste using FIRST middle mouse click or Browser > Edit > Paste.
+
+And THEN use CTRL+V.
+
+This limitation is due to the experimental nature of HTML5 builds.
+You should download and play the binary instead.
+
+You can even run the raw source code if you don't trust our binaries.
+It is the POWER of OPEN SOURCE, my friends.     Welcome !
+"
+script = SubResource( 1 )
+
+[node name="ImportField" type="TextEdit" parent="Layout/Dock/ImportDock"]
+margin_top = 124.0
+margin_right = 467.0
+margin_bottom = 546.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+wrap_enabled = true
+
+[node name="PhiuClipboardMirrorBehavior" type="Node" parent="Layout/Dock/ImportDock/ImportField"]
+script = ExtResource( 3 )
+
+[node name="ImportButton" type="Button" parent="Layout/Dock/ImportDock"]
+margin_top = 550.0
+margin_right = 467.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 50 )
+theme = ExtResource( 6 )
+text = "Load Level String"
+
+[connection signal="pressed" from="Layout/Menu/NewButton" to="." method="_on_NewButton_pressed"]
+[connection signal="pressed" from="Layout/Menu/OpenButton" to="." method="_on_OpenButton_pressed"]
+[connection signal="pressed" from="Layout/Menu/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="Layout/Dock/ImportDock/ImportButton" to="." method="_on_ImportButton_pressed"]

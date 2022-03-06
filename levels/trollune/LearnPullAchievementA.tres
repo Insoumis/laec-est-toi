@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://core/Achievement.gd" type="Script" id=1]
+[ext_resource path="res://sprites/items/laec_0.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+trigger_on_turn_if = "laec on laec"
+trigger_on_victory_if = ""
+image = ExtResource( 2 )
+snake_identifier = "laec_on_laec"
+title = "level.LearnPull.laec_on_laec.title"
+title_custom = ""

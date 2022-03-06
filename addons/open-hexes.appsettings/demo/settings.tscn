@@ -1,0 +1,621 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/open-hexes.appsettings/types/BooleanInputField.gd" type="Script" id=1]
+[ext_resource path="res://addons/open-hexes.appsettings/presets/default/video/screen/fullscreen.gd" type="Script" id=2]
+[ext_resource path="res://addons/open-hexes.appsettings/types/RangeInputField.gd" type="Script" id=3]
+[ext_resource path="res://addons/open-hexes.appsettings/presets/default/video/screen/resolution.gd" type="Script" id=4]
+
+[node name="AppSettingsContainer" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"maximum_height": 714
+}
+
+[node name="AppSettingsColumn0" type="VBoxContainer" parent="."]
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="VideoScreenFullscreenSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/VideoScreenFullscreenSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "[right]Fullscreen[/right]"
+fit_content_height = true
+
+[node name="@@41" type="VScrollBar" parent="AppSettingsColumn0/VideoScreenFullscreenSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/VideoScreenFullscreenSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsColumn0/VideoScreenFullscreenSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 2 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenResolutionSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/VideoScreenResolutionSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Resolution[/right]"
+text = "[right]Resolution[/right]"
+fit_content_height = true
+
+[node name="@@42" type="VScrollBar" parent="AppSettingsColumn0/VideoScreenResolutionSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/VideoScreenResolutionSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="OptionButton" parent="AppSettingsColumn0/VideoScreenResolutionSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+text = "1024x768"
+items = [ "800x600", null, false, 0, null, "1024x768", null, false, 1, null, "1280x1024", null, false, 2, null ]
+selected = 1
+script = ExtResource( 4 )
+setting = {
+"category": "screen",
+"default": Vector2( 1024, 768 ),
+"options": [ {
+"title": "800x600",
+"value": Vector2( 800, 600 )
+}, {
+"title": "1024x768",
+"value": Vector2( 1024, 768 )
+}, {
+"title": "1280x1024",
+"value": Vector2( 1280, 1024 )
+} ],
+"section": "video",
+"setting": "resolution",
+"title": "Resolution",
+"type": "select"
+}
+
+[node name="@@44" type="PopupMenu" parent="AppSettingsColumn0/VideoScreenResolutionSetting/InputField"]
+items = [ "800x600", null, 2, false, false, 0, 0, null, "", false, "1024x768", null, 2, true, false, 1, 0, null, "", false, "1280x1024", null, 2, false, false, 2, 0, null, "", false ]
+allow_search = true
+
+[node name="@@43" type="Timer" parent="AppSettingsColumn0/VideoScreenResolutionSetting/InputField/@@44"]
+wait_time = 0.3
+one_shot = true
+
+[node name="VideoScreenVsyncSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/VideoScreenVsyncSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Vertical Sync[/right]"
+text = "[right]Vertical Sync[/right]"
+fit_content_height = true
+
+[node name="@@45" type="VScrollBar" parent="AppSettingsColumn0/VideoScreenVsyncSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/VideoScreenVsyncSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsColumn0/VideoScreenVsyncSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"hint": "Requires reboot of The Internet Box©",
+"section": "video",
+"setting": "vsync",
+"title": "Vertical Sync",
+"type": "boolean"
+}
+
+[node name="AudioVolumeMasterSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/AudioVolumeMasterSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Master
+Volume[/right]"
+text = "[right]Master
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@46" type="VScrollBar" parent="AppSettingsColumn0/AudioVolumeMasterSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/AudioVolumeMasterSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/AudioVolumeMasterSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio",
+"setting": "master",
+"step": 1,
+"title": "Master
+Volume",
+"type": "range"
+}
+
+[node name="AudioVolumeMusicSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/AudioVolumeMusicSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Music
+Volume[/right]"
+text = "[right]Music
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@47" type="VScrollBar" parent="AppSettingsColumn0/AudioVolumeMusicSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/AudioVolumeMusicSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/AudioVolumeMusicSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio",
+"setting": "music",
+"step": 1,
+"title": "Music
+Volume",
+"type": "range"
+}
+
+[node name="AudioVolumeInterfaceSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/AudioVolumeInterfaceSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Interface
+Volume[/right]"
+text = "[right]Interface
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@48" type="VScrollBar" parent="AppSettingsColumn0/AudioVolumeInterfaceSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/AudioVolumeInterfaceSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/AudioVolumeInterfaceSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio",
+"setting": "interface",
+"step": 1,
+"title": "Interface
+Volume",
+"type": "range"
+}
+
+[node name="AudioVolumeEffectsSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/AudioVolumeEffectsSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Effects
+Volume[/right]"
+text = "[right]Effects
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@49" type="VScrollBar" parent="AppSettingsColumn0/AudioVolumeEffectsSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/AudioVolumeEffectsSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/AudioVolumeEffectsSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio",
+"setting": "effects",
+"step": 1,
+"title": "Effects
+Volume",
+"type": "range"
+}
+
+[node name="Audio2VolumeMasterSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/Audio2VolumeMasterSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Master
+Volume[/right]"
+text = "[right]Master
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@50" type="VScrollBar" parent="AppSettingsColumn0/Audio2VolumeMasterSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/Audio2VolumeMasterSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/Audio2VolumeMasterSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio2",
+"setting": "master",
+"step": 1,
+"title": "Master
+Volume",
+"type": "range"
+}
+
+[node name="Audio2VolumeMusicSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/Audio2VolumeMusicSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Music
+Volume[/right]"
+text = "[right]Music
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@51" type="VScrollBar" parent="AppSettingsColumn0/Audio2VolumeMusicSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/Audio2VolumeMusicSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/Audio2VolumeMusicSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio2",
+"setting": "music",
+"step": 1,
+"title": "Music
+Volume",
+"type": "range"
+}
+
+[node name="Audio2VolumeInterfaceSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/Audio2VolumeInterfaceSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Interface
+Volume[/right]"
+text = "[right]Interface
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@52" type="VScrollBar" parent="AppSettingsColumn0/Audio2VolumeInterfaceSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/Audio2VolumeInterfaceSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/Audio2VolumeInterfaceSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio2",
+"setting": "interface",
+"step": 1,
+"title": "Interface
+Volume",
+"type": "range"
+}
+
+[node name="Audio2VolumeEffectsSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/Audio2VolumeEffectsSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Effects
+Volume[/right]"
+text = "[right]Effects
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@53" type="VScrollBar" parent="AppSettingsColumn0/Audio2VolumeEffectsSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/Audio2VolumeEffectsSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/Audio2VolumeEffectsSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio2",
+"setting": "effects",
+"step": 1,
+"title": "Effects
+Volume",
+"type": "range"
+}
+
+[node name="Audio3VolumeMasterSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/Audio3VolumeMasterSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Master
+Volume[/right]"
+text = "[right]Master
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@54" type="VScrollBar" parent="AppSettingsColumn0/Audio3VolumeMasterSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/Audio3VolumeMasterSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/Audio3VolumeMasterSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio3",
+"setting": "master",
+"step": 1,
+"title": "Master
+Volume",
+"type": "range"
+}
+
+[node name="Audio3VolumeMusicSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/Audio3VolumeMusicSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Music
+Volume[/right]"
+text = "[right]Music
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@55" type="VScrollBar" parent="AppSettingsColumn0/Audio3VolumeMusicSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/Audio3VolumeMusicSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/Audio3VolumeMusicSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio3",
+"setting": "music",
+"step": 1,
+"title": "Music
+Volume",
+"type": "range"
+}
+
+[node name="Audio3VolumeInterfaceSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/Audio3VolumeInterfaceSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Interface
+Volume[/right]"
+text = "[right]Interface
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@56" type="VScrollBar" parent="AppSettingsColumn0/Audio3VolumeInterfaceSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/Audio3VolumeInterfaceSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/Audio3VolumeInterfaceSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio3",
+"setting": "interface",
+"step": 1,
+"title": "Interface
+Volume",
+"type": "range"
+}
+
+[node name="Audio3VolumeEffectsSetting" type="HBoxContainer" parent="AppSettingsColumn0"]
+rect_min_size = Vector2( 0, 42 )
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsColumn0/Audio3VolumeEffectsSetting"]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.618
+bbcode_enabled = true
+bbcode_text = "[right]Effects
+Volume[/right]"
+text = "[right]Effects
+Volume[/right]"
+fit_content_height = true
+
+[node name="@@57" type="VScrollBar" parent="AppSettingsColumn0/Audio3VolumeEffectsSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="InnerGap" type="Control" parent="AppSettingsColumn0/Audio3VolumeEffectsSetting"]
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="HSlider" parent="AppSettingsColumn0/Audio3VolumeEffectsSetting"]
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+setting = {
+"category": "volume",
+"default": 40,
+"maximum": 100,
+"minimum": 0,
+"section": "audio3",
+"setting": "effects",
+"step": 1,
+"title": "Effects
+Volume",
+"type": "range"
+}

@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprites/gui/hexagon_1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/gui/hexagon_2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/gui/hexagon_0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/gui/hexagon_mouse_left_1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/gui/hexagon_mouse_left_0.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Focus"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.618, -0.25, 0, 0.25, 0, 0.7, -0.25, 0, 0.25, 0, 0.618, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.618, -0.25, 0, 0.25, 0, 0.7, -0.25, 0, 0.25, 0, 0.618, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("AnimatedSprite2:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.618, -0.25, 0, 0.25, 0, 0.7, -0.25, 0, 0.25, 0, 0.618, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("AnimatedSprite2:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0.618, -0.25, 0, 0.25, 0, 0.7, -0.25, 0, 0.25, 0, 0.618, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("AnimatedSprite3:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0.618, -0.25, 0, 0.25, 0, 0.51, -0.375706, 0.00166047, 0.516768, -0.00495428, 0.618, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("AnimatedSprite3:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0.618, -0.25, 0, 0.25, 0, 0.51, -0.328841, -0.00542676, 0.516768, 0.00213295, 0.618, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="AttentionSeeker" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.618, 0.618 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.618, 0.618 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.618, 0.618 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Focus"
+anims/Focus = SubResource( 2 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 0, -58 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 3 )
+playing = true

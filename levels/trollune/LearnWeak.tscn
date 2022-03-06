@@ -1,0 +1,180 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/trollune/LearnWeakAchievementB.tres" type="Resource" id=2]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/trollune/LearnWeakAchievementA.tres" type="Resource" id=4]
+
+[node name="LearnWeak" instance=ExtResource( 1 )]
+title = "level.LearnWeak.title"
+excerpt = "level.LearnWeak.excerpt"
+link = "level.LearnWeak.link"
+title_custom = "Alexandre Langlois"
+excerpt_custom = "Fils caché de Tintin et du Capitaine Haddock,
+Alexandre Langlois mérite mieux que d'être rejeté
+Par une institution qui fait dans son froc
+Et gaspille la vie de nos officiers
+Pour laisser le politique brasser du vent
+Et la peur dans le coeur des honnêtes gens."
+achievement_a = ExtResource( 4 )
+achievement_b = ExtResource( 2 )
+solution_a = "431497974339631794999796"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -262144, 4, 0, -262143, 4, 0, -131073, 4, 0, -196606, 7, 0, -131072, 4, 0, -131068, 7, 0, -2, 4, 0, -1, 4, 0, -65536, 4, 0, -65530, 4, 0, 65533, 17, 0, 65534, 4, 0, 65535, 4, 0, 0, 4, 0, 1, 4, 0, 5, 4, 0, 131069, 4, 0, 131070, 4, 0, 131071, 4, 0, 65536, 4, 0, 65537, 4, 0, 65538, 4, 0, 65539, 4, 0, 65540, 4, 0, 196606, 4, 0, 196607, 4, 0, 131072, 4, 0, 131073, 4, 0, 131075, 17, 0, 131076, 17, 0, 262139, 4, 0, 262142, 4, 0, 262143, 4, 0, 196608, 4, 0, 327678, 22, 0, 327679, 22, 0, 262144, 4, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="Guard" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( 0, 83.3333 )
+concept_name = "guard"
+cell_position = Vector2( -1, 2 )
+tile_position = Vector2( 0, 2 )
+is_you = true
+is_weak = true
+
+[node name="Guard2" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( 320, -7.56474 )
+concept_name = "guard"
+cell_position = Vector2( 5, 0 )
+tile_position = Vector2( 5, 0 )
+is_you = true
+is_weak = true
+
+[node name="Troll" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( 0, -98.4728 )
+concept_name = "troll"
+cell_position = Vector2( 1, -2 )
+tile_position = Vector2( 0, -2 )
+direction = "left"
+is_stop = true
+
+[node name="France" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( 64, -189.371 )
+concept_name = "france"
+cell_position = Vector2( 3, -4 )
+tile_position = Vector2( 1, -4 )
+is_win = true
+
+[node name="Troll2" parent="Items" index="4" instance=ExtResource( 3 )]
+position = Vector2( 160, 37.8743 )
+concept_name = "troll"
+cell_position = Vector2( 2, 1 )
+tile_position = Vector2( 2, 1 )
+is_stop = true
+
+[node name="GuardText2" parent="Items" index="5" instance=ExtResource( 3 )]
+position = Vector2( -224, 128.772 )
+is_text = true
+concept_name = "guard"
+cell_position = Vector2( -5, 3 )
+tile_position = Vector2( -4, 3 )
+
+[node name="IsText" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( -160, 128.772 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, 3 )
+tile_position = Vector2( -3, 3 )
+
+[node name="FranceText2" parent="Items" index="7" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -320, -7.57484 )
+is_text = true
+concept_name = "france"
+cell_position = Vector2( -5, 0 )
+tile_position = Vector2( -5, 0 )
+is_lit = false
+
+[node name="IsText5" parent="Items" index="8" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -256, -7.57484 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, 0 )
+tile_position = Vector2( -4, 0 )
+is_lit = false
+
+[node name="WeakText" parent="Items" index="9" instance=ExtResource( 3 )]
+position = Vector2( -96, 128.772 )
+is_text = true
+concept_name = "weak"
+cell_position = Vector2( -3, 3 )
+tile_position = Vector2( -2, 3 )
+
+[node name="GuardText" parent="Items" index="10" instance=ExtResource( 3 )]
+position = Vector2( 160, 219.67 )
+is_text = true
+concept_name = "guard"
+cell_position = Vector2( 0, 5 )
+tile_position = Vector2( 2, 5 )
+
+[node name="IsText4" parent="Items" index="11" instance=ExtResource( 3 )]
+position = Vector2( 224, 219.67 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 1, 5 )
+tile_position = Vector2( 3, 5 )
+
+[node name="YouText" parent="Items" index="12" instance=ExtResource( 3 )]
+position = Vector2( 288, 219.67 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 2, 5 )
+tile_position = Vector2( 4, 5 )
+
+[node name="FranceText" parent="Items" index="13" instance=ExtResource( 3 )]
+position = Vector2( -320, -189.371 )
+is_text = true
+concept_name = "france"
+cell_position = Vector2( -3, -4 )
+tile_position = Vector2( -5, -4 )
+
+[node name="IsText3" parent="Items" index="14" instance=ExtResource( 3 )]
+position = Vector2( -256, -189.371 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -2, -4 )
+tile_position = Vector2( -4, -4 )
+
+[node name="WinText" parent="Items" index="15" instance=ExtResource( 3 )]
+position = Vector2( -192, -189.371 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( -1, -4 )
+tile_position = Vector2( -3, -4 )
+
+[node name="TrollText" parent="Items" index="16" instance=ExtResource( 3 )]
+position = Vector2( -288, 37.8742 )
+is_text = true
+concept_name = "troll"
+cell_position = Vector2( -5, 1 )
+tile_position = Vector2( -5, 1 )
+
+[node name="IsText2" parent="Items" index="17" instance=ExtResource( 3 )]
+position = Vector2( -224, 37.8742 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, 1 )
+tile_position = Vector2( -4, 1 )
+
+[node name="StopText" parent="Items" index="18" instance=ExtResource( 3 )]
+position = Vector2( -160, 37.8742 )
+is_text = true
+concept_name = "stop"
+cell_position = Vector2( -3, 1 )
+tile_position = Vector2( -3, 1 )
+
+[node name="Anar" parent="Items" index="19" instance=ExtResource( 3 )]
+position = Vector2( 416, -53.0239 )
+concept_name = "anar"
+cell_position = Vector2( 7, -1 )
+tile_position = Vector2( 6, -1 )

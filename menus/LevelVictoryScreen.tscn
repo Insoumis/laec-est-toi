@@ -1,0 +1,295 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://menus/LevelVictoryScreen.gd" type="Script" id=1]
+[ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=2]
+[ext_resource path="res://addons/RTLQueue/RTLQueue.gd" type="Script" id=3]
+[ext_resource path="res://sprites/items/laec_0.png" type="Texture" id=4]
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/items/text_is_0.png" type="Texture" id=6]
+[ext_resource path="res://sprites/items/text_laec_0.png" type="Texture" id=7]
+[ext_resource path="res://fonts/KenneyBlocks.tres" type="DynamicFont" id=8]
+[ext_resource path="res://sprites/items/text_you_0.png" type="Texture" id=9]
+[ext_resource path="res://guis/MobileThemeMicro.tres" type="Theme" id=10]
+[ext_resource path="res://sprites/background/victory.png" type="Texture" id=11]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 1
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+// Quick background for the victory screen text
+// Not in its own file for now.
+
+uniform sampler2D texture_a;
+
+void fragment() {
+	vec2 uvx = UV * vec2(0.8, 1.0) + vec2(sin(TIME*0.1) * 0.111, 0.0);
+	vec4 texture_a_color = texture(texture_a, uvx);
+	texture_a_color.rgb = mix(texture_a_color.rgb, vec3(0.0, 0.0, 0.0), 0.666);
+	COLOR = texture_a_color;
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/texture_a = ExtResource( 11 )
+
+[node name="VictoryCard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundParticles" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.380392 )
+
+[node name="CPUParticles2D1" type="CPUParticles2D" parent="BackgroundParticles"]
+material = SubResource( 1 )
+position = Vector2( 523.181, -163.852 )
+amount = 40
+lifetime = 5.0
+preprocess = 3.0
+texture = ExtResource( 4 )
+emission_shape = 2
+emission_rect_extents = Vector2( 700, 1 )
+angular_velocity = 40.0
+angular_velocity_random = 1.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="BackgroundParticles"]
+material = SubResource( 1 )
+position = Vector2( 523.181, -163.852 )
+amount = 40
+lifetime = 5.0
+preprocess = 3.0
+texture = ExtResource( 7 )
+emission_shape = 2
+emission_rect_extents = Vector2( 700, 1 )
+angular_velocity = 40.0
+angular_velocity_random = 1.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="BackgroundParticles"]
+material = SubResource( 1 )
+position = Vector2( 523.181, -163.852 )
+amount = 40
+lifetime = 5.0
+preprocess = 3.0
+texture = ExtResource( 6 )
+emission_shape = 2
+emission_rect_extents = Vector2( 700, 1 )
+angular_velocity = 40.0
+angular_velocity_random = 1.0
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="BackgroundParticles"]
+material = SubResource( 1 )
+position = Vector2( 523.181, -163.852 )
+amount = 40
+lifetime = 5.0
+preprocess = 3.0
+texture = ExtResource( 9 )
+emission_shape = 2
+emission_rect_extents = Vector2( 700, 1 )
+angular_velocity = 40.0
+angular_velocity_random = 1.0
+
+[node name="TextDock" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextDockPanel" type="PanelContainer" parent="TextDock"]
+self_modulate = Color( 1, 1, 1, 0.729412 )
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 291.24, 180 )
+theme = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextDockContainer" type="VBoxContainer" parent="TextDock/TextDockPanel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 505.0
+margin_bottom = 593.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VictoryLabel" type="RichTextLabel" parent="TextDock/TextDockPanel/TextDockContainer"]
+margin_right = 498.0
+margin_bottom = 41.0
+custom_fonts/normal_font = ExtResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center][tornado radius=2 freq=1]LEVEL COMPLETE ![/tornado][/center]"
+text = "LEVEL COMPLETE !"
+fit_content_height = true
+
+[node name="HSeparator" type="HSeparator" parent="TextDock/TextDockPanel/TextDockContainer"]
+margin_top = 45.0
+margin_right = 498.0
+margin_bottom = 49.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LaecTitleLabel" type="RichTextLabel" parent="TextDock/TextDockPanel/TextDockContainer"]
+visible = false
+margin_top = 61.0
+margin_right = 656.0
+margin_bottom = 110.0
+bbcode_enabled = true
+bbcode_text = "Urgence Démocratique"
+text = "Urgence Démocratique"
+fit_content_height = true
+
+[node name="HSeparator2" type="HSeparator" parent="TextDock/TextDockPanel/TextDockContainer"]
+visible = false
+margin_top = 114.0
+margin_right = 656.0
+margin_bottom = 118.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LaecExcerptLabel" type="RichTextLabel" parent="TextDock/TextDockPanel/TextDockContainer"]
+visible = false
+margin_top = 122.0
+margin_right = 656.0
+margin_bottom = 322.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "Le projet de Constitution proposé par l'Assemblée constituante sera soumis à un référendum d'approbation."
+text = "Le projet de Constitution proposé par l'Assemblée constituante sera soumis à un référendum d'approbation."
+
+[node name="LaecExcerptRtlQueue" type="ReferenceRect" parent="TextDock/TextDockPanel/TextDockContainer"]
+margin_top = 53.0
+margin_right = 498.0
+margin_bottom = 543.0
+rect_min_size = Vector2( 0, 300 )
+size_flags_vertical = 3
+script = ExtResource( 3 )
+ENABLE_SCROLLING = true
+WAIT_FOR_INPUT_ON_FINISH = false
+
+[node name="HSeparator3" type="HSeparator" parent="TextDock/TextDockPanel/TextDockContainer"]
+margin_top = 547.0
+margin_right = 498.0
+margin_bottom = 551.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextDock/TextDockPanel/TextDockContainer"]
+margin_top = 555.0
+margin_right = 498.0
+margin_bottom = 586.0
+
+[node name="MoreButton" type="Button" parent="TextDock/TextDockPanel/TextDockContainer/HBoxContainer"]
+visible = false
+margin_right = 415.0
+margin_bottom = 54.0
+text = "Want to know more ?"
+
+[node name="VSeparator" type="VSeparator" parent="TextDock/TextDockPanel/TextDockContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 387.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueButton" type="Button" parent="TextDock/TextDockPanel/TextDockContainer/HBoxContainer"]
+margin_left = 391.0
+margin_right = 498.0
+margin_bottom = 31.0
+text = "Continue  >"
+
+[node name="Replay" type="Control" parent="."]
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Replay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Replay/ViewportContainer"]
+size = Vector2( 512, 300 )
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
+
+[node name="Level" parent="Replay/ViewportContainer/Viewport" instance=ExtResource( 5 )]
+no_interaction = true
+
+[node name="Stats" type="Control" parent="."]
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Layout" type="VBoxContainer" parent="Stats"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_right = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="HBoxContainer" parent="Stats/Layout"]
+margin_right = 472.0
+margin_bottom = 148.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Stats/Layout/Time"]
+margin_top = 50.0
+margin_right = 101.0
+margin_bottom = 98.0
+text = "Time:"
+
+[node name="TimeField" type="Label" parent="Stats/Layout/Time"]
+margin_left = 105.0
+margin_top = 50.0
+margin_right = 472.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+text = "0.0s"
+align = 2
+
+[node name="Moves" type="HBoxContainer" parent="Stats/Layout"]
+margin_top = 152.0
+margin_right = 472.0
+margin_bottom = 300.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Stats/Layout/Moves"]
+margin_top = 50.0
+margin_right = 137.0
+margin_bottom = 98.0
+text = "Moves:"
+
+[node name="MovesField" type="Label" parent="Stats/Layout/Moves"]
+margin_left = 141.0
+margin_top = 50.0
+margin_right = 472.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+text = "0"
+align = 2
+
+[connection signal="pressed" from="TextDock/TextDockPanel/TextDockContainer/HBoxContainer/MoreButton" to="." method="_on_MoreButton_pressed"]
+[connection signal="pressed" from="TextDock/TextDockPanel/TextDockContainer/HBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]

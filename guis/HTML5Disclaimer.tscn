@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://guis/HTML5Disclaimer.gd" type="Script" id=1]
+
+[node name="DarkColorRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.819608 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisclaimerPanel" type="Panel" parent="."]
+anchor_left = 0.2
+anchor_top = 0.15
+anchor_right = 0.8
+anchor_bottom = 0.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DisclaimerPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WelcomeLabel" type="Label" parent="DisclaimerPanel/VBoxContainer"]
+margin_right = 614.0
+margin_bottom = 14.0
+text = "Bienvenue dans LEAC IS YOU"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="DisclaimerPanel/VBoxContainer"]
+margin_top = 18.0
+margin_right = 614.0
+margin_bottom = 22.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisclaimerLabel" type="Label" parent="DisclaimerPanel/VBoxContainer"]
+margin_top = 26.0
+margin_right = 614.0
+margin_bottom = 57.0
+text = "Vous avez démarré la version HTML5 de LAEC IS YOU, cette version expérimentale contient plus de bugs que la version Windows ou Linux du jeu, elle sert de démo au projet."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OKButton" type="Button" parent="DisclaimerPanel/VBoxContainer"]
+margin_top = 61.0
+margin_right = 614.0
+margin_bottom = 81.0
+text = "J'ai compris"
+
+[connection signal="pressed" from="DisclaimerPanel/VBoxContainer/OKButton" to="." method="_on_OKButton_pressed"]

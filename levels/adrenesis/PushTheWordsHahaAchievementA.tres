@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://core/Achievement.gd" type="Script" id=1]
+[ext_resource path="res://sprites/items/fi_0.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+trigger_on_turn_if = ""
+trigger_on_victory_if = "18 fi"
+image = ExtResource( 2 )
+snake_identifier = "all_are_fi"
+title = "level.PushTheWordsHaha.all_are_fi.title"

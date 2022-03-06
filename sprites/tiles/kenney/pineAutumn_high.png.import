@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/pineAutumn_high.png-1b1f083dd327cea8fad1c16fb07f4f8b.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/pineAutumn_high.png"
+dest_files=[ "res://.import/pineAutumn_high.png-1b1f083dd327cea8fad1c16fb07f4f8b.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

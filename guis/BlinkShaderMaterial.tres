@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+void fragment() {
+	float time_mod = mod(TIME, 1.0);
+	if (time_mod < 0.5) {
+		COLOR = vec4(1.0, 1.0, 1.0, 0.0)
+	}
+}"
+
+[resource]
+shader = SubResource( 1 )

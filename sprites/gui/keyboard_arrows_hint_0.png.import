@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/keyboard_arrows_hint_0.png-d9c307096e6514e0446e0ab49ea35cad.res"
+group_file="res://sprites/gui/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/gui/keyboard_arrows_hint_0.png"
+dest_files=[ "res://.import/keyboard_arrows_hint_0.png-d9c307096e6514e0446e0ab49ea35cad.res" ]
+
+[params]
+
+atlas_file="res://sprites/gui/atlas.png"
+import_mode=0
+crop_to_region=false

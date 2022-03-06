@@ -1,0 +1,173 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=1]
+[ext_resource path="res://menus/PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://guis/CompletionScore.tscn" type="PackedScene" id=3]
+[ext_resource path="res://guis/CodeTheme.tres" type="Theme" id=4]
+[ext_resource path="res://guis/MobileThemeNoBackground.tres" type="Theme" id=5]
+[ext_resource path="res://effects/PauseMenuPanelMaterial.tres" type="Material" id=6]
+[ext_resource path="res://sprites/background/people.png" type="Texture" id=7]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float strength;
+
+void fragment() {
+	COLOR = mix(vec4(0.0), vec4(0.0 , 0.0, 0.0, 1.0), (1.0-UV.x)*strength);
+//	COLOR = vec4(UV.x, UV.y, 1.0, 1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/strength = 1.115
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.321569, 0.321569, 0.321569, 0.482353 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="PauseMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color( 0.227451, 0.227451, 0.227451, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 2 )
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_right = 307.0
+margin_bottom = 10.0
+mouse_filter = 1
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="SentencesContainer" type="VBoxContainer" parent="ColorRect"]
+material = SubResource( 2 )
+anchor_left = 0.1
+anchor_top = 0.15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.25995
+margin_right = -1.25995
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+self_modulate = Color( 0.415686, 0.415686, 0.415686, 1 )
+material = ExtResource( 6 )
+margin_left = 312.0
+margin_top = 145.0
+margin_right = 712.0
+margin_bottom = 495.0
+rect_min_size = Vector2( 400, 350 )
+theme = ExtResource( 5 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer"]
+margin_right = 400.0
+margin_bottom = 350.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/Control"]
+anchor_left = 0.1
+anchor_right = 0.9
+margin_bottom = 310.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 1 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CompletionScore" parent="CenterContainer/PanelContainer/Control/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 320.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="ResumeButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
+margin_top = 54.0
+margin_right = 320.0
+margin_bottom = 102.0
+focus_neighbour_top = NodePath("../BackToMenuButton")
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
+margin_top = 106.0
+margin_right = 320.0
+margin_bottom = 154.0
+text = "Restart Level"
+
+[node name="ExitLevelButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
+margin_top = 158.0
+margin_right = 320.0
+margin_bottom = 206.0
+text = "Exit Level"
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
+margin_top = 210.0
+margin_right = 320.0
+margin_bottom = 258.0
+text = "Settings"
+
+[node name="BackToMenuButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
+margin_top = 262.0
+margin_right = 320.0
+margin_bottom = 310.0
+focus_neighbour_bottom = NodePath("../ResumeButton")
+text = "Back to Menu"
+
+[node name="ExitGameButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
+visible = false
+margin_top = 286.0
+margin_right = 261.0
+margin_bottom = 340.0
+text = "Exit Game"
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
+visible = false
+margin_top = 344.0
+margin_right = 274.0
+margin_bottom = 348.0
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/Control/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/Control/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/Control/VBoxContainer/ExitLevelButton" to="." method="_on_ExitLevelButton_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/Control/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/Control/VBoxContainer/BackToMenuButton" to="." method="_on_BackToMenuButton_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/Control/VBoxContainer/ExitGameButton" to="." method="_on_ExitGameButton_pressed"]

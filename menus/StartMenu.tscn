@@ -1,0 +1,239 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://menus/StartMenu.gd" type="Script" id=1]
+[ext_resource path="res://addons/version/version_label.gd" type="Script" id=2]
+[ext_resource path="res://guis/VanityCard.tscn" type="PackedScene" id=3]
+[ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=4]
+[ext_resource path="res://effects/background_shader.shader" type="Shader" id=5]
+[ext_resource path="res://fonts/KenneyBlocks.tres" type="DynamicFont" id=6]
+[ext_resource path="res://sprites/items/text_is_1.png" type="Texture" id=7]
+[ext_resource path="res://sprites/items/text_laec_0.png" type="Texture" id=8]
+[ext_resource path="res://sprites/items/text_you_2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/items/text_is_0.png" type="Texture" id=10]
+[ext_resource path="res://sprites/items/text_you_0.png" type="Texture" id=11]
+[ext_resource path="res://sprites/items/text_is_2.png" type="Texture" id=12]
+[ext_resource path="res://sprites/items/text_laec_1.png" type="Texture" id=13]
+[ext_resource path="res://sprites/items/text_laec_2.png" type="Texture" id=14]
+[ext_resource path="res://sprites/items/text_you_1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/items/laec_1.png" type="Texture" id=16]
+[ext_resource path="res://sprites/items/laec_0.png" type="Texture" id=17]
+[ext_resource path="res://sprites/items/laec_2.png" type="Texture" id=18]
+[ext_resource path="res://sprites/background/people2.png" type="Texture" id=19]
+[ext_resource path="res://sprites/background/people.png" type="Texture" id=20]
+[ext_resource path="res://sprites/background/people3.png" type="Texture" id=21]
+[ext_resource path="res://sprites/background/victory.png" type="Texture" id=22]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 5 )
+shader_param/primary_color = Color( 0.831373, 0.376471, 0.258824, 1 )
+shader_param/secondary_color = Color( 0.192157, 0.678431, 0.494118, 1 )
+shader_param/ternary_color = Color( 0.184314, 0.364706, 1, 1 )
+shader_param/quaternary_color = Color( 0, 0, 0, 1 )
+shader_param/use_primary_texture = true
+shader_param/use_secondary_texture = true
+shader_param/use_ternary_texture = true
+shader_param/use_quaternary_texture = true
+shader_param/primary_texture = ExtResource( 21 )
+shader_param/secondary_texture = ExtResource( 19 )
+shader_param/ternary_texture = ExtResource( 22 )
+shader_param/quaternary_texture = ExtResource( 20 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="StartMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundColorRect" type="ColorRect" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButtonsContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 433.0
+margin_top = 120.0
+margin_right = 591.0
+margin_bottom = 480.0
+
+[node name="PlayStoryButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
+margin_right = 158.0
+margin_bottom = 48.0
+focus_neighbour_top = NodePath("../ExitButton")
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+text = "Play"
+
+[node name="PlayTutosButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 52.0
+margin_right = 158.0
+margin_bottom = 100.0
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+text = "Tutorial"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayExtrasButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 104.0
+margin_right = 158.0
+margin_bottom = 152.0
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+text = "Extras"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlsButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 156.0
+margin_right = 158.0
+margin_bottom = 204.0
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+text = "Controls"
+flat = true
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 208.0
+margin_right = 158.0
+margin_bottom = 256.0
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+text = "Settings"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 260.0
+margin_right = 158.0
+margin_bottom = 308.0
+focus_neighbour_bottom = NodePath("../PlayStoryButton")
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+text = "Exit"
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 312.0
+margin_right = 158.0
+margin_bottom = 316.0
+
+[node name="VersionLabel" type="Label" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 320.0
+margin_right = 158.0
+margin_bottom = 360.0
+custom_fonts/font = ExtResource( 6 )
+text = "0.4.1"
+align = 1
+script = ExtResource( 2 )
+
+[node name="CursorAnimatedSprite" type="AnimatedSprite" parent="CenterContainer"]
+position = Vector2( 622.482, 106.886 )
+frames = SubResource( 5 )
+playing = true
+centered = false
+
+[node name="Title" type="Node2D" parent="."]
+position = Vector2( 58.4561, 259.287 )
+
+[node name="LaecAnimatedSprite" type="AnimatedSprite" parent="Title"]
+position = Vector2( 63.5687, 32.3649 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="IsAnimatedSprite" type="AnimatedSprite" parent="Title"]
+position = Vector2( 127.272, 33.0721 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="YouAnimatedSprite" type="AnimatedSprite" parent="Title"]
+position = Vector2( 204.99, 32.3649 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+
+[node name="SecretButton" type="Button" parent="Title/YouAnimatedSprite"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PhiSprite" parent="MarginContainer" instance=ExtResource( 3 )]
+
+[connection signal="visibility_changed" from="." to="." method="_on_StartMenu_visibility_changed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/PlayStoryButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/PlayTutosButton" to="." method="_on_PlayTutosButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/PlayExtrasButton" to="." method="_on_PlayExtrasButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/ControlsButton" to="." method="_on_ControlsButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="Title/YouAnimatedSprite/SecretButton" to="." method="_on_SecretButton_pressed"]

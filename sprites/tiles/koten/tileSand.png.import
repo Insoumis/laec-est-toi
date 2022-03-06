@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/tileSand.png-7a6800150b307e52f03870467eaa5698.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/koten/tileSand.png"
+dest_files=[ "res://.import/tileSand.png-7a6800150b307e52f03870467eaa5698.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

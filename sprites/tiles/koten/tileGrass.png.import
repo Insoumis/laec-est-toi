@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/tileGrass.png-4d010857e371d22a89e27f65575c0436.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/koten/tileGrass.png"
+dest_files=[ "res://.import/tileGrass.png-4d010857e371d22a89e27f65575c0436.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

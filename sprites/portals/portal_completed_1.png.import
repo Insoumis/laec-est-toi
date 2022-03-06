@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/portal_completed_1.png-c51998c4f99398327fbba55922d81772.res"
+group_file="res://sprites/portals/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/portals/portal_completed_1.png"
+dest_files=[ "res://.import/portal_completed_1.png-c51998c4f99398327fbba55922d81772.res" ]
+
+[params]
+
+atlas_file="res://sprites/portals/atlas.png"
+import_mode=0
+crop_to_region=false

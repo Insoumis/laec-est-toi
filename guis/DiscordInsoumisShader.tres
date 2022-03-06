@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 main_color;
+uniform vec4 secondary_color;
+uniform float time_multiplier;
+uniform float thresh_time_multiplier;
+
+void fragment (){
+	if (mod(UV.x+UV.y+TIME*thresh_time_multiplier, 1.0) < 0.5) {
+		COLOR = mix( main_color, secondary_color, mod(UV.x+UV.y+TIME*time_multiplier, 1.0)*2.0);
+	}
+	else {
+		COLOR = mix( secondary_color, main_color, mod(UV.x+UV.y+TIME*time_multiplier, 1.0)*2.0-1.0)
+	}
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/main_color = Plane( 0.8, 0.4, 0.2, 1 )
+shader_param/secondary_color = Plane( 0.6, 0.3, 1, 1 )
+shader_param/time_multiplier = 0.1
+shader_param/thresh_time_multiplier = 0.162

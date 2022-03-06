@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/gui/hint_undo_hourglass_big_0.png" type="Texture" id=1]
+[ext_resource path="res://sprites/gui/hexagon_mouse_left_1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/gui/hexagon_mouse_left_0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/gui/hint_undo_hourglass_big_1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/gui/hint_undo_hourglass_big_2.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="MousePassHint" type="Node2D"]
+
+[node name="Mouse" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+playing = true
+
+[node name="ForwardHourglass" type="AnimatedSprite" parent="."]
+position = Vector2( -1.05945, 76.2813 )
+frames = SubResource( 2 )
+playing = true
+flip_h = true

@@ -1,0 +1,318 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://sprites/tiles/kenney/tileAutumn.png" type="Texture" id=1]
+[ext_resource path="res://sprites/tiles/kenney/tileAutumn_full.png" type="Texture" id=2]
+[ext_resource path="res://sprites/tiles/kenney/tileDirt.png" type="Texture" id=3]
+[ext_resource path="res://sprites/tiles/kenney/tileDirt_full.png" type="Texture" id=4]
+[ext_resource path="res://sprites/tiles/kenney/tileGrass.png" type="Texture" id=5]
+[ext_resource path="res://sprites/tiles/kenney/tileGrass_full.png" type="Texture" id=6]
+[ext_resource path="res://sprites/tiles/kenney/tileLava.png" type="Texture" id=7]
+[ext_resource path="res://sprites/tiles/kenney/tileLava_full.png" type="Texture" id=8]
+[ext_resource path="res://sprites/tiles/kenney/tileMagic.png" type="Texture" id=9]
+[ext_resource path="res://sprites/tiles/kenney/tileMagic_full.png" type="Texture" id=10]
+[ext_resource path="res://sprites/tiles/kenney/tileRock.png" type="Texture" id=11]
+[ext_resource path="res://sprites/tiles/kenney/tileRock_full.png" type="Texture" id=12]
+[ext_resource path="res://sprites/tiles/kenney/tileSand.png" type="Texture" id=13]
+[ext_resource path="res://sprites/tiles/kenney/tileSand_full.png" type="Texture" id=14]
+[ext_resource path="res://sprites/tiles/kenney/tileSnow.png" type="Texture" id=15]
+[ext_resource path="res://sprites/tiles/kenney/tileSnow_full.png" type="Texture" id=16]
+[ext_resource path="res://sprites/tiles/kenney/tileStone.png" type="Texture" id=17]
+[ext_resource path="res://sprites/tiles/kenney/tileStone_bridge.png" type="Texture" id=18]
+[ext_resource path="res://sprites/tiles/kenney/tileStone_full.png" type="Texture" id=19]
+[ext_resource path="res://sprites/tiles/kenney/tileWater.png" type="Texture" id=20]
+[ext_resource path="res://sprites/tiles/kenney/tileWater_full.png" type="Texture" id=21]
+[ext_resource path="res://sprites/tiles/kenney/tileWater_shadow.png" type="Texture" id=22]
+[ext_resource path="res://sprites/tiles/kenney/tileWood_bridge.png" type="Texture" id=23]
+[ext_resource path="res://sprites/tiles/koten/tileDirt_full.png" type="Texture" id=24]
+[ext_resource path="res://sprites/tiles/koten/tileGrass.png" type="Texture" id=25]
+[ext_resource path="res://sprites/tiles/koten/tileGrass_full.png" type="Texture" id=26]
+[ext_resource path="res://sprites/tiles/koten/tileDirt.png" type="Texture" id=27]
+[ext_resource path="res://sprites/tiles/koten/tileAutumn_full.png" type="Texture" id=28]
+[ext_resource path="res://sprites/tiles/koten/tileAutumn.png" type="Texture" id=29]
+[ext_resource path="res://sprites/tiles/koten/tileLava_full.png" type="Texture" id=30]
+[ext_resource path="res://sprites/tiles/koten/tileLava.png" type="Texture" id=31]
+[ext_resource path="res://sprites/tiles/koten/tileMagic.png" type="Texture" id=32]
+[ext_resource path="res://sprites/tiles/koten/tileMagic_full.png" type="Texture" id=33]
+[ext_resource path="res://sprites/tiles/koten/tileRock.png" type="Texture" id=34]
+[ext_resource path="res://sprites/tiles/koten/tileMagic_full_reflet.png" type="Texture" id=35]
+[ext_resource path="res://sprites/tiles/koten/tileRock_full.png" type="Texture" id=36]
+[ext_resource path="res://sprites/tiles/koten/tileSand_full.png" type="Texture" id=37]
+[ext_resource path="res://sprites/tiles/koten/tileSand.png" type="Texture" id=38]
+[ext_resource path="res://sprites/tiles/koten/tileSnow_full.png" type="Texture" id=39]
+[ext_resource path="res://sprites/tiles/koten/tileSnow.png" type="Texture" id=40]
+[ext_resource path="res://sprites/tiles/koten/tileStone_bridge.png" type="Texture" id=41]
+[ext_resource path="res://sprites/tiles/koten/tileWood_bridge.png" type="Texture" id=42]
+[ext_resource path="res://sprites/tiles/koten/tileWater.png" type="Texture" id=43]
+[ext_resource path="res://sprites/tiles/koten/tileStone.png" type="Texture" id=44]
+[ext_resource path="res://sprites/tiles/koten/tileWater_full.png" type="Texture" id=45]
+
+[node name="KenneyGroundTileSet" type="Node2D"]
+
+[node name="Autumn" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="AutumnFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="Dirt" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="DirtFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="Grass" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="GrassFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="Lava" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="LavaFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 8 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="Magic" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="MagicFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 10 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="Rock" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="RockFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 12 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="Sand" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 13 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="SandFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 14 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="Snow" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 15 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="SnowFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 16 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="Stone" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 17 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="StoneBridge" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 18 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="StoneFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 19 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="Water" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 20 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="WaterFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 21 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="WaterShadow" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 22 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="WoodBridge" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 23 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenAutumn" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 29 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenAutumnFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 28 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenDirt" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 27 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenDirtFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 24 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenGrass" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 25 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenGrassFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 26 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenLava" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 31 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenLavaFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 30 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenMagic" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 32 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenMagicFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 33 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenMagicFullReflet" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 35 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenRock" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 34 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenRockFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 36 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenSand" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 38 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenSandFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 37 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenSnow" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 40 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenSnowFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 39 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenStone" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 44 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenStoneBridge" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 41 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenWater" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 43 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenWaterFull" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 45 )
+centered = false
+offset = Vector2( 0, -16 )
+
+[node name="KotenWoodBridge" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 42 )
+centered = false
+offset = Vector2( 0, -16 )

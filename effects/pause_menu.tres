@@ -1,0 +1,38 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform sampler2D primary_texture;
+
+uniform vec4 primary_color: hint_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform vec4 secondary_color: hint_color = vec4(0.0, 1.0, 0.0, 1.0);
+uniform vec4 ternary_color: hint_color = vec4(0.0, 0.0, 1.0, 1.0);
+
+uniform float primary_limit = 0.33;
+uniform float primary_speed = 0.80;
+uniform float primary_amplitude = 0.10;
+uniform float secondary_limit = 0.718;
+uniform float secondary_speed = 0.60;
+uniform float secondary_amplitude = 0.10;
+
+void fragment() {
+	float primary_threshold = primary_limit + sin(TIME*primary_speed + UV.x * 2.0) * primary_amplitude;
+	if (UV.y < primary_threshold) {
+		vec4 texture_color = texture(primary_texture, vec2(UV.x+primary_threshold, UV.y+TIME*0.1));
+		COLOR = mix(primary_color, texture_color, 0.1);
+		//COLOR = primary_color;
+	} else {
+		float secondary_threshold = secondary_limit + sin(TIME*secondary_speed + UV.x) * secondary_amplitude;
+		if (UV.y < secondary_threshold) {
+			COLOR = secondary_color;
+		} else {
+			vec4 texture_color = texture(primary_texture, vec2(UV.x+secondary_threshold, UV.y+TIME*-0.07));
+			COLOR = mix(ternary_color, texture_color, 0.1);
+//			COLOR = ternary_color;
+			
+		}
+		
+	}
+	
+}"

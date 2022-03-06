@@ -1,0 +1,188 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/homage/StopThatThiefAchievementA.tres" type="Resource" id=2]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/homage/StopThatThiefAchievementB.tres" type="Resource" id=4]
+[ext_resource path="res://core/Portal.tscn" type="PackedScene" id=5]
+
+[node name="StopThatThief" instance=ExtResource( 1 )]
+title = "level.StopThatThief.title"
+excerpt = "level.StopThatThief.excerpt"
+link = "level.StopThatThief.link"
+title_custom = "Au Voleur !"
+excerpt_custom = "Au feucours !  Au voleur !
+Notre avenir est volé !
+Par un fieffé menteur,
+Au nez à l'envolée !
+
+Vite !  Vite !  Mettons-y fin !
+Bien avant d'être nues,
+Avant d'avoir trop faim,
+Déboutons ce parvenu !"
+achievement_a = ExtResource( 2 )
+achievement_b = ExtResource( 4 )
+solution_a = "96697963133447444139936749600076341160399677411417794467936036999"
+solution_b = "9966736334474441399967739114177794414766341113996774936691496714"
+
+[node name="HexagonalTileMap" parent="." index="1"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -262149, 8, 0, -262148, 8, 0, -196613, 8, 0, -196611, 8, 0, -196609, 19, 0, -262144, 19, 0, -262143, 19, 0, -262141, 8, 0, -262140, 8, 0, -131079, 8, 0, -131078, 19, 0, -131077, 19, 0, -131076, 19, 0, -131075, 19, 0, -131074, 19, 0, -131073, 4, 0, -196608, 4, 0, -196607, 19, 0, -196606, 8, 0, -196604, 8, 0, -65542, 19, 0, -65541, 19, 0, -65540, 19, 0, -65539, 19, 0, -65538, 19, 0, -65537, 4, 0, -131072, 4, 0, -131071, 4, 0, -131070, 19, 0, -131069, 19, 0, -131068, 8, 0, -6, 19, 0, -5, 19, 0, -4, 19, 0, -3, 4, 0, -2, 4, 0, -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 19, 0, 65530, 19, 0, 65531, 19, 0, 65532, 19, 0, 65533, 19, 0, 65534, 4, 0, 65535, 6, 0, 0, 4, 0, 1, 6, 0, 2, 4, 0, 3, 19, 0, 131065, 19, 0, 131066, 19, 0, 131067, 19, 0, 131068, 19, 0, 131069, 4, 0, 131070, 4, 0, 131071, 4, 0, 65536, 4, 0, 65537, 4, 0, 65538, 4, 0, 65539, 19, 0, 196601, 19, 0, 196602, 19, 0, 196603, 19, 0, 196604, 19, 0, 196605, 19, 0, 196607, 4, 0, 131072, 4, 0, 131073, 4, 0, 131075, 19, 0, 262137, 19, 0, 262138, 8, 0, 262139, 19, 0, 262140, 19, 0, 262141, 19, 0, 262142, 19, 0, 262143, 19, 0, 196608, 19, 0, 196609, 19, 0, 196610, 19, 0, 327674, 19, 0, 327675, 19, 0, 327679, 4, 0, 262144, 4, 0, 262145, 4, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="MonarcText" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( -224, 128.772 )
+is_text = true
+concept_name = "monarc"
+cell_position = Vector2( -5, 3 )
+tile_position = Vector2( -4, 3 )
+
+[node name="People" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( -352, 128.782 )
+concept_name = "people"
+cell_position = Vector2( -7, 3 )
+tile_position = Vector2( -6, 3 )
+is_you = true
+
+[node name="IsText" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( -160, 128.772 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, 3 )
+tile_position = Vector2( -3, 3 )
+
+[node name="MoveText" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( -96, 128.772 )
+is_text = true
+concept_name = "move"
+cell_position = Vector2( -3, 3 )
+tile_position = Vector2( -2, 3 )
+
+[node name="GuardText" parent="Items" index="4" instance=ExtResource( 3 )]
+position = Vector2( 256, 174.221 )
+is_text = true
+concept_name = "guard"
+cell_position = Vector2( 2, 4 )
+tile_position = Vector2( 4, 4 )
+
+[node name="IsText3" parent="Items" index="5" instance=ExtResource( 3 )]
+position = Vector2( 320, 174.221 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 3, 4 )
+tile_position = Vector2( 5, 4 )
+
+[node name="DefeatText" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( 384, 174.221 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( 4, 4 )
+tile_position = Vector2( 6, 4 )
+
+[node name="WinText" parent="Items" index="7" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 0, 83.3232 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( -1, 2 )
+tile_position = Vector2( 0, 2 )
+is_lit = false
+
+[node name="Monarc" parent="Items" index="8" instance=ExtResource( 3 )]
+position = Vector2( 192, -7.57474 )
+concept_name = "monarc"
+cell_position = Vector2( 3, 0 )
+tile_position = Vector2( 3, 0 )
+direction = "left"
+is_move = true
+
+[node name="Guard" parent="Items" index="9" instance=ExtResource( 3 )]
+position = Vector2( 0, -7.57474 )
+concept_name = "guard"
+is_defeat = true
+
+[node name="Guard2" parent="Items" index="10" instance=ExtResource( 3 )]
+position = Vector2( 32, 37.8743 )
+concept_name = "guard"
+cell_position = Vector2( 0, 1 )
+tile_position = Vector2( 0, 1 )
+is_defeat = true
+
+[node name="Guard6" parent="Items" index="11" instance=ExtResource( 3 )]
+position = Vector2( 32, 128.772 )
+concept_name = "guard"
+cell_position = Vector2( -1, 3 )
+tile_position = Vector2( 0, 3 )
+is_defeat = true
+
+[node name="Guard7" parent="Items" index="12" instance=ExtResource( 3 )]
+position = Vector2( 0, 174.221 )
+concept_name = "guard"
+cell_position = Vector2( -2, 4 )
+tile_position = Vector2( 0, 4 )
+is_defeat = true
+
+[node name="Guard3" parent="Items" index="13" instance=ExtResource( 3 )]
+position = Vector2( 32, -53.0238 )
+concept_name = "guard"
+cell_position = Vector2( 1, -1 )
+tile_position = Vector2( 0, -1 )
+is_defeat = true
+
+[node name="Guard4" parent="Items" index="14" instance=ExtResource( 3 )]
+position = Vector2( 0, -98.4728 )
+concept_name = "guard"
+cell_position = Vector2( 1, -2 )
+tile_position = Vector2( 0, -2 )
+is_defeat = true
+
+[node name="Guard5" parent="Items" index="15" instance=ExtResource( 3 )]
+position = Vector2( 32, -143.922 )
+concept_name = "guard"
+cell_position = Vector2( 2, -3 )
+tile_position = Vector2( 0, -3 )
+is_defeat = true
+
+[node name="Guard8" parent="Items" index="16" instance=ExtResource( 3 )]
+position = Vector2( 0, -189.371 )
+concept_name = "guard"
+cell_position = Vector2( 2, -4 )
+tile_position = Vector2( 0, -4 )
+is_defeat = true
+
+[node name="PeopleText" parent="Items" index="17" instance=ExtResource( 3 )]
+position = Vector2( -256, -98.4729 )
+is_text = true
+concept_name = "people"
+cell_position = Vector2( -3, -2 )
+tile_position = Vector2( -4, -2 )
+
+[node name="IsText2" parent="Items" index="18" instance=ExtResource( 3 )]
+position = Vector2( -224, -53.0239 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, -1 )
+tile_position = Vector2( -4, -1 )
+
+[node name="YouText" parent="Items" index="19" instance=ExtResource( 3 )]
+position = Vector2( -192, -7.57484 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -3, 0 )
+tile_position = Vector2( -3, 0 )
+
+[node name="Portal" parent="Items" index="20" instance=ExtResource( 5 )]
+position = Vector2( 256, -189.371 )
+cell_position = Vector2( 6, -4 )
+tile_position = Vector2( 4, -4 )
+secret = true
+level_path = "res://levels/trollune/SecretTunnel.tscn"
+title = "Secret des Victoires"

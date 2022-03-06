@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://core/Achievement.gd" type="Script" id=1]
+[ext_resource path="res://sprites/items/france_0.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+trigger_on_turn_if = "6 france"
+trigger_on_victory_if = ""
+image = ExtResource( 2 )
+snake_identifier = "obstacle_conversion"
+title = "level.LearnStop.obstacle_conversion.title"
+title_custom = ""

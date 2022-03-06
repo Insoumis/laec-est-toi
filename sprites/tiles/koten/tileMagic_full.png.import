@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/tileMagic_full.png-6e7e6a712289a9497ae7d5ff8ef62dd7.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/koten/tileMagic_full.png"
+dest_files=[ "res://.import/tileMagic_full.png-6e7e6a712289a9497ae7d5ff8ef62dd7.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

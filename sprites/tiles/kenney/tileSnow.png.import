@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/tileSnow.png-bee0608704a5bbc7118fccb8b4bacb65.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/tileSnow.png"
+dest_files=[ "res://.import/tileSnow.png-bee0608704a5bbc7118fccb8b4bacb65.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

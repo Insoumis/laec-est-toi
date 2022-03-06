@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://sprites/portals/portal_0.png" type="Texture" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/portals/portal_1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/portals/portal_2.png" type="Texture" id=4]
+[ext_resource path="res://addons/laec-is-you/entity/Portal.gd" type="Script" id=5]
+[ext_resource path="res://sprites/items/fi_1.png" type="Texture" id=6]
+[ext_resource path="res://effects/WarpSpiro.tscn" type="PackedScene" id=7]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "top_right_0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "left_0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "right_0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "top_left_0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "bottom_left_0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "bottom_right_0",
+"speed": 5.0
+} ]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.503788, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.238938, 0.455752, 0.619469, 0.809735, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 0.994089, 1, 0.243363, 1, 0, 1, 0.179688, 1, 0.202332, 0.996094, 0.97749, 1, 0.0625, 0.25293, 1, 1, 1, 0, 0.304688, 1 )
+
+[node name="Portal" instance=ExtResource( 2 )]
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" parent="." index="8"]
+frames = SubResource( 4 )
+offset = Vector2( 6, -10 )
+
+[node name="CompletionParticles" type="CPUParticles2D" parent="." index="11"]
+emitting = false
+amount = 13
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.62
+randomness = 0.3
+texture = ExtResource( 6 )
+direction = Vector2( 0, -1 )
+spread = 42.0
+initial_velocity = 120.0
+scale_amount_curve = SubResource( 2 )
+
+[node name="CompletionParticles2" type="CPUParticles2D" parent="." index="12"]
+emitting = false
+amount = 13
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.62
+randomness = 0.3
+texture = ExtResource( 6 )
+direction = Vector2( 0, -1 )
+spread = 42.0
+initial_velocity = 120.0
+angular_velocity = 600.0
+angular_velocity_random = 0.38
+orbit_velocity = 0.1
+damping = 10.0
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
+hue_variation = 0.5
+hue_variation_random = 0.3
+
+[node name="WarpSpiro" parent="." index="13" instance=ExtResource( 7 )]
+visible = false

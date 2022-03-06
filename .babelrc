@@ -1,0 +1,13 @@
+[ignore: addons/WAT/**]
+[ignore: addons/zylann*/**]
+[ignore: features/**]
+[ignore: tests/**]
+
+[python: **.gd]
+encoding = utf-8
+
+[godot_scene: **.tscn]
+encoding = utf-8
+
+[godot_resource: **.tres]
+encoding = utf-8

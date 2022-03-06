@@ -1,0 +1,166 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=2]
+
+[node name="Laec1_3" instance=ExtResource( 2 )]
+contribute_to_completion_score = true
+title = "level.Laec1_3.title"
+excerpt = "level.Laec1_3.excerpt"
+link = "level.Laec1_3.link"
+title_custom = "Chapitre Trois"
+excerpt_custom = "Bien joué ! Un nouveau grand chantier s’ouvert : la Justice !
+Chacun a désormais accès à la Justice grâce à une aide juridictionnelle augmentée et aux tribunaux de proximité !
+Sont renforcées :  la lutte contre la délinquance financière, la justice pénale environnementale, la protection de l’enfance, mais aussi la lutte contre les violences sexistes et sexuelles.
+La police est refondée sur la base d’une police de proximité, qui créée une relation de confiance avec la population, pour une action plus efficace.  
+Grâce à la légalisation du cannabis, l’État encadre la consommation, la production et la vente à des fins récréatives, dans des conditions qui luttent contre l’addiction. La police est ainsi libérée du poids d’une politique répressive inefficace.
+Enfin, la lutte antiterroriste est améliorée et ses moyens sont augmentés."
+link_custom = "https://laec.fr/section/3/une-republique-permettant-l-intervention-populaire"
+solution_a = "66999633333666663441677779966699"
+
+[node name="Camera2D" parent="." index="0"]
+zoom = Vector2( 1.2, 1.2 )
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -327674, 20, 0, -327673, 20, 0, -262138, 20, 0, -262137, 20, 0, -262136, 20, 0, -131076, 3, 0, -131075, 1, 0, -131074, 3, 0, -131073, 3, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -196602, 20, 0, -196601, 20, 0, -65540, 3, 0, -65539, 3, 0, -65538, 3, 0, -65537, 3, 0, -131072, 3, 0, -131071, 10, 0, -131070, 10, 0, -131069, 10, 0, -131068, 20, 0, -131067, 20, 0, -131066, 20, 0, -8, 9, 0, -7, 9, 0, -5, 3, 0, -4, 3, 0, -3, 3, 0, -2, 3, 0, -1, 3, 0, -65536, 10, 0, -65535, 10, 0, -65534, 10, 0, 65528, 9, 0, 65529, 9, 0, 65530, 9, 0, 65531, 3, 0, 65532, 3, 0, 65533, 3, 0, 65534, 3, 0, 65535, 3, 0, 0, 3, 0, 1, 10, 0, 2, 10, 0, 3, 10, 0, 4, 10, 0, 5, 10, 0, 6, 10, 0, 131064, 9, 0, 131065, 9, 0, 131067, 3, 0, 131068, 3, 0, 131069, 3, 0, 131070, 3, 0, 131071, 3, 0, 65536, 10, 0, 65537, 10, 0, 65538, 10, 0, 65539, 10, 0, 65540, 10, 0, 65541, 10, 0, 65542, 10, 0, 196604, 3, 0, 196605, 3, 0, 196606, 3, 0, 196607, 3, 0, 131072, 3, 0, 131073, 10, 0, 131074, 10, 0, 131075, 10, 0, 131076, 10, 0, 131077, 10, 0, 131078, 10, 0, 131079, 10, 0, 262140, 3, 0, 262141, 3, 0, 262142, 3, 0, 262143, 3, 0, 196608, 10, 0, 196609, 10, 0, 196610, 10, 0, 196611, 10, 0, 196612, 10, 0, 196613, 10, 0, 196614, 10, 0, 262147, 10, 0, 262148, 10, 0, 262149, 10, 0, 262150, 10, 0, 262151, 10, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="LaecText" parent="Items" index="0" instance=ExtResource( 1 )]
+position = Vector2( -192, 83.3232 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( -4, 2 )
+tile_position = Vector2( -3, 2 )
+
+[node name="Laec" parent="Items" index="1" instance=ExtResource( 1 )]
+position = Vector2( -448, -7.56484 )
+concept_name = "laec"
+cell_position = Vector2( -7, 0 )
+tile_position = Vector2( -7, 0 )
+is_you = true
+
+[node name="YouText" parent="Items" index="2" instance=ExtResource( 1 )]
+position = Vector2( -64, 83.3232 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -2, 2 )
+tile_position = Vector2( -1, 2 )
+
+[node name="Lobby" parent="Items" index="3" instance=ExtResource( 1 )]
+position = Vector2( 32, -143.922 )
+concept_name = "lobby"
+cell_position = Vector2( 2, -3 )
+tile_position = Vector2( 0, -3 )
+is_defeat = true
+
+[node name="Lobby2" parent="Items" index="4" instance=ExtResource( 1 )]
+position = Vector2( 64, -98.4728 )
+concept_name = "lobby"
+cell_position = Vector2( 2, -2 )
+tile_position = Vector2( 1, -2 )
+is_defeat = true
+
+[node name="Lobby3" parent="Items" index="5" instance=ExtResource( 1 )]
+position = Vector2( 32, -53.0238 )
+concept_name = "lobby"
+cell_position = Vector2( 1, -1 )
+tile_position = Vector2( 0, -1 )
+is_defeat = true
+
+[node name="Lobby4" parent="Items" index="6" instance=ExtResource( 1 )]
+position = Vector2( 64, -7.57474 )
+concept_name = "lobby"
+cell_position = Vector2( 1, 0 )
+tile_position = Vector2( 1, 0 )
+is_defeat = true
+
+[node name="Lobby5" parent="Items" index="7" instance=ExtResource( 1 )]
+position = Vector2( 32, 37.8743 )
+concept_name = "lobby"
+cell_position = Vector2( 0, 1 )
+tile_position = Vector2( 0, 1 )
+is_defeat = true
+
+[node name="Lobby6" parent="Items" index="8" instance=ExtResource( 1 )]
+position = Vector2( 64, 83.3233 )
+concept_name = "lobby"
+cell_position = Vector2( 0, 2 )
+tile_position = Vector2( 1, 2 )
+is_defeat = true
+
+[node name="Lobby7" parent="Items" index="9" instance=ExtResource( 1 )]
+position = Vector2( 32, 128.772 )
+concept_name = "lobby"
+cell_position = Vector2( -1, 3 )
+tile_position = Vector2( 0, 3 )
+is_defeat = true
+
+[node name="IsText" parent="Items" index="10" instance=ExtResource( 1 )]
+position = Vector2( -128, 83.3232 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, 2 )
+tile_position = Vector2( -2, 2 )
+
+[node name="LobbyText" parent="Items" index="11" instance=ExtResource( 1 )]
+position = Vector2( -224, -234.82 )
+is_text = true
+concept_name = "lobby"
+cell_position = Vector2( -1, -5 )
+tile_position = Vector2( -4, -5 )
+
+[node name="DefeatText" parent="Items" index="12" instance=ExtResource( 1 )]
+position = Vector2( -160, -143.922 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( -1, -3 )
+tile_position = Vector2( -3, -3 )
+
+[node name="6 Eme" parent="Items" index="13" instance=ExtResource( 1 )]
+position = Vector2( 448, -189.371 )
+concept_name = "6eme"
+cell_position = Vector2( 9, -4 )
+tile_position = Vector2( 7, -4 )
+
+[node name="6 EmeText" parent="Items" index="14" instance=ExtResource( 1 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 256, 174.221 )
+is_text = true
+concept_name = "6eme"
+cell_position = Vector2( 2, 4 )
+tile_position = Vector2( 4, 4 )
+is_lit = false
+
+[node name="IsText2" parent="Items" index="15" instance=ExtResource( 1 )]
+position = Vector2( -192, -189.371 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -1, -4 )
+tile_position = Vector2( -3, -4 )
+
+[node name="WinText" parent="Items" index="16" instance=ExtResource( 1 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 448, 174.221 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 5, 4 )
+tile_position = Vector2( 7, 4 )
+is_lit = false
+
+[node name="IsText3" parent="Items" index="17" instance=ExtResource( 1 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 384, 174.221 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 4, 4 )
+tile_position = Vector2( 6, 4 )
+is_lit = false

@@ -1,0 +1,808 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://editor/activities/CameraBorder.gd" type="Script" id=2]
+[ext_resource path="res://guis/CodeTheme.tres" type="Theme" id=3]
+[ext_resource path="res://editor/activities/ExportDialog.gd" type="Script" id=4]
+[ext_resource path="res://guis/HexagonGui.tscn" type="PackedScene" id=5]
+[ext_resource path="res://editor/LevelEditor.gd" type="Script" id=6]
+[ext_resource path="res://editor/activities/EditorActivity.gd" type="Script" id=7]
+[ext_resource path="res://editor/activities/ImportDialog.gd" type="Script" id=8]
+[ext_resource path="res://editor/activities/MetadataDialog.gd" type="Script" id=9]
+[ext_resource path="res://editor/activities/HelpDialog.gd" type="Script" id=10]
+[ext_resource path="res://core/behaviors/PhiuClipboardMirrorBehavior.gd" type="Script" id=11]
+[ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=12]
+[ext_resource path="res://fonts/Marius.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://guis/MobileThemeMini.tres" type="Theme" id=14]
+[ext_resource path="res://guis/MobileThemeMicro.tres" type="Theme" id=15]
+[ext_resource path="res://sprites/gui/window_background.png" type="Texture" id=16]
+[ext_resource path="res://sprites/gui/activity_grabber.png" type="Texture" id=17]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 16 )
+region = Rect2( -1, 53, 197, 185 )
+
+[sub_resource type="Theme" id=9]
+HSplitContainer/constants/autohide = 0
+HSplitContainer/icons/grabber = null
+HSplitContainer/styles/bg = null
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 36, 0 )
+margin = Rect2( 2, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.345098, 0.0901961, 0, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Theme" id=12]
+VScrollBar/styles/grabber = SubResource( 11 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.368627 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.301961, 0.301961, 0.301961, 0.380392 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.6 )
+
+[node name="LevelEditor" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="."]
+anchor_bottom = 1.0
+margin_right = 100.0
+theme = ExtResource( 15 )
+texture = SubResource( 5 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_bottom = 1.0
+margin_right = 100.0
+theme = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PlayButton" type="Button" parent="Menu"]
+margin_right = 100.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UndoRedo" type="HBoxContainer" parent="Menu"]
+margin_top = 54.0
+margin_right = 100.0
+margin_bottom = 105.0
+hint_tooltip = "Would love an UNDO button, but other features take priority (and it's a lot of work)"
+size_flags_vertical = 3
+
+[node name="UndoButton" type="Button" parent="Menu/UndoRedo"]
+margin_right = 48.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RedoButton" type="Button" parent="Menu/UndoRedo"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 51.0
+hint_tooltip = "Would love an UNDO button, but other features take priority (and it's a lot of work)"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ZoomEditor" type="HBoxContainer" parent="Menu"]
+margin_top = 109.0
+margin_right = 100.0
+margin_bottom = 159.0
+hint_tooltip = "Would love an UNDO button, but other features take priority (and it's a lot of work)"
+size_flags_vertical = 3
+
+[node name="ZoomEditorOutButton" type="Button" parent="Menu/ZoomEditor"]
+margin_right = 48.0
+margin_bottom = 50.0
+hint_tooltip = "Zoom backwards in the editor.  This won't affect the created level."
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ZoomEditorInButton" type="Button" parent="Menu/ZoomEditor"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 50.0
+hint_tooltip = "Zoom forward in the editor.  This won't affect the created level."
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ZoomLevel" type="HBoxContainer" parent="Menu"]
+margin_top = 163.0
+margin_right = 100.0
+margin_bottom = 214.0
+hint_tooltip = "Would love an UNDO button, but other features take priority (and it's a lot of work)"
+size_flags_vertical = 3
+
+[node name="ZoomLevelOutButton" type="Button" parent="Menu/ZoomLevel"]
+margin_right = 47.0
+margin_bottom = 51.0
+hint_tooltip = "Zoom backwards in the level.  This will only affect the created level."
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ø-ø"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ZoomLevelInButton" type="Button" parent="Menu/ZoomLevel"]
+margin_left = 51.0
+margin_right = 100.0
+margin_bottom = 51.0
+hint_tooltip = "Zoom forward in the level.  This will only affect the created level."
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Ø+Ø"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+margin_top = 218.0
+margin_right = 100.0
+margin_bottom = 218.0
+
+[node name="TerrainButton" type="Button" parent="Menu"]
+margin_top = 222.0
+margin_right = 100.0
+margin_bottom = 272.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Terrain"
+
+[node name="ConceptsButton" type="Button" parent="Menu"]
+margin_top = 276.0
+margin_right = 100.0
+margin_bottom = 327.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Concepts"
+
+[node name="MetadataButton" type="Button" parent="Menu"]
+margin_top = 331.0
+margin_right = 100.0
+margin_bottom = 381.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Metadata"
+
+[node name="ExportButton" type="Button" parent="Menu"]
+margin_top = 385.0
+margin_right = 100.0
+margin_bottom = 436.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Export"
+
+[node name="ImportButton" type="Button" parent="Menu"]
+margin_top = 440.0
+margin_right = 100.0
+margin_bottom = 490.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Import"
+
+[node name="HelpButton" type="Button" parent="Menu"]
+margin_top = 494.0
+margin_right = 100.0
+margin_bottom = 545.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Help"
+
+[node name="ExitButton" type="Button" parent="Menu"]
+margin_top = 549.0
+margin_right = 100.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Exit"
+
+[node name="DrawingSection" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 102.0
+margin_right = 19.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ActivityContainer" type="HSplitContainer" parent="DrawingSection"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 9 )
+custom_constants/separation = 35
+custom_icons/grabber = SubResource( 10 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Preview" type="Control" parent="DrawingSection/ActivityContainer"]
+margin_right = 825.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PreviewContainer" type="ViewportContainer" parent="DrawingSection/ActivityContainer/Preview"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Previewport" type="Viewport" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer"]
+size = Vector2( 825, 600 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="PreviewCamera" type="Camera2D" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport"]
+current = true
+__meta__ = {
+"_editor_description_": "This camera is used to preview the level, respond to zoom actions in the editor, and its zoom will not be stored along with the level."
+}
+
+[node name="Level" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport" instance=ExtResource( 1 )]
+editor_preview_no_interaction = true
+
+[node name="Camera2D" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="0"]
+visible = false
+current = false
+
+[node name="HexagonalTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+
+[node name="MiniDecorFarTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="UndoGuiButton" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level/GuiLayer" index="0"]
+visible = false
+
+[node name="HomeGuiButton" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level/GuiLayer" index="1"]
+visible = false
+
+[node name="CameraBorder" type="Node2D" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport"]
+show_behind_parent = true
+script = ExtResource( 2 )
+
+[node name="HexagonGui" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport" instance=ExtResource( 5 )]
+
+[node name="Dock" type="Control" parent="DrawingSection/ActivityContainer"]
+margin_left = 861.0
+margin_right = 941.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.58
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DockContainer" type="VBoxContainer" parent="DrawingSection/ActivityContainer/Dock"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileSetItemList" type="ItemList" parent="DrawingSection/ActivityContainer/Dock/DockContainer"]
+margin_right = 80.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ConceptsItemList" type="ItemList" parent="DrawingSection/ActivityContainer/Dock/DockContainer"]
+visible = false
+margin_top = 302.0
+margin_right = 92.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HelpButton" type="Button" parent="DrawingSection/ActivityContainer/Dock/DockContainer"]
+visible = false
+margin_top = 580.0
+margin_right = 100.0
+margin_bottom = 600.0
+text = "HELP"
+
+[node name="ExportDialog" type="AcceptDialog" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 12 )
+popup_exclusive = true
+window_title = "Export or save"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Layout" type="VBoxContainer" parent="ExportDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ExportDialog/Layout"]
+margin_right = 1008.0
+margin_bottom = 174.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExportDialog/Layout/VBoxContainer"]
+margin_right = 1008.0
+margin_bottom = 66.0
+
+[node name="LevelImage" type="TextureRect" parent="ExportDialog/Layout/VBoxContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 100, 66 )
+
+[node name="Help" type="Label" parent="ExportDialog/Layout/VBoxContainer/HBoxContainer"]
+margin_left = 104.0
+margin_top = 12.0
+margin_right = 498.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 200, 30 )
+text = "Save the level in a local file:"
+
+[node name="SaveToFileButton" type="Button" parent="ExportDialog/Layout/VBoxContainer"]
+margin_top = 70.0
+margin_right = 1008.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+text = "Save level to file"
+
+[node name="SaveToImageFileButton" type="Button" parent="ExportDialog/Layout/VBoxContainer"]
+margin_top = 124.0
+margin_right = 1008.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+text = "Save level to image file"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ExportDialog/Layout"]
+margin_top = 178.0
+margin_right = 1008.0
+margin_bottom = 269.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExportDialog/Layout/VBoxContainer2"]
+margin_right = 1008.0
+
+[node name="Help2" type="Label" parent="ExportDialog/Layout/VBoxContainer2"]
+margin_top = 4.0
+margin_right = 1008.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 610, 30 )
+text = "Or copy any of these strings below and share it with the world so they can try out your level !"
+autowrap = true
+
+[node name="TabContainer" type="TabContainer" parent="ExportDialog/Layout"]
+margin_top = 273.0
+margin_right = 1008.0
+margin_bottom = 528.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base 1024" type="TextEdit" parent="ExportDialog/Layout/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 57.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "Please wait..."
+readonly = true
+wrap_enabled = true
+
+[node name="Base 256" type="TextEdit" parent="ExportDialog/Layout/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 57.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "Please wait..."
+readonly = true
+wrap_enabled = true
+
+[node name="Base 64" type="TextEdit" parent="ExportDialog/Layout/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 57.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "Please wait..."
+readonly = true
+wrap_enabled = true
+
+[node name="Base 16" type="TextEdit" parent="ExportDialog/Layout/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 57.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "Please wait..."
+readonly = true
+wrap_enabled = true
+
+[node name="ImportDialog" type="ConfirmationDialog" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 12 )
+popup_exclusive = true
+window_title = "Import a level"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layout" type="VBoxContainer" parent="ImportDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -64.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="Label" parent="ImportDialog/Layout"]
+margin_right = 1008.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 120 )
+custom_fonts/font = SubResource( 1 )
+text = "Copy the level string in the field below to load that level"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImportField" type="TextEdit" parent="ImportDialog/Layout"]
+margin_top = 124.0
+margin_right = 1008.0
+margin_bottom = 528.0
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+custom_styles/read_only = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+wrap_enabled = true
+
+[node name="PhiuClipboardMirrorBehavior" type="Node" parent="ImportDialog/Layout/ImportField"]
+script = ExtResource( 11 )
+
+[node name="ExitDialog" type="ConfirmationDialog" parent="."]
+margin_left = 5.0
+margin_top = 1.0
+margin_right = 667.0
+margin_bottom = 223.0
+theme = ExtResource( 12 )
+popup_exclusive = true
+window_title = "Exit the editor"
+dialog_text = "Are you sure you want to quit?
+
+You will lose all unsaved changes."
+
+[node name="MetadataDialog" type="ConfirmationDialog" parent="."]
+rect_min_size = Vector2( 400, 200 )
+theme = ExtResource( 12 )
+popup_exclusive = true
+window_title = "Metadata"
+resizable = true
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Layout" type="VBoxContainer" parent="MetadataDialog"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+margin_left = -12.0
+margin_top = -7.5
+margin_right = 12.0
+margin_bottom = -48.5
+theme = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TitleRow" type="HBoxContainer" parent="MetadataDialog/Layout"]
+margin_right = 384.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MetadataDialog/Layout/TitleRow"]
+margin_right = 100.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 100, 0 )
+text = "Title"
+
+[node name="Field" type="LineEdit" parent="MetadataDialog/Layout/TitleRow"]
+margin_left = 104.0
+margin_right = 384.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+
+[node name="CongratulationRow" type="HBoxContainer" parent="MetadataDialog/Layout"]
+margin_top = 46.0
+margin_right = 384.0
+margin_bottom = 146.0
+rect_min_size = Vector2( 0, 25 )
+hint_tooltip = "This congratulating message is shown upon victory.
+
+You may use raw Godot's BBCODE in here, and therefore can probably use this property to crash and burn everyone's computer.
+Please don't."
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MetadataDialog/Layout/CongratulationRow"]
+margin_top = 29.0
+margin_right = 213.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 100, 0 )
+text = "Congratulation"
+
+[node name="Field" type="TextEdit" parent="MetadataDialog/Layout/CongratulationRow"]
+margin_left = 217.0
+margin_right = 384.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+
+[node name="AuthorsRow" type="HBoxContainer" parent="MetadataDialog/Layout"]
+margin_top = 150.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 0, 25 )
+hint_tooltip = "When set, will show up somewhere someday."
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MetadataDialog/Layout/AuthorsRow"]
+margin_right = 113.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 100, 0 )
+text = "Authors"
+
+[node name="Field" type="LineEdit" parent="MetadataDialog/Layout/AuthorsRow"]
+margin_left = 117.0
+margin_right = 384.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+
+[node name="VersionRow" type="HBoxContainer" parent="MetadataDialog/Layout"]
+margin_top = 196.0
+margin_right = 384.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 0, 25 )
+hint_tooltip = "The version of this level.  It's probably best to set this to an ever-incrementing integer, but you probably may use semver as well.
+
+This will help players know if they are playing the latest version of your level, and even perhaps update."
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MetadataDialog/Layout/VersionRow"]
+margin_right = 112.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 100, 0 )
+text = "Version"
+
+[node name="Field" type="LineEdit" parent="MetadataDialog/Layout/VersionRow"]
+margin_left = 116.0
+margin_right = 384.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+text = "1"
+
+[node name="HelpDialog" type="AcceptDialog" parent="."]
+margin_right = 615.0
+margin_bottom = 515.0
+theme = ExtResource( 12 )
+window_title = "Help"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Layout" type="VBoxContainer" parent="HelpDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -64.0
+theme = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpText" type="RichTextLabel" parent="HelpDialog/Layout"]
+margin_right = 599.0
+margin_bottom = 471.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "Make your own levels using this level editor.
+Your work is not saved automatically so make sure to export it from time to time.
+
+THERE WILL BE BUGS.  DO NOT PANIC.
+
+There are no safeguards.  This WILL CRASH if you enter infinite loops.
+
+We are iinterested in crash reports, so if you want to make this software better, [url=https://framagit.org/laec-is-you/laec-is-you/-/issues]things happen here[/url].
+
+Content made using this editor will be licensed under the Creative Commons Zero (CC0) license.
+
+---
+
+TERRAIN
+
+Paint : Left Mouse Button
+Erase : Right Mouse Button
+Pipette : CTRL + Left Mouse Button
+
+
+CONCEPTS
+
+Use Drag and Drop.
+When dragging, use the Right Mouse Button to duplicate what's held.
+Erase : Right Mouse Button, one concept at a time.
+
+The triangle on the hexagon cursor indicates the direction in which the dragged item will be placed."
+text = "Make your own levels using this level editor.
+Your work is not saved automatically so make sure to export it from time to time.
+
+THERE WILL BE BUGS.  DO NOT PANIC.
+
+There are no safeguards.  This WILL CRASH if you enter infinite loops.
+
+We are iinterested in crash reports, so if you want to make this software better, things happen here.
+
+Content made using this editor will be licensed under the Creative Commons Zero (CC0) license.
+
+---
+
+TERRAIN
+
+Paint : Left Mouse Button
+Erase : Right Mouse Button
+Pipette : CTRL + Left Mouse Button
+
+
+CONCEPTS
+
+Use Drag and Drop.
+When dragging, use the Right Mouse Button to duplicate what's held.
+Erase : Right Mouse Button, one concept at a time.
+
+The triangle on the hexagon cursor indicates the direction in which the dragged item will be placed."
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="pressed" from="Menu/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Menu/ZoomEditor/ZoomEditorOutButton" to="." method="_on_ZoomEditorOutButton_pressed"]
+[connection signal="pressed" from="Menu/ZoomEditor/ZoomEditorInButton" to="." method="_on_ZoomEditorInButton_pressed"]
+[connection signal="pressed" from="Menu/ZoomLevel/ZoomLevelOutButton" to="." method="_on_ZoomLevelOutButton_pressed"]
+[connection signal="pressed" from="Menu/ZoomLevel/ZoomLevelInButton" to="." method="_on_ZoomLevelInButton_pressed"]
+[connection signal="pressed" from="Menu/TerrainButton" to="." method="_on_TerrainButton_pressed"]
+[connection signal="pressed" from="Menu/ConceptsButton" to="." method="_on_ConceptsButton_pressed"]
+[connection signal="pressed" from="Menu/MetadataButton" to="." method="_on_MetadataButton_pressed"]
+[connection signal="pressed" from="Menu/ExportButton" to="." method="_on_ExportButton_pressed"]
+[connection signal="pressed" from="Menu/ImportButton" to="." method="_on_ImportButton_pressed"]
+[connection signal="pressed" from="Menu/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="Menu/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="ExportDialog/Layout/VBoxContainer/SaveToFileButton" to="ExportDialog" method="_on_SaveToFileButton_pressed"]
+[connection signal="pressed" from="ExportDialog/Layout/VBoxContainer/SaveToImageFileButton" to="ExportDialog" method="_on_SaveToImageFileButton_pressed"]
+
+[editable path="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level"]

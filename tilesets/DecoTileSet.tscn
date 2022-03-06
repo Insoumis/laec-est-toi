@@ -1,0 +1,390 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://sprites/deco/niwatori/Feuillage.png" type="Texture" id=1]
+[ext_resource path="res://sprites/deco/niwatori/Arbre.png" type="Texture" id=2]
+[ext_resource path="res://sprites/deco/niwatori/Excalibur.png" type="Texture" id=3]
+[ext_resource path="res://sprites/deco/niwatori/Eolienne.png" type="Texture" id=4]
+[ext_resource path="res://sprites/deco/niwatori/Sapin.png" type="Texture" id=5]
+[ext_resource path="res://sprites/tiles/kenney/bushMagic.png" type="Texture" id=6]
+[ext_resource path="res://sprites/deco/niwatori/Stele.png" type="Texture" id=7]
+[ext_resource path="res://sprites/tiles/kenney/bushSnow.png" type="Texture" id=8]
+[ext_resource path="res://sprites/deco/niwatori/Phare.png" type="Texture" id=9]
+[ext_resource path="res://sprites/deco/niwatori/Temple.png" type="Texture" id=10]
+[ext_resource path="res://sprites/deco/niwatori/Buisson.png" type="Texture" id=11]
+[ext_resource path="res://sprites/deco/niwatori/Agriculture.png" type="Texture" id=12]
+[ext_resource path="res://sprites/deco/niwatori/Constitution.png" type="Texture" id=13]
+[ext_resource path="res://sprites/deco/niwatori/Bateau.png" type="Texture" id=14]
+[ext_resource path="res://sprites/deco/niwatori/Ruine.png" type="Texture" id=15]
+[ext_resource path="res://sprites/tiles/kenney/bushGrass.png" type="Texture" id=16]
+[ext_resource path="res://sprites/deco/niwatori/Grotte.png" type="Texture" id=17]
+[ext_resource path="res://sprites/tiles/kenney/waveLava.png" type="Texture" id=18]
+[ext_resource path="res://sprites/tiles/kenney/waveWater.png" type="Texture" id=19]
+[ext_resource path="res://sprites/tiles/kenney/bushAutumn.png" type="Texture" id=20]
+[ext_resource path="res://sprites/deco/koten/tileAutumn_feuille2.png" type="Texture" id=21]
+[ext_resource path="res://sprites/deco/koten/tileLava_1.png" type="Texture" id=22]
+[ext_resource path="res://sprites/deco/koten/tileGrass_2.png" type="Texture" id=23]
+[ext_resource path="res://sprites/deco/koten/tileGrass_1.png" type="Texture" id=24]
+[ext_resource path="res://sprites/tiles/kenney/bushDirt.png" type="Texture" id=25]
+[ext_resource path="res://sprites/deco/koten/tileGrass_3.png" type="Texture" id=26]
+[ext_resource path="res://sprites/deco/koten/tileLava_2.png" type="Texture" id=27]
+[ext_resource path="res://sprites/deco/koten/tileAutumn_feuille1.png" type="Texture" id=28]
+[ext_resource path="res://sprites/deco/koten/tileLava_3.png" type="Texture" id=29]
+[ext_resource path="res://sprites/tiles/kenney/flowerWhite.png" type="Texture" id=30]
+[ext_resource path="res://sprites/tiles/kenney/flowerRed.png" type="Texture" id=31]
+[ext_resource path="res://sprites/deco/koten/tileSand_cactus1.png" type="Texture" id=32]
+[ext_resource path="res://sprites/deco/koten/tileSand_cactus3.png" type="Texture" id=33]
+[ext_resource path="res://sprites/deco/koten/tileSand_cactus2.png" type="Texture" id=34]
+[ext_resource path="res://sprites/tiles/kenney/flowerGreen.png" type="Texture" id=46]
+[ext_resource path="res://sprites/tiles/kenney/flowerYellow.png" type="Texture" id=48]
+[ext_resource path="res://sprites/tiles/kenney/flowerBlue.png" type="Texture" id=49]
+[ext_resource path="res://sprites/tiles/kenney/bushSand.png" type="Texture" id=56]
+[ext_resource path="res://tilesets/AutoOffsetTileSet.gd" type="Script" id=61]
+
+[node name="DecoTileSet" type="Node2D"]
+script = ExtResource( 61 )
+__meta__ = {
+"_edit_lock_": true
+}
+offset_origin_adjustment = Vector2( 4, 8 )
+
+[node name="BushAutumn" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 20 )
+centered = false
+offset = Vector2( -4.5, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BushDirt" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 25 )
+centered = false
+offset = Vector2( -4.5, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BushGrass" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 16 )
+centered = false
+offset = Vector2( -4.5, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BushMagic" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( -4.5, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BushSand" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 56 )
+centered = false
+offset = Vector2( -4.5, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BushSnow" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 8 )
+centered = false
+offset = Vector2( -4.5, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FlowerBlue" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 49 )
+centered = false
+offset = Vector2( -2, -2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FlowerGreen" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 46 )
+centered = false
+offset = Vector2( -2, -2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FlowerRed" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 31 )
+centered = false
+offset = Vector2( -2, -2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FlowerWhite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 30 )
+centered = false
+offset = Vector2( -2, -2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FlowerYellow" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 48 )
+centered = false
+offset = Vector2( -2, -2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WaveLava" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 18 )
+centered = false
+offset = Vector2( -13.5, -6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WaveWater" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 19 )
+centered = false
+offset = Vector2( -13.5, -6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Agriculture" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 12 )
+centered = false
+offset = Vector2( -28.5, -56 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Arbre" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -28, -56 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bateau" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 14 )
+centered = false
+offset = Vector2( -28.5, -57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Buisson" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( -28, -57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Constitution" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 13 )
+centered = false
+offset = Vector2( -28, -57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Eolienne" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( -28.5, -57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Excalibur" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( -28.5, -57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Feuillage" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -28.5, -57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Grotte" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 17 )
+centered = false
+offset = Vector2( -28.5, -57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Phare" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( -28, -57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ruine" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 15 )
+centered = false
+offset = Vector2( -28, -57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sapin" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -28.5, -57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Stele" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( -28, -56 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Temple" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 10 )
+centered = false
+offset = Vector2( -28.5, -56 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileAutumnFeuille1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 28 )
+centered = false
+offset = Vector2( -13, -15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileAutumnFeuille2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 21 )
+centered = false
+offset = Vector2( -20, -25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileGrass1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 24 )
+centered = false
+offset = Vector2( -2, -2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileGrass2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 23 )
+centered = false
+offset = Vector2( -15, -15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileGrass3" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 26 )
+centered = false
+offset = Vector2( -20, -25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileLava1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 22 )
+centered = false
+offset = Vector2( -25, -20 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileLava2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 27 )
+centered = false
+offset = Vector2( -20, -25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileLava3" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 29 )
+centered = false
+offset = Vector2( -5, -8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileSandCactus1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 32 )
+centered = false
+offset = Vector2( -25, -30 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileSandCactus2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 34 )
+centered = false
+offset = Vector2( -10, -15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileSandCactus3" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 33 )
+centered = false
+offset = Vector2( -6, -22 )
+__meta__ = {
+"_edit_lock_": true
+}

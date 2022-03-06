@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/smallRockSnow.png-aa914462bb875bec91ae32cf6dba5806.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/smallRockSnow.png"
+dest_files=[ "res://.import/smallRockSnow.png-aa914462bb875bec91ae32cf6dba5806.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

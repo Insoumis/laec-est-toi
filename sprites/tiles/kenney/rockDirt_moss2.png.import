@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/rockDirt_moss2.png-2002e2c75b283edc6c3981a73d7b252b.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/rockDirt_moss2.png"
+dest_files=[ "res://.import/rockDirt_moss2.png-2002e2c75b283edc6c3981a73d7b252b.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

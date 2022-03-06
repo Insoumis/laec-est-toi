@@ -1,0 +1,243 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://levels/phi/FaiblesseDesAutresAchievementA.tres" type="Resource" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=3]
+
+[node name="FaiblesseDesAutres" instance=ExtResource( 3 )]
+title = "level.FaiblesseDesAutres.title"
+excerpt = "level.FaiblesseDesAutres.excerpt"
+link = "level.FaiblesseDesAutres.link"
+title_custom = "Déségrégation Médiatique"
+excerpt_custom = "Le concept NON n'est qu'à moitié implémenté.
+Le concept OUI n'est pas implémenté du tout.
+À la bonne franquette... "
+achievement_a = ExtResource( 1 )
+solution_a = "47979777933634444716666666444444441399976611196666666"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -196611, 4, 0, -196610, 4, 0, -196609, 4, 0, -131076, 4, 0, -131075, 4, 0, -131074, 4, 0, -131073, 4, 0, -196608, 4, 0, -196607, 4, 0, -196606, 4, 0, -65540, 4, 0, -65539, 4, 0, -65538, 4, 0, -65537, 4, 0, -131072, 4, 0, -131071, 4, 0, -131070, 4, 0, -131069, 4, 0, -131068, 2, 0, -5, 4, 0, -4, 4, 0, -3, 4, 0, -2, 4, 0, -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 2, 0, -65532, 6, 0, 65531, 4, 0, 65532, 4, 0, 65533, 4, 0, 65534, 4, 0, 65535, 4, 0, 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 2, 0, 4, 6, 0, 131067, 4, 0, 131068, 4, 0, 131069, 4, 0, 131070, 4, 0, 131071, 4, 0, 65536, 4, 0, 65537, 4, 0, 65538, 4, 0, 65539, 2, 0, 65540, 6, 0, 196604, 22, 0, 196605, 22, 0, 196606, 20, 0, 196607, 4, 0, 131072, 4, 0, 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 2, 0, 262142, 20, 0, 262143, 20, 0, 196608, 2, 0, 196609, 2, 0, 196610, 4, 0, 262144, 20, 0, 262145, 20, 0, 262146, 22, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="People" parent="Items" index="0" instance=ExtResource( 2 )]
+position = Vector2( 64, 174.221 )
+concept_name = "people"
+cell_position = Vector2( -1, 4 )
+tile_position = Vector2( 1, 4 )
+is_you = true
+is_stop = true
+is_weak = true
+
+[node name="NotText" parent="Items" index="1" instance=ExtResource( 2 )]
+position = Vector2( -32, -143.922 )
+is_text = true
+concept_name = "not"
+cell_position = Vector2( 1, -3 )
+tile_position = Vector2( -1, -3 )
+
+[node name="PeopleText" parent="Items" index="2" instance=ExtResource( 2 )]
+position = Vector2( -192, -7.57484 )
+is_text = true
+concept_name = "people"
+cell_position = Vector2( -3, 0 )
+tile_position = Vector2( -3, 0 )
+
+[node name="IsText" parent="Items" index="3" instance=ExtResource( 2 )]
+position = Vector2( -128, -7.57484 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -2, 0 )
+tile_position = Vector2( -2, 0 )
+
+[node name="WeakText" parent="Items" index="4" instance=ExtResource( 2 )]
+position = Vector2( -64, -7.57484 )
+is_text = true
+concept_name = "weak"
+cell_position = Vector2( -1, 0 )
+tile_position = Vector2( -1, 0 )
+
+[node name="TvText" parent="Items" index="5" instance=ExtResource( 2 )]
+position = Vector2( -416, -234.82 )
+is_text = true
+concept_name = "tv"
+cell_position = Vector2( -4, -5 )
+tile_position = Vector2( -7, -5 )
+
+[node name="IsText5" parent="Items" index="6" instance=ExtResource( 2 )]
+position = Vector2( -352, -234.82 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, -5 )
+tile_position = Vector2( -6, -5 )
+
+[node name="DefeatText" parent="Items" index="7" instance=ExtResource( 2 )]
+position = Vector2( -288, -234.82 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( -2, -5 )
+tile_position = Vector2( -5, -5 )
+
+[node name="GuardText2" parent="Items" index="8" instance=ExtResource( 2 )]
+position = Vector2( -480, -143.922 )
+is_text = true
+concept_name = "guard"
+cell_position = Vector2( -6, -3 )
+tile_position = Vector2( -8, -3 )
+
+[node name="IsText4" parent="Items" index="9" instance=ExtResource( 2 )]
+position = Vector2( -416, -143.922 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -5, -3 )
+tile_position = Vector2( -7, -3 )
+
+[node name="WinText" parent="Items" index="10" instance=ExtResource( 2 )]
+position = Vector2( -352, -143.922 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( -4, -3 )
+tile_position = Vector2( -6, -3 )
+
+[node name="IsText3" parent="Items" index="11" instance=ExtResource( 2 )]
+position = Vector2( 96, -143.922 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 3, -3 )
+tile_position = Vector2( 1, -3 )
+
+[node name="StopText" parent="Items" index="12" instance=ExtResource( 2 )]
+position = Vector2( 160, -143.922 )
+is_text = true
+concept_name = "stop"
+cell_position = Vector2( 4, -3 )
+tile_position = Vector2( 2, -3 )
+
+[node name="PeopleText2" parent="Items" index="13" instance=ExtResource( 2 )]
+position = Vector2( 288, 219.67 )
+is_text = true
+concept_name = "people"
+cell_position = Vector2( 2, 5 )
+tile_position = Vector2( 4, 5 )
+
+[node name="IsText2" parent="Items" index="14" instance=ExtResource( 2 )]
+position = Vector2( 352, 219.67 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 3, 5 )
+tile_position = Vector2( 5, 5 )
+
+[node name="YouText" parent="Items" index="15" instance=ExtResource( 2 )]
+position = Vector2( 416, 219.67 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 4, 5 )
+tile_position = Vector2( 6, 5 )
+
+[node name="Guard" parent="Items" index="16" instance=ExtResource( 2 )]
+position = Vector2( 256, -7.57474 )
+concept_name = "guard"
+cell_position = Vector2( 4, 0 )
+tile_position = Vector2( 4, 0 )
+is_win = true
+
+[node name="GuardText" parent="Items" index="17" instance=ExtResource( 2 )]
+position = Vector2( 32, -143.922 )
+is_text = true
+concept_name = "guard"
+cell_position = Vector2( 2, -3 )
+tile_position = Vector2( 0, -3 )
+
+[node name="Guard2" parent="Items" index="18" instance=ExtResource( 2 )]
+position = Vector2( 288, -53.0238 )
+concept_name = "guard"
+cell_position = Vector2( 5, -1 )
+tile_position = Vector2( 4, -1 )
+is_win = true
+
+[node name="Guard3" parent="Items" index="19" instance=ExtResource( 2 )]
+position = Vector2( 288, 37.8743 )
+concept_name = "guard"
+cell_position = Vector2( 4, 1 )
+tile_position = Vector2( 4, 1 )
+is_win = true
+
+[node name="Tv" parent="Items" index="20" instance=ExtResource( 2 )]
+position = Vector2( 256, -98.4727 )
+concept_name = "tv"
+cell_position = Vector2( 5, -2 )
+tile_position = Vector2( 4, -2 )
+is_defeat = true
+is_stop = true
+
+[node name="Tv2" parent="Items" index="21" instance=ExtResource( 2 )]
+position = Vector2( 224, -53.0237 )
+concept_name = "tv"
+cell_position = Vector2( 4, -1 )
+tile_position = Vector2( 3, -1 )
+is_defeat = true
+is_stop = true
+
+[node name="Tv3" parent="Items" index="22" instance=ExtResource( 2 )]
+position = Vector2( 192, -7.57464 )
+concept_name = "tv"
+cell_position = Vector2( 3, 0 )
+tile_position = Vector2( 3, 0 )
+is_defeat = true
+is_stop = true
+
+[node name="Tv7" parent="Items" index="23" instance=ExtResource( 2 )]
+position = Vector2( 32, 128.772 )
+concept_name = "tv"
+cell_position = Vector2( -1, 3 )
+tile_position = Vector2( 0, 3 )
+is_defeat = true
+is_stop = true
+
+[node name="Tv6" parent="Items" index="24" instance=ExtResource( 2 )]
+position = Vector2( 96, 128.772 )
+concept_name = "tv"
+cell_position = Vector2( 0, 3 )
+tile_position = Vector2( 1, 3 )
+direction = "left"
+is_defeat = true
+is_stop = true
+
+[node name="Tv8" parent="Items" index="25" instance=ExtResource( 2 )]
+position = Vector2( 128, 174.221 )
+concept_name = "tv"
+cell_position = Vector2( 0, 4 )
+tile_position = Vector2( 2, 4 )
+direction = "left"
+is_defeat = true
+is_stop = true
+
+[node name="Tv4" parent="Items" index="26" instance=ExtResource( 2 )]
+position = Vector2( 224, 37.8744 )
+concept_name = "tv"
+cell_position = Vector2( 3, 1 )
+tile_position = Vector2( 3, 1 )
+is_defeat = true
+is_stop = true
+
+[node name="Tv5" parent="Items" index="27" instance=ExtResource( 2 )]
+position = Vector2( 256, 83.3234 )
+concept_name = "tv"
+cell_position = Vector2( 3, 2 )
+tile_position = Vector2( 4, 2 )
+is_defeat = true
+is_stop = true
+
+[node name="Effects" parent="." index="8"]
+z_index = 50
+
+[node name="Hud" parent="." index="9"]
+z_index = 100

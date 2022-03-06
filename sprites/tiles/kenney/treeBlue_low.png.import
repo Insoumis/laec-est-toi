@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/treeBlue_low.png-dd166d63ab2e7983fa1470463f9396e9.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/treeBlue_low.png"
+dest_files=[ "res://.import/treeBlue_low.png-dd166d63ab2e7983fa1470463f9396e9.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

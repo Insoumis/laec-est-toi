@@ -1,0 +1,171 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+
+[node name="Lotd20220318" instance=ExtResource( 1 )]
+title = "level.Lotd20220318.title"
+excerpt = "level.Lotd20220318.excerpt"
+link = "level.Lotd20220318.link"
+title_custom = "Un Vrai Faux Random"
+excerpt_custom = "Vous êtes face à trois dieux.
+L'un dit toujours la vérité, un autre ment toujours, et le dernier répond au hasard.
+Vous avez trois questions, chacune posée au dieu de votre choix, pour identifier les trois dieux.
+Mais ce n'est pas tout !
+Les dieux comprennent parfaitement votre langue, mais répondent dans la leur, par \"da\" ou \"ja\", et vous ne savez pas lequel est \"oui\" et lequel est \"non\"."
+solution_a = "666997797455353535651577411477661113666666666"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -262144, 7, 0, -131077, 7, 0, -196605, 7, 0, -131072, 6, 0, -5, 6, 0, -3, 21, 0, -2, 21, 0, -1, 6, 0, -65536, 6, 0, -65535, 21, 0, -65534, 21, 0, -65533, 6, 0, -65532, 20, 0, 65531, 6, 0, 65532, 6, 0, 65533, 21, 0, 65534, 21, 0, 65535, 6, 0, 0, 6, 0, 1, 6, 0, 2, 21, 0, 3, 6, 0, 4, 6, 0, 5, 20, 0, 131066, 6, 0, 131067, 6, 0, 131068, 6, 0, 131069, 21, 0, 131070, 21, 0, 131071, 6, 0, 65536, 6, 0, 65537, 21, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 196602, 20, 0, 196603, 6, 0, 196604, 6, 0, 196605, 21, 0, 196607, 21, 0, 131072, 21, 0, 131075, 6, 0, 131076, 6, 0, 131077, 20, 0, 262139, 20, 0, 262140, 20, 0, 262143, 21, 0, 327675, 20, 0, 327679, 22, 0, 262145, 22, 0, 262146, 22, 0, 393211, 22, 0, 393212, 22, 0, 393213, 22, 0, 393214, 22, 0, 393215, 22, 0, 327680, 22, 0, 327681, 22, 0, 327682, 22, 0, 327683, 22, 0, 327684, 22, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="IsText" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( 64, 174.221 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -1, 4 )
+tile_position = Vector2( 1, 4 )
+direction = "bottom_right"
+
+[node name="YouText" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( -160, -234.82 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 0, -5 )
+tile_position = Vector2( -3, -5 )
+
+[node name="TreeText" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( 0, 174.221 )
+is_text = true
+concept_name = "tree"
+cell_position = Vector2( -2, 4 )
+tile_position = Vector2( 0, 4 )
+
+[node name="Tree" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( -288, 219.68 )
+concept_name = "tree"
+cell_position = Vector2( -7, 5 )
+tile_position = Vector2( -5, 5 )
+direction = "left"
+is_you = true
+is_poet = true
+
+[node name="WinText" parent="Items" index="4" instance=ExtResource( 3 )]
+position = Vector2( 96, 37.8742 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 1, 1 )
+tile_position = Vector2( 1, 1 )
+direction = "bottom_right"
+
+[node name="IsText2" parent="Items" index="5" instance=ExtResource( 3 )]
+position = Vector2( 32, 37.8742 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 0, 1 )
+tile_position = Vector2( 0, 1 )
+direction = "bottom_right"
+
+[node name="LoveText" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( -32, 37.8742 )
+is_text = true
+concept_name = "love"
+cell_position = Vector2( -1, 1 )
+tile_position = Vector2( -1, 1 )
+direction = "bottom_right"
+
+[node name="Love" parent="Items" index="7" instance=ExtResource( 3 )]
+position = Vector2( 0, -189.371 )
+concept_name = "love"
+cell_position = Vector2( 2, -4 )
+tile_position = Vector2( 0, -4 )
+direction = "top_right"
+is_win = true
+
+[node name="Love2" parent="Items" index="8" instance=ExtResource( 3 )]
+position = Vector2( 224, -143.922 )
+concept_name = "love"
+cell_position = Vector2( 5, -3 )
+tile_position = Vector2( 3, -3 )
+direction = "left"
+is_win = true
+
+[node name="Love3" parent="Items" index="9" instance=ExtResource( 3 )]
+position = Vector2( -288, -143.922 )
+concept_name = "love"
+cell_position = Vector2( -3, -3 )
+tile_position = Vector2( -5, -3 )
+direction = "top_left"
+is_win = true
+
+[node name="TreeText2" parent="Items" index="10" instance=ExtResource( 3 )]
+position = Vector2( -288, -234.82 )
+is_text = true
+concept_name = "tree"
+cell_position = Vector2( -2, -5 )
+tile_position = Vector2( -5, -5 )
+
+[node name="IsText3" parent="Items" index="11" instance=ExtResource( 3 )]
+position = Vector2( -224, -234.82 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -1, -5 )
+tile_position = Vector2( -4, -5 )
+
+[node name="Monarc" parent="Items" index="12" instance=ExtResource( 3 )]
+position = Vector2( 0, -7.57484 )
+concept_name = "monarc"
+direction = "bottom_right"
+
+[node name="PoetText" parent="Items" index="13" instance=ExtResource( 3 )]
+position = Vector2( 128, 174.221 )
+is_text = true
+concept_name = "poet"
+cell_position = Vector2( 0, 4 )
+tile_position = Vector2( 2, 4 )
+direction = "bottom_right"
+
+[node name="Troll" parent="Items" index="14" instance=ExtResource( 3 )]
+position = Vector2( 224, 37.8742 )
+concept_name = "troll"
+cell_position = Vector2( 3, 1 )
+tile_position = Vector2( 3, 1 )
+direction = "left"
+
+[node name="Troll2" parent="Items" index="15" instance=ExtResource( 3 )]
+position = Vector2( 224, 37.8742 )
+concept_name = "troll"
+cell_position = Vector2( 3, 1 )
+tile_position = Vector2( 3, 1 )
+direction = "left"
+
+[node name="People" parent="Items" index="16" instance=ExtResource( 3 )]
+position = Vector2( -288, 37.8742 )
+concept_name = "people"
+cell_position = Vector2( -5, 1 )
+tile_position = Vector2( -5, 1 )
+
+[node name="Love4" parent="Items" index="17" instance=ExtResource( 3 )]
+position = Vector2( 288, 219.67 )
+concept_name = "love"
+cell_position = Vector2( 2, 5 )
+tile_position = Vector2( 4, 5 )
+direction = "left"
+is_win = true
+
+[node name="LonelyText" parent="Items" index="18" instance=ExtResource( 3 )]
+position = Vector2( -96, 37.8742 )
+is_text = true
+concept_name = "lonely"
+cell_position = Vector2( -2, 1 )
+tile_position = Vector2( -2, 1 )
+direction = "bottom_right"

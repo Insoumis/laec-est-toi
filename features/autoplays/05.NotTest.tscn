@@ -1,0 +1,153 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/laec-is-you/entity/Item.gd" type="Script" id=2]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+
+[node name="05NotTest" instance=ExtResource( 1 )]
+title = "level.05.NotTest.title"
+excerpt = "level.05.NotTest.excerpt"
+link = "level.05.NotTest.link"
+
+[node name="HexagonalTileMap" parent="." index="1"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -131075, 3, 0, -131074, 3, 0, -131073, 3, 0, -65539, 3, 0, -65537, 3, 0, -131072, 3, 0, -131071, 4, 0, -131070, 4, 0, -4, 3, 0, -3, 3, 0, -2, 3, 0, -1, 3, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, 65533, 3, 0, 65534, 3, 0, 65535, 3, 0, 0, 3, 0, 1, 4, 0, 2, 4, 0, 3, 3, 0, 131068, 12, 0, 131069, 12, 0, 131070, 3, 0, 131071, 3, 0, 65536, 3, 0, 65537, 3, 0, 65538, 3, 0, 196605, 12, 0, 196606, 12, 0, 196607, 12, 0, 131072, 19, 0, 131073, 19, 0, 131074, 19, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+tile_data = PoolIntArray( -1179652, 0, 0, -917491, 19, 0, -327691, 0, 0, 589830, 12, 0, 786431, 12, 0, 786434, 12, 0, 786445, 12, 0, 983045, 12, 0 )
+
+[node name="DecorTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+tile_data = PoolIntArray( 983049, 12, 0 )
+
+[node name="MiniDecorNearTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="AnarText" type="Node2D" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( 256, -189.371 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "anar"
+cell_position = Vector2( 6, -4 )
+tile_position = Vector2( 4, -4 )
+
+[node name="TrollText" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( 96, 37.8742 )
+is_text = true
+concept_name = "troll"
+cell_position = Vector2( 1, 1 )
+tile_position = Vector2( 1, 1 )
+
+[node name="Anar" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( 96, -53.0239 )
+concept_name = "anar"
+cell_position = Vector2( 2, -1 )
+tile_position = Vector2( 1, -1 )
+
+[node name="IsText" type="Node2D" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( 320, -189.371 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 7, -4 )
+tile_position = Vector2( 5, -4 )
+
+[node name="NotText" parent="Items" index="4" instance=ExtResource( 3 )]
+position = Vector2( 192, -189.371 )
+is_text = true
+concept_name = "not"
+cell_position = Vector2( 5, -4 )
+tile_position = Vector2( 3, -4 )
+
+[node name="NotText4" parent="Items" index="5" instance=ExtResource( 3 )]
+position = Vector2( 32, 37.8742 )
+is_text = true
+concept_name = "not"
+cell_position = Vector2( 0, 1 )
+tile_position = Vector2( 0, 1 )
+
+[node name="NotText5" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( 128, -189.371 )
+is_text = true
+concept_name = "not"
+cell_position = Vector2( 4, -4 )
+tile_position = Vector2( 2, -4 )
+
+[node name="NotText6" parent="Items" index="7" instance=ExtResource( 3 )]
+position = Vector2( 64, -189.371 )
+is_text = true
+concept_name = "not"
+cell_position = Vector2( 3, -4 )
+tile_position = Vector2( 1, -4 )
+
+[node name="OnText" parent="Items" index="8" instance=ExtResource( 3 )]
+position = Vector2( -32, 37.8742 )
+is_text = true
+concept_name = "on"
+cell_position = Vector2( -1, 1 )
+tile_position = Vector2( -1, 1 )
+
+[node name="NotText2" parent="Items" index="9" instance=ExtResource( 3 )]
+position = Vector2( -256, -98.4729 )
+is_text = true
+concept_name = "not"
+cell_position = Vector2( -3, -2 )
+tile_position = Vector2( -4, -2 )
+
+[node name="YouText" type="Node2D" parent="Items" index="10" instance=ExtResource( 3 )]
+position = Vector2( 384, -189.371 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 8, -4 )
+tile_position = Vector2( 6, -4 )
+
+[node name="France" parent="Items" index="11" instance=ExtResource( 3 )]
+position = Vector2( -224, 37.8842 )
+concept_name = "france"
+cell_position = Vector2( -4, 1 )
+tile_position = Vector2( -4, 1 )
+is_you = true
+
+[node name="IsText2" parent="Items" index="12" instance=ExtResource( 3 )]
+position = Vector2( 160, 37.8742 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 2, 1 )
+tile_position = Vector2( 2, 1 )
+
+[node name="WinText" parent="Items" index="13" instance=ExtResource( 3 )]
+position = Vector2( 224, 37.8742 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 3, 1 )
+tile_position = Vector2( 3, 1 )
+
+[node name="FranceText" parent="Items" index="14" instance=ExtResource( 3 )]
+position = Vector2( -384, -98.4729 )
+is_text = true
+concept_name = "france"
+cell_position = Vector2( -5, -2 )
+tile_position = Vector2( -6, -2 )
+
+[node name="FranceText2" parent="Items" index="15" instance=ExtResource( 3 )]
+position = Vector2( -96, 37.8742 )
+is_text = true
+concept_name = "france"
+cell_position = Vector2( -2, 1 )
+tile_position = Vector2( -2, 1 )
+
+[node name="IsText3" parent="Items" index="16" instance=ExtResource( 3 )]
+position = Vector2( -320, -98.4729 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, -2 )
+tile_position = Vector2( -5, -2 )
+
+[node name="WinText2" parent="Items" index="17" instance=ExtResource( 3 )]
+position = Vector2( -192, -98.4729 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( -2, -2 )
+tile_position = Vector2( -3, -2 )

@@ -1,0 +1,354 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/tutorial/TutorialScenario.gd" type="Script" id=2]
+[ext_resource path="res://guis/MouseMoveHint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=4]
+[ext_resource path="res://guis/NumKeyHint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://effects/ApparitionParticles.tscn" type="PackedScene" id=6]
+[ext_resource path="res://effects/WinParticles.tscn" type="PackedScene" id=7]
+[ext_resource path="res://guis/KeyboardArrowsHint.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Intro"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("../HexagonalTileMap:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.03, 0.05, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../GuiLayer/UndoGuiButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.79, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../GuiLayer/HomeGuiButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.79, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Items/Laec:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.79397e-07, 0.09, 0.12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Items/FranceText:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.18, 0.21 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../Items/LaecText:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.09, 0.12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../Items/France:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.18, 0.21 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Items/IsText:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.27, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Items/YouText:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.27, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Items/IsText2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.36, 0.39 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Items/WinText:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.36, 0.39 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Hud:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.51, 0.76 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/12/type = "method"
+tracks/12/path = NodePath("../Items/Laec/LaecApparitionParticles")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.26 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart"
+} ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("../Items/France/FranceWinParticles")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.36 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart"
+} ]
+}
+tracks/14/type = "method"
+tracks/14/path = NodePath("../Items/WinText/FranceWinTextParticles")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0.36 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart"
+} ]
+}
+tracks/15/type = "method"
+tracks/15/path = NodePath("../Items/YouApparitionParticles")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0.26 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart"
+} ]
+}
+
+[node name="Tutorial01Level" instance=ExtResource( 1 )]
+contribute_to_completion_score = true
+title = "level.Tutorial01Level.title"
+excerpt = "level.Tutorial01Level.excerpt"
+link = "level.Tutorial01Level.link"
+title_custom = "Tutoriel A"
+excerpt_custom = "De petits pas pour de petits pions
+LAEC est allé sur la victoire
+Nous avons trouvé un nouveau champion
+A vous maintenant d'écrire votre histoire"
+forward_level_path = "res://levels/TutorialMap.tscn"
+solution_a = "6666"
+
+[node name="TutorialScenario" type="Node" parent="." index="0"]
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TutorialScenario" index="0"]
+anims/Intro = SubResource( 1 )
+
+[node name="HexagonalTileMap" parent="." index="3"]
+modulate = Color( 1, 1, 1, 0 )
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -65537, 10, 0, -131072, 10, 0, -131071, 10, 0, -131070, 10, 0, -131069, 10, 0, -2, 9, 0, -1, 9, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 10, 0, 65534, 9, 0, 65535, 3, 0, 0, 9, 0, 1, 19, 0, 2, 19, 0, 3, 3, 0, 4, 10, 0, 131070, 9, 0, 131071, 9, 0, 65536, 19, 0, 65537, 4, 0, 65538, 4, 0, 65539, 10, 0, 196607, 10, 0, 131072, 10, 0, 131073, 10, 0, 131074, 10, 0, 131075, 10, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="LaecText" parent="Items" index="0" instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -320, -7.57484 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( -5, 0 )
+tile_position = Vector2( -5, 0 )
+
+[node name="IsText" parent="Items" index="1" instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -256, -7.57484 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, 0 )
+tile_position = Vector2( -4, 0 )
+
+[node name="YouApparitionParticles" parent="Items" index="2" instance=ExtResource( 6 )]
+position = Vector2( -192, -9.2376 )
+lifetime = 1.5
+
+[node name="YouText" parent="Items" index="3" instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -192, -7.57484 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -3, 0 )
+tile_position = Vector2( -3, 0 )
+
+[node name="FranceText" parent="Items" index="4" instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 320, -7.57484 )
+is_text = true
+concept_name = "france"
+cell_position = Vector2( 5, 0 )
+tile_position = Vector2( 5, 0 )
+
+[node name="IsText2" parent="Items" index="5" instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 384, -7.57484 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 6, 0 )
+tile_position = Vector2( 6, 0 )
+
+[node name="WinText" parent="Items" index="6" instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 448, -7.57484 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 7, 0 )
+tile_position = Vector2( 7, 0 )
+
+[node name="FranceWinTextParticles" parent="Items/WinText" index="11" instance=ExtResource( 7 )]
+amount = 32
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.7
+scale_amount = 2.0
+
+[node name="France" parent="Items" index="7" instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 192, -7.57474 )
+concept_name = "france"
+cell_position = Vector2( 3, 0 )
+tile_position = Vector2( 3, 0 )
+is_win = true
+
+[node name="FranceWinParticles" parent="Items/France" index="11" instance=ExtResource( 7 )]
+amount = 32
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.7
+scale_amount = 2.0
+
+[node name="Laec" parent="Items" index="8" instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -64, -7.56484 )
+concept_name = "laec"
+cell_position = Vector2( -1, 0 )
+tile_position = Vector2( -1, 0 )
+is_you = true
+
+[node name="LaecApparitionParticles" parent="Items/Laec" index="11" instance=ExtResource( 6 )]
+lifetime = 1.5
+
+[node name="Hud" parent="." index="10"]
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="NumKeyHint" parent="Hud" index="1" instance=ExtResource( 5 )]
+position = Vector2( -64, -9.2276 )
+scale = Vector2( 0.618, 0.618 )
+
+[node name="MoveHint" parent="Hud" index="2" instance=ExtResource( 3 )]
+position = Vector2( -409.699, -182.961 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="KeyboardArrowsHint" parent="Hud" index="3" instance=ExtResource( 8 )]
+position = Vector2( 64.8263, 215.934 )
+scale = Vector2( 0.618, 0.618 )
+frame = 2
+
+[node name="UndoGuiButton" parent="GuiLayer" index="0"]
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="HomeGuiButton" parent="GuiLayer" index="1"]
+modulate = Color( 1, 1, 1, 0 )

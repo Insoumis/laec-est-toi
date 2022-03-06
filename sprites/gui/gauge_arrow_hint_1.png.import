@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/gauge_arrow_hint_1.png-65162db85ca42de8b9c6e0d7ea7f17c7.res"
+group_file="res://sprites/gui/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/gui/gauge_arrow_hint_1.png"
+dest_files=[ "res://.import/gauge_arrow_hint_1.png-65162db85ca42de8b9c6e0d7ea7f17c7.res" ]
+
+[params]
+
+atlas_file="res://sprites/gui/atlas.png"
+import_mode=0
+crop_to_region=false

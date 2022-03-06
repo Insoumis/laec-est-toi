@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/tileLava_tile.png-d6493546bb1bdda3bf82fd95f536aba9.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/tileLava_tile.png"
+dest_files=[ "res://.import/tileLava_tile.png-d6493546bb1bdda3bf82fd95f536aba9.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

@@ -1,0 +1,239 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=3]
+[ext_resource path="res://sprites/items/deluxe_0.png" type="Texture" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+trigger_on_turn_if = "not 1 monarc & not 1 drugs"
+trigger_on_victory_if = ""
+image = ExtResource( 4 )
+snake_identifier = "gems_only"
+title = ""
+title_custom = "Ni drogues, ni maîtres."
+
+[node name="Lotd20220319" instance=ExtResource( 1 )]
+title = "level.Lotd20220319.title"
+excerpt = "level.Lotd20220319.excerpt"
+link = "level.Lotd20220319.link"
+excerpt_custom = "L'argent est un bon esclave mais fait un bien mauvais maître."
+achievement_a = SubResource( 1 )
+solution_a = "630999663666634074111447436669996344711"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -262147, 7, 0, -262146, 6, 0, -262145, 6, 0, -327680, 6, 0, -196611, 7, 0, -196609, 6, 0, -262143, 6, 0, -131076, 7, 0, -131075, 7, 0, -131074, 7, 0, -131073, 12, 0, -196608, 6, 0, -196607, 9, 0, -196606, 9, 0, -196605, 9, 0, -65540, 7, 0, -65539, 7, 0, -65537, 6, 0, -131072, 6, 0, -131071, 6, 0, -131070, 11, 0, -131069, 9, 0, -131068, 9, 0, -5, 7, 0, -4, 7, 0, -2, 11, 0, -1, 11, 0, -65536, 11, 0, -65535, 7, 0, -65534, 11, 0, -65533, 9, 0, -65532, 9, 0, 65531, 7, 0, 65532, 7, 0, 65534, 11, 0, 65535, 9, 0, 1, 7, 0, 2, 11, 0, 4, 9, 0, 5, 9, 0, 131067, 7, 0, 131068, 7, 0, 131069, 11, 0, 131070, 9, 0, 131071, 11, 0, 65536, 11, 0, 65537, 11, 0, 65539, 9, 0, 65540, 9, 0, 196604, 7, 0, 196605, 7, 0, 196606, 11, 0, 196607, 9, 0, 131072, 9, 0, 131073, 9, 0, 131075, 9, 0, 131076, 9, 0, 262140, 7, 0, 262141, 7, 0, 262142, 7, 0, 262143, 9, 0, 196608, 12, 0, 196609, 9, 0, 196610, 9, 0, 196611, 9, 0, 327679, 9, 0, 262145, 9, 0, 262147, 9, 0, 393215, 9, 0, 327680, 9, 0, 327681, 9, 0, 327682, 9, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="3"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+tile_data = PoolIntArray( -131068, 10, 0, 131068, 8, 0, 262144, 22, 0, 393226, 31, 0 )
+
+[node name="DecorTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="LobbyText" parent="Items" index="0" instance=ExtResource( 2 )]
+position = Vector2( 160, -234.82 )
+is_text = true
+concept_name = "lobby"
+cell_position = Vector2( 5, -5 )
+tile_position = Vector2( 2, -5 )
+
+[node name="Lobby" parent="Items" index="1" instance=ExtResource( 2 )]
+position = Vector2( -320, -7.56484 )
+concept_name = "lobby"
+cell_position = Vector2( -5, 0 )
+tile_position = Vector2( -5, 0 )
+is_you = true
+
+[node name="Drugs" parent="Items" index="2" instance=ExtResource( 2 )]
+position = Vector2( 64, -7.57474 )
+concept_name = "drugs"
+cell_position = Vector2( 1, 0 )
+tile_position = Vector2( 1, 0 )
+is_defeat = true
+
+[node name="DrugsText" parent="Items" index="3" instance=ExtResource( 2 )]
+position = Vector2( -224, -234.82 )
+is_text = true
+concept_name = "drugs"
+cell_position = Vector2( -1, -5 )
+tile_position = Vector2( -4, -5 )
+
+[node name="DrugsText2" parent="Items" index="4" instance=ExtResource( 2 )]
+position = Vector2( 352, 128.772 )
+is_text = true
+concept_name = "drugs"
+cell_position = Vector2( 4, 3 )
+tile_position = Vector2( 5, 3 )
+
+[node name="Monarc" parent="Items" index="5" instance=ExtResource( 2 )]
+position = Vector2( 224, -53.0238 )
+concept_name = "monarc"
+cell_position = Vector2( 4, -1 )
+tile_position = Vector2( 3, -1 )
+is_defeat = true
+
+[node name="MonarcText" parent="Items" index="6" instance=ExtResource( 2 )]
+position = Vector2( -96, -234.82 )
+is_text = true
+concept_name = "monarc"
+cell_position = Vector2( 1, -5 )
+tile_position = Vector2( -2, -5 )
+
+[node name="MonarcText2" parent="Items" index="7" instance=ExtResource( 2 )]
+position = Vector2( -192, 83.3232 )
+is_text = true
+concept_name = "monarc"
+cell_position = Vector2( -4, 2 )
+tile_position = Vector2( -3, 2 )
+
+[node name="MonarcText3" parent="Items" index="8" instance=ExtResource( 2 )]
+position = Vector2( -288, 219.67 )
+is_text = true
+concept_name = "monarc"
+cell_position = Vector2( -7, 5 )
+tile_position = Vector2( -5, 5 )
+
+[node name="DeluxeText" parent="Items" index="9" instance=ExtResource( 2 )]
+position = Vector2( -160, 219.67 )
+is_text = true
+concept_name = "deluxe"
+cell_position = Vector2( -5, 5 )
+tile_position = Vector2( -3, 5 )
+
+[node name="DeluxeText2" parent="Items" index="10" instance=ExtResource( 2 )]
+position = Vector2( 288, 219.67 )
+is_text = true
+concept_name = "deluxe"
+cell_position = Vector2( 2, 5 )
+tile_position = Vector2( 4, 5 )
+
+[node name="HasText" parent="Items" index="11" instance=ExtResource( 2 )]
+position = Vector2( -224, 219.67 )
+is_text = true
+concept_name = "has"
+cell_position = Vector2( -6, 5 )
+tile_position = Vector2( -4, 5 )
+
+[node name="OnText" parent="Items" index="12" instance=ExtResource( 2 )]
+position = Vector2( -160, -234.82 )
+is_text = true
+concept_name = "on"
+cell_position = Vector2( 0, -5 )
+tile_position = Vector2( -3, -5 )
+
+[node name="Drugs2" parent="Items" index="13" instance=ExtResource( 2 )]
+position = Vector2( -224, 37.8743 )
+concept_name = "drugs"
+cell_position = Vector2( -4, 1 )
+tile_position = Vector2( -4, 1 )
+is_defeat = true
+
+[node name="Drugs3" parent="Items" index="14" instance=ExtResource( 2 )]
+position = Vector2( 64, 174.221 )
+concept_name = "drugs"
+cell_position = Vector2( -1, 4 )
+tile_position = Vector2( 1, 4 )
+is_defeat = true
+
+[node name="IsText" parent="Items" index="15" instance=ExtResource( 2 )]
+position = Vector2( 224, -234.82 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 6, -5 )
+tile_position = Vector2( 3, -5 )
+
+[node name="IsText4" parent="Items" index="16" instance=ExtResource( 2 )]
+position = Vector2( 352, 219.67 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 3, 5 )
+tile_position = Vector2( 5, 5 )
+
+[node name="WinText" parent="Items" index="17" instance=ExtResource( 2 )]
+position = Vector2( 416, 219.67 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 4, 5 )
+tile_position = Vector2( 6, 5 )
+
+[node name="IsText2" parent="Items" index="18" instance=ExtResource( 2 )]
+position = Vector2( -32, -234.82 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 2, -5 )
+tile_position = Vector2( -1, -5 )
+
+[node name="IsText3" parent="Items" index="19" instance=ExtResource( 2 )]
+position = Vector2( -128, 83.3232 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, 2 )
+tile_position = Vector2( -2, 2 )
+
+[node name="IsText6" parent="Items" index="20" instance=ExtResource( 2 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -96, 128.772 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, 3 )
+tile_position = Vector2( -2, 3 )
+is_lit = false
+
+[node name="IsText5" parent="Items" index="21" instance=ExtResource( 2 )]
+position = Vector2( 416, 128.772 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 5, 3 )
+tile_position = Vector2( 6, 3 )
+
+[node name="PushText" parent="Items" index="22" instance=ExtResource( 2 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -32, 128.772 )
+is_text = true
+concept_name = "push"
+cell_position = Vector2( -2, 3 )
+tile_position = Vector2( -1, 3 )
+is_lit = false
+
+[node name="DefeatText" parent="Items" index="23" instance=ExtResource( 2 )]
+position = Vector2( -64, 83.3232 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( -2, 2 )
+tile_position = Vector2( -1, 2 )
+
+[node name="DefeatText2" parent="Items" index="24" instance=ExtResource( 2 )]
+position = Vector2( 480, 128.772 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( 6, 3 )
+tile_position = Vector2( 7, 3 )
+
+[node name="YouText" parent="Items" index="25" instance=ExtResource( 2 )]
+position = Vector2( 288, -234.82 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 7, -5 )
+tile_position = Vector2( 4, -5 )
+
+[node name="SinkText" parent="Items" index="26" instance=ExtResource( 2 )]
+position = Vector2( 32, -234.82 )
+is_text = true
+concept_name = "sink"
+cell_position = Vector2( 3, -5 )
+tile_position = Vector2( 0, -5 )
+
+[node name="WeakText" parent="Items" index="27" instance=ExtResource( 2 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -96, 37.8742 )
+is_text = true
+concept_name = "weak"
+cell_position = Vector2( -2, 1 )
+tile_position = Vector2( -2, 1 )
+is_lit = false

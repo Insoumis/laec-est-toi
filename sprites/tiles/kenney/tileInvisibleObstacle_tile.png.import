@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/tileInvisibleObstacle_tile.png-5a2f8d7050b1eb6f0a8c0b4eeb0a95b1.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/tileInvisibleObstacle_tile.png"
+dest_files=[ "res://.import/tileInvisibleObstacle_tile.png-5a2f8d7050b1eb6f0a8c0b4eeb0a95b1.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

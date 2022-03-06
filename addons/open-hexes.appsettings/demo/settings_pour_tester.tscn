@@ -1,0 +1,595 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/open-hexes.appsettings/presets/default/video/screen/fullscreen.gd" type="Script" id=1]
+
+[node name="Panel" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AppSettingsContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AppSettingsColumn0" type="GridContainer" parent="AppSettingsContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="VideoScreenFullscreenSetting" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="@@2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="@@3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting2" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_left = 342.0
+margin_right = 680.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting2"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullsgfdgfdcreen[/right]"
+text = "Fullsgfdgfdcreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting2/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting2"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting2"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting3" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_left = 684.0
+margin_right = 1022.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting3"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]03[/right]"
+text = "03"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting3/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting3"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting3"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting4" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_top = 46.0
+margin_right = 338.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting4"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen004[/right]"
+text = "Fullscreen004"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting4/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting4"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting4"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting5" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_left = 342.0
+margin_top = 46.0
+margin_right = 680.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting5"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting5/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting5"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting5"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting6" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_left = 684.0
+margin_top = 46.0
+margin_right = 1022.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting6"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting6/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting6"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting6"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting7" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_top = 92.0
+margin_right = 338.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting7"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting7/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting7"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting7"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting8" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_left = 342.0
+margin_top = 92.0
+margin_right = 680.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting8"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting8/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting8"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting8"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting9" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_left = 684.0
+margin_top = 92.0
+margin_right = 1022.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting9"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting9/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting9"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting9"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting10" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_top = 138.0
+margin_right = 338.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting10"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting10/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting10"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting10"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting11" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_left = 342.0
+margin_top = 138.0
+margin_right = 680.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting11"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting11/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting11"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting11"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}
+
+[node name="VideoScreenFullscreenSetting12" type="HBoxContainer" parent="AppSettingsContainer/AppSettingsColumn0"]
+margin_left = 684.0
+margin_top = 138.0
+margin_right = 1022.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+
+[node name="LabelField" type="RichTextLabel" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting12"]
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "[right]Fullscreen[/right]"
+text = "Fullscreen"
+fit_content_height = true
+
+[node name="2" type="VScrollBar" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting12/LabelField"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="3" type="Control" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting12"]
+margin_left = 213.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="InputField" type="CheckButton" parent="AppSettingsContainer/AppSettingsColumn0/VideoScreenFullscreenSetting12"]
+margin_left = 233.0
+margin_right = 338.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+setting = {
+"category": "screen",
+"default": false,
+"section": "video",
+"setting": "fullscreen",
+"title": "Fullscreen",
+"type": "boolean"
+}

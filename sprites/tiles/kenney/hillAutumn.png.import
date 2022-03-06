@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/hillAutumn.png-796733a1c02f4f47f8fd8cbe20b80543.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/hillAutumn.png"
+dest_files=[ "res://.import/hillAutumn.png-796733a1c02f4f47f8fd8cbe20b80543.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://guis/UndoGuiButton.gd" type="Script" id=1]
+[ext_resource path="res://sprites/gui/hint_undo_hourglass_big_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/gui/hint_undo_hourglass_big_1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/gui/hint_undo_hourglass_big_2.png" type="Texture" id=4]
+[ext_resource path="res://guis/GraffitiTheme.tres" type="Theme" id=5]
+[ext_resource path="res://guis/AttentionSeekerCPUParticles2D.tscn" type="PackedScene" id=6]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="UndoGuiButton" type="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UndoButton" type="Button" parent="."]
+margin_left = 148.749
+margin_top = -148.0
+margin_right = 296.749
+rect_scale = Vector2( -1, 1 )
+focus_mode = 0
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="UndoButton"]
+position = Vector2( 76.0195, 75.3127 )
+frames = SubResource( 2 )
+
+[node name="LimboCPUParticles2D" parent="." instance=ExtResource( 6 )]
+emitting = false
+
+[connection signal="button_down" from="UndoButton" to="." method="_on_Button_button_down"]
+[connection signal="button_up" from="UndoButton" to="." method="_on_Button_button_up"]

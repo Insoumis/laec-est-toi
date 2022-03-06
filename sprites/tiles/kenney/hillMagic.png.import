@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/hillMagic.png-4251ce5ecfe9669eb413d71651b2d9da.res"
+group_file="res://sprites/tiles/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/tiles/kenney/hillMagic.png"
+dest_files=[ "res://.import/hillMagic.png-4251ce5ecfe9669eb413d71651b2d9da.res" ]
+
+[params]
+
+atlas_file="res://sprites/tiles/atlas.png"
+import_mode=0
+crop_to_region=false

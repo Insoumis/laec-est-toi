@@ -1,0 +1,46 @@
+[gd_resource type="Theme" load_steps=10 format=2]
+
+[ext_resource path="res://fonts/Marius.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://sprites/gui/rectangle_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/gui/rectangle_2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/gui/rectangle_1.png" type="Texture" id=4]
+
+[sub_resource type="AnimatedTexture" id=3]
+frames = 3
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 4 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 3 )
+frame_2/delay_sec = 0.0
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = SubResource( 3 )
+region_rect = Rect2( -0.675835, 0.564167, 256.211, 63.262 )
+margin_left = 10.619
+margin_right = 8.81149
+margin_top = 8.58555
+margin_bottom = 7.45587
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.596078 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.596078 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="DynamicFont" id=1]
+size = 42
+font_data = ExtResource( 1 )
+
+[resource]
+default_font = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Panel/styles/panel = SubResource( 5 )
+PanelContainer/styles/panel = SubResource( 4 )

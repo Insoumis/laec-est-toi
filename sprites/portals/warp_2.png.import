@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/warp_2.png-43310a6a0c3906671efdc18589fd25eb.res"
+group_file="res://sprites/portals/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/portals/warp_2.png"
+dest_files=[ "res://.import/warp_2.png-43310a6a0c3906671efdc18589fd25eb.res" ]
+
+[params]
+
+atlas_file="res://sprites/portals/atlas.png"
+import_mode=0
+crop_to_region=false

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://sprites/items/guard_2.png" type="Texture" id=1]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+trigger_on_turn_if = ""
+trigger_on_victory_if = "not 1 guard"
+image = ExtResource( 1 )
+snake_identifier = "guard_is_laec"
+title = "level.LaGardeAvecNous.guard_is_laec.title"
+title_custom = ""

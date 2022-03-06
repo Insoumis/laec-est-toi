@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=3]
+
+[node name="Tutorial02Level" instance=ExtResource( 3 )]
+contribute_to_completion_score = true
+title = "level.Tutorial02Level.title"
+excerpt = "level.Tutorial02Level.excerpt"
+link = "level.Tutorial02Level.link"
+title_custom = "Tutoriel B"
+excerpt_custom = "Des mots à la pelle
+Et des mots en foire
+Que la France appelle
+À écrire l'histoire."
+solution_a = "6663966"
+
+[node name="HexagonalTileMap" parent="." index="1"]
+cell_custom_transform = Transform2D( 64, 0, 0, 55.4256, -32, -27.7128 )
+tile_data = PoolIntArray( -131076, 10, 0, -131075, 10, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 2, 0, -196605, 2, 0, -65540, 10, 0, -65539, 10, 0, -65538, 10, 0, -65537, 10, 0, -131072, 10, 0, -131071, 10, 0, -131070, 2, 0, -131069, 10, 0, -131068, 2, 0, -5, 10, 0, -4, 8, 0, -3, 8, 0, -2, 10, 0, -1, 10, 0, -65536, 10, 0, -65535, 10, 0, -65534, 2, 0, -65533, 21, 0, -65532, 2, 0, 65531, 10, 0, 65532, 8, 0, 65533, 22, 0, 65534, 8, 0, 65535, 10, 0, 0, 10, 0, 1, 10, 0, 2, 10, 0, 3, 10, 0, 4, 19, 0, 5, 2, 0, 131067, 10, 0, 131068, 8, 0, 131069, 8, 0, 131070, 10, 0, 131071, 10, 0, 65536, 10, 0, 65537, 10, 0, 65538, 2, 0, 65539, 21, 0, 65540, 2, 0, 196604, 10, 0, 196605, 10, 0, 196606, 10, 0, 196607, 10, 0, 131072, 10, 0, 131073, 10, 0, 131074, 2, 0, 131075, 10, 0, 131076, 2, 0, 262140, 10, 0, 262141, 10, 0, 262142, 10, 0, 262143, 10, 0, 196608, 10, 0, 196609, 10, 0, 196610, 2, 0, 196611, 2, 0 )
+
+[node name="LaecText" parent="Items" index="0" instance=ExtResource( 1 )]
+position = Vector2( -64, -120.089 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( 0, -2 )
+tile_position = Vector2( -1, -2 )
+
+[node name="Laec" parent="Items" index="1" instance=ExtResource( 1 )]
+position = Vector2( -192, -9.2276 )
+concept_name = "laec"
+cell_position = Vector2( -3, 0 )
+tile_position = Vector2( -3, 0 )
+is_you = true
+
+[node name="IsText" parent="Items" index="2" instance=ExtResource( 1 )]
+position = Vector2( 0, -120.089 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 1, -2 )
+tile_position = Vector2( 0, -2 )
+
+[node name="YouText" parent="Items" index="3" instance=ExtResource( 1 )]
+position = Vector2( 64, -120.089 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 2, -2 )
+tile_position = Vector2( 1, -2 )
+
+[node name="FranceText" parent="Items" index="4" instance=ExtResource( 1 )]
+position = Vector2( -64, 101.614 )
+is_text = true
+concept_name = "france"
+cell_position = Vector2( -2, 2 )
+tile_position = Vector2( -1, 2 )
+
+[node name="France" parent="Items" index="5" instance=ExtResource( 1 )]
+position = Vector2( 192, -9.2375 )
+concept_name = "france"
+cell_position = Vector2( 3, 0 )
+tile_position = Vector2( 3, 0 )
+is_defeat = true
+
+[node name="IsText2" parent="Items" index="6" instance=ExtResource( 1 )]
+position = Vector2( 0, 101.614 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -1, 2 )
+tile_position = Vector2( 0, 2 )
+
+[node name="DefeatText" parent="Items" index="7" instance=ExtResource( 1 )]
+position = Vector2( 64, 101.614 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( 0, 2 )
+tile_position = Vector2( 1, 2 )
+
+[node name="WinText" parent="Items" index="8" instance=ExtResource( 1 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 32, 46.188 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 0, 1 )
+tile_position = Vector2( 0, 1 )
+is_lit = false
