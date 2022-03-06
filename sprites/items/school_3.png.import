@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/anar_1.png-f2b9d5bddc1a170495f8cf7a62209e7d.stex"
+path="res://.import/school_3.png-feb80495649beed15499008b5d582325.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/anar_1.png"
-dest_files=[ "res://.import/anar_1.png-f2b9d5bddc1a170495f8cf7a62209e7d.stex" ]
+source_file="res://sprites/items/school_3.png"
+dest_files=[ "res://.import/school_3.png-feb80495649beed15499008b5d582325.stex" ]
 
 [params]
 

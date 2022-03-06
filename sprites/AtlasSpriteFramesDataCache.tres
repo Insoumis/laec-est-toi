@@ -223,159 +223,165 @@ item_sprite_frames_dictionary = {
 }, {
 "region": Rect2( 1792, 128, 64, 64 )
 } ],
-"greed_0": [ {
+"guard_0": [ {
 "region": Rect2( 1856, 128, 64, 64 )
 }, {
 "region": Rect2( 1920, 128, 64, 64 )
 }, {
 "region": Rect2( 1984, 128, 64, 64 )
 } ],
-"guard_0": [ {
+"jlm_right_0": [ {
 "region": Rect2( 0, 192, 64, 64 )
 }, {
 "region": Rect2( 64, 192, 64, 64 )
 }, {
 "region": Rect2( 128, 192, 64, 64 )
 } ],
-"jlm_right_0": [ {
+"jlm_right_1": [ {
 "region": Rect2( 192, 192, 64, 64 )
 }, {
 "region": Rect2( 256, 192, 64, 64 )
 }, {
 "region": Rect2( 320, 192, 64, 64 )
 } ],
-"jlm_right_1": [ {
+"jlm_right_2": [ {
 "region": Rect2( 384, 192, 64, 64 )
 }, {
 "region": Rect2( 448, 192, 64, 64 )
 }, {
 "region": Rect2( 512, 192, 64, 64 )
 } ],
-"jlm_right_2": [ {
+"justice_0": [ {
 "region": Rect2( 576, 192, 64, 64 )
 }, {
 "region": Rect2( 640, 192, 64, 64 )
 }, {
 "region": Rect2( 704, 192, 64, 64 )
 } ],
-"justice_0": [ {
+"laec_0": [ {
 "region": Rect2( 768, 192, 64, 64 )
 }, {
 "region": Rect2( 832, 192, 64, 64 )
 }, {
 "region": Rect2( 896, 192, 64, 64 )
 } ],
-"laec_0": [ {
+"law_0": [ {
 "region": Rect2( 960, 192, 64, 64 )
 }, {
 "region": Rect2( 1024, 192, 64, 64 )
 }, {
 "region": Rect2( 1088, 192, 64, 64 )
 } ],
-"law_0": [ {
+"lobby_right_0": [ {
 "region": Rect2( 1152, 192, 64, 64 )
 }, {
 "region": Rect2( 1216, 192, 64, 64 )
 }, {
 "region": Rect2( 1280, 192, 64, 64 )
 } ],
-"lobby_right_0": [ {
+"love_0": [ {
 "region": Rect2( 1344, 192, 64, 64 )
 }, {
 "region": Rect2( 1408, 192, 64, 64 )
 }, {
 "region": Rect2( 1472, 192, 64, 64 )
 } ],
-"love_0": [ {
+"media_left_0": [ {
 "region": Rect2( 1536, 192, 64, 64 )
 }, {
 "region": Rect2( 1600, 192, 64, 64 )
 }, {
 "region": Rect2( 1664, 192, 64, 64 )
 } ],
-"media_left_0": [ {
+"monarc_0": [ {
 "region": Rect2( 1728, 192, 64, 64 )
 }, {
 "region": Rect2( 1792, 192, 64, 64 )
 }, {
 "region": Rect2( 1856, 192, 64, 64 )
 } ],
-"monarc_0": [ {
+"money_0": [ {
 "region": Rect2( 1920, 192, 64, 64 )
 }, {
 "region": Rect2( 1984, 192, 64, 64 )
 }, {
 "region": Rect2( 0, 256, 64, 64 )
 } ],
-"money_0": [ {
+"people_0": [ {
 "region": Rect2( 64, 256, 64, 64 )
 }, {
 "region": Rect2( 128, 256, 64, 64 )
 }, {
 "region": Rect2( 192, 256, 64, 64 )
 } ],
-"people_0": [ {
+"school_0": [ {
 "region": Rect2( 256, 256, 64, 64 )
 }, {
 "region": Rect2( 320, 256, 64, 64 )
 }, {
 "region": Rect2( 384, 256, 64, 64 )
-} ],
-"tree_0": [ {
+}, {
 "region": Rect2( 448, 256, 64, 64 )
 }, {
 "region": Rect2( 512, 256, 64, 64 )
-}, {
-"region": Rect2( 576, 256, 64, 64 )
 } ],
-"troll_left_0": [ {
+"tree_0": [ {
+"region": Rect2( 576, 256, 64, 64 )
+}, {
 "region": Rect2( 640, 256, 64, 64 )
 }, {
 "region": Rect2( 704, 256, 64, 64 )
-}, {
-"region": Rect2( 768, 256, 64, 64 )
 } ],
-"troll_right_0": [ {
+"troll_left_0": [ {
+"region": Rect2( 768, 256, 64, 64 )
+}, {
 "region": Rect2( 832, 256, 64, 64 )
 }, {
 "region": Rect2( 896, 256, 64, 64 )
-}, {
-"region": Rect2( 960, 256, 64, 64 )
 } ],
-"tv_left_0": [ {
+"troll_right_0": [ {
+"region": Rect2( 960, 256, 64, 64 )
+}, {
 "region": Rect2( 1024, 256, 64, 64 )
 }, {
 "region": Rect2( 1088, 256, 64, 64 )
-}, {
-"region": Rect2( 1152, 256, 64, 64 )
 } ],
-"undefined_0": [ {
+"tv_left_0": [ {
+"region": Rect2( 1152, 256, 64, 64 )
+}, {
 "region": Rect2( 1216, 256, 64, 64 )
 }, {
 "region": Rect2( 1280, 256, 64, 64 )
-}, {
-"region": Rect2( 1344, 256, 64, 64 )
 } ],
-"wall_0": [ {
+"undefined_0": [ {
+"region": Rect2( 1344, 256, 64, 64 )
+}, {
+"region": Rect2( 1408, 256, 64, 64 )
+}, {
 "region": Rect2( 1472, 256, 64, 64 )
 }, {
 "region": Rect2( 1536, 256, 64, 64 )
-}, {
-"region": Rect2( 1600, 256, 64, 64 )
 } ],
-"waste_0": [ {
+"wall_0": [ {
+"region": Rect2( 1600, 256, 64, 64 )
+}, {
 "region": Rect2( 1664, 256, 64, 64 )
 }, {
 "region": Rect2( 1728, 256, 64, 64 )
-}, {
-"region": Rect2( 1792, 256, 64, 64 )
 } ],
-"wave_0": [ {
+"waste_0": [ {
+"region": Rect2( 1792, 256, 64, 64 )
+}, {
 "region": Rect2( 1856, 256, 64, 64 )
 }, {
 "region": Rect2( 1920, 256, 64, 64 )
-}, {
+} ],
+"wave_0": [ {
 "region": Rect2( 1984, 256, 64, 64 )
+}, {
+"region": Rect2( 0, 320, 64, 64 )
+}, {
+"region": Rect2( 64, 320, 64, 64 )
 } ]
 }
 text_sprite_frames_dictionary = {
@@ -625,6 +631,13 @@ text_sprite_frames_dictionary = {
 }, {
 "region": Rect2( 1344, 64, 64, 64 )
 } ],
+"text_school_0": [ {
+"region": Rect2( 256, 256, 64, 64 )
+}, {
+"region": Rect2( 320, 256, 64, 64 )
+}, {
+"region": Rect2( 384, 256, 64, 64 )
+} ],
 "text_shut_0": [ {
 "region": Rect2( 1408, 64, 64, 64 )
 }, {
@@ -647,32 +660,32 @@ text_sprite_frames_dictionary = {
 "region": Rect2( 1920, 64, 64, 64 )
 } ],
 "text_tree_0": [ {
-"region": Rect2( 256, 256, 64, 64 )
-}, {
-"region": Rect2( 320, 256, 64, 64 )
-}, {
-"region": Rect2( 384, 256, 64, 64 )
-} ],
-"text_troll_0": [ {
 "region": Rect2( 448, 256, 64, 64 )
 }, {
 "region": Rect2( 512, 256, 64, 64 )
 }, {
 "region": Rect2( 576, 256, 64, 64 )
 } ],
-"text_tv_0": [ {
+"text_troll_0": [ {
 "region": Rect2( 640, 256, 64, 64 )
 }, {
 "region": Rect2( 704, 256, 64, 64 )
 }, {
 "region": Rect2( 768, 256, 64, 64 )
 } ],
-"text_undefined_0": [ {
+"text_tv_0": [ {
 "region": Rect2( 832, 256, 64, 64 )
 }, {
 "region": Rect2( 896, 256, 64, 64 )
 }, {
 "region": Rect2( 960, 256, 64, 64 )
+} ],
+"text_undefined_0": [ {
+"region": Rect2( 1024, 256, 64, 64 )
+}, {
+"region": Rect2( 1088, 256, 64, 64 )
+}, {
+"region": Rect2( 1152, 256, 64, 64 )
 } ],
 "text_void_0": [ {
 "region": Rect2( 1984, 64, 64, 64 )
@@ -682,25 +695,25 @@ text_sprite_frames_dictionary = {
 "region": Rect2( 64, 128, 64, 64 )
 } ],
 "text_wall_0": [ {
-"region": Rect2( 1024, 256, 64, 64 )
-}, {
-"region": Rect2( 1088, 256, 64, 64 )
-}, {
-"region": Rect2( 1152, 256, 64, 64 )
-} ],
-"text_waste_0": [ {
 "region": Rect2( 1216, 256, 64, 64 )
 }, {
 "region": Rect2( 1280, 256, 64, 64 )
 }, {
 "region": Rect2( 1344, 256, 64, 64 )
 } ],
-"text_wave_0": [ {
+"text_waste_0": [ {
 "region": Rect2( 1408, 256, 64, 64 )
 }, {
 "region": Rect2( 1472, 256, 64, 64 )
 }, {
 "region": Rect2( 1536, 256, 64, 64 )
+} ],
+"text_wave_0": [ {
+"region": Rect2( 1600, 256, 64, 64 )
+}, {
+"region": Rect2( 1664, 256, 64, 64 )
+}, {
+"region": Rect2( 1728, 256, 64, 64 )
 } ],
 "text_weak_0": [ {
 "region": Rect2( 128, 128, 64, 64 )
