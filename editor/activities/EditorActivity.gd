@@ -617,15 +617,17 @@ func build_concepts_brushes_gui():
 	
 	var i := 0
 	for available_item in collect_available_items():
-		
-		#var brush_name: String = available_item.concept
+		# We cannot use AtlasTextures in AnimatedTextures, so no atlas here for now
+#		var item_sprite_frames := AtlasSpriteFramesFactory.get_for_concept(
 		var item_sprite_frames := SpriteFramesFactory.get_for_concept(
 			available_item.concept, available_item.is_text
 		)
 		var animated_icon := AnimatedTexture.new()
 		animated_icon.set_frames(shiver_length)
 		for shiver in shiver_length:
-			var icon := item_sprite_frames.get_frame('right_0', shiver)
+#			var animation_name = "%s_0" % available_item.get_animation_prefix_for(Directions.RIGHT)
+			var animation_name = "%s_0" % Directions.as_string(Directions.RIGHT)
+			var icon := item_sprite_frames.get_frame(animation_name, shiver)
 			assert(icon)
 			animated_icon.set_frame_texture(shiver, icon)
 		self.concepts_list.add_icon_item(animated_icon)

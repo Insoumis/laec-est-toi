@@ -617,6 +617,7 @@ func animate_destruction() -> void:
 
 
 func get_animation_name(flip_h = false) -> String:
+	# probably deprecated
 	var dir: String = self.direction
 	if flip_h:
 		if dir.find("left") >= 0:
@@ -634,7 +635,7 @@ func get_sprite_frame_animation_name() -> String:
 		concept_full = "text_"
 	concept_full += get_concept_name()
 	var pool_item = ItemsPool.get_item_by_concept_full(concept_full)
-	var animation_name = pool_item.available_animation_mapping[direction]
+	var animation_name = pool_item.get_animation_prefix_for(direction)
 	return animation_name
 
 
@@ -788,18 +789,19 @@ func is_looking_right() -> bool:
 
 
 func reverse_direction():
-	if self.direction == Directions.RIGHT:
-		self.direction = Directions.LEFT
-	elif self.direction == Directions.UP_RIGHT:
-		self.direction = Directions.DOWN_LEFT
-	elif self.direction == Directions.UP_LEFT:
-		self.direction = Directions.DOWN_RIGHT
-	elif self.direction == Directions.LEFT:
-		self.direction = Directions.RIGHT
-	elif self.direction == Directions.DOWN_LEFT:
-		self.direction = Directions.UP_RIGHT
-	elif self.direction == Directions.DOWN_RIGHT:
-		self.direction = Directions.UP_LEFT
+	self.direction = Directions.inverse(self.direction)
+#	if self.direction == Directions.RIGHT:
+#		self.direction = Directions.LEFT
+#	elif self.direction == Directions.UP_RIGHT:
+#		self.direction = Directions.DOWN_LEFT
+#	elif self.direction == Directions.UP_LEFT:
+#		self.direction = Directions.DOWN_RIGHT
+#	elif self.direction == Directions.LEFT:
+#		self.direction = Directions.RIGHT
+#	elif self.direction == Directions.DOWN_LEFT:
+#		self.direction = Directions.UP_RIGHT
+#	elif self.direction == Directions.DOWN_RIGHT:
+#		self.direction = Directions.UP_LEFT
 
 
 const SALIENCE_NONE := 0.0

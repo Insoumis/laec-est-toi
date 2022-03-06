@@ -42,14 +42,87 @@ class PoolItem:
 	var is_text := true
 	var concept := 'undefined'
 	var concept_full : String setget ,get_concept_full
-	var directions := Array()  # of Directions.XXXX
+	var directions := Array()  # of Directions.XXXX available as files (maybe not useful)
 	var animations := Dictionary()  # Directions.XXXX => Dictionary(animation_state => Array of filepaths)
-	var available_animation_mapping := Dictionary()  # Directions.XXXX => anmation_name
 	var filepaths := Array()
 	var filepaths_relative := Array()
 	
+	# memoization cache
+	var available_animation_mapping := Dictionary()  # Directions.XXXX => anmation_name
+	
 	func get_concept_full():
 		return ('text_' if is_text else '') + concept
+
+	func get_animation_prefix_for(direction) -> String:
+		""" Returns full concept and direction: 'laec_top_left' for example """
+		if not self.available_animation_mapping.has(direction):
+			self.available_animation_mapping[direction] = find_closest_animation_prefix_for(direction)
+		return self.available_animation_mapping[direction]
+#		return get_closest_animation_prefix_for(direction)
+#		breakpoint
+#		return 'undefined'
+	
+	func find_closest_animation_prefix_for(direction) -> String:
+		if direction == Directions.TOP_LEFT:
+			if self.animations.has(Directions.TOP_LEFT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.TOP_LEFT)]
+			elif self.animations.has(Directions.TOP_RIGHT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.TOP_RIGHT)]
+			elif self.animations.has(Directions.LEFT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.LEFT)]
+			elif self.animations.has(Directions.RIGHT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.RIGHT)]
+			else:
+				return self.concept_full
+		elif direction == Directions.TOP_RIGHT:
+			if self.animations.has(Directions.TOP_RIGHT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.TOP_RIGHT)]
+			elif self.animations.has(Directions.TOP_LEFT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.TOP_LEFT)]
+			elif self.animations.has(Directions.RIGHT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.RIGHT)]
+			elif self.animations.has(Directions.LEFT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.LEFT)]
+			else:
+				return self.concept_full
+		elif direction == Directions.LEFT:
+			if self.animations.has(Directions.LEFT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.LEFT)]
+			elif self.animations.has(Directions.RIGHT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.RIGHT)]
+			else:
+				return self.concept_full
+		elif direction == Directions.RIGHT:
+			if self.animations.has(Directions.RIGHT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.RIGHT)]
+			elif self.animations.has(Directions.LEFT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.LEFT)]
+			else:
+				return self.concept_full
+		elif direction == Directions.BOTTOM_LEFT:
+			if self.animations.has(Directions.BOTTOM_LEFT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.BOTTOM_LEFT)]
+			elif self.animations.has(Directions.BOTTOM_RIGHT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.BOTTOM_RIGHT)]
+			elif self.animations.has(Directions.LEFT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.LEFT)]
+			elif self.animations.has(Directions.RIGHT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.RIGHT)]
+			else:
+				return self.concept_full
+		elif direction == Directions.BOTTOM_RIGHT:
+			if self.animations.has(Directions.BOTTOM_RIGHT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.BOTTOM_RIGHT)]
+			elif self.animations.has(Directions.BOTTOM_LEFT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.BOTTOM_LEFT)]
+			elif self.animations.has(Directions.RIGHT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.RIGHT)]
+			elif self.animations.has(Directions.LEFT):
+				return "%s_%s" % [self.concept_full, Directions.as_string(Directions.LEFT)]
+			else:
+				return self.concept_full
+		else:
+			return self.concept_full
 
 
 # Inefficient, we'll optimize when we'll have banchmark metrics
@@ -184,7 +257,7 @@ func recollect_items():
 	self.items_sorted_for_editor = self.items.duplicate(false)
 	self.items_sorted_for_editor = list_items_sorted(self.items_sorted_for_editor)
 	
-	write_animation_mapping()
+	#write_animation_mapping()
 	reindex_items()
 #	for item in items:
 #		print(item.concept_full)
@@ -206,15 +279,15 @@ func get_item_by_concept_full(concept_full: String) -> PoolItem:
 	return self.items_by_concept['undefined']
 
 
-func write_animation_mapping():
-	for item in self.items:
-		item.available_animation_mapping = Dictionary()
-		item.available_animation_mapping["top_left"] = get_closest_animation_for(Directions.TOP_LEFT, item)
-		item.available_animation_mapping["top_right"] = get_closest_animation_for(Directions.TOP_RIGHT, item)
-		item.available_animation_mapping["left"] = get_closest_animation_for(Directions.LEFT, item)
-		item.available_animation_mapping["right"] = get_closest_animation_for(Directions.RIGHT, item)
-		item.available_animation_mapping["bottom_left"] = get_closest_animation_for(Directions.BOTTOM_LEFT, item)
-		item.available_animation_mapping["bottom_right"] = get_closest_animation_for(Directions.BOTTOM_RIGHT, item)
+#func write_animation_mapping():
+#	for item in self.items:
+#		item.available_animation_mapping = Dictionary()
+#		item.available_animation_mapping["top_left"] = get_closest_animation_for(Directions.TOP_LEFT, item)
+#		item.available_animation_mapping["top_right"] = get_closest_animation_for(Directions.TOP_RIGHT, item)
+#		item.available_animation_mapping["left"] = get_closest_animation_for(Directions.LEFT, item)
+#		item.available_animation_mapping["right"] = get_closest_animation_for(Directions.RIGHT, item)
+#		item.available_animation_mapping["bottom_left"] = get_closest_animation_for(Directions.BOTTOM_LEFT, item)
+#		item.available_animation_mapping["bottom_right"] = get_closest_animation_for(Directions.BOTTOM_RIGHT, item)
 	# ?
 #	return items.duplicate()
 
@@ -240,7 +313,7 @@ static func list_items() -> Array:  # PoolItem[]
 	var where := "res://sprites/items"
 	
 	# When specified, should prefer l10ned files (todo)
-	var preferred_lang := ''
+	var _preferred_lang := ''
 	
 	var regex := RegEx.new()
 	var regex_err = regex.compile(where + "/" + ITEM_FILENAME_REGEX + "$")
@@ -273,17 +346,17 @@ static func list_items() -> Array:  # PoolItem[]
 			
 			var animation_string: String = matches.strings[matches.names['animation']]
 			var animation := 0
-			var _has_animation := false
+			var _has_animation := false  # perhaps useful later
 			if animation_string:
 				animation = int(animation_string.substr(1))
 				_has_animation = true
 			
 			var shiver_string: String = matches.strings[matches.names['shiver']]
-			var _shiver := 0
-			var has_shiver := false
+			var _shiver := 0  # perhaps useful later
+			var _has_shiver := false  # perhaps useful later
 			if shiver_string:
 				_shiver = int(shiver_string)
-				has_shiver = true
+				_has_shiver = true
 			
 			var _has_lang := false
 			var _lang := 'fr'
@@ -328,65 +401,65 @@ static func list_items() -> Array:  # PoolItem[]
 	return listed_items
 
 
-static func get_closest_animation_for(direction, item):
-	if direction == Directions.TOP_LEFT:
-		if item.animations.has(Directions.TOP_LEFT):
-			return item.concept_full + "_top_left"
-		elif item.animations.has(Directions.TOP_RIGHT):
-			return item.concept_full + "_top_right"
-		elif item.animations.has(Directions.LEFT):
-			return item.concept_full + "_left"
-		elif item.animations.has(Directions.RIGHT):
-			return item.concept_full + "_right"
-		else:
-			return item.concept_full
-	elif direction == Directions.TOP_RIGHT:
-		if item.animations.has(Directions.TOP_RIGHT):
-			return item.concept_full + "_top_right"
-		elif item.animations.has(Directions.TOP_LEFT):
-			return item.concept_full + "_top_left"
-		elif item.animations.has(Directions.RIGHT):
-			return item.concept_full + "_right"
-		elif item.animations.has(Directions.LEFT):
-			return item.concept_full + "_left"
-		else:
-			return item.concept_full
-	elif direction == Directions.LEFT:
-		if item.animations.has(Directions.LEFT):
-			return item.concept_full + "_left"
-		elif item.animations.has(Directions.RIGHT):
-			return item.concept_full + "_right"
-		else:
-			return item.concept_full
-	elif direction == Directions.RIGHT:
-		if item.animations.has(Directions.RIGHT):
-			return item.concept_full + "_right"
-		elif item.animations.has(Directions.LEFT):
-			return item.concept_full + "_left"
-		else:
-			return item.concept_full
-	elif direction == Directions.BOTTOM_LEFT:
-		if item.animations.has(Directions.BOTTOM_LEFT):
-			return item.concept_full + "_bottom_left"
-		elif item.animations.has(Directions.BOTTOM_RIGHT):
-			return item.concept_full + "_bottom_right"
-		elif item.animations.has(Directions.LEFT):
-			return item.concept_full + "_left"
-		elif item.animations.has(Directions.RIGHT):
-			return item.concept_full + "_right"
-		else:
-			return item.concept_full
-	elif direction == Directions.BOTTOM_RIGHT:
-		if item.animations.has(Directions.BOTTOM_RIGHT):
-			return item.concept_full + "_bottom_right"
-		elif item.animations.has(Directions.BOTTOM_LEFT):
-			return item.concept_full + "_bottom_left"
-		elif item.animations.has(Directions.RIGHT):
-			return item.concept_full + "_right"
-		elif item.animations.has(Directions.LEFT):
-			return item.concept_full + "_left"
-		else:
-			return item.concept_full
+#static func get_closest_animation_for(direction, item):
+#	if direction == Directions.TOP_LEFT:
+#		if item.animations.has(Directions.TOP_LEFT):
+#			return item.concept_full + "_top_left"
+#		elif item.animations.has(Directions.TOP_RIGHT):
+#			return item.concept_full + "_top_right"
+#		elif item.animations.has(Directions.LEFT):
+#			return item.concept_full + "_left"
+#		elif item.animations.has(Directions.RIGHT):
+#			return item.concept_full + "_right"
+#		else:
+#			return item.concept_full
+#	elif direction == Directions.TOP_RIGHT:
+#		if item.animations.has(Directions.TOP_RIGHT):
+#			return item.concept_full + "_top_right"
+#		elif item.animations.has(Directions.TOP_LEFT):
+#			return item.concept_full + "_top_left"
+#		elif item.animations.has(Directions.RIGHT):
+#			return item.concept_full + "_right"
+#		elif item.animations.has(Directions.LEFT):
+#			return item.concept_full + "_left"
+#		else:
+#			return item.concept_full
+#	elif direction == Directions.LEFT:
+#		if item.animations.has(Directions.LEFT):
+#			return item.concept_full + "_left"
+#		elif item.animations.has(Directions.RIGHT):
+#			return item.concept_full + "_right"
+#		else:
+#			return item.concept_full
+#	elif direction == Directions.RIGHT:
+#		if item.animations.has(Directions.RIGHT):
+#			return item.concept_full + "_right"
+#		elif item.animations.has(Directions.LEFT):
+#			return item.concept_full + "_left"
+#		else:
+#			return item.concept_full
+#	elif direction == Directions.BOTTOM_LEFT:
+#		if item.animations.has(Directions.BOTTOM_LEFT):
+#			return item.concept_full + "_bottom_left"
+#		elif item.animations.has(Directions.BOTTOM_RIGHT):
+#			return item.concept_full + "_bottom_right"
+#		elif item.animations.has(Directions.LEFT):
+#			return item.concept_full + "_left"
+#		elif item.animations.has(Directions.RIGHT):
+#			return item.concept_full + "_right"
+#		else:
+#			return item.concept_full
+#	elif direction == Directions.BOTTOM_RIGHT:
+#		if item.animations.has(Directions.BOTTOM_RIGHT):
+#			return item.concept_full + "_bottom_right"
+#		elif item.animations.has(Directions.BOTTOM_LEFT):
+#			return item.concept_full + "_bottom_left"
+#		elif item.animations.has(Directions.RIGHT):
+#			return item.concept_full + "_right"
+#		elif item.animations.has(Directions.LEFT):
+#			return item.concept_full + "_left"
+#		else:
+#			return item.concept_full
 
 
 static func parse_name(file_name: String, path: String):

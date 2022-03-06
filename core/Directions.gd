@@ -254,6 +254,10 @@ static func build_directions_index() -> Dictionary:
 
 
 # start using this so we can move to Vector2 constants
+static func as_string(direction) -> String:
+	return get_direction_string(direction)
+
+
 static func get_direction_string(direction) -> String:
 	if not STRINGS.has(direction):
 		breakpoint

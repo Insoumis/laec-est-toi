@@ -94,10 +94,13 @@ func zoom_level_camera(forward := true) -> void:
 
 
 func zoom_preview_camera(forward := true) -> void:
-	self.preview_camera.zoom += (-1 if forward else 1) * Vector2(
+	var new_zoom = self.preview_camera.zoom + (-1 if forward else 1) * Vector2(
 		self.camera_zoom_step,
 		self.camera_zoom_step
 	)
+	if new_zoom.x == 0 or new_zoom.y == 0:
+		return
+	self.preview_camera.zoom = new_zoom
 
 
 func process_zoom_inputs():
