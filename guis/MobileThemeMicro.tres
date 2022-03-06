@@ -120,6 +120,7 @@ PopupDialog/styles/panel = SubResource( 6 )
 TabContainer/styles/panel = SubResource( 11 )
 TabContainer/styles/tab_bg = SubResource( 12 )
 TabContainer/styles/tab_fg = SubResource( 13 )
+TooltipLabel/colors/font_color = Color( 1, 1, 1, 1 )
 WindowDialog/constants/scaleborder_size = 12
 WindowDialog/constants/title_height = 40
 WindowDialog/styles/panel = SubResource( 8 )
