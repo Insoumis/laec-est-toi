@@ -1,11 +1,11 @@
 tool
 extends Node
 
-static func export_sprite_frames(sprite_frames : SpriteFrames) -> Dictionary:
+static func export_sprite_frames(sprite_frames: SpriteFrames) -> Dictionary:
 	var sprite_frames_dict = Dictionary()
 	for animation_name in sprite_frames.get_animation_names():
 		sprite_frames_dict[animation_name] = Array()
-		for i in range(3):
+		for i in range(sprite_frames.get_frame_count(animation_name)):
 			if sprite_frames.get_frame_count(animation_name) - 1 < i:
 				continue
 			var crop_texture = sprite_frames.get_frame(animation_name, i)
@@ -24,7 +24,7 @@ static func import_sprite_frames_dictionary(dictionary : Dictionary, texture : T
 		if key == "default":
 			continue
 		sprite_frames.add_animation(key)
-		for i in range(3):
+		for i in range(dictionary[key].size()):
 			if dictionary[key].size() -1 < i:
 				continue
 			var crop_texture = AtlasTexture.new()
