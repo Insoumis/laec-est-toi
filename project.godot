@@ -109,7 +109,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://core/ItemsPalette.gd"
 }, {
-"base": "Reference",
+"base": "Resource",
 "class": "LevelReference",
 "language": "GDScript",
 "path": "res://core/LevelReference.gd"
@@ -286,8 +286,8 @@ config/migration_data_path="res://SettingsMigrationData.tres"
 Logger="*res://singletons/Logger.gd"
 Chronometer="*res://addons/laec.chronometer/Chronometer.gd"
 Version="*res://addons/version/Version.gd"
-App="*res://singletons/App.gd"
 Finder="*res://addons/laec-is-you/core/Finder.gd"
+App="*res://singletons/App.gd"
 SpriteFramesFactory="*res://singletons/SpriteFramesFactory.gd"
 LevelsPool="*res://core/LevelsPool.gd"
 Game="*res://singletons/Game.gd"

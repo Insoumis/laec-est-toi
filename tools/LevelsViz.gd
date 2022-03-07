@@ -21,6 +21,8 @@ var links := Dictionary()  # Link => LinkScene
 
 func _ready():
 	
+	prints("Starting Levels Viz…")
+	
 	Chronometer.start()
 	self.levels_pool = LevelsPoolClass.new()
 	self.levels_pool.should_use_exclusion = false
@@ -46,7 +48,7 @@ func _ready():
 	var orphans = self.levels_pool.find_orphans()
 	prints("LevelsPool#find_orphans():", Chronometer.stop(), "s")
 	
-	prints("Found %d orphaned levels." % orphans.size())
+	prints("Found %d orphaned levels." % [orphans.size()])
 	for orphan in orphans:
 		prints("  orphan:", orphan)
 	

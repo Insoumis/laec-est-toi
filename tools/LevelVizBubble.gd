@@ -3,7 +3,7 @@ extends RigidBody2D
 
 # Somthing that repesents a level in our visualization.
 
-func _process(delta):
+func _process(_delta):
 	# hack against physics rotation
 	$Info.global_rotation = 0.0
 	$Sprite.global_rotation = 0.0

@@ -1,4 +1,4 @@
-extends Reference
+extends Resource
 class_name LevelReference
 
 # Kind of like a pointer to a Level.

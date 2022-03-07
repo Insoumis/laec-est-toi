@@ -170,7 +170,7 @@ func on_rescan_pressed():
 	print("Generating spriteframes…")
 	AtlasSpriteFramesFactory.generate_spriteframes(ItemsPool.list_items_sorted())
 	AtlasSpriteFramesFactory.load_from_files()
-	level_editor.get_editor_interface().inspect_object(AtlasSpriteFramesFactory.final_result)
+	level_editor.get_editor_interface().inspect_object(AtlasSpriteFramesFactory.data_cache)
 	print("Done scanning item sprites.")
 
 

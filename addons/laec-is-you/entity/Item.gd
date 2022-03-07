@@ -541,10 +541,6 @@ func update_sprite(refresh_frames := true) -> void:
 #		var sf = SpriteFramesFactory.get_for_concept(concept, self.is_text)
 		var sf = AtlasSpriteFramesFactory.get_for_concept(concept, self.is_text)
 		sprite.set_sprite_frames(sf)
-#		if is_text:
-#			sprite.set_sprite_frames(AtlasSpriteFramesFactory.final_result.text_sprite_frames)
-#		else:
-#			sprite.set_sprite_frames(AtlasSpriteFramesFactory.final_result.item_sprite_frames)
 	var animation_name_raw = get_sprite_frame_animation_name()
 	var animation_name = animation_name_raw
 	if (animation_name.find("right") >= 0) and (direction.find("left") >= 0):

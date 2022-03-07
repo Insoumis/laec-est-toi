@@ -16,6 +16,7 @@ script = ExtResource( 1 )
 current = true
 
 [node name="Floor" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2( -6.01965, 386.65 )

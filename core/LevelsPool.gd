@@ -22,6 +22,7 @@ const CompressorSerializer = preload("res://lib/CompressorSerializer.gd")
 const PoolLevel = preload("res://core/LevelReference.gd")
 
 
+
 class LevelLink:
 	extends Reference
 	var from : String  # filepath
@@ -100,12 +101,12 @@ func __set_map_path_regex(value):
 	rebuild_regexes()
 
 
-func init():
+func init():  # expensive
 	rebuild_regexes()
 	reindex_levels()
 
 
-func init_full():  # expensive
+func init_full():  # very expensive
 	init()
 	instance_levels()
 	reindex_portals()
@@ -261,7 +262,6 @@ func add_levels_in_directory(
 ):
 	if depth < 0:
 		return
-	
 	if skipped_directories.has(target_directory):
 		return
 	
@@ -273,7 +273,7 @@ func add_levels_in_directory(
 		add_level(filepath)
 	for filepath in levels_directory['directories']:
 		add_levels_in_directory(filepath, depth - 1, excluded_directories)
-
+	finder.queue_free()
 
 func instance_levels():
 	for filepath in self.instanced_levels:

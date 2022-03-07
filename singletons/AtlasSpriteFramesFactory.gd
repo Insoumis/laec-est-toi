@@ -39,7 +39,8 @@ var item_atlas_image: StreamTexture
 # @read_only
 var text_atlas_image: StreamTexture
 
-var final_result: AtlasSpriteFramesDataCacheType
+
+var data_cache: AtlasSpriteFramesDataCacheType
 
 
 class BlitLoadResult:
@@ -52,10 +53,23 @@ func _init():
 	initialize()
 
 
+func _ready():
+	initialize_late()
+
+
 func initialize():
-#	print("Readying atlas sprites frames factory…")
 	set_name("AtlasSpriteFramesFactory")
+	print("%s: Initializing…" % [get_name()])
+
+
+func initialize_late():
+	print("%s: Initializing late…" % [get_name()])
+	regenerate_if_missing()
+	print("%s: Loading…" % [get_name()])
+	load_from_files()
 	
+	
+func regenerate_if_missing():
 	var are_file_requirements_satisfied := true
 	var required_files = [
 		self.item_atlas_path,
@@ -74,8 +88,6 @@ func initialize():
 		generate_spriteframes(collect_items())
 #		yield(get_tree().create_timer(2), "timeout")
 #		print("Done waiting.")
-	#print("Loading…")
-	load_from_files()
 
 
 func collect_items():
@@ -85,29 +97,29 @@ func collect_items():
 func load_from_files():
 	self.item_atlas_image = ResourceLoader.load(self.item_atlas_path)
 	self.text_atlas_image = load(self.text_atlas_path)
-	self.final_result = load(self.atlas_data_path)
-	self.final_result.item_atlas_texture = ImageTexture.new()
-	self.final_result.text_atlas_texture = ImageTexture.new()
+	self.data_cache = load(self.atlas_data_path)
+	self.data_cache.item_atlas_texture = ImageTexture.new()
+	self.data_cache.text_atlas_texture = ImageTexture.new()
 	
 	if self.item_atlas_image is StreamTexture:
-		self.final_result.item_atlas_image = self.item_atlas_image.get_data().duplicate()
+		self.data_cache.item_atlas_image = self.item_atlas_image.get_data().duplicate()
 	else:
 		printerr("AtlasSpriteFramesFactory: can't load item atlas texture")
 	
 	if self.text_atlas_image is StreamTexture:
-		self.final_result.text_atlas_image = self.text_atlas_image.get_data().duplicate()
+		self.data_cache.text_atlas_image = self.text_atlas_image.get_data().duplicate()
 	else:
 		printerr("AtlasSpriteFramesFactory: can't load text atlas texture")
 	
-	self.final_result.item_atlas_texture.create_from_image(self.final_result.item_atlas_image)
-	self.final_result.text_atlas_texture.create_from_image(self.final_result.text_atlas_image)
-	self.final_result.item_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
-		self.final_result.item_sprite_frames_dictionary,
-		self.final_result.item_atlas_texture
+	self.data_cache.item_atlas_texture.create_from_image(self.data_cache.item_atlas_image)
+	self.data_cache.text_atlas_texture.create_from_image(self.data_cache.text_atlas_image)
+	self.data_cache.item_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
+		self.data_cache.item_sprite_frames_dictionary,
+		self.data_cache.item_atlas_texture
 	)
-	self.final_result.text_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
-		self.final_result.text_sprite_frames_dictionary,
-		self.final_result.text_atlas_texture
+	self.data_cache.text_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
+		self.data_cache.text_sprite_frames_dictionary,
+		self.data_cache.text_atlas_texture
 	)
 
 
@@ -151,31 +163,31 @@ func make_sprite_atlas_texture(atlas, region):
 
 
 func get_for_concept(_concept_name: String, is_text: bool) -> SpriteFrames:
-	if not self.final_result:
+	if not self.data_cache:
 		breakpoint  # make sure the cache is hydrated?  or remove me?
 		return null
 	
 	if is_text:
-		return self.final_result.text_sprite_frames
+		return self.data_cache.text_sprite_frames
 	else:
-		return self.final_result.item_sprite_frames
+		return self.data_cache.item_sprite_frames
 
 
 func generate_spriteframes(items: Array):  # of PoolItem[]
-	self.final_result = AtlasSpriteFramesDataCacheType.new()
+	self.data_cache = AtlasSpriteFramesDataCacheType.new()
 	var text_index := 0
 	var item_index := 0
 	var items_sprite_frames = SpriteFrames.new()
 	var texts_sprite_frames = SpriteFrames.new()
 	
-	self.final_result.item_atlas_image = Image.new()
-	self.final_result.item_atlas_texture = ImageTexture.new()
-	self.final_result.item_atlas_image.create(TEXTURE_SIZE, TEXTURE_SIZE, true, Image.FORMAT_RGBA8)
-	self.final_result.item_atlas_texture.create_from_image(self.final_result.item_atlas_image)
-	self.final_result.text_atlas_image = Image.new()
-	self.final_result.text_atlas_texture = ImageTexture.new()
-	self.final_result.text_atlas_image.create(TEXTURE_SIZE, TEXTURE_SIZE, true, Image.FORMAT_RGBA8)
-	self.final_result.text_atlas_texture.create_from_image(self.final_result.text_atlas_image)
+	self.data_cache.item_atlas_image = Image.new()
+	self.data_cache.item_atlas_texture = ImageTexture.new()
+	self.data_cache.item_atlas_image.create(TEXTURE_SIZE, TEXTURE_SIZE, true, Image.FORMAT_RGBA8)
+	self.data_cache.item_atlas_texture.create_from_image(self.data_cache.item_atlas_image)
+	self.data_cache.text_atlas_image = Image.new()
+	self.data_cache.text_atlas_texture = ImageTexture.new()
+	self.data_cache.text_atlas_image.create(TEXTURE_SIZE, TEXTURE_SIZE, true, Image.FORMAT_RGBA8)
+	self.data_cache.text_atlas_texture.create_from_image(self.data_cache.text_atlas_image)
 #	var destination_rect = Rect2(Vector2(0.0, 0.0), Vector2(float(QUADRANT_SIZE), float(QUADRANT_SIZE)))
 
 	for item in items:
@@ -202,11 +214,11 @@ func generate_spriteframes(items: Array):  # of PoolItem[]
 						
 						var blit_load = load_texture_and_blit(
 							frame_filepath,
-							self.final_result.text_atlas_image, text_index
+							self.data_cache.text_atlas_image, text_index
 						)
 						if blit_load.error == OK:
 							var atlas_texture = make_sprite_atlas_texture(
-								final_result.text_atlas_texture,
+								self.data_cache.text_atlas_texture,
 								blit_load.region
 							)
 							texts_sprite_frames.add_frame(animation_name, atlas_texture)
@@ -218,11 +230,11 @@ func generate_spriteframes(items: Array):  # of PoolItem[]
 					for frame_filepath in shivers_filepaths:
 						var blit_load = load_texture_and_blit(
 							frame_filepath,
-							self.final_result.item_atlas_image, item_index
+							self.data_cache.item_atlas_image, item_index
 						)
 						if blit_load.error == OK:
 							var atlas_texture = make_sprite_atlas_texture(
-								final_result.item_atlas_texture,
+								self.data_cache.item_atlas_texture,
 								blit_load.region
 							)
 							
@@ -232,65 +244,65 @@ func generate_spriteframes(items: Array):  # of PoolItem[]
 							printerr("Failed to load item texture and blit.")
 	
 	#print("Saving atlasses…")
-	self.final_result.item_sprite_frames = items_sprite_frames
-	self.final_result.text_sprite_frames = texts_sprite_frames
-	self.final_result.items = items
+	self.data_cache.item_sprite_frames = items_sprite_frames
+	self.data_cache.text_sprite_frames = texts_sprite_frames
+	self.data_cache.items = items
 	
-	var error = self.final_result.item_atlas_image.save_png(self.item_atlas_path)
+	var error = self.data_cache.item_atlas_image.save_png(self.item_atlas_path)
 	if error != OK:
 		printerr("AtlasSpriteFramesFactory: can't write item texture")
-	error = self.final_result.text_atlas_image.save_png(self.text_atlas_path)
+	error = self.data_cache.text_atlas_image.save_png(self.text_atlas_path)
 	if error != OK:
 		printerr("AtlasSpriteFramesFactory: can't write text texture")
 	
 	var tex = load(self.item_atlas_path)
 	if tex is StreamTexture:
-		self.final_result.item_atlas_image = tex.get_data().duplicate()
+		self.data_cache.item_atlas_image = tex.get_data().duplicate()
 	else:
 		printerr("AtlasSpriteFramesFactory: can't load item atlas texture")
 	tex = load(self.text_atlas_path)
 	if tex is StreamTexture:
-		self.final_result.text_atlas_image = tex.get_data().duplicate()
+		self.data_cache.text_atlas_image = tex.get_data().duplicate()
 	else:
 		printerr("AtlasSpriteFramesFactory: can't load text atlas texture")
 	
-#	final_result.item_atlas_image.take_over_path(self.item_atlas_path)
-#	final_result.text_atlas_image.take_over_path(self.text_atlas_path)
-	self.final_result.item_atlas_texture.create_from_image(final_result.item_atlas_image)
-	self.final_result.text_atlas_texture.create_from_image(final_result.text_atlas_image)
+#	data_cache.item_atlas_image.take_over_path(self.item_atlas_path)
+#	data_cache.text_atlas_image.take_over_path(self.text_atlas_path)
+	self.data_cache.item_atlas_texture.create_from_image(data_cache.item_atlas_image)
+	self.data_cache.text_atlas_texture.create_from_image(data_cache.text_atlas_image)
 	# A list of things I tried...
-#	final_result.item_atlas_texture.set_data(final_result.item_atlas_image)
-#	final_result.text_atlas_texture.set_data(final_result.text_atlas_image)
-#	print(final_result.item_atlas_image)
-#	print(final_result.text_atlas_image)
-#	final_result.item_atlas_image.resource_path = "res://sprites/item_atlas_image.png"
-#	final_result.text_atlas_image.resource_path = "res://sprites/text_atlas_image.png"
-#	final_result.item_atlas_texture.image.resource_path = "res://sprites/item_atlas_image.png"
-#	final_result.text_atlas_texture.image.resource_path = "res://sprites/text_atlas_image.png"
-#	final_result.item_atlas_texture.image.take_over_path("res://sprites/item_atlas_image.png")
-#	final_result.text_atlas_texture.image.take_over_path("res://sprites/text_atlas_image.png")
-#	print(final_result.item_atlas_texture.image)
-#	print(final_result.text_atlas_texture.image)
-#	final_result.item_atlas_texture.create_from_image(final_result.item_atlas_image)
-#	final_result.text_atlas_texture.create_from_image(final_result.text_atlas_image)
-	self.final_result.item_sprite_frames_dictionary = SpriteFramesExporter.export_sprite_frames(items_sprite_frames)
-	self.final_result.text_sprite_frames_dictionary = SpriteFramesExporter.export_sprite_frames(texts_sprite_frames)
+#	data_cache.item_atlas_texture.set_data(data_cache.item_atlas_image)
+#	data_cache.text_atlas_texture.set_data(data_cache.text_atlas_image)
+#	print(data_cache.item_atlas_image)
+#	print(data_cache.text_atlas_image)
+#	data_cache.item_atlas_image.resource_path = "res://sprites/item_atlas_image.png"
+#	data_cache.text_atlas_image.resource_path = "res://sprites/text_atlas_image.png"
+#	data_cache.item_atlas_texture.image.resource_path = "res://sprites/item_atlas_image.png"
+#	data_cache.text_atlas_texture.image.resource_path = "res://sprites/text_atlas_image.png"
+#	data_cache.item_atlas_texture.image.take_over_path("res://sprites/item_atlas_image.png")
+#	data_cache.text_atlas_texture.image.take_over_path("res://sprites/text_atlas_image.png")
+#	print(data_cache.item_atlas_texture.image)
+#	print(data_cache.text_atlas_texture.image)
+#	data_cache.item_atlas_texture.create_from_image(data_cache.item_atlas_image)
+#	data_cache.text_atlas_texture.create_from_image(data_cache.text_atlas_image)
+	self.data_cache.item_sprite_frames_dictionary = SpriteFramesExporter.export_sprite_frames(items_sprite_frames)
+	self.data_cache.text_sprite_frames_dictionary = SpriteFramesExporter.export_sprite_frames(texts_sprite_frames)
 	var flags = 0
-#	ResourceSaver.save("res://sprites/AtlasSpriteFramesFactoryDataCacheItem.tres", final_result.item_sprite_frames, flags)
-	self.final_result.item_atlas_image_path = self.item_atlas_path
-	self.final_result.text_atlas_image_path = self.text_atlas_path
-	var saved := ResourceSaver.save(self.atlas_data_path, final_result, flags)
+#	ResourceSaver.save("res://sprites/AtlasSpriteFramesFactoryDataCacheItem.tres", data_cache.item_sprite_frames, flags)
+	self.data_cache.item_atlas_image_path = self.item_atlas_path
+	self.data_cache.text_atlas_image_path = self.text_atlas_path
+	var saved := ResourceSaver.save(self.atlas_data_path, data_cache, flags)
 	if OK != saved:
 		printerr("AtlasSpriteFramesFactory: Could not save the altas sprite of items.")
-	#final_result.take_over_path(self.atlas_data_path)
+	#data_cache.take_over_path(self.atlas_data_path)
 	
-	self.final_result.item_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
-		self.final_result.item_sprite_frames_dictionary,
-		self.final_result.item_atlas_texture
+	self.data_cache.item_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
+		self.data_cache.item_sprite_frames_dictionary,
+		self.data_cache.item_atlas_texture
 	)
-	self.final_result.text_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
-		self.final_result.text_sprite_frames_dictionary,
-		self.final_result.text_atlas_texture
+	self.data_cache.text_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
+		self.data_cache.text_sprite_frames_dictionary,
+		self.data_cache.text_atlas_texture
 	)
 
 
