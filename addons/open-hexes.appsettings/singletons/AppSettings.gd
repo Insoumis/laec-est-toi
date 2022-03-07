@@ -66,8 +66,11 @@ var current_migration_resource : MigrationData
 #func _init():
 #	apply()
 
-func _init():
+#func _init():
+func _ready():
+	print("AppSettings: Readying…")
 	load_and_apply_migrations()
+
 
 func boot(with_metadata:Dictionary) -> void:
 	register_metadata(with_metadata)
@@ -316,7 +319,7 @@ const USER_MIGRATION_DATA_PATH = "user://SettingsMigrationData.json"
 # On ANDROID: ????????
 ## should ????????
 
-func load_built_project_settings_with_fallbacks(out_config : ConfigFile):
+func load_built_project_settings_with_fallbacks(out_config:ConfigFile):
 	var loaded : int
 	loaded = out_config.load("res://project.godot")
 	var saved
@@ -334,10 +337,12 @@ func load_built_project_settings_with_fallbacks(out_config : ConfigFile):
 	return loaded
 
 func set_project_setting(setting_path:String, value):
+	print("AppSettings: Setting `%s' to `%s'." % [setting_path, str(value)])
 	if not ProjectSettings.has_setting(setting_path):
 		printerr("Unknown project setting `%s'." % setting_path)
 		return
 	ProjectSettings.set_setting(setting_path, value)
+	
 	var loaded_config = load_and_apply_migrations()
 	var setting_path_array = setting_path.split("/", false)
 	var slashed_setting_key = setting_path.replace(setting_path_array[0] + "/", "")
@@ -358,7 +363,7 @@ func load_and_apply_migrations() -> ConfigFile:
 		print("AppSettings: Saving all user ProjectSettings")
 		# NORMAL LOADING CRASHED, REWRITING SETTINGS FROM BUILD PROJECTSETTINGS...
 		loaded = load_built_project_settings_with_fallbacks(loaded_config)
-		App.clean_and_save_project_settings(loaded_config, self.project_settings_path)
+		clean_and_save_project_settings(loaded_config, self.project_settings_path)
 		loaded = load_migration_from_file(saved_migration)
 		if OK != loaded:
 			# Migrate everything?
@@ -403,6 +408,25 @@ func load_and_apply_migrations() -> ConfigFile:
 								migration_data_to_apply.append(migration_datum)
 						apply_migrations(migration_data_to_apply, built_project_settings_config, loaded_config)
 	return loaded_config
+
+
+
+# Carbon Copy of the one in App  (trying to hunt a bug)
+func clean_and_save_project_settings(config, file_path):
+	# CLEANING AND SAVING PROJECTSETTINGS TO USER FOLDER
+	for section_to_be_removed in App.EXCLUDE_LIST:
+		if config.has_section(section_to_be_removed):
+			config.erase_section(section_to_be_removed)
+
+	for section in config.get_sections():
+#		print("setting section written: \"", section, "\"")
+		pass
+	var saved = config.save(file_path)
+	if OK != saved:
+		printerr("Failed to save project settings to `%s'." % file_path)
+	return saved
+
+
 
 func apply():
 	"""
