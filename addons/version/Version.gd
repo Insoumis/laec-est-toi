@@ -15,5 +15,6 @@ func get_full():
 			printerr("Version file `%s` exists but cannot be read." % self.version_file_path)
 			return self.default_version
 		var full = file.get_as_text().strip_edges()
+		file.close()
 		return full
 	return self.default_version

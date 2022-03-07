@@ -11,10 +11,10 @@ extends EditorPlugin
 
 
 func _enter_tree():
-	add_autoload_singleton('Version', 'res://addons/version/Version.gd')
+	#add_autoload_singleton('Version', 'res://addons/version/Version.gd')
 	#yield(get_tree(), "idle_frame")
-	for i in 10:
-		yield(get_tree(), "idle_frame")
+#	for i in 10:
+#		yield(get_tree(), "idle_frame")
 	add_custom_type(
 		'VersionLabel',
 		'Label',
@@ -25,4 +25,4 @@ func _enter_tree():
 
 func _exit_tree():
 	remove_custom_type('VersionLabel')
-	remove_autoload_singleton('Version')
+	#remove_autoload_singleton('Version')
