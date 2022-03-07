@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/open-hexes.appsettings/types/VolumeRangeInputField.gd"
 }, {
+"base": "Reference",
+"class": "CheapTrigo",
+"language": "GDScript",
+"path": "res://addons/bootstrap/math/CheapTrigo.gd"
+}, {
 "base": "Node",
 "class": "ClipboardMirrorBehavior",
 "language": "GDScript",
@@ -218,6 +223,7 @@ _global_script_class_icons={
 "AppSettingsRangeInput": "",
 "AppSettingsSelectInput": "",
 "AppSettingsVolumeRangeInput": "",
+"CheapTrigo": "",
 "ClipboardMirrorBehavior": "",
 "Complement": "",
 "Condition": "",

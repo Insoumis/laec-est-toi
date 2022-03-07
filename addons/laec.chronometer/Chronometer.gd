@@ -1,3 +1,4 @@
+tool
 extends Node
 
 #   _____ _                                          _

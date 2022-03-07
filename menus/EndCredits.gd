@@ -7,7 +7,6 @@ extends Control
 # Niveaux
 # 
 # Famille
-# 
 
 enum ROLES {
 	CODER
@@ -27,79 +26,80 @@ enum ROLES {
 	SPECIAL_THANKS
 }
 
+
 var people := [
 	
 	{
 		"name": "Fanelia",
-		"roles": ['thanks'],
+		"roles": [ROLES.THANKS],
 	},
 	{
 		"name": "Trollune",
-		"roles": ['code', 'levels'],
+		"roles": [ROLES.CODER],
 	},
 	{
 		"name": "Precheurius",
-		"roles": ['music', 'orga'],
+		"roles": [ROLES.MUSIC_COMPOSER, ROLES.MUSIC_PERFORMER],
 	},
 	{
 		"name": "Adrenesis",
-		"roles": ['code'],
+		"roles": [ROLES.CODER],
 	},
 	{
 		"name": "Miidnight",
-		"roles": ['orga', 'levels'],
+		"roles": [ROLES.ORGANIZER, ROLES.LEVEL_DESIGNER],
 	},
 	{
 		"name": "Dazo",
-		"roles": ['levels'],
+		"roles": [ROLES.LEVEL_DESIGNER],
 	},
 	{
 		"name": "Bogoss69",
-		"roles": ['code', 'orga', 'music', 'thanks'],
+		"roles": [ROLES.THANKS],
 	},
 	{
 		"name": "Roipoussiere",
-		"roles": ['code'],
+		"roles": [ROLES.CODER],
 	},
 	{
 		"name": "Karibou",
-		"roles": ['thanks'],
+		"roles": [ROLES.THANKS],
 	},
 	{
 		"name": "Zargett",
-		"roles": ['levels'],
+		"roles": [ROLES.LEVEL_DESIGNER],
 	},
 	{
 		"name": "SpyBob",
-		"roles": ['testing'],
+		"roles": [ROLES.TESTER],
 	},
 	{
 		"name": "Stheal",
-		"roles": ['levels'],
+		"roles": [ROLES.LEVEL_DESIGNER],
 	},
 	{
 		"name": "Niwatori",
-		"roles": ['pixels'],
+		"roles": [ROLES.GRAPHIC_DESIGNER],
 	},
 	{
 		"name": "Lametyste",
-		"roles": ['pixels'],
+		"roles": [ROLES.GRAPHIC_DESIGNER],
 	},
 	{
 		"name": "IvanC",
-		"roles": ['levels'],
+		"roles": [ROLES.LEVEL_DESIGNER, ROLES.GAME_DESIGNER],
 	},
 	{
 		"name": "AudreyH",
-		"roles": ['levels'],
+		"roles": [ROLES.GRAPHIC_DESIGNER],
 	},
 	{
 		"name": "Gobz",
-		"roles": ['thanks'],
+		"roles": [ROLES.THANKS],
 	},
 	{
 		"name": "JeanSebastienBachOfficiel",
-		"roles": ['testing'],
+		"roles": [ROLES.TESTER],
 	},
 
 ]
