@@ -740,9 +740,9 @@ func get_completion_score() -> float:  # between 0.0 and 1.0
 	if not LevelsPool:
 		breakpoint
 		return 0.0
-	if not LevelsPool.packed_levels:
-		breakpoint
-		return 0.0
+#	if not LevelsPool.packed_levels:
+#		breakpoint
+#		return 0.0
 	var amount_of_levels_to_complete := 0.0  # yes, float (division!)
 	var amount_of_levels_completed := 0.0
 	
