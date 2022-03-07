@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Sign.tscn" type="PackedScene" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://core/Portal.tscn" type="PackedScene" id=4]
 
@@ -57,3 +58,26 @@ cell_position = Vector2( 0, -1 )
 tile_position = Vector2( -1, -1 )
 level_path = "res://levels/xr/Extinction01Level.tscn"
 title = "Extinction: Tsunami"
+
+[node name="Portal2" parent="Items" index="5" instance=ExtResource( 4 )]
+position = Vector2( -64, -98.4729 )
+cell_position = Vector2( 0, -2 )
+tile_position = Vector2( -1, -2 )
+level_path = "res://levels/xr/Extinction02Level.tscn"
+title = "Abeilles Arctiques"
+
+[node name="Portal3" parent="Items" index="6" instance=ExtResource( 4 )]
+position = Vector2( -96, -143.922 )
+cell_position = Vector2( 0, -3 )
+tile_position = Vector2( -2, -3 )
+level_path = "res://levels/xr/Extinction03Level.tscn"
+title = "level.Extinction03Level.title"
+
+[node name="Undefined" parent="Items" index="7" instance=ExtResource( 2 )]
+position = Vector2( -256, -7.57484 )
+cell_position = Vector2( -4, 0 )
+tile_position = Vector2( -4, 0 )
+contents = "/!\\  EN TRAVAUX  /!\\
+
+Venez résister avec nous,
+et ajouter votre propre niveau !"
