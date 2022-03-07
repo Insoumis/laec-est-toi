@@ -25,7 +25,7 @@ extends Node
 # Properties in project settings we're not letting users customize
 # When we merge source and user configs, we always prefer the source, for these.
 # Am I documenting this right, @Adrenesis?
-var exclude_list = [
+const EXCLUDE_LIST = [
 	"",
 	"autoload",
 	"editor_plugins",
@@ -35,16 +35,19 @@ var exclude_list = [
 
 
 
-func _ready():
+func _init():
 	boot()
 
+func _ready():
+	#yield(get_parent(), "ready")
+	print("App: Initializing Settings…")
+	init_settings()
 
 func boot():
+	print("App: Booting…")
 	var loaded := verify_autoloads()
 	if OK != loaded:
 		rewrite_user_project_settings()
-	init_settings()
-
 
 
 #                _        _                 _
@@ -101,7 +104,7 @@ func verify_autoloads() -> int:
 
 func clean_and_save_project_settings(config, file_path):
 	# CLEANING AND SAVING PROJECTSETTINGS TO USER FOLDER
-	for section_to_be_removed in exclude_list:
+	for section_to_be_removed in EXCLUDE_LIST:
 		if config.has_section(section_to_be_removed):
 			config.erase_section(section_to_be_removed)
 
@@ -124,9 +127,11 @@ func rewrite_user_project_settings():
 			printerr("Couldn't rewrite ", ProjectSettings.globalize_path("user://settings.godot"))
 	else:
 		OS.set_window_fullscreen(false)
-		OS.alert("LAEC IS YOU couldn't load, but tried to apply a fix.\n" +
-				"LAEC IS YOU now needs to be restarted",
-				"Please restart the game")
+		OS.alert(
+			"LAEC IS YOU couldn't load, but tried to apply a fix.\n " +
+			"LAEC IS YOU now needs to be restarted.",
+			"Please restart the game."
+		)
 
 
 # __          ___           _
@@ -171,8 +176,6 @@ func init_settings():
 	else:
 		var appsl = AppSettingsLauncher.new()
 		appsl.launch()
-	
-	
 
 
 #   _____           _
