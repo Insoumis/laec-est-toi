@@ -303,12 +303,14 @@ fi
 #echo -e "${Green}Copying the default config…${Off}"
 #cp config/settings.ini ${BUILD_PATH}/config/settings.ini
 
-echo -e "${Green}Copying the distributed READMEs…${Off}"
-cp dist/README-* ${BUILD_PATH}/
+if [ "${BUILD_TARGET}" != "mac64" ]; then  # Trying to clean up the mac zip, see what happens
+    echo -e "${Green}Copying the distributed READMEs…${Off}"
+    cp dist/README-* ${BUILD_PATH}/
+fi
 
 #%SystemRoot%\explorer.exe "c:\Yaya\yoyo\"
 
-if [[ "${BUILD_TARGET}" =~ ^(linux|mac)(32|64)$ ]]; then
+if [[ "${BUILD_TARGET}" =~ ^(linux)(32|64)$ ]]; then
     cp dist/linux/* ${BUILD_PATH}/
 fi
 
