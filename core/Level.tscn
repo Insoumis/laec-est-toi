@@ -148,8 +148,7 @@ __meta__ = {
 [node name="Items" type="YSort" parent="."]
 __meta__ = {
 "_edit_lock_": true,
-"_editor_description_": "We disabled the sort for now.
-Perhaps we'll remove the YSort type altogether at some point."
+"_editor_description_": ""
 }
 
 [node name="Effects" type="Node2D" parent="."]
