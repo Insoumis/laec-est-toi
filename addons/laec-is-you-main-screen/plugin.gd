@@ -74,10 +74,8 @@ func cleanup():
 func play_button_pressed():
 	get_editor_interface().play_main_scene()
 
-
 func run_features():
 	get_editor_interface().play_custom_scene("res://features/FeaturesRunner.tscn")
-	
 
 func show_level_tutorial():
 	pass
@@ -86,8 +84,10 @@ func show_item_tutorial():
 	pass
 
 func new_level_pressed():
-	level_editor.new_level_pressed()
-	pass
+	if self.level_editor:
+		self.level_editor.new_level_pressed()
+	else:
+		printerr("Level Editor plugin is not ready ?!")
 
 func new_item_pressed():
 	pass
