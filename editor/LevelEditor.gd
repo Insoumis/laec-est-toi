@@ -7,7 +7,10 @@ extends Control
 # | |___|  __/\ V /  __/ | |___| (_| | | || (_) | |
 # |______\___| \_/ \___|_|______\__,_|_|\__\___/|_|
 #
-# Nitty-gritty is in EditorActivity
+# Nitty-gritty is in EditorActivity.
+# The idea was to have multiple activities,
+# each with its own set of tools and shortcuts.
+# We end up with one big activity, for now.
 
 const LevelReference = preload("res://core/LevelReference.gd")
 const ExportDialog = preload("res://editor/activities/ExportDialog.gd")
@@ -64,6 +67,7 @@ func _on_Preview_gui_input(_event):
 
 var __level_to_open
 
+# Call this between init() and ready() to inject a level
 #func configure_for_level(level: PoolLevel):
 func configure_for_level(level):
 	__level_to_open = level
@@ -121,6 +125,8 @@ func process_tool_inputs():
 	if Input.is_action_just_pressed("editor_zen"):
 		self.menu.visible = not self.menu.visible
 		self.camera_border.visible = not self.camera_border.visible
+	if Input.is_action_just_pressed("save"):
+		save()
 
 
 func ask_exit_confirmation():
@@ -128,7 +134,7 @@ func ask_exit_confirmation():
 
 
 func exit():
-	Game.go_back()
+	var _gone = Game.go_back()
 
 
 #  _______    _     __  __
@@ -202,6 +208,9 @@ const Jsonify = preload("res://lib/jsonify.gd")
 const CompressorSerializer = preload("res://lib/CompressorSerializer.gd")
 
 
+signal level_saved(filepath)
+
+
 var json_export := ""
 var base16_export := ""
 var base64_export := ""
@@ -244,20 +253,43 @@ func to_pickle() -> Dictionary:
 	return rick
 
 
-func _on_SaveDialog_file_selected(filepath):
+func save(filepath := ""):
+	if not filepath:
+		if not self.save_filepath:
+			# todo: open save filepath picker dialog?
+			printerr("Tried to save but no save filepath is defined.")
+			return
+		filepath = self.save_filepath
+	
 	var file = File.new()
 	var opened = file.open(filepath, File.WRITE)
 	if OK != opened:
 		printerr("Could not open file `%s` to save level into it." % filepath)
 		breakpoint
 		return
-	file.store_string(self.json_export)
+	file.store_string(serialize_level())
 	file.close()
-	prints("Saved level to file:", filepath)
+	
+	emit_signal("level_saved", filepath)
+	
+	if not self.save_filepath:
+		self.save_filepath = filepath
+	else:
+		if self.save_filepath != filepath:
+			self.save_filepath = filepath
+			#print("Changed level save filepath.")
+	#print("Saved level into file `%s'." % filepath)
+
+
+func _on_SaveDialog_file_selected(filepath):
+	if not filepath:
+		printerr("Empty save filepath.  Skipping save…")
+		return
+	save(filepath)
 
 
 func _on_SaveDialog_image_file_selected(image_file_path):
-	print("_on_SaveDialog_image_file_selected")
+	#print("_on_SaveDialog_image_file_selected")
 	var save_error = self.image_export.save_png(image_file_path)
 
 	if OK != save_error:

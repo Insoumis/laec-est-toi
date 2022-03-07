@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://editor/activities/CameraBorder.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://guis/MobileThemeMicro.tres" type="Theme" id=15]
 [ext_resource path="res://sprites/gui/window_background.png" type="Texture" id=16]
 [ext_resource path="res://sprites/gui/activity_grabber.png" type="Texture" id=17]
+[ext_resource path="res://editor/SaveLabel.gd" type="Script" id=18]
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 16 )
@@ -41,6 +42,49 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="Theme" id=12]
 VScrollBar/styles/grabber = SubResource( 11 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "flash"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.381639, -0.0170246, 0.135673, -0.185864, 0.099467, 0.0347928, -0.269146, 0.199382, -0.139748, 0.134573, 0.0602522, -0.157977, 0.0624682, -0.117961, -0.122319, 0.126288, -0.0578724, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.31225, 0.504342, 0.744427, 0.90541, 1.01227 )
+}
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -79,6 +123,8 @@ theme = ExtResource( 15 )
 texture = SubResource( 5 )
 expand = true
 __meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
@@ -224,6 +270,7 @@ text = "Metadata"
 margin_top = 385.0
 margin_right = 100.0
 margin_bottom = 436.0
+hint_tooltip = "Use CTRL+S to quicksave."
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Export"
@@ -270,6 +317,7 @@ custom_constants/separation = 35
 custom_icons/grabber = SubResource( 10 )
 script = ExtResource( 7 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -383,6 +431,28 @@ margin_top = 580.0
 margin_right = 100.0
 margin_bottom = 600.0
 text = "HELP"
+
+[node name="SaveLabel" type="Label" parent="DrawingSection"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -78.9583
+margin_top = -32.5839
+margin_right = 85.0417
+margin_bottom = 34.4161
+theme = ExtResource( 12 )
+text = "Saving..."
+align = 1
+valign = 1
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DrawingSection/SaveLabel"]
+anims/flash = SubResource( 13 )
 
 [node name="ExportDialog" type="AcceptDialog" parent="."]
 anchor_right = 1.0
