@@ -20,17 +20,7 @@ link = "level.PhiMap.link"
 zoom = Vector2( 1.2, 1.2 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
-cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -262148, 4, 0, -262147, 4, 0, -262146, 4, 0, -262145, 4, 0, -327680, 4, 0, -327679, 4, 0, -327678, 4, 0, -196613, 4, 0, -196612, 4, 0, -196611, 2, 0, -196610, 2, 0, -196609, 4, 0, -262144, 2, 0, -262143, 2, 0, -262142, 2, 0, -262141, 4, 0, -262140, 4, 0, -131078, 4, 0, -131077, 4, 0, -131076, 2, 0, -131075, 4, 0, -131074, 4, 0, -131073, 2, 0, -196608, 4, 0, -196607, 4, 0, -196606, 2, 0, -196605, 4, 0, -196604, 4, 0, -65541, 4, 0, -65540, 2, 0, -65539, 4, 0, -65538, 4, 0, -65537, 2, 0, -131072, 4, 0, -131071, 4, 0, -131070, 4, 0, -131069, 2, 0, -131068, 4, 0, -131067, 4, 0, -6, 4, 0, -5, 4, 0, -4, 2, 0, -3, 4, 0, -2, 4, 0, -1, 2, 0, -65536, 4, 0, -65535, 4, 0, -65534, 2, 0, -65533, 4, 0, -65532, 4, 0, 65531, 4, 0, 65532, 4, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 4, 0, 131067, 4, 0, 131068, 4, 0, 131069, 4, 0, 131070, 4, 0, 131071, 2, 0, 65536, 4, 0, 65537, 4, 0, 65538, 4, 0, 196606, 4, 0, 196607, 4, 0, 131072, 2, 0, 131073, 4, 0, 131077, 22, 0, 262142, 4, 0, 262143, 4, 0, 196608, 2, 0, 196609, 4, 0, 262144, 4, 0, 262145, 2, 0, 262146, 4, 0, 327680, 4, 0, 327681, 4, 0 )
-
-[node name="MiniDecorFarTileMap" parent="." index="3"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
-
-[node name="DecorTileMap" parent="." index="4"]
-cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
-
-[node name="MiniDecorNearTileMap" parent="." index="5"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="Laec" parent="Items" index="0" instance=ExtResource( 1 )]
 position = Vector2( -128, -189.361 )
@@ -88,9 +78,9 @@ title = "Ailleurs est Yoda"
 position = Vector2( -224, -53.0239 )
 cell_position = Vector2( -3, -1 )
 tile_position = Vector2( -4, -1 )
-level_path = "res://levels/trollune/Cameleon.tscn"
+level_path = "res://levels/trollune/LearnMove.tscn"
 dependency_a = NodePath("../Portal16")
-title = "Mots interdits"
+title = "Attention aux Trolls"
 
 [node name="Portal12" parent="Items" index="8" instance=ExtResource( 4 )]
 position = Vector2( -192, -7.57484 )
@@ -134,9 +124,9 @@ title = "Les lobbys et les médias"
 position = Vector2( 128, -7.57484 )
 cell_position = Vector2( 2, 0 )
 tile_position = Vector2( 2, 0 )
-level_path = "res://levels/trollune/LearnMove.tscn"
+level_path = "res://levels/trollune/Cameleon.tscn"
 dependency_a = NodePath("../Portal15")
-title = "Attention aux Trolls"
+title = "Mots interdits"
 
 [node name="Portal13" parent="Items" index="14" instance=ExtResource( 4 )]
 position = Vector2( 160, -53.0239 )
@@ -178,7 +168,15 @@ level_path = "res://levels/trollune/LearnPull.tscn"
 dependency_a = NodePath("../Portal18")
 title = "level.LearnPull.title"
 
-[node name="Portal07" parent="Items" index="19" instance=ExtResource( 4 )]
+[node name="Portal25" parent="Items" index="19" instance=ExtResource( 4 )]
+position = Vector2( 64, -98.4729 )
+cell_position = Vector2( 2, -2 )
+tile_position = Vector2( 1, -2 )
+warp = true
+level_path = "res://levels/xr/XrMap.tscn"
+title_override = "Extinction"
+
+[node name="Portal07" parent="Items" index="20" instance=ExtResource( 4 )]
 position = Vector2( 0, -189.371 )
 cell_position = Vector2( 2, -4 )
 tile_position = Vector2( 0, -4 )
@@ -186,7 +184,7 @@ level_path = "res://levels/phi/FaiblesseDesAutres.tscn"
 dependency_a = NodePath("../Portal17")
 title = "Déségrégation Médiatique"
 
-[node name="Portal24" parent="Items" index="20" instance=ExtResource( 4 )]
+[node name="Portal24" parent="Items" index="21" instance=ExtResource( 4 )]
 position = Vector2( -32, -143.922 )
 cell_position = Vector2( 1, -3 )
 tile_position = Vector2( -1, -3 )
@@ -194,7 +192,7 @@ level_path = "res://levels/laec/36.ReduireLaTva.tscn"
 dependency_a = NodePath("../Portal07")
 title = "level.36.ReduireLaTva.title"
 
-[node name="Portal21" parent="Items" index="21" instance=ExtResource( 4 )]
+[node name="Portal21" parent="Items" index="22" instance=ExtResource( 4 )]
 position = Vector2( -64, -98.4729 )
 cell_position = Vector2( 0, -2 )
 tile_position = Vector2( -1, -2 )
@@ -202,7 +200,7 @@ level_path = "res://levels/homage/SubmergedRuins.tscn"
 dependency_a = NodePath("../Portal24")
 title = "level.SubmergedRuins.title"
 
-[node name="Portal09" parent="Items" index="22" instance=ExtResource( 4 )]
+[node name="Portal09" parent="Items" index="23" instance=ExtResource( 4 )]
 position = Vector2( -32, -53.0239 )
 cell_position = Vector2( 0, -1 )
 tile_position = Vector2( -1, -1 )
@@ -210,7 +208,7 @@ level_path = "res://levels/miidnight/BlocusDeTrolls.tscn"
 dependency_a = NodePath("../Portal21")
 title = "level.BlocusDeTrolls.title"
 
-[node name="Portal22" parent="Items" index="23" instance=ExtResource( 4 )]
+[node name="Portal22" parent="Items" index="24" instance=ExtResource( 4 )]
 position = Vector2( -32, 37.8742 )
 cell_position = Vector2( -1, 1 )
 tile_position = Vector2( -1, 1 )
@@ -218,7 +216,7 @@ level_path = "res://levels/homage/StopThatThief.tscn"
 dependency_a = NodePath("../Portal09")
 title = "Au Voleur !"
 
-[node name="Portal19" parent="Items" index="24" instance=ExtResource( 4 )]
+[node name="Portal19" parent="Items" index="25" instance=ExtResource( 4 )]
 position = Vector2( 0, 83.3232 )
 cell_position = Vector2( -1, 2 )
 tile_position = Vector2( 0, 2 )
@@ -226,7 +224,7 @@ level_path = "res://levels/homage/TinyIsle.tscn"
 dependency_a = NodePath("../Portal22")
 title = "Petite Ile"
 
-[node name="Portal23" parent="Items" index="25" instance=ExtResource( 4 )]
+[node name="Portal23" parent="Items" index="26" instance=ExtResource( 4 )]
 position = Vector2( 32, 128.772 )
 cell_position = Vector2( -1, 3 )
 tile_position = Vector2( 0, 3 )
@@ -234,7 +232,7 @@ level_path = "res://levels/stheal/LearnVerlan.tscn"
 dependency_a = NodePath("../Portal19")
 title = "level.LearnVerlan.title"
 
-[node name="Portal20" parent="Items" index="26" instance=ExtResource( 4 )]
+[node name="Portal20" parent="Items" index="27" instance=ExtResource( 4 )]
 position = Vector2( 64, 174.221 )
 cell_position = Vector2( -1, 4 )
 tile_position = Vector2( 1, 4 )
@@ -242,28 +240,28 @@ level_path = "res://levels/trollune/DisableMonarchy.tscn"
 dependency_a = NodePath("../Portal23")
 title = "Désactivons la Monarchie"
 
-[node name="AnarText" parent="Items" index="27" instance=ExtResource( 1 )]
+[node name="AnarText" parent="Items" index="28" instance=ExtResource( 1 )]
 position = Vector2( 960, -643.861 )
 is_text = true
 concept_name = "anar"
 cell_position = Vector2( 22, -14 )
 tile_position = Vector2( 15, -14 )
 
-[node name="IsText2" parent="Items" index="28" instance=ExtResource( 1 )]
+[node name="IsText2" parent="Items" index="29" instance=ExtResource( 1 )]
 position = Vector2( 1024, -643.861 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 23, -14 )
 tile_position = Vector2( 16, -14 )
 
-[node name="WinText" parent="Items" index="29" instance=ExtResource( 1 )]
+[node name="WinText" parent="Items" index="30" instance=ExtResource( 1 )]
 position = Vector2( 1088, -643.861 )
 is_text = true
 concept_name = "win"
 cell_position = Vector2( 24, -14 )
 tile_position = Vector2( 17, -14 )
 
-[node name="Sign" parent="Items" index="30" instance=ExtResource( 10 )]
+[node name="Undefined" parent="Items" index="31" instance=ExtResource( 10 )]
 position = Vector2( -288, 37.8742 )
 cell_position = Vector2( -5, 1 )
 tile_position = Vector2( -5, 1 )

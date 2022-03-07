@@ -9,7 +9,7 @@ title = "level.PushTheWords.title"
 excerpt = "level.PushTheWords.excerpt"
 link = "level.PushTheWords.link"
 achievement_a = ExtResource( 3 )
-solution_a = "967736744766666633363"
+solution_a = "36666311136957977666363331"
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.1, 1.1 )

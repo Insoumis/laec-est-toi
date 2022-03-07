@@ -24,6 +24,7 @@ tile_data = PoolIntArray( -196609, 4, 0, -262144, 4, 0, -131074, 4, 0, -131073, 
 
 [node name="MiniDecorFarTileMap" parent="." index="3"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+tile_data = PoolIntArray( 1703936, 9, 0, 1769474, 3, 0, 1900543, 3, 0 )
 
 [node name="DecorTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
@@ -59,10 +60,10 @@ concept_name = "win"
 cell_position = Vector2( -5, 0 )
 tile_position = Vector2( -5, 0 )
 
-[node name="LaecText" parent="Items" index="4" instance=ExtResource( 1 )]
+[node name="PeopleText" parent="Items" index="4" instance=ExtResource( 1 )]
 position = Vector2( -320, -189.371 )
 is_text = true
-concept_name = "laec"
+concept_name = "people"
 cell_position = Vector2( -3, -4 )
 tile_position = Vector2( -5, -4 )
 
@@ -147,10 +148,10 @@ concept_name = "tv"
 cell_position = Vector2( -3, 2 )
 tile_position = Vector2( -2, 2 )
 
-[node name="Laec" parent="Items" index="16" instance=ExtResource( 1 )]
+[node name="People" parent="Items" index="16" instance=ExtResource( 1 )]
 position = Vector2( 320, 83.3332 )
 z_index = 10
-concept_name = "laec"
+concept_name = "people"
 cell_position = Vector2( 4, 2 )
 tile_position = Vector2( 5, 2 )
 is_you = true
