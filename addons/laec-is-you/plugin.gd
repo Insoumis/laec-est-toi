@@ -14,8 +14,8 @@ const PATH_ITEM_SCENE := "res://core/Item.tscn"
 const PATH_ITEM_SCRIPT := "res://addons/laec-is-you/entity/Item.gd"
 const PATH_PORTAL_SCRIPT := "res://addons/laec-is-you/entity/Portal.gd"
 const PATH_LEVEL_SCRIPT := "res://addons/laec-is-you/entity/Level.gd"
-const PATH_TILE_MAP_SCRIPT := 'node/HexagonalTileMap.gd'
-const PATH_HEX_TEXTURE := 'icon/hexagon.svg'
+const PATH_TILE_MAP_SCRIPT := PATH_LAEC_ADDON + 'node/HexagonalTileMap.gd'
+const PATH_HEX_TEXTURE := PATH_LAEC_ADDON + 'icon/hexagon.svg'
 const PATH_ITEM_DIRECTORY := "res://sprites/items"
 
 # That container is in the top menu of the 2D Editor
