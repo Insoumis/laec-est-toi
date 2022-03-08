@@ -148,6 +148,8 @@ The sound assets (original soundtrack) are copyrighted by _@precheurius_.
 - Lametyste (💕🎸) _Backgrounds_
 - IvanC (📜🔭) _Level Design_
 - AudreyH (🦊✏) _Everything_
+- Koten (🧟🧶) _Nature & Bees_
+- Wilfried (🧸🎙) _Sound Design_
 - Gobz (⚡🏋🏾‍) _Touillage_
 - JeanSebastienBachOfficiel (🍏🎻) _Alpha Testing_
 
