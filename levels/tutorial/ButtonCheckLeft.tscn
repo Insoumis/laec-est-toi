@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://guis/KeyboardArrowsHint.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://guis/MouseMoveHintMaskShader.tres" type="Shader" id=6]
 [ext_resource path="res://sprites/gui/hint_move_mask_1.png" type="Texture" id=7]
 [ext_resource path="res://guis/GamepadHint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/laec-is-you/ide/editor_grid.png" type="Texture" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 6 )
@@ -28,15 +29,18 @@ skip_victory_screen = true
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
-tile_data = PoolIntArray( -65537, 13, 0, -131072, 13, 0, -131071, 13, 0, -2, 19, 0, -1, 13, 0, -65536, 13, 0, -65535, 13, 0, 65534, 20, 0, 65535, 19, 0, 0, 13, 0, 1, 13, 0, 2, 13, 0, 131070, 19, 0, 131071, 13, 0, 65536, 13, 0, 65537, 13, 0, 196607, 13, 0, 131072, 13, 0, 131073, 13, 0 )
+tile_data = PoolIntArray( -65537, 36, 0, -131072, 36, 0, -131071, 36, 0, -2, 43, 0, -1, 36, 0, -65536, 36, 0, -65535, 36, 0, 65534, 43, 0, 65535, 43, 0, 0, 36, 0, 1, 36, 0, 2, 36, 0, 131070, 43, 0, 131071, 36, 0, 65536, 36, 0, 65537, 36, 0, 196607, 36, 0, 131072, 36, 0, 131073, 36, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="HexagonalGridLines" parent="." index="3"]
+texture = ExtResource( 9 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="Laec" parent="Items" index="0" instance=ExtResource( 3 )]
@@ -95,6 +99,7 @@ tile_position = Vector2( -4, 3 )
 
 [node name="KeyboardArrowsHint" parent="GuiLayer" index="4" instance=ExtResource( 2 )]
 position = Vector2( 152, 105 )
+frame = 1
 
 [node name="PressHint" type="Control" parent="GuiLayer/KeyboardArrowsHint" index="0"]
 show_behind_parent = true
