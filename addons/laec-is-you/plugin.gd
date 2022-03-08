@@ -43,8 +43,8 @@ var presets := [  # Sentences, be careful with spacing
 	'people make people',
 ]
 
-var cell_cursor = preload(PATH_CELL_CURSOR).instance()
-var ItemSelector = preload(PATH_ITEM_SELECTOR).instance()
+var cell_cursor #= preload(PATH_CELL_CURSOR).instance()
+#var ItemSelector = preload(PATH_ITEM_SELECTOR).instance()
 var was_handling : bool = false
 var __portal_button
 
@@ -59,105 +59,6 @@ var __portal_button
 
 # We load() it to avoid dependency cycles
 #const LevelScript = preload('entity/Level.gd')
-
-
-#func sort_items(p_items: Array):  # and index them
-#	self.items_by_name = Dictionary()
-#	var already_parsed_items = Array()
-#	var sorted_items = Array()
-#	for item in p_items:
-#		if already_parsed_items.find(item["concept"]) == -1 and not item["is_text"]:
-#			sorted_items.push_back(item)
-#			self.items_by_name[item["concept"]] = item
-#			already_parsed_items.push_back(item["concept"])
-#		if item["is_text"]:
-#			sorted_items.push_back(item)
-#			self.items_by_name["text_" + item["concept"]] = item
-#
-#	sorted_items.sort_custom(ItemSorter, 'sort_items')
-#
-#	return sorted_items
-#
-#
-## Old stuff, using dictionaries, see ItemsPool instead
-#class ItemSorter:
-#	# true if a < b else false
-#	static func sort_items(item_a, item_b) -> bool:
-#		if not item_a:
-#			return true
-#		if not item_b:
-#			return false
-#		if not item_a.has('concept'):
-#			return true
-#		if not item_b.has('concept'):
-#			return false
-#		if item_a['concept'] == item_b['concept']:
-#			if item_a['is_text']:
-#				if item_b['is_text']:
-#					return false
-#				else:
-#					return false
-#			if item_b['is_text']:
-#				if item_a['is_text']:
-#					return false
-#				else:
-#					return true
-#			return false
-#		return sort_concepts(item_a['concept'], item_b['concept'])
-#
-#	# true if a < b else false
-#	static func sort_concepts(concept_a, concept_b) -> bool:
-#		var lexicographical : bool = concept_a.casecmp_to(concept_b) == -1
-#
-#		if Words.is_operator(concept_a):
-#			if Words.is_operator(concept_b):
-#				return lexicographical
-#			else:
-#				return true
-#
-#		if Words.is_operator(concept_b):
-#			if Words.is_operator(concept_a):
-#				return lexicographical
-#			else:
-#				return false
-#
-#		if Words.is_verb(concept_a):
-#			if Words.is_verb(concept_b):
-#				return lexicographical
-#			else:
-#				return true
-#
-#		if Words.is_verb(concept_b):
-#			if Words.is_verb(concept_a):
-#				return lexicographical
-#			else:
-#				return false
-#
-#		if Words.is_quality(concept_a):
-#			if Words.is_quality(concept_b):
-#				return lexicographical
-#			else:
-#				return true
-#
-#		if Words.is_quality(concept_b):
-#			if Words.is_quality(concept_a):
-#				return lexicographical
-#			else:
-#				return false
-#
-#		if Words.is_thing(concept_a):
-#			if Words.is_thing(concept_b):
-#				return lexicographical
-#			else:
-#				return true
-#
-#		if Words.is_thing(concept_b):
-#			if Words.is_thing(concept_a):
-#				return lexicographical
-#			else:
-#				return false
-#
-#		return lexicographical
 
 
 func add_items_to_tree(p_items: Array):
@@ -303,12 +204,12 @@ func handles(object: Object):
 	return false
 
 func recreate_cell_cursor():
-	cell_cursor = preload(PATH_CELL_CURSOR).instance()
+	cell_cursor = load(PATH_CELL_CURSOR).instance()
 
 func recreate_editor_grid():
 	editor_grid = Sprite.new()
 	editor_grid.position = Vector2(-6.4, 11.0)
-	editor_grid.texture = preload(PATH_EDITOR_GRID_TEXTURE)
+	editor_grid.texture = load(PATH_EDITOR_GRID_TEXTURE)
 	editor_grid.scale = Vector2(0.985, 0.928)
 	editor_grid.region_enabled = true
 	editor_grid.region_rect = Rect2(0.0, 0.0, 2000.0, 2000.0)
@@ -372,7 +273,7 @@ func index_items():
 
 
 func setup_item_wizard():
-	item_wizard_control = preload(PATH_ITEM_WIZARD).instance()
+	item_wizard_control = load(PATH_ITEM_WIZARD).instance()
 	refresh_button = item_wizard_control.find_node("Refresh")
 	add_button = item_wizard_control.find_node("Add")
 	more_button = item_wizard_control.find_node("More")
@@ -397,8 +298,8 @@ func setup_item_wizard():
 func _enter_tree():
 	add_custom_type(
 		"HexagonalTileMap", "TileMap",
-		preload(PATH_TILE_MAP_SCRIPT),
-		preload(PATH_HEX_TEXTURE)
+		load(PATH_TILE_MAP_SCRIPT),
+		load(PATH_HEX_TEXTURE)
 	)
 	setup_item_wizard()
 	connect("main_screen_changed", self, "on_main_scene_changed")
@@ -638,7 +539,7 @@ func add_item_to_edited_scene(concept: String, is_text:=false, on_tile:=Vector2.
 	item = ItemsPool.get_item_by_concept_full(item_name)
 #	item = items_by_name[item_name]
 	
-	var ItemScene = preload(PATH_ITEM_SCENE)
+	var ItemScene = load(PATH_ITEM_SCENE)
 	var item_node = ItemScene.instance()
 	
 #	if item.direction:

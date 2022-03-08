@@ -83,7 +83,7 @@ func _ready():
 		if "res://levels/tutorial" == directory_path:
 			continue
 		add_levels_in_directory_as_features(directory_path)
-	connect("suite_finished", self, "__on_suite_finished")
+	var _c = connect("suite_finished", self, "__on_suite_finished")
 
 
 func __on_suite_finished():
