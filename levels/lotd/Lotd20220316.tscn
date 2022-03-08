@@ -9,7 +9,7 @@ script = ExtResource( 2 )
 trigger_on_turn_if = ""
 trigger_on_victory_if = "not 1 deluxe"
 snake_identifier = "no_money"
-title = ""
+title = "level.Lotd20220316.no_money.title"
 title_custom = ""
 
 [node name="Lotd20220316" instance=ExtResource( 1 )]
