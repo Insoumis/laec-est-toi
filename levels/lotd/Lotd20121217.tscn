@@ -15,14 +15,21 @@ solution_a = "41144947666933344441"
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -131076, 12, 0, -131075, 12, 0, -131074, 12, 0, -131073, 12, 0, -196608, 12, 0, -65541, 12, 0, -65540, 12, 0, -65539, 12, 0, -65538, 12, 0, -65537, 12, 0, -131072, 12, 0, -131069, 20, 0, -5, 4, 0, -4, 12, 0, -3, 12, 0, -2, 12, 0, -1, 12, 0, -65536, 12, 0, -65535, 20, 0, -65534, 20, 0, -65533, 20, 0, 65531, 4, 0, 65532, 4, 0, 65533, 12, 0, 65534, 12, 0, 65535, 12, 0, 0, 20, 0, 1, 20, 0, 2, 20, 0, 3, 20, 0, 4, 20, 0, 5, 20, 0, 131067, 4, 0, 131068, 4, 0, 131069, 12, 0, 131070, 12, 0, 131071, 12, 0, 65536, 12, 0, 65537, 20, 0, 65538, 20, 0, 65539, 20, 0, 65540, 20, 0, 196603, 2, 0, 196604, 4, 0, 196605, 4, 0, 196606, 12, 0, 196607, 12, 0, 131072, 12, 0, 131073, 20, 0, 131074, 20, 0, 131075, 20, 0, 262139, 4, 0, 262140, 4, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="HexagonalGridLines" parent="." index="3"]
+modulate = Color( 1, 1, 1, 0.301961 )
+position = Vector2( -22.318, 20.119 )
+scale = Vector2( 1, 0.711 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2000, 2000 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 tile_data = PoolIntArray( -786424, 22, 0, -458788, 2, 0, -393251, 2, 0, -196644, 2, 0, -196639, 2, 0, -65569, 2, 0, -65568, 2, 0, 131103, 15, 0, 262105, 14, 0, 262116, 16, 0, 262180, 15, 0, 458720, 16, 0, 917472, 16, 0, 917482, 14, 0, 983002, 24, 0, 1048547, 16, 0, 1048554, 2, 0, 1179624, 2, 0, 1507293, 2, 0, 1638362, 2, 0, 1638364, 2, 0, 1703902, 2, 0, 1703910, 24, 0 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]

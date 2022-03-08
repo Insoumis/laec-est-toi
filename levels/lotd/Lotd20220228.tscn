@@ -10,7 +10,7 @@ script = ExtResource( 3 )
 trigger_on_turn_if = "not 1 justice"
 trigger_on_victory_if = ""
 snake_identifier = "no_justice"
-title = ""
+title = "level.Lotd20220228.no_justice.title"
 title_custom = "Y'a pas d'justice !"
 
 [sub_resource type="Resource" id=2]
@@ -18,7 +18,7 @@ script = ExtResource( 3 )
 trigger_on_turn_if = "two jlm"
 trigger_on_victory_if = ""
 snake_identifier = "many_jlm"
-title = ""
+title = "level.Lotd20220228.many_jlm.title"
 title_custom = "La relève est là !"
 
 [node name="Lotd20220228" instance=ExtResource( 1 )]
@@ -37,14 +37,20 @@ solution_a = "666699544111397996653144414474747963144166663977663314993144666633
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -262144, 9, 0, -262141, 17, 0, -262140, 17, 0, -131077, 12, 0, -131076, 21, 0, -131075, 4, 0, -131073, 9, 0, -196606, 4, 0, -196605, 21, 0, -196604, 12, 0, -65541, 4, 0, -65540, 21, 0, -65538, 4, 0, -65537, 1, 0, -131072, 1, 0, -131071, 1, 0, -131070, 4, 0, -131069, 21, 0, -131068, 21, 0, -131067, 4, 0, -6, 4, 0, -5, 21, 0, -4, 21, 0, -3, 21, 0, -2, 1, 0, -1, 4, 0, -65536, 4, 0, -65535, 1, 0, -65534, 4, 0, -65532, 21, 0, -65531, 4, 0, 65531, 4, 0, 65532, 4, 0, 65533, 4, 0, 65534, 1, 0, 65535, 4, 0, 0, 12, 0, 1, 4, 0, 2, 1, 0, 3, 4, 0, 4, 19, 0, 5, 4, 0, 131069, 1, 0, 131070, 1, 0, 131071, 4, 0, 65536, 4, 0, 65537, 1, 0, 65538, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 262141, 4, 0, 262143, 1, 0, 196608, 1, 0, 196610, 4, 0, 327677, 4, 0, 262147, 4, 0, 393213, 4, 0, 393214, 4, 0, 393215, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="HexagonalGridLines" parent="." index="3"]
+position = Vector2( -22.318, 20.119 )
+scale = Vector2( 1, 0.711 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2000, 2000 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 tile_data = PoolIntArray( -983069, 32, 0, -1048542, 8, 0, -851936, 31, 0 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="IsText" parent="Items" index="0" instance=ExtResource( 2 )]

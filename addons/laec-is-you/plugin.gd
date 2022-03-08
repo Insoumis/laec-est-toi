@@ -209,14 +209,14 @@ func recreate_cell_cursor():
 func recreate_editor_grid(into_node):
 	if editor_grid and is_instance_valid(editor_grid):
 		editor_grid.queue_free()
-	editor_grid = Sprite.new()
-	editor_grid.position = Vector2(-6.4, 11.0)
-	editor_grid.texture = load(PATH_EDITOR_GRID_TEXTURE)
-	editor_grid.scale = Vector2(0.985, 0.928)
-	editor_grid.region_enabled = true
-	editor_grid.region_rect = Rect2(0.0, 0.0, 2000.0, 2000.0)
+	editor_grid = HexagonalGridLines.new()
+#	editor_grid = Sprite.new()
+#	editor_grid.position = Vector2(-6.4, 11.0)
+#	editor_grid.texture = load(PATH_EDITOR_GRID_TEXTURE)
+#	editor_grid.scale = Vector2(0.985, 0.928)
+#	editor_grid.region_enabled = true
+#	editor_grid.region_rect = Rect2(0.0, 0.0, 2000.0, 2000.0)
 	if not is_instance_valid(editor_grid.get_parent()):
-#		cell_cursor.scale = Vector2(0.827, 0.827)
 		into_node.add_child(editor_grid)
 	
 func recreate_item_selector():

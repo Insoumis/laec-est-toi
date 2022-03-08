@@ -732,6 +732,8 @@ func handle_input(event):
 				try_pass()
 		if Input.is_action_just_released("cheat"):
 			start_any_autoplay()
+		if Input.is_action_just_pressed("grid"):
+			$HexagonalGridLines.visible = not $HexagonalGridLines.visible
 	
 	if event is InputEventMouse:
 		handle_mouse_inputs(event)
