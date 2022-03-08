@@ -15,8 +15,10 @@ func _enter_tree():
 	add_custom_type(
 		'VersionLabel',
 		'Label',
-		preload('res://addons/version/version_label.gd'),
-		preload('res://addons/version/version_label.png')
+		# load instead of preload, for when .import/ does not exist (fresh clone)
+		# preload will fail hard and the whole plugin will be disabled.
+		load('res://addons/version/version_label.gd'),
+		load('res://addons/version/version_label.png')
 	)
 
 
