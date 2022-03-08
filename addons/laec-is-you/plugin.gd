@@ -20,18 +20,18 @@ const PATH_ITEM_DIRECTORY := "res://sprites/items"
 
 # That container is in the top menu of the 2D Editor
 var container = CONTAINER_CANVAS_EDITOR_MENU
-var items : Array
-var items_by_name : Dictionary
+var items: Array
+var items_by_name: Dictionary
 var item_wizard_control
 var refresh_button
-var new_level_button : Button
-var import_button : Button
-var add_button : MenuButton
-var more_button : MenuButton
+var new_level_button: Button
+var import_button: Button
+var add_button: MenuButton
+var more_button: MenuButton
 var text_menu := PopupMenu.new()
 var add_preset_menu := PopupMenu.new()
-var editor_grid = recreate_editor_grid()
-var item_selector : Node = null
+var editor_grid: Sprite  # = recreate_editor_grid()
+var item_selector: Node = null
 
 var presets := [  # Sentences, be careful with spacing
 	'laec is you',
@@ -206,14 +206,19 @@ func handles(object: Object):
 func recreate_cell_cursor():
 	cell_cursor = load(PATH_CELL_CURSOR).instance()
 
-func recreate_editor_grid():
+func recreate_editor_grid(into_node):
+	if editor_grid and is_instance_valid(editor_grid):
+		editor_grid.queue_free()
 	editor_grid = Sprite.new()
 	editor_grid.position = Vector2(-6.4, 11.0)
 	editor_grid.texture = load(PATH_EDITOR_GRID_TEXTURE)
 	editor_grid.scale = Vector2(0.985, 0.928)
 	editor_grid.region_enabled = true
 	editor_grid.region_rect = Rect2(0.0, 0.0, 2000.0, 2000.0)
-
+	if not is_instance_valid(editor_grid.get_parent()):
+#		cell_cursor.scale = Vector2(0.827, 0.827)
+		into_node.add_child(editor_grid)
+	
 func recreate_item_selector():
 	item_selector = load(PATH_ITEM_SELECTOR).instance()
 
@@ -223,13 +228,13 @@ func _init_level_editor():
 	if not is_instance_valid(cell_cursor):
 		recreate_cell_cursor()
 	if not is_instance_valid(editor_grid):
-		recreate_editor_grid()
+		recreate_editor_grid(scene_root)
 	if not is_instance_valid(cell_cursor.get_parent()):
 		cell_cursor.scale = Vector2(0.827, 0.827)
 		scene_root.add_child(cell_cursor)
 	if not is_instance_valid(editor_grid.get_parent()):
 		cell_cursor.scale = Vector2(0.827, 0.827)
-		scene_root.add_child(editor_grid)
+#		scene_root.add_child(editor_grid)
 	if not is_instance_valid(item_selector):
 		recreate_item_selector()
 	if not is_instance_valid(item_selector.get_parent()):
@@ -359,7 +364,7 @@ func on_canvas_editor_input(event):
 	if not is_instance_valid(cell_cursor):
 		recreate_cell_cursor()
 	if not is_instance_valid(editor_grid):
-		recreate_editor_grid()
+		recreate_editor_grid(scene_root)
 	cell_cursor.position = tilemap.map_to_world(cell)
 
 
@@ -591,6 +596,9 @@ func more_option_pressed(id : int):
 			id,
 			not more_button.get_popup().is_item_checked(id)
 		)
+		if not editor_grid or not is_instance_valid(editor_grid):
+			var scene_root = get_tree().get_edited_scene_root()
+			recreate_editor_grid(scene_root)
 		editor_grid.visible =  more_button.get_popup().is_item_checked(id)
 	elif id == MORE_OPTION_DISPLAY_CURSOR:
 		more_button.get_popup().set_item_checked(
