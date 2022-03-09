@@ -4,11 +4,11 @@
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/laec-is-you/ide/editor_grid.png" type="Texture" id=3]
 
-[node name="2AbolireMonarchPres2" instance=ExtResource( 2 )]
+[node name="2AbolirMonarchPres2" instance=ExtResource( 2 )]
 contribute_to_completion_score = true
-title = "level.2AbolireMonarchPres2.title"
-excerpt = "level.2AbolireMonarchPres2.excerpt"
-link = "level.2AbolireMonarchPres2.link"
+title = "level.2AbolirMonarchPres2.title"
+excerpt = "level.2AbolirMonarchPres2.excerpt"
+link = "level.2AbolirMonarchPres2.link"
 title_custom = "Chapitre Trois"
 excerpt_custom = "Bien joué ! Un nouveau grand chantier s’ouvert : la Justice !
 Chacun a désormais accès à la Justice grâce à une aide juridictionnelle augmentée et aux tribunaux de proximité !
