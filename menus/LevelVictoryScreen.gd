@@ -56,6 +56,14 @@ func _ready():
 		% tr('LEVEL COMPLETE !')
 
 
+func _input(event):
+	if event is InputEventMouseMotion:
+		return
+	if event is InputEventJoypadMotion:
+		return
+	self.excerpt_label.speed_up_for_real = 13
+
+
 func _on_replay_completed(_won_level, _winning_cells) -> void:
 	var _c = get_tree().create_timer(2.0).connect(
 		"timeout", self, "restart_replay"
