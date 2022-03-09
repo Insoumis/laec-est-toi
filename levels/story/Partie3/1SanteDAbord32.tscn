@@ -8,11 +8,11 @@ title = "level.1SanteDAbord32.title"
 excerpt = "level.1SanteDAbord32.excerpt"
 link = "level.1SanteDAbord32.link"
 title_custom = "Chapitre 6"
-excerpt_custom = "Face aux crises, la solidarité et l’organisation sont maintenant au coeur de l’action de l’Etat : prix bloqués, SMIC et minima sociaux revalorisés... Chacun doit vivre dignement !
+excerpt_custom = "Face aux crises, la solidarité et l'organisation sont maintenant au coeur de l'action de l’Etat : prix bloqués, SMIC et minima sociaux revalorisés... Chacun doit vivre dignement !
 
 Grâce à une meilleure organisation (création de stocks stratégiques, société de roulement, réquisition des entreprises essentielles...), la France peut faire face aux épidémies tout en supprimant les états d’urgence et passes (peu) sanitaires.
 
-La Santé redevient une priorité : plus de lits d’hôpitaux, plus de postes, meilleurs salaires, fin des déserts médicaux... Les soins prescrits sont remboursés à 100% par la Sécu."
+La Santé redevient une priorité : plus de lits d’hôpitaux, plus de postes, meilleurs salaires, fin des déserts médicaux... Les soins prescrits sont remboursés à 100% par la Sécurité Sociale."
 solution_a = "6333636363697"
 
 [node name="Camera2D" parent="." index="0"]
