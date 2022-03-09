@@ -70,7 +70,7 @@ func rebuild_levels_list():
 	var i := 0
 	for level in self.user_levels:
 		# We could also add an icon here
-		self.levels_list.add_item(level.filepath)
+		self.levels_list.add_item(level.level_filepath)
 		self.levels_list.set_item_metadata(i, level)
 		i += 1
 

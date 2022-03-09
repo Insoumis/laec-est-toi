@@ -29,7 +29,7 @@ func _init():
 func _ready():
 	rekt = get_rect()
 
-func _process(delta):
+func _process(_delta):
 	__reposition_between(
 		left_position,
 		right_position,

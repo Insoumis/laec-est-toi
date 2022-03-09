@@ -342,6 +342,9 @@ func load_from_string(serialized: String) -> int:
 
 func load_from_pickle(data: Dictionary) -> int:
 	
+	if not self.is_ready:
+		yield(self, "ready")
+	
 	if not (data is Dictionary):
 		return ERR_INVALID_PARAMETER
 	
@@ -364,9 +367,10 @@ func load_from_pickle(data: Dictionary) -> int:
 	self.actions_history.clear()
 	self.recorded_solution = ""
 #	for item in get_all_items():
-	for item in self.items_layer.get_children():
-		item.get_parent().remove_child(item)
-		item.queue_free()
+	if self.items_layer:
+		for item in self.items_layer.get_children():
+			item.get_parent().remove_child(item)
+			item.queue_free()
 	deregister_all_items()
 	
 	for item_pickle in data.get('concepts', []):
@@ -1493,7 +1497,9 @@ func coerce_item_direction_to_hexagon(item, direction):
 
 func get_items_from_scene() -> Array:
 	var items := Array()
-	for item in self.items_layer.get_children():
+	var items_layer_noready = find_node('Items')
+	for item in items_layer_noready.get_children():
+#	for item in self.items_layer.get_children():
 		if item is Item and item.is_on_lattice():
 			items.append(item)
 	return items
@@ -2229,12 +2235,16 @@ onready var portal_selection_hint = find_node('PortalSelectionHint')
 var __currently_selected_portal
 
 
+func get_portals() -> Array:
+	return get_all_portals()
+
+
 func get_all_portals() -> Array:
 	var portals := Array()
 	for item in get_items_lattice().get_things():
 		assert(item is Item)
 		assert(item.is_on_lattice())
-		if item is Portal and item.is_on_lattice():
+		if (item is Portal) and item.is_on_lattice():
 			portals.append(item)
 	return portals
 

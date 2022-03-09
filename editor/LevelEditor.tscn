@@ -363,13 +363,13 @@ current = false
 [node name="HexagonalTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 
-[node name="MiniDecorFarTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="3"]
+[node name="MiniDecorFarTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="4"]
+[node name="DecorTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="5"]
+[node name="MiniDecorNearTileMap" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level" index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="UndoGuiButton" parent="DrawingSection/ActivityContainer/Preview/PreviewContainer/Previewport/Level/GuiLayer" index="0"]

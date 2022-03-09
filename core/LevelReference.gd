@@ -1,7 +1,10 @@
 extends Resource
 class_name LevelReference
+#class_name LevelResource  # todo
 
 # Kind of like a pointer to a Level.
+# Does not hold all the level data, but should hold enough to invoke it.
+# Also holds (if hydrated) some copied data from the level, such as title and portals.
 # Semantics: it's perhaps the Level, and the current Level is LevelScene.
 # Or perhaps this is a LevelSeed ?
 
@@ -15,18 +18,75 @@ const Jsonify = preload("res://lib/jsonify.gd")
 const CompressorSerializer = preload("res://lib/CompressorSerializer.gd")
 
 
-var filepath: String  # of the scene (.tscn) or the phiu (.phiu)
+# Filepath of the scene (.tscn), or the phiu (.phiu), or the .png
+# May not be set if this resource was loaded directly via string.
+export var level_filepath: String
+
+# Copies of some of the contents of the level
+# These are expensive to hydrate, since we need to instantiate the level.
+# Do not assume they are set.   See hydrate_from_instance()
+export var title: String
+export var portals: Array  # of PortalResource
+export var is_in_score: bool
+
+
+# Both of these should be function accessors.
+# It's probably OK if they memoize.
 var packed: PackedScene  # packed scene, if filepath is a `.tscn`
 var pickle: Dictionary  # pickled level, if filepath is a `.phiu` or null
 
 
-func load_from_filepath(level_filepath: String) -> int:
-	if level_filepath.ends_with('phiu'):
+func hydrate_from_instance() -> int:
+	pass
+	return OK
+
+
+func instantiate_scene():
+	var file = File.new()
+	if not file.file_exists(self.level_filepath):
+#	if not Finder.exists(self.level_filepath):  # prbly an acceptable shortcut
+#	if not ResourceLoader.exists(self.level_filepath):  # false fails in user://
+		printerr("LevelResource.instantiate_scene() cannot find level `%s'." % self.level_filepath)
+		breakpoint  # Q: what happened?   A: …
+		return null
+	
+	if self.level_filepath.ends_with('tscn'):
+		var level_packed_scene = ResourceLoader.load(self.level_filepath)
+		var level_scene = level_packed_scene.instance()
+		var LevelScene = load("res://addons/laec-is-you/entity/Level.gd")
+		if not (level_scene is LevelScene):
+			printerr("Scene `%s' is not a Level." % [self.level_filepath])
+			breakpoint  # Q: what happened?   A: …
+			return null
+		return level_scene
+	
+	elif self.level_filepath.ends_with('phiu'):
+		var loaded = load_from_filepath(self.level_filepath)
+		if loaded != OK:
+			printerr("Level `%s' could not be loaded as phiu." % [self.level_filepath])
+			return null
+		var level_scene_packed = load("res://core/Level.tscn")
+		var level_scene = level_scene_packed.instance()
+		level_scene.load_from_pickle(self.pickle)
+		return level_scene
+	
+	elif self.level_filepath.ends_with('png'):
+		# todo: support other formats
+		pass
+	
+	#breakpoint
+	return null
+
+
+
+
+func load_from_filepath(that_filepath: String) -> int:
+	if that_filepath.ends_with('phiu'):
 		var file = File.new()
-		var open_err = file.open(level_filepath, File.READ)
+		var open_err = file.open(that_filepath, File.READ)
 		if open_err:
 			Logger.warn(
-				"Cannot open PHIU file `%s'." % level_filepath, null, open_err
+				"Cannot open PHIU file `%s'." % that_filepath, null, open_err
 			)
 			breakpoint
 			return ERR_FILE_CANT_OPEN
@@ -34,21 +94,21 @@ func load_from_filepath(level_filepath: String) -> int:
 		file.close()
 		if parse_err:
 			Logger.warn(
-				"Cannot parse PHIU file `%s'." % level_filepath, null, parse_err
+				"Cannot parse PHIU file `%s'." % that_filepath, null, parse_err
 			)
 			breakpoint
 			return ERR_FILE_CANT_READ
 
-	elif level_filepath.ends_with('tscn'):
+	elif that_filepath.ends_with('tscn'):
 		pass
 		breakpoint # todo
 
-	elif level_filepath.ends_with('json'):
+	elif that_filepath.ends_with('json'):
 		var file = File.new()
-		var open_err = file.open(level_filepath, File.READ)
+		var open_err = file.open(that_filepath, File.READ)
 		if open_err:
 			Logger.warn(
-				"Cannot open JSON file `%s'." % level_filepath, null, open_err
+				"Cannot open JSON file `%s'." % that_filepath, null, open_err
 			)
 			breakpoint
 			return ERR_FILE_CANT_OPEN
@@ -56,23 +116,23 @@ func load_from_filepath(level_filepath: String) -> int:
 		file.close()
 		if parse_err:
 			Logger.warn(
-				"Cannot parse JSON file `%s'." % level_filepath, null, parse_err
+				"Cannot parse JSON file `%s'." % that_filepath, null, parse_err
 			)
 			breakpoint
 			return ERR_FILE_CANT_READ
 
-	elif level_filepath.ends_with('png'):
+	elif that_filepath.ends_with('png'):
 		var image = Image.new()
 
-		var load_err = image.load(level_filepath)
+		var load_err = image.load(that_filepath)
 		if OK != load_err:
-			Logger.warn("Cannot open PNG file `%s'." % level_filepath, null, load_err)
+			Logger.warn("Cannot open PNG file `%s'." % that_filepath, null, load_err)
 			breakpoint
 			return ERR_FILE_CANT_OPEN
 		var parse_err = parse_image_level(image)
 
 		if OK != parse_err:
-			Logger.warn("Cannot parse PNG file `%s'." % level_filepath, null, parse_err)
+			Logger.warn("Cannot parse PNG file `%s'." % that_filepath, null, parse_err)
 			breakpoint
 			return ERR_FILE_CANT_READ
 
@@ -80,7 +140,7 @@ func load_from_filepath(level_filepath: String) -> int:
 		breakpoint
 		return ERR_INVALID_PARAMETER
 
-	self.filepath = level_filepath
+	self.level_filepath = that_filepath
 	return OK
 
 

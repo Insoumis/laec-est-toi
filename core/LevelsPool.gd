@@ -22,11 +22,10 @@ const CompressorSerializer = preload("res://lib/CompressorSerializer.gd")
 const PoolLevel = preload("res://core/LevelReference.gd")
 
 
-
-class LevelLink:
-	extends Reference
-	var from : String  # filepath
-	var to : String  # filepath
+#class LevelLink:
+#	extends Resource
+#	var from : String  # filepath
+#	var to : String  # filepath
 
 
 export var source_directories := [
@@ -64,18 +63,33 @@ var __map_path_regex : RegEx
 
 
 # Main index of levels.  Not sure how big this can get?
-var levels := Dictionary()  # filepath => PoolLevel
+#var levels := Dictionary()  # filepath => PoolLevel
 
 # TODO: Replace this by an accessor, and use self.levels internally !
-var packed_levels := Dictionary()  # filepath => PackedScene
+#var packed_levels := Dictionary()  # filepath => PackedScene
 
 # Index of instanced levels.
 # WiP: probably too expensive and troublesome to keep
-var instanced_levels := Dictionary()  # filepath => Level
+#var instanced_levels := Dictionary()  # filepath => Level
 
 # Links between levels, collected from found portals
-var levels_links := Array()  # of LevelLink
+#var levels_links := Array()  # of LevelLink
 
+
+#class LevelsPoolCache:
+#	extends Resource
+#	export var levels := Dictionary()  # filepath => LevelReference (is a Resource, actually)
+#	export var levels_links := Array()  # of LevelLink
+#
+#	func clear():
+#		self.levels.clear()
+#		self.levels_links.clear()
+
+
+# We can save this to file, and skip the expensive indexation.
+var cache: LevelsPoolCache
+
+export var cache_file_path := "res://cache/levels.tres"
 
 # It's expensive.  Call it yourselves when relevant.
 #func _init():
@@ -100,24 +114,73 @@ func __set_map_path_regex(value):
 	map_path_regex = value  # not self.… !
 	rebuild_regexes()
 
+func init_full():  # expensive
+	return init(true)
 
-func init():  # expensive
+func init(invalidate_cache := false):
 	rebuild_regexes()
-	reindex_levels()
+	var loaded = load_cache_from_file()
+	if loaded != OK or invalidate_cache or should_rebuild_cache():
+		print("Re-indexing the levels.  This is going to take a few seconds.")
+		reindex_levels()
+		var saved := save_cache_to_file()
+		if saved != OK:
+			printerr("Cannot write the levels' cache to file.")
+			breakpoint
 
 
-func init_full():  # very expensive
-	init()
-	instance_levels()
-	reindex_portals()
+func should_rebuild_cache():
+	return (
+		(not self.cache)
+	)
+
+
+func save_cache_to_file() -> int:
+	if not self.cache:
+		return ERR_CANT_ACQUIRE_RESOURCE
+	self.cache.take_over_path(self.cache_file_path)
+	var saved = ResourceSaver.save(
+		self.cache_file_path,
+		self.cache,
+		0
+#		&
+#		ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS
+#		&
+#		ResourceSaver.FLAG_CHANGE_PATH
+	)
+	if saved != OK:
+		return saved
+	return OK
+
+
+func load_cache_from_file() -> int:
+	var file := File.new()
+	if not file.file_exists(self.cache_file_path):
+		return ERR_FILE_CANT_OPEN
+	self.cache = ResourceLoader.load(
+		self.cache_file_path,
+		"", # "LevelsPoolCache"
+		false
+	)
+	if not self.cache:
+		breakpoint  # corruption?
+		return ERR_CANT_ACQUIRE_RESOURCE
+	return OK
+
+
+#func init_full():  # very expensive
+#	init()
+#	instance_levels()
+#	reindex_portals()
 
 
 func clear():
-	for filepath in self.instanced_levels:
-		self.instanced_levels[filepath].queue_free()
-	self.instanced_levels.clear()
-	self.levels_links.clear()  # LevelLink is Reference
-	self.packed_levels.clear()  # PackedScene is Reference
+#	for filepath in self.instanced_levels:
+#		self.instanced_levels[filepath].queue_free()
+#	self.instanced_levels.clear()
+#	self.levels_links.clear()  # LevelLink is Reference
+#	self.packed_levels.clear()  # PackedScene is Reference
+	self.cache.clear()
 
 
 func build_regex_path_prefix() -> String:
@@ -168,7 +231,8 @@ func rebuild_regexes():
 
 
 func reindex_levels():
-	self.packed_levels.clear()
+#	self.packed_levels.clear()
+	self.cache = LevelsPoolCache.new()
 	
 	for source_directory in self.source_directories:
 		add_levels_in_directory(
@@ -188,15 +252,6 @@ func reindex_levels():
 		)
 
 
-func get_user_levels() -> Array:
-	var user_levels := Array()
-	for level_filepath in self.levels:
-		var level = self.levels[level_filepath]
-		if level_filepath.begins_with("user://"):
-			user_levels.append(level)
-	return user_levels
-
-
 func add_level(filepath: String):
 	var found := __level_path_regex.search(filepath)
 	if not found and self.should_use_match:
@@ -210,14 +265,18 @@ func add_level(filepath: String):
 	
 	var is_level_file_valid := false
 	var level := PoolLevel.new()
-	level.filepath = filepath
+	level.level_filepath = filepath
 	
 	if filepath.ends_with(".phiu"):
-		var file = File.new()
-		file.open(filepath, File.READ)
-		var phiu = file.get_as_text()
+		var file := File.new()
+		var opened := file.open(filepath, File.READ)
+		if opened != OK:
+			printerr("Failed to open .phiu file `%s`." % filepath)
+			return
+		
+		var phiu: String = file.get_as_text()
 		file.close()
-		var parsed = level.parse_phiu(phiu)
+		var parsed := level.parse_phiu(phiu)
 		if OK != parsed:
 			printerr("Failed to parse .phiu file `%s`." % filepath)
 			breakpoint
@@ -225,8 +284,8 @@ func add_level(filepath: String):
 		is_level_file_valid = true
 
 	if filepath.ends_with(".png"):
-		var image = Image.new()
-		var load_err = image.load(filepath)
+		var image := Image.new()
+		var load_err := image.load(filepath)
 
 		if OK != load_err:
 			Logger.warn("Cannot open PNG file `%s'." % filepath, null, load_err)
@@ -245,14 +304,44 @@ func add_level(filepath: String):
 	elif filepath.ends_with(".tscn"):
 		var packed_level = load(filepath)
 		if packed_level:
-			level.packed = packed_level
-			self.packed_levels[filepath] = packed_level
+			packed_level = null  # hungry GC
 			is_level_file_valid = true
 		else:
 			printerr("Skipping scene `%s`: cannot load() it." % filepath)
 	
-	if is_level_file_valid:
-		self.levels[filepath] = level
+	if not is_level_file_valid:
+		return
+	
+	var level_instance = level.instantiate_scene()
+	if not level_instance:
+		print("%s: Skipping wannabe level `%s'." % [self.name, filepath])
+		return
+	# This is already checked/validated by level.instantiate_scene()
+#	if not (level_instance is LevelScript):
+#		print("%s: Skipping would-be level `%s'." % [self.name, filepath])
+#		return
+	
+	#level_instance.register_all_items()
+	level_instance.reindex_lattice()
+
+	level.is_in_score = level_instance.contribute_to_completion_score
+	level.title = level_instance.get_title_displayed()
+#	level.portals = 
+	
+	for portal_scene in level_instance.get_portals():
+		var portal = PortalResource.new()
+		portal.target_level_path = portal_scene.level_path
+		level.portals.append(portal)
+		# I don't think we need those like this
+#		var level_link = LevelLink.new()
+#		level_link.from = filepath
+#		level_link.to = portal_scene.level_path
+#		self.cache.levels_links.append(level_link)
+
+	self.cache.levels[filepath] = level
+	
+	level_instance.free()  # not queue_free() else boum
+
 
 
 func add_levels_in_directory(
@@ -275,50 +364,77 @@ func add_levels_in_directory(
 		add_levels_in_directory(filepath, depth - 1, excluded_directories)
 	finder.queue_free()
 
-func instance_levels():
-	for filepath in self.instanced_levels:
-		self.instanced_levels[filepath].queue_free()
-	self.instanced_levels.clear()
-	var completion_score_levels := Array()  # of filepaths? of PoolLevel?
-	for filepath in self.packed_levels:
-		var level = self.packed_levels[filepath].instance()
-		self.instanced_levels[filepath] = level
-		if level.contribute_to_completion_score:
-			completion_score_levels.append(
-				filepath
-			)
-	# Cache the index of the levels useful in completion score calculus 
-	FileStorage.set_value(
-		"LevelsPool", "completion_score_levels", completion_score_levels
-	)
+
+#func instance_levels():
+#	breakpoint  # deprecated
+#	for filepath in self.instanced_levels:
+#		self.instanced_levels[filepath].queue_free()
+#	self.instanced_levels.clear()
+#	var completion_score_levels := Array()  # of filepaths? of PoolLevel?
+#	for filepath in self.packed_levels:
+#		var level = self.packed_levels[filepath].instance()
+#		self.instanced_levels[filepath] = level
+#		if level.contribute_to_completion_score:
+#			completion_score_levels.append(
+#				filepath
+#			)
+#	# Cache the index of the levels useful in completion score calculus 
+#	FileStorage.set_value(
+#		"LevelsPool", "completion_score_levels", completion_score_levels
+#	)
 
 
-func reindex_portals():
-	assert(self.instanced_levels, "Call instance_levels() first.")
-	for filepath in self.instanced_levels:
-		var level = self.instanced_levels[filepath]
-		assert(level is Level)
-		var portals : Array = level.get_all_portals()
-#		print("Found %d portals for %s" % [portals.size(), filepath])
-		for portal in portals:
-			var link = LevelLink.new()
-			link.from = filepath
-			link.to = portal.level_path
-			if not link.to:
-				printerr("Portal `%s` without target in %s" % [
-					portal.name, filepath
-				])
-				continue
-			self.levels_links.append(link)
+#func reindex_portals():
+#	breakpoint
+#	assert(self.instanced_levels, "Call instance_levels() first.")
+#	for filepath in self.instanced_levels:
+#		var level = self.instanced_levels[filepath]
+#		assert(level is Level)
+#		var portals : Array = level.get_all_portals()
+##		print("Found %d portals for %s" % [portals.size(), filepath])
+#		for portal in portals:
+#			var link = LevelLink.new()
+#			link.from = filepath
+#			link.to = portal.level_path
+#			if not link.to:
+#				printerr("Portal `%s` without target in %s" % [
+#					portal.name, filepath
+#				])
+#				continue
+#			self.levels_links.append(link)
+
+
+
+func get_levels_dict() -> Dictionary:
+	return self.cache.levels
+
+
+func get_levels() -> Array:
+	return self.cache.levels.values()
+#	var levels := Array()
+#	for level_filepath in self.cache.levels:
+#		var level = self.cache.levels[level_filepath]
+#		levels.append(level)
+#	return levels
+
+
+func get_user_levels() -> Array:
+	var user_levels := Array()
+	for level_filepath in self.cache.levels:
+		var level = self.cache.levels[level_filepath]
+		if level_filepath.begins_with("user://"):
+			user_levels.append(level)
+	return user_levels
 
 
 func find_orphans() -> Array:
-	assert(self.levels_links, "Call reindex_portals() first.")
-	
-	var possible_orphans := self.packed_levels.keys()
-	for link in self.levels_links:
-		possible_orphans.erase(link.from)  # adopted
-		possible_orphans.erase(link.to)    # you too
-	
+	assert(self.cache, "Call reindex_levels() first.")
+	return []
+#
+	var possible_orphans := self.cache.levels.keys()
+#	for link in self.levels_links:
+#		possible_orphans.erase(link.from)  # adopted
+#		possible_orphans.erase(link.to)    # you too
+#
 	return possible_orphans
 
