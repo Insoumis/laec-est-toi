@@ -1,11 +1,234 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/laec-is-you/entity/Item.gd" type="Script" id=2]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 
-[node name="BoilerplateLevel" instance=ExtResource( 1 )]
-title = "Bienvenue"
-subtitle = "L'Avenir en Commun"
+[node name="3BanquesInteretGeneral47" instance=ExtResource( 1 )]
+title = "level.3BanquesInteretGeneral47.title"
+excerpt = "level.3BanquesInteretGeneral47.excerpt"
+link = "level.3BanquesInteretGeneral47.link"
+title_custom = "Chapitre 8"
+excerpt_custom = "Bravo ! Tu viens d’éradiquer la précarité : personne sous le seuil de pauvreté (1063 €/mois) !
+La France est un pays riche : redistribuer cette richesse est devenu une nécessité...
+L'impôt sur la fortune (ISF) est rétabli et le montant des héritages plafonné à 12 millions d'euros. L'impôt est aussi rendu plus progressif, en passant de 5 à 14 tranches : les revenus inférieurs à 4000 €/mois payent moins de taxes ! 
+Aucun jeune n’est laissé de côté : une allocation d'autonomie de 1063 €/mois leur permet désormais d’étudier pleinement ! 
+Enfin, la dette publique, qui asphyxie notre démocratie, est annulée : grâce à la Banque Centrale Européenne, nous avons pu transformer sa part de dette des États en dettes perpétuelles à taux nul."
 
-[node name="HexagonalTileMap" parent="." index="1"]
-cell_custom_transform = Transform2D( 64, 0, 0, 55.4256, -32, -27.7128 )
-tile_data = PoolIntArray( 0, 4, 0 )
+[node name="Camera2D" parent="." index="0"]
+zoom = Vector2( 1.4, 1.4 )
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -393218, 27, 0, -393217, 27, 0, -458752, 27, 0, -458751, 27, 0, -458750, 27, 0, -458749, 36, 0, -458748, 36, 0, -327682, 27, 0, -327681, 27, 0, -393216, 27, 0, -393215, 27, 0, -393214, 27, 0, -393213, 27, 0, -393212, 36, 0, -393211, 36, 0, -262147, 31, 0, -262146, 27, 0, -327676, 36, 0, -327675, 36, 0, -196611, 31, 0, -196610, 27, 0, -262139, 36, 0, -262138, 36, 0, -131076, 27, 0, -131075, 27, 0, -65541, 34, 0, -65540, 34, 0, -65539, 34, 0, -65538, 34, 0, -65537, 34, 0, -131072, 34, 0, -131071, 34, 0, -131070, 34, 0, -131069, 34, 0, -131068, 34, 0, -6, 34, 0, -5, 34, 0, -4, 34, 0, -3, 34, 0, -2, 34, 0, -1, 23, 0, -65536, 23, 0, -65535, 34, 0, -65534, 34, 0, -65533, 34, 0, 65532, 27, 0, 65533, 27, 0, 65534, 27, 0, 131067, 27, 0, 131068, 27, 0, 131069, 27, 0, 196603, 34, 0, 196604, 34, 0, 196605, 34, 0, 196606, 34, 0, 196607, 34, 0, 131072, 34, 0, 131073, 34, 0, 131074, 34, 0, 131075, 34, 0, 131076, 34, 0, 262138, 34, 0, 262139, 34, 0, 262140, 34, 0, 262141, 34, 0, 262142, 34, 0, 262143, 23, 0, 196608, 23, 0, 196609, 34, 0, 196610, 34, 0, 196611, 34, 0, 327676, 27, 0, 327677, 27, 0, 262149, 36, 0, 262150, 36, 0, 393212, 27, 0, 393213, 27, 0, 327684, 36, 0, 327685, 36, 0, 458749, 27, 0, 458750, 27, 0, 458751, 27, 0, 393219, 27, 0, 393220, 23, 0, 393221, 36, 0, 524285, 27, 0, 524286, 27, 0, 524287, 27, 0, 458752, 27, 0, 458753, 27, 0, 458754, 27, 0, 458755, 23, 0, 458756, 36, 0, 589823, 27, 0, 524288, 27, 0, 524289, 27, 0, 524290, 27, 0, 524291, 27, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="LaecText" type="Node2D" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( -576, -280.269 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( -6, -6 )
+tile_position = Vector2( -9, -6 )
+
+[node name="IsText" type="Node2D" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( -512, -280.269 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -5, -6 )
+tile_position = Vector2( -8, -6 )
+
+[node name="YouText" type="Node2D" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( -448, -280.269 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -4, -6 )
+tile_position = Vector2( -7, -6 )
+
+[node name="6 EmeText" type="Node2D" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( -448, -189.371 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "6eme"
+cell_position = Vector2( -5, -4 )
+tile_position = Vector2( -7, -4 )
+
+[node name="AndText" parent="Items" index="4" instance=ExtResource( 3 )]
+position = Vector2( -256, -189.371 )
+is_text = true
+concept_name = "and"
+cell_position = Vector2( -2, -4 )
+tile_position = Vector2( -4, -4 )
+
+[node name="6 EmeText2" parent="Items" index="5" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 64, 356.017 )
+is_text = true
+concept_name = "6eme"
+cell_position = Vector2( -3, 8 )
+tile_position = Vector2( 1, 8 )
+is_lit = false
+
+[node name="IsText2" type="Node2D" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( -384, -189.371 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, -4 )
+tile_position = Vector2( -6, -4 )
+
+[node name="IsText3" parent="Items" index="7" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 128, 356.017 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -2, 8 )
+tile_position = Vector2( 2, 8 )
+is_lit = false
+
+[node name="PullText" type="Node2D" parent="Items" index="8" instance=ExtResource( 3 )]
+position = Vector2( -320, -189.371 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "pull"
+cell_position = Vector2( -3, -4 )
+tile_position = Vector2( -5, -4 )
+
+[node name="PushText" parent="Items" index="9" instance=ExtResource( 3 )]
+position = Vector2( -192, -189.371 )
+is_text = true
+concept_name = "push"
+cell_position = Vector2( -1, -4 )
+tile_position = Vector2( -3, -4 )
+
+[node name="WinText" parent="Items" index="10" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 224, 310.568 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 0, 7 )
+tile_position = Vector2( 3, 7 )
+is_lit = false
+
+[node name="Laec" type="Node2D" parent="Items" index="11" instance=ExtResource( 3 )]
+position = Vector2( 288, -234.81 )
+script = ExtResource( 2 )
+concept_name = "laec"
+cell_position = Vector2( 7, -5 )
+tile_position = Vector2( 4, -5 )
+is_you = true
+
+[node name="6 Eme" type="Node2D" parent="Items" index="12" instance=ExtResource( 3 )]
+position = Vector2( 320, -189.371 )
+script = ExtResource( 2 )
+concept_name = "6eme"
+cell_position = Vector2( 7, -4 )
+tile_position = Vector2( 5, -4 )
+is_push = true
+is_pull = true
+
+[node name="Deluxe" type="Node2D" parent="Items" index="13" instance=ExtResource( 3 )]
+position = Vector2( -128, 265.119 )
+script = ExtResource( 2 )
+concept_name = "deluxe"
+cell_position = Vector2( -5, 6 )
+tile_position = Vector2( -2, 6 )
+is_defeat = true
+
+[node name="Deluxe2" parent="Items" index="14" instance=ExtResource( 3 )]
+position = Vector2( -160, 310.568 )
+concept_name = "deluxe"
+cell_position = Vector2( -6, 7 )
+tile_position = Vector2( -3, 7 )
+is_defeat = true
+
+[node name="6 EmeText3" type="Node2D" parent="Items" index="15" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 32, -53.0239 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "6eme"
+cell_position = Vector2( 1, -1 )
+tile_position = Vector2( 0, -1 )
+is_lit = false
+
+[node name="IsText4" type="Node2D" parent="Items" index="16" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 96, -53.0239 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 2, -1 )
+tile_position = Vector2( 1, -1 )
+is_lit = false
+
+[node name="HotText" type="Node2D" parent="Items" index="17" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 224, -53.0239 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "hot"
+cell_position = Vector2( 4, -1 )
+tile_position = Vector2( 3, -1 )
+is_lit = false
+
+[node name="DeluxeText" type="Node2D" parent="Items" index="18" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 32, 128.772 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "deluxe"
+cell_position = Vector2( -1, 3 )
+tile_position = Vector2( 0, 3 )
+is_lit = false
+
+[node name="DeluxeText2" parent="Items" index="19" instance=ExtResource( 3 )]
+position = Vector2( -576, -98.4729 )
+is_text = true
+concept_name = "deluxe"
+cell_position = Vector2( -8, -2 )
+tile_position = Vector2( -9, -2 )
+
+[node name="IsText5" type="Node2D" parent="Items" index="20" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 96, 128.772 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 0, 3 )
+tile_position = Vector2( 1, 3 )
+is_lit = false
+
+[node name="IsText6" parent="Items" index="21" instance=ExtResource( 3 )]
+position = Vector2( -512, -98.4729 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -7, -2 )
+tile_position = Vector2( -8, -2 )
+
+[node name="MeltText" type="Node2D" parent="Items" index="22" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 224, 128.772 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "melt"
+cell_position = Vector2( 2, 3 )
+tile_position = Vector2( 3, 3 )
+is_lit = false
+
+[node name="DefeatText" parent="Items" index="23" instance=ExtResource( 3 )]
+position = Vector2( -448, -98.4729 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( -6, -2 )
+tile_position = Vector2( -7, -2 )
