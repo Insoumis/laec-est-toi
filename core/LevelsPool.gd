@@ -160,7 +160,7 @@ func load_cache_from_file() -> int:
 	self.cache = ResourceLoader.load(
 		self.cache_file_path,
 		"", # "LevelsPoolCache"
-		false
+		false # read file, not cache
 	)
 	if not self.cache:
 		breakpoint  # corruption?
@@ -230,7 +230,7 @@ func rebuild_regexes():
 		printerr("Failed to compile regex `%s`." % path_prefix + self.map_path_regex)
 
 
-func reindex_levels():
+func reindex_levels(refresh_existing := true):
 #	self.packed_levels.clear()
 	self.cache = LevelsPoolCache.new()
 	
@@ -238,9 +238,14 @@ func reindex_levels():
 		add_levels_in_directory(
 			source_directory,
 			self.directory_max_depth,
-			self.excluded_directories
+			self.excluded_directories,
+			refresh_existing
 		)
 	
+	reindex_levels_from_user(refresh_existing)
+
+
+func reindex_levels_from_user(refresh_existing := true):
 	var dir_tool = Directory.new()
 	for user_directory in self.user_directories:
 		assert(user_directory.begins_with("user://"))  # just to be sure
@@ -248,11 +253,12 @@ func reindex_levels():
 		add_levels_in_directory(
 			user_directory,
 			self.directory_max_depth,
-			self.excluded_directories
+			self.excluded_directories,
+			refresh_existing
 		)
 
 
-func add_level(filepath: String):
+func add_level(filepath: String, refresh_existing := true):
 	var found := __level_path_regex.search(filepath)
 	if not found and self.should_use_match:
 		return
@@ -260,6 +266,14 @@ func add_level(filepath: String):
 	var excluded := __excluded_level_path_regex.search(filepath)
 	if excluded and self.should_use_exclusion:
 		return
+	
+	assert(self.cache)
+	assert(self.cache.levels)
+	if not refresh_existing and self.cache.levels.has(filepath):
+		return  # Skip
+	# Replace an existing level with new contents
+	var _erased = self.cache.levels.erase(filepath)
+	
 	
 	# TODO: maps?  we're going to need those at some point, right?
 	
@@ -347,7 +361,8 @@ func add_level(filepath: String):
 func add_levels_in_directory(
 	target_directory,
 	depth := 0,
-	skipped_directories := Array()
+	skipped_directories := Array(),
+	refresh_existing := true
 ):
 	if depth < 0:
 		return
@@ -359,9 +374,9 @@ func add_levels_in_directory(
 	var levels_directory = finder.list_directory(target_directory)
 	
 	for filepath in levels_directory['files']:
-		add_level(filepath)
+		add_level(filepath, refresh_existing)
 	for filepath in levels_directory['directories']:
-		add_levels_in_directory(filepath, depth - 1, excluded_directories)
+		add_levels_in_directory(filepath, depth - 1, excluded_directories, refresh_existing)
 	finder.queue_free()
 
 

@@ -99,7 +99,9 @@ func load_from_files():
 	self.text_atlas_image = load(self.text_atlas_path)
 	self.data_cache = load(self.atlas_data_path)
 	self.data_cache.item_atlas_texture = ImageTexture.new()
+	self.data_cache.item_atlas_texture.flags = 0
 	self.data_cache.text_atlas_texture = ImageTexture.new()
+	self.data_cache.text_atlas_texture.flags = 0
 	
 	if self.item_atlas_image is StreamTexture:
 		self.data_cache.item_atlas_image = self.item_atlas_image.get_data().duplicate()
@@ -112,7 +114,10 @@ func load_from_files():
 		printerr("AtlasSpriteFramesFactory: can't load text atlas texture")
 	
 	self.data_cache.item_atlas_texture.create_from_image(self.data_cache.item_atlas_image)
+	self.data_cache.item_atlas_texture.flags = 0
 	self.data_cache.text_atlas_texture.create_from_image(self.data_cache.text_atlas_image)
+	self.data_cache.text_atlas_texture.flags = 0
+	
 	self.data_cache.item_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
 		self.data_cache.item_sprite_frames_dictionary,
 		self.data_cache.item_atlas_texture
@@ -159,6 +164,7 @@ func make_sprite_atlas_texture(atlas, region):
 	var atlas_texture = AtlasTexture.new()
 	atlas_texture.atlas = atlas
 	atlas_texture.region = region
+	atlas_texture.flags = 0
 	return atlas_texture
 
 
@@ -182,10 +188,13 @@ func generate_spriteframes(items: Array):  # of PoolItem[]
 	
 	self.data_cache.item_atlas_image = Image.new()
 	self.data_cache.item_atlas_texture = ImageTexture.new()
+	self.data_cache.item_atlas_texture.flags = 0
 	self.data_cache.item_atlas_image.create(TEXTURE_SIZE, TEXTURE_SIZE, true, Image.FORMAT_RGBA8)
+	
 	self.data_cache.item_atlas_texture.create_from_image(self.data_cache.item_atlas_image)
 	self.data_cache.text_atlas_image = Image.new()
 	self.data_cache.text_atlas_texture = ImageTexture.new()
+	self.data_cache.text_atlas_texture.flags = 0
 	self.data_cache.text_atlas_image.create(TEXTURE_SIZE, TEXTURE_SIZE, true, Image.FORMAT_RGBA8)
 	self.data_cache.text_atlas_texture.create_from_image(self.data_cache.text_atlas_image)
 #	var destination_rect = Rect2(Vector2(0.0, 0.0), Vector2(float(QUADRANT_SIZE), float(QUADRANT_SIZE)))
