@@ -65,7 +65,8 @@ func rebuild_levels_list():
 	if not self.levels_list:
 		return
 	self.levels_list.clear()
-	LevelsPool.reindex_levels()
+	LevelsPool.init()
+	LevelsPool.reindex_levels_from_user(false)
 	self.user_levels = LevelsPool.get_user_levels()
 	var i := 0
 	for level in self.user_levels:
