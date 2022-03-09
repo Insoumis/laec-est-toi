@@ -67,6 +67,7 @@ var check_newline : bool = false
 var current_newlines : int = 0
 # Modify the current speed
 var speed_up : float = 1
+var speed_up_for_real : float = 1
 # Variable to keep track of if in the current step the number of lines increased
 var last_lines : int = 1
 # Variable to decide whether to prepend (and append) all the tags which are cut mid sentence
@@ -256,7 +257,7 @@ func _physics_process(delta : float) -> void:
 			match currentitem.type:
 				NORMAL_TEXT:
 					# Increase the speed by speed_up
-					counter+=delta*speed_up
+					counter+=delta*speed_up*speed_up_for_real
 					
 					# used to decide if all words are written
 					var finished : bool = false
@@ -493,7 +494,7 @@ func _physics_process(delta : float) -> void:
 					on_newline = true
 
 				WAIT:
-					counter+=delta*speed_up
+					counter+=delta*speed_up*speed_up_for_real
 					# If this is called for the first time emit wait start
 					if queue_start:
 						queue_start = false
@@ -523,7 +524,7 @@ func _physics_process(delta : float) -> void:
 					parsedqueues+=1
 
 				IMAGE:
-					counter+=delta*speed_up
+					counter+=delta*speed_up*speed_up_for_real
 					if counter > currentitem.time:
 						
 						# Add the image to the text box
