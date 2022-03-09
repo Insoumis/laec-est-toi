@@ -267,8 +267,7 @@ func add_level(filepath: String, refresh_existing := true):
 	if excluded and self.should_use_exclusion:
 		return
 	
-	assert(self.cache)
-	assert(self.cache.levels)
+	assert(self.cache is LevelsPoolCache)
 	if not refresh_existing and self.cache.levels.has(filepath):
 		return  # Skip
 	# Replace an existing level with new contents
