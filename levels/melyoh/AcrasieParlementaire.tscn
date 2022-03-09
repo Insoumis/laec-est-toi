@@ -1,0 +1,221 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/laec-is-you/entity/Item.gd" type="Script" id=2]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=4]
+[ext_resource path="res://sprites/items/jlm_right_0_0.png" type="Texture" id=5]
+[ext_resource path="res://sprites/items/money_1.png" type="Texture" id=6]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+trigger_on_turn_if = "2 jlm"
+trigger_on_victory_if = ""
+image = ExtResource( 5 )
+snake_identifier = "two_jlm"
+title = ""
+title_custom = "La République, c'est moi !"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+trigger_on_turn_if = "2 money"
+trigger_on_victory_if = ""
+image = ExtResource( 6 )
+snake_identifier = "more_money"
+title = ""
+title_custom = "Richard Ferrand"
+
+[node name="AcrasieParlementaire" instance=ExtResource( 1 )]
+title = "level.AcrasieParlementaire.title"
+excerpt = "level.AcrasieParlementaire.excerpt"
+link = "level.AcrasieParlementaire.link"
+title_custom = "Acrasie Parlementaire"
+excerpt_custom = "Le même personnage revient chaque matin accomplir sa révoltante criminelle et assassine sinistre fonction qui est de maintenir l’envoûtement sur moi, de continuer à faire de moi cet envoûté éternel etc etc."
+achievement_a = SubResource( 1 )
+achievement_b = SubResource( 2 )
+solution_a = "631693617444149999333631141444"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -262148, 32, 0, -262147, 32, 0, -262146, 32, 0, -262145, 32, 0, -327680, 32, 0, -327679, 32, 0, -327678, 32, 0, -196613, 32, 0, -196612, 32, 0, -196611, 31, 0, -196610, 31, 0, -196609, 9, 0, -262144, 9, 0, -262143, 9, 0, -262142, 31, 0, -262141, 31, 0, -262140, 32, 0, -262139, 32, 0, -262138, 32, 0, -131078, 32, 0, -131076, 32, 0, -131074, 9, 0, -131073, 9, 0, -196608, 9, 0, -196607, 9, 0, -196605, 9, 0, -196604, 32, 0, -196602, 32, 0, -65542, 32, 0, -65540, 32, 0, -65537, 9, 0, -131072, 9, 0, -131071, 9, 0, -131068, 32, 0, -131065, 32, 0, -5, 32, 0, -4, 33, 0, -3, 33, 0, -2, 33, 0, -1, 33, 0, -65536, 33, 0, -65535, 33, 0, -65534, 33, 0, -65533, 9, 0, -65532, 32, 0, 65532, 32, 0, 65533, 32, 0, 65534, 32, 0, 65535, 32, 0, 0, 32, 0, 1, 32, 0, 2, 32, 0, 3, 32, 0, 4, 9, 0, 5, 32, 0, 131068, 32, 0, 131070, 32, 0, 131071, 32, 0, 65539, 32, 0, 65540, 32, 0, 131075, 32, 0, 131076, 32, 0, 196609, 32, 0, 196610, 32, 0, 327678, 32, 0, 327679, 32, 0, 262144, 32, 0, 262145, 32, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="YouText" type="Node2D" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( 448, -98.4729 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 8, -2 )
+tile_position = Vector2( 7, -2 )
+direction = "bottom_right"
+
+[node name="IsText" type="Node2D" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( 416, -143.922 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 8, -3 )
+tile_position = Vector2( 6, -3 )
+
+[node name="WinText" type="Node2D" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( -224, 219.67 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( -6, 5 )
+tile_position = Vector2( -4, 5 )
+direction = "top_left"
+
+[node name="IsText2" type="Node2D" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( 320, 174.221 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 3, 4 )
+tile_position = Vector2( 5, 4 )
+
+[node name="EnergyText" type="Node2D" parent="Items" index="4" instance=ExtResource( 3 )]
+position = Vector2( -288, 128.772 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "energy"
+cell_position = Vector2( -6, 3 )
+tile_position = Vector2( -5, 3 )
+
+[node name="Energy" type="Node2D" parent="Items" index="5" instance=ExtResource( 3 )]
+position = Vector2( -128, 174.221 )
+script = ExtResource( 2 )
+concept_name = "energy"
+cell_position = Vector2( -4, 4 )
+tile_position = Vector2( -2, 4 )
+direction = "bottom_left"
+is_win = true
+
+[node name="Money" type="Node2D" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( 192, 83.3234 )
+script = ExtResource( 2 )
+concept_name = "money"
+cell_position = Vector2( 2, 2 )
+tile_position = Vector2( 3, 2 )
+direction = "left"
+is_defeat = true
+is_melt = true
+
+[node name="MoneyText" type="Node2D" parent="Items" index="7" instance=ExtResource( 3 )]
+position = Vector2( 256, 174.221 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "money"
+cell_position = Vector2( 2, 4 )
+tile_position = Vector2( 4, 4 )
+
+[node name="IsText3" type="Node2D" parent="Items" index="8" instance=ExtResource( 3 )]
+position = Vector2( -256, 174.221 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -6, 4 )
+tile_position = Vector2( -4, 4 )
+direction = "bottom_right"
+
+[node name="Law" type="Node2D" parent="Items" index="9" instance=ExtResource( 3 )]
+position = Vector2( 96, -53.0238 )
+script = ExtResource( 2 )
+concept_name = "law"
+cell_position = Vector2( 2, -1 )
+tile_position = Vector2( 1, -1 )
+direction = "top_left"
+is_push = true
+
+[node name="LawText" type="Node2D" parent="Items" index="10" instance=ExtResource( 3 )]
+position = Vector2( -64, -189.371 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "law"
+cell_position = Vector2( 1, -4 )
+tile_position = Vector2( -1, -4 )
+
+[node name="IsText4" type="Node2D" parent="Items" index="11" instance=ExtResource( 3 )]
+position = Vector2( 0, -189.371 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 2, -4 )
+tile_position = Vector2( 0, -4 )
+
+[node name="MeltText" type="Node2D" parent="Items" index="12" instance=ExtResource( 3 )]
+position = Vector2( 448, 83.3232 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "melt"
+cell_position = Vector2( 6, 2 )
+tile_position = Vector2( 7, 2 )
+direction = "top_left"
+
+[node name="HotText" type="Node2D" parent="Items" index="13" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -64, -7.57484 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "hot"
+cell_position = Vector2( -1, 0 )
+tile_position = Vector2( -1, 0 )
+direction = "bottom_right"
+is_lit = false
+
+[node name="PushText" type="Node2D" parent="Items" index="14" instance=ExtResource( 3 )]
+position = Vector2( 64, -189.371 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "push"
+cell_position = Vector2( 3, -4 )
+tile_position = Vector2( 1, -4 )
+
+[node name="MoneyText2" type="Node2D" parent="Items" index="15" instance=ExtResource( 3 )]
+position = Vector2( 320, 83.3232 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "money"
+cell_position = Vector2( 4, 2 )
+tile_position = Vector2( 5, 2 )
+
+[node name="IsText5" type="Node2D" parent="Items" index="16" instance=ExtResource( 3 )]
+position = Vector2( 384, 83.3232 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 5, 2 )
+tile_position = Vector2( 6, 2 )
+
+[node name="DefeatText" type="Node2D" parent="Items" index="17" instance=ExtResource( 3 )]
+position = Vector2( 384, 174.221 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( 4, 4 )
+tile_position = Vector2( 6, 4 )
+
+[node name="JlmText" type="Node2D" parent="Items" index="18" instance=ExtResource( 3 )]
+position = Vector2( 384, -189.371 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "jlm"
+cell_position = Vector2( 8, -4 )
+tile_position = Vector2( 6, -4 )
+
+[node name="Jlm" type="Node2D" parent="Items" index="19" instance=ExtResource( 3 )]
+position = Vector2( 0, -98.4629 )
+script = ExtResource( 2 )
+concept_name = "jlm"
+cell_position = Vector2( 1, -2 )
+tile_position = Vector2( 0, -2 )
+direction = "top_right"
+is_you = true

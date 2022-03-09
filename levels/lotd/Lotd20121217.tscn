@@ -17,10 +17,6 @@ tile_data = PoolIntArray( -131076, 12, 0, -131075, 12, 0, -131074, 12, 0, -13107
 
 [node name="HexagonalGridLines" parent="." index="3"]
 modulate = Color( 1, 1, 1, 0.301961 )
-position = Vector2( -22.318, 20.119 )
-scale = Vector2( 1, 0.711 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 2000, 2000 )
 
 [node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
