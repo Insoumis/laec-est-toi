@@ -3,9 +3,19 @@
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 
 [node name="BoilerplateLevel" instance=ExtResource( 1 )]
-title = "Bienvenue"
-subtitle = "L'Avenir en Commun"
+title = "level.BoilerplateLevel.title"
+excerpt = "level.BoilerplateLevel.excerpt"
+link = "level.BoilerplateLevel.link"
 
-[node name="HexagonalTileMap" parent="." index="1"]
-cell_custom_transform = Transform2D( 64, 0, 0, 55.4256, -32, -27.7128 )
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( 0, 4, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
