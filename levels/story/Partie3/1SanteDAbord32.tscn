@@ -71,15 +71,15 @@ concept_name = "money"
 cell_position = Vector2( -9, 4 )
 tile_position = Vector2( -7, 4 )
 
-[node name="Justice" parent="Items" index="6" instance=ExtResource( 2 )]
+[node name="Law2" parent="Items" index="6" instance=ExtResource( 2 )]
 position = Vector2( 384, 174.221 )
-concept_name = "justice"
+concept_name = "law"
 cell_position = Vector2( 4, 4 )
 tile_position = Vector2( 6, 4 )
 
-[node name="Law" parent="Items" index="7" instance=ExtResource( 2 )]
+[node name="Hospital" parent="Items" index="7" instance=ExtResource( 2 )]
 position = Vector2( 352, -143.922 )
-concept_name = "law"
+concept_name = "hospital"
 cell_position = Vector2( 7, -3 )
 tile_position = Vector2( 5, -3 )
 
@@ -122,20 +122,20 @@ cell_position = Vector2( -2, 3 )
 tile_position = Vector2( -1, 3 )
 is_lit = false
 
-[node name="JusticeText" parent="Items" index="13" instance=ExtResource( 2 )]
+[node name="LawText" parent="Items" index="13" instance=ExtResource( 2 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( -448, 265.119 )
 is_text = true
-concept_name = "justice"
+concept_name = "law"
 cell_position = Vector2( -10, 6 )
 tile_position = Vector2( -7, 6 )
 is_lit = false
 
-[node name="LawText" parent="Items" index="14" instance=ExtResource( 2 )]
+[node name="HospitalText" parent="Items" index="14" instance=ExtResource( 2 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( 384, 265.119 )
 is_text = true
-concept_name = "law"
+concept_name = "hospital"
 cell_position = Vector2( 3, 6 )
 tile_position = Vector2( 6, 6 )
 is_lit = false
