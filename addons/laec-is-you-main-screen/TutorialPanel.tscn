@@ -146,10 +146,18 @@ rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 3 )
 text = "Run the Features"
 
-[node name="Control5" type="Control" parent="TutorialPanel"]
+[node name="RescanSprites" type="Button" parent="TutorialPanel"]
 margin_top = 468.0
 margin_right = 1024.0
-margin_bottom = 488.0
+margin_bottom = 548.0
+rect_min_size = Vector2( 0, 80 )
+custom_fonts/font = SubResource( 3 )
+text = "Rescan Sprites"
+
+[node name="Control5" type="Control" parent="TutorialPanel"]
+margin_top = 552.0
+margin_right = 1024.0
+margin_bottom = 572.0
 rect_min_size = Vector2( 0, 20 )
 __meta__ = {
 "_edit_use_anchors_": false

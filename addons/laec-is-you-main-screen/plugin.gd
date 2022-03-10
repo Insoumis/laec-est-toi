@@ -9,6 +9,7 @@ var create_new_item : Button
 var show_new_level_tutorial : Button
 var show_new_item_tutorial : Button
 var run_features_button : Button
+var rescan_sprites_button : Button
 var level_editor : EditorPlugin setget set_level_editor
 
 
@@ -48,12 +49,14 @@ func setup():
 	show_new_item_tutorial = main_screen_panel.find_node("ShowItemTutorial")
 	show_new_level_tutorial = main_screen_panel.find_node("ShowLevelTutorial")
 	run_features_button = main_screen_panel.find_node("RunFeatures")
+	rescan_sprites_button = main_screen_panel.find_node("RescanSprites")
 	play_button.connect("pressed", self, "play_button_pressed")
 	create_new_item.connect("pressed" , self, "new_item_pressed")
 	create_new_level.connect("pressed" , self, "new_level_pressed")
 	show_new_level_tutorial.connect("pressed" , self, "show_level_tutorial")
 	show_new_item_tutorial.connect("pressed" , self, "show_item_tutorial")
 	run_features_button.connect("pressed" , self, "run_features")
+	rescan_sprites_button.connect("pressed" , self, "rescan_sprites")
 	# Add the main panel to the editor's main viewport.
 	
 #	yield(get_tree(), "idle_frame")
@@ -76,6 +79,14 @@ func play_button_pressed():
 
 func run_features():
 	get_editor_interface().play_custom_scene("res://features/FeaturesRunner.tscn")
+
+func rescan_sprites():
+	print("Rescanning sprites…")
+	ItemsPool.recollect_items()
+	AtlasSpriteFramesFactory.generate_spriteframes(ItemsPool.list_items_sorted())
+	AtlasSpriteFramesFactory.load_from_files()
+	get_editor_interface().get_resource_filesystem().scan_sources()
+	print("Done rescanning sprites.")
 
 func show_level_tutorial():
 	pass
