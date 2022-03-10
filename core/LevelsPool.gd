@@ -19,13 +19,8 @@ class_name LevelsPoolClass  # singleton could be LevelsPool
 const Level = preload("res://addons/laec-is-you/entity/Level.gd")
 const Jsonify = preload("res://lib/jsonify.gd")
 const CompressorSerializer = preload("res://lib/CompressorSerializer.gd")
-const PoolLevel = preload("res://core/LevelReference.gd")
-
-
-#class LevelLink:
-#	extends Resource
-#	var from : String  # filepath
-#	var to : String  # filepath
+# Naming woes ; refactor at will (into LevelResource, probably)
+const PoolLevel = preload("res://core/LevelReference.gd")  # is a Resource
 
 
 export var source_directories := [
@@ -62,38 +57,19 @@ export var map_path_regex := \
 var __map_path_regex : RegEx
 
 
-# Main index of levels.  Not sure how big this can get?
-#var levels := Dictionary()  # filepath => PoolLevel
 
-# TODO: Replace this by an accessor, and use self.levels internally !
-#var packed_levels := Dictionary()  # filepath => PackedScene
-
-# Index of instanced levels.
-# WiP: probably too expensive and troublesome to keep
-#var instanced_levels := Dictionary()  # filepath => Level
-
-# Links between levels, collected from found portals
-#var levels_links := Array()  # of LevelLink
-
-
-#class LevelsPoolCache:
-#	extends Resource
-#	export var levels := Dictionary()  # filepath => LevelReference (is a Resource, actually)
-#	export var levels_links := Array()  # of LevelLink
-#
-#	func clear():
-#		self.levels.clear()
-#		self.levels_links.clear()
-
-
-# We can save this to file, and skip the expensive indexation.
-var cache: LevelsPoolCache
-
+# We could also use a `res`, for performance.
+# This file should be safe to delete, but the directory must exist.
 export var cache_file_path := "res://cache/levels.tres"
 
-# It's expensive.  Call it yourselves when relevant.
-#func _init():
-#	init()
+# We save this to a file (defined above), and skip the expensive indexation.
+var cache: LevelsPoolCache
+
+
+func _init():
+	set_name("LevelsPool")
+	# It's expensive.  Call it yourselves when relevant.
+	#init()
 
 
 func _exit_tree():
@@ -114,8 +90,10 @@ func __set_map_path_regex(value):
 	map_path_regex = value  # not self.… !
 	rebuild_regexes()
 
+
 func init_full():  # expensive
 	return init(true)
+
 
 func init(invalidate_cache := false):
 	rebuild_regexes()
@@ -168,18 +146,7 @@ func load_cache_from_file() -> int:
 	return OK
 
 
-#func init_full():  # very expensive
-#	init()
-#	instance_levels()
-#	reindex_portals()
-
-
 func clear():
-#	for filepath in self.instanced_levels:
-#		self.instanced_levels[filepath].queue_free()
-#	self.instanced_levels.clear()
-#	self.levels_links.clear()  # LevelLink is Reference
-#	self.packed_levels.clear()  # PackedScene is Reference
 	self.cache.clear()
 
 
@@ -243,6 +210,7 @@ func reindex_levels(refresh_existing := true):
 		)
 	
 	reindex_levels_from_user(refresh_existing)
+	reindex_orphanness()
 
 
 func reindex_levels_from_user(refresh_existing := true):
@@ -356,7 +324,6 @@ func add_level(filepath: String, refresh_existing := true):
 	level_instance.free()  # not queue_free() else boum
 
 
-
 func add_levels_in_directory(
 	target_directory,
 	depth := 0,
@@ -379,60 +346,21 @@ func add_levels_in_directory(
 	finder.queue_free()
 
 
-#func instance_levels():
-#	breakpoint  # deprecated
-#	for filepath in self.instanced_levels:
-#		self.instanced_levels[filepath].queue_free()
-#	self.instanced_levels.clear()
-#	var completion_score_levels := Array()  # of filepaths? of PoolLevel?
-#	for filepath in self.packed_levels:
-#		var level = self.packed_levels[filepath].instance()
-#		self.instanced_levels[filepath] = level
-#		if level.contribute_to_completion_score:
-#			completion_score_levels.append(
-#				filepath
-#			)
-#	# Cache the index of the levels useful in completion score calculus 
-#	FileStorage.set_value(
-#		"LevelsPool", "completion_score_levels", completion_score_levels
-#	)
-
-
-#func reindex_portals():
-#	breakpoint
-#	assert(self.instanced_levels, "Call instance_levels() first.")
-#	for filepath in self.instanced_levels:
-#		var level = self.instanced_levels[filepath]
-#		assert(level is Level)
-#		var portals : Array = level.get_all_portals()
-##		print("Found %d portals for %s" % [portals.size(), filepath])
-#		for portal in portals:
-#			var link = LevelLink.new()
-#			link.from = filepath
-#			link.to = portal.level_path
-#			if not link.to:
-#				printerr("Portal `%s` without target in %s" % [
-#					portal.name, filepath
-#				])
-#				continue
-#			self.levels_links.append(link)
-
-
-
 func get_levels_dict() -> Dictionary:
+	assert(self.cache, "Call init() or init_full() first.")
+	
 	return self.cache.levels
 
 
 func get_levels() -> Array:
+	assert(self.cache, "Call init() or init_full() first.")
+	
 	return self.cache.levels.values()
-#	var levels := Array()
-#	for level_filepath in self.cache.levels:
-#		var level = self.cache.levels[level_filepath]
-#		levels.append(level)
-#	return levels
 
 
 func get_user_levels() -> Array:
+	assert(self.cache, "Call init() or init_full() first.")
+	
 	var user_levels := Array()
 	for level_filepath in self.cache.levels:
 		var level = self.cache.levels[level_filepath]
@@ -441,14 +369,41 @@ func get_user_levels() -> Array:
 	return user_levels
 
 
-func find_orphans() -> Array:
-	assert(self.cache, "Call reindex_levels() first.")
-	return []
-#
+func find_orphans_paths() -> Array:
+	assert(self.cache, "Call init() or init_full() first.")
+	
 	var possible_orphans := self.cache.levels.keys()
-#	for link in self.levels_links:
-#		possible_orphans.erase(link.from)  # adopted
-#		possible_orphans.erase(link.to)    # you too
-#
+	for parent_filepath in self.cache.levels:
+		var parent_level = self.cache.levels[parent_filepath]
+		for portal in parent_level.portals:
+			possible_orphans.erase(portal.target_level_path)
 	return possible_orphans
 
+
+func reindex_orphanness():
+#	var orphans = find_orphans()
+#
+#	for level_filepath in self.cache.levels:
+#		var level = self.cache.levels[level_filepath]
+#		if orphans.has(level_filepath):
+#			level.is_orphan = true
+#		else:
+#			level.is_orphan = false
+	
+	for level_filepath in self.cache.levels:
+		var level = self.cache.levels[level_filepath]
+		level.parents.clear()
+	
+	for parent_filepath in self.cache.levels:
+		var parent_level = self.cache.levels[parent_filepath]
+		for portal in parent_level.portals:
+			if not portal.has_a_target_defined():
+				continue
+			assert(self.cache.levels.has(portal.target_level_path))
+			if not self.cache.levels.has(portal.target_level_path):
+				# Portal target level path is probably messed up.
+				printerr("%s: Portal targets a level not in the level pool (%s)" % [
+					self.name, portal.target_level_path,
+				])
+				continue
+			self.cache.levels[portal.target_level_path].parents.append(parent_level)

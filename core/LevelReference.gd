@@ -27,18 +27,31 @@ export var level_filepath: String
 # Do not assume they are set.   See hydrate_from_instance()
 export var title: String
 export var portals: Array  # of PortalResource
+export var parents: Array  # of LevelResource (self)
+#export var children: Array  # of LevelResource (self) TODO?
 export var is_in_score: bool
 
+var is_orphan: bool setget set_is_orphan, get_is_orphan
 
-# Both of these should be function accessors.
+# Both of these should be lazy methods (accessors).
 # It's probably OK if they memoize.
 var packed: PackedScene  # packed scene, if filepath is a `.tscn`
 var pickle: Dictionary  # pickled level, if filepath is a `.phiu` or null
 
 
-func hydrate_from_instance() -> int:
-	pass
-	return OK
+func set_is_orphan(_value):
+	assert("READ ONLY.  Use `parents' property instead.")
+
+func get_is_orphan():
+	return self.parents.empty()
+
+
+#func hydrate_from_instance() -> int:
+#	pass
+#	return OK
+
+func _to_string() -> String:
+	return self.level_filepath
 
 
 func instantiate_scene():

@@ -17,8 +17,17 @@ extends Node
 # - Untangle spaghetti
 
 # Try out exports instead of consts → easier override
-const TEXTURE_SIZE = 2048
-const QUADRANT_SIZE = 64
+const TEXTURE_SIZE_X = 2088  # 29 * 72
+const TEXTURE_SIZE_Y = 2048
+
+export var margin_size := 4
+export var sprite_size := 64
+
+export var flags_for_atlases: int = (
+	Texture.FLAG_FILTER
+	||
+	Texture.FLAG_MIPMAPS
+)
 
 # Will look for sprites in here to include them in one of the atlases
 export var sprites_directory := "res://sprites/items/"
@@ -41,6 +50,16 @@ var text_atlas_image: StreamTexture
 
 
 var data_cache: AtlasSpriteFramesDataCacheType
+
+
+var quadrant_size: int setget set_quadrant_size, get_quadrant_size
+
+func set_quadrant_size(_value):
+	assert("READ ONLY.  Use margin_size and sprite_size.")
+
+func get_quadrant_size():
+	return self.sprite_size + self.margin_size * 2
+
 
 
 class BlitLoadResult:
@@ -99,9 +118,9 @@ func load_from_files():
 	self.text_atlas_image = load(self.text_atlas_path)
 	self.data_cache = load(self.atlas_data_path)
 	self.data_cache.item_atlas_texture = ImageTexture.new()
-	self.data_cache.item_atlas_texture.flags = 0
+	self.data_cache.item_atlas_texture.flags = self.flags_for_atlases
 	self.data_cache.text_atlas_texture = ImageTexture.new()
-	self.data_cache.text_atlas_texture.flags = 0
+	self.data_cache.text_atlas_texture.flags = self.flags_for_atlases
 	
 	if self.item_atlas_image is StreamTexture:
 		self.data_cache.item_atlas_image = self.item_atlas_image.get_data().duplicate()
@@ -114,9 +133,9 @@ func load_from_files():
 		printerr("AtlasSpriteFramesFactory: can't load text atlas texture")
 	
 	self.data_cache.item_atlas_texture.create_from_image(self.data_cache.item_atlas_image)
-	self.data_cache.item_atlas_texture.flags = 0
+	self.data_cache.item_atlas_texture.flags = self.flags_for_atlases
 	self.data_cache.text_atlas_texture.create_from_image(self.data_cache.text_atlas_image)
-	self.data_cache.text_atlas_texture.flags = 0
+	self.data_cache.text_atlas_texture.flags = self.flags_for_atlases
 	
 	self.data_cache.item_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
 		self.data_cache.item_sprite_frames_dictionary,
@@ -129,10 +148,10 @@ func load_from_files():
 
 
 func load_texture_and_blit(file_name, atlas_texture, index) -> BlitLoadResult: 
-	var destination_rect = Rect2()
-	destination_rect.size = Vector2(float(QUADRANT_SIZE), float(QUADRANT_SIZE))
+	var destination_rect := Rect2()
+	destination_rect.size = Vector2(float(self.quadrant_size), float(self.quadrant_size))
 	destination_rect.position = get_rect_pos_from_index(
-		index, Vector2(float(TEXTURE_SIZE), float(TEXTURE_SIZE)), destination_rect.size
+		index, Vector2(float(TEXTURE_SIZE_X), float(TEXTURE_SIZE_Y)), destination_rect.size
 	)
 	var texture_rect = Rect2(Vector2(0.0, 0.0), destination_rect.size)
 	var result = BlitLoadResult.new()
@@ -146,7 +165,11 @@ func load_texture_and_blit(file_name, atlas_texture, index) -> BlitLoadResult:
 		result.error = OK
 	if result.error == OK:
 		#print("blitting %s at %d" % [file_name, index])
-		atlas_texture.blit_rect(texture.get_data(), texture_rect, destination_rect.position)
+		atlas_texture.blit_rect(
+			texture.get_data(),
+			texture_rect,
+			destination_rect.position + Vector2(self.margin_size, self.margin_size)
+		)
 		#print("done blitting")
 	return result
 
@@ -164,7 +187,7 @@ func make_sprite_atlas_texture(atlas, region):
 	var atlas_texture = AtlasTexture.new()
 	atlas_texture.atlas = atlas
 	atlas_texture.region = region
-	atlas_texture.flags = 0
+	atlas_texture.flags = self.flags_for_atlases
 	return atlas_texture
 
 
@@ -188,14 +211,14 @@ func generate_spriteframes(items: Array):  # of PoolItem[]
 	
 	self.data_cache.item_atlas_image = Image.new()
 	self.data_cache.item_atlas_texture = ImageTexture.new()
-	self.data_cache.item_atlas_texture.flags = 0
-	self.data_cache.item_atlas_image.create(TEXTURE_SIZE, TEXTURE_SIZE, true, Image.FORMAT_RGBA8)
+	self.data_cache.item_atlas_texture.flags = self.flags_for_atlases
+	self.data_cache.item_atlas_image.create(TEXTURE_SIZE_X, TEXTURE_SIZE_Y, true, Image.FORMAT_RGBA8)
 	
 	self.data_cache.item_atlas_texture.create_from_image(self.data_cache.item_atlas_image)
 	self.data_cache.text_atlas_image = Image.new()
 	self.data_cache.text_atlas_texture = ImageTexture.new()
-	self.data_cache.text_atlas_texture.flags = 0
-	self.data_cache.text_atlas_image.create(TEXTURE_SIZE, TEXTURE_SIZE, true, Image.FORMAT_RGBA8)
+	self.data_cache.text_atlas_texture.flags = self.flags_for_atlases
+	self.data_cache.text_atlas_image.create(TEXTURE_SIZE_X, TEXTURE_SIZE_Y, true, Image.FORMAT_RGBA8)
 	self.data_cache.text_atlas_texture.create_from_image(self.data_cache.text_atlas_image)
 #	var destination_rect = Rect2(Vector2(0.0, 0.0), Vector2(float(QUADRANT_SIZE), float(QUADRANT_SIZE)))
 

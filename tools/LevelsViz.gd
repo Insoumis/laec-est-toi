@@ -21,28 +21,37 @@ var links := Dictionary()  # Link => LinkScene
 
 onready var levels_table: DataTable = find_node("LevelsTable")
 
+
 func _ready():
 	
 	prints("Starting Levels Viz…")
 	
 	Chronometer.start()
+	# We could also use the singleton LevelsPool
 	self.levels_pool = LevelsPoolClass.new()
 	self.levels_pool.should_use_exclusion = false
 	self.levels_pool.init_full()
-	prints("LevelsPool#init():", Chronometer.stop(), "s")
-	# LevelsPool#init(): 1.640474 s
-
-	levels_table.columns = 3
-	levels_table.add_header_row([
+	prints("LevelsPool#init_full():", Chronometer.stop(), "s")
+	# LevelsPool#init_full(): 1.640474 s
+	
+	var header_row = [
 		tr("Filepath"),
 		tr("Title"),
 		tr("Story"),
-	])
+#		tr("Orphan"),
+		tr("Parents"),
+		tr("Children"),
+	]
+	levels_table.set_columns(header_row.size())
+	levels_table.add_header_row(header_row)
 	for level in self.levels_pool.get_levels():
 		levels_table.add_row([
 			level.level_filepath,
 			level.title,
 			bool_to_human(level.is_in_score),
+#			bool_to_human(level.is_orphan),
+			level.parents,
+			level.portals.size(),
 		])
 
 
@@ -52,42 +61,6 @@ func bool_to_human(value: bool):
 	else:
 		return tr("NO")
 
-
-#	Chronometer.start()
-#	self.levels_pool.instance_levels()
-#	prints("LevelsPool#instance_levels():", Chronometer.stop(), "s")
-	# LevelsPool#instance_levels(): 0.310439 s
-	
-#	Chronometer.start()
-#	self.levels_pool.reindex_portals()
-#	prints("LevelsPool#reindex_portals():", Chronometer.stop(), "s")
-	# LevelsPool#reindex_portals(): 0.001231 s
-	
-	
-#	prints("LevelsPool#levels_links size", self.levels_pool.levels_links.size())
-	
-	
-#	Chronometer.start()
-#	var orphans = self.levels_pool.find_orphans()
-#	prints("LevelsPool#find_orphans():", Chronometer.stop(), "s")
-	
-#	prints("Found %d orphaned levels." % [orphans.size()])
-#	for orphan in orphans:
-#		prints("  orphan:", orphan)
-	
-	
-
-#	for filepath in levels_pool.instanced_levels:
-#		var level = levels_pool.instanced_levels[filepath]
-#		var bubble = Bubble.instance()
-#		bubble.position = Vector2(
-#			(randf()-0.5)*2*600,
-#			(randf()-0.5)*2*400
-#		)
-#		bubble.set_filepath(filepath)
-#		$PortalsLayer.add_child(bubble)
-#		bubbles[filepath] = bubble
-	
 	
 #	for link in levels_pool.levels_links:
 ##		var link = levels_pool.levels_links[filepath]
@@ -102,14 +75,6 @@ func bool_to_human(value: bool):
 #
 #		links[link] = scene
 ##		bubbles[filepath] = bubble
-	
-	
-	
-	#self.levels_pool.clear()
-
-#func update_links():
-
-
 #func _process(_delta):
 #	if not self.levels_pool:
 #		return
