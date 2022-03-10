@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-03-02 02:08+0100\n"
-"PO-Revision-Date: 2022-03-02 05:57+0100\n"
+"POT-Creation-Date: 2022-03-10 15:40+0100\n"
+"PO-Revision-Date: 2022-03-10 15:51+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -19,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 2.3\n"
 
-#: addons/input-map-helper/InputMapper.gd:743 menus/SettingsMenu.tscn:95
+#: addons/input-map-helper/InputMapper.gd:745 menus/SettingsMenu.tscn:95
 msgid "Back"
 msgstr "Retour"
 
-#: addons/input-map-helper/InputMapper.gd:769
+#: addons/input-map-helper/InputMapper.gd:772
 msgid "Reset"
 msgstr "Réinitialiser"
 
-#: addons/laec-is-you/core/BoilerplateLevel.tscn:6
+#: addons/laec-is-you/core/BoilerplateLevel.tscn:6 cache/levels.tres:314
 msgid "Bienvenue"
 msgstr "Bienvenue"
 
@@ -71,7 +71,7 @@ msgstr "Ajouter"
 msgid "New Level"
 msgstr "Nouveau NIveau"
 
-#: addons/laec-is-you/ide/ItemWizard.tscn:56 editor/LevelEditor.tscn:216
+#: addons/laec-is-you/ide/ItemWizard.tscn:56 editor/LevelEditor.tscn:284
 msgid "Import"
 msgstr "Importer"
 
@@ -108,11 +108,19 @@ msgstr ""
 msgid "CREATE A NEW LEVEL"
 msgstr "CRÉER UN NOUVEAU NIVEAU"
 
-#: addons/laec-is-you-main-screen/TutorialPanel.tscn:163
+#: addons/laec-is-you-main-screen/TutorialPanel.tscn:147
+msgid "Run the Features"
+msgstr "Tester les niveaux"
+
+#: addons/laec-is-you-main-screen/TutorialPanel.tscn:155
+msgid "Rescan Sprites"
+msgstr "Rescanner les images"
+
+#: addons/laec-is-you-main-screen/TutorialPanel.tscn:179
 msgid "or"
 msgstr "ou"
 
-#: addons/laec-is-you-main-screen/TutorialPanel.tscn:186
+#: addons/laec-is-you-main-screen/TutorialPanel.tscn:202
 msgid "CREATE A NEW ITEM"
 msgstr "CRÉER UN NOUVEAU OBJET"
 
@@ -122,7 +130,7 @@ msgstr "RETOUR"
 
 #: addons/open-hexes.appsettings/demo/Demo.gd:174
 #: addons/open-hexes.appsettings/demo/Demo.tscn:28 menus/PauseMenu.tscn:146
-#: menus/SettingsMenu.tscn:48 menus/StartMenu.tscn:153
+#: menus/SettingsMenu.tscn:48 menus/StartMenu.tscn:154
 msgid "Settings"
 msgstr "Configuration"
 
@@ -214,19 +222,416 @@ msgstr ""
 msgid "Fullscreen004"
 msgstr "Plein Écran"
 
-#: core/Level.tscn:36
+#: cache/levels.tres:134 levels/LotdMap.tscn:10
+#, fuzzy
+#| msgid "level.PhiMapLevel.title"
+msgid "level.LotdMap.title"
+msgstr "Insoumission !"
+
+#: cache/levels.tres:238 levels/PhiMap.tscn:15
+#, fuzzy
+#| msgid "level.PhiMapLevel.title"
+msgid "level.PhiMap.title"
+msgstr "Insoumission !"
+
+#: cache/levels.tres:258 cache/levels.tres:994 levels/TutorialMap.tscn:93
+msgid "Tutoriel B"
+msgstr ""
+
+#: cache/levels.tres:266
+msgid "La plume et l'épée"
+msgstr ""
+
+#: cache/levels.tres:274
+msgid "Succès Médiatique"
+msgstr ""
+
+#: cache/levels.tres:286 levels/PhiMap.tscn:217
+msgid "Au Voleur !"
+msgstr ""
+
+#: cache/levels.tres:294
+msgid "IGPN CItoyen"
+msgstr ""
+
+#: cache/levels.tres:306 levels/PhiMap.tscn:225
+msgid "Petite Ile"
+msgstr ""
+
+#: cache/levels.tres:322 levels/idle/02MoveThings.tscn:7
+#, fuzzy
+#| msgid "level.LearnMove.title"
+msgid "level.02MoveThings.title"
+msgstr "Slalom Périlleux"
+
+#: cache/levels.tres:330 levels/idle/03RewriteRules.tscn:7
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.03RewriteRules.title"
+msgstr "Abstrait"
+
+#: cache/levels.tres:338
+msgid "Alchemistry"
+msgstr ""
+
+#: cache/levels.tres:346 levels/PhiMap.tscn:121
+msgid "Les lobbys et les médias"
+msgstr ""
+
+#: cache/levels.tres:354
+msgid "Vive l'AEC"
+msgstr ""
+
+#: cache/levels.tres:362
+msgid "Vive l'AEC (bonus)"
+msgstr ""
+
+#: cache/levels.tres:370
+msgid "Droit dans le mur ?"
+msgstr ""
+
+#: cache/levels.tres:378
+msgid "Promotion de l'AEC"
+msgstr ""
+
+#: cache/levels.tres:386
+msgid "Philature"
+msgstr ""
+
+#: cache/levels.tres:394
+msgid "Les deux candidats de LFI"
+msgstr ""
+
+#: cache/levels.tres:402
+msgid "L'eau fait le buzz"
+msgstr ""
+
+#: cache/levels.tres:410
+msgid "Le monarque dans la neige"
+msgstr ""
+
+#: cache/levels.tres:418
+msgid "Peuple ou lobbys"
+msgstr ""
+
+#: cache/levels.tres:426
+msgid "Ajuster la TVA"
+msgstr ""
+
+#: cache/levels.tres:474 levels/TutorialMap.tscn:106
+#: levels/laec/Chapter1Map.tscn:9
+#, fuzzy
+#| msgid "level.Patrol.title"
+msgid "level.Chapter1Map.title"
+msgstr "C'est chaud !"
+
+#: cache/levels.tres:482 cache/levels.tres:706 levels/laec/Chapter1Map.tscn:31
+msgid "Chapitre Premier"
+msgstr ""
+
+#: cache/levels.tres:490 cache/levels.tres:722 levels/laec/Chapter1Map.tscn:69
+msgid "Chapitre Dix"
+msgstr ""
+
+#: cache/levels.tres:498 levels/laec/Chapter1Map.tscn:77
+msgid "Chapitre Dix (Bonus)"
+msgstr ""
+
+#: cache/levels.tres:506 levels/laec/Chapter1Map.tscn:39
+msgid "Chapitre Premier (Bonus)"
+msgstr ""
+
+#: cache/levels.tres:514 cache/levels.tres:690 cache/levels.tres:698
+#: cache/levels.tres:730 cache/levels.tres:738 cache/levels.tres:746
+#: levels/laec/Chapter1Map.tscn:47
+msgid "Chapitre Trois"
+msgstr ""
+
+#: cache/levels.tres:522 levels/laec/Chapter1Map.tscn:101
+msgid "Chapitre Trois (Bonus)"
+msgstr ""
+
+#: cache/levels.tres:530 cache/levels.tres:538 levels/laec/Chapter1Map.tscn:53
+#: levels/laec/Chapter1Map.tscn:93
+msgid "Chapitre Quatre"
+msgstr ""
+
+#: cache/levels.tres:546 cache/levels.tres:714 levels/laec/Chapter1Map.tscn:61
+msgid "Chapitre Huit"
+msgstr ""
+
+#: cache/levels.tres:554 levels/laec/Chapter1Map.tscn:85
+msgid "Chapitre Huit (Bonus)"
+msgstr ""
+
+#: cache/levels.tres:562 levels/LotdMap.tscn:33
+msgid "Fin du monde"
+msgstr ""
+
+#: cache/levels.tres:570
+msgid "Justice est Clef"
+msgstr ""
+
+#: cache/levels.tres:578
+msgid "Débat à l'Assermblée"
+msgstr ""
+
+#: cache/levels.tres:586
+msgid "Eduquer est Investir"
+msgstr ""
+
+#: cache/levels.tres:594 levels/LotdMap.tscn:48
+msgid "NIveau du 15 Mars"
+msgstr ""
+
+#: cache/levels.tres:602 levels/LotdMap.tscn:56
+msgid "Niveau du 16 Mars 2022"
+msgstr ""
+
+#: cache/levels.tres:610 levels/LotdMap.tscn:64
+msgid "Niveau du 17 Mars 2022"
+msgstr ""
+
+#: cache/levels.tres:618
+msgid "Un Vrai Faux Random"
+msgstr ""
+
+#: cache/levels.tres:626 levels/lotd/Lotd20220319.tscn:18
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.Lotd20220319.title"
+msgstr "Abstrait"
+
+#: cache/levels.tres:634
+msgid "Gestion des déchets"
+msgstr ""
+
+#: cache/levels.tres:642
+msgid "Acrasie Parlementaire"
+msgstr ""
+
+#: cache/levels.tres:650
+#, fuzzy
+#| msgid "level.MotsCroises.link"
+msgid "Blocus de Trolls"
+msgstr ""
+"https://laec.fr/section/3/une-republique-permettant-l-intervention-populaire"
+
+#: cache/levels.tres:658 levels/PhiMap.tscn:185
+msgid "Déségrégation Médiatique"
+msgstr ""
+
+#: cache/levels.tres:666 levels/PhiMap.tscn:153
+msgid "Grenouille"
+msgstr ""
+
+#: cache/levels.tres:674 levels/PhiMap.tscn:91
+msgid "Oh, des espoirs !"
+msgstr ""
+
+#: cache/levels.tres:682
+msgid "Le monde à l'envers"
+msgstr ""
+
+#: cache/levels.tres:754
+msgid "Chapitre 6"
+msgstr ""
+
+#: cache/levels.tres:762
+msgid "Chapitre 7"
+msgstr ""
+
+#: cache/levels.tres:770
+msgid "Chapitre 8"
+msgstr ""
+
+#: cache/levels.tres:778
+msgid "Chapitre 9"
+msgstr ""
+
+#: cache/levels.tres:786
+msgid "Chapitre 10"
+msgstr ""
+
+#: cache/levels.tres:794
+msgid "Chapitre 11"
+msgstr ""
+
+#: cache/levels.tres:802
+msgid "Chapitre 12"
+msgstr ""
+
+#: cache/levels.tres:810
+msgid "Chapitre 13"
+msgstr ""
+
+#: cache/levels.tres:818
+msgid "Chapitre 14"
+msgstr ""
+
+#: cache/levels.tres:826 levels/PhiMap.tscn:129
+msgid "Mots interdits"
+msgstr ""
+
+#: cache/levels.tres:834 levels/PhiMap.tscn:241
+msgid "Désactivons la Monarchie"
+msgstr ""
+
+#: cache/levels.tres:842 levels/PhiMap.tscn:83
+msgid "Attention aux Trolls"
+msgstr ""
+
+#: cache/levels.tres:850 levels/homage/TinyIsle.tscn:249
+msgid "Le Secret"
+msgstr ""
+
+#: cache/levels.tres:858 levels/PhiMap.tscn:161
+msgid "Aptonymie Poétique"
+msgstr ""
+
+#: cache/levels.tres:866
+msgid "Qu'ils viennent me chercher !"
+msgstr ""
+
+#: cache/levels.tres:874 levels/PhiMap.tscn:59
+msgid "Media Poussifs"
+msgstr ""
+
+#: cache/levels.tres:882 levels/PhiMap.tscn:75
+msgid "Ailleurs est Yoda"
+msgstr ""
+
+#: cache/levels.tres:890 levels/PhiMap.tscn:67
+msgid "Choix Éditoriaux"
+msgstr ""
+
+#: cache/levels.tres:898 levels/PhiMap.tscn:99
+msgid "Alexandre Langlois"
+msgstr ""
+
+#: cache/levels.tres:906 levels/PhiMap.tscn:107
+msgid "Croiser la Plume dans les Laves du Débat"
+msgstr ""
+
+#: cache/levels.tres:914 levels/PhiMap.tscn:137
+msgid "C'est chaud !"
+msgstr ""
+
+#: cache/levels.tres:922 levels/homage/StopThatThief.tscn:189
+msgid "Secret des Victoires"
+msgstr ""
+
+#: cache/levels.tres:930 levels/tutorial/ButtonCheckDownLeft.tscn:19
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.ButtonCheckDownLeft.title"
+msgstr "Abstrait"
+
+#: cache/levels.tres:938 levels/tutorial/ButtonCheckDownRight.tscn:24
+#, fuzzy
+#| msgid "level.Cameleon.title"
+msgid "level.ButtonCheckDownRight.title"
+msgstr "La vie parfois fait ploufff"
+
+#: cache/levels.tres:946 levels/tutorial/ButtonCheckLeft.tscn:24
+#, fuzzy
+#| msgid "level.StopThatThief.title"
+msgid "level.ButtonCheckLeft.title"
+msgstr "Expropriation"
+
+#: cache/levels.tres:954 levels/tutorial/ButtonCheckRight.tscn:24
+#, fuzzy
+#| msgid "level.Patrol.title"
+msgid "level.ButtonCheckRight.title"
+msgstr "C'est chaud !"
+
+#: cache/levels.tres:962 levels/tutorial/ButtonCheckUpLeft.tscn:24
+#, fuzzy
+#| msgid "level.StopThatThief.title"
+msgid "level.ButtonCheckUpLeft.title"
+msgstr "Expropriation"
+
+#: cache/levels.tres:970 levels/tutorial/ButtonCheckUpRight.tscn:24
+#, fuzzy
+#| msgid "level.StopThatThief.title"
+msgid "level.ButtonCheckUpRight.title"
+msgstr "Expropriation"
+
+#: cache/levels.tres:978 levels/tutorial/ButtonCheckWait.tscn:11
+#, fuzzy
+#| msgid "level.StopThatThief.title"
+msgid "level.ButtonCheckWait.title"
+msgstr "Expropriation"
+
+#: cache/levels.tres:986 levels/TutorialMap.tscn:86
+msgid "Tutoriel A"
+msgstr ""
+
+#: cache/levels.tres:1018 levels/vener/VenerMap.tscn:8
+#, fuzzy
+#| msgid "level.Patrol.title"
+msgid "level.VenerMap.title"
+msgstr "C'est chaud !"
+
+#: cache/levels.tres:1026
+msgid "Roi est poussière"
+msgstr ""
+
+#: cache/levels.tres:1034 levels/vener/VenerMap.tscn:56
+#: levels/vener/VenerMap.tscn:63 levels/vener/VenerMap.tscn:70
+msgid "Révolte"
+msgstr ""
+
+#: cache/levels.tres:1042 levels/vener/VenerMap.tscn:77
+msgid "Révolution"
+msgstr ""
+
+#: cache/levels.tres:1050 levels/vener/Rebellion03Level.tscn:7
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.Rebellion03Level.title"
+msgstr "Abstrait"
+
+#: cache/levels.tres:1070 levels/xr/XrMap.tscn:9
+#, fuzzy
+#| msgid "level.PhiMapLevel.title"
+msgid "level.XrMap.title"
+msgstr "Insoumission !"
+
+#: cache/levels.tres:1078 levels/xr/XrMap.tscn:60
+msgid "Extinction: Tsunami"
+msgstr ""
+
+#: cache/levels.tres:1086 levels/xr/XrMap.tscn:67
+msgid "Abeilles Arctiques"
+msgstr ""
+
+#: cache/levels.tres:1094
+msgid "Déchets Dangereux"
+msgstr ""
+
+#: cache/levels.tres:1102 levels/PhiMap.tscn:145
+msgid "Identité Nationale"
+msgstr ""
+
+#: cache/levels.tres:1110 cache/levels.tres:1118 cache/levels.tres:1126
+#: cache/levels.tres:1134 cache/levels.tres:1142 cache/levels.tres:1150
+#: cache/levels.tres:1158 cache/levels.tres:1166 cache/levels.tres:1174
+#: cache/levels.tres:1182 cache/levels.tres:1190 cache/levels.tres:1198
+#: cache/levels.tres:1206 cache/levels.tres:1214 cache/levels.tres:1222
+#: cache/levels.tres:1230 cache/levels.tres:1238 core/Level.tscn:50
 #, fuzzy
 #| msgid "level.vel.title"
 msgid "level.Level.title"
 msgstr "Abstrait"
 
-#: core/Level.tscn:37
+#: core/Level.tscn:51
 #, fuzzy
 #| msgid "level.vel.excerpt"
 msgid "level.Level.excerpt"
 msgstr "Abstrait"
 
-#: core/Level.tscn:38
+#: core/Level.tscn:52
 #, fuzzy
 #| msgid "level.vel.link"
 msgid "level.Level.link"
@@ -242,90 +647,92 @@ msgid ""
 "hello"
 msgstr ""
 
-#: editor/LevelEditor.tscn:77 menus/StartMenu.tscn:112
+#: editor/LevelEditor.tscn:144 menus/StartMenu.tscn:113
 msgid "Play"
 msgstr "Jouer"
 
-#: editor/LevelEditor.tscn:95
+#: editor/LevelEditor.tscn:162
 msgid "<"
 msgstr ""
 
-#: editor/LevelEditor.tscn:108
+#: editor/LevelEditor.tscn:175
 msgid ">"
 msgstr ""
 
-#: editor/LevelEditor.tscn:126
+#: editor/LevelEditor.tscn:193
 msgid "-"
 msgstr ""
 
-#: editor/LevelEditor.tscn:138
+#: editor/LevelEditor.tscn:205
 msgid "+"
 msgstr ""
 
-#: editor/LevelEditor.tscn:156
+#: editor/LevelEditor.tscn:223
 msgid "ø-ø"
 msgstr ""
 
-#: editor/LevelEditor.tscn:168
+#: editor/LevelEditor.tscn:235
 msgid "Ø+Ø"
 msgstr ""
 
-#: editor/LevelEditor.tscn:184
+#: editor/LevelEditor.tscn:251
 msgid "Terrain"
 msgstr "Terrain"
 
-#: editor/LevelEditor.tscn:192
+#: editor/LevelEditor.tscn:259
 msgid "Concepts"
 msgstr "Concepts"
 
-#: editor/LevelEditor.tscn:200
+#: editor/LevelEditor.tscn:267
 msgid "Metadata"
 msgstr "Metadata"
 
-#: editor/LevelEditor.tscn:208
+#: editor/LevelEditor.tscn:276
 msgid "Export"
 msgstr "Exporter"
 
-#: editor/LevelEditor.tscn:224
+#: editor/LevelEditor.tscn:292
 msgid "Help"
 msgstr "Aide"
 
-#: editor/LevelEditor.tscn:232 editor/LevelsExplorer.tscn:90
-#: menus/StartMenu.tscn:166
+#: editor/LevelEditor.tscn:300 editor/LevelsExplorer.tscn:90
+#: menus/StartMenu.tscn:167
 msgid "Exit"
 msgstr "Quitter"
 
-#: editor/LevelEditor.tscn:360
+#: editor/LevelEditor.tscn:433
 msgid "HELP"
 msgstr "AIDE"
 
-#: editor/LevelEditor.tscn:409
-#, fuzzy
-#| msgid "Save the level in a local file"
-msgid "Save the level in a local file:"
-msgstr "Sauvegarder le niveau dans un fichier local"
+#: editor/LevelEditor.tscn:446
+msgid "Saving..."
+msgstr "Sauvegarde..."
 
-#: editor/LevelEditor.tscn:417
+#: editor/LevelEditor.tscn:504
+msgid "Save the level in a local file:"
+msgstr "Sauvegarder le niveau dans un fichier local."
+
+#: editor/LevelEditor.tscn:512
 msgid "Save level to file"
 msgstr "Sauvegarder le niveau dans un fichier"
 
-#: editor/LevelEditor.tscn:425
+#: editor/LevelEditor.tscn:520
 msgid "Save level to image file"
 msgstr "Sauvegarder le niveau dans un fichier image"
 
-#: editor/LevelEditor.tscn:440
+#: editor/LevelEditor.tscn:535
 msgid ""
 "Or copy any of these strings below and share it with the world so they can "
 "try out your level !"
 msgstr ""
 "Ou copiez un de ces jetons d'échange et partagez-le comme bon vous semble !"
 
-#: editor/LevelEditor.tscn:463 editor/LevelEditor.tscn:477
-#: editor/LevelEditor.tscn:491 editor/LevelEditor.tscn:505
+#: editor/LevelEditor.tscn:558 editor/LevelEditor.tscn:572
+#: editor/LevelEditor.tscn:586 editor/LevelEditor.tscn:600
 msgid "Please wait..."
 msgstr "Veuillez patienter..."
 
-#: editor/LevelEditor.tscn:537
+#: editor/LevelEditor.tscn:632
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -337,27 +744,27 @@ msgstr ""
 "Glissez et déposez un fichier de niveau depuis votre disque dur, ou copiez "
 "un jeton d'échange de niveau (φ=U…) dans le champ ci-dessous pour l'ouvrir."
 
-#: editor/LevelEditor.tscn:605
+#: editor/LevelEditor.tscn:700 tools/LevelsViz.gd:36
 msgid "Title"
 msgstr "Titre"
 
-#: editor/LevelEditor.tscn:629
+#: editor/LevelEditor.tscn:724
 msgid "Congratulation"
 msgstr "Félicitation"
 
-#: editor/LevelEditor.tscn:650
+#: editor/LevelEditor.tscn:745
 msgid "Authors"
 msgstr "Auteurs"
 
-#: editor/LevelEditor.tscn:672
+#: editor/LevelEditor.tscn:767
 msgid "Version"
 msgstr "Version"
 
-#: editor/LevelEditor.tscn:679
+#: editor/LevelEditor.tscn:774
 msgid "1"
 msgstr ""
 
-#: editor/LevelEditor.tscn:737
+#: editor/LevelEditor.tscn:832
 msgid ""
 "Make your own levels using this level editor.\n"
 "Your work is not saved automatically so make sure to export it from time to "
@@ -445,55 +852,27 @@ msgstr ""
 msgid "J'ai compris"
 msgstr ""
 
-#: levels/LotdMap.tscn:9
-#, fuzzy
-#| msgid "level.PhiMapLevel.title"
-msgid "level.LotdMap.title"
-msgstr "Insoumission !"
-
-#: levels/LotdMap.tscn:10
+#: levels/LotdMap.tscn:11
 #, fuzzy
 #| msgid "level.PhiMapLevel.excerpt"
 msgid "level.LotdMap.excerpt"
 msgstr "ANAR ON LAEC IS WIN"
 
-#: levels/LotdMap.tscn:11
+#: levels/LotdMap.tscn:12
 #, fuzzy
 #| msgid "level.PhiMapLevel.link"
 msgid "level.LotdMap.link"
 msgstr "https://"
 
-#: levels/LotdMap.tscn:32
-msgid "Fin du monde"
-msgstr ""
-
-#: levels/LotdMap.tscn:39
+#: levels/LotdMap.tscn:40
 #, fuzzy
 #| msgid "level.vel.title"
 msgid "level.Lotd20220212.title"
 msgstr "Abstrait"
 
-#: levels/LotdMap.tscn:47
-msgid "NIveau du 15 Mars"
-msgstr ""
-
-#: levels/LotdMap.tscn:55
-msgid "Niveau du 16 Mars 2022"
-msgstr ""
-
-#: levels/LotdMap.tscn:63
-msgid "Niveau du 17 Mars 2022"
-msgstr ""
-
-#: levels/LotdMap.tscn:255
+#: levels/LotdMap.tscn:264
 msgid "Un nouveau niveau se débloque chaque jour !"
 msgstr ""
-
-#: levels/PhiMap.tscn:15
-#, fuzzy
-#| msgid "level.PhiMapLevel.title"
-msgid "level.PhiMap.title"
-msgstr "Insoumission !"
 
 #: levels/PhiMap.tscn:16
 #, fuzzy
@@ -507,97 +886,29 @@ msgstr "ANAR ON LAEC IS WIN"
 msgid "level.PhiMap.link"
 msgstr "https://"
 
-#: levels/PhiMap.tscn:69
-msgid "Media Poussifs"
-msgstr ""
-
-#: levels/PhiMap.tscn:77
-msgid "Choix Éditoriaux"
-msgstr ""
-
-#: levels/PhiMap.tscn:85
-msgid "Ailleurs est Yoda"
-msgstr ""
-
-#: levels/PhiMap.tscn:93
-msgid "Mots interdits"
-msgstr ""
-
-#: levels/PhiMap.tscn:101
-msgid "Oh, des espoirs !"
-msgstr ""
-
-#: levels/PhiMap.tscn:109
-msgid "Alexandre Langlois"
-msgstr ""
-
-#: levels/PhiMap.tscn:117
-msgid "Croiser la Plume dans les Laves du Débat"
-msgstr ""
-
-#: levels/PhiMap.tscn:123 levels/adrenesis/PushTheWords.tscn:8
+#: levels/PhiMap.tscn:113 levels/adrenesis/PushTheWords.tscn:8
 msgid "level.PushTheWords.title"
 msgstr "La plume et l'épée"
 
-#: levels/PhiMap.tscn:131
-msgid "Les lobbys et les médias"
-msgstr ""
-
-#: levels/PhiMap.tscn:139
-msgid "Attention aux Trolls"
-msgstr ""
-
-#: levels/PhiMap.tscn:147
-msgid "C'est chaud !"
-msgstr ""
-
-#: levels/PhiMap.tscn:155
-msgid "Identité Nationale"
-msgstr ""
-
-#: levels/PhiMap.tscn:163
-msgid "Grenouille"
-msgstr ""
-
-#: levels/PhiMap.tscn:171
-msgid "Aptonymie Poétique"
-msgstr ""
-
-#: levels/PhiMap.tscn:179 levels/trollune/LearnPull.tscn:8
+#: levels/PhiMap.tscn:169 levels/trollune/LearnPull.tscn:8
 msgid "level.LearnPull.title"
 msgstr "Qu'ils viennent me chercher !"
 
-#: levels/PhiMap.tscn:187
-msgid "Déségrégation Médiatique"
-msgstr ""
-
-#: levels/PhiMap.tscn:195 levels/laec/36.ReduireLaTva.tscn:7
+#: levels/PhiMap.tscn:193 levels/laec/36.ReduireLaTva.tscn:7
 msgid "level.36.ReduireLaTva.title"
 msgstr "Ajuster la TVA"
 
-#: levels/PhiMap.tscn:203 levels/homage/SubmergedRuins.tscn:7
+#: levels/PhiMap.tscn:201 levels/homage/SubmergedRuins.tscn:7
 msgid "level.SubmergedRuins.title"
 msgstr "IGPN CItoyen"
 
-#: levels/PhiMap.tscn:211 levels/miidnight/BlocusDeTrolls.tscn:7
+#: levels/PhiMap.tscn:209 levels/miidnight/BlocusDeTrolls.tscn:8
 msgid "level.BlocusDeTrolls.title"
 msgstr "Blocus de Trolls"
 
-#: levels/PhiMap.tscn:219
-msgid "Au Voleur !"
-msgstr ""
-
-#: levels/PhiMap.tscn:227
-msgid "Petite Ile"
-msgstr ""
-
-#: levels/PhiMap.tscn:235 levels/stheal/LearnVerlan.tscn:7
+#: levels/PhiMap.tscn:233 levels/stheal/LearnVerlan.tscn:7
 msgid "level.LearnVerlan.title"
 msgstr "Le monde à l'envers"
-
-#: levels/PhiMap.tscn:243
-msgid "Désactivons la Monarchie"
-msgstr ""
 
 #: levels/TutorialMap.tscn:30
 #, fuzzy
@@ -619,20 +930,6 @@ msgstr ""
 #| msgid "level.Patrol.link"
 msgid "level.TutorialMap.link"
 msgstr "https://laec.fr/s2m3"
-
-#: levels/TutorialMap.tscn:86
-msgid "Tutoriel A"
-msgstr ""
-
-#: levels/TutorialMap.tscn:93
-msgid "Tutoriel B"
-msgstr ""
-
-#: levels/TutorialMap.tscn:106 levels/laec/Chapter1Map.tscn:9
-#, fuzzy
-#| msgid "level.Patrol.title"
-msgid "level.Chapter1Map.title"
-msgstr "C'est chaud !"
 
 #: levels/adrenesis/PushTheWords.tscn:9
 msgid "level.PushTheWords.excerpt"
@@ -694,10 +991,6 @@ msgstr ""
 msgid "level.StopThatThief.link"
 msgstr "https://laec.fr/chapitre/2/proteger-et-partager"
 
-#: levels/homage/StopThatThief.tscn:188
-msgid "Secret des Victoires"
-msgstr ""
-
 #: levels/homage/StopThatThiefAchievementA.tres:12
 #: levels/homage/StopThatThiefAchievementB.tres:10
 #, fuzzy
@@ -735,10 +1028,6 @@ msgstr ""
 msgid "level.TinyIsle.link"
 msgstr "https://laec.fr/section/15/l-egalite-reelle-pour-les-outre-mer"
 
-#: levels/homage/TinyIsle.tscn:249
-msgid "Le Secret"
-msgstr ""
-
 #: levels/idle/01Welcome.tscn:7
 #, fuzzy
 #| msgid "level.vel.title"
@@ -759,12 +1048,6 @@ msgstr "https://laec.fr"
 
 #: levels/idle/02MoveThings.tscn:8
 #, fuzzy
-#| msgid "level.LearnMove.title"
-msgid "level.02MoveThings.title"
-msgstr "Slalom Périlleux"
-
-#: levels/idle/02MoveThings.tscn:9
-#, fuzzy
 #| msgid "level.LearnMove.excerpt"
 msgid "level.02MoveThings.excerpt"
 msgstr ""
@@ -772,7 +1055,7 @@ msgstr ""
 "économiques et politiques par le renforcement du statut juridique des "
 "rédactions et une charte déontologique dans la convention collective."
 
-#: levels/idle/02MoveThings.tscn:10
+#: levels/idle/02MoveThings.tscn:9
 #, fuzzy
 #| msgid "level.LearnMove.link"
 msgid "level.02MoveThings.link"
@@ -780,21 +1063,36 @@ msgstr "https://laec.fr/s8m6"
 
 #: levels/idle/03RewriteRules.tscn:8
 #, fuzzy
-#| msgid "level.vel.title"
-msgid "level.03RewriteRules.title"
-msgstr "Abstrait"
-
-#: levels/idle/03RewriteRules.tscn:9
-#, fuzzy
 #| msgid "level.vel.excerpt"
 msgid "level.03RewriteRules.excerpt"
 msgstr "Abstrait"
 
-#: levels/idle/03RewriteRules.tscn:10
+#: levels/idle/03RewriteRules.tscn:9
 #, fuzzy
 #| msgid "level.vel.link"
 msgid "level.03RewriteRules.link"
 msgstr "https://laec.fr"
+
+#: levels/idle/04TransformThings.tscn:18
+#, fuzzy
+#| msgid "level.LearnMove.title"
+msgid "level.04TransformThings.title"
+msgstr "Slalom Périlleux"
+
+#: levels/idle/04TransformThings.tscn:19
+#, fuzzy
+#| msgid "level.LearnMove.excerpt"
+msgid "level.04TransformThings.excerpt"
+msgstr ""
+"Protéger les sources et l'indépendance des rédactions à l'égard des pouvoirs "
+"économiques et politiques par le renforcement du statut juridique des "
+"rédactions et une charte déontologique dans la convention collective."
+
+#: levels/idle/04TransformThings.tscn:20
+#, fuzzy
+#| msgid "level.LearnMove.link"
+msgid "level.04TransformThings.link"
+msgstr "https://laec.fr/s8m6"
 
 #: levels/ivanc/IvanCLevel01.tscn:8
 #, fuzzy
@@ -904,6 +1202,60 @@ msgstr "Abstrait"
 msgid "level.IvanCLevel06.link"
 msgstr "https://laec.fr"
 
+#: levels/ivanc/IvanCLevel07.tscn:8
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.IvanCLevel07.title"
+msgstr "Abstrait"
+
+#: levels/ivanc/IvanCLevel07.tscn:9
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.IvanCLevel07.excerpt"
+msgstr "Abstrait"
+
+#: levels/ivanc/IvanCLevel07.tscn:10
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.IvanCLevel07.link"
+msgstr "https://laec.fr"
+
+#: levels/ivanc/IvanCLevel08.tscn:9
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.IvanCLevel08.title"
+msgstr "Abstrait"
+
+#: levels/ivanc/IvanCLevel08.tscn:10
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.IvanCLevel08.excerpt"
+msgstr "Abstrait"
+
+#: levels/ivanc/IvanCLevel08.tscn:11
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.IvanCLevel08.link"
+msgstr "https://laec.fr"
+
+#: levels/ivanc/IvanCLevel09.tscn:7
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.IvanCLevel09.title"
+msgstr "Abstrait"
+
+#: levels/ivanc/IvanCLevel09.tscn:8
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.IvanCLevel09.excerpt"
+msgstr "Abstrait"
+
+#: levels/ivanc/IvanCLevel09.tscn:9
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.IvanCLevel09.link"
+msgstr "https://laec.fr"
+
 #: levels/laec/36.ReduireLaTva.tscn:8
 msgid "level.36.ReduireLaTva.excerpt"
 msgstr ""
@@ -928,42 +1280,6 @@ msgstr ""
 #| msgid "level.Patrol.link"
 msgid "level.Chapter1Map.link"
 msgstr "https://laec.fr/s2m3"
-
-#: levels/laec/Chapter1Map.tscn:31
-msgid "Chapitre Premier"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:39
-msgid "Chapitre Premier (Bonus)"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:47
-msgid "Chapitre Trois"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:53 levels/laec/Chapter1Map.tscn:93
-msgid "Chapitre Quatre"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:61
-msgid "Chapitre Huit"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:69
-msgid "Chapitre Dix"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:77
-msgid "Chapitre Dix (Bonus)"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:85
-msgid "Chapitre Huit (Bonus)"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:101
-msgid "Chapitre Trois (Bonus)"
-msgstr ""
 
 #: levels/laec/chapter1/Laec1_1.tscn:9
 #, fuzzy
@@ -1173,73 +1489,109 @@ msgstr "Abstrait"
 msgid "level.Lotd20121217.link"
 msgstr "https://laec.fr"
 
-#: levels/lotd/Lotd20220228.tscn:9
+#: levels/lotd/Lotd20220228.tscn:25
 #, fuzzy
 #| msgid "level.vel.title"
 msgid "level.Lotd20220228.title"
 msgstr "Abstrait"
 
-#: levels/lotd/Lotd20220228.tscn:10
+#: levels/lotd/Lotd20220228.tscn:26
 #, fuzzy
 #| msgid "level.vel.excerpt"
 msgid "level.Lotd20220228.excerpt"
 msgstr "Abstrait"
 
-#: levels/lotd/Lotd20220228.tscn:11
+#: levels/lotd/Lotd20220228.tscn:27
 #, fuzzy
 #| msgid "level.vel.link"
 msgid "level.Lotd20220228.link"
 msgstr "https://laec.fr"
 
-#: levels/lotd/Lotd20220315.tscn:7
+#: levels/lotd/Lotd20220301.tscn:7
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.Lotd20220301.title"
+msgstr "Abstrait"
+
+#: levels/lotd/Lotd20220301.tscn:8
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.Lotd20220301.excerpt"
+msgstr "Abstrait"
+
+#: levels/lotd/Lotd20220301.tscn:9
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.Lotd20220301.link"
+msgstr "https://laec.fr"
+
+#: levels/lotd/Lotd20220314.tscn:16
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.Lotd20220314.title"
+msgstr "Abstrait"
+
+#: levels/lotd/Lotd20220314.tscn:17
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.Lotd20220314.excerpt"
+msgstr "Abstrait"
+
+#: levels/lotd/Lotd20220314.tscn:18
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.Lotd20220314.link"
+msgstr "https://laec.fr"
+
+#: levels/lotd/Lotd20220315.tscn:18
 #, fuzzy
 #| msgid "level.vel.title"
 msgid "level.Lotd20220315.title"
 msgstr "Abstrait"
 
-#: levels/lotd/Lotd20220315.tscn:8
+#: levels/lotd/Lotd20220315.tscn:19
 #, fuzzy
 #| msgid "level.vel.excerpt"
 msgid "level.Lotd20220315.excerpt"
 msgstr "Abstrait"
 
-#: levels/lotd/Lotd20220315.tscn:9
+#: levels/lotd/Lotd20220315.tscn:20
 #, fuzzy
 #| msgid "level.vel.link"
 msgid "level.Lotd20220315.link"
 msgstr "https://laec.fr"
 
-#: levels/lotd/Lotd20220316.tscn:8
+#: levels/lotd/Lotd20220316.tscn:16
 #, fuzzy
 #| msgid "level.vel.title"
 msgid "level.Lotd20220316.title"
 msgstr "Abstrait"
 
-#: levels/lotd/Lotd20220316.tscn:9
+#: levels/lotd/Lotd20220316.tscn:17
 #, fuzzy
 #| msgid "level.vel.excerpt"
 msgid "level.Lotd20220316.excerpt"
 msgstr "Abstrait"
 
-#: levels/lotd/Lotd20220316.tscn:10
+#: levels/lotd/Lotd20220316.tscn:18
 #, fuzzy
 #| msgid "level.vel.link"
 msgid "level.Lotd20220316.link"
 msgstr "https://laec.fr"
 
-#: levels/lotd/Lotd20220317.tscn:8
+#: levels/lotd/Lotd20220317.tscn:7
 #, fuzzy
 #| msgid "level.vel.title"
 msgid "level.Lotd20220317.title"
 msgstr "Abstrait"
 
-#: levels/lotd/Lotd20220317.tscn:9
+#: levels/lotd/Lotd20220317.tscn:8
 #, fuzzy
 #| msgid "level.vel.excerpt"
 msgid "level.Lotd20220317.excerpt"
 msgstr "Abstrait"
 
-#: levels/lotd/Lotd20220317.tscn:10
+#: levels/lotd/Lotd20220317.tscn:9
 #, fuzzy
 #| msgid "level.vel.link"
 msgid "level.Lotd20220317.link"
@@ -1263,25 +1615,59 @@ msgstr "Abstrait"
 msgid "level.Lotd20220318.link"
 msgstr "https://laec.fr"
 
-#: levels/lotd/Lotd20220319.tscn:7
-#, fuzzy
-#| msgid "level.vel.title"
-msgid "level.Lotd20220319.title"
-msgstr "Abstrait"
-
-#: levels/lotd/Lotd20220319.tscn:8
+#: levels/lotd/Lotd20220319.tscn:19
 #, fuzzy
 #| msgid "level.vel.excerpt"
 msgid "level.Lotd20220319.excerpt"
 msgstr "Abstrait"
 
-#: levels/lotd/Lotd20220319.tscn:9
+#: levels/lotd/Lotd20220319.tscn:20
 #, fuzzy
 #| msgid "level.vel.link"
 msgid "level.Lotd20220319.link"
 msgstr "https://laec.fr"
 
-#: levels/miidnight/BlocusDeTrolls.tscn:8
+#: levels/lotd/Lotd20220320.tscn:29
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.Lotd20220320.title"
+msgstr "Abstrait"
+
+#: levels/lotd/Lotd20220320.tscn:30
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.Lotd20220320.excerpt"
+msgstr "Abstrait"
+
+#: levels/lotd/Lotd20220320.tscn:31
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.Lotd20220320.link"
+msgstr "https://laec.fr"
+
+#: levels/melyoh/AcrasieParlementaire.tscn:28
+#, fuzzy
+#| msgid "level.CameleonEncore.title"
+msgid "level.AcrasieParlementaire.title"
+msgstr "Le poids des mots"
+
+#: levels/melyoh/AcrasieParlementaire.tscn:29
+#, fuzzy
+#| msgid "level.Cameleon.excerpt"
+msgid "level.AcrasieParlementaire.excerpt"
+msgstr ""
+"Le système aujourd'hui est absurde : il prive d'eau les personnes qui ne "
+"peuvent payer et ne pénalise pas le mésusage.  Changeons de logique, "
+"imposons la gratuité des quantités nécessaires à une vie digne et "
+"sanctionnons les gaspillages."
+
+#: levels/melyoh/AcrasieParlementaire.tscn:30
+#, fuzzy
+#| msgid "level.CameleonEncore.link"
+msgid "level.AcrasieParlementaire.link"
+msgstr "https://laec.fr/s8m5"
+
+#: levels/miidnight/BlocusDeTrolls.tscn:9
 #, fuzzy
 #| msgid "level.MotsCroises.excerpt"
 msgid "level.BlocusDeTrolls.excerpt"
@@ -1292,7 +1678,7 @@ msgstr ""
 "permettre le débat et l'expression de la souveraineté populaire en toutes "
 "circonstances."
 
-#: levels/miidnight/BlocusDeTrolls.tscn:9
+#: levels/miidnight/BlocusDeTrolls.tscn:10
 #, fuzzy
 #| msgid "level.MotsCroises.link"
 msgid "level.BlocusDeTrolls.link"
@@ -1379,6 +1765,352 @@ msgstr ""
 
 #: levels/stheal/LearnVerlan.tscn:9
 msgid "level.LearnVerlan.link"
+msgstr ""
+"https://laec.fr/section/69/changer-de-logique-en-matiere-d-addiction-et-de-"
+"drogues"
+
+#: levels/story/Partie1/1InterventionPopulaire4.tscn:9
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.1InterventionPopulaire4.title"
+msgstr "Abstrait"
+
+#: levels/story/Partie1/1InterventionPopulaire4.tscn:10
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.1InterventionPopulaire4.excerpt"
+msgstr "Abstrait"
+
+#: levels/story/Partie1/1InterventionPopulaire4.tscn:11
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.1InterventionPopulaire4.link"
+msgstr "https://laec.fr"
+
+#: levels/story/Partie1/2AbolirMonarchPres2.tscn:9
+#, fuzzy
+#| msgid "level.DisableMonarchy.title"
+msgid "level.2AbolirMonarchPres2.title"
+msgstr "Désactivez la Monarchie"
+
+#: levels/story/Partie1/2AbolirMonarchPres2.tscn:10
+#, fuzzy
+#| msgid "level.DisableMonarchy.excerpt"
+msgid "level.2AbolirMonarchPres2.excerpt"
+msgstr ""
+"La monarchie présidentielle actuelle marginalise le Parlement.  Le président "
+"peut dissoudre l'Assemblée, mais celle-ci ne peut le renverser.  "
+"Conséquence : les députés agissent plus souvent comme des godillots, obligés "
+"du monarque, que comme représentants du peuple souverain.  Ce système est "
+"une anomalie démocratique."
+
+#: levels/story/Partie1/2AbolirMonarchPres2.tscn:11
+#, fuzzy
+#| msgid "level.DisableMonarchy.link"
+msgid "level.2AbolirMonarchPres2.link"
+msgstr "https://laec.fr/section/4/abolir-la-monarchie-presidentielle"
+
+#: levels/story/Partie1/3Convoquer6emeRep1.tscn:10
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.3Convoquer6emeRep1.title"
+msgstr "Abstrait"
+
+#: levels/story/Partie1/3Convoquer6emeRep1.tscn:11
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.3Convoquer6emeRep1.excerpt"
+msgstr "Abstrait"
+
+#: levels/story/Partie1/3Convoquer6emeRep1.tscn:12
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.3Convoquer6emeRep1.link"
+msgstr "https://laec.fr"
+
+#: levels/story/Partie1/4RevolutionMedia6.tscn:9
+#, fuzzy
+#| msgid "level.PhiMapLevel.title"
+msgid "level.4RevolutionMedia6.title"
+msgstr "Insoumission !"
+
+#: levels/story/Partie1/4RevolutionMedia6.tscn:10
+#, fuzzy
+#| msgid "level.PhiMapLevel.excerpt"
+msgid "level.4RevolutionMedia6.excerpt"
+msgstr "ANAR ON LAEC IS WIN"
+
+#: levels/story/Partie1/4RevolutionMedia6.tscn:11
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.4RevolutionMedia6.link"
+msgstr "https://laec.fr"
+
+#: levels/story/Partie1/5JusticeAuNomDuPeuple7.tscn:20
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.5JusticeAuNomDuPeuple7.title"
+msgstr "Abstrait"
+
+#: levels/story/Partie1/5JusticeAuNomDuPeuple7.tscn:21
+#, fuzzy
+#| msgid "level.LaPoliceAvecNousLevel.excerpt"
+msgid "level.5JusticeAuNomDuPeuple7.excerpt"
+msgstr ""
+"La République a besoin d'une police ; une police républicaine, agissant pour "
+"protéger les libertés individuelles et collectives."
+
+#: levels/story/Partie1/5JusticeAuNomDuPeuple7.tscn:22
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.5JusticeAuNomDuPeuple7.link"
+msgstr "https://laec.fr"
+
+#: levels/story/Partie2/1Bifurcation13.tscn:9
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.1Bifurcation13.title"
+msgstr "Abstrait"
+
+#: levels/story/Partie2/1Bifurcation13.tscn:10
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.1Bifurcation13.excerpt"
+msgstr "Abstrait"
+
+#: levels/story/Partie2/1Bifurcation13.tscn:11
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.1Bifurcation13.link"
+msgstr "https://laec.fr"
+
+#: levels/story/Partie2/2Renouvelable19.tscn:9
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.2Renouvelable19.title"
+msgstr "Abstrait"
+
+#: levels/story/Partie2/2Renouvelable19.tscn:10
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.2Renouvelable19.excerpt"
+msgstr "Abstrait"
+
+#: levels/story/Partie2/2Renouvelable19.tscn:11
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.2Renouvelable19.link"
+msgstr "https://laec.fr"
+
+#: levels/story/Partie2/3EnjeuEau25.tscn:9
+#, fuzzy
+#| msgid "level.Patrol.title"
+msgid "level.3EnjeuEau25.title"
+msgstr "C'est chaud !"
+
+#: levels/story/Partie2/3EnjeuEau25.tscn:10
+#, fuzzy
+#| msgid "level.PhiMapLevel.excerpt"
+msgid "level.3EnjeuEau25.excerpt"
+msgstr "ANAR ON LAEC IS WIN"
+
+#: levels/story/Partie2/3EnjeuEau25.tscn:11
+#, fuzzy
+#| msgid "level.Patrol.link"
+msgid "level.3EnjeuEau25.link"
+msgstr "https://laec.fr/s2m3"
+
+#: levels/story/Partie3/1SanteDAbord32.tscn:7
+#, fuzzy
+#| msgid "level.Patrol.title"
+msgid "level.1SanteDAbord32.title"
+msgstr "C'est chaud !"
+
+#: levels/story/Partie3/1SanteDAbord32.tscn:8
+#, fuzzy
+#| msgid "level.Patrol.excerpt"
+msgid "level.1SanteDAbord32.excerpt"
+msgstr ""
+"Combattre la pollution du débat parlementaire par les lobbies, interdire "
+"l'entrée des lobbyistes dans l'enceinte du Parlement et les cadeaux faits "
+"aux parlementaires."
+
+#: levels/story/Partie3/1SanteDAbord32.tscn:9
+#, fuzzy
+#| msgid "level.LearnStop.link"
+msgid "level.1SanteDAbord32.link"
+msgstr "https://laec.fr/s8m2"
+
+#: levels/story/Partie3/2LancerGrandChantiersEcolo37.tscn:7
+#, fuzzy
+#| msgid "level.LearnWeak.antipatriot.title"
+msgid "level.2LancerGrandChantiersEcolo37.title"
+msgstr "Antipatriote"
+
+#: levels/story/Partie3/2LancerGrandChantiersEcolo37.tscn:8
+#, fuzzy
+#| msgid "level.LearnVerlan.excerpt"
+msgid "level.2LancerGrandChantiersEcolo37.excerpt"
+msgstr ""
+"La politique française en matière de drogues se résume trop souvent à la "
+"répression, et la guerre contre la drogue est un échec à la fois sanitaire "
+"et de sécurité. Il y a si peu de réflexion sur les consommations de "
+"psychotropes, si peu d'efforts pour aider les personnes à sortir de ces "
+"consommations. L'heure est venue de changer la stratégie pour lutter plus "
+"efficacement et plus humainement contre les addictions."
+
+#: levels/story/Partie3/2LancerGrandChantiersEcolo37.tscn:9
+msgid "level.2LancerGrandChantiersEcolo37.link"
+msgstr ""
+
+#: levels/story/Partie3/3BanquesInteretGeneral47.tscn:7
+#, fuzzy
+#| msgid "level.DeuxIlesDeStheal.title"
+msgid "level.3BanquesInteretGeneral47.title"
+msgstr "Oh, des espoirs !"
+
+#: levels/story/Partie3/3BanquesInteretGeneral47.tscn:8
+#, fuzzy
+#| msgid "level.DeuxIlesDeStheal.excerpt"
+msgid "level.3BanquesInteretGeneral47.excerpt"
+msgstr ""
+"Non, le handicap n'est pas une affaire privée. C'est d'abord une affaire "
+"publique. Celle de la dignité des personnes en situation de handicap, de "
+"leur liberté, de l'égalité entre les êtres humains. Le plan de lutte contre "
+"les obstacles au travail et dans les espaces publics a été trop de fois "
+"repoussé. La prise en compte du handicap est trop souvent reléguée au second "
+"plan ou noyée parmi d'autres thèmes comme la dépendance ou la maladie. Une "
+"personne en situation de handicap n'est pas plus que quiconque réductible à "
+"son handicap."
+
+#: levels/story/Partie3/3BanquesInteretGeneral47.tscn:9
+#, fuzzy
+#| msgid "level.DeuxIlesDeStheal.link"
+msgid "level.3BanquesInteretGeneral47.link"
+msgstr ""
+"https://laec.fr/section/68/pas-d-obstacle-aux-personnes-en-situation-de-"
+"handicap"
+
+#: levels/story/Partie4/1RepubliqueContreRacisme57.tscn:7
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.1RepubliqueContreRacisme57.title"
+msgstr "Abstrait"
+
+#: levels/story/Partie4/1RepubliqueContreRacisme57.tscn:8
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.1RepubliqueContreRacisme57.excerpt"
+msgstr "Abstrait"
+
+#: levels/story/Partie4/1RepubliqueContreRacisme57.tscn:9
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.1RepubliqueContreRacisme57.link"
+msgstr "https://laec.fr"
+
+#: levels/story/Partie4/2SportsCorpsArgent62.tscn:7
+#, fuzzy
+#| msgid "level.MotsCroises.title"
+msgid "level.2SportsCorpsArgent62.title"
+msgstr "Croiser la plume dans les laves du débat"
+
+#: levels/story/Partie4/2SportsCorpsArgent62.tscn:8
+#, fuzzy
+#| msgid "level.MotsCroises.excerpt"
+msgid "level.2SportsCorpsArgent62.excerpt"
+msgstr ""
+"Le peuple est systématiquement tenu à l'écart des décisions. Tout au plus a-"
+"t-il le droit de voter une fois tous les cinq ans sans possibilité "
+"d'intervenir ensuite. Il est temps de faire confiance aux citoyens et de "
+"permettre le débat et l'expression de la souveraineté populaire en toutes "
+"circonstances."
+
+#: levels/story/Partie4/2SportsCorpsArgent62.tscn:9
+#, fuzzy
+#| msgid "level.MotsCroises.link"
+msgid "level.2SportsCorpsArgent62.link"
+msgstr ""
+"https://laec.fr/section/3/une-republique-permettant-l-intervention-populaire"
+
+#: levels/story/Partie4/3ReconstruireEcoleGlobale65.tscn:7
+#, fuzzy
+#| msgid "level.Cameleon.telephobe.title"
+msgid "level.3ReconstruireEcoleGlobale65.title"
+msgstr "Temps de cerveau disponible"
+
+#: levels/story/Partie4/3ReconstruireEcoleGlobale65.tscn:8
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.3ReconstruireEcoleGlobale65.excerpt"
+msgstr "Abstrait"
+
+#: levels/story/Partie4/3ReconstruireEcoleGlobale65.tscn:9
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.3ReconstruireEcoleGlobale65.link"
+msgstr "https://laec.fr"
+
+#: levels/story/Partie5/1DesobeissanceEurope70.tscn:8
+#, fuzzy
+#| msgid "level.Patrol.title"
+msgid "level.1DesobeissanceEurope70.title"
+msgstr "C'est chaud !"
+
+#: levels/story/Partie5/1DesobeissanceEurope70.tscn:9
+#, fuzzy
+#| msgid "level.PhiMapLevel.excerpt"
+msgid "level.1DesobeissanceEurope70.excerpt"
+msgstr "ANAR ON LAEC IS WIN"
+
+#: levels/story/Partie5/1DesobeissanceEurope70.tscn:10
+#, fuzzy
+#| msgid "level.Patrol.link"
+msgid "level.1DesobeissanceEurope70.link"
+msgstr "https://laec.fr/s2m3"
+
+#: levels/story/Partie5/2IndependanceFrance71.tscn:8
+#, fuzzy
+#| msgid "level.LearnVerlan.title"
+msgid "level.2IndependanceFrance71.title"
+msgstr "Le monde à l'envers"
+
+#: levels/story/Partie5/2IndependanceFrance71.tscn:9
+#, fuzzy
+#| msgid "level.LearnVerlan.excerpt"
+msgid "level.2IndependanceFrance71.excerpt"
+msgstr ""
+"La politique française en matière de drogues se résume trop souvent à la "
+"répression, et la guerre contre la drogue est un échec à la fois sanitaire "
+"et de sécurité. Il y a si peu de réflexion sur les consommations de "
+"psychotropes, si peu d'efforts pour aider les personnes à sortir de ces "
+"consommations. L'heure est venue de changer la stratégie pour lutter plus "
+"efficacement et plus humainement contre les addictions."
+
+#: levels/story/Partie5/2IndependanceFrance71.tscn:10
+#, fuzzy
+#| msgid "level.LearnVerlan.link"
+msgid "level.2IndependanceFrance71.link"
+msgstr ""
+"https://laec.fr/section/69/changer-de-logique-en-matiere-d-addiction-et-de-"
+"drogues"
+
+#: levels/story/Partie5/3ProtegerMerOceans82.tscn:8
+#, fuzzy
+#| msgid "level.LearnVerlan.title"
+msgid "level.3ProtegerMerOceans82.title"
+msgstr "Le monde à l'envers"
+
+#: levels/story/Partie5/3ProtegerMerOceans82.tscn:9
+#, fuzzy
+#| msgid "level.PhiMapLevel.excerpt"
+msgid "level.3ProtegerMerOceans82.excerpt"
+msgstr "ANAR ON LAEC IS WIN"
+
+#: levels/story/Partie5/3ProtegerMerOceans82.tscn:10
+#, fuzzy
+#| msgid "level.LearnVerlan.link"
+msgid "level.3ProtegerMerOceans82.link"
 msgstr ""
 "https://laec.fr/section/69/changer-de-logique-en-matiere-d-addiction-et-de-"
 "drogues"
@@ -1638,31 +2370,19 @@ msgstr ""
 msgid "level.SecretTunnel.link"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckDownLeft.tscn:18
-#, fuzzy
-#| msgid "level.vel.title"
-msgid "level.ButtonCheckDownLeft.title"
-msgstr "Abstrait"
-
-#: levels/tutorial/ButtonCheckDownLeft.tscn:19
+#: levels/tutorial/ButtonCheckDownLeft.tscn:20
 #, fuzzy
 #| msgid "level.vel.excerpt"
 msgid "level.ButtonCheckDownLeft.excerpt"
 msgstr "Abstrait"
 
-#: levels/tutorial/ButtonCheckDownLeft.tscn:20
+#: levels/tutorial/ButtonCheckDownLeft.tscn:21
 #, fuzzy
 #| msgid "level.vel.link"
 msgid "level.ButtonCheckDownLeft.link"
 msgstr "https://laec.fr"
 
-#: levels/tutorial/ButtonCheckDownRight.tscn:23
-#, fuzzy
-#| msgid "level.Cameleon.title"
-msgid "level.ButtonCheckDownRight.title"
-msgstr "La vie parfois fait ploufff"
-
-#: levels/tutorial/ButtonCheckDownRight.tscn:24
+#: levels/tutorial/ButtonCheckDownRight.tscn:25
 #, fuzzy
 #| msgid "level.Cameleon.excerpt"
 msgid "level.ButtonCheckDownRight.excerpt"
@@ -1672,37 +2392,25 @@ msgstr ""
 "imposons la gratuité des quantités nécessaires à une vie digne et "
 "sanctionnons les gaspillages."
 
-#: levels/tutorial/ButtonCheckDownRight.tscn:25
+#: levels/tutorial/ButtonCheckDownRight.tscn:26
 #, fuzzy
 #| msgid "level.Cameleon.link"
 msgid "level.ButtonCheckDownRight.link"
 msgstr "https://laec.fr/section/43/consommer-autrement"
 
-#: levels/tutorial/ButtonCheckLeft.tscn:23
-#, fuzzy
-#| msgid "level.StopThatThief.title"
-msgid "level.ButtonCheckLeft.title"
-msgstr "Expropriation"
-
-#: levels/tutorial/ButtonCheckLeft.tscn:24
+#: levels/tutorial/ButtonCheckLeft.tscn:25
 #, fuzzy
 #| msgid "level.vel.excerpt"
 msgid "level.ButtonCheckLeft.excerpt"
 msgstr "Abstrait"
 
-#: levels/tutorial/ButtonCheckLeft.tscn:25
+#: levels/tutorial/ButtonCheckLeft.tscn:26
 #, fuzzy
 #| msgid "level.StopThatThief.link"
 msgid "level.ButtonCheckLeft.link"
 msgstr "https://laec.fr/chapitre/2/proteger-et-partager"
 
-#: levels/tutorial/ButtonCheckRight.tscn:23
-#, fuzzy
-#| msgid "level.Patrol.title"
-msgid "level.ButtonCheckRight.title"
-msgstr "C'est chaud !"
-
-#: levels/tutorial/ButtonCheckRight.tscn:24
+#: levels/tutorial/ButtonCheckRight.tscn:25
 #, fuzzy
 #| msgid "level.Patrol.excerpt"
 msgid "level.ButtonCheckRight.excerpt"
@@ -1711,19 +2419,13 @@ msgstr ""
 "l'entrée des lobbyistes dans l'enceinte du Parlement et les cadeaux faits "
 "aux parlementaires."
 
-#: levels/tutorial/ButtonCheckRight.tscn:25
+#: levels/tutorial/ButtonCheckRight.tscn:26
 #, fuzzy
 #| msgid "level.Patrol.link"
 msgid "level.ButtonCheckRight.link"
 msgstr "https://laec.fr/s2m3"
 
-#: levels/tutorial/ButtonCheckUpLeft.tscn:23
-#, fuzzy
-#| msgid "level.StopThatThief.title"
-msgid "level.ButtonCheckUpLeft.title"
-msgstr "Expropriation"
-
-#: levels/tutorial/ButtonCheckUpLeft.tscn:24
+#: levels/tutorial/ButtonCheckUpLeft.tscn:25
 #, fuzzy
 #| msgid "level.StopThatThief.excerpt"
 msgid "level.ButtonCheckUpLeft.excerpt"
@@ -1733,19 +2435,13 @@ msgstr ""
 "chômage se généralise, l'État se disloque, les services publics reculent. "
 "Comment sortir de cette spirale ?"
 
-#: levels/tutorial/ButtonCheckUpLeft.tscn:25
+#: levels/tutorial/ButtonCheckUpLeft.tscn:26
 #, fuzzy
 #| msgid "level.StopThatThief.link"
 msgid "level.ButtonCheckUpLeft.link"
 msgstr "https://laec.fr/chapitre/2/proteger-et-partager"
 
-#: levels/tutorial/ButtonCheckUpRight.tscn:23
-#, fuzzy
-#| msgid "level.StopThatThief.title"
-msgid "level.ButtonCheckUpRight.title"
-msgstr "Expropriation"
-
-#: levels/tutorial/ButtonCheckUpRight.tscn:24
+#: levels/tutorial/ButtonCheckUpRight.tscn:25
 #, fuzzy
 #| msgid "level.StopThatThief.excerpt"
 msgid "level.ButtonCheckUpRight.excerpt"
@@ -1755,17 +2451,11 @@ msgstr ""
 "chômage se généralise, l'État se disloque, les services publics reculent. "
 "Comment sortir de cette spirale ?"
 
-#: levels/tutorial/ButtonCheckUpRight.tscn:25
+#: levels/tutorial/ButtonCheckUpRight.tscn:26
 #, fuzzy
 #| msgid "level.StopThatThief.link"
 msgid "level.ButtonCheckUpRight.link"
 msgstr "https://laec.fr/chapitre/2/proteger-et-partager"
-
-#: levels/tutorial/ButtonCheckWait.tscn:11
-#, fuzzy
-#| msgid "level.StopThatThief.title"
-msgid "level.ButtonCheckWait.title"
-msgstr "Expropriation"
 
 #: levels/tutorial/ButtonCheckWait.tscn:12
 #, fuzzy
@@ -1813,13 +2503,13 @@ msgstr "ANAR ON LAEC IS WIN"
 msgid "level.Tutorial02Level.link"
 msgstr ""
 
-#: levels/vener/03CrushMonarchy.tscn:8
+#: levels/vener/03CrushMonarchy.tscn:7
 #, fuzzy
 #| msgid "level.DisableMonarchy.title"
 msgid "level.03CrushMonarchy.title"
 msgstr "Désactivez la Monarchie"
 
-#: levels/vener/03CrushMonarchy.tscn:9
+#: levels/vener/03CrushMonarchy.tscn:8
 #, fuzzy
 #| msgid "level.DisableMonarchy.excerpt"
 msgid "level.03CrushMonarchy.excerpt"
@@ -1830,7 +2520,7 @@ msgstr ""
 "du monarque, que comme représentants du peuple souverain.  Ce système est "
 "une anomalie démocratique."
 
-#: levels/vener/03CrushMonarchy.tscn:10
+#: levels/vener/03CrushMonarchy.tscn:9
 #, fuzzy
 #| msgid "level.DisableMonarchy.link"
 msgid "level.03CrushMonarchy.link"
@@ -1872,12 +2562,6 @@ msgstr "Abstrait"
 msgid "level.Rebellion02Level.link"
 msgstr "https://laec.fr"
 
-#: levels/vener/Rebellion03Level.tscn:7
-#, fuzzy
-#| msgid "level.vel.title"
-msgid "level.Rebellion03Level.title"
-msgstr "Abstrait"
-
 #: levels/vener/Rebellion03Level.tscn:8
 #, fuzzy
 #| msgid "level.vel.excerpt"
@@ -1889,12 +2573,6 @@ msgstr "Abstrait"
 #| msgid "level.vel.link"
 msgid "level.Rebellion03Level.link"
 msgstr "https://laec.fr"
-
-#: levels/vener/VenerMap.tscn:8
-#, fuzzy
-#| msgid "level.Patrol.title"
-msgid "level.VenerMap.title"
-msgstr "C'est chaud !"
 
 #: levels/vener/VenerMap.tscn:9
 #, fuzzy
@@ -1908,54 +2586,71 @@ msgstr "ANAR ON LAEC IS WIN"
 msgid "level.VenerMap.link"
 msgstr "https://laec.fr/s2m3"
 
-#: levels/vener/VenerMap.tscn:56 levels/vener/VenerMap.tscn:63
-#: levels/vener/VenerMap.tscn:70
-msgid "Révolte"
-msgstr ""
-
-#: levels/vener/VenerMap.tscn:77
-msgid "Révolution"
-msgstr ""
-
-#: levels/xr/Extinction01Level.tscn:7
+#: levels/xr/Extinction01Level.tscn:28
 #, fuzzy
 #| msgid "level.vel.title"
 msgid "level.Extinction01Level.title"
 msgstr "Abstrait"
 
-#: levels/xr/Extinction01Level.tscn:8
+#: levels/xr/Extinction01Level.tscn:29
 #, fuzzy
 #| msgid "level.vel.excerpt"
 msgid "level.Extinction01Level.excerpt"
 msgstr "Abstrait"
 
-#: levels/xr/Extinction01Level.tscn:9
+#: levels/xr/Extinction01Level.tscn:30
 #, fuzzy
 #| msgid "level.vel.link"
 msgid "level.Extinction01Level.link"
 msgstr "https://laec.fr"
 
-#: levels/xr/XrMap.tscn:8
+#: levels/xr/Extinction02Level.tscn:8
 #, fuzzy
-#| msgid "level.PhiMapLevel.title"
-msgid "level.XrMap.title"
-msgstr "Insoumission !"
+#| msgid "level.vel.title"
+msgid "level.Extinction02Level.title"
+msgstr "Abstrait"
 
-#: levels/xr/XrMap.tscn:9
+#: levels/xr/Extinction02Level.tscn:9
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.Extinction02Level.excerpt"
+msgstr "Abstrait"
+
+#: levels/xr/Extinction02Level.tscn:10
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.Extinction02Level.link"
+msgstr "https://laec.fr"
+
+#: levels/xr/Extinction03Level.tscn:18 levels/xr/XrMap.tscn:74
+#, fuzzy
+#| msgid "level.vel.title"
+msgid "level.Extinction03Level.title"
+msgstr "Abstrait"
+
+#: levels/xr/Extinction03Level.tscn:19
+#, fuzzy
+#| msgid "level.vel.excerpt"
+msgid "level.Extinction03Level.excerpt"
+msgstr "Abstrait"
+
+#: levels/xr/Extinction03Level.tscn:20
+#, fuzzy
+#| msgid "level.vel.link"
+msgid "level.Extinction03Level.link"
+msgstr "https://laec.fr"
+
+#: levels/xr/XrMap.tscn:10
 #, fuzzy
 #| msgid "level.PhiMapLevel.excerpt"
 msgid "level.XrMap.excerpt"
 msgstr "ANAR ON LAEC IS WIN"
 
-#: levels/xr/XrMap.tscn:10
+#: levels/xr/XrMap.tscn:11
 #, fuzzy
 #| msgid "level.PhiMapLevel.link"
 msgid "level.XrMap.link"
 msgstr "https://"
-
-#: levels/xr/XrMap.tscn:59
-msgid "Extinction: Tsunami"
-msgstr ""
 
 #: levels/zargett/LaPoliceAvecNousLevel.tscn:7
 msgid "level.LaPoliceAvecNousLevel.title"
@@ -1975,15 +2670,15 @@ msgstr "https://laec.fr/section/13/garantir-la-securite-et-la-surete"
 msgid "Appuyez pour Continuer"
 msgstr ""
 
-#: menus/LevelVictoryScreen.gd:56 menus/LevelVictoryScreen.tscn:69
+#: menus/LevelVictoryScreen.gd:56 menus/LevelVictoryScreen.tscn:131
 msgid "LEVEL COMPLETE !"
 msgstr "NIVEAU RÉUSSI !"
 
-#: menus/LevelVictoryScreen.tscn:87
+#: menus/LevelVictoryScreen.tscn:149
 msgid "Urgence Démocratique"
 msgstr "Urgence Démocratique"
 
-#: menus/LevelVictoryScreen.tscn:108
+#: menus/LevelVictoryScreen.tscn:170
 msgid ""
 "Le projet de Constitution proposé par l'Assemblée constituante sera soumis à "
 "un référendum d'approbation."
@@ -1991,27 +2686,27 @@ msgstr ""
 "Le projet de Constitution proposé par l'Assemblée constituante sera soumis à "
 "un référendum d'approbation."
 
-#: menus/LevelVictoryScreen.tscn:137
+#: menus/LevelVictoryScreen.tscn:199
 msgid "Want to know more ?"
 msgstr "En savoir plus ?"
 
-#: menus/LevelVictoryScreen.tscn:152
+#: menus/LevelVictoryScreen.tscn:214
 msgid "Continue  >"
 msgstr "Continuer >"
 
-#: menus/LevelVictoryScreen.tscn:200
+#: menus/LevelVictoryScreen.tscn:262
 msgid "Time:"
 msgstr "Temps:"
 
-#: menus/LevelVictoryScreen.tscn:208
+#: menus/LevelVictoryScreen.tscn:270
 msgid "0.0s"
 msgstr ""
 
-#: menus/LevelVictoryScreen.tscn:221
+#: menus/LevelVictoryScreen.tscn:283
 msgid "Moves:"
 msgstr "Coups:"
 
-#: menus/LevelVictoryScreen.tscn:229
+#: menus/LevelVictoryScreen.tscn:291
 msgid "0"
 msgstr ""
 
@@ -2035,7 +2730,7 @@ msgstr "Retour au Menu"
 msgid "Exit Game"
 msgstr "Quitter le Jeu"
 
-#: menus/SettingsMenu.tscn:69 menus/StartMenu.tscn:144
+#: menus/SettingsMenu.tscn:69 menus/StartMenu.tscn:145
 msgid "Controls"
 msgstr "Contrôles"
 
@@ -2043,17 +2738,21 @@ msgstr "Contrôles"
 msgid "Open Settings Directory"
 msgstr "Ouvrir le dossier local"
 
-#: menus/StartMenu.tscn:120
+#: menus/StartMenu.tscn:121
 msgid "Tutorial"
 msgstr "Tutoriel"
 
-#: menus/StartMenu.tscn:132
-msgid "Extras"
-msgstr "Extras"
+#: menus/StartMenu.tscn:133
+msgid "Arcade"
+msgstr "Arcade"
 
-#: menus/StartMenu.tscn:178
-msgid "0.3.5"
+#: menus/StartMenu.tscn:179
+msgid "0.4.3"
 msgstr ""
+
+#: menus/StartMenu.tscn:188
+msgid "Beta"
+msgstr "Beta"
 
 #: menus/TutorialMenu.tscn:32
 msgid "Voulez vous commencer le tutoriel ?"
@@ -2163,8 +2862,40 @@ msgstr "Flèche Droite"
 msgid "res://levels/trollune/SomeLevel.tscn"
 msgstr ""
 
-#~ msgid "level.CameleonEncore.title"
-#~ msgstr "Le poids des mots"
+#: tools/LevelsViz.gd:34
+msgid "Action"
+msgstr "Action"
+
+#: tools/LevelsViz.gd:35
+msgid "Filepath"
+msgstr "Fichier"
+
+#: tools/LevelsViz.gd:37
+msgid "Story"
+msgstr "Histoire"
+
+#: tools/LevelsViz.gd:39
+msgid "Parents"
+msgstr "Parents"
+
+#: tools/LevelsViz.gd:40
+msgid "Children"
+msgstr "Enfants"
+
+#: tools/LevelsViz.gd:47
+msgid "PLAY"
+msgstr "JOUER"
+
+#: tools/LevelsViz.gd:75
+msgid "YES"
+msgstr "OUI"
+
+#: tools/LevelsViz.gd:77
+msgid "NO"
+msgstr "NON"
+
+#~ msgid "Extras"
+#~ msgstr "Extras"
 
 #~ msgid "level.CameleonEncore.excerpt"
 #~ msgstr ""
@@ -2172,23 +2903,10 @@ msgstr ""
 #~ "d'information et mutualiser les outils de production (imprimeries, "
 #~ "serveurs, distribution, etc.)"
 
-#~ msgid "level.CameleonEncore.link"
-#~ msgstr "https://laec.fr/s8m5"
-
 #, fuzzy
 #~| msgid "level.LaPoliceAvecNousLevel.title"
 #~ msgid "level.LaPoliceAvecNousLevel.subtitle"
 #~ msgstr "Alexandre Langlois"
-
-#, fuzzy
-#~| msgid "level.vel.title"
-#~ msgid "level.DustyLevel.title"
-#~ msgstr "Abstrait"
-
-#, fuzzy
-#~| msgid "level.vel.link"
-#~ msgid "level.DustyLevel.link"
-#~ msgstr "https://laec.fr"
 
 #, fuzzy
 #~| msgid "level.PhiMapLevel.title"

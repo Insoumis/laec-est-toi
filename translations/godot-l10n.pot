@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-03-02 02:08+0100\n"
+"POT-Creation-Date: 2022-03-10 15:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: addons/input-map-helper/InputMapper.gd:743 menus/SettingsMenu.tscn:95
+#: addons/input-map-helper/InputMapper.gd:745 menus/SettingsMenu.tscn:95
 msgid "Back"
 msgstr ""
 
-#: addons/input-map-helper/InputMapper.gd:769
+#: addons/input-map-helper/InputMapper.gd:772
 msgid "Reset"
 msgstr ""
 
-#: addons/laec-is-you/core/BoilerplateLevel.tscn:6
+#: addons/laec-is-you/core/BoilerplateLevel.tscn:6 cache/levels.tres:314
 msgid "Bienvenue"
 msgstr ""
 
@@ -69,7 +69,7 @@ msgstr ""
 msgid "New Level"
 msgstr ""
 
-#: addons/laec-is-you/ide/ItemWizard.tscn:56 editor/LevelEditor.tscn:216
+#: addons/laec-is-you/ide/ItemWizard.tscn:56 editor/LevelEditor.tscn:284
 msgid "Import"
 msgstr ""
 
@@ -103,11 +103,19 @@ msgstr ""
 msgid "CREATE A NEW LEVEL"
 msgstr ""
 
-#: addons/laec-is-you-main-screen/TutorialPanel.tscn:163
+#: addons/laec-is-you-main-screen/TutorialPanel.tscn:147
+msgid "Run the Features"
+msgstr ""
+
+#: addons/laec-is-you-main-screen/TutorialPanel.tscn:155
+msgid "Rescan Sprites"
+msgstr ""
+
+#: addons/laec-is-you-main-screen/TutorialPanel.tscn:179
 msgid "or"
 msgstr ""
 
-#: addons/laec-is-you-main-screen/TutorialPanel.tscn:186
+#: addons/laec-is-you-main-screen/TutorialPanel.tscn:202
 msgid "CREATE A NEW ITEM"
 msgstr ""
 
@@ -117,7 +125,7 @@ msgstr ""
 
 #: addons/open-hexes.appsettings/demo/Demo.gd:174
 #: addons/open-hexes.appsettings/demo/Demo.tscn:28 menus/PauseMenu.tscn:146
-#: menus/SettingsMenu.tscn:48 menus/StartMenu.tscn:153
+#: menus/SettingsMenu.tscn:48 menus/StartMenu.tscn:154
 msgid "Settings"
 msgstr ""
 
@@ -205,15 +213,377 @@ msgstr ""
 msgid "Fullscreen004"
 msgstr ""
 
-#: core/Level.tscn:36
+#: cache/levels.tres:134 levels/LotdMap.tscn:10
+msgid "level.LotdMap.title"
+msgstr ""
+
+#: cache/levels.tres:238 levels/PhiMap.tscn:15
+msgid "level.PhiMap.title"
+msgstr ""
+
+#: cache/levels.tres:258 cache/levels.tres:994 levels/TutorialMap.tscn:93
+msgid "Tutoriel B"
+msgstr ""
+
+#: cache/levels.tres:266
+msgid "La plume et l'épée"
+msgstr ""
+
+#: cache/levels.tres:274
+msgid "Succès Médiatique"
+msgstr ""
+
+#: cache/levels.tres:286 levels/PhiMap.tscn:217
+msgid "Au Voleur !"
+msgstr ""
+
+#: cache/levels.tres:294
+msgid "IGPN CItoyen"
+msgstr ""
+
+#: cache/levels.tres:306 levels/PhiMap.tscn:225
+msgid "Petite Ile"
+msgstr ""
+
+#: cache/levels.tres:322 levels/idle/02MoveThings.tscn:7
+msgid "level.02MoveThings.title"
+msgstr ""
+
+#: cache/levels.tres:330 levels/idle/03RewriteRules.tscn:7
+msgid "level.03RewriteRules.title"
+msgstr ""
+
+#: cache/levels.tres:338
+msgid "Alchemistry"
+msgstr ""
+
+#: cache/levels.tres:346 levels/PhiMap.tscn:121
+msgid "Les lobbys et les médias"
+msgstr ""
+
+#: cache/levels.tres:354
+msgid "Vive l'AEC"
+msgstr ""
+
+#: cache/levels.tres:362
+msgid "Vive l'AEC (bonus)"
+msgstr ""
+
+#: cache/levels.tres:370
+msgid "Droit dans le mur ?"
+msgstr ""
+
+#: cache/levels.tres:378
+msgid "Promotion de l'AEC"
+msgstr ""
+
+#: cache/levels.tres:386
+msgid "Philature"
+msgstr ""
+
+#: cache/levels.tres:394
+msgid "Les deux candidats de LFI"
+msgstr ""
+
+#: cache/levels.tres:402
+msgid "L'eau fait le buzz"
+msgstr ""
+
+#: cache/levels.tres:410
+msgid "Le monarque dans la neige"
+msgstr ""
+
+#: cache/levels.tres:418
+msgid "Peuple ou lobbys"
+msgstr ""
+
+#: cache/levels.tres:426
+msgid "Ajuster la TVA"
+msgstr ""
+
+#: cache/levels.tres:474 levels/TutorialMap.tscn:106
+#: levels/laec/Chapter1Map.tscn:9
+msgid "level.Chapter1Map.title"
+msgstr ""
+
+#: cache/levels.tres:482 cache/levels.tres:706 levels/laec/Chapter1Map.tscn:31
+msgid "Chapitre Premier"
+msgstr ""
+
+#: cache/levels.tres:490 cache/levels.tres:722 levels/laec/Chapter1Map.tscn:69
+msgid "Chapitre Dix"
+msgstr ""
+
+#: cache/levels.tres:498 levels/laec/Chapter1Map.tscn:77
+msgid "Chapitre Dix (Bonus)"
+msgstr ""
+
+#: cache/levels.tres:506 levels/laec/Chapter1Map.tscn:39
+msgid "Chapitre Premier (Bonus)"
+msgstr ""
+
+#: cache/levels.tres:514 cache/levels.tres:690 cache/levels.tres:698
+#: cache/levels.tres:730 cache/levels.tres:738 cache/levels.tres:746
+#: levels/laec/Chapter1Map.tscn:47
+msgid "Chapitre Trois"
+msgstr ""
+
+#: cache/levels.tres:522 levels/laec/Chapter1Map.tscn:101
+msgid "Chapitre Trois (Bonus)"
+msgstr ""
+
+#: cache/levels.tres:530 cache/levels.tres:538 levels/laec/Chapter1Map.tscn:53
+#: levels/laec/Chapter1Map.tscn:93
+msgid "Chapitre Quatre"
+msgstr ""
+
+#: cache/levels.tres:546 cache/levels.tres:714 levels/laec/Chapter1Map.tscn:61
+msgid "Chapitre Huit"
+msgstr ""
+
+#: cache/levels.tres:554 levels/laec/Chapter1Map.tscn:85
+msgid "Chapitre Huit (Bonus)"
+msgstr ""
+
+#: cache/levels.tres:562 levels/LotdMap.tscn:33
+msgid "Fin du monde"
+msgstr ""
+
+#: cache/levels.tres:570
+msgid "Justice est Clef"
+msgstr ""
+
+#: cache/levels.tres:578
+msgid "Débat à l'Assermblée"
+msgstr ""
+
+#: cache/levels.tres:586
+msgid "Eduquer est Investir"
+msgstr ""
+
+#: cache/levels.tres:594 levels/LotdMap.tscn:48
+msgid "NIveau du 15 Mars"
+msgstr ""
+
+#: cache/levels.tres:602 levels/LotdMap.tscn:56
+msgid "Niveau du 16 Mars 2022"
+msgstr ""
+
+#: cache/levels.tres:610 levels/LotdMap.tscn:64
+msgid "Niveau du 17 Mars 2022"
+msgstr ""
+
+#: cache/levels.tres:618
+msgid "Un Vrai Faux Random"
+msgstr ""
+
+#: cache/levels.tres:626 levels/lotd/Lotd20220319.tscn:18
+msgid "level.Lotd20220319.title"
+msgstr ""
+
+#: cache/levels.tres:634
+msgid "Gestion des déchets"
+msgstr ""
+
+#: cache/levels.tres:642
+msgid "Acrasie Parlementaire"
+msgstr ""
+
+#: cache/levels.tres:650
+msgid "Blocus de Trolls"
+msgstr ""
+
+#: cache/levels.tres:658 levels/PhiMap.tscn:185
+msgid "Déségrégation Médiatique"
+msgstr ""
+
+#: cache/levels.tres:666 levels/PhiMap.tscn:153
+msgid "Grenouille"
+msgstr ""
+
+#: cache/levels.tres:674 levels/PhiMap.tscn:91
+msgid "Oh, des espoirs !"
+msgstr ""
+
+#: cache/levels.tres:682
+msgid "Le monde à l'envers"
+msgstr ""
+
+#: cache/levels.tres:754
+msgid "Chapitre 6"
+msgstr ""
+
+#: cache/levels.tres:762
+msgid "Chapitre 7"
+msgstr ""
+
+#: cache/levels.tres:770
+msgid "Chapitre 8"
+msgstr ""
+
+#: cache/levels.tres:778
+msgid "Chapitre 9"
+msgstr ""
+
+#: cache/levels.tres:786
+msgid "Chapitre 10"
+msgstr ""
+
+#: cache/levels.tres:794
+msgid "Chapitre 11"
+msgstr ""
+
+#: cache/levels.tres:802
+msgid "Chapitre 12"
+msgstr ""
+
+#: cache/levels.tres:810
+msgid "Chapitre 13"
+msgstr ""
+
+#: cache/levels.tres:818
+msgid "Chapitre 14"
+msgstr ""
+
+#: cache/levels.tres:826 levels/PhiMap.tscn:129
+msgid "Mots interdits"
+msgstr ""
+
+#: cache/levels.tres:834 levels/PhiMap.tscn:241
+msgid "Désactivons la Monarchie"
+msgstr ""
+
+#: cache/levels.tres:842 levels/PhiMap.tscn:83
+msgid "Attention aux Trolls"
+msgstr ""
+
+#: cache/levels.tres:850 levels/homage/TinyIsle.tscn:249
+msgid "Le Secret"
+msgstr ""
+
+#: cache/levels.tres:858 levels/PhiMap.tscn:161
+msgid "Aptonymie Poétique"
+msgstr ""
+
+#: cache/levels.tres:866
+msgid "Qu'ils viennent me chercher !"
+msgstr ""
+
+#: cache/levels.tres:874 levels/PhiMap.tscn:59
+msgid "Media Poussifs"
+msgstr ""
+
+#: cache/levels.tres:882 levels/PhiMap.tscn:75
+msgid "Ailleurs est Yoda"
+msgstr ""
+
+#: cache/levels.tres:890 levels/PhiMap.tscn:67
+msgid "Choix Éditoriaux"
+msgstr ""
+
+#: cache/levels.tres:898 levels/PhiMap.tscn:99
+msgid "Alexandre Langlois"
+msgstr ""
+
+#: cache/levels.tres:906 levels/PhiMap.tscn:107
+msgid "Croiser la Plume dans les Laves du Débat"
+msgstr ""
+
+#: cache/levels.tres:914 levels/PhiMap.tscn:137
+msgid "C'est chaud !"
+msgstr ""
+
+#: cache/levels.tres:922 levels/homage/StopThatThief.tscn:189
+msgid "Secret des Victoires"
+msgstr ""
+
+#: cache/levels.tres:930 levels/tutorial/ButtonCheckDownLeft.tscn:19
+msgid "level.ButtonCheckDownLeft.title"
+msgstr ""
+
+#: cache/levels.tres:938 levels/tutorial/ButtonCheckDownRight.tscn:24
+msgid "level.ButtonCheckDownRight.title"
+msgstr ""
+
+#: cache/levels.tres:946 levels/tutorial/ButtonCheckLeft.tscn:24
+msgid "level.ButtonCheckLeft.title"
+msgstr ""
+
+#: cache/levels.tres:954 levels/tutorial/ButtonCheckRight.tscn:24
+msgid "level.ButtonCheckRight.title"
+msgstr ""
+
+#: cache/levels.tres:962 levels/tutorial/ButtonCheckUpLeft.tscn:24
+msgid "level.ButtonCheckUpLeft.title"
+msgstr ""
+
+#: cache/levels.tres:970 levels/tutorial/ButtonCheckUpRight.tscn:24
+msgid "level.ButtonCheckUpRight.title"
+msgstr ""
+
+#: cache/levels.tres:978 levels/tutorial/ButtonCheckWait.tscn:11
+msgid "level.ButtonCheckWait.title"
+msgstr ""
+
+#: cache/levels.tres:986 levels/TutorialMap.tscn:86
+msgid "Tutoriel A"
+msgstr ""
+
+#: cache/levels.tres:1018 levels/vener/VenerMap.tscn:8
+msgid "level.VenerMap.title"
+msgstr ""
+
+#: cache/levels.tres:1026
+msgid "Roi est poussière"
+msgstr ""
+
+#: cache/levels.tres:1034 levels/vener/VenerMap.tscn:56
+#: levels/vener/VenerMap.tscn:63 levels/vener/VenerMap.tscn:70
+msgid "Révolte"
+msgstr ""
+
+#: cache/levels.tres:1042 levels/vener/VenerMap.tscn:77
+msgid "Révolution"
+msgstr ""
+
+#: cache/levels.tres:1050 levels/vener/Rebellion03Level.tscn:7
+msgid "level.Rebellion03Level.title"
+msgstr ""
+
+#: cache/levels.tres:1070 levels/xr/XrMap.tscn:9
+msgid "level.XrMap.title"
+msgstr ""
+
+#: cache/levels.tres:1078 levels/xr/XrMap.tscn:60
+msgid "Extinction: Tsunami"
+msgstr ""
+
+#: cache/levels.tres:1086 levels/xr/XrMap.tscn:67
+msgid "Abeilles Arctiques"
+msgstr ""
+
+#: cache/levels.tres:1094
+msgid "Déchets Dangereux"
+msgstr ""
+
+#: cache/levels.tres:1102 levels/PhiMap.tscn:145
+msgid "Identité Nationale"
+msgstr ""
+
+#: cache/levels.tres:1110 cache/levels.tres:1118 cache/levels.tres:1126
+#: cache/levels.tres:1134 cache/levels.tres:1142 cache/levels.tres:1150
+#: cache/levels.tres:1158 cache/levels.tres:1166 cache/levels.tres:1174
+#: cache/levels.tres:1182 cache/levels.tres:1190 cache/levels.tres:1198
+#: cache/levels.tres:1206 cache/levels.tres:1214 cache/levels.tres:1222
+#: cache/levels.tres:1230 cache/levels.tres:1238 core/Level.tscn:50
 msgid "level.Level.title"
 msgstr ""
 
-#: core/Level.tscn:37
+#: core/Level.tscn:51
 msgid "level.Level.excerpt"
 msgstr ""
 
-#: core/Level.tscn:38
+#: core/Level.tscn:52
 msgid "level.Level.link"
 msgstr ""
 
@@ -227,111 +597,115 @@ msgid ""
 "hello"
 msgstr ""
 
-#: editor/LevelEditor.tscn:77 menus/StartMenu.tscn:112
+#: editor/LevelEditor.tscn:144 menus/StartMenu.tscn:113
 msgid "Play"
 msgstr ""
 
-#: editor/LevelEditor.tscn:95
+#: editor/LevelEditor.tscn:162
 msgid "<"
 msgstr ""
 
-#: editor/LevelEditor.tscn:108
+#: editor/LevelEditor.tscn:175
 msgid ">"
 msgstr ""
 
-#: editor/LevelEditor.tscn:126
+#: editor/LevelEditor.tscn:193
 msgid "-"
 msgstr ""
 
-#: editor/LevelEditor.tscn:138
+#: editor/LevelEditor.tscn:205
 msgid "+"
 msgstr ""
 
-#: editor/LevelEditor.tscn:156
+#: editor/LevelEditor.tscn:223
 msgid "ø-ø"
 msgstr ""
 
-#: editor/LevelEditor.tscn:168
+#: editor/LevelEditor.tscn:235
 msgid "Ø+Ø"
 msgstr ""
 
-#: editor/LevelEditor.tscn:184
+#: editor/LevelEditor.tscn:251
 msgid "Terrain"
 msgstr ""
 
-#: editor/LevelEditor.tscn:192
+#: editor/LevelEditor.tscn:259
 msgid "Concepts"
 msgstr ""
 
-#: editor/LevelEditor.tscn:200
+#: editor/LevelEditor.tscn:267
 msgid "Metadata"
 msgstr ""
 
-#: editor/LevelEditor.tscn:208
+#: editor/LevelEditor.tscn:276
 msgid "Export"
 msgstr ""
 
-#: editor/LevelEditor.tscn:224
+#: editor/LevelEditor.tscn:292
 msgid "Help"
 msgstr ""
 
-#: editor/LevelEditor.tscn:232 editor/LevelsExplorer.tscn:90
-#: menus/StartMenu.tscn:166
+#: editor/LevelEditor.tscn:300 editor/LevelsExplorer.tscn:90
+#: menus/StartMenu.tscn:167
 msgid "Exit"
 msgstr ""
 
-#: editor/LevelEditor.tscn:360
+#: editor/LevelEditor.tscn:433
 msgid "HELP"
 msgstr ""
 
-#: editor/LevelEditor.tscn:409
+#: editor/LevelEditor.tscn:446
+msgid "Saving..."
+msgstr ""
+
+#: editor/LevelEditor.tscn:504
 msgid "Save the level in a local file:"
 msgstr ""
 
-#: editor/LevelEditor.tscn:417
+#: editor/LevelEditor.tscn:512
 msgid "Save level to file"
 msgstr ""
 
-#: editor/LevelEditor.tscn:425
+#: editor/LevelEditor.tscn:520
 msgid "Save level to image file"
 msgstr ""
 
-#: editor/LevelEditor.tscn:440
+#: editor/LevelEditor.tscn:535
 msgid ""
 "Or copy any of these strings below and share it with the world so they "
 "can try out your level !"
 msgstr ""
 
-#: editor/LevelEditor.tscn:463 editor/LevelEditor.tscn:477
-#: editor/LevelEditor.tscn:491 editor/LevelEditor.tscn:505
+#: editor/LevelEditor.tscn:558 editor/LevelEditor.tscn:572
+#: editor/LevelEditor.tscn:586 editor/LevelEditor.tscn:600
 msgid "Please wait..."
 msgstr ""
 
-#: editor/LevelEditor.tscn:537
+#: editor/LevelEditor.tscn:632
 msgid "Copy the level string in the field below to load that level"
 msgstr ""
 
-#: editor/LevelEditor.tscn:605
+#: editor/LevelEditor.tscn:700 tools/LevelsViz.gd:36
 msgid "Title"
 msgstr ""
 
-#: editor/LevelEditor.tscn:629
+#: editor/LevelEditor.tscn:724
 msgid "Congratulation"
 msgstr ""
 
-#: editor/LevelEditor.tscn:650
+#: editor/LevelEditor.tscn:745
 msgid "Authors"
 msgstr ""
 
-#: editor/LevelEditor.tscn:672
+#: editor/LevelEditor.tscn:767
 msgid "Version"
 msgstr ""
 
-#: editor/LevelEditor.tscn:679
+#: editor/LevelEditor.tscn:774
 msgid "1"
 msgstr ""
 
-#: editor/LevelEditor.tscn:737
+#: editor/LevelEditor.tscn:832
 msgid ""
 "Make your own levels using this level editor.\n"
 "Your work is not saved automatically so make sure to export it from time "
@@ -414,44 +788,20 @@ msgstr ""
 msgid "J'ai compris"
 msgstr ""
 
-#: levels/LotdMap.tscn:9
-msgid "level.LotdMap.title"
-msgstr ""
-
-#: levels/LotdMap.tscn:10
+#: levels/LotdMap.tscn:11
 msgid "level.LotdMap.excerpt"
 msgstr ""
 
-#: levels/LotdMap.tscn:11
+#: levels/LotdMap.tscn:12
 msgid "level.LotdMap.link"
 msgstr ""
 
-#: levels/LotdMap.tscn:32
-msgid "Fin du monde"
-msgstr ""
-
-#: levels/LotdMap.tscn:39
+#: levels/LotdMap.tscn:40
 msgid "level.Lotd20220212.title"
 msgstr ""
 
-#: levels/LotdMap.tscn:47
-msgid "NIveau du 15 Mars"
-msgstr ""
-
-#: levels/LotdMap.tscn:55
-msgid "Niveau du 16 Mars 2022"
-msgstr ""
-
-#: levels/LotdMap.tscn:63
-msgid "Niveau du 17 Mars 2022"
-msgstr ""
-
-#: levels/LotdMap.tscn:255
+#: levels/LotdMap.tscn:264
 msgid "Un nouveau niveau se débloque chaque jour !"
-msgstr ""
-
-#: levels/PhiMap.tscn:15
-msgid "level.PhiMap.title"
 msgstr ""
 
 #: levels/PhiMap.tscn:16
@@ -462,96 +812,28 @@ msgstr ""
 msgid "level.PhiMap.link"
 msgstr ""
 
-#: levels/PhiMap.tscn:69
-msgid "Media Poussifs"
-msgstr ""
-
-#: levels/PhiMap.tscn:77
-msgid "Choix Éditoriaux"
-msgstr ""
-
-#: levels/PhiMap.tscn:85
-msgid "Ailleurs est Yoda"
-msgstr ""
-
-#: levels/PhiMap.tscn:93
-msgid "Mots interdits"
-msgstr ""
-
-#: levels/PhiMap.tscn:101
-msgid "Oh, des espoirs !"
-msgstr ""
-
-#: levels/PhiMap.tscn:109
-msgid "Alexandre Langlois"
-msgstr ""
-
-#: levels/PhiMap.tscn:117
-msgid "Croiser la Plume dans les Laves du Débat"
-msgstr ""
-
-#: levels/PhiMap.tscn:123 levels/adrenesis/PushTheWords.tscn:8
+#: levels/PhiMap.tscn:113 levels/adrenesis/PushTheWords.tscn:8
 msgid "level.PushTheWords.title"
 msgstr ""
 
-#: levels/PhiMap.tscn:131
-msgid "Les lobbys et les médias"
-msgstr ""
-
-#: levels/PhiMap.tscn:139
-msgid "Attention aux Trolls"
-msgstr ""
-
-#: levels/PhiMap.tscn:147
-msgid "C'est chaud !"
-msgstr ""
-
-#: levels/PhiMap.tscn:155
-msgid "Identité Nationale"
-msgstr ""
-
-#: levels/PhiMap.tscn:163
-msgid "Grenouille"
-msgstr ""
-
-#: levels/PhiMap.tscn:171
-msgid "Aptonymie Poétique"
-msgstr ""
-
-#: levels/PhiMap.tscn:179 levels/trollune/LearnPull.tscn:8
+#: levels/PhiMap.tscn:169 levels/trollune/LearnPull.tscn:8
 msgid "level.LearnPull.title"
 msgstr ""
 
-#: levels/PhiMap.tscn:187
-msgid "Déségrégation Médiatique"
-msgstr ""
-
-#: levels/PhiMap.tscn:195 levels/laec/36.ReduireLaTva.tscn:7
+#: levels/PhiMap.tscn:193 levels/laec/36.ReduireLaTva.tscn:7
 msgid "level.36.ReduireLaTva.title"
 msgstr ""
 
-#: levels/PhiMap.tscn:203 levels/homage/SubmergedRuins.tscn:7
+#: levels/PhiMap.tscn:201 levels/homage/SubmergedRuins.tscn:7
 msgid "level.SubmergedRuins.title"
 msgstr ""
 
-#: levels/PhiMap.tscn:211 levels/miidnight/BlocusDeTrolls.tscn:7
+#: levels/PhiMap.tscn:209 levels/miidnight/BlocusDeTrolls.tscn:8
 msgid "level.BlocusDeTrolls.title"
 msgstr ""
 
-#: levels/PhiMap.tscn:219
-msgid "Au Voleur !"
-msgstr ""
-
-#: levels/PhiMap.tscn:227
-msgid "Petite Ile"
-msgstr ""
-
-#: levels/PhiMap.tscn:235 levels/stheal/LearnVerlan.tscn:7
+#: levels/PhiMap.tscn:233 levels/stheal/LearnVerlan.tscn:7
 msgid "level.LearnVerlan.title"
-msgstr ""
-
-#: levels/PhiMap.tscn:243
-msgid "Désactivons la Monarchie"
 msgstr ""
 
 #: levels/TutorialMap.tscn:30
@@ -564,18 +846,6 @@ msgstr ""
 
 #: levels/TutorialMap.tscn:32
 msgid "level.TutorialMap.link"
-msgstr ""
-
-#: levels/TutorialMap.tscn:86
-msgid "Tutoriel A"
-msgstr ""
-
-#: levels/TutorialMap.tscn:93
-msgid "Tutoriel B"
-msgstr ""
-
-#: levels/TutorialMap.tscn:106 levels/laec/Chapter1Map.tscn:9
-msgid "level.Chapter1Map.title"
 msgstr ""
 
 #: levels/adrenesis/PushTheWords.tscn:9
@@ -618,10 +888,6 @@ msgstr ""
 msgid "level.StopThatThief.link"
 msgstr ""
 
-#: levels/homage/StopThatThief.tscn:188
-msgid "Secret des Victoires"
-msgstr ""
-
 #: levels/homage/StopThatThiefAchievementA.tres:12
 #: levels/homage/StopThatThiefAchievementB.tres:10
 msgid "level.StopThatThief.default_achievement.title"
@@ -647,10 +913,6 @@ msgstr ""
 msgid "level.TinyIsle.link"
 msgstr ""
 
-#: levels/homage/TinyIsle.tscn:249
-msgid "Le Secret"
-msgstr ""
-
 #: levels/idle/01Welcome.tscn:7
 msgid "level.01Welcome.title"
 msgstr ""
@@ -664,27 +926,31 @@ msgid "level.01Welcome.link"
 msgstr ""
 
 #: levels/idle/02MoveThings.tscn:8
-msgid "level.02MoveThings.title"
-msgstr ""
-
-#: levels/idle/02MoveThings.tscn:9
 msgid "level.02MoveThings.excerpt"
 msgstr ""
 
-#: levels/idle/02MoveThings.tscn:10
+#: levels/idle/02MoveThings.tscn:9
 msgid "level.02MoveThings.link"
 msgstr ""
 
 #: levels/idle/03RewriteRules.tscn:8
-msgid "level.03RewriteRules.title"
-msgstr ""
-
-#: levels/idle/03RewriteRules.tscn:9
 msgid "level.03RewriteRules.excerpt"
 msgstr ""
 
-#: levels/idle/03RewriteRules.tscn:10
+#: levels/idle/03RewriteRules.tscn:9
 msgid "level.03RewriteRules.link"
+msgstr ""
+
+#: levels/idle/04TransformThings.tscn:18
+msgid "level.04TransformThings.title"
+msgstr ""
+
+#: levels/idle/04TransformThings.tscn:19
+msgid "level.04TransformThings.excerpt"
+msgstr ""
+
+#: levels/idle/04TransformThings.tscn:20
+msgid "level.04TransformThings.link"
 msgstr ""
 
 #: levels/ivanc/IvanCLevel01.tscn:8
@@ -759,6 +1025,42 @@ msgstr ""
 msgid "level.IvanCLevel06.link"
 msgstr ""
 
+#: levels/ivanc/IvanCLevel07.tscn:8
+msgid "level.IvanCLevel07.title"
+msgstr ""
+
+#: levels/ivanc/IvanCLevel07.tscn:9
+msgid "level.IvanCLevel07.excerpt"
+msgstr ""
+
+#: levels/ivanc/IvanCLevel07.tscn:10
+msgid "level.IvanCLevel07.link"
+msgstr ""
+
+#: levels/ivanc/IvanCLevel08.tscn:9
+msgid "level.IvanCLevel08.title"
+msgstr ""
+
+#: levels/ivanc/IvanCLevel08.tscn:10
+msgid "level.IvanCLevel08.excerpt"
+msgstr ""
+
+#: levels/ivanc/IvanCLevel08.tscn:11
+msgid "level.IvanCLevel08.link"
+msgstr ""
+
+#: levels/ivanc/IvanCLevel09.tscn:7
+msgid "level.IvanCLevel09.title"
+msgstr ""
+
+#: levels/ivanc/IvanCLevel09.tscn:8
+msgid "level.IvanCLevel09.excerpt"
+msgstr ""
+
+#: levels/ivanc/IvanCLevel09.tscn:9
+msgid "level.IvanCLevel09.link"
+msgstr ""
+
 #: levels/laec/36.ReduireLaTva.tscn:8
 msgid "level.36.ReduireLaTva.excerpt"
 msgstr ""
@@ -773,42 +1075,6 @@ msgstr ""
 
 #: levels/laec/Chapter1Map.tscn:11
 msgid "level.Chapter1Map.link"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:31
-msgid "Chapitre Premier"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:39
-msgid "Chapitre Premier (Bonus)"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:47
-msgid "Chapitre Trois"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:53 levels/laec/Chapter1Map.tscn:93
-msgid "Chapitre Quatre"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:61
-msgid "Chapitre Huit"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:69
-msgid "Chapitre Dix"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:77
-msgid "Chapitre Dix (Bonus)"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:85
-msgid "Chapitre Huit (Bonus)"
-msgstr ""
-
-#: levels/laec/Chapter1Map.tscn:101
-msgid "Chapitre Trois (Bonus)"
 msgstr ""
 
 #: levels/laec/chapter1/Laec1_1.tscn:9
@@ -943,51 +1209,75 @@ msgstr ""
 msgid "level.Lotd20121217.link"
 msgstr ""
 
-#: levels/lotd/Lotd20220228.tscn:9
+#: levels/lotd/Lotd20220228.tscn:25
 msgid "level.Lotd20220228.title"
 msgstr ""
 
-#: levels/lotd/Lotd20220228.tscn:10
+#: levels/lotd/Lotd20220228.tscn:26
 msgid "level.Lotd20220228.excerpt"
 msgstr ""
 
-#: levels/lotd/Lotd20220228.tscn:11
+#: levels/lotd/Lotd20220228.tscn:27
 msgid "level.Lotd20220228.link"
 msgstr ""
 
-#: levels/lotd/Lotd20220315.tscn:7
+#: levels/lotd/Lotd20220301.tscn:7
+msgid "level.Lotd20220301.title"
+msgstr ""
+
+#: levels/lotd/Lotd20220301.tscn:8
+msgid "level.Lotd20220301.excerpt"
+msgstr ""
+
+#: levels/lotd/Lotd20220301.tscn:9
+msgid "level.Lotd20220301.link"
+msgstr ""
+
+#: levels/lotd/Lotd20220314.tscn:16
+msgid "level.Lotd20220314.title"
+msgstr ""
+
+#: levels/lotd/Lotd20220314.tscn:17
+msgid "level.Lotd20220314.excerpt"
+msgstr ""
+
+#: levels/lotd/Lotd20220314.tscn:18
+msgid "level.Lotd20220314.link"
+msgstr ""
+
+#: levels/lotd/Lotd20220315.tscn:18
 msgid "level.Lotd20220315.title"
 msgstr ""
 
-#: levels/lotd/Lotd20220315.tscn:8
+#: levels/lotd/Lotd20220315.tscn:19
 msgid "level.Lotd20220315.excerpt"
 msgstr ""
 
-#: levels/lotd/Lotd20220315.tscn:9
+#: levels/lotd/Lotd20220315.tscn:20
 msgid "level.Lotd20220315.link"
 msgstr ""
 
-#: levels/lotd/Lotd20220316.tscn:8
+#: levels/lotd/Lotd20220316.tscn:16
 msgid "level.Lotd20220316.title"
 msgstr ""
 
-#: levels/lotd/Lotd20220316.tscn:9
+#: levels/lotd/Lotd20220316.tscn:17
 msgid "level.Lotd20220316.excerpt"
 msgstr ""
 
-#: levels/lotd/Lotd20220316.tscn:10
+#: levels/lotd/Lotd20220316.tscn:18
 msgid "level.Lotd20220316.link"
 msgstr ""
 
-#: levels/lotd/Lotd20220317.tscn:8
+#: levels/lotd/Lotd20220317.tscn:7
 msgid "level.Lotd20220317.title"
 msgstr ""
 
-#: levels/lotd/Lotd20220317.tscn:9
+#: levels/lotd/Lotd20220317.tscn:8
 msgid "level.Lotd20220317.excerpt"
 msgstr ""
 
-#: levels/lotd/Lotd20220317.tscn:10
+#: levels/lotd/Lotd20220317.tscn:9
 msgid "level.Lotd20220317.link"
 msgstr ""
 
@@ -1003,23 +1293,43 @@ msgstr ""
 msgid "level.Lotd20220318.link"
 msgstr ""
 
-#: levels/lotd/Lotd20220319.tscn:7
-msgid "level.Lotd20220319.title"
-msgstr ""
-
-#: levels/lotd/Lotd20220319.tscn:8
+#: levels/lotd/Lotd20220319.tscn:19
 msgid "level.Lotd20220319.excerpt"
 msgstr ""
 
-#: levels/lotd/Lotd20220319.tscn:9
+#: levels/lotd/Lotd20220319.tscn:20
 msgid "level.Lotd20220319.link"
 msgstr ""
 
-#: levels/miidnight/BlocusDeTrolls.tscn:8
-msgid "level.BlocusDeTrolls.excerpt"
+#: levels/lotd/Lotd20220320.tscn:29
+msgid "level.Lotd20220320.title"
+msgstr ""
+
+#: levels/lotd/Lotd20220320.tscn:30
+msgid "level.Lotd20220320.excerpt"
+msgstr ""
+
+#: levels/lotd/Lotd20220320.tscn:31
+msgid "level.Lotd20220320.link"
+msgstr ""
+
+#: levels/melyoh/AcrasieParlementaire.tscn:28
+msgid "level.AcrasieParlementaire.title"
+msgstr ""
+
+#: levels/melyoh/AcrasieParlementaire.tscn:29
+msgid "level.AcrasieParlementaire.excerpt"
+msgstr ""
+
+#: levels/melyoh/AcrasieParlementaire.tscn:30
+msgid "level.AcrasieParlementaire.link"
 msgstr ""
 
 #: levels/miidnight/BlocusDeTrolls.tscn:9
+msgid "level.BlocusDeTrolls.excerpt"
+msgstr ""
+
+#: levels/miidnight/BlocusDeTrolls.tscn:10
 msgid "level.BlocusDeTrolls.link"
 msgstr ""
 
@@ -1073,6 +1383,210 @@ msgstr ""
 
 #: levels/stheal/LearnVerlan.tscn:9
 msgid "level.LearnVerlan.link"
+msgstr ""
+
+#: levels/story/Partie1/1InterventionPopulaire4.tscn:9
+msgid "level.1InterventionPopulaire4.title"
+msgstr ""
+
+#: levels/story/Partie1/1InterventionPopulaire4.tscn:10
+msgid "level.1InterventionPopulaire4.excerpt"
+msgstr ""
+
+#: levels/story/Partie1/1InterventionPopulaire4.tscn:11
+msgid "level.1InterventionPopulaire4.link"
+msgstr ""
+
+#: levels/story/Partie1/2AbolirMonarchPres2.tscn:9
+msgid "level.2AbolirMonarchPres2.title"
+msgstr ""
+
+#: levels/story/Partie1/2AbolirMonarchPres2.tscn:10
+msgid "level.2AbolirMonarchPres2.excerpt"
+msgstr ""
+
+#: levels/story/Partie1/2AbolirMonarchPres2.tscn:11
+msgid "level.2AbolirMonarchPres2.link"
+msgstr ""
+
+#: levels/story/Partie1/3Convoquer6emeRep1.tscn:10
+msgid "level.3Convoquer6emeRep1.title"
+msgstr ""
+
+#: levels/story/Partie1/3Convoquer6emeRep1.tscn:11
+msgid "level.3Convoquer6emeRep1.excerpt"
+msgstr ""
+
+#: levels/story/Partie1/3Convoquer6emeRep1.tscn:12
+msgid "level.3Convoquer6emeRep1.link"
+msgstr ""
+
+#: levels/story/Partie1/4RevolutionMedia6.tscn:9
+msgid "level.4RevolutionMedia6.title"
+msgstr ""
+
+#: levels/story/Partie1/4RevolutionMedia6.tscn:10
+msgid "level.4RevolutionMedia6.excerpt"
+msgstr ""
+
+#: levels/story/Partie1/4RevolutionMedia6.tscn:11
+msgid "level.4RevolutionMedia6.link"
+msgstr ""
+
+#: levels/story/Partie1/5JusticeAuNomDuPeuple7.tscn:20
+msgid "level.5JusticeAuNomDuPeuple7.title"
+msgstr ""
+
+#: levels/story/Partie1/5JusticeAuNomDuPeuple7.tscn:21
+msgid "level.5JusticeAuNomDuPeuple7.excerpt"
+msgstr ""
+
+#: levels/story/Partie1/5JusticeAuNomDuPeuple7.tscn:22
+msgid "level.5JusticeAuNomDuPeuple7.link"
+msgstr ""
+
+#: levels/story/Partie2/1Bifurcation13.tscn:9
+msgid "level.1Bifurcation13.title"
+msgstr ""
+
+#: levels/story/Partie2/1Bifurcation13.tscn:10
+msgid "level.1Bifurcation13.excerpt"
+msgstr ""
+
+#: levels/story/Partie2/1Bifurcation13.tscn:11
+msgid "level.1Bifurcation13.link"
+msgstr ""
+
+#: levels/story/Partie2/2Renouvelable19.tscn:9
+msgid "level.2Renouvelable19.title"
+msgstr ""
+
+#: levels/story/Partie2/2Renouvelable19.tscn:10
+msgid "level.2Renouvelable19.excerpt"
+msgstr ""
+
+#: levels/story/Partie2/2Renouvelable19.tscn:11
+msgid "level.2Renouvelable19.link"
+msgstr ""
+
+#: levels/story/Partie2/3EnjeuEau25.tscn:9
+msgid "level.3EnjeuEau25.title"
+msgstr ""
+
+#: levels/story/Partie2/3EnjeuEau25.tscn:10
+msgid "level.3EnjeuEau25.excerpt"
+msgstr ""
+
+#: levels/story/Partie2/3EnjeuEau25.tscn:11
+msgid "level.3EnjeuEau25.link"
+msgstr ""
+
+#: levels/story/Partie3/1SanteDAbord32.tscn:7
+msgid "level.1SanteDAbord32.title"
+msgstr ""
+
+#: levels/story/Partie3/1SanteDAbord32.tscn:8
+msgid "level.1SanteDAbord32.excerpt"
+msgstr ""
+
+#: levels/story/Partie3/1SanteDAbord32.tscn:9
+msgid "level.1SanteDAbord32.link"
+msgstr ""
+
+#: levels/story/Partie3/2LancerGrandChantiersEcolo37.tscn:7
+msgid "level.2LancerGrandChantiersEcolo37.title"
+msgstr ""
+
+#: levels/story/Partie3/2LancerGrandChantiersEcolo37.tscn:8
+msgid "level.2LancerGrandChantiersEcolo37.excerpt"
+msgstr ""
+
+#: levels/story/Partie3/2LancerGrandChantiersEcolo37.tscn:9
+msgid "level.2LancerGrandChantiersEcolo37.link"
+msgstr ""
+
+#: levels/story/Partie3/3BanquesInteretGeneral47.tscn:7
+msgid "level.3BanquesInteretGeneral47.title"
+msgstr ""
+
+#: levels/story/Partie3/3BanquesInteretGeneral47.tscn:8
+msgid "level.3BanquesInteretGeneral47.excerpt"
+msgstr ""
+
+#: levels/story/Partie3/3BanquesInteretGeneral47.tscn:9
+msgid "level.3BanquesInteretGeneral47.link"
+msgstr ""
+
+#: levels/story/Partie4/1RepubliqueContreRacisme57.tscn:7
+msgid "level.1RepubliqueContreRacisme57.title"
+msgstr ""
+
+#: levels/story/Partie4/1RepubliqueContreRacisme57.tscn:8
+msgid "level.1RepubliqueContreRacisme57.excerpt"
+msgstr ""
+
+#: levels/story/Partie4/1RepubliqueContreRacisme57.tscn:9
+msgid "level.1RepubliqueContreRacisme57.link"
+msgstr ""
+
+#: levels/story/Partie4/2SportsCorpsArgent62.tscn:7
+msgid "level.2SportsCorpsArgent62.title"
+msgstr ""
+
+#: levels/story/Partie4/2SportsCorpsArgent62.tscn:8
+msgid "level.2SportsCorpsArgent62.excerpt"
+msgstr ""
+
+#: levels/story/Partie4/2SportsCorpsArgent62.tscn:9
+msgid "level.2SportsCorpsArgent62.link"
+msgstr ""
+
+#: levels/story/Partie4/3ReconstruireEcoleGlobale65.tscn:7
+msgid "level.3ReconstruireEcoleGlobale65.title"
+msgstr ""
+
+#: levels/story/Partie4/3ReconstruireEcoleGlobale65.tscn:8
+msgid "level.3ReconstruireEcoleGlobale65.excerpt"
+msgstr ""
+
+#: levels/story/Partie4/3ReconstruireEcoleGlobale65.tscn:9
+msgid "level.3ReconstruireEcoleGlobale65.link"
+msgstr ""
+
+#: levels/story/Partie5/1DesobeissanceEurope70.tscn:8
+msgid "level.1DesobeissanceEurope70.title"
+msgstr ""
+
+#: levels/story/Partie5/1DesobeissanceEurope70.tscn:9
+msgid "level.1DesobeissanceEurope70.excerpt"
+msgstr ""
+
+#: levels/story/Partie5/1DesobeissanceEurope70.tscn:10
+msgid "level.1DesobeissanceEurope70.link"
+msgstr ""
+
+#: levels/story/Partie5/2IndependanceFrance71.tscn:8
+msgid "level.2IndependanceFrance71.title"
+msgstr ""
+
+#: levels/story/Partie5/2IndependanceFrance71.tscn:9
+msgid "level.2IndependanceFrance71.excerpt"
+msgstr ""
+
+#: levels/story/Partie5/2IndependanceFrance71.tscn:10
+msgid "level.2IndependanceFrance71.link"
+msgstr ""
+
+#: levels/story/Partie5/3ProtegerMerOceans82.tscn:8
+msgid "level.3ProtegerMerOceans82.title"
+msgstr ""
+
+#: levels/story/Partie5/3ProtegerMerOceans82.tscn:9
+msgid "level.3ProtegerMerOceans82.excerpt"
+msgstr ""
+
+#: levels/story/Partie5/3ProtegerMerOceans82.tscn:10
+msgid "level.3ProtegerMerOceans82.link"
 msgstr ""
 
 #: levels/trollune/Cameleon.tscn:8
@@ -1275,80 +1789,52 @@ msgstr ""
 msgid "level.SecretTunnel.link"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckDownLeft.tscn:18
-msgid "level.ButtonCheckDownLeft.title"
-msgstr ""
-
-#: levels/tutorial/ButtonCheckDownLeft.tscn:19
+#: levels/tutorial/ButtonCheckDownLeft.tscn:20
 msgid "level.ButtonCheckDownLeft.excerpt"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckDownLeft.tscn:20
+#: levels/tutorial/ButtonCheckDownLeft.tscn:21
 msgid "level.ButtonCheckDownLeft.link"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckDownRight.tscn:23
-msgid "level.ButtonCheckDownRight.title"
-msgstr ""
-
-#: levels/tutorial/ButtonCheckDownRight.tscn:24
+#: levels/tutorial/ButtonCheckDownRight.tscn:25
 msgid "level.ButtonCheckDownRight.excerpt"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckDownRight.tscn:25
+#: levels/tutorial/ButtonCheckDownRight.tscn:26
 msgid "level.ButtonCheckDownRight.link"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckLeft.tscn:23
-msgid "level.ButtonCheckLeft.title"
-msgstr ""
-
-#: levels/tutorial/ButtonCheckLeft.tscn:24
+#: levels/tutorial/ButtonCheckLeft.tscn:25
 msgid "level.ButtonCheckLeft.excerpt"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckLeft.tscn:25
+#: levels/tutorial/ButtonCheckLeft.tscn:26
 msgid "level.ButtonCheckLeft.link"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckRight.tscn:23
-msgid "level.ButtonCheckRight.title"
-msgstr ""
-
-#: levels/tutorial/ButtonCheckRight.tscn:24
+#: levels/tutorial/ButtonCheckRight.tscn:25
 msgid "level.ButtonCheckRight.excerpt"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckRight.tscn:25
+#: levels/tutorial/ButtonCheckRight.tscn:26
 msgid "level.ButtonCheckRight.link"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckUpLeft.tscn:23
-msgid "level.ButtonCheckUpLeft.title"
-msgstr ""
-
-#: levels/tutorial/ButtonCheckUpLeft.tscn:24
+#: levels/tutorial/ButtonCheckUpLeft.tscn:25
 msgid "level.ButtonCheckUpLeft.excerpt"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckUpLeft.tscn:25
+#: levels/tutorial/ButtonCheckUpLeft.tscn:26
 msgid "level.ButtonCheckUpLeft.link"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckUpRight.tscn:23
-msgid "level.ButtonCheckUpRight.title"
-msgstr ""
-
-#: levels/tutorial/ButtonCheckUpRight.tscn:24
+#: levels/tutorial/ButtonCheckUpRight.tscn:25
 msgid "level.ButtonCheckUpRight.excerpt"
 msgstr ""
 
-#: levels/tutorial/ButtonCheckUpRight.tscn:25
+#: levels/tutorial/ButtonCheckUpRight.tscn:26
 msgid "level.ButtonCheckUpRight.link"
-msgstr ""
-
-#: levels/tutorial/ButtonCheckWait.tscn:11
-msgid "level.ButtonCheckWait.title"
 msgstr ""
 
 #: levels/tutorial/ButtonCheckWait.tscn:12
@@ -1383,15 +1869,15 @@ msgstr ""
 msgid "level.Tutorial02Level.link"
 msgstr ""
 
-#: levels/vener/03CrushMonarchy.tscn:8
+#: levels/vener/03CrushMonarchy.tscn:7
 msgid "level.03CrushMonarchy.title"
 msgstr ""
 
-#: levels/vener/03CrushMonarchy.tscn:9
+#: levels/vener/03CrushMonarchy.tscn:8
 msgid "level.03CrushMonarchy.excerpt"
 msgstr ""
 
-#: levels/vener/03CrushMonarchy.tscn:10
+#: levels/vener/03CrushMonarchy.tscn:9
 msgid "level.03CrushMonarchy.link"
 msgstr ""
 
@@ -1419,20 +1905,12 @@ msgstr ""
 msgid "level.Rebellion02Level.link"
 msgstr ""
 
-#: levels/vener/Rebellion03Level.tscn:7
-msgid "level.Rebellion03Level.title"
-msgstr ""
-
 #: levels/vener/Rebellion03Level.tscn:8
 msgid "level.Rebellion03Level.excerpt"
 msgstr ""
 
 #: levels/vener/Rebellion03Level.tscn:9
 msgid "level.Rebellion03Level.link"
-msgstr ""
-
-#: levels/vener/VenerMap.tscn:8
-msgid "level.VenerMap.title"
 msgstr ""
 
 #: levels/vener/VenerMap.tscn:9
@@ -1443,41 +1921,48 @@ msgstr ""
 msgid "level.VenerMap.link"
 msgstr ""
 
-#: levels/vener/VenerMap.tscn:56 levels/vener/VenerMap.tscn:63
-#: levels/vener/VenerMap.tscn:70
-msgid "Révolte"
-msgstr ""
-
-#: levels/vener/VenerMap.tscn:77
-msgid "Révolution"
-msgstr ""
-
-#: levels/xr/Extinction01Level.tscn:7
+#: levels/xr/Extinction01Level.tscn:28
 msgid "level.Extinction01Level.title"
 msgstr ""
 
-#: levels/xr/Extinction01Level.tscn:8
+#: levels/xr/Extinction01Level.tscn:29
 msgid "level.Extinction01Level.excerpt"
 msgstr ""
 
-#: levels/xr/Extinction01Level.tscn:9
+#: levels/xr/Extinction01Level.tscn:30
 msgid "level.Extinction01Level.link"
 msgstr ""
 
-#: levels/xr/XrMap.tscn:8
-msgid "level.XrMap.title"
+#: levels/xr/Extinction02Level.tscn:8
+msgid "level.Extinction02Level.title"
 msgstr ""
 
-#: levels/xr/XrMap.tscn:9
-msgid "level.XrMap.excerpt"
+#: levels/xr/Extinction02Level.tscn:9
+msgid "level.Extinction02Level.excerpt"
+msgstr ""
+
+#: levels/xr/Extinction02Level.tscn:10
+msgid "level.Extinction02Level.link"
+msgstr ""
+
+#: levels/xr/Extinction03Level.tscn:18 levels/xr/XrMap.tscn:74
+msgid "level.Extinction03Level.title"
+msgstr ""
+
+#: levels/xr/Extinction03Level.tscn:19
+msgid "level.Extinction03Level.excerpt"
+msgstr ""
+
+#: levels/xr/Extinction03Level.tscn:20
+msgid "level.Extinction03Level.link"
 msgstr ""
 
 #: levels/xr/XrMap.tscn:10
-msgid "level.XrMap.link"
+msgid "level.XrMap.excerpt"
 msgstr ""
 
-#: levels/xr/XrMap.tscn:59
-msgid "Extinction: Tsunami"
+#: levels/xr/XrMap.tscn:11
+msgid "level.XrMap.link"
 msgstr ""
 
 #: levels/zargett/LaPoliceAvecNousLevel.tscn:7
@@ -1496,41 +1981,41 @@ msgstr ""
 msgid "Appuyez pour Continuer"
 msgstr ""
 
-#: menus/LevelVictoryScreen.gd:56 menus/LevelVictoryScreen.tscn:69
+#: menus/LevelVictoryScreen.gd:56 menus/LevelVictoryScreen.tscn:131
 msgid "LEVEL COMPLETE !"
 msgstr ""
 
-#: menus/LevelVictoryScreen.tscn:87
+#: menus/LevelVictoryScreen.tscn:149
 msgid "Urgence Démocratique"
 msgstr ""
 
-#: menus/LevelVictoryScreen.tscn:108
+#: menus/LevelVictoryScreen.tscn:170
 msgid ""
 "Le projet de Constitution proposé par l'Assemblée constituante sera "
 "soumis à un référendum d'approbation."
 msgstr ""
 
-#: menus/LevelVictoryScreen.tscn:137
+#: menus/LevelVictoryScreen.tscn:199
 msgid "Want to know more ?"
 msgstr ""
 
-#: menus/LevelVictoryScreen.tscn:152
+#: menus/LevelVictoryScreen.tscn:214
 msgid "Continue  >"
 msgstr ""
 
-#: menus/LevelVictoryScreen.tscn:200
+#: menus/LevelVictoryScreen.tscn:262
 msgid "Time:"
 msgstr ""
 
-#: menus/LevelVictoryScreen.tscn:208
+#: menus/LevelVictoryScreen.tscn:270
 msgid "0.0s"
 msgstr ""
 
-#: menus/LevelVictoryScreen.tscn:221
+#: menus/LevelVictoryScreen.tscn:283
 msgid "Moves:"
 msgstr ""
 
-#: menus/LevelVictoryScreen.tscn:229
+#: menus/LevelVictoryScreen.tscn:291
 msgid "0"
 msgstr ""
 
@@ -1554,7 +2039,7 @@ msgstr ""
 msgid "Exit Game"
 msgstr ""
 
-#: menus/SettingsMenu.tscn:69 menus/StartMenu.tscn:144
+#: menus/SettingsMenu.tscn:69 menus/StartMenu.tscn:145
 msgid "Controls"
 msgstr ""
 
@@ -1562,16 +2047,20 @@ msgstr ""
 msgid "Open Settings Directory"
 msgstr ""
 
-#: menus/StartMenu.tscn:120
+#: menus/StartMenu.tscn:121
 msgid "Tutorial"
 msgstr ""
 
-#: menus/StartMenu.tscn:132
-msgid "Extras"
+#: menus/StartMenu.tscn:133
+msgid "Arcade"
 msgstr ""
 
-#: menus/StartMenu.tscn:178
-msgid "0.3.5"
+#: menus/StartMenu.tscn:179
+msgid "0.4.3"
+msgstr ""
+
+#: menus/StartMenu.tscn:188
+msgid "Beta"
 msgstr ""
 
 #: menus/TutorialMenu.tscn:32
@@ -1680,5 +2169,37 @@ msgstr ""
 
 #: tools/LevelVizBubble.tscn:44
 msgid "res://levels/trollune/SomeLevel.tscn"
+msgstr ""
+
+#: tools/LevelsViz.gd:34
+msgid "Action"
+msgstr ""
+
+#: tools/LevelsViz.gd:35
+msgid "Filepath"
+msgstr ""
+
+#: tools/LevelsViz.gd:37
+msgid "Story"
+msgstr ""
+
+#: tools/LevelsViz.gd:39
+msgid "Parents"
+msgstr ""
+
+#: tools/LevelsViz.gd:40
+msgid "Children"
+msgstr ""
+
+#: tools/LevelsViz.gd:47
+msgid "PLAY"
+msgstr ""
+
+#: tools/LevelsViz.gd:75
+msgid "YES"
+msgstr ""
+
+#: tools/LevelsViz.gd:77
+msgid "NO"
 msgstr ""
 
