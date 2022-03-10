@@ -11,13 +11,9 @@ extends Node2D
 # - …
 # 
 
-const Bubble = preload("res://tools/LevelVizBubble.tscn")
-const LinkScene = preload("res://tools/LevelsVizLink.tscn")
 
 var levels_pool: LevelsPoolClass
 
-var bubbles := Dictionary()  # filepath => Bubble
-var links := Dictionary()  # Link => LinkScene
 
 onready var levels_table: DataTable = find_node("LevelsTable")
 
@@ -27,7 +23,7 @@ func _ready():
 	prints("Starting Levels Viz…")
 	
 	Chronometer.start()
-	# We could also use the singleton LevelsPool
+	# We could also use the singleton LevelsPool, probably
 	self.levels_pool = LevelsPoolClass.new()
 	self.levels_pool.should_use_exclusion = false
 	self.levels_pool.init_full()
@@ -35,6 +31,7 @@ func _ready():
 	# LevelsPool#init_full(): 1.640474 s
 	
 	var header_row = [
+		tr("Action"),
 		tr("Filepath"),
 		tr("Title"),
 		tr("Story"),
@@ -45,14 +42,32 @@ func _ready():
 	levels_table.set_columns(header_row.size())
 	levels_table.add_header_row(header_row)
 	for level in self.levels_pool.get_levels():
+		
+		var play_button = Button.new()
+		play_button.text = tr("PLAY")
+		play_button.connect("button_down", self, "on_level_play_button", [level])
+		
 		levels_table.add_row([
+			play_button,
 			level.level_filepath,
 			level.title,
 			bool_to_human(level.is_in_score),
 #			bool_to_human(level.is_orphan),
 			level.parents,
-			level.portals.size(),
+			level.portals.size(),  # incorrect, since it also counts "invalid" portals
 		])
+
+
+func _input(event):
+	if Input.is_action_just_pressed("escape"):
+		var _gone = Game.go_back()
+
+
+func on_level_play_button(level):
+	Game.switch_to_scene_path(
+		level.level_filepath,
+		false, true, true
+	)
 
 
 func bool_to_human(value: bool):
@@ -60,43 +75,6 @@ func bool_to_human(value: bool):
 		return tr("YES")
 	else:
 		return tr("NO")
-
-	
-#	for link in levels_pool.levels_links:
-##		var link = levels_pool.levels_links[filepath]
-#		var scene = LinkScene.instance()
-#		scene.left_position = bubbles[link.from].global_position
-#		scene.right_position = bubbles[link.to].global_position
-##		scene.position = Vector2(
-##			(randf()-0.5)*2*100,
-##			(randf()-0.5)*2*100
-##		)
-#		$LinksLayer.add_child(scene)
-#
-#		links[link] = scene
-##		bubbles[filepath] = bubble
-#func _process(_delta):
-#	if not self.levels_pool:
-#		return
-#	if not self.levels_pool.levels_links:
-#		return
-#	for link in self.levels_pool.levels_links:
-#		var from_bubble = self.bubbles[link.from]
-#		var to_bubble = self.bubbles[link.to]
-#		var force = to_bubble.position - from_bubble.position
-#		var invert := false
-#		if force.length() < 250:
-#			invert = true
-#		force *= 0.00001
-#		if invert:
-#			force *= -0.618
-#		from_bubble.apply_central_impulse(force)
-##		from_bubble.rotation_degrees = 0  # nope
-#		to_bubble.apply_central_impulse(-1 * force)
-#
-#		var link_scene = self.links[link]
-#		link_scene.left_position = self.bubbles[link.from].global_position
-#		link_scene.right_position = self.bubbles[link.to].global_position
 
 
 func _exit_tree():

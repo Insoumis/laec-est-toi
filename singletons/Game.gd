@@ -210,6 +210,7 @@ func switch_to_story_mode(free_current_scene := false):
 	enter_level(entrypoint_tutos_level_scene_path, free_current_scene)
 
 
+# Somewhat deprecated
 func switch_to_level(
 		level_path: String,
 		free_current := false,

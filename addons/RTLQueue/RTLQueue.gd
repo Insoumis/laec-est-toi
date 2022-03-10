@@ -192,7 +192,7 @@ func clear(extendedclear : bool = false) -> void:
 
 
 func _input(event : InputEvent) -> void:
-	
+	return  # skip!
 	# When our interaction event is clicked and we are waiting for the next page, we will go to the next page
 	if event.is_action_pressed(INTERACTION_EVENT):
 		if waiting_for_next_page:

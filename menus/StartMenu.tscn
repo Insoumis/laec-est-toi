@@ -194,7 +194,6 @@ __meta__ = {
 [node name="CursorAnimatedSprite" type="AnimatedSprite" parent="CenterContainer"]
 position = Vector2( 622.482, 106.886 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
 
@@ -204,19 +203,19 @@ position = Vector2( 58.4561, 259.287 )
 [node name="LaecAnimatedSprite" type="AnimatedSprite" parent="Title"]
 position = Vector2( 63.5687, 32.3649 )
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="Title"]
 position = Vector2( 127.272, 33.0721 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="Title"]
 position = Vector2( 204.99, 32.3649 )
 frames = SubResource( 4 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="SecretButton" type="Button" parent="Title/YouAnimatedSprite"]

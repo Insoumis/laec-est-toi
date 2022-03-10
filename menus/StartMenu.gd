@@ -55,6 +55,8 @@ func _input(event):
 		var _gone = Game.go_back(true, true)
 	if Input.is_action_just_pressed("escape"):
 		var _gone = Game.go_back(true, false)  # could also directly be App.exit() ?
+	if Input.is_action_just_pressed("cheat"):
+		Game.switch_to_scene_path('res://tools/LevelsViz.tscn')
 
 
 func focus_play_button():

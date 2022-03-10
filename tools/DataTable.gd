@@ -27,6 +27,8 @@ func create_header_cell(element):
 
 
 func create_cell(element):
+	if element is Control:
+		return element
 	var cell = Label.new()
 	cell.align = Label.ALIGN_CENTER
 	cell.valign = Label.VALIGN_CENTER
