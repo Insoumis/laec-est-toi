@@ -381,14 +381,6 @@ func find_orphans_paths() -> Array:
 
 
 func reindex_orphanness():
-#	var orphans = find_orphans()
-#
-#	for level_filepath in self.cache.levels:
-#		var level = self.cache.levels[level_filepath]
-#		if orphans.has(level_filepath):
-#			level.is_orphan = true
-#		else:
-#			level.is_orphan = false
 	
 	for level_filepath in self.cache.levels:
 		var level = self.cache.levels[level_filepath]

@@ -56,8 +56,8 @@ func _run():
 		var altered_image = CompressorSerializer.compress_string_in_image(testDatum, test_image)
 		print("Compressing string into image...")
 #		print("image data first bytes: ", altered_image.get_data().subarray(0, 23))
-		actual = CompressorSerializer.decompress_string_in_image(altered_image)
-		assert(expected == actual, "%s != %s" % [expected, actual])
+		var actually = CompressorSerializer.decompress_string_in_image(altered_image)
+		assert(expected == actual, "%s != %s" % [expected, actually[0]])
 
 	assert(CompressorSerializer.byte_to_binary_string(000) == "00000000")
 	assert(CompressorSerializer.byte_to_binary_string(042) == "00101010")
@@ -67,7 +67,7 @@ func _run():
 	print()
 
 	test_chunk8( [ 14, 07, 17, 89, 15, 08, 18, 90 ],
-		0,  # offset
+		0,  # offsetX
 		0,  # 1.   0   1   1   1   1   0   0   0        <- bit layer << layer
 			# 2.   14  6   16  88  14  8   18  90       <- byte - (1)
 		42, # 3.   0   0   1   0   1   0   1   0        <- data byte in binary << layer
