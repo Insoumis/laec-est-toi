@@ -24,18 +24,27 @@ func _ready():
 	start_idle_demo()
 
 
-#func _enter_tree():
+func _enter_tree():
+	self.current_idle_demo_cooldown = idle_demo_cooldown
+	reveal_secret_editor_perhaps()
 #	focus_play_button()
 
 
-func _enter_tree():
-	self.current_idle_demo_cooldown = idle_demo_cooldown
+func _on_StartMenu_visibility_changed():
+	if self.visible:
+		# Ugly timeout to make sure the button is in the scene tree
+		var _c = get_tree().create_timer(0.3).connect("timeout", self, "focus_play_button")
+		# Even uglier way of doing the same disgusting hack
+#		yield(get_tree().create_timer(0.3), "timeout")
+#		focus_play_button()
+
 
 func _process(delta):
 	self.current_idle_demo_cooldown -= delta
 	if self.current_idle_demo_cooldown < 0.0:
 		Game.switch_to_scene_path('res://menus/IdleMenu.tscn')
 		self.current_idle_demo_cooldown = idle_demo_cooldown
+
 
 func _input(event):
 	if event is InputEventJoypadMotion:
@@ -76,6 +85,12 @@ func start_idle_demo():
 #	add_child(idle_demo)
 
 
+func reveal_secret_editor_perhaps():
+	var score = Game.get_completion_score()
+	if score > 0.618:
+		find_node("SecretEditorParticles").visible = true
+
+
 func _on_Menu_Button_focused(button: Button, silent := false):
 	if not button.is_inside_tree():
 		return
@@ -86,13 +101,6 @@ func _on_Menu_Button_focused(button: Button, silent := false):
 	if not silent:  # ineffective because of our deferred shenanigans, no time to untangle this
 		#SoundFx.play('gui_pouic')
 		SoundFx.play('gui_move')
-
-
-func _on_StartMenu_visibility_changed():
-	if self.visible:
-		# Ugly timeout to make sure the button is in the scene tree
-		yield(get_tree().create_timer(0.3), "timeout")
-		focus_play_button()
 
 
 func _on_PlayButton_pressed():

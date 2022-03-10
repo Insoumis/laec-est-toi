@@ -25,13 +25,13 @@ func _ready():
 
 func _input(_event):
 	if Input.is_action_just_pressed("undo"):
-		Game.go_back(true, true)
+		var _gone = Game.go_back(true, true)
 	if Input.is_action_just_pressed("escape"):
-		Game.go_back(true, false)
+		var _gone = Game.go_back(true, false)
 
 
 func _on_BackButton_pressed():
-	Game.go_back()
+	var _gone = Game.go_back()
 
 
 func _on_ControlsButton_pressed():
@@ -45,7 +45,9 @@ func _on_SettingsMenu_visibility_changed():
 
 
 func _on_OpenDirButton_pressed():
-	var opened := OS.shell_open(OS.get_user_data_dir())
+	var directory := OS.get_user_data_dir()
+	var opened := OS.shell_open(directory)
+	print("Trying to open the user data directory at `%s'." % directory)
 	if OK != opened:
 		printerr("Cannot open user data directory.")
 

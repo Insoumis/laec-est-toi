@@ -18,6 +18,10 @@ func exit_tree():
 		get_level().disconnect("turn_spending_ended", self, "on_each_turn")
 
 
+func get_concept_name():
+	return 'sign'
+
+
 func update_sprite(_refresh_frames := true) -> void:
 	pass  # nothing is cool
 #	var concept := 'sign'

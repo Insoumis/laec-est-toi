@@ -86,8 +86,8 @@ func initialize_late():
 	regenerate_if_missing()
 	print("%s: Loading…" % [get_name()])
 	load_from_files()
-	
-	
+
+
 func regenerate_if_missing():
 	var are_file_requirements_satisfied := true
 	var required_files = [
@@ -125,12 +125,12 @@ func load_from_files():
 	if self.item_atlas_image is StreamTexture:
 		self.data_cache.item_atlas_image = self.item_atlas_image.get_data().duplicate()
 	else:
-		printerr("AtlasSpriteFramesFactory: can't load item atlas texture")
+		printerr("%s: can't load item atlas texture" % [get_name()])
 	
 	if self.text_atlas_image is StreamTexture:
 		self.data_cache.text_atlas_image = self.text_atlas_image.get_data().duplicate()
 	else:
-		printerr("AtlasSpriteFramesFactory: can't load text atlas texture")
+		printerr("%s: can't load text atlas texture" % [get_name()])
 	
 	self.data_cache.item_atlas_texture.create_from_image(self.data_cache.item_atlas_image)
 	self.data_cache.item_atlas_texture.flags = self.flags_for_atlases
@@ -174,12 +174,11 @@ func load_texture_and_blit(file_name, atlas_texture, index) -> BlitLoadResult:
 	return result
 
 
-func get_rect_pos_from_index(index, total_size, quadrant_size) -> Vector2:
-	var x_flat_position = int(index * quadrant_size.x)
+func get_rect_pos_from_index(index, total_size, quad_size) -> Vector2:
+	var x_flat_position = int(index * quad_size.x)
 	var line_number = x_flat_position / int(total_size.x)
 	var x = x_flat_position - line_number * int(total_size.x)
-	var y = line_number * quadrant_size.y
-#	print(Vector2(x, y))
+	var y = line_number * quad_size.y
 	return Vector2(x, y)
 
 
@@ -256,7 +255,7 @@ func generate_spriteframes(items: Array):  # of PoolItem[]
 							texts_sprite_frames.add_frame(animation_name, atlas_texture)
 							text_index += 1
 						else:
-							printerr("Failed to load text texture and blit.")
+							printerr("%s: Failed to load text texture and blit." % [get_name()])
 				else:
 					items_sprite_frames.add_animation(animation_name)
 					for frame_filepath in shivers_filepaths:
@@ -282,21 +281,21 @@ func generate_spriteframes(items: Array):  # of PoolItem[]
 	
 	var error = self.data_cache.item_atlas_image.save_png(self.item_atlas_path)
 	if error != OK:
-		printerr("AtlasSpriteFramesFactory: can't write item texture")
+		printerr("%s: can't write item texture" % [get_name()])
 	error = self.data_cache.text_atlas_image.save_png(self.text_atlas_path)
 	if error != OK:
-		printerr("AtlasSpriteFramesFactory: can't write text texture")
+		printerr("%s: can't write text texture" % [get_name()])
 	
 	var tex = load(self.item_atlas_path)
 	if tex is StreamTexture:
 		self.data_cache.item_atlas_image = tex.get_data().duplicate()
 	else:
-		printerr("AtlasSpriteFramesFactory: can't load item atlas texture")
+		printerr("%s: can't load item atlas texture" % [get_name()])
 	tex = load(self.text_atlas_path)
 	if tex is StreamTexture:
 		self.data_cache.text_atlas_image = tex.get_data().duplicate()
 	else:
-		printerr("AtlasSpriteFramesFactory: can't load text atlas texture")
+		printerr("%s: can't load text atlas texture" % [get_name()])
 	
 #	data_cache.item_atlas_image.take_over_path(self.item_atlas_path)
 #	data_cache.text_atlas_image.take_over_path(self.text_atlas_path)
@@ -325,7 +324,7 @@ func generate_spriteframes(items: Array):  # of PoolItem[]
 	self.data_cache.text_atlas_image_path = self.text_atlas_path
 	var saved := ResourceSaver.save(self.atlas_data_path, data_cache, flags)
 	if OK != saved:
-		printerr("AtlasSpriteFramesFactory: Could not save the altas sprite of items.")
+		printerr("%s: Could not save the altas sprite of items." % [get_name()])
 	#data_cache.take_over_path(self.atlas_data_path)
 	
 	self.data_cache.item_sprite_frames = SpriteFramesExporter.import_sprite_frames_dictionary(
