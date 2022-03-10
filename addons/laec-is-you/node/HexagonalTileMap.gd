@@ -83,3 +83,43 @@ func map_to_world(map_position: Vector2, ignore_half_offset:=false) -> Vector2:
 			hex_size * XY_RATIO * self.aspect_ratio / (2.0 + koff)
 		)
 	)
+
+
+func to_pickle() -> Dictionary:
+	# We could also add the other properties (cell size, etc) in here later if we needed
+	var rick := Dictionary()
+	var cells := Array()
+	for cell in get_used_cells():  # cell here means position in the dumb offset-based coords system
+		var tile := get_cellv(cell)
+		assert(tile != INVALID_CELL)
+		cells.append({
+			'cell': cell,
+			'tile': tile,
+			# transpose, flip, etc. left as an exercise to the reader
+		})
+	rick['cells'] = cells
+	return rick
+
+
+func from_pickle(rick: Dictionary) -> void:
+	if not rick.has('cells'):
+		printerr("%s.from_pickle: pickle lacks cells." % [get_name()])
+		return
+	if not (rick['cells'] is Array):
+		printerr("%s.from_pickle: pickle cells are not an array." % [get_name()])
+		return
+	
+	clear()
+	for element in rick['cells']:
+		if not element.has('cell'):
+			printerr("%s.from_pickle: pickle cell is missing position." % [get_name()])
+			continue
+		if not element.has('tile'):
+			printerr("%s.from_pickle: pickle cell is missing data." % [get_name()])
+			continue
+		var tile = int(element['tile'])  # contents
+		var cell = element['cell']  # position
+		if not cell is Vector2:
+			printerr("%s.from_pickle: pickle cell has mangled vector data." % [get_name()])
+		
+		set_cellv(cell, tile)

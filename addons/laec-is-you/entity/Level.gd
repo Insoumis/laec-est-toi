@@ -364,6 +364,9 @@ func load_from_pickle(data: Dictionary) -> int:
 	for tile in data.get('terrain', {}).keys():
 		hex_tilemap.set_cellv(tile, data['terrain'][tile])
 	
+	if data.has('decor') and (data['decor'] is Dictionary):
+		unpickle_decor(data['decor'])
+	
 	self.actions_history.clear()
 	self.recorded_solution = ""
 #	for item in get_all_items():
@@ -412,6 +415,23 @@ func terrain_to_pickle() -> Dictionary:
 	return pickle
 
 
+func decor_to_pickle() -> Dictionary:
+	var pickle := Dictionary()
+	
+	for tile_map in get_decor_tile_maps():
+		pickle[tile_map.get_name()] = tile_map.to_pickle()
+	
+	return pickle
+
+
+func unpickle_decor(rick: Dictionary) -> int:
+	for tile_map in get_decor_tile_maps():
+		if not rick.has(tile_map.get_name()):
+			continue
+		tile_map.from_pickle(rick[tile_map.get_name()])
+	return OK
+
+
 func concepts_to_pickle() -> Array:
 	var pickle := Array()
 	
@@ -427,6 +447,7 @@ func concepts_to_pickle() -> Array:
 func to_pickle() -> Dictionary:
 	return {
 		'terrain': terrain_to_pickle(),
+		'decor': decor_to_pickle(),
 		'concepts': concepts_to_pickle(),
 		'zoom': self.camera.zoom,
 		# meta too?  FIXME
@@ -652,6 +673,23 @@ func get_tile_map() -> TileMap:
 	__tile_map = find_node('HexagonalTileMap', true, false)
 	assert(__tile_map, 'HexagonalTileMap was not found in the scene.')
 	return __tile_map
+
+
+func get_decor_tile_maps() -> Array: # TileMap[]
+	
+	# Perhaps move this to the top of the file?
+	var decors_names = [
+		'MiniDecorFarTileMap',
+		'DecorTileMap',
+		'MiniDecorNearTileMap',
+	]
+	
+	var decors := Array()
+	for decor_name in decors_names:
+		var decor = find_node(decor_name)
+		if decor and is_instance_valid(decor):
+			decors.append(decor)	
+	return decors
 
 
 #  _    _           _
@@ -2686,6 +2724,7 @@ func do_win(winning_cells: Array):
 			go_forward()
 		else:
 			breakpoint  # you're missing a forward_level_path, probably
+			var _gone = Game.go_back()
 	elif not is_dummy_run():
 		yield(get_tree().create_timer(2.0), "timeout")
 		Game.go_to_level_victory_screen(self)
