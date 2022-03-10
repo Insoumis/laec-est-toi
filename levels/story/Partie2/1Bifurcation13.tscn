@@ -34,6 +34,7 @@ cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+tile_data = PoolIntArray( -1245138, 34, 0, -1245122, 11, 0, -1179589, 34, 0, -1114062, 11, 0, -1048543, 32, 0, -983002, 32, 0, -982985, 33, 0, -982977, 33, 0, -917444, 11, 0, -851905, 34, 0, -65494, 2, 0, 65490, 2, 0, 131112, 30, 0, 262097, 30, 0, 327676, 29, 0, 393188, 2, 0, 327726, 7, 0, 393260, 30, 0, 393262, 13, 0, 524243, 2, 0, 524259, 29, 0, 524283, 7, 0, 589820, 2, 0, 524308, 4, 0, 655332, 30, 0, 655355, 30, 0, 720915, 29, 0, 720917, 30, 0, 786478, 30, 0, 917530, 2, 0, 917554, 13, 0, 1048535, 0, 0, 1048575, 2, 0, 983040, 7, 0, 1114088, 2, 0, 1245161, 30, 0, 1179650, 30, 0, 1179697, 2, 0, 1310693, 10, 0, 1245209, 30, 0, 1376243, 29, 0, 1441749, 2, 0, 1441779, 10, 0, 1441788, 29, 0, 1441820, 2, 0, 1441846, 13, 0, 1572843, 2, 0, 1507331, 2, 0, 1507341, 2, 0, 1507379, 0, 0, 1507380, 2, 0, 1638391, 2, 0, 1638396, 0, 0, 1572914, 7, 0, 1638414, 30, 0, 1769446, 30, 0, 1834975, 7, 0, 1769479, 30, 0, 1769508, 30, 0, 1900503, 2, 0, 1835021, 0, 0, 1835041, 30, 0, 1966037, 30, 0, 1966063, 2, 0, 1900561, 31, 0, 1900569, 2, 0, 1900591, 0, 0, 2031589, 30, 0, 2031596, 31, 0, 2031615, 31, 0, 1966087, 30, 0, 1966121, 2, 0, 1966127, 2, 0, 2097139, 30, 0, 2162653, 2, 0, 2097154, 10, 0, 2097180, 2, 0, 2097184, 30, 0, 2097196, 29, 0, 2162703, 10, 0 )
 
 [node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
@@ -201,105 +202,133 @@ concept_name = "is"
 cell_position = Vector2( -4, -5 )
 tile_position = Vector2( -7, -5 )
 
-[node name="StopText" parent="Items" index="21" instance=ExtResource( 2 )]
+[node name="LaecText2" parent="Items" index="21" instance=ExtResource( 2 )]
+position = Vector2( -160, -325.718 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( 1, -7 )
+tile_position = Vector2( -3, -7 )
+
+[node name="WithText" parent="Items" index="22" instance=ExtResource( 2 )]
+position = Vector2( -32, -325.718 )
+is_text = true
+concept_name = "with"
+cell_position = Vector2( 3, -7 )
+tile_position = Vector2( -1, -7 )
+
+[node name="TreeText3" parent="Items" index="23" instance=ExtResource( 2 )]
+position = Vector2( 32, -325.718 )
+is_text = true
+concept_name = "tree"
+cell_position = Vector2( 4, -7 )
+tile_position = Vector2( 0, -7 )
+
+[node name="NotText" parent="Items" index="24" instance=ExtResource( 2 )]
+position = Vector2( -96, -325.718 )
+is_text = true
+concept_name = "not"
+cell_position = Vector2( 2, -7 )
+tile_position = Vector2( -2, -7 )
+
+[node name="StopText" parent="Items" index="25" instance=ExtResource( 2 )]
 position = Vector2( -160, 128.772 )
 is_text = true
 concept_name = "stop"
 cell_position = Vector2( -4, 3 )
 tile_position = Vector2( -3, 3 )
 
-[node name="IsText5" parent="Items" index="22" instance=ExtResource( 2 )]
+[node name="IsText5" parent="Items" index="26" instance=ExtResource( 2 )]
 position = Vector2( 192, 83.3232 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 2, 2 )
 tile_position = Vector2( 3, 2 )
 
-[node name="LobbyText" parent="Items" index="23" instance=ExtResource( 2 )]
+[node name="LobbyText" parent="Items" index="27" instance=ExtResource( 2 )]
 position = Vector2( -224, -234.82 )
 is_text = true
 concept_name = "lobby"
 cell_position = Vector2( -1, -5 )
 tile_position = Vector2( -4, -5 )
 
-[node name="MoveText" parent="Items" index="24" instance=ExtResource( 2 )]
+[node name="MoveText" parent="Items" index="28" instance=ExtResource( 2 )]
 position = Vector2( -96, -234.82 )
 is_text = true
 concept_name = "move"
 cell_position = Vector2( 1, -5 )
 tile_position = Vector2( -2, -5 )
 
-[node name="TreeText" parent="Items" index="25" instance=ExtResource( 2 )]
+[node name="TreeText" parent="Items" index="29" instance=ExtResource( 2 )]
 position = Vector2( 160, 37.8742 )
 is_text = true
 concept_name = "tree"
 cell_position = Vector2( 2, 1 )
 tile_position = Vector2( 2, 1 )
 
-[node name="IsText6" parent="Items" index="26" instance=ExtResource( 2 )]
+[node name="IsText6" parent="Items" index="30" instance=ExtResource( 2 )]
 position = Vector2( -192, 83.3232 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( -4, 2 )
 tile_position = Vector2( -3, 2 )
 
-[node name="GuardText" parent="Items" index="27" instance=ExtResource( 2 )]
+[node name="GuardText" parent="Items" index="31" instance=ExtResource( 2 )]
 position = Vector2( -224, 37.8742 )
 is_text = true
 concept_name = "guard"
 cell_position = Vector2( -4, 1 )
 tile_position = Vector2( -4, 1 )
 
-[node name="TreeText2" parent="Items" index="28" instance=ExtResource( 2 )]
+[node name="TreeText2" parent="Items" index="32" instance=ExtResource( 2 )]
 position = Vector2( 32, -234.82 )
 is_text = true
 concept_name = "tree"
 cell_position = Vector2( 3, -5 )
 tile_position = Vector2( 0, -5 )
 
-[node name="IsText2" parent="Items" index="29" instance=ExtResource( 2 )]
+[node name="IsText2" parent="Items" index="33" instance=ExtResource( 2 )]
 position = Vector2( -160, -234.82 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 0, -5 )
 tile_position = Vector2( -3, -5 )
 
-[node name="MoneyText" parent="Items" index="30" instance=ExtResource( 2 )]
+[node name="MoneyText" parent="Items" index="34" instance=ExtResource( 2 )]
 position = Vector2( 288, -234.82 )
 is_text = true
 concept_name = "money"
 cell_position = Vector2( 7, -5 )
 tile_position = Vector2( 4, -5 )
 
-[node name="SinkText" parent="Items" index="31" instance=ExtResource( 2 )]
+[node name="SinkText" parent="Items" index="35" instance=ExtResource( 2 )]
 position = Vector2( 416, -234.82 )
 is_text = true
 concept_name = "sink"
 cell_position = Vector2( 9, -5 )
 tile_position = Vector2( 6, -5 )
 
-[node name="Money" parent="Items" index="32" instance=ExtResource( 2 )]
+[node name="Money" parent="Items" index="36" instance=ExtResource( 2 )]
 position = Vector2( 384, -98.4728 )
 concept_name = "money"
 cell_position = Vector2( 7, -2 )
 tile_position = Vector2( 6, -2 )
 is_sink = true
 
-[node name="Money2" parent="Items" index="33" instance=ExtResource( 2 )]
+[node name="Money2" parent="Items" index="37" instance=ExtResource( 2 )]
 position = Vector2( 448, -98.4728 )
 concept_name = "money"
 cell_position = Vector2( 8, -2 )
 tile_position = Vector2( 7, -2 )
 is_sink = true
 
-[node name="Money3" parent="Items" index="34" instance=ExtResource( 2 )]
+[node name="Money3" parent="Items" index="38" instance=ExtResource( 2 )]
 position = Vector2( 512, -98.4728 )
 concept_name = "money"
 cell_position = Vector2( 9, -2 )
 tile_position = Vector2( 8, -2 )
 is_sink = true
 
-[node name="Tree" parent="Items" index="35" instance=ExtResource( 2 )]
+[node name="Tree" parent="Items" index="39" instance=ExtResource( 2 )]
 position = Vector2( -384, -98.4727 )
 concept_name = "tree"
 cell_position = Vector2( -5, -2 )
@@ -307,7 +336,7 @@ tile_position = Vector2( -6, -2 )
 is_win = true
 is_push = true
 
-[node name="Tree2" parent="Items" index="36" instance=ExtResource( 2 )]
+[node name="Tree2" parent="Items" index="40" instance=ExtResource( 2 )]
 position = Vector2( -320, -98.4727 )
 concept_name = "tree"
 cell_position = Vector2( -4, -2 )
@@ -315,7 +344,7 @@ tile_position = Vector2( -5, -2 )
 is_win = true
 is_push = true
 
-[node name="Tree3" parent="Items" index="37" instance=ExtResource( 2 )]
+[node name="Tree3" parent="Items" index="41" instance=ExtResource( 2 )]
 position = Vector2( -256, -98.4727 )
 concept_name = "tree"
 cell_position = Vector2( -3, -2 )
@@ -323,30 +352,44 @@ tile_position = Vector2( -4, -2 )
 is_win = true
 is_push = true
 
-[node name="IsText4" parent="Items" index="38" instance=ExtResource( 2 )]
+[node name="IsText4" parent="Items" index="42" instance=ExtResource( 2 )]
 position = Vector2( 352, -234.82 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 8, -5 )
 tile_position = Vector2( 5, -5 )
 
-[node name="PushText" parent="Items" index="39" instance=ExtResource( 2 )]
+[node name="PushText" parent="Items" index="43" instance=ExtResource( 2 )]
 position = Vector2( 224, 128.772 )
 is_text = true
 concept_name = "push"
 cell_position = Vector2( 2, 3 )
 tile_position = Vector2( 3, 3 )
 
-[node name="WinText" parent="Items" index="40" instance=ExtResource( 2 )]
+[node name="WinText" parent="Items" index="44" instance=ExtResource( 2 )]
 position = Vector2( 160, -234.82 )
 is_text = true
 concept_name = "win"
 cell_position = Vector2( 5, -5 )
 tile_position = Vector2( 2, -5 )
 
-[node name="IsText3" parent="Items" index="41" instance=ExtResource( 2 )]
+[node name="IsText3" parent="Items" index="45" instance=ExtResource( 2 )]
 position = Vector2( 96, -234.82 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 4, -5 )
 tile_position = Vector2( 1, -5 )
+
+[node name="DefeatText" parent="Items" index="46" instance=ExtResource( 2 )]
+position = Vector2( 160, -325.718 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( 6, -7 )
+tile_position = Vector2( 2, -7 )
+
+[node name="IsText7" parent="Items" index="47" instance=ExtResource( 2 )]
+position = Vector2( 96, -325.718 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 5, -7 )
+tile_position = Vector2( 1, -7 )

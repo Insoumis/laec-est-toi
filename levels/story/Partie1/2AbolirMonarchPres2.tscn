@@ -34,6 +34,7 @@ cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+tile_data = PoolIntArray( -2621386, 12, 0, -2555852, 25, 0, -2555846, 25, 0, -2359241, 17, 0, -2228174, 12, 0, -2228165, 12, 0, -1703884, 12, 0, -1638342, 12, 0, -1310686, 12, 0, -1310673, 12, 0, -1245151, 12, 0, -1048538, 12, 0 )
 
 [node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
