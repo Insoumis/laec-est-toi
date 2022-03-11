@@ -1637,13 +1637,15 @@ func spend_turn(in_editor := false):
 
 	# For faster computation later, we want to index the items.
 	# Here's an easy but expensive place to reindex.
-	# We should probably (re-)index at the END of the turn, or use signals
+	# We should probably (re-)index at the END of the turn, or use signals.
 	reindex_lattice()
 	
 	# VII. MOVE
+	# Not sure why this is first.  Do we want this first?
+	# This is not the move of the player, just the MOVE quality.
 	if not in_editor:
 		apply_move_effect()
-		# Urgh. Let's try to keep track while moving please
+		# Urgh. Let's try instead to keep track while moving please
 		reindex_lattice()
 	
 	# I. Reset qualities and stuff, sentences will be re-applied
@@ -1750,6 +1752,30 @@ func spend_turn(in_editor := false):
 
 	# Reposition all the items?
 	# …?
+	
+	# XXX. Prune piles of identical items
+	var maximum_identical_items_per_cell := 3
+	for cell in self.cell_lattice.get_used_cells():
+		var amount_per_concept_full := Dictionary()
+		var things_on_cell := self.cell_lattice.get_things_on_cell(cell)
+		var things_to_annihilate := Array()
+#		for i in range(things_on_cell.size() - 1, -1, -1):
+		for i in range(0, things_on_cell.size()):
+			var cell_thing = things_on_cell[i]
+			var cell_thing_concept = cell_thing.concept_full
+			if not amount_per_concept_full.has(cell_thing_concept):
+				amount_per_concept_full[cell_thing_concept] = 0
+			if amount_per_concept_full[cell_thing_concept] >= maximum_identical_items_per_cell:
+				debug("%s: Annihilating extra `%s'" % [get_name(), cell_thing_concept])
+				# Instead of annihilating right away, we annihilate later.
+				# This helps us annihilate the "newest" items on our lattice,
+				# which show up last in this loop.
+				things_to_annihilate.append(cell_thing)
+				continue
+			amount_per_concept_full[cell_thing_concept] += 1
+		
+		for cell_thing in things_to_annihilate:
+			annihilate_item(cell_thing)
 
 	# Update the items aesthetics from their new flags
 	for item in get_all_items():
@@ -1764,7 +1790,7 @@ func spend_turn(in_editor := false):
 	# LI. Write this turn into the history ledger
 	write_history()
 	
-	# LII. Hidden, discoverable content is the best content
+	# LII. Hidden, obliquely granular content is the best content
 	perhaps_trigger_achievements_on_turn()
 	
 	# C. Emit signals !
@@ -2160,6 +2186,14 @@ func register_all_items():
 		register_item(item)
 
 
+func deregister_item(item):
+	assert(item is Item)
+	var key = hash_item(item)
+	if self.items_bag.has(key):
+		assert(item == self.items_bag[key])
+		self.items_bag.erase(key)
+
+
 func register_item(item):
 	assert(item is Item)
 	var key = hash_item(item)
@@ -2238,13 +2272,21 @@ func __seek_to_history(turn: int):
 	
 	var turn_data = self.history[turn]
 	for item_hash in turn_data.keys():
-		assert(item_hash in self.items_bag)
-		var item = self.items_bag[item_hash]
-		if item is Portal:
-			breakpoint
+		#assert(item_hash in self.items_bag)
+		var item: Item
+		if self.items_bag.has(item_hash):
+			item = self.items_bag[item_hash]
+			if item is Portal:  # should we have Portals in turn data? no, for now
+				breakpoint
+		var spawned_anew := false
+		if not item:
+			item = spawn_item(null, turn_data[item_hash])
+			register_item(item)
+			spawned_anew = true
 		item.from_pickle(turn_data[item_hash])
-		self.items_layer.add_child(item)
-		item.reposition()
+		if not spawned_anew:
+			self.items_layer.add_child(item)
+		item.reposition(spawned_anew)
 		item.update_aesthetics()
 
 	self.history = self.history.slice(0, turn)
@@ -2933,7 +2975,7 @@ func apply_poet_effect() -> bool:
 # |_|  |_|\___/ \_/ \___|
 #
 # Will try to move in the direction the item faces,
-# and if it cannot, it will reverse direction and… ?  Debate!
+# and if it cannot, it will reverse direction and/or… ?  Debate!
 #
 
 func apply_move_effect() -> bool:
@@ -3119,6 +3161,13 @@ func remove_item_from_lattice(item):
 	# Perhaps this should listen to lattice signals instead
 	item.set_latticeability(false)
 
+
+func annihilate_item(item: Item):
+	# Like destruction, but without fuss and no undo
+	remove_item_from_lattice(item)
+	remove_item_from_scene(item)
+	deregister_item(item)
+	item.queue_free()
 
 func update_items_z_salience():
 	pass
@@ -3377,11 +3426,16 @@ func process_autoplay(_delta) -> void:
 	execute_input_from_character(pop_autoplay_input())
 	
 	if not has_inputs_left_to_autoplay() and self.is_test_run:
-		yield(get_tree().create_timer(0.5), "timeout")
-		if is_completed():
-			emit_signal("test_passed")
-		else:
-			emit_signal("test_failed")
+#		yield(get_tree().create_timer(0.5), "timeout")
+		get_tree().create_timer(1.0).connect("timeout", self, "process_autoplay_closure")
+#		process_autoplay_closure()
+
+
+func process_autoplay_closure():
+	if is_completed():
+		emit_signal("test_passed")
+	else:
+		emit_signal("test_failed")
 
 
 func has_inputs_left_to_autoplay() -> bool:

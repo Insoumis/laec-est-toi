@@ -30,22 +30,32 @@ extends Node2D
 
 # This is relevant only for things.
 # Always set this to true for operators, qualities, prepositions and verbs.
-export(bool) var is_text = false
+export(bool) var is_text := false
 
 # Describe the concept of this item.
 # Only one of these may be set.
 # If somehow multiple are provided, behavior is undefined.
-# Right now any keyword can be used
+# Right now pretty much any keyword can be used
 # as long as there are icons for it.
 # - sprites/items/<name>.png
 # - sprites/items/text_<name>.png
-# Please only use a single word, lowercase, no diacritics.
-# Numbers are allowed (bogoss69), but raw numbers (42) are reserved.
-# MUST match `^[a-z0-9]+$`, in other words.
-export(String) var concept_name = ''
+# 
+# Constraints:
+# 1. Please only use a single word, lowercase, no diacritics.
+# 2. Numbers are allowed (bogoss69), but raw numbers (42) are reserved.
+# 3. MUST match `^[a-z0-9]*[a-z][a-z0-9]*$`, in other words.
+# 4. MUST NOT contain the word "color", "left", "right", "top", or "bottom".
+export(String) var concept_name := ''
 
 # Emitted when one of the above properties change, (todo?)
 #signal concept_changed
+
+var concept_full: String setget set_concept_full, get_concept_full
+
+func set_concept_full(value):
+	assert(not "Implemented")  # we could write to concept_name and is_text
+func get_concept_full() -> String:
+	return ("text_" if self.is_text else "") + get_concept_name()
 
 # Read-only concept flags.
 # In this class, use the fully qualified self.is_xxx
@@ -72,13 +82,10 @@ var latticeability := true
 # The level makers ought not change these values themselves.
 # 
 
-# Forward compat for other lattices than hexagons, use instead of hexagon_position
-# Right now this holds the tile_position data.
-# In the future it will hold the real cell position (axial coords)
+# Hold the real cell position (axial coords system)
 export(Vector2) var cell_position := Vector2.ZERO setget set_cell_position, get_cell_position
 
-# Tile position in the awkward offset-mode coordinates system,
-# as used by the TileMap.
+# Tile position in the awkward offset-mode coordinates system, as used by the TileMap.
 export(Vector2) var tile_position := Vector2.ZERO setget set_tile_position, get_tile_position
 
 # The direction this Item is facing.
@@ -470,14 +477,14 @@ func has_quality(quality: String) -> bool:
 #
 #
 
-func rename():
+func rename() -> void:
 	self.name = (
 		get_concept_name().capitalize()
 		+
 		('Text' if self.is_text else '')
 	)
 
-func get_concept_name():
+func get_concept_name() -> String:
 	if self.concept_name:
 		return self.concept_name
 	return 'undefined'  # here be trolls
@@ -626,11 +633,7 @@ func get_animation_name(flip_h = false) -> String:
 
 
 func get_sprite_frame_animation_name() -> String:
-	var concept_full = ""
-	if is_text:
-		concept_full = "text_"
-	concept_full += get_concept_name()
-	var pool_item = ItemsPool.get_item_by_concept_full(concept_full)
+	var pool_item = ItemsPool.get_item_by_concept_full(self.concept_full)
 	var animation_name = pool_item.get_animation_prefix_for(direction)
 	return animation_name
 
@@ -695,6 +698,7 @@ func get_tile_position() -> Vector2:
 #	)
 
 
+# Guess and set the cell/tile position from the XY cartesian world Node2D position.
 # possibly a bad name ; perhaps infer_position_from_xy ?
 func infer_position(teleport := false) -> void:
 	snap_to_grid()
@@ -717,9 +721,10 @@ func reposition_on_tile(tile: Vector2, teleport := false) -> void:
 	var target_position = tile_map.map_to_world(tile)
 	target_position.y += 0.001 * get_z_salience()  # z-index crutch
 	if teleport:
+		stop_tween_position()
 		self.position = target_position
 	else:
-		tween_position_change(target_position)
+		tween_position(target_position)
 
 
 func pretend_to_move(direction):
@@ -735,10 +740,16 @@ func pretend_to_move(direction):
 		target_cell
 	)
 	target_position = self.position + (target_position - self.position) * 0.5
-	tween_position_change(target_position)
+	tween_position(target_position)
 
+func stop_tween_position():
+	$Tween.stop(self, 'position')
 
 func tween_position_change(target_position):
+	# deprecated
+	return tween_position(target_position)
+
+func tween_position(target_position):
 	$Tween.interpolate_property(
 		self,  # object
 		'position',  # property
