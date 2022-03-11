@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=1]
 [ext_resource path="res://menus/PauseMenu.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://guis/MobileThemeNoBackground.tres" type="Theme" id=5]
 [ext_resource path="res://effects/PauseMenuPanelMaterial.tres" type="Material" id=6]
 [ext_resource path="res://sprites/background/people.png" type="Texture" id=7]
+[ext_resource path="res://core/behaviors/MouseFocusBinder.gd" type="Script" id=8]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -112,6 +113,9 @@ alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MouseFocusBinder" type="Node" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
+script = ExtResource( 8 )
 
 [node name="CompletionScore" parent="CenterContainer/PanelContainer/Control/VBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0

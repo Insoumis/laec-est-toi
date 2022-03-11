@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menus/SettingsMenu.gd" type="Script" id=1]
 [ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=2]
 [ext_resource path="res://sprites/background/frise_spaciale.png" type="Texture" id=3]
 [ext_resource path="res://guis/MobileThemeNoBackground.tres" type="Theme" id=4]
 [ext_resource path="res://guis/TextureScrollerMaterial.tres" type="Material" id=5]
+[ext_resource path="res://core/behaviors/MouseFocusBinder.gd" type="Script" id=6]
 
 [node name="SettingsMenu" type="Control"]
 anchor_right = 1.0
@@ -93,6 +94,9 @@ margin_top = 492.0
 margin_right = 921.0
 margin_bottom = 540.0
 text = "Back"
+
+[node name="MouseFocusBinder" type="Node" parent="PanelContainer/VBoxContainer"]
+script = ExtResource( 6 )
 
 [connection signal="visibility_changed" from="." to="." method="_on_SettingsMenu_visibility_changed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ControlsButton" to="." method="_on_ControlsButton_pressed"]

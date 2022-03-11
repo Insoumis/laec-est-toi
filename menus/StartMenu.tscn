@@ -176,7 +176,7 @@ margin_top = 320.0
 margin_right = 158.0
 margin_bottom = 360.0
 custom_fonts/font = ExtResource( 6 )
-text = "0.4.3"
+text = "0.4.4"
 align = 1
 script = ExtResource( 2 )
 
@@ -194,6 +194,7 @@ __meta__ = {
 [node name="CursorAnimatedSprite" type="AnimatedSprite" parent="CenterContainer"]
 position = Vector2( 622.482, 106.886 )
 frames = SubResource( 5 )
+frame = 1
 playing = true
 centered = false
 
@@ -203,19 +204,19 @@ position = Vector2( 58.4561, 259.287 )
 [node name="LaecAnimatedSprite" type="AnimatedSprite" parent="Title"]
 position = Vector2( 63.5687, 32.3649 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="Title"]
 position = Vector2( 127.272, 33.0721 )
 frames = SubResource( 3 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="Title"]
 position = Vector2( 204.99, 32.3649 )
 frames = SubResource( 4 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="SecretButton" type="Button" parent="Title/YouAnimatedSprite"]
@@ -244,6 +245,8 @@ __meta__ = {
 }
 
 [node name="PhiSprite" parent="MarginContainer" instance=ExtResource( 3 )]
+
+[node name="MouseFocusBinder" type="Node" parent="."]
 
 [connection signal="visibility_changed" from="." to="." method="_on_StartMenu_visibility_changed"]
 [connection signal="pressed" from="CenterContainer/MenuButtonsContainer/PlayStoryButton" to="." method="_on_PlayButton_pressed"]
