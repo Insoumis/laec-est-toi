@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-03-10 15:40+0100\n"
+"POT-Creation-Date: 2022-03-11 07:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: addons/input-map-helper/InputMapper.gd:745 menus/SettingsMenu.tscn:95
+#: addons/input-map-helper/InputMapper.gd:745 menus/SettingsMenu.tscn:96
 msgid "Back"
 msgstr ""
 
@@ -25,12 +25,16 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: addons/laec-is-you/core/BoilerplateLevel.tscn:6 cache/levels.tres:314
-msgid "Bienvenue"
+#: addons/laec-is-you/core/BoilerplateLevel.tscn:6
+msgid "level.BoilerplateLevel.title"
 msgstr ""
 
 #: addons/laec-is-you/core/BoilerplateLevel.tscn:7
-msgid "L'Avenir en Commun"
+msgid "level.BoilerplateLevel.excerpt"
+msgstr ""
+
+#: addons/laec-is-you/core/BoilerplateLevel.tscn:8
+msgid "level.BoilerplateLevel.link"
 msgstr ""
 
 #: addons/laec-is-you/entity/Portal.gd:195
@@ -71,6 +75,11 @@ msgstr ""
 
 #: addons/laec-is-you/ide/ItemWizard.tscn:56 editor/LevelEditor.tscn:284
 msgid "Import"
+msgstr ""
+
+#: addons/laec-is-you/node/LevelChronometer.gd:43
+#, python-format
+msgid "Turn spending took %fs"
 msgstr ""
 
 #: addons/laec-is-you-main-screen/TutorialPanel.tscn:45
@@ -124,8 +133,8 @@ msgid "BACK"
 msgstr ""
 
 #: addons/open-hexes.appsettings/demo/Demo.gd:174
-#: addons/open-hexes.appsettings/demo/Demo.tscn:28 menus/PauseMenu.tscn:146
-#: menus/SettingsMenu.tscn:48 menus/StartMenu.tscn:154
+#: addons/open-hexes.appsettings/demo/Demo.tscn:28 menus/PauseMenu.tscn:150
+#: menus/SettingsMenu.tscn:49 menus/StartMenu.tscn:154
 msgid "Settings"
 msgstr ""
 
@@ -243,6 +252,10 @@ msgstr ""
 
 #: cache/levels.tres:306 levels/PhiMap.tscn:225
 msgid "Petite Ile"
+msgstr ""
+
+#: cache/levels.tres:314
+msgid "Bienvenue"
 msgstr ""
 
 #: cache/levels.tres:322 levels/idle/02MoveThings.tscn:7
@@ -575,15 +588,15 @@ msgstr ""
 #: cache/levels.tres:1158 cache/levels.tres:1166 cache/levels.tres:1174
 #: cache/levels.tres:1182 cache/levels.tres:1190 cache/levels.tres:1198
 #: cache/levels.tres:1206 cache/levels.tres:1214 cache/levels.tres:1222
-#: cache/levels.tres:1230 cache/levels.tres:1238 core/Level.tscn:50
+#: cache/levels.tres:1230 cache/levels.tres:1238 core/Level.tscn:51
 msgid "level.Level.title"
 msgstr ""
 
-#: core/Level.tscn:51
+#: core/Level.tscn:52
 msgid "level.Level.excerpt"
 msgstr ""
 
-#: core/Level.tscn:52
+#: core/Level.tscn:53
 msgid "level.Level.link"
 msgstr ""
 
@@ -685,7 +698,7 @@ msgstr ""
 msgid "Copy the level string in the field below to load that level"
 msgstr ""
 
-#: editor/LevelEditor.tscn:700 tools/LevelsViz.gd:36
+#: editor/LevelEditor.tscn:700 tools/LevelsViz.gd:56
 msgid "Title"
 msgstr ""
 
@@ -786,6 +799,19 @@ msgstr ""
 
 #: guis/HTML5Disclaimer.tscn:59
 msgid "J'ai compris"
+msgstr ""
+
+#: guis/PressToContinue.gd:4
+msgid "Press anything to Continue"
+msgstr ""
+
+#: guis/PressToContinue.gd:10
+msgid "Click to Continue"
+msgstr ""
+
+#: guis/PressToContinue.tscn:24 guis/PressToContinue.tscn:40
+#: menus/IdleMenu.tscn:28
+msgid "Appuyez pour Continuer"
 msgstr ""
 
 #: levels/LotdMap.tscn:11
@@ -1977,10 +2003,6 @@ msgstr ""
 msgid "level.LaPoliceAvecNousLevel.link"
 msgstr ""
 
-#: menus/IdleMenu.tscn:28 menus/TitleScreen.tscn:43 menus/TitleScreen.tscn:59
-msgid "Appuyez pour Continuer"
-msgstr ""
-
 #: menus/LevelVictoryScreen.gd:56 menus/LevelVictoryScreen.tscn:131
 msgid "LEVEL COMPLETE !"
 msgstr ""
@@ -2019,31 +2041,31 @@ msgstr ""
 msgid "0"
 msgstr ""
 
-#: menus/PauseMenu.tscn:128
+#: menus/PauseMenu.tscn:132
 msgid "Resume"
 msgstr ""
 
-#: menus/PauseMenu.tscn:134
+#: menus/PauseMenu.tscn:138
 msgid "Restart Level"
 msgstr ""
 
-#: menus/PauseMenu.tscn:140
+#: menus/PauseMenu.tscn:144
 msgid "Exit Level"
 msgstr ""
 
-#: menus/PauseMenu.tscn:153
+#: menus/PauseMenu.tscn:157
 msgid "Back to Menu"
 msgstr ""
 
-#: menus/PauseMenu.tscn:160
+#: menus/PauseMenu.tscn:164
 msgid "Exit Game"
 msgstr ""
 
-#: menus/SettingsMenu.tscn:69 menus/StartMenu.tscn:145
+#: menus/SettingsMenu.tscn:70 menus/StartMenu.tscn:145
 msgid "Controls"
 msgstr ""
 
-#: menus/SettingsMenu.tscn:78
+#: menus/SettingsMenu.tscn:79
 msgid "Open Settings Directory"
 msgstr ""
 
@@ -2056,7 +2078,7 @@ msgid "Arcade"
 msgstr ""
 
 #: menus/StartMenu.tscn:179
-msgid "0.4.3"
+msgid "0.4.4"
 msgstr ""
 
 #: menus/StartMenu.tscn:188
@@ -2171,35 +2193,35 @@ msgstr ""
 msgid "res://levels/trollune/SomeLevel.tscn"
 msgstr ""
 
-#: tools/LevelsViz.gd:34
+#: tools/LevelsViz.gd:54
 msgid "Action"
 msgstr ""
 
-#: tools/LevelsViz.gd:35
+#: tools/LevelsViz.gd:55
 msgid "Filepath"
 msgstr ""
 
-#: tools/LevelsViz.gd:37
+#: tools/LevelsViz.gd:57
 msgid "Story"
 msgstr ""
 
-#: tools/LevelsViz.gd:39
+#: tools/LevelsViz.gd:59
 msgid "Parents"
 msgstr ""
 
-#: tools/LevelsViz.gd:40
+#: tools/LevelsViz.gd:60
 msgid "Children"
 msgstr ""
 
-#: tools/LevelsViz.gd:47
+#: tools/LevelsViz.gd:67
 msgid "PLAY"
 msgstr ""
 
-#: tools/LevelsViz.gd:75
+#: tools/LevelsViz.gd:83
 msgid "YES"
 msgstr ""
 
-#: tools/LevelsViz.gd:77
+#: tools/LevelsViz.gd:85
 msgid "NO"
 msgstr ""
 
