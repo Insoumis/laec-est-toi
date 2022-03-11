@@ -38,9 +38,10 @@ func end(run_name:=DEFAULT_RUN) -> float:
 	return stop(run_name)
 
 
-func stop(run_name:=DEFAULT_RUN) -> float:
+func stop(run_name:=DEFAULT_RUN, silent:=false) -> float:
 	if not __times.has(run_name):
-		printerr("Stopping a chronometer that was never started…")
+		if not silent:
+			printerr("Stopping a chronometer that was never started…")
 		return 0.0
 	
 	__times[run_name][STOP] = get_now_usec()
@@ -48,9 +49,10 @@ func stop(run_name:=DEFAULT_RUN) -> float:
 	return report(run_name)
 
 
-func report(run_name:=DEFAULT_RUN) -> float:
+func report(run_name:=DEFAULT_RUN, silent:=false) -> float:
 	if not __times.has(run_name):
-		printerr("Reporting on a chronometer run that was never started…")
+		if not silent:
+			printerr("Reporting on a chronometer run that was never started…")
 		return 0.0
 	
 	var time_usec = __times[run_name][STOP] - __times[run_name][START]
