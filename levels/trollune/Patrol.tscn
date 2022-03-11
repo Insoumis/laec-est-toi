@@ -65,14 +65,14 @@ solution_a = "933614 3369436"
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -196609, 4, 0, -262144, 4, 0, -262143, 4, 0, -131074, 4, 0, -131073, 4, 0, -196608, 4, 0, -196607, 4, 0, -65538, 4, 0, -65537, 4, 0, -131071, 4, 0, -131070, 4, 0, -3, 4, 0, -2, 4, 0, -1, 4, 0, -65536, 4, 0, -65535, 4, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 131069, 2, 0, 131070, 2, 0, 65537, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 22, 0, 262141, 4, 0, 262142, 4, 0, 262143, 4, 0, 196608, 4, 0, 196609, 22, 0, 327678, 4, 0, 327679, 4, 0, 262144, 4, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 tile_data = PoolIntArray( -1900535, 2, 0, -851982, 2, 0, -786416, 2, 0, -589809, 10, 0, -458738, 9, 0, -65555, 10, 0, -65553, 8, 0, 1048560, 0, 0, 1376268, 1, 0, 1900529, 4, 0, 2031612, 8, 0, 2097145, 7, 0, 2031618, 9, 0 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="Jlm" parent="Items" index="0" instance=ExtResource( 3 )]
@@ -106,7 +106,7 @@ tile_position = Vector2( 6, -2 )
 
 [node name="LaecText2" parent="Items" index="4" instance=ExtResource( 3 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
-position = Vector2( 1.49832, 82.5741 )
+position = Vector2( 0, 83.3232 )
 is_text = true
 concept_name = "laec"
 cell_position = Vector2( -1, 2 )
@@ -115,7 +115,7 @@ is_lit = false
 
 [node name="IsText6" parent="Items" index="5" instance=ExtResource( 3 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
-position = Vector2( 64.7491, 84.8215 )
+position = Vector2( 64, 83.3232 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 0, 2 )

@@ -12,21 +12,41 @@ extends Node2D
 # 
 
 
-var levels_pool: LevelsPoolClass
+# Let's try the singleton, so we don't have to free it.
+#var levels_pool: LevelsPoolClass
 
 
 onready var levels_table: DataTable = find_node("LevelsTable")
 
 
 func _ready():
+	start()
+
+
+func _input(_event):
+	if Input.is_action_just_pressed("escape"):
+		var _gone = Game.go_back()
+
+
+#func _exit_tree():
+#	breakpoint
+#	self.levels_pool.clear()
+#	self.levels_pool.queue_free()
+
+#func free():
+#	breakpoint
+#	.free()
+
+
+func start():
 	
 	prints("Starting Levels Viz…")
 	
 	Chronometer.start()
 	# We could also use the singleton LevelsPool, probably
-	self.levels_pool = LevelsPoolClass.new()
-	self.levels_pool.should_use_exclusion = false
-	self.levels_pool.init_full()
+#	self.levels_pool = LevelsPoolClass.new()
+	LevelsPool.should_use_exclusion = false
+	LevelsPool.init_full()
 	prints("LevelsPool#init_full():", Chronometer.stop(), "s")
 	# LevelsPool#init_full(): 1.640474 s
 	
@@ -41,7 +61,7 @@ func _ready():
 	]
 	levels_table.set_columns(header_row.size())
 	levels_table.add_header_row(header_row)
-	for level in self.levels_pool.get_levels():
+	for level in LevelsPool.get_levels():
 		
 		var play_button = Button.new()
 		play_button.text = tr("PLAY")
@@ -58,18 +78,6 @@ func _ready():
 		])
 
 
-func _input(event):
-	if Input.is_action_just_pressed("escape"):
-		var _gone = Game.go_back()
-
-
-func on_level_play_button(level):
-	Game.switch_to_scene_path(
-		level.level_filepath,
-		false, true, true
-	)
-
-
 func bool_to_human(value: bool):
 	if value:
 		return tr("YES")
@@ -77,7 +85,9 @@ func bool_to_human(value: bool):
 		return tr("NO")
 
 
-func _exit_tree():
-	print("%s _exit_tree()" % self.name)  # nope, I never see this
-	self.levels_pool.clear()
+func on_level_play_button(level):
+	Game.switch_to_scene_path(
+		level.level_filepath,
+		false, true, true
+	)
 

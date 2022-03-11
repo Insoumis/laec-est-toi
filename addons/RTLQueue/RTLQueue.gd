@@ -227,6 +227,7 @@ func next_page() -> void:
 		current_newlines -= max_lines
 	emit_signal("next_page")
 
+
 func get_max_lines() -> int:
 	
 	# Wait for the object to render correclty
@@ -248,6 +249,11 @@ func _physics_process(delta : float) -> void:
 		if current_queue.size() == 0:
 			if parsedqueues > 0:
 				emit_signal("queue_finished")
+				
+				# Sometimes the end is still hidden and percent_visible < 1.0
+				# This is tied to our hack with speed_up_really
+				self.label.percent_visible = 1.0
+				
 				paused = true
 				if WAIT_FOR_INPUT_ON_FINISH:
 					waiting_for_input = true
