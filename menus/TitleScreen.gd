@@ -21,8 +21,8 @@ func _process(delta):
 		$Title.frame = ($Title.frame + 1) % 3
 		current_cooldown = TITLE_ANIMATION_COOLDOWN
 	if current_press_start_cooldown < 0.0:
-		$PressStart.visible = not $PressStart.visible
-		$PressStartShadow.visible = not $PressStartShadow.visible
+		$PressToContinue.visible = not $PressToContinue.visible
+#		$PressStartShadow.visible = not $PressStartShadow.visible
 		current_press_start_cooldown = PRESS_START_COOLDOWN
 	if current_idle_menu_cooldown < 0.0:
 		Game.switch_to_scene_path('res://menus/IdleMenu.tscn')
