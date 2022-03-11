@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://addons/laec-is-you/node/HexagonalTileMap.gd" type="Script" id=1]
 [ext_resource path="res://addons/laec-is-you/entity/Level.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://core/Sherpa.gd" type="Script" id=18]
 [ext_resource path="res://guis/HexagonalGridLines.gd" type="Script" id=19]
 [ext_resource path="res://sprites/gui/hexagonal_grid_lines_0.png" type="Texture" id=20]
+[ext_resource path="res://addons/laec-is-you/node/LevelChronometer.gd" type="Script" id=21]
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 14 )
@@ -195,3 +196,8 @@ __meta__ = {
 [node name="PortalSelectionHint" parent="GuiLayer" instance=ExtResource( 7 )]
 
 [node name="LimboHint" parent="GuiLayer" instance=ExtResource( 8 )]
+
+[node name="Tools" type="Node" parent="."]
+
+[node name="Chronometer" type="Node" parent="Tools"]
+script = ExtResource( 21 )

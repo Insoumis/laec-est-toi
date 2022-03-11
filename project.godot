@@ -149,6 +149,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/open-hexes.appsettings/MigrationDatum.gd"
 }, {
+"base": "Node",
+"class": "MouseFocusBinder",
+"language": "GDScript",
+"path": "res://core/behaviors/MouseFocusBinder.gd"
+}, {
 "base": "Action",
 "class": "MoveAction",
 "language": "GDScript",
@@ -263,6 +268,7 @@ _global_script_class_icons={
 "LinkSprite": "",
 "MigrationData": "",
 "MigrationDatum": "",
+"MouseFocusBinder": "",
 "MoveAction": "",
 "PassAction": "",
 "PhiuClipboardMirrorBehavior": "",
