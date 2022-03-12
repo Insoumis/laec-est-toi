@@ -341,6 +341,9 @@ func load_from_string(serialized: String) -> int:
 
 
 func load_from_pickle(data: Dictionary) -> int:
+	"""
+	A pickle only holds primitives, for easier serialization.
+	"""
 	
 	if not self.is_ready:
 		yield(self, "ready")
@@ -369,7 +372,7 @@ func load_from_pickle(data: Dictionary) -> int:
 	
 	self.actions_history.clear()
 	self.recorded_solution = ""
-#	for item in get_all_items():
+#	for item in get_all_items_in_scene():
 	if self.items_layer:
 		for item in self.items_layer.get_children():
 			item.get_parent().remove_child(item)
@@ -388,6 +391,12 @@ func load_from_pickle(data: Dictionary) -> int:
 		
 		item.reposition()
 		item.update_aesthetics()
+		
+		# Hotfix for specials that were not pickled well enough to unpickle
+		# Eventually we need to unpickle the specials as well.
+		# We won't use spawn_item in these cases so this whooe logic needs to change.
+		if item.get_concept_name() == 'undefined':
+			annihilate_item(item)
 	
 	self.camera.zoom = data.get('zoom', Vector2.ONE)
 	
