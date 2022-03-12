@@ -13,6 +13,7 @@ excerpt_custom = "Des mots à la pelle
 Et des mots en foire
 Que la France appelle
 À écrire l'histoire."
+forward_level_path = "res://levels/story/Partie1Map.tscn"
 solution_a = "6663966"
 
 [node name="HexagonalTileMap" parent="." index="2"]
