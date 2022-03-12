@@ -10,17 +10,17 @@ title = "level.Chapter1Map.title"
 excerpt = "level.Chapter1Map.excerpt"
 link = "level.Chapter1Map.link"
 
-[node name="HexagonalTileMap" parent="." index="1"]
+[node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -262144, 21, 0, -131074, 22, 0, -131073, 22, 0, -196608, 22, 0, -196607, 22, 0, -65538, 22, 0, -65537, 22, 0, -131072, 22, 0, -131071, 22, 0, -131070, 22, 0, -5, 22, 0, -3, 22, 0, -1, 22, 0, -65536, 22, 0, -65534, 22, 0, 65532, 22, 0, 65533, 22, 0, 65534, 4, 0, 65535, 4, 0, 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 22, 0, 4, 22, 0, 131069, 22, 0, 131070, 9, 0, 131071, 9, 0, 65536, 8, 0, 65537, 8, 0, 65538, 9, 0, 65540, 22, 0, 196606, 22, 0, 196607, 22, 0, 131072, 22, 0, 131073, 22, 0, 131074, 22, 0, 262142, 22, 0, 262143, 22, 0, 196608, 22, 0, 196609, 22, 0, 262144, 22, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="2"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="3"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="4"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="Portal1_1" parent="Items" index="0" instance=ExtResource( 4 )]
@@ -30,7 +30,16 @@ tile_position = Vector2( -2, 0 )
 level_path = "res://levels/laec/chapter1/Laec1_1.tscn"
 title = "Chapitre Premier"
 
-[node name="Portal1_1Bonus1" parent="Items" index="1" instance=ExtResource( 4 )]
+[node name="WarpToPartie1" parent="Items" index="1" instance=ExtResource( 4 )]
+position = Vector2( 0, -189.371 )
+cell_position = Vector2( 2, -4 )
+tile_position = Vector2( 0, -4 )
+warp = true
+level_path = "res://levels/story/Partie1Map.tscn"
+dependency_a = NodePath("../Portal1_1")
+title = "Chapitre Premier"
+
+[node name="Portal1_1Bonus1" parent="Items" index="2" instance=ExtResource( 4 )]
 position = Vector2( -96, 37.8742 )
 cell_position = Vector2( -2, 1 )
 tile_position = Vector2( -2, 1 )
@@ -38,7 +47,7 @@ level_path = "res://levels/laec/chapter1/Laec1_1Bonus1.tscn"
 dependency_a = NodePath("../Portal1_1")
 title = "Chapitre Premier (Bonus)"
 
-[node name="Portal1_3" parent="Items" index="2" instance=ExtResource( 4 )]
+[node name="Portal1_3" parent="Items" index="3" instance=ExtResource( 4 )]
 position = Vector2( -64, -7.57484 )
 cell_position = Vector2( -1, 0 )
 tile_position = Vector2( -1, 0 )
@@ -46,13 +55,13 @@ level_path = "res://levels/laec/chapter1/Laec1_3.tscn"
 dependency_a = NodePath("../Portal1_1")
 title = "Chapitre Trois"
 
-[node name="Portal1_4" parent="Items" index="3" instance=ExtResource( 4 )]
+[node name="Portal1_4" parent="Items" index="4" instance=ExtResource( 4 )]
 position = Vector2( 0, -7.57484 )
 level_path = "res://levels/laec/chapter1/Laec1_4.tscn"
 dependency_a = NodePath("../Portal1_3")
 title = "Chapitre Quatre"
 
-[node name="Portal1_8" parent="Items" index="4" instance=ExtResource( 4 )]
+[node name="Portal1_8" parent="Items" index="5" instance=ExtResource( 4 )]
 position = Vector2( 64, -7.57484 )
 cell_position = Vector2( 1, 0 )
 tile_position = Vector2( 1, 0 )
@@ -60,7 +69,7 @@ level_path = "res://levels/laec/chapter1/Laec1_8.tscn"
 dependency_a = NodePath("../Portal1_4")
 title = "Chapitre Huit"
 
-[node name="Portal1_10" parent="Items" index="5" instance=ExtResource( 4 )]
+[node name="Portal1_10" parent="Items" index="6" instance=ExtResource( 4 )]
 position = Vector2( 128, -7.57484 )
 cell_position = Vector2( 2, 0 )
 tile_position = Vector2( 2, 0 )
@@ -68,7 +77,7 @@ level_path = "res://levels/laec/chapter1/Laec1_10.tscn"
 dependency_a = NodePath("../Portal1_8")
 title = "Chapitre Dix"
 
-[node name="Portal1_10Bonus1" parent="Items" index="6" instance=ExtResource( 4 )]
+[node name="Portal1_10Bonus1" parent="Items" index="7" instance=ExtResource( 4 )]
 position = Vector2( 160, 37.8742 )
 cell_position = Vector2( 2, 1 )
 tile_position = Vector2( 2, 1 )
@@ -76,7 +85,7 @@ level_path = "res://levels/laec/chapter1/Laec1_10Bonus1.tscn"
 dependency_a = NodePath("../Portal1_10")
 title = "Chapitre Dix (Bonus)"
 
-[node name="Portal1_8Bonus1" parent="Items" index="7" instance=ExtResource( 4 )]
+[node name="Portal1_8Bonus1" parent="Items" index="8" instance=ExtResource( 4 )]
 position = Vector2( 96, 37.8742 )
 cell_position = Vector2( 1, 1 )
 tile_position = Vector2( 1, 1 )
@@ -84,7 +93,7 @@ level_path = "res://levels/laec/chapter1/Laec1_8Bonus1.tscn"
 dependency_a = NodePath("../Portal1_8")
 title = "Chapitre Huit (Bonus)"
 
-[node name="Portal1_4Bonus1" parent="Items" index="8" instance=ExtResource( 4 )]
+[node name="Portal1_4Bonus1" parent="Items" index="9" instance=ExtResource( 4 )]
 position = Vector2( 32, 37.8742 )
 cell_position = Vector2( 0, 1 )
 tile_position = Vector2( 0, 1 )
@@ -92,7 +101,7 @@ level_path = "res://levels/laec/chapter1/Laec1_4Bonus1.tscn"
 dependency_a = NodePath("../Portal1_4")
 title = "Chapitre Quatre"
 
-[node name="Portal1_3Bonus1" parent="Items" index="9" instance=ExtResource( 4 )]
+[node name="Portal1_3Bonus1" parent="Items" index="10" instance=ExtResource( 4 )]
 position = Vector2( -32, 37.8742 )
 cell_position = Vector2( -1, 1 )
 tile_position = Vector2( -1, 1 )
@@ -100,28 +109,28 @@ level_path = "res://levels/laec/chapter1/Laec1_3Bonus1.tscn"
 dependency_a = NodePath("../Portal1_3")
 title = "Chapitre Trois (Bonus)"
 
-[node name="LaecText" parent="Items" index="10" instance=ExtResource( 3 )]
+[node name="LaecText" parent="Items" index="11" instance=ExtResource( 3 )]
 position = Vector2( -416, -234.82 )
 is_text = true
 concept_name = "laec"
 cell_position = Vector2( -4, -5 )
 tile_position = Vector2( -7, -5 )
 
-[node name="Laec" parent="Items" index="11" instance=ExtResource( 3 )]
+[node name="Laec" parent="Items" index="12" instance=ExtResource( 3 )]
 position = Vector2( -192, -7.56484 )
 concept_name = "laec"
 cell_position = Vector2( -3, 0 )
 tile_position = Vector2( -3, 0 )
 is_you = true
 
-[node name="IsText" parent="Items" index="12" instance=ExtResource( 3 )]
+[node name="IsText" parent="Items" index="13" instance=ExtResource( 3 )]
 position = Vector2( -352, -234.82 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( -3, -5 )
 tile_position = Vector2( -6, -5 )
 
-[node name="YouText" parent="Items" index="13" instance=ExtResource( 3 )]
+[node name="YouText" parent="Items" index="14" instance=ExtResource( 3 )]
 position = Vector2( -288, -234.82 )
 is_text = true
 concept_name = "you"
