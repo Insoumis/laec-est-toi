@@ -37,6 +37,9 @@ const ITEM_FILENAME_REGEX := \
 	"[.]png"
 
 
+# Lightweight Item entity.
+# Took me too long to understand we needed something else than Nodes for each of our entities.
+# fixme: Move to own file, rename as ItemResource, extend Resource
 class PoolItem:
 	extends Reference
 	var is_text := true
@@ -467,7 +470,7 @@ static func parse_name(file_name: String, path: String):
 	if file_name.ends_with("_0.png"):
 		var regex := RegEx.new()
 		var _careful = regex.compile(
-			"(?<is_text>text_)?" + 
+			"(?<is_text>text_)?" +
 			"(?<item_name>[A-Za-z0-9-]+)?_?" +
 			
 			"(?<direction>(bottom_left|bottom_right|left|right|top_left|top_right))?_?" +

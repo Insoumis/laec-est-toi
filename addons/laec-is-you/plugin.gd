@@ -11,6 +11,8 @@ const PATH_LEVEL_BOILERPLATE := PATH_LAEC_ADDON + 'core/BoilerplateLevel.tscn'
 const PATH_LEVEL_OUTPUT := 'res://levels'
 const PATH_EDITOR_GRID_TEXTURE := "res://addons/laec-is-you/ide/editor_grid.png"
 const PATH_ITEM_SCENE := "res://core/Item.tscn"
+const PATH_SIGN_SCENE := "res://core/Sign.tscn"
+const PATH_PORTAL_SCENE := "res://core/Portal.tscn"
 const PATH_ITEM_SCRIPT := "res://addons/laec-is-you/entity/Item.gd"
 const PATH_PORTAL_SCRIPT := "res://addons/laec-is-you/entity/Portal.gd"
 const PATH_LEVEL_SCRIPT := "res://addons/laec-is-you/entity/Level.gd"
@@ -18,22 +20,7 @@ const PATH_TILE_MAP_SCRIPT := PATH_LAEC_ADDON + 'node/HexagonalTileMap.gd'
 const PATH_HEX_TEXTURE := PATH_LAEC_ADDON + 'icon/hexagon.svg'
 const PATH_ITEM_DIRECTORY := "res://sprites/items"
 
-# That container is in the top menu of the 2D Editor
-var container = CONTAINER_CANVAS_EDITOR_MENU
-var items: Array
-var items_by_name: Dictionary
-var item_wizard_control
-var refresh_button
-var new_level_button: Button
-var import_button: Button
-var add_button: MenuButton
-var more_button: MenuButton
-var text_menu := PopupMenu.new()
-var add_preset_menu := PopupMenu.new()
-var editor_grid: Sprite  # = recreate_editor_grid()
-var item_selector: Node = null
-
-var presets := [  # Sentences, be careful with spacing
+var presets := [  # Sentences.  Be careful with spacing.
 	'laec is you',
 	'france is win',
 	'monarc is defeat',
@@ -41,12 +28,55 @@ var presets := [  # Sentences, be careful with spacing
 	'media is push',
 	'tree has tree',
 	'people make people',
+	'waste is boom',
 ]
+
+# That container is in the top menu of the 2D Editor
+var container = CONTAINER_CANVAS_EDITOR_MENU
+# Straight from ItemsPool
+var items: Array  # of ItemResource (once the refacto is done)
+var items_by_name: Dictionary  # do we still need this?
+var item_wizard_control
+var refresh_button
+var new_level_button: Button
+var import_button: Button
+var add_button: MenuButton
+var add_text_menu := PopupMenu.new()
+var add_preset_menu := PopupMenu.new()
+var add_special_menu := PopupMenu.new()
+var more_button: MenuButton
+var editor_grid: Sprite  # = recreate_editor_grid()
+var item_selector: Node = null
 
 var cell_cursor #= preload(PATH_CELL_CURSOR).instance()
 #var ItemSelector = preload(PATH_ITEM_SELECTOR).instance()
 var was_handling : bool = false
 var __portal_button
+
+
+func _enter_tree():
+	add_custom_type(
+		"HexagonalTileMap", "TileMap",
+		load(PATH_TILE_MAP_SCRIPT),
+		load(PATH_HEX_TEXTURE)
+	)
+	setup_item_wizard()
+	connect("main_screen_changed", self, "on_main_scene_changed")
+
+
+func _exit_tree():
+	if item_selector:
+		item_selector.queue_free()
+	if cell_cursor:
+		cell_cursor.queue_free()
+	if add_button:
+		add_button.queue_free()  # will free its popups as well
+	if import_button:
+		import_button.queue_free()
+	if refresh_button:
+		refresh_button.queue_free()
+	remove_custom_type("HexagonalTileMap")
+	remove_control_from_container(container, item_wizard_control)
 
 
 #  _____ _                  __          ___                  _
@@ -61,11 +91,40 @@ var __portal_button
 #const LevelScript = preload('entity/Level.gd')
 
 
+func setup_item_wizard():
+	item_wizard_control = load(PATH_ITEM_WIZARD).instance()
+	refresh_button = item_wizard_control.find_node("Refresh")
+	add_button = item_wizard_control.find_node("Add")
+	more_button = item_wizard_control.find_node("More")
+	new_level_button = item_wizard_control.find_node("NewLevel")
+	import_button = item_wizard_control.find_node("ImportPhiu")
+	
+	more_button.get_popup().add_check_item("display_grid")
+	more_button.get_popup().add_check_item("display_cursor")
+	
+	add_button.get_popup().connect('index_pressed', self, 'add_item_pressed')
+	add_text_menu.connect('index_pressed', self, 'add_text_pressed')
+	add_preset_menu.connect('index_pressed', self, 'add_preset_pressed')
+	add_special_menu.connect('index_pressed', self, 'add_special_pressed')
+	refresh_button.connect('pressed', self, 'refresh_pressed')
+	new_level_button.connect('pressed', self, 'new_level_pressed')
+	import_button.connect('pressed', self, 'import_pressed')
+	more_button.get_popup().connect('index_pressed', self, 'more_option_pressed')
+	
+	add_control_to_container(container, item_wizard_control)
+	index_items()
+
+
+func index_items():
+	self.items = ItemsPool.get_items_sorted_for_editor()
+	add_items_to_tree(self.items)
+
+
 func add_items_to_tree(p_items: Array):
 	add_button.get_popup().clear()
-	text_menu.name = "text"
-	if not text_menu.get_parent() == add_button.get_popup():
-		add_button.get_popup().add_child(text_menu)
+	add_text_menu.name = "text"
+	if not add_text_menu.get_parent() == add_button.get_popup():
+		add_button.get_popup().add_child(add_text_menu)
 	add_button.get_popup().add_submenu_item(
 		"text", "text"
 	)
@@ -77,9 +136,16 @@ func add_items_to_tree(p_items: Array):
 	for preset in presets:
 		add_preset_menu.add_item(preset)
 	
+	add_special_menu.name = "special"
+	if not add_special_menu.get_parent() == add_button.get_popup():
+		add_button.get_popup().add_child(add_special_menu)
+	add_button.get_popup().add_submenu_item("special", "special")
+	add_special_menu.add_item("portal")
+	add_special_menu.add_item("sign")
+	
 	for item in p_items:
 		if item.is_text:
-			text_menu.add_item(item.concept)
+			add_text_menu.add_item(item.concept)
 		else:
 			add_button.get_popup().add_item(item.concept)
 
@@ -271,60 +337,6 @@ func _clean_level_editor():
 #	add_button.visible = false
 #	refresh_button.visible = false
 
-
-func index_items():
-	self.items = ItemsPool.get_items_sorted_for_editor()
-	add_items_to_tree(self.items)
-
-
-func setup_item_wizard():
-	item_wizard_control = load(PATH_ITEM_WIZARD).instance()
-	refresh_button = item_wizard_control.find_node("Refresh")
-	add_button = item_wizard_control.find_node("Add")
-	more_button = item_wizard_control.find_node("More")
-	new_level_button = item_wizard_control.find_node("NewLevel")
-	import_button = item_wizard_control.find_node("ImportPhiu")
-	
-	more_button.get_popup().add_check_item("display_grid")
-	more_button.get_popup().add_check_item("display_cursor")
-	
-	add_button.get_popup().connect('index_pressed', self, 'add_item_pressed')
-	text_menu.connect('index_pressed', self, 'add_text_pressed')
-	add_preset_menu.connect('index_pressed', self, 'add_preset_pressed')
-	refresh_button.connect('pressed', self, 'refresh_pressed')
-	new_level_button.connect('pressed', self, 'new_level_pressed')
-	import_button.connect('pressed', self, 'import_pressed')
-	more_button.get_popup().connect('index_pressed', self, 'more_option_pressed')
-	
-	add_control_to_container(container, item_wizard_control)
-	index_items()
-
-
-func _enter_tree():
-	add_custom_type(
-		"HexagonalTileMap", "TileMap",
-		load(PATH_TILE_MAP_SCRIPT),
-		load(PATH_HEX_TEXTURE)
-	)
-	setup_item_wizard()
-	connect("main_screen_changed", self, "on_main_scene_changed")
-
-
-func _exit_tree():
-	if item_selector:
-		item_selector.queue_free()
-	if cell_cursor:
-		cell_cursor.queue_free()
-	if add_button:
-		add_button.queue_free()
-	if import_button:
-		import_button.queue_free()
-	if refresh_button:
-		refresh_button.queue_free()
-	remove_custom_type("HexagonalTileMap")
-	remove_control_from_container(container, item_wizard_control)
-
-
 var has_shown_tutorial = false
 
 func on_main_scene_changed(scene_name):
@@ -509,11 +521,16 @@ func refresh_items(xy2hex := true):
 
 # ADDING ITEMS
 
+
+func find_items_container():
+	return get_editor_interface().get_edited_scene_root().find_node("Items")
+
+
 func add_sentence_to_edited_scene(sentence: String, is_text:=false):
 	if not get_editor_interface().get_edited_scene_root():
 		printerr("Please open a Level scene first in res://levels")
 		return
-	var item_container = get_editor_interface().get_edited_scene_root().find_node("Items")
+	var item_container = find_items_container()
 	if not is_instance_valid(item_container):
 		printerr("Please open a Level scene first in res://levels")	
 		return
@@ -534,7 +551,7 @@ func add_item_to_edited_scene(concept: String, is_text:=false, on_tile:=Vector2.
 		printerr("Please open a Level scene first in res://levels")	
 		return
 	
-	var item  # PoolItem not Dictionary
+	var item  # PoolItem (future ItemResource), not Dictionary
 	var item_name : String
 	if is_text:
 		item_name = "text_" + concept
@@ -542,7 +559,6 @@ func add_item_to_edited_scene(concept: String, is_text:=false, on_tile:=Vector2.
 		item_name = concept
 	
 	item = ItemsPool.get_item_by_concept_full(item_name)
-#	item = items_by_name[item_name]
 	
 	var ItemScene = load(PATH_ITEM_SCENE)
 	var item_node = ItemScene.instance()
@@ -557,17 +573,20 @@ func add_item_to_edited_scene(concept: String, is_text:=false, on_tile:=Vector2.
 	item_node.concept_name = item["concept"]
 	item_container.add_child(item_node)
 	item_node.tile_position = on_tile
-#	item_node.cell_position = on_tile
 	item_node.reposition(true)
 	
+	print("ItemWizard: %s has been added to the scene" % [item_name])
+	update_after_adding_item(item_node)
+
+
+func update_after_adding_item(item_node):
 	item_node.set_owner(get_editor_interface().get_edited_scene_root())
-#	get_editor_interface().get_selection().add_node(item_node)
 	yield(get_tree(), "idle_frame")
 	refresh_pressed()
-	print("%s has been added to the scene" % [ item_name ])
 	yield(get_tree(), "idle_frame")
-	get_editor_interface().get_selection().call_deferred("clear")
 #	clear()
+#	get_editor_interface().get_selection().add_node(item_node)
+	get_editor_interface().get_selection().call_deferred("clear")
 	get_editor_interface().get_selection().call_deferred("add_node", item_node)
 
 
@@ -578,7 +597,7 @@ func add_item_pressed(id: int):
 
 func add_text_pressed(id: int):
 	add_item_to_edited_scene(
-		text_menu.get_item_text(id),
+		add_text_menu.get_item_text(id),
 		true
 	)
 
@@ -587,6 +606,26 @@ func add_preset_pressed(id: int):
 		add_preset_menu.get_item_text(id),
 		true
 	)
+
+func add_special_pressed(id: int):
+	var item_container = find_items_container()
+	if not is_instance_valid(item_container):
+		printerr("Please open a Level scene first, for example in res://levels/")
+		return
+	var special_name = add_special_menu.get_item_text(id)
+	if "sign" == special_name:
+		var SignScene = load(PATH_SIGN_SCENE)
+		var item_node = SignScene.instance()
+		item_container.add_child(item_node)
+		update_after_adding_item(item_node)
+	elif "portal" == special_name:
+		var PortalScene = load(PATH_PORTAL_SCENE)
+		var item_node = PortalScene.instance()
+		item_container.add_child(item_node)
+		update_after_adding_item(item_node)
+	else:
+		print_debug("Special not implemented.")
+
 
 const MORE_OPTION_DISPLAY_GRID := 0
 const MORE_OPTION_DISPLAY_CURSOR := 1
