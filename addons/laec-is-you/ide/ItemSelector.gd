@@ -55,13 +55,13 @@ func refresh_item_selector_from_selected_nodes(nodes : Array):
 #
 
 const PortalButton = preload("res://addons/laec-is-you/ide/PortalButton.tscn")
-var __portal_labels := Array()
+var __portal_guis := Array()
 
 
-func clean_portal_labels():
-	for label in __portal_labels:
-		label.queue_free()
-	__portal_labels.clear()
+func clean_portal_guis():
+	for gui in __portal_guis:
+		gui.queue_free()
+	__portal_guis.clear()
 #	var nodes = 
 	#is_inside_tree())
 	var scene_root = level_editor.get_tree().get_edited_scene_root()
@@ -72,10 +72,10 @@ func clean_portal_labels():
 		return
 	var nodes = items_node.get_children()
 	for node in nodes:
-		var label = node.find_node('*PortalPathHint*', true, false)
-		if not is_instance_valid(label):
+		var gui = node.find_node('*PortalGuiHint*', true, false)
+		if not is_instance_valid(gui):
 			continue
-		label.queue_free()
+		gui.queue_free()
 
 
 func clean_portal_button():
@@ -83,16 +83,56 @@ func clean_portal_button():
 		level_editor.__portal_button.queue_free()
 	level_editor.__portal_button = null
 
+var CopyLabelSizeToParent = load("res://lib/CopyLabelSizeToParentBehaviour.gd")
 
 func refresh_portals_from_selected_nodes(nodes: Array):
 	for node in nodes:
 		if level_editor.is_item_layer(node):
 			continue
+		var portal_gui = Node2D.new()
+		portal_gui.z_index = 30
+		var portal_panel_gui = Panel.new()
+		portal_panel_gui.size_flags_horizontal = Control.SIZE_EXPAND
+		var portal_vbox_gui = VBoxContainer.new()
+		portal_vbox_gui.size_flags_horizontal = Control.SIZE_EXPAND
+		portal_vbox_gui.margin_top = 10
+		portal_vbox_gui.margin_left = 10
+		portal_vbox_gui.margin_right = 10
+		portal_vbox_gui.margin_bottom = 15
+		var portal_title_label = Label.new()
 		var portal_label = Label.new()
-		portal_label.set_name("PortalPathHint")
-		portal_label.set_text(node.level_path)
-		node.add_child(portal_label)
-		__portal_labels.push_back(portal_label)
+		var portal_dependencies_label = Label.new()
+		portal_gui.set_name("PortalGuiHint")
+		var title = ""
+		if node.title_override != "":
+			title = node.title_override
+		elif node.title != "":
+			title = node.title
+		portal_title_label.set_text("Title: " + title)
+		portal_label.set_text("Scene path: " + node.level_path)
+		
+		node.add_child(portal_gui)
+		portal_gui.add_child(portal_panel_gui)
+		if (
+			node.dependency_a != "" and
+			node.dependency_a and 
+			is_instance_valid(node.get_node(node.dependency_a))
+		):
+			var line = Line2D.new()
+			line.z_index = -1
+			portal_gui.add_child(line)
+			line.add_point(Vector2(0.0, 0.0))
+			portal_dependencies_label.set_text("Dependency: " + node.get_node(node.dependency_a).name)
+			line.add_point(node.get_node(node.dependency_a).get_global_position() - node.get_global_position())
+		portal_panel_gui.add_child(portal_vbox_gui)
+		portal_vbox_gui.add_child(portal_title_label)
+		portal_vbox_gui.add_child(portal_label)
+		portal_vbox_gui.add_child(portal_dependencies_label)
+		var size_copier = CopyLabelSizeToParent.new()
+		size_copier.target_node = portal_panel_gui
+		size_copier.parent_node = portal_vbox_gui
+		portal_gui.add_child(size_copier)
+		__portal_guis.push_back(portal_gui)
 	if 1 == nodes.size():
 		var node = nodes[0]
 		level_editor.__portal_button = PortalButton.instance()
@@ -105,7 +145,7 @@ func refresh_portals_from_selected_nodes(nodes: Array):
 
 func on_selection_changed():
 	clean_portal_button()
-	clean_portal_labels()
+	clean_portal_guis()
 	if not level_editor.are_all_selected_nodes_items():
 		if not level_editor.are_all_selected_nodes_portals():
 			if not level_editor.is_selected_node_items_layer():
@@ -214,7 +254,7 @@ func item_sizer_changed(value: float):
 
 func _exit_tree():
 	clean_portal_button()
-	clean_portal_labels()
+	clean_portal_guis()
 
 func _enter_tree():
 	_item_container = get_node("ItemListContainer/ItemContainer")
