@@ -1717,7 +1717,6 @@ func spend_turn(in_editor := false):
 				for item in sentence_object.items_used:
 					item.is_ignored = true
 	
-	
 	# VIII. Same-tile effects
 	var has_won = false
 	if not in_editor:
@@ -1757,6 +1756,7 @@ func spend_turn(in_editor := false):
 	var maximum_identical_items_per_cell := 3
 	for cell in self.cell_lattice.get_used_cells():
 		var amount_per_concept_full := Dictionary()
+		# We "should" get them oldest to newest, but I'm not sure anymore.
 		var things_on_cell := self.cell_lattice.get_things_on_cell(cell)
 		var things_to_annihilate := Array()
 #		for i in range(things_on_cell.size() - 1, -1, -1):
@@ -1766,10 +1766,11 @@ func spend_turn(in_editor := false):
 			if not amount_per_concept_full.has(cell_thing_concept):
 				amount_per_concept_full[cell_thing_concept] = 0
 			if amount_per_concept_full[cell_thing_concept] >= maximum_identical_items_per_cell:
-				debug("%s: Annihilating extra `%s'" % [get_name(), cell_thing_concept])
+				#debug("%s: Annihilating extra `%s'" % [get_name(), cell_thing_concept])
 				# Instead of annihilating right away, we annihilate later.
 				# This helps us annihilate the "newest" items on our lattice,
-				# which show up last in this loop.
+				# which show up last in this loop. (cells ought to be stacks)
+				# → Now I'm not 100% sure this is what's happening ; careful.
 				things_to_annihilate.append(cell_thing)
 				continue
 			amount_per_concept_full[cell_thing_concept] += 1
@@ -2217,7 +2218,7 @@ func write_history():
 func undo():
 	if 2 > self.history.size():
 		return
-	seek_to_history(-2)
+	seek_to_history(SEEK_PREVIOUS_TURN)
 	#update_limbo_status()
 	#call_deferred('__deferred_undo')
 
@@ -2245,13 +2246,20 @@ func undo():
 #	update_portal_selection()
 
 
+const SEEK_INITIAL_STATE := 0
+const SEEK_FIRST_TURN := 1
+const SEEK_CURRENT_TURN := -1
+const SEEK_PREVIOUS_TURN := -2
+
 func seek_to_history(turn: int):
 	"""
 	turn:
-		Index of the turn (starts at 0), negative numbers are looped.
+		Index of the turn (starts at 0), negative numbers are relative to the next turn.
+		It looks weird to have -1 meaning the current turn, but it works.
 		Note:
 			turn ==  0 means the initial state before the first turn.
 			turn ==  1 means after the first turn.
+			turn ==  2 means after the second turn.
 			turn == -1 means the current turn.
 			turn == -2 means the previous turn.
 	"""
@@ -2267,11 +2275,31 @@ func __seek_to_history(turn: int):
 	assert(turn >= 0)
 	assert(turn < self.history.size())
 	
+	var turn_data = self.history[turn]
+	var turn_item_hashes = turn_data.keys()
+	
+	# Clean slate, scene tree wise.  Item nodes are not freed, and are stashed in the items bag.
 	for item in get_all_items():
 		self.items_layer.remove_child(item)
 	
-	var turn_data = self.history[turn]
-	for item_hash in turn_data.keys():
+	# We want to prune from memory all the items in the items bag that are there in the future turns
+	# but are not there at the turn we're seeking to.   Items are nodes we need to free.
+	var future_items_hashes := Array()
+	for future_turn in range(turn + 1, self.history.size(), 1):
+		var future_turn_data = self.history[future_turn]
+		for item_hash in future_turn_data:
+			if turn_item_hashes.has(item_hash):
+				continue
+			if future_items_hashes.has(item_hash):
+				continue
+			future_items_hashes.append(item_hash)
+	for freed_item_hash in future_items_hashes:
+		if not self.items_bag.has(freed_item_hash):
+			continue
+		var freed_item = self.items_bag[freed_item_hash]
+		annihilate_item(freed_item)
+	
+	for item_hash in turn_item_hashes:
 		#assert(item_hash in self.items_bag)
 		var item: Item
 		if self.items_bag.has(item_hash):
@@ -2283,14 +2311,23 @@ func __seek_to_history(turn: int):
 			item = spawn_item(null, turn_data[item_hash])
 			register_item(item)
 			spawned_anew = true
-		item.from_pickle(turn_data[item_hash])
+		else:
+			item.from_pickle(turn_data[item_hash])
+		
 		if not spawned_anew:
+			# spawn_item() already handles adding the item to the scene, for better or worse
 			self.items_layer.add_child(item)
+		else:
+			# Rewrite history, so it can prune this new spawn later if needed on another undo
+			self.history[turn].erase(item_hash)
+			self.history[turn][hash_item(item)] = item.to_pickle()
+		
 		item.reposition(spawned_anew)
 		item.update_aesthetics()
 
 	self.history = self.history.slice(0, turn)
 	
+#	register_all_items()
 	reindex_lattice()
 	
 	update_limbo_status()
@@ -2312,6 +2349,7 @@ const Portal = preload("res://addons/laec-is-you/entity/Portal.gd")
 onready var portal_selection_hint = find_node('PortalSelectionHint')
 
 
+# Waiting for Godot 4 to ditch the double underscores
 var __currently_selected_portal
 
 
@@ -2405,6 +2443,8 @@ func spawn_item(item_to_copy=null, extra_properties:Dictionary={}):
 	cell_lattice.add_thing_on_cell(item, item.cell_position)
 	
 	# and emit a signal (todo)
+	
+	#debug("Spawning item `%s' %d" % [item.concept_full, hash_item(item)])
 	
 	return item
 
@@ -3152,8 +3192,9 @@ func destroy_item(item: Item):
 		item.set_latticeability(true)
 
 
-func remove_item_from_scene(item):
-	items_layer.remove_child(item)
+func remove_item_from_scene(item: Item):
+	if item.is_inside_tree():
+		self.items_layer.remove_child(item)
 
 
 func remove_item_from_lattice(item):
