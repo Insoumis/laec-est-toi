@@ -1,0 +1,384 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+
+[node name="3ReconstruireEcoleGlobale65" instance=ExtResource( 1 )]
+title = "level.3ReconstruireEcoleGlobale65.title"
+excerpt = "level.3ReconstruireEcoleGlobale65.excerpt"
+link = "level.3ReconstruireEcoleGlobale65.link"
+title_custom = "Chapitre 11"
+solution_a = "96666679644446669611413336774999674413133317496747666966663"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -196614, 27, 0, -196613, 27, 0, -196612, 27, 0, -196611, 27, 0, -196610, 27, 0, -196609, 27, 0, -262144, 27, 0, -262143, 27, 0, -262142, 27, 0, -262141, 27, 0, -262140, 27, 0, -262139, 27, 0, -262138, 27, 0, -131079, 27, 0, -131078, 27, 0, -131077, 27, 0, -131076, 27, 0, -131075, 27, 0, -131074, 27, 0, -131073, 27, 0, -196608, 27, 0, -196607, 27, 0, -196606, 27, 0, -196605, 27, 0, -196604, 27, 0, -196603, 27, 0, -196602, 27, 0, -65542, 27, 0, -65541, 27, 0, -65540, 27, 0, -65539, 27, 0, -65538, 27, 0, -65537, 27, 0, -131072, 27, 0, -131071, 27, 0, -131070, 27, 0, -131069, 29, 0, -131068, 29, 0, -131067, 29, 0, -131066, 29, 0, -7, 27, 0, -6, 29, 0, -5, 29, 0, -4, 29, 0, -3, 27, 0, -2, 27, 0, -1, 27, 0, -65536, 27, 0, -65535, 27, 0, -65534, 29, 0, -65533, 27, 0, -65532, 27, 0, -65531, 27, 0, -65530, 27, 0, 65530, 29, 0, 65531, 27, 0, 65532, 27, 0, 65533, 27, 0, 65534, 27, 0, 65535, 27, 0, 0, 27, 0, 1, 27, 0, 2, 29, 0, 3, 27, 0, 4, 27, 0, 5, 27, 0, 6, 27, 0, 131065, 29, 0, 131066, 27, 0, 131067, 27, 0, 131068, 29, 0, 131069, 27, 0, 131070, 27, 0, 131071, 27, 0, 65536, 27, 0, 65537, 27, 0, 65538, 29, 0, 65539, 27, 0, 65540, 27, 0, 65541, 27, 0, 65542, 27, 0, 196602, 29, 0, 196603, 27, 0, 196604, 27, 0, 196605, 29, 0, 196606, 27, 0, 196607, 27, 0, 131072, 27, 0, 131073, 27, 0, 131074, 29, 0, 131075, 27, 0, 131076, 27, 0, 131077, 27, 0, 131078, 27, 0, 262137, 29, 0, 262138, 27, 0, 262139, 27, 0, 262140, 27, 0, 262141, 29, 0, 262142, 27, 0, 262143, 27, 0, 196608, 27, 0, 196609, 27, 0, 196610, 29, 0, 196611, 29, 0, 196612, 29, 0, 196613, 29, 0, 196614, 29, 0, 327674, 29, 0, 327675, 29, 0, 327676, 29, 0, 327677, 29, 0, 327678, 27, 0, 327679, 27, 0, 262144, 27, 0, 262145, 27, 0, 262146, 27, 0, 262147, 27, 0, 262148, 27, 0, 262149, 27, 0, 262150, 27, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( -384, -189.371 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( -4, -4 )
+tile_position = Vector2( -6, -4 )
+
+[node name="IsText" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( -320, -189.371 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, -4 )
+tile_position = Vector2( -5, -4 )
+
+[node name="YouText" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( -256, -189.371 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -2, -4 )
+tile_position = Vector2( -4, -4 )
+
+[node name="SchoolText" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( -416, -143.922 )
+is_text = true
+concept_name = "school"
+cell_position = Vector2( -5, -3 )
+tile_position = Vector2( -7, -3 )
+
+[node name="IsText2" parent="Items" index="4" instance=ExtResource( 3 )]
+position = Vector2( -352, -143.922 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, -3 )
+tile_position = Vector2( -6, -3 )
+
+[node name="WinText" parent="Items" index="5" instance=ExtResource( 3 )]
+position = Vector2( -288, -143.922 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( -3, -3 )
+tile_position = Vector2( -5, -3 )
+
+[node name="School" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( 384, -7.57474 )
+concept_name = "school"
+cell_position = Vector2( 6, 0 )
+tile_position = Vector2( 6, 0 )
+is_win = true
+
+[node name="Laec" parent="Items" index="7" instance=ExtResource( 3 )]
+position = Vector2( -352, 37.8842 )
+concept_name = "laec"
+cell_position = Vector2( -6, 1 )
+tile_position = Vector2( -6, 1 )
+is_you = true
+
+[node name="Monarc" parent="Items" index="8" instance=ExtResource( 3 )]
+position = Vector2( 384, -98.4728 )
+concept_name = "monarc"
+cell_position = Vector2( 7, -2 )
+tile_position = Vector2( 6, -2 )
+is_defeat = true
+
+[node name="Monarc2" parent="Items" index="9" instance=ExtResource( 3 )]
+position = Vector2( 320, -98.4728 )
+concept_name = "monarc"
+cell_position = Vector2( 6, -2 )
+tile_position = Vector2( 5, -2 )
+is_defeat = true
+
+[node name="Monarc3" parent="Items" index="10" instance=ExtResource( 3 )]
+position = Vector2( 256, -98.4728 )
+concept_name = "monarc"
+cell_position = Vector2( 5, -2 )
+tile_position = Vector2( 4, -2 )
+is_defeat = true
+
+[node name="Monarc14" parent="Items" index="11" instance=ExtResource( 3 )]
+position = Vector2( -416, 37.8743 )
+concept_name = "monarc"
+cell_position = Vector2( -7, 1 )
+tile_position = Vector2( -7, 1 )
+is_defeat = true
+
+[node name="Monarc15" parent="Items" index="12" instance=ExtResource( 3 )]
+position = Vector2( -384, 83.3233 )
+concept_name = "monarc"
+cell_position = Vector2( -7, 2 )
+tile_position = Vector2( -6, 2 )
+is_defeat = true
+
+[node name="Monarc16" parent="Items" index="13" instance=ExtResource( 3 )]
+position = Vector2( -416, 128.772 )
+concept_name = "monarc"
+cell_position = Vector2( -8, 3 )
+tile_position = Vector2( -7, 3 )
+is_defeat = true
+
+[node name="Monarc17" parent="Items" index="14" instance=ExtResource( 3 )]
+position = Vector2( -384, 174.221 )
+concept_name = "monarc"
+cell_position = Vector2( -8, 4 )
+tile_position = Vector2( -6, 4 )
+is_defeat = true
+
+[node name="Monarc18" parent="Items" index="15" instance=ExtResource( 3 )]
+position = Vector2( -320, 174.221 )
+concept_name = "monarc"
+cell_position = Vector2( -7, 4 )
+tile_position = Vector2( -5, 4 )
+is_defeat = true
+
+[node name="Monarc19" parent="Items" index="16" instance=ExtResource( 3 )]
+position = Vector2( -256, 174.221 )
+concept_name = "monarc"
+cell_position = Vector2( -6, 4 )
+tile_position = Vector2( -4, 4 )
+is_defeat = true
+
+[node name="Monarc20" parent="Items" index="17" instance=ExtResource( 3 )]
+position = Vector2( -192, 174.221 )
+concept_name = "monarc"
+cell_position = Vector2( -5, 4 )
+tile_position = Vector2( -3, 4 )
+is_defeat = true
+
+[node name="Monarc21" parent="Items" index="18" instance=ExtResource( 3 )]
+position = Vector2( -160, 128.772 )
+concept_name = "monarc"
+cell_position = Vector2( -4, 3 )
+tile_position = Vector2( -3, 3 )
+is_defeat = true
+
+[node name="Monarc22" parent="Items" index="19" instance=ExtResource( 3 )]
+position = Vector2( -192, 83.3233 )
+concept_name = "monarc"
+cell_position = Vector2( -4, 2 )
+tile_position = Vector2( -3, 2 )
+is_defeat = true
+
+[node name="Monarc23" parent="Items" index="20" instance=ExtResource( 3 )]
+position = Vector2( -224, 37.8743 )
+concept_name = "monarc"
+cell_position = Vector2( -4, 1 )
+tile_position = Vector2( -4, 1 )
+is_defeat = true
+
+[node name="Monarc25" parent="Items" index="21" instance=ExtResource( 3 )]
+position = Vector2( -288, -53.0238 )
+concept_name = "monarc"
+cell_position = Vector2( -4, -1 )
+tile_position = Vector2( -5, -1 )
+is_defeat = true
+
+[node name="Monarc26" parent="Items" index="22" instance=ExtResource( 3 )]
+position = Vector2( -352, -53.0238 )
+concept_name = "monarc"
+cell_position = Vector2( -5, -1 )
+tile_position = Vector2( -6, -1 )
+is_defeat = true
+
+[node name="Monarc27" parent="Items" index="23" instance=ExtResource( 3 )]
+position = Vector2( -224, -53.0238 )
+concept_name = "monarc"
+cell_position = Vector2( -3, -1 )
+tile_position = Vector2( -4, -1 )
+is_defeat = true
+
+[node name="Monarc24" parent="Items" index="24" instance=ExtResource( 3 )]
+position = Vector2( -384, -7.57474 )
+concept_name = "monarc"
+cell_position = Vector2( -6, 0 )
+tile_position = Vector2( -6, 0 )
+is_defeat = true
+
+[node name="Monarc4" parent="Items" index="25" instance=ExtResource( 3 )]
+position = Vector2( 192, -98.4728 )
+concept_name = "monarc"
+cell_position = Vector2( 4, -2 )
+tile_position = Vector2( 3, -2 )
+is_defeat = true
+
+[node name="Monarc5" parent="Items" index="26" instance=ExtResource( 3 )]
+position = Vector2( 160, -53.0238 )
+concept_name = "monarc"
+cell_position = Vector2( 3, -1 )
+tile_position = Vector2( 2, -1 )
+is_defeat = true
+
+[node name="Monarc6" parent="Items" index="27" instance=ExtResource( 3 )]
+position = Vector2( 128, -7.57474 )
+concept_name = "monarc"
+cell_position = Vector2( 2, 0 )
+tile_position = Vector2( 2, 0 )
+is_defeat = true
+
+[node name="Monarc7" parent="Items" index="28" instance=ExtResource( 3 )]
+position = Vector2( 160, 37.8743 )
+concept_name = "monarc"
+cell_position = Vector2( 2, 1 )
+tile_position = Vector2( 2, 1 )
+is_defeat = true
+
+[node name="Monarc8" parent="Items" index="29" instance=ExtResource( 3 )]
+position = Vector2( 128, 83.3233 )
+concept_name = "monarc"
+cell_position = Vector2( 1, 2 )
+tile_position = Vector2( 2, 2 )
+is_defeat = true
+
+[node name="Monarc9" parent="Items" index="30" instance=ExtResource( 3 )]
+position = Vector2( 160, 128.772 )
+concept_name = "monarc"
+cell_position = Vector2( 1, 3 )
+tile_position = Vector2( 2, 3 )
+is_defeat = true
+
+[node name="Monarc10" parent="Items" index="31" instance=ExtResource( 3 )]
+position = Vector2( 224, 128.772 )
+concept_name = "monarc"
+cell_position = Vector2( 2, 3 )
+tile_position = Vector2( 3, 3 )
+is_defeat = true
+
+[node name="Monarc11" parent="Items" index="32" instance=ExtResource( 3 )]
+position = Vector2( 288, 128.772 )
+concept_name = "monarc"
+cell_position = Vector2( 3, 3 )
+tile_position = Vector2( 4, 3 )
+is_defeat = true
+
+[node name="Monarc12" parent="Items" index="33" instance=ExtResource( 3 )]
+position = Vector2( 352, 128.772 )
+concept_name = "monarc"
+cell_position = Vector2( 4, 3 )
+tile_position = Vector2( 5, 3 )
+is_defeat = true
+
+[node name="Monarc13" parent="Items" index="34" instance=ExtResource( 3 )]
+position = Vector2( 416, 128.772 )
+concept_name = "monarc"
+cell_position = Vector2( 5, 3 )
+tile_position = Vector2( 6, 3 )
+is_defeat = true
+
+[node name="Money" parent="Items" index="35" instance=ExtResource( 3 )]
+position = Vector2( -256, -7.57474 )
+concept_name = "money"
+cell_position = Vector2( -4, 0 )
+tile_position = Vector2( -4, 0 )
+is_push = true
+
+[node name="Love" parent="Items" index="36" instance=ExtResource( 3 )]
+position = Vector2( 64, -98.4729 )
+concept_name = "love"
+cell_position = Vector2( 2, -2 )
+tile_position = Vector2( 1, -2 )
+
+[node name="Justice" parent="Items" index="37" instance=ExtResource( 3 )]
+position = Vector2( -32, 128.772 )
+concept_name = "justice"
+cell_position = Vector2( -2, 3 )
+tile_position = Vector2( -1, 3 )
+
+[node name="MonarcText" parent="Items" index="38" instance=ExtResource( 3 )]
+position = Vector2( 256, -7.57484 )
+is_text = true
+concept_name = "monarc"
+cell_position = Vector2( 4, 0 )
+tile_position = Vector2( 4, 0 )
+
+[node name="IsText3" parent="Items" index="39" instance=ExtResource( 3 )]
+position = Vector2( 288, 37.8742 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 4, 1 )
+tile_position = Vector2( 4, 1 )
+
+[node name="DefeatText" parent="Items" index="40" instance=ExtResource( 3 )]
+position = Vector2( 320, 83.3232 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( 4, 2 )
+tile_position = Vector2( 5, 2 )
+
+[node name="LoveText" parent="Items" index="41" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -384, -98.4729 )
+is_text = true
+concept_name = "love"
+cell_position = Vector2( -5, -2 )
+tile_position = Vector2( -6, -2 )
+is_lit = false
+
+[node name="IsText4" parent="Items" index="42" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -320, -98.4729 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, -2 )
+tile_position = Vector2( -5, -2 )
+is_lit = false
+
+[node name="PushText" parent="Items" index="43" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -192, -98.4729 )
+is_text = true
+concept_name = "push"
+cell_position = Vector2( -2, -2 )
+tile_position = Vector2( -3, -2 )
+is_lit = false
+
+[node name="JusticeText" parent="Items" index="44" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -64, -189.371 )
+is_text = true
+concept_name = "justice"
+cell_position = Vector2( 1, -4 )
+tile_position = Vector2( -1, -4 )
+is_lit = false
+
+[node name="IsText5" parent="Items" index="45" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 0, -189.371 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 2, -4 )
+tile_position = Vector2( 0, -4 )
+is_lit = false
+
+[node name="PushText2" parent="Items" index="46" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 64, 83.3232 )
+is_text = true
+concept_name = "push"
+cell_position = Vector2( 0, 2 )
+tile_position = Vector2( 1, 2 )
+is_lit = false
+
+[node name="MoneyText" parent="Items" index="47" instance=ExtResource( 3 )]
+position = Vector2( -352, 128.772 )
+is_text = true
+concept_name = "money"
+cell_position = Vector2( -7, 3 )
+tile_position = Vector2( -6, 3 )
+
+[node name="IsText6" parent="Items" index="48" instance=ExtResource( 3 )]
+position = Vector2( -288, 128.772 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -6, 3 )
+tile_position = Vector2( -5, 3 )
+
+[node name="PushText3" parent="Items" index="49" instance=ExtResource( 3 )]
+position = Vector2( -224, 128.772 )
+is_text = true
+concept_name = "push"
+cell_position = Vector2( -5, 3 )
+tile_position = Vector2( -4, 3 )
