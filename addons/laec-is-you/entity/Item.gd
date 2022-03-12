@@ -131,6 +131,7 @@ export(bool) var is_hot := false
 export(bool) var is_melt := false
 export(bool) var is_move := false
 export(bool) var is_poet := false
+export(bool) var is_genie := false
 export(bool) var is_yoda := false
 export(bool) var is_more := false
 export(bool) var is_boom := false
@@ -176,6 +177,7 @@ func reset_qualities():
 	self.is_melt = false
 	self.is_move = false
 	self.is_poet = false
+	self.is_genie = false
 	self.is_yoda = false
 	self.is_more = false
 	self.is_boom = false
@@ -210,6 +212,7 @@ func to_pickle():
 		'is_melt': self.is_melt,
 		'is_move': self.is_move,
 		'is_poet': self.is_poet,
+		'is_genie': self.is_genie,
 		'is_yoda': self.is_yoda,
 		'is_more': self.is_more,
 		'is_boom': self.is_boom,

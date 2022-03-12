@@ -73,6 +73,7 @@ const QUALITY_HOT := 'hot'
 const QUALITY_MELT := 'melt'
 const QUALITY_MOVE := 'move'
 const QUALITY_POET := 'poet'
+const QUALITY_GENIE := 'genie'
 const QUALITY_YODA := 'yoda'
 const QUALITY_MORE := 'more'
 const QUALITY_BOOM := 'boom'
@@ -94,6 +95,7 @@ const QUALITIES := [
 	QUALITY_MELT,
 	QUALITY_MOVE,
 	QUALITY_POET,
+	QUALITY_GENIE,
 	QUALITY_YODA,
 	QUALITY_MORE,
 	QUALITY_BOOM,

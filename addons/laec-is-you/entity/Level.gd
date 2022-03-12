@@ -1734,6 +1734,7 @@ func spend_turn(in_editor := false):
 		apply_sink_effect()
 		apply_hot_effect()
 		apply_poet_effect()
+		apply_genie_effect()
 		apply_more_effect(sentences)
 		
 		apply_qualifying_sentences(sentences)
@@ -2965,7 +2966,7 @@ func apply_open_effect() -> bool:
 # | |  | | (_) | |_ / /  | |  | |  __/ | |_
 # |_|  |_|\___/ \__/_/   |_|  |_|\___|_|\__|
 #
-# Something HOT will destroy all items MELT on the same tile.
+# Something HOT will destroy all items that MELT on the same tile.
 # The HOT item will be unaffected, unless it is also MELT.
 #
 
@@ -3014,6 +3015,43 @@ func apply_poet_effect() -> bool:
 		item_lettered.update_aesthetics()
 	
 	return applied
+
+
+#   _____            _
+#  / ____|          (_)
+# | |  __  ___ _ __  _  ___
+# | | |_ |/ _ \ '_ \| |/ _ \
+# | |__| |  __/ | | | |  __/
+#  \_____|\___|_| |_|_|\___|
+#
+# A GENIE transforms texts on its tile into things.
+
+
+func apply_genie_effect() -> bool:
+	var applied := false
+	var items_engineered := Array()
+	for genie in get_things_with_qualities({Words.QUALITY_GENIE: true}):
+		var piled_items := get_items_piled_with(genie, false)
+		for other_item in piled_items:
+			assert(other_item != genie)
+			if not other_item.is_text:
+				continue
+			other_item.is_text = false
+			other_item.is_lit = true
+			items_engineered.append(other_item)
+			applied = true
+	
+	# We perhaps need to apply this to everyone, since we might have broken sentences
+	var fresh_sentences = get_possible_sentences()
+	for item_engineered in items_engineered:
+		item_engineered.reset_properties()
+		apply_qualifying_sentences_to_item(fresh_sentences, item_engineered)
+		item_engineered.update_aesthetics()
+	
+	return applied
+
+
+
 
 
 #  __  __
@@ -3234,9 +3272,9 @@ func update_items_z_salience():
 #    | |  | | | | | | |  __/
 #    |_|  |_|_| |_| |_|\___|
 #
-#
+# These are not benchmarking utilities.  See the behavioral node in the scene for that.
 
-# Stats about this level
+# Stats about this level, measures player's performance.
 var __start_time := 0.0  # seconds
 var __end_time := -1.0  # seconds
 
@@ -3249,15 +3287,6 @@ func get_current_time() -> float:
 	return OS.get_ticks_msec() * 0.001
 
 
-func restart_level_chronometer() -> void:
-	self.__start_time = get_current_time()
-	self.__end_time = -1.0
-
-
-func stop_level_chronometer() -> void:
-	self.__end_time = get_current_time()
-
-
 func get_level_time() -> float:
 	"""
 	Time in seconds since the start of this level.
@@ -3265,6 +3294,15 @@ func get_level_time() -> float:
 	if self.__end_time < 0:
 		return 0.0
 	return self.__end_time - self.__start_time
+
+
+func restart_level_chronometer() -> void:
+	self.__start_time = get_current_time()
+	self.__end_time = -1.0
+
+
+func stop_level_chronometer() -> void:
+	self.__end_time = get_current_time()
 
 
 #   _____
