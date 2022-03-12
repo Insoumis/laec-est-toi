@@ -5,7 +5,7 @@ onready var level = $".."  # level may not be ready yet /!.
 
 
 func _ready():
-	$AnimationPlayer.play("Intro", -1, 0.012)
+	$AnimationPlayer.play("Intro", -1, 0.036)
 	var _c = self.level.connect("turn_spending_started", self, "on_level_turn_spent")
 
 
