@@ -18,13 +18,13 @@ forward_level_path = "res://levels/TutorialMap.tscn"
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -65537, 3, 0, -131072, 3, 0, -131071, 3, 0, -2, 3, 0, -65535, 3, 0, 65529, 5, 0, 65530, 5, 0, 65531, 5, 0, 65532, 5, 0, 65533, 5, 0, 65534, 3, 0, 65535, 9, 0, 0, 8, 0, 1, 9, 0, 2, 9, 0, 3, 9, 0, 4, 21, 0, 5, 9, 0, 131070, 3, 0, 65537, 3, 0, 196607, 3, 0, 131072, 3, 0, 131073, 3, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="Laec" parent="Items" index="0" instance=ExtResource( 3 )]
@@ -212,17 +212,14 @@ __meta__ = {
 position = Vector2( 734, 129 )
 
 [node name="Input" parent="GuiLayer/GamepadHint" index="0"]
-frame = 2
+frame = 1
 
 [node name="AnimatedSprite" parent="GuiLayer/GamepadHint/Input" index="0"]
 scale = Vector2( -1.271, 1.208 )
+frame = 1
+
+[node name="AnimatedSprite4" parent="GuiLayer/GamepadHint/Input" index="1"]
 frame = 2
-
-[node name="AnimatedSprite2" parent="GuiLayer/GamepadHint/Input" index="2"]
-frame = 1
-
-[node name="AnimatedSprite3" parent="GuiLayer/GamepadHint/Input" index="3"]
-frame = 1
 
 [node name="ColorRect" type="ColorRect" parent="GuiLayer/GamepadHint" index="1"]
 material = ExtResource( 5 )

@@ -19,12 +19,16 @@ shader_param/mask = ExtResource( 6 )
 title = "level.ButtonCheckDownLeft.title"
 excerpt = "level.ButtonCheckDownLeft.excerpt"
 link = "level.ButtonCheckDownLeft.link"
-forward_level_path = "res://levels/tutorial/ButtonCheckLeft.tscn"
-skip_victory_screen = true
+excerpt_custom = "Bravo, vous maitrisez désormais les contrôles du jeu !
+
+Il est temps de faire face à votre premier défi...
+
+Ré-écrivez les règles !"
+forward_level_path = "res://levels/tutorial/Tutorial02Level.tscn"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
-tile_data = PoolIntArray( -65537, 36, 0, -131072, 36, 0, -131071, 36, 0, -2, 36, 0, -1, 36, 0, -65536, 36, 0, -65535, 36, 0, 65534, 36, 0, 65535, 34, 0, 0, 40, 0, 1, 36, 0, 2, 36, 0, 131070, 34, 0, 131071, 40, 0, 65536, 34, 0, 65537, 36, 0, 196607, 40, 0, 131072, 34, 0, 131073, 36, 0 )
+tile_data = PoolIntArray( -65537, 36, 0, -131072, 36, 0, -131071, 36, 0, -2, 36, 0, -1, 36, 0, -65535, 36, 0, 65534, 36, 0, 65535, 34, 0, 0, 40, 0, 1, 36, 0, 2, 36, 0, 131070, 34, 0, 131071, 40, 0, 65536, 34, 0, 65537, 36, 0, 196607, 40, 0, 131072, 34, 0, 131073, 36, 0 )
 
 [node name="HexagonalGridLines" parent="." index="3"]
 texture = ExtResource( 9 )
@@ -41,6 +45,7 @@ cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 [node name="Laec" parent="Items" index="0" instance=ExtResource( 3 )]
 position = Vector2( 0, -7.56484 )
 concept_name = "laec"
+direction = "left"
 is_you = true
 
 [node name="Justice" parent="Items" index="1" instance=ExtResource( 3 )]
@@ -94,7 +99,7 @@ tile_position = Vector2( -4, 0 )
 
 [node name="KeyboardArrowsHint" parent="GuiLayer" index="4" instance=ExtResource( 2 )]
 position = Vector2( 179, 110 )
-frame = 2
+frame = 1
 
 [node name="PressHint" type="Control" parent="GuiLayer/KeyboardArrowsHint" index="0"]
 show_behind_parent = true
@@ -163,6 +168,7 @@ frame = 2
 
 [node name="GamepadHint" parent="GuiLayer" index="6" instance=ExtResource( 8 )]
 position = Vector2( 734, 129 )
+scale = Vector2( 0.62, 0.62 )
 
 [node name="ColorRect3" type="ColorRect" parent="GuiLayer/GamepadHint" index="0"]
 material = ExtResource( 4 )

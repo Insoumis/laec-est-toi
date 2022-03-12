@@ -121,8 +121,8 @@ var html5_disclaimer_scene_path := "res://guis/HTML5Disclaimer.tscn"
 
 var entrypoint_story_level_scene_path := "res://levels/laec/Chapter1Map.tscn"
 # Don't use a map for tutos, use the first level (we rely on its completion)
-#var entrypoint_tutos_level_scene_path := "res://levels/tutorial/Tutorial01Level.tscn"
-var entrypoint_tutos_level_scene_path := "res://levels/tutorial/ButtonCheckLeft.tscn"
+var entrypoint_tutos_level_scene_path := "res://levels/tutorial/Tutorial01Level.tscn"
+#var entrypoint_tutos_level_scene_path := "res://levels/tutorial/ButtonCheckLeft.tscn"
 var entrypoint_extra_level_scene_path := "res://levels/PhiMap.tscn"
 var entrypoint_tutorial_menu := "res://menus/TutorialMenu.tscn"
 var entrypoint_button_check_level_scene_path := "res://levels/tutorial/ButtonCheckDownLeft.tscn"

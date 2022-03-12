@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/tutorial/TutorialScenario.gd" type="Script" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://effects/ApparitionParticles.tscn" type="PackedScene" id=6]
 [ext_resource path="res://effects/WinParticles.tscn" type="PackedScene" id=7]
 [ext_resource path="res://guis/KeyboardArrowsHint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/gui/hint_move_mask_1.png" type="Texture" id=9]
+[ext_resource path="res://guis/MouseMoveHintMaskShader.tres" type="Shader" id=10]
+[ext_resource path="res://guis/BlinkShaderMaterial.tres" type="Material" id=11]
+[ext_resource path="res://guis/GamepadHint.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Intro"
@@ -213,6 +217,11 @@ tracks/15/keys = {
 } ]
 }
 
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 10 )
+shader_param/flip_h = true
+shader_param/mask = ExtResource( 9 )
+
 [node name="Tutorial01Level" instance=ExtResource( 1 )]
 contribute_to_completion_score = true
 title = "level.Tutorial01Level.title"
@@ -223,7 +232,7 @@ excerpt_custom = "De petits pas pour de petits pions
 LAEC est allé sur la victoire
 Nous avons trouvé un nouveau champion
 A vous maintenant d'écrire votre histoire"
-forward_level_path = "res://levels/TutorialMap.tscn"
+forward_level_path = "res://levels/tutorial/ButtonCheckUpLeft.tscn"
 solution_a = "6666"
 
 [node name="TutorialScenario" type="Node" parent="." index="0"]
@@ -327,10 +336,105 @@ position = Vector2( -64, -9.2276 )
 scale = Vector2( 0.618, 0.618 )
 
 [node name="MoveHint" parent="Hud" index="2" instance=ExtResource( 3 )]
-position = Vector2( -409.699, -182.961 )
+position = Vector2( -219.656, 160.966 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="KeyboardArrowsHint" parent="Hud" index="3" instance=ExtResource( 8 )]
-position = Vector2( 64.8263, 215.934 )
-scale = Vector2( 0.618, 0.618 )
+[node name="Input" parent="Hud/MoveHint" index="0"]
 frame = 2
+
+[node name="Arrows" parent="Hud/MoveHint" index="1"]
+frame = 2
+
+[node name="ArrowLeft" parent="Hud/MoveHint" index="2"]
+visible = false
+frame = 2
+
+[node name="ArrowRight" parent="Hud/MoveHint" index="3"]
+frame = 2
+
+[node name="ArrowTopLeft" parent="Hud/MoveHint" index="4"]
+visible = false
+frame = 0
+
+[node name="ArrowBottomLeft" parent="Hud/MoveHint" index="5"]
+visible = false
+frame = 2
+
+[node name="ArrowBottomRight" parent="Hud/MoveHint" index="6"]
+visible = false
+frame = 2
+
+[node name="ArrowTopRight" parent="Hud/MoveHint" index="7"]
+visible = false
+frame = 2
+
+[node name="KeyboardArrowsHint" parent="Hud" index="3" instance=ExtResource( 8 )]
+position = Vector2( 356.154, 174.215 )
+scale = Vector2( 0.618, 0.618 )
+
+[node name="PressHint" type="Control" parent="Hud/KeyboardArrowsHint" index="0"]
+show_behind_parent = true
+margin_left = 319.0
+margin_top = 174.0
+margin_right = 359.0
+margin_bottom = 214.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Hud/KeyboardArrowsHint/PressHint" index="0"]
+material = ExtResource( 11 )
+margin_left = -272.0
+margin_top = -178.0
+margin_right = -239.0
+margin_bottom = -142.0
+color = Color( 0.65098, 0.65098, 0.65098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GamepadHint" parent="Hud" index="4" instance=ExtResource( 12 )]
+position = Vector2( -266.971, -169.658 )
+scale = Vector2( 0.62, 0.62 )
+
+[node name="ColorRect3" type="ColorRect" parent="Hud/GamepadHint" index="0"]
+material = ExtResource( 11 )
+margin_left = -16.0
+margin_top = -12.0
+margin_right = -5.0
+margin_bottom = -3.0
+rect_scale = Vector2( 1, 1.14293 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MoveHint" parent="Hud/GamepadHint" index="1" instance=ExtResource( 3 )]
+visible = false
+position = Vector2( -66, -62 )
+
+[node name="Input" parent="Hud/GamepadHint/MoveHint" index="0"]
+visible = false
+
+[node name="Arrows" parent="Hud/GamepadHint/MoveHint" index="1"]
+material = SubResource( 2 )
+position = Vector2( -1, 21 )
+
+[node name="AnimatedSprite" parent="Hud/GamepadHint/Input" index="0"]
+scale = Vector2( -1.271, -1.208 )
+
+[node name="AnimatedSprite4" parent="Hud/GamepadHint/Input" index="1"]
+visible = true
+scale = Vector2( -1.271, 1.208 )
+frame = 2
+
+[node name="AnimatedSprite2" parent="Hud/GamepadHint/Input" index="2"]
+visible = false
+frame = 2
+
+[node name="AnimatedSprite3" parent="Hud/GamepadHint/Input" index="3"]
+frame = 2
+
+[editable path="Hud/MoveHint"]
+[editable path="Hud/GamepadHint"]
+[editable path="Hud/GamepadHint/MoveHint"]

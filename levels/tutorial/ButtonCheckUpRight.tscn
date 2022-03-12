@@ -24,7 +24,7 @@ shader_param/mask = ExtResource( 7 )
 title = "level.ButtonCheckUpRight.title"
 excerpt = "level.ButtonCheckUpRight.excerpt"
 link = "level.ButtonCheckUpRight.link"
-forward_level_path = "res://levels/tutorial/ButtonCheckRight.tscn"
+forward_level_path = "res://levels/tutorial/ButtonCheckDownLeft.tscn"
 skip_victory_screen = true
 
 [node name="HexagonalTileMap" parent="." index="2"]
@@ -44,16 +44,16 @@ cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="Laec" parent="Items" index="0" instance=ExtResource( 3 )]
-position = Vector2( 0, -7.56484 )
-concept_name = "laec"
-is_you = true
-
-[node name="Love" parent="Items" index="1" instance=ExtResource( 3 )]
 position = Vector2( 64, -98.4728 )
-concept_name = "love"
+concept_name = "laec"
 cell_position = Vector2( 2, -2 )
 tile_position = Vector2( 1, -2 )
 is_win = true
+
+[node name="Love" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( 0, -7.56484 )
+concept_name = "love"
+is_you = true
 
 [node name="LoveText" parent="Items" index="2" instance=ExtResource( 3 )]
 position = Vector2( -384, -7.57484 )
@@ -70,11 +70,11 @@ cell_position = Vector2( -6, 1 )
 tile_position = Vector2( -6, 1 )
 
 [node name="WinText" parent="Items" index="4" instance=ExtResource( 3 )]
-position = Vector2( -320, 83.3232 )
+position = Vector2( -96, 219.67 )
 is_text = true
 concept_name = "win"
-cell_position = Vector2( -6, 2 )
-tile_position = Vector2( -5, 2 )
+cell_position = Vector2( -4, 5 )
+tile_position = Vector2( -2, 5 )
 
 [node name="LaecText" parent="Items" index="5" instance=ExtResource( 3 )]
 position = Vector2( -160, 128.772 )
@@ -91,15 +91,14 @@ cell_position = Vector2( -4, 4 )
 tile_position = Vector2( -2, 4 )
 
 [node name="YouText" parent="Items" index="7" instance=ExtResource( 3 )]
-position = Vector2( -96, 219.67 )
+position = Vector2( -320, 83.3232 )
 is_text = true
 concept_name = "you"
-cell_position = Vector2( -4, 5 )
-tile_position = Vector2( -2, 5 )
+cell_position = Vector2( -6, 2 )
+tile_position = Vector2( -5, 2 )
 
 [node name="KeyboardArrowsHint" parent="GuiLayer" index="4" instance=ExtResource( 2 )]
 position = Vector2( 145, 96 )
-frame = 2
 
 [node name="PressHint" type="Control" parent="GuiLayer/KeyboardArrowsHint" index="0"]
 show_behind_parent = true
@@ -117,7 +116,7 @@ margin_left = -272.0
 margin_top = -178.0
 margin_right = -239.0
 margin_bottom = -142.0
-color = Color( 0.396078, 0.396078, 0.396078, 1 )
+color = Color( 0.666667, 0.666667, 0.666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -128,7 +127,7 @@ margin_left = -336.0
 margin_top = -232.0
 margin_right = -303.0
 margin_bottom = -196.0
-color = Color( 0.396078, 0.396078, 0.396078, 1 )
+color = Color( 0.643137, 0.643137, 0.643137, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -136,38 +135,27 @@ __meta__ = {
 [node name="MoveHint" parent="GuiLayer" index="5" instance=ExtResource( 5 )]
 position = Vector2( 886, 420 )
 
-[node name="Input" parent="GuiLayer/MoveHint" index="0"]
-frame = 0
-
 [node name="Arrows" parent="GuiLayer/MoveHint" index="1"]
 material = SubResource( 1 )
-frame = 0
 
 [node name="ArrowLeft" parent="GuiLayer/MoveHint" index="2"]
 visible = false
-frame = 0
 
 [node name="ArrowRight" parent="GuiLayer/MoveHint" index="3"]
 visible = false
-frame = 0
 
 [node name="ArrowTopLeft" parent="GuiLayer/MoveHint" index="4"]
 visible = false
-frame = 1
 
 [node name="ArrowBottomLeft" parent="GuiLayer/MoveHint" index="5"]
 visible = false
-frame = 0
 
 [node name="ArrowBottomRight" parent="GuiLayer/MoveHint" index="6"]
 visible = false
-frame = 0
-
-[node name="ArrowTopRight" parent="GuiLayer/MoveHint" index="7"]
-frame = 0
 
 [node name="GamepadHint" parent="GuiLayer" index="6" instance=ExtResource( 8 )]
 position = Vector2( 734, 129 )
+scale = Vector2( 0.618, 0.618 )
 
 [node name="ColorRect3" type="ColorRect" parent="GuiLayer/GamepadHint" index="0"]
 material = ExtResource( 4 )
@@ -197,40 +185,25 @@ position = Vector2( -53, -56 )
 
 [node name="Input" parent="GuiLayer/GamepadHint/MoveHint" index="0"]
 visible = false
-frame = 0
 
 [node name="Arrows" parent="GuiLayer/GamepadHint/MoveHint" index="1"]
 material = SubResource( 2 )
 position = Vector2( -11, 32 )
-frame = 0
-
-[node name="ArrowLeft" parent="GuiLayer/GamepadHint/MoveHint" index="2"]
-frame = 0
-
-[node name="ArrowRight" parent="GuiLayer/GamepadHint/MoveHint" index="3"]
-frame = 0
-
-[node name="ArrowTopLeft" parent="GuiLayer/GamepadHint/MoveHint" index="4"]
-frame = 1
-
-[node name="ArrowBottomLeft" parent="GuiLayer/GamepadHint/MoveHint" index="5"]
-frame = 0
-
-[node name="ArrowBottomRight" parent="GuiLayer/GamepadHint/MoveHint" index="6"]
-frame = 0
-
-[node name="ArrowTopRight" parent="GuiLayer/GamepadHint/MoveHint" index="7"]
-frame = 0
-
-[node name="Input" parent="GuiLayer/GamepadHint" index="3"]
-frame = 2
 
 [node name="AnimatedSprite" parent="GuiLayer/GamepadHint/Input" index="0"]
 visible = true
 scale = Vector2( -1.271, 1.208 )
+frame = 1
+
+[node name="AnimatedSprite4" parent="GuiLayer/GamepadHint/Input" index="1"]
+frame = 1
 
 [node name="AnimatedSprite2" parent="GuiLayer/GamepadHint/Input" index="2"]
 visible = false
+frame = 1
+
+[node name="AnimatedSprite3" parent="GuiLayer/GamepadHint/Input" index="3"]
+frame = 1
 
 [editable path="GuiLayer/MoveHint"]
 [editable path="GuiLayer/GamepadHint"]
