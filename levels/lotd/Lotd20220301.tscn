@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprites/items/bee_right_0.png" type="Texture" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+trigger_on_turn_if = ""
+trigger_on_victory_if = "not 1 lobby"
+image = ExtResource( 4 )
+snake_identifier = "save_bees"
+title = ""
+title_custom = "On fait les choses bien !"
 
 [node name="Lotd20220301" instance=ExtResource( 1 )]
 title = "level.Lotd20220301.title"
@@ -12,6 +23,7 @@ excerpt_custom = "Néonicotinoïdes, sucres, choix irresponsables et coûts irr�
 
 La mort des abeilles nous tuera.
 Pas celle des profits de Sugar Daddy."
+achievement_a = SubResource( 1 )
 solution_a = "4141139394979933774443331679000397997134446631314444447777976963336669631777779"
 
 [node name="Camera2D" parent="." index="0"]
@@ -340,3 +352,6 @@ is_text = true
 concept_name = "shut"
 cell_position = Vector2( 7, 5 )
 tile_position = Vector2( 9, 5 )
+
+[node name="Chronometer" parent="Tools" index="0"]
+measure_turn_spending = true
