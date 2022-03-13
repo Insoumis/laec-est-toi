@@ -47,6 +47,20 @@ But, as a level designer, you will see them all.  Brace yourselves!
 Report them, fix them, bypass them…   Be creative, and most importantly: _DON'T PANIC_.
 
 
+## GOD IS YOU
+
+_You make the game._
+
+1. Download [Godot 3](https://godotengine.org/download/),
+2. Download [the source](https://framagit.org/laec-is-you/laec-is-you/-/archive/master/laec-is-you-master.zip) and unzip it somewhere.  Even better, `git clone https://framagit.org/laec-is-you/laec-is-you.git` to be able to publish your changes !
+3. Run Godot.
+4. Open this project.
+5. Click on `YOU MAKE LAEC` at the top
+6. Enjoy!
+
+> Remember to request a merge of your additions, so that everyone can enjoy them!
+
+
 ### YOU MAKE LEVEL
 
 #### Ingame Editor
@@ -56,27 +70,14 @@ Click on `YOU` in the start menu.  Then click `NEW`.
 
 #### Advanced
 
-Click on `YOU MAKE LAEC` in the top dock.
-Click on `MAKE NEW LEVEL`.  Save your level somewhere in `levels/`.
-
-##### Old way
-
-Go to `Scene > New inherited scene`, choose `core/Level.tscn`.
-
-In the Inspector, on the right, select a map scene, and set a title and subtitle.
-
-Select the `Items` layer node, right-click on it, and instance a child scene from `core/Item.tscn`.
-
-You can duplicate the Item child scenes, change their concepts,
-move them around, and hit REFRESH in the top dock of the 2D Editor.
-
-
-Save your scene somewhere in `levels/`.
-
+1. Run Godot, open this project.
+2. Click on `YOU MAKE LAEC` in the top dock.
+3. Click on `MAKE NEW LEVEL`.  Save your level somewhere in `levels/`.
+4. Watch a video: todo
 
 ---
 
-You can also make a new map, or submaps.
+You can also make a new map, or submaps.  A map is a level like any other, it just holds portals.
 
 
 ### YOU MAKE ART
@@ -91,46 +92,74 @@ Things are in the directory `sprites/items`.
   → should blow up pretty quick, since it will create many items on each turn
 
 
-## GOD IS YOU
+## GAME IS OPEN
 
-_You make the game._
+This game is governed by an enlightened heterarchy, but not in anomy.  _There are rules._
 
-1. Download [Godot 3](https://godotengine.org/download/),
-2. Download [the source](https://framagit.org/laec-is-you/laec-is-you/-/archive/master/laec-is-you-master.zip) and unzip it somewhere.  Even better, `git clone https://framagit.org/laec-is-you/laec-is-you.git` to be able to publish your changes !
-3. Run Godot.
-4. Open this project.
-5. Follow instructions.
-6. Enjoy!
+### 1. Radical Inclusion
+This game must be safe to play and contribute to by anyone, of any age.
 
-> Remember to request a merge of your additions, so that everyone can enjoy them!
+### 2. Gifting
+What you do here, unless specified otherwise, will be licensed `CC0`.
+The value of a gift is unconditional.
+Gifting does not contemplate a return or an exchange for something of equal value.
 
+### 3. Decommodification
+We're not here to make money.   That means no advertisements, sponsorships, etc.
+We stand ready to protect our culture from such exploitation.
+We resist the substitution of consumption for participatory experience.
 
-## CONFIG IS OPEN
+### 4. Radical Self-reliance
+We encourage the individual to discover, exercise and rely on their inner resources.
+You have everything you need right in front of you.    _Just do it !    Do it now !_
 
-Godot allows overriding any part of our `project.godot` file, including (but not limited to) the actions shortcuts.
+### 5. Radical Self-expression
+No one other than the individual or a collaborating group can determine its content.
+You are encouraged to express your unique gifts, in the respect of the rights and liberties of your recipients.
 
-Create an `override.cfg` file with the parts of the `project.godot` you wish to verride, and put it right next to the distributed binary.
+### 6. Communal Effort
+We're all in this together, hurtling through space at speeds beyond madness.
 
-Refer to the [Godot documentation](https://docs.godotengine.org/fr/stable/classes/class_projectsettings.html) about this feature.
+### 7. Civic Responsibility
+We believe in civil society, heterarchic structures, and harmony between beings and with nature.
+Yet here we are, individualists and collectivists of the 99%, on the raggedy edge of our sovereignty…    Don't push me, and I won't push you.
+
+### 8. Leaving No Trace
+This game shifts like dunes in the desert.   What we do here may not be there in the morrow.
+If you see Bits Out Of Place, please bring them to their optimal location, or flag them as `BOOP`.
+
+### 9. Participation
+Our community is committed to a radically participatory ethic.
+We believe that transformative change, whether in the individual or in society, can occur only through the medium of deeply personal participation.
+We achieve being through doing.   Everyone is invited to work.   Everyone is invited to play.
+
+### 10. Immediacy
+Don't be afraid to break the game.  It's OK.  It's actually quite hilarious.
+Expect some unexpected.   Best start right now !
 
 
 ## CODE IS CLOSE
 
 _Just kidding._  The code is **WTFPL**.
-That means you may do _whatever the fork you want_ with it, _except complain_.
+That means you may do _Whatever The Fork you want_ with it, _except complain_.
+The codebase is very immature and prototypal in many aspects, not really up to the standards of open-source.
+It is still considered very fluid, and we'd love to hear how you think it should evolve.
+We'd love to make adding new concepts easier, but that means extensive changes,
+so this refactorization is a good collective jam candidate. (someday?)
+
 The license of the sprite assets is CC0.
 Godot Game Engine is MIT.
 
 
-## SOUND IS STOP TROLL
+## SOUND WITH TROLL IS STOP
 
-The sound assets (original soundtrack) are copyrighted by _@precheurius_.
+The sound assets (original soundtrack and beeps) are copyrighted by _@precheurius_ and _@Wilfried_.
 **You may not use tham without permission.**
 
 
 ## PUBLIC HAS LOVE
 
-> [Le Discord Insoumis](http://discord-insoumis.fr/)
+> Tout se passe sur **[Le Discord Insoumis](http://discord-insoumis.fr/)**
 
 - Fanelia (💃🎨) _Enthusiasm_
 - Trollune (👽⌨) _Code Design_
@@ -151,7 +180,7 @@ The sound assets (original soundtrack) are copyrighted by _@precheurius_.
 - Koten (🧟🧶) _Nature & Bees_
 - Wilfried (🧸🎙) _Sound Design_
 - Gobz (⚡🏋🏾‍) _Touillage_
-- JeanSebastienBachOfficiel (🍏🎻) _Alpha Testing_
+- JeanSebastienBachOfficiel (🍏🎻) _Testing & Jokes_
 
 
 Special thanks to our parents and extended families for beta-testing the game and for their unwavering support.
@@ -161,8 +190,11 @@ Special thanks to our parents and extended families for beta-testing the game an
 
 Mostly people who unwittingly contributed to the project.
 
+- La France Insoumise
 - Baba Is You
+- Baba Is You Discord Community
 - Godot Game Engine Contributors
 - Kenney (CC0 assets from https://kenney.nl/)
 - La Riot Insoumise
+- Milou
 
