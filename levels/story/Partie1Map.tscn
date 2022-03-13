@@ -82,7 +82,15 @@ level_path = "res://levels/story/Partie1/5JusticeAuNomDuPeuple7.tscn"
 dependency_a = NodePath("../PortalFour")
 title = "Chapitre Dix"
 
-[node name="Laec" parent="Items" index="8" instance=ExtResource( 3 )]
+[node name="PortalFive2" parent="Items" index="8" instance=ExtResource( 5 )]
+position = Vector2( 288, 128.772 )
+cell_position = Vector2( 3, 3 )
+tile_position = Vector2( 4, 3 )
+warp = true
+level_path = "res://levels/story/Partie2Map.tscn"
+title_override = "Partie 2"
+
+[node name="Laec" parent="Items" index="9" instance=ExtResource( 3 )]
 position = Vector2( -256, -189.361 )
 concept_name = "laec"
 cell_position = Vector2( -2, -4 )

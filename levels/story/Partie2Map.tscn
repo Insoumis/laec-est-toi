@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Sign.gd" type="Script" id=2]
+[ext_resource path="res://core/Portal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Sign.tscn" type="PackedScene" id=4]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=5]
+
+[node name="Partie2Map" instance=ExtResource( 1 )]
+title = "level.Partie2Map.title"
+excerpt = "level.Partie2Map.excerpt"
+link = "level.Partie2Map.link"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -196613, 31, 0, -196612, 31, 0, -196611, 31, 0, -196610, 31, 0, -196609, 31, 0, -262144, 31, 0, -262143, 31, 0, -262142, 32, 0, -262141, 32, 0, -262140, 32, 0, -131078, 31, 0, -196608, 31, 0, -196607, 30, 0, -196606, 30, 0, -196605, 30, 0, -196604, 30, 0, -65541, 31, 0, -65540, 35, 0, -65539, 35, 0, -65538, 35, 0, -65537, 35, 0, -131072, 35, 0, -131071, 35, 0, -131070, 31, 0, -131069, 31, 0, -131068, 31, 0, -131067, 31, 0, -6, 31, 0, -5, 31, 0, -4, 31, 0, -3, 35, 0, -1, 35, 0, -65536, 30, 0, -65535, 31, 0, 65532, 31, 0, 65533, 29, 0, 65534, 35, 0, 0, 35, 0, 1, 31, 0, 131067, 32, 0, 131068, 31, 0, 131069, 29, 0, 131070, 35, 0, 65536, 35, 0, 196603, 32, 0, 196604, 32, 0, 196605, 31, 0, 196606, 29, 0, 196607, 35, 0, 131073, 35, 0, 262140, 32, 0, 262141, 31, 0, 262142, 31, 0, 262143, 35, 0, 196609, 35, 0, 327678, 35, 0, 327679, 35, 0, 262144, 35, 0, 262145, 35, 0, 262146, 35, 0, 262147, 35, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="Portal" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( -192, -98.4729 )
+cell_position = Vector2( -2, -2 )
+tile_position = Vector2( -3, -2 )
+level_path = "res://levels/story/Partie2/1Bifurcation13.tscn"
+title = "Chapitre Trois"
+
+[node name="Portal2" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( -64, -98.4729 )
+cell_position = Vector2( 0, -2 )
+tile_position = Vector2( -1, -2 )
+level_path = "res://levels/story/Partie2/2Renouvelable19.tscn"
+dependency_a = NodePath("../Portal")
+title = "Chapitre Trois"
+
+[node name="Portal3" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( 64, -98.4729 )
+cell_position = Vector2( 2, -2 )
+tile_position = Vector2( 1, -2 )
+level_path = "res://levels/story/Partie2/3EnjeuEau25.tscn"
+dependency_a = NodePath("../Portal2")
+title = "Chapitre Trois"
+
+[node name="LaecText" parent="Items" index="3" instance=ExtResource( 5 )]
+position = Vector2( 224, 37.8742 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( 3, 1 )
+tile_position = Vector2( 3, 1 )
+
+[node name="Laec" parent="Items" index="4" instance=ExtResource( 5 )]
+position = Vector2( -160, 37.8842 )
+concept_name = "laec"
+cell_position = Vector2( -3, 1 )
+tile_position = Vector2( -3, 1 )
+is_you = true
+
+[node name="IsText" parent="Items" index="5" instance=ExtResource( 5 )]
+position = Vector2( 288, 37.8742 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 4, 1 )
+tile_position = Vector2( 4, 1 )
+
+[node name="YouText" parent="Items" index="6" instance=ExtResource( 5 )]
+position = Vector2( 352, 37.8742 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 5, 1 )
+tile_position = Vector2( 5, 1 )
+
+[node name="Sign" type="Node2D" parent="Items" index="7" instance=ExtResource( 4 )]
+position = Vector2( 192, 174.221 )
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Revenez plus tard !"
+}
+cell_position = Vector2( 1, 4 )
+tile_position = Vector2( 3, 4 )
