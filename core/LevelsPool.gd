@@ -1,3 +1,4 @@
+tool
 extends Node
 class_name LevelsPoolClass  # singleton could be LevelsPool
 
@@ -76,21 +77,6 @@ func _exit_tree():
 	clear()
 
 
-func __set_level_path_regex(value):
-	level_path_regex = value  # not self.… !
-	rebuild_regexes()
-
-
-func __set_excluded_level_path_regex(value):
-	excluded_level_path_regex = value  # not self.… !
-	rebuild_regexes()
-
-
-func __set_map_path_regex(value):
-	map_path_regex = value  # not self.… !
-	rebuild_regexes()
-
-
 func init_full():  # expensive
 	return init(true)
 
@@ -121,9 +107,9 @@ func save_cache_to_file() -> int:
 		self.cache_file_path,
 		self.cache,
 		0
-#		&
+#		||
 #		ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS
-#		&
+#		||
 #		ResourceSaver.FLAG_CHANGE_PATH
 	)
 	if saved != OK:
@@ -150,56 +136,13 @@ func clear():
 	self.cache.clear()
 
 
-func build_regex_path_prefix() -> String:
-	var r := "("
-	var first_prefix := true
-	for source_directory in self.source_directories:
-		r += source_directory  # how to escape for regex?  FIXME
-		if not first_prefix:
-			r += "|"
-		else:
-			first_prefix = false
-	for user_directory in self.user_directories:
-		r += user_directory  # how to escape for regex?  FIXME
-		if not first_prefix:
-			r += "|"
-		else:
-			first_prefix = false
-	r += ")"
-	
-	return r
-
-
-func rebuild_regexes():
-	var path_prefix := build_regex_path_prefix()
-	var err: int # : Error
-	__level_path_regex = RegEx.new()
-	err = __level_path_regex.compile(path_prefix + self.level_path_regex)
-	if err != OK:
-		printerr("Failed to compile regex `%s`." % path_prefix + self.level_path_regex)
-	
-	__excluded_level_path_regex = RegEx.new()
-	err = __excluded_level_path_regex.compile(
-		path_prefix 
-		+
-		self.excluded_level_path_regex
-	)
-	if err != OK:
-		printerr("Failed to compile regex `%s`." % path_prefix + self.excluded_level_path_regex)
-	
-	__map_path_regex = RegEx.new()
-	err = __map_path_regex.compile(
-		path_prefix
-		+
-		self.map_path_regex
-	)
-	if err != OK:
-		printerr("Failed to compile regex `%s`." % path_prefix + self.map_path_regex)
-
-
 func reindex_levels(refresh_existing := true):
-#	self.packed_levels.clear()
-	self.cache = LevelsPoolCache.new()
+	"""
+	If refresh_existing is false, only newfound levels will be opened, analyzed and indexed.
+	This parameter is basically equivalent to `invalidate_cache`, I believe.
+	"""
+	if refresh_existing:
+		self.cache = LevelsPoolCache.new()
 	
 	for source_directory in self.source_directories:
 		add_levels_in_directory(
@@ -307,17 +250,13 @@ func add_level(filepath: String, refresh_existing := true):
 
 	level.is_in_score = level_instance.contribute_to_completion_score
 	level.title = level_instance.get_title_displayed()
-#	level.portals = 
 	
 	for portal_scene in level_instance.get_portals():
 		var portal = PortalResource.new()
 		portal.target_level_path = portal_scene.level_path
 		level.portals.append(portal)
-		# I don't think we need those like this
-#		var level_link = LevelLink.new()
-#		level_link.from = filepath
-#		level_link.to = portal_scene.level_path
-#		self.cache.levels_links.append(level_link)
+	
+	# … grab more data from the level here, such as available concepts, their tallies, etc.
 
 	self.cache.levels[filepath] = level
 	
@@ -399,3 +338,68 @@ func reindex_orphanness():
 				])
 				continue
 			self.cache.levels[portal.target_level_path].parents.append(parent_level)
+
+
+## REGEXES #####################################################################
+
+func __set_level_path_regex(value):
+	level_path_regex = value  # not self.… !
+	rebuild_regexes()
+
+
+func __set_excluded_level_path_regex(value):
+	excluded_level_path_regex = value  # not self.… !
+	rebuild_regexes()
+
+
+func __set_map_path_regex(value):
+	map_path_regex = value  # not self.… !
+	rebuild_regexes()
+
+
+func build_regex_path_prefix() -> String:
+	var r := "("
+	var first_prefix := true
+	for source_directory in self.source_directories:
+		r += source_directory  # how to escape for regex?  FIXME
+		if not first_prefix:
+			r += "|"
+		else:
+			first_prefix = false
+	for user_directory in self.user_directories:
+		r += user_directory  # how to escape for regex?  FIXME
+		if not first_prefix:
+			r += "|"
+		else:
+			first_prefix = false
+	r += ")"
+	
+	return r
+
+
+func rebuild_regexes() -> void:
+	var path_prefix := build_regex_path_prefix()
+	var err: int # : Error
+	__level_path_regex = RegEx.new()
+	err = __level_path_regex.compile(path_prefix + self.level_path_regex)
+	if err != OK:
+		printerr("Failed to compile regex `%s`." % path_prefix + self.level_path_regex)
+	
+	__excluded_level_path_regex = RegEx.new()
+	err = __excluded_level_path_regex.compile(
+		path_prefix 
+		+
+		self.excluded_level_path_regex
+	)
+	if err != OK:
+		printerr("Failed to compile regex `%s`." % path_prefix + self.excluded_level_path_regex)
+	
+	__map_path_regex = RegEx.new()
+	err = __map_path_regex.compile(
+		path_prefix
+		+
+		self.map_path_regex
+	)
+	if err != OK:
+		printerr("Failed to compile regex `%s`." % path_prefix + self.map_path_regex)
+

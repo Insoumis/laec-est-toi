@@ -2711,6 +2711,18 @@ func get_things_piled_with(item, including_item:=false) -> Array:
 	return piled_things
 
 
+func get_items_around(item) -> Array:
+	var aura_items := Array()
+	var cells = self.cell_lattice.get_adjacent_cells_positions(item.cell_position)
+	# an option to also include the item's own tile? 
+	#cells.append(item.cell_position)
+	for cell in cells:
+		var neighbors = self.cell_lattice.find_on_cell(cell)
+		for neighbor in neighbors:
+			aura_items.append(neighbor)
+	
+	return aura_items
+
 
 # __      ___      _
 # \ \    / (_)    | |
@@ -3032,9 +3044,13 @@ func apply_genie_effect() -> bool:
 	var items_engineered := Array()
 	for genie in get_things_with_qualities({Words.QUALITY_GENIE: true}):
 		var piled_items := get_items_piled_with(genie, false)
-		for other_item in piled_items:
+		var aura_items := get_items_around(genie)
+		for other_item in (piled_items + aura_items):
 			assert(other_item != genie)
 			if not other_item.is_text:
+				continue
+			if not other_item.is_thing:
+				# What should a genie do on verbs and such?
 				continue
 			other_item.is_text = false
 			other_item.is_lit = true

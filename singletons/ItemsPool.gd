@@ -278,7 +278,7 @@ func get_items_sorted_for_editor():
 func get_item_by_concept_full(concept_full: String) -> PoolItem:
 	if self.items_by_concept.has(concept_full):
 		return self.items_by_concept[concept_full]
-	breakpoint  # comment me if trouble
+	#breakpoint  # comment me if trouble
 	return self.items_by_concept['undefined']
 
 
