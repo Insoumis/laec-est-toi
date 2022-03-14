@@ -1303,9 +1303,12 @@ func try_undo() -> bool:
 	emit_signal("before_action_undoed")
 	var action = UndoAction.new()
 	self.actions_history.append(action)
-	undo()
-	emit_signal("after_action_undoed")
-	emit_signal("after_action_executed", action)
+	undo()  # /!. calls stuff deferred
+#	emit_signal("after_action_undoed")
+#	emit_signal("after_action_executed", action)
+	# so we defer signals as well, and hope for the best
+	call_deferred("emit_signal", "after_action_undoed")
+	call_deferred("emit_signal", "after_action_executed", action)
 	return true
 
 

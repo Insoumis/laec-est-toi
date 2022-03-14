@@ -118,6 +118,8 @@ func update_position():
 		hint_move(Directions.UP_RIGHT)
 	elif self.level.CHARS_UNDO.has(next_action_char):
 		hint_undo()
+	else:
+		breakpoint  # unrecognized char?   PoM
 
 
 func find_first_item_that_is_you():
