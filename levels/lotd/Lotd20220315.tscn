@@ -11,7 +11,7 @@ trigger_on_turn_if = "laec on deluxe"
 trigger_on_victory_if = ""
 image = ExtResource( 4 )
 snake_identifier = "requisition"
-title = ""
+title = "level.Lotd20220315.requisition.title"
 title_custom = "Saisie !"
 
 [node name="Lotd20220315" instance=ExtResource( 1 )]
@@ -28,13 +28,13 @@ solution_a = "7177636535595556555353636666"
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -196612, 10, 0, -196611, 10, 0, -196610, 10, 0, -131077, 10, 0, -131076, 10, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -196605, 5, 0, -196604, 5, 0, -65541, 10, 0, -65539, 10, 0, -65538, 10, 0, -65537, 10, 0, -131072, 10, 0, -131071, 10, 0, -131070, 10, 0, -131069, 10, 0, -131068, 10, 0, -131067, 5, 0, -5, 10, 0, -4, 10, 0, -3, 10, 0, -2, 10, 0, -1, 10, 0, -65536, 10, 0, -65535, 10, 0, -65534, 10, 0, -65533, 10, 0, -65532, 5, 0, 65531, 10, 0, 65532, 10, 0, 65533, 10, 0, 65534, 10, 0, 65535, 10, 0, 0, 4, 0, 1, 10, 0, 2, 10, 0, 3, 10, 0, 4, 10, 0, 5, 5, 0, 6, 5, 0, 131067, 10, 0, 131068, 10, 0, 131069, 10, 0, 131070, 10, 0, 131071, 10, 0, 65536, 10, 0, 65537, 10, 0, 65538, 10, 0, 65539, 5, 0, 65540, 5, 0, 65541, 5, 0, 65542, 5, 0, 196604, 10, 0, 196605, 10, 0, 196606, 10, 0, 196607, 10, 0, 131072, 10, 0, 131073, 10, 0, 131074, 10, 0, 131075, 5, 0, 262140, 10, 0, 262141, 10, 0, 262142, 10, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
@@ -44,14 +44,14 @@ concept_name = "laec"
 cell_position = Vector2( -4, 1 )
 tile_position = Vector2( -4, 1 )
 
-[node name="Laec" parent="Items" index="1" instance=ExtResource( 3 )]
-position = Vector2( -32, -53.0139 )
+[node name="Laec2" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( -32, -53.0239 )
 concept_name = "laec"
 cell_position = Vector2( 0, -1 )
 tile_position = Vector2( -1, -1 )
 is_you = true
 
-[node name="Laec2" parent="Items" index="2" instance=ExtResource( 3 )]
+[node name="Laec" parent="Items" index="2" instance=ExtResource( 3 )]
 position = Vector2( -96, -53.0139 )
 concept_name = "laec"
 cell_position = Vector2( -1, -1 )
