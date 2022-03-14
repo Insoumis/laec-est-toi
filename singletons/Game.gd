@@ -119,7 +119,8 @@ var input_mapper_config := [
 
 var html5_disclaimer_scene_path := "res://guis/HTML5Disclaimer.tscn"
 
-var entrypoint_story_level_scene_path := "res://levels/laec/Chapter1Map.tscn"
+#var entrypoint_story_level_scene_path := "res://levels/laec/Chapter1Map.tscn"
+var entrypoint_story_level_scene_path := "res://levels/story/Partie1Map.tscn"
 # Don't use a map for tutos, use the first level (we rely on its completion)
 var entrypoint_tutos_level_scene_path := "res://levels/tutorial/Tutorial01Level.tscn"
 #var entrypoint_tutos_level_scene_path := "res://levels/tutorial/ButtonCheckLeft.tscn"

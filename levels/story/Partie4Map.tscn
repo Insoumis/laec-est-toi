@@ -65,7 +65,7 @@ cell_position = Vector2( 2, 4 )
 tile_position = Vector2( 4, 4 )
 warp = true
 level_path = "res://levels/story/Partie5Map.tscn"
-title = "Partie Cinq"
+title = "Biens Communs"
 
 [node name="Portal2" parent="Items" index="6" instance=ExtResource( 5 )]
 position = Vector2( -64, -7.57484 )

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
-[ext_resource path="res://addons/laec-is-you/entity/Portal.gd" type="Script" id=2]
 [ext_resource path="res://core/Portal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=5]
 
@@ -9,6 +8,7 @@
 title = "level.Partie2Map.title"
 excerpt = "level.Partie2Map.excerpt"
 link = "level.Partie2Map.link"
+title_custom = "Sûreté & Justice"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
@@ -74,10 +74,10 @@ concept_name = "you"
 cell_position = Vector2( 5, 1 )
 tile_position = Vector2( 5, 1 )
 
-[node name="Portal4" type="Node2D" parent="Items" index="7" instance=ExtResource( 3 )]
+[node name="Portal4" parent="Items" index="7" instance=ExtResource( 3 )]
 position = Vector2( 192, 174.221 )
-script = ExtResource( 2 )
 cell_position = Vector2( 1, 4 )
 tile_position = Vector2( 3, 4 )
 warp = true
 level_path = "res://levels/story/Partie3Map.tscn"
+title = "Planification Écologique"

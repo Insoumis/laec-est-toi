@@ -8,6 +8,7 @@
 title = "level.Partie1Map.title"
 excerpt = "level.Partie1Map.excerpt"
 link = "level.Partie1Map.link"
+title_custom = "Démocratie"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
@@ -88,6 +89,7 @@ cell_position = Vector2( 3, 3 )
 tile_position = Vector2( 4, 3 )
 warp = true
 level_path = "res://levels/story/Partie2Map.tscn"
+title = "Sûreté & Justice"
 title_override = "Partie 2"
 
 [node name="Laec" parent="Items" index="9" instance=ExtResource( 3 )]

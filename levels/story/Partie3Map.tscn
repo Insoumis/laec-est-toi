@@ -8,6 +8,7 @@
 title = "level.Partie3Map.title"
 excerpt = "level.Partie3Map.excerpt"
 link = "level.Partie3Map.link"
+title_custom = "Planification Écologique"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
