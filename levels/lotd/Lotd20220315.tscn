@@ -18,42 +18,45 @@ title_custom = "Saisie !"
 title = "level.Lotd20220315.title"
 excerpt = "level.Lotd20220315.excerpt"
 link = "level.Lotd20220315.link"
-title_custom = "NIveau du 15 Mars"
+title_custom = "Niveau du 15 Mars"
 excerpt_custom = "La ploutocratie dégénérée
-Menace de tout faire sauter."
+Menace de tout faire sauter
+À l'idée de partager
+Un petit peu de souveraineté."
 achievement_a = SubResource( 1 )
 solution_a = "7177636535595556555353636666"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
-tile_data = PoolIntArray( -196612, 10, 0, -196611, 10, 0, -196610, 10, 0, -131077, 10, 0, -131076, 10, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -196605, 5, 0, -196604, 5, 0, -65541, 10, 0, -65539, 10, 0, -65538, 10, 0, -65537, 10, 0, -131072, 10, 0, -131071, 10, 0, -131070, 10, 0, -131069, 10, 0, -131068, 10, 0, -131067, 5, 0, -5, 10, 0, -4, 10, 0, -3, 10, 0, -2, 10, 0, -1, 10, 0, -65536, 10, 0, -65535, 10, 0, -65534, 10, 0, -65533, 10, 0, -65532, 5, 0, 65531, 10, 0, 65532, 10, 0, 65533, 10, 0, 65534, 10, 0, 65535, 10, 0, 0, 4, 0, 1, 10, 0, 2, 10, 0, 3, 10, 0, 4, 10, 0, 5, 5, 0, 6, 5, 0, 131067, 10, 0, 131068, 10, 0, 131069, 10, 0, 131070, 10, 0, 131071, 10, 0, 65536, 10, 0, 65537, 10, 0, 65538, 10, 0, 65539, 5, 0, 65540, 5, 0, 65541, 5, 0, 65542, 5, 0, 196604, 10, 0, 196605, 10, 0, 196606, 10, 0, 196607, 10, 0, 131072, 10, 0, 131073, 10, 0, 131074, 10, 0, 131075, 5, 0, 262140, 10, 0, 262141, 10, 0, 262142, 10, 0 )
+tile_data = PoolIntArray( -196612, 10, 0, -196611, 10, 0, -196610, 10, 0, -131077, 35, 0, -131076, 35, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -196605, 5, 0, -196604, 5, 0, -65541, 35, 0, -65539, 35, 0, -65538, 35, 0, -65537, 35, 0, -131072, 35, 0, -131071, 35, 0, -131070, 10, 0, -131069, 10, 0, -131068, 10, 0, -131067, 5, 0, -5, 35, 0, -4, 35, 0, -3, 38, 0, -2, 35, 0, -1, 35, 0, -65536, 38, 0, -65535, 35, 0, -65534, 10, 0, -65533, 10, 0, -65532, 5, 0, 65531, 10, 0, 65532, 10, 0, 65533, 35, 0, 65534, 35, 0, 65535, 35, 0, 0, 35, 0, 1, 35, 0, 2, 35, 0, 3, 10, 0, 4, 10, 0, 5, 5, 0, 6, 5, 0, 131067, 10, 0, 131068, 10, 0, 131069, 10, 0, 131070, 10, 0, 131071, 10, 0, 65536, 35, 0, 65537, 35, 0, 65538, 35, 0, 65539, 5, 0, 65540, 5, 0, 65541, 5, 0, 65542, 5, 0, 196604, 10, 0, 196605, 10, 0, 196606, 10, 0, 196607, 10, 0, 131072, 10, 0, 131073, 35, 0, 131074, 35, 0, 131075, 5, 0, 262140, 35, 0, 262141, 35, 0, 262142, 35, 0 )
 
 [node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+tile_data = PoolIntArray( -1245204, 37, 0, -983080, 32, 0, -917476, 3, 0, -196558, 14, 0, 458784, 29, 0, 589862, 28, 0, 655405, 27, 0, 1114131, 3, 0, 1179672, 29, 0 )
 
 [node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
+[node name="AnarText" parent="Items" index="0" instance=ExtResource( 3 )]
 position = Vector2( -224, 37.8742 )
 is_text = true
-concept_name = "laec"
+concept_name = "anar"
 cell_position = Vector2( -4, 1 )
 tile_position = Vector2( -4, 1 )
 
-[node name="Laec2" parent="Items" index="1" instance=ExtResource( 3 )]
-position = Vector2( -32, -53.0239 )
-concept_name = "laec"
+[node name="Anar" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( -32, -53.0139 )
+concept_name = "anar"
 cell_position = Vector2( 0, -1 )
 tile_position = Vector2( -1, -1 )
 is_you = true
 
-[node name="Laec" parent="Items" index="2" instance=ExtResource( 3 )]
+[node name="Anar2" parent="Items" index="2" instance=ExtResource( 3 )]
 position = Vector2( -96, -53.0139 )
-concept_name = "laec"
+concept_name = "anar"
 cell_position = Vector2( -1, -1 )
 tile_position = Vector2( -2, -1 )
 is_you = true
@@ -135,35 +138,35 @@ tile_position = Vector2( 3, -3 )
 is_weak = true
 is_boom = true
 
-[node name="Deluxe" parent="Items" index="13" instance=ExtResource( 3 )]
+[node name="Science" parent="Items" index="13" instance=ExtResource( 3 )]
 position = Vector2( 288, -143.922 )
-concept_name = "deluxe"
+concept_name = "science"
 cell_position = Vector2( 6, -3 )
 tile_position = Vector2( 4, -3 )
 
-[node name="Deluxe2" parent="Items" index="14" instance=ExtResource( 3 )]
+[node name="Deluxe" parent="Items" index="14" instance=ExtResource( 3 )]
 position = Vector2( 320, -98.4729 )
 concept_name = "deluxe"
 cell_position = Vector2( 6, -2 )
 tile_position = Vector2( 5, -2 )
 
-[node name="Deluxe3" parent="Items" index="15" instance=ExtResource( 3 )]
+[node name="Home" parent="Items" index="15" instance=ExtResource( 3 )]
+position = Vector2( 384, -7.57484 )
+concept_name = "home"
+cell_position = Vector2( 6, 0 )
+tile_position = Vector2( 6, 0 )
+
+[node name="Money" parent="Items" index="16" instance=ExtResource( 3 )]
 position = Vector2( 288, -53.0239 )
-concept_name = "deluxe"
+concept_name = "money"
 cell_position = Vector2( 5, -1 )
 tile_position = Vector2( 4, -1 )
 
-[node name="Deluxe4" parent="Items" index="16" instance=ExtResource( 3 )]
+[node name="Europe" parent="Items" index="17" instance=ExtResource( 3 )]
 position = Vector2( 320, -7.57484 )
-concept_name = "deluxe"
+concept_name = "europe"
 cell_position = Vector2( 5, 0 )
 tile_position = Vector2( 5, 0 )
-
-[node name="Deluxe5" parent="Items" index="17" instance=ExtResource( 3 )]
-position = Vector2( 384, -7.57484 )
-concept_name = "deluxe"
-cell_position = Vector2( 6, 0 )
-tile_position = Vector2( 6, 0 )
 
 [node name="Monarc4" parent="Items" index="18" instance=ExtResource( 3 )]
 position = Vector2( 224, 37.8744 )

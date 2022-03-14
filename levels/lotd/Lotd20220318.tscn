@@ -19,13 +19,13 @@ solution_a = "666997797455353535651577411477661113666666666"
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -262144, 7, 0, -131077, 7, 0, -196605, 7, 0, -131072, 6, 0, -5, 6, 0, -3, 21, 0, -2, 21, 0, -1, 6, 0, -65536, 6, 0, -65535, 21, 0, -65534, 21, 0, -65533, 6, 0, -65532, 20, 0, 65531, 6, 0, 65532, 6, 0, 65533, 21, 0, 65534, 21, 0, 65535, 6, 0, 0, 6, 0, 1, 6, 0, 2, 21, 0, 3, 6, 0, 4, 6, 0, 5, 20, 0, 131066, 6, 0, 131067, 6, 0, 131068, 6, 0, 131069, 21, 0, 131070, 21, 0, 131071, 6, 0, 65536, 6, 0, 65537, 21, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 196602, 20, 0, 196603, 6, 0, 196604, 6, 0, 196605, 21, 0, 196607, 21, 0, 131072, 21, 0, 131075, 6, 0, 131076, 6, 0, 131077, 20, 0, 262139, 20, 0, 262140, 20, 0, 262143, 21, 0, 327675, 20, 0, 327679, 22, 0, 262145, 22, 0, 262146, 22, 0, 393211, 22, 0, 393212, 22, 0, 393213, 22, 0, 393214, 22, 0, 393215, 22, 0, 327680, 22, 0, 327681, 22, 0, 327682, 22, 0, 327683, 22, 0, 327684, 22, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="IsText" parent="Items" index="0" instance=ExtResource( 3 )]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
-[ext_resource path="res://addons/laec-is-you/entity/Item.gd" type="Script" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://core/Achievement.gd" type="Script" id=4]
 [ext_resource path="res://sprites/items/people_0.png" type="Texture" id=5]
@@ -13,7 +12,7 @@ trigger_on_turn_if = "not 1 people"
 trigger_on_victory_if = ""
 image = ExtResource( 5 )
 snake_identifier = "brutal"
-title = ""
+title = "level.Lotd20220320.brutal.title"
 title_custom = "Frelon asiatique"
 
 [sub_resource type="Resource" id=2]
@@ -22,7 +21,7 @@ trigger_on_turn_if = "not 1 tv"
 trigger_on_victory_if = ""
 image = ExtResource( 6 )
 snake_identifier = "no_tv"
-title = ""
+title = "level.Lotd20220320.no_tv.title"
 title_custom = "Bourdonnement télévisuel"
 
 [node name="Lotd20220320" instance=ExtResource( 1 )]
@@ -39,289 +38,257 @@ solution_a = "1314799113996669666997116144471344177396036669966"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
-tile_data = PoolIntArray( -131068, 4, 0, -131067, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, 65532, 2, 0, 65533, 2, 0, 65534, 12, 0, 65535, 12, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 131068, 2, 0, 131069, 2, 0, 131070, 12, 0, 131071, 12, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 4, 0, 65540, 4, 0, 65541, 4, 0, 196604, 2, 0, 196605, 2, 0, 196606, 12, 0, 196607, 12, 0, 131072, 2, 0, 262139, 2, 0, 262140, 2, 0, 262141, 2, 0, 262142, 12, 0, 262143, 12, 0, 327676, 2, 0, 327677, 2, 0, 327678, 2, 0 )
+tile_data = PoolIntArray( -131068, 4, 0, -131067, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, 65532, 26, 0, 65533, 26, 0, 65534, 12, 0, 65535, 12, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 131068, 26, 0, 131069, 2, 0, 131070, 12, 0, 131071, 12, 0, 65536, 26, 0, 65537, 26, 0, 65538, 26, 0, 65539, 4, 0, 65540, 4, 0, 65541, 4, 0, 196604, 26, 0, 196605, 2, 0, 196606, 12, 0, 196607, 12, 0, 131072, 26, 0, 262139, 26, 0, 262140, 2, 0, 262141, 2, 0, 262142, 12, 0, 262143, 12, 0, 327676, 26, 0, 327677, 26, 0, 327678, 26, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 tile_data = PoolIntArray( -1179615, 2, 0, -1179612, 8, 0, -1048545, 2, 0, -196558, 9, 0, -65489, 2, 0, 131119, 8, 0, 262187, 2, 0, 393250, 10, 0, 458779, 2, 0, 458794, 2, 0, 589855, 2, 0, 655395, 9, 0 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="Undefined" type="Node2D" parent="Items" index="0" instance=ExtResource( 3 )]
+[node name="Undefined" parent="Items" index="0" instance=ExtResource( 3 )]
 position = Vector2( 96, -53.0239 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "tv"
 cell_position = Vector2( 2, -1 )
 tile_position = Vector2( 1, -1 )
 direction = "bottom_left"
 
-[node name="Undefined2" type="Node2D" parent="Items" index="1" instance=ExtResource( 3 )]
+[node name="Undefined2" parent="Items" index="1" instance=ExtResource( 3 )]
 position = Vector2( 160, -53.0239 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "has"
 cell_position = Vector2( 3, -1 )
 tile_position = Vector2( 2, -1 )
 
-[node name="Undefined3" type="Node2D" parent="Items" index="2" instance=ExtResource( 3 )]
+[node name="Undefined3" parent="Items" index="2" instance=ExtResource( 3 )]
 position = Vector2( 224, -53.0239 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "waste"
 cell_position = Vector2( 4, -1 )
 tile_position = Vector2( 3, -1 )
 direction = "bottom_right"
 
-[node name="Undefined4" type="Node2D" parent="Items" index="3" instance=ExtResource( 3 )]
+[node name="Undefined4" parent="Items" index="3" instance=ExtResource( 3 )]
 position = Vector2( 96, -143.922 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "win"
 cell_position = Vector2( 3, -3 )
 tile_position = Vector2( 1, -3 )
 direction = "bottom_left"
 
-[node name="Undefined5" type="Node2D" parent="Items" index="4" instance=ExtResource( 3 )]
+[node name="Undefined5" parent="Items" index="4" instance=ExtResource( 3 )]
 position = Vector2( -128, -7.57474 )
-script = ExtResource( 2 )
 concept_name = "people"
 cell_position = Vector2( -2, 0 )
 tile_position = Vector2( -2, 0 )
 is_weak = true
 
-[node name="Undefined6" type="Node2D" parent="Items" index="5" instance=ExtResource( 3 )]
+[node name="Undefined6" parent="Items" index="5" instance=ExtResource( 3 )]
 position = Vector2( 192, -7.57474 )
-script = ExtResource( 2 )
 concept_name = "tree"
 cell_position = Vector2( 3, 0 )
 tile_position = Vector2( 3, 0 )
 direction = "bottom_left"
 is_win = true
 
-[node name="Undefined7" type="Node2D" parent="Items" index="6" instance=ExtResource( 3 )]
+[node name="Undefined7" parent="Items" index="6" instance=ExtResource( 3 )]
 position = Vector2( 288, -53.0238 )
-script = ExtResource( 2 )
 concept_name = "tree"
 cell_position = Vector2( 5, -1 )
 tile_position = Vector2( 4, -1 )
 is_win = true
 
-[node name="Undefined8" type="Node2D" parent="Items" index="7" instance=ExtResource( 3 )]
+[node name="Undefined8" parent="Items" index="7" instance=ExtResource( 3 )]
 position = Vector2( 256, -7.57474 )
-script = ExtResource( 2 )
 concept_name = "tree"
 cell_position = Vector2( 4, 0 )
 tile_position = Vector2( 4, 0 )
 direction = "top_right"
 is_win = true
 
-[node name="Undefined9" type="Node2D" parent="Items" index="8" instance=ExtResource( 3 )]
+[node name="Undefined9" parent="Items" index="8" instance=ExtResource( 3 )]
 position = Vector2( -32, 128.772 )
-script = ExtResource( 2 )
 concept_name = "people"
 cell_position = Vector2( -2, 3 )
 tile_position = Vector2( -1, 3 )
 direction = "left"
 is_weak = true
 
-[node name="Undefined10" type="Node2D" parent="Items" index="9" instance=ExtResource( 3 )]
+[node name="Undefined10" parent="Items" index="9" instance=ExtResource( 3 )]
 position = Vector2( -96, -143.922 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "with"
 cell_position = Vector2( 0, -3 )
 tile_position = Vector2( -2, -3 )
 
-[node name="Undefined11" type="Node2D" parent="Items" index="10" instance=ExtResource( 3 )]
+[node name="Undefined11" parent="Items" index="10" instance=ExtResource( 3 )]
 position = Vector2( -160, -143.922 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "not"
 cell_position = Vector2( -1, -3 )
 tile_position = Vector2( -3, -3 )
 
-[node name="Undefined12" type="Node2D" parent="Items" index="11" instance=ExtResource( 3 )]
+[node name="Undefined12" parent="Items" index="11" instance=ExtResource( 3 )]
 position = Vector2( 32, -143.922 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 2, -3 )
 tile_position = Vector2( 0, -3 )
 
-[node name="Undefined13" type="Node2D" parent="Items" index="12" instance=ExtResource( 3 )]
+[node name="Undefined13" parent="Items" index="12" instance=ExtResource( 3 )]
 position = Vector2( -32, -143.922 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "waste"
 cell_position = Vector2( 1, -3 )
 tile_position = Vector2( -1, -3 )
 direction = "top_right"
 
-[node name="Undefined14" type="Node2D" parent="Items" index="13" instance=ExtResource( 3 )]
+[node name="Undefined14" parent="Items" index="13" instance=ExtResource( 3 )]
 position = Vector2( -224, -143.922 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "tree"
 cell_position = Vector2( -2, -3 )
 tile_position = Vector2( -4, -3 )
 
-[node name="Undefined15" type="Node2D" parent="Items" index="14" instance=ExtResource( 3 )]
+[node name="Undefined15" parent="Items" index="14" instance=ExtResource( 3 )]
 position = Vector2( -32, 37.8743 )
-script = ExtResource( 2 )
 concept_name = "people"
 cell_position = Vector2( -1, 1 )
 tile_position = Vector2( -1, 1 )
 direction = "left"
 is_weak = true
 
-[node name="Undefined16" type="Node2D" parent="Items" index="15" instance=ExtResource( 3 )]
+[node name="Undefined16" parent="Items" index="15" instance=ExtResource( 3 )]
 position = Vector2( -128, 83.3233 )
-script = ExtResource( 2 )
 concept_name = "people"
 cell_position = Vector2( -3, 2 )
 tile_position = Vector2( -2, 2 )
 is_weak = true
 
-[node name="Undefined17" type="Node2D" parent="Items" index="16" instance=ExtResource( 3 )]
+[node name="Undefined17" parent="Items" index="16" instance=ExtResource( 3 )]
 position = Vector2( -160, 37.8842 )
-script = ExtResource( 2 )
 concept_name = "bee"
 cell_position = Vector2( -3, 1 )
 tile_position = Vector2( -3, 1 )
 is_you = true
 
-[node name="Undefined18" type="Node2D" parent="Items" index="17" instance=ExtResource( 3 )]
+[node name="Undefined18" parent="Items" index="17" instance=ExtResource( 3 )]
 position = Vector2( 96, 219.67 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "bee"
 cell_position = Vector2( -1, 5 )
 tile_position = Vector2( 1, 5 )
 direction = "bottom_right"
 
-[node name="Undefined19" type="Node2D" parent="Items" index="18" instance=ExtResource( 3 )]
+[node name="Undefined19" parent="Items" index="18" instance=ExtResource( 3 )]
 position = Vector2( 160, 219.67 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 0, 5 )
 tile_position = Vector2( 2, 5 )
 direction = "bottom_left"
 
-[node name="Undefined20" type="Node2D" parent="Items" index="19" instance=ExtResource( 3 )]
+[node name="Undefined20" parent="Items" index="19" instance=ExtResource( 3 )]
 position = Vector2( 224, 219.67 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "you"
 cell_position = Vector2( 1, 5 )
 tile_position = Vector2( 3, 5 )
 direction = "bottom_left"
 
-[node name="Undefined21" type="Node2D" parent="Items" index="20" instance=ExtResource( 3 )]
+[node name="Undefined21" parent="Items" index="20" instance=ExtResource( 3 )]
 position = Vector2( -160, -53.0239 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( -2, -1 )
 tile_position = Vector2( -3, -1 )
 
-[node name="Undefined22" type="Node2D" parent="Items" index="21" instance=ExtResource( 3 )]
+[node name="Undefined22" parent="Items" index="21" instance=ExtResource( 3 )]
 position = Vector2( -224, 128.772 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "weak"
 cell_position = Vector2( -5, 3 )
 tile_position = Vector2( -4, 3 )
 direction = "top_left"
 
-[node name="Undefined23" type="Node2D" parent="Items" index="22" instance=ExtResource( 3 )]
+[node name="Undefined23" parent="Items" index="22" instance=ExtResource( 3 )]
 position = Vector2( -256, 83.3232 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( -5, 2 )
 tile_position = Vector2( -4, 2 )
 direction = "top_left"
 
-[node name="Undefined24" type="Node2D" parent="Items" index="23" instance=ExtResource( 3 )]
+[node name="Undefined24" parent="Items" index="23" instance=ExtResource( 3 )]
 position = Vector2( -288, 37.8742 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "people"
 cell_position = Vector2( -5, 1 )
 tile_position = Vector2( -5, 1 )
 direction = "top_left"
 
-[node name="Undefined25" type="Node2D" parent="Items" index="24" instance=ExtResource( 3 )]
+[node name="Undefined25" parent="Items" index="24" instance=ExtResource( 3 )]
 position = Vector2( -64, -7.57474 )
-script = ExtResource( 2 )
 concept_name = "tv"
 cell_position = Vector2( -1, 0 )
 tile_position = Vector2( -1, 0 )
 direction = "left"
 is_defeat = true
 
-[node name="Undefined26" type="Node2D" parent="Items" index="25" instance=ExtResource( 3 )]
+[node name="Undefined26" parent="Items" index="25" instance=ExtResource( 3 )]
 position = Vector2( -96, 37.8743 )
-script = ExtResource( 2 )
 concept_name = "tv"
 cell_position = Vector2( -2, 1 )
 tile_position = Vector2( -2, 1 )
 is_defeat = true
 
-[node name="Undefined27" type="Node2D" parent="Items" index="26" instance=ExtResource( 3 )]
+[node name="Undefined27" parent="Items" index="26" instance=ExtResource( 3 )]
 position = Vector2( -64, 83.3233 )
-script = ExtResource( 2 )
 concept_name = "tv"
 cell_position = Vector2( -2, 2 )
 tile_position = Vector2( -1, 2 )
 direction = "top_left"
 is_defeat = true
 
-[node name="Undefined28" type="Node2D" parent="Items" index="27" instance=ExtResource( 3 )]
+[node name="Undefined28" parent="Items" index="27" instance=ExtResource( 3 )]
 position = Vector2( -96, 128.772 )
-script = ExtResource( 2 )
 concept_name = "tv"
 cell_position = Vector2( -3, 3 )
 tile_position = Vector2( -2, 3 )
 direction = "top_right"
 is_defeat = true
 
-[node name="Undefined29" type="Node2D" parent="Items" index="28" instance=ExtResource( 3 )]
+[node name="Undefined29" parent="Items" index="28" instance=ExtResource( 3 )]
 position = Vector2( -96, -53.0239 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "defeat"
 cell_position = Vector2( -1, -1 )
 tile_position = Vector2( -2, -1 )
 direction = "bottom_left"
 
-[node name="Undefined30" type="Node2D" parent="Items" index="29" instance=ExtResource( 3 )]
+[node name="Undefined30" parent="Items" index="29" instance=ExtResource( 3 )]
 position = Vector2( -224, -53.0239 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "tv"
 cell_position = Vector2( -3, -1 )
 tile_position = Vector2( -4, -1 )
 direction = "top_right"
 
-[node name="Undefined31" type="Node2D" parent="Items" index="30" instance=ExtResource( 3 )]
+[node name="Undefined31" parent="Items" index="30" instance=ExtResource( 3 )]
 position = Vector2( 352, -53.0238 )
-script = ExtResource( 2 )
 concept_name = "tree"
 cell_position = Vector2( 6, -1 )
 tile_position = Vector2( 5, -1 )
 direction = "top_left"
 is_win = true
 
-[node name="Undefined32" type="Node2D" parent="Items" index="31" instance=ExtResource( 3 )]
+[node name="Undefined32" parent="Items" index="31" instance=ExtResource( 3 )]
 position = Vector2( 320, -98.4728 )
-script = ExtResource( 2 )
 concept_name = "tree"
 cell_position = Vector2( 6, -2 )
 tile_position = Vector2( 5, -2 )

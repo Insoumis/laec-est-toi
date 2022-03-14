@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprites/items/people_1.png" type="Texture" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+trigger_on_turn_if = "2 people"
+trigger_on_victory_if = ""
+image = ExtResource( 4 )
+snake_identifier = "friend"
+title = ""
+title_custom = "M6R (recommence !)"
 
 [node name="Lotd20220317" instance=ExtResource( 1 )]
 title = "level.Lotd20220317.title"
@@ -14,6 +25,7 @@ Ne cèdera rien à l'envol démocratique.
 Gel, saisie et confiscation des avoirs criminels
 Volés aux communs par les crapules.
 "
+achievement_a = SubResource( 1 )
 solution_a = "666369979743999641144114791369663997969"
 
 [node name="Camera2D" parent="." index="0"]
@@ -21,15 +33,17 @@ zoom = Vector2( 1.0618, 1.0618 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
-tile_data = PoolIntArray( -262146, 0, 0, -327680, 0, 0, -196610, 10, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -131075, 10, 0, -131074, 10, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 10, 0, -65537, 10, 0, -131072, 10, 0, -131071, 0, 0, -5, 0, 0, -3, 0, 0, -2, 10, 0, -1, 10, 0, -65536, 10, 0, -65535, 10, 0, -65534, 0, 0, 65531, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 10, 0, 1, 10, 0, 2, 10, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 10, 0, 131072, 0, 0, 131073, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262143, 0, 0, 196608, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0 )
+tile_data = PoolIntArray( -262146, 24, 0, -327680, 24, 0, -196610, 10, 0, -196609, 24, 0, -262144, 24, 0, -262143, 24, 0, -262142, 24, 0, -131075, 35, 0, -131074, 10, 0, -131073, 24, 0, -196608, 24, 0, -196607, 24, 0, -196606, 24, 0, -65540, 0, 0, -65539, 0, 0, -65538, 35, 0, -65537, 10, 0, -131072, 10, 0, -131071, 24, 0, -5, 0, 0, -3, 0, 0, -2, 35, 0, -1, 35, 0, -65536, 10, 0, -65535, 10, 0, -65534, 24, 0, 65531, 30, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 35, 0, 1, 35, 0, 2, 10, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 35, 0, 131072, 0, 0, 131073, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262143, 0, 0, 196608, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+tile_data = PoolIntArray( 1376261, 10, 0, 1441795, 10, 0 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+tile_data = PoolIntArray( 131035, 9, 0, 1572869, 10, 0 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="People" parent="Items" index="0" instance=ExtResource( 3 )]
