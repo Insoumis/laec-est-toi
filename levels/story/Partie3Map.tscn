@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Portal.tscn" type="PackedScene" id=5]
+
+[node name="Partie3Map" instance=ExtResource( 1 )]
+title = "level.Partie3Map.title"
+excerpt = "level.Partie3Map.excerpt"
+link = "level.Partie3Map.link"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -131077, 32, 0, -131076, 33, 0, -131075, 33, 0, -131074, 33, 0, -131073, 33, 0, -196608, 33, 0, -196607, 33, 0, -196606, 33, 0, -196605, 32, 0, -65539, 33, 0, -65537, 33, 0, -131071, 33, 0, -3, 33, 0, -1, 33, 0, -65535, 33, 0, 65534, 33, 0, 0, 33, 0, 2, 33, 0, 131070, 33, 0, 65536, 33, 0, 65538, 33, 0, 196607, 33, 0, 131073, 33, 0, 131075, 33, 0, 262143, 33, 0, 196609, 33, 0, 196611, 33, 0, 327677, 32, 0, 327678, 33, 0, 327679, 33, 0, 262144, 33, 0, 262145, 33, 0, 262146, 33, 0, 262147, 33, 0, 262148, 33, 0, 262149, 32, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( -384, -7.57484 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( -6, 0 )
+tile_position = Vector2( -6, 0 )
+
+[node name="IsText" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( -320, -7.57484 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -5, 0 )
+tile_position = Vector2( -5, 0 )
+
+[node name="YouText" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( -256, -7.57484 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -4, 0 )
+tile_position = Vector2( -4, 0 )
+
+[node name="Laec" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( -192, 174.231 )
+concept_name = "laec"
+cell_position = Vector2( -5, 4 )
+tile_position = Vector2( -3, 4 )
+is_you = true
+
+[node name="Portal" parent="Items" index="4" instance=ExtResource( 5 )]
+position = Vector2( -64, 174.221 )
+cell_position = Vector2( -3, 4 )
+tile_position = Vector2( -1, 4 )
+level_path = "res://levels/story/Partie3/1SanteDAbord32.tscn"
+title = "Chapitre 6"
+
+[node name="Portal2" parent="Items" index="5" instance=ExtResource( 5 )]
+position = Vector2( 192, 174.221 )
+cell_position = Vector2( 1, 4 )
+tile_position = Vector2( 3, 4 )
+level_path = "res://levels/story/Partie3/3BanquesInteretGeneral47.tscn"
+title = "Chapitre 8"
+
+[node name="Portal3" parent="Items" index="6" instance=ExtResource( 5 )]
+position = Vector2( 320, 174.221 )
+cell_position = Vector2( 3, 4 )
+tile_position = Vector2( 5, 4 )
+warp = true
+level_path = "res://levels/story/Partie4Map.tscn"
+title = "Bifurcation Écologique"
