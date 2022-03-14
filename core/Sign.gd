@@ -54,9 +54,10 @@ func on_action_passed():
 	if is_piled_with_you():
 		var http_url := get_url()
 		if http_url:
-			self.contents = tr("A new browser tab \n was opened.")
-			show_contents()
-			OS.shell_open(http_url)
+			var opened = OS.shell_open(http_url)
+			if opened:
+				self.contents = tr("A new browser tab \n was opened.")
+				show_contents()
 
 
 func show_contents():
@@ -74,7 +75,7 @@ func hide_contents():
 func is_piled_with_you() -> bool:
 	var level = get_level()
 	if not level:
-		printerr("This Portal has no level.  Skipping is_piled_with_you()…")
+		printerr("This Sign has no level.  Skipping is_piled_with_you()…")
 		return false
 	
 	var it_is := false

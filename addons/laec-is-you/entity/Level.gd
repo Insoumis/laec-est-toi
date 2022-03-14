@@ -1889,6 +1889,7 @@ func apply_alchemical_sentences_to_item(sentences:Array, item:Item) -> void:
 		
 		if things_to_become:
 			item.transmute(things_to_become.pop_front())
+			$Effects/AlchemyParticles.emit(item.position)
 		if things_to_become:
 			for thing_to_become in things_to_become:
 				var created_item = spawn_item(item, {

@@ -159,6 +159,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://core/actions/MoveAction.gd"
 }, {
+"base": "Node",
+"class": "ParticlesFactory",
+"language": "GDScript",
+"path": "res://lib/ParticlesFactory.gd"
+}, {
 "base": "Action",
 "class": "PassAction",
 "language": "GDScript",
@@ -270,6 +275,7 @@ _global_script_class_icons={
 "MigrationDatum": "",
 "MouseFocusBinder": "",
 "MoveAction": "",
+"ParticlesFactory": "",
 "PassAction": "",
 "PhiuClipboardMirrorBehavior": "",
 "Playlist": "",

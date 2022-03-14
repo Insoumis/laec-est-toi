@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://addons/laec-is-you/node/HexagonalTileMap.gd" type="Script" id=1]
 [ext_resource path="res://addons/laec-is-you/entity/Level.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://guis/HexagonalGridLines.gd" type="Script" id=19]
 [ext_resource path="res://sprites/gui/hexagonal_grid_lines_0.png" type="Texture" id=20]
 [ext_resource path="res://addons/laec-is-you/node/LevelChronometer.gd" type="Script" id=21]
+[ext_resource path="res://lib/ParticlesFactory.gd" type="Script" id=22]
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 14 )
@@ -177,6 +178,11 @@ script = ExtResource( 18 )
 __meta__ = {
 "_editor_description_": "Starts hidden.  Shows the way of the solution."
 }
+
+[node name="AlchemyParticles" type="Node" parent="Effects"]
+script = ExtResource( 22 )
+particles_emitter_scene_path = "res://effects/AlchemyParticles.tscn"
+max_concurrent_emitters = 20
 
 [node name="Hud" parent="." instance=ExtResource( 3 )]
 
