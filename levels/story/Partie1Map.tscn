@@ -49,7 +49,7 @@ position = Vector2( -128, -189.371 )
 cell_position = Vector2( 0, -4 )
 tile_position = Vector2( -2, -4 )
 level_path = "res://levels/story/Partie1/1InterventionPopulaire4.tscn"
-title = "Chapitre Trois"
+title = "Intervention Populaire"
 
 [node name="PortalTwo" parent="Items" index="4" instance=ExtResource( 5 )]
 position = Vector2( -32, -143.922 )
@@ -57,7 +57,7 @@ cell_position = Vector2( 1, -3 )
 tile_position = Vector2( -1, -3 )
 level_path = "res://levels/story/Partie1/2AbolirMonarchPres2.tscn"
 dependency_a = NodePath("../PortalOne")
-title = "Chapitre Trois"
+title = "Abolir la Monarchie"
 
 [node name="PortalThree" parent="Items" index="5" instance=ExtResource( 5 )]
 position = Vector2( -32, -53.0239 )
@@ -65,7 +65,7 @@ cell_position = Vector2( 0, -1 )
 tile_position = Vector2( -1, -1 )
 level_path = "res://levels/story/Partie1/3Convoquer6emeRep1.tscn"
 dependency_a = NodePath("../PortalTwo")
-title = "Chapitre Premier"
+title = "Conquer une Constitutante"
 
 [node name="PortalFour" parent="Items" index="6" instance=ExtResource( 5 )]
 position = Vector2( 64, -7.57484 )
@@ -73,7 +73,7 @@ cell_position = Vector2( 1, 0 )
 tile_position = Vector2( 1, 0 )
 level_path = "res://levels/story/Partie1/4RevolutionMedia6.tscn"
 dependency_a = NodePath("../PortalThree")
-title = "Chapitre Huit"
+title = "Révolution des Médias"
 
 [node name="PortalFive" parent="Items" index="7" instance=ExtResource( 5 )]
 position = Vector2( 64, 83.3232 )
@@ -81,7 +81,7 @@ cell_position = Vector2( 0, 2 )
 tile_position = Vector2( 1, 2 )
 level_path = "res://levels/story/Partie1/5JusticeAuNomDuPeuple7.tscn"
 dependency_a = NodePath("../PortalFour")
-title = "Chapitre Dix"
+title = "Justice au nom du Peuple"
 
 [node name="PortalFive2" parent="Items" index="8" instance=ExtResource( 5 )]
 position = Vector2( 288, 128.772 )

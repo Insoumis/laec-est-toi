@@ -28,7 +28,7 @@ position = Vector2( -192, -98.4729 )
 cell_position = Vector2( -2, -2 )
 tile_position = Vector2( -3, -2 )
 level_path = "res://levels/story/Partie2/1Bifurcation13.tscn"
-title = "Chapitre Trois"
+title = "Bifurcation"
 
 [node name="Portal2" parent="Items" index="1" instance=ExtResource( 3 )]
 position = Vector2( -64, -98.4729 )
@@ -36,7 +36,7 @@ cell_position = Vector2( 0, -2 )
 tile_position = Vector2( -1, -2 )
 level_path = "res://levels/story/Partie2/2Renouvelable19.tscn"
 dependency_a = NodePath("../Portal")
-title = "Chapitre Trois"
+title = "Renouvelable"
 
 [node name="Portal3" parent="Items" index="2" instance=ExtResource( 3 )]
 position = Vector2( 64, -98.4729 )
@@ -44,7 +44,7 @@ cell_position = Vector2( 2, -2 )
 tile_position = Vector2( 1, -2 )
 level_path = "res://levels/story/Partie2/3EnjeuEau25.tscn"
 dependency_a = NodePath("../Portal2")
-title = "Chapitre Trois"
+title = "L'Enjeu de l'Eau"
 
 [node name="LaecText" parent="Items" index="3" instance=ExtResource( 5 )]
 position = Vector2( 224, 37.8742 )

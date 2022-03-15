@@ -56,14 +56,14 @@ position = Vector2( -64, 174.221 )
 cell_position = Vector2( -3, 4 )
 tile_position = Vector2( -1, 4 )
 level_path = "res://levels/story/Partie3/1SanteDAbord32.tscn"
-title = "Chapitre 6"
+title = "Santé d'Abord"
 
 [node name="Portal2" parent="Items" index="5" instance=ExtResource( 5 )]
 position = Vector2( 192, 174.221 )
 cell_position = Vector2( 1, 4 )
 tile_position = Vector2( 3, 4 )
 level_path = "res://levels/story/Partie3/3BanquesInteretGeneral47.tscn"
-title = "Chapitre 8"
+title = "Intérêt Général"
 
 [node name="Portal3" parent="Items" index="6" instance=ExtResource( 5 )]
 position = Vector2( 320, 174.221 )

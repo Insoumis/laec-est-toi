@@ -28,32 +28,32 @@ cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 tile_data = PoolIntArray( -1835016, 34, 0, -1376269, 9, 0, -1310739, 2, 0, -1048570, 9, 0, -1048561, 28, 0, -917502, 18, 0, -524287, 7, 0, -458739, 9, 0, -262167, 2, 0, 458758, 36, 0, 589847, 37, 0, 917485, 31, 0, 1245162, 6, 0, 1245170, 29, 0, 1376239, 30, 0, 1310720, 2, 0, 1310726, 30, 0, 1572866, 31, 0, 1703943, 32, 0 )
 
 [node name="FranceText" parent="Items" index="0" instance=ExtResource( 3 )]
-position = Vector2( 294, 183 )
+position = Vector2( 320, 174.221 )
 is_text = true
 concept_name = "france"
-cell_position = Vector2( 4, 0 )
-tile_position = Vector2( 4, 0 )
+cell_position = Vector2( 3, 4 )
+tile_position = Vector2( 5, 4 )
 
 [node name="France" parent="Items" index="1" instance=ExtResource( 3 )]
-position = Vector2( 64, -98.4729 )
+position = Vector2( 64, -98.4629 )
 concept_name = "france"
 cell_position = Vector2( 2, -2 )
 tile_position = Vector2( 1, -2 )
 is_you = true
 
 [node name="IsText" parent="Items" index="2" instance=ExtResource( 3 )]
-position = Vector2( 358, 183 )
+position = Vector2( 384, 174.221 )
 is_text = true
 concept_name = "is"
-cell_position = Vector2( 5, 0 )
-tile_position = Vector2( 5, 0 )
+cell_position = Vector2( 4, 4 )
+tile_position = Vector2( 6, 4 )
 
 [node name="YouText" parent="Items" index="3" instance=ExtResource( 3 )]
-position = Vector2( 422, 183 )
+position = Vector2( 448, 174.221 )
 is_text = true
 concept_name = "you"
-cell_position = Vector2( 6, 0 )
-tile_position = Vector2( 6, 0 )
+cell_position = Vector2( 5, 4 )
+tile_position = Vector2( 7, 4 )
 
 [node name="Portal" parent="Items" index="4" instance=ExtResource( 7 )]
 position = Vector2( 0, -189.371 )

@@ -325,10 +325,13 @@ func update_sprite(refresh_frames := true) -> void:
 		concept = 'portal'
 	elif is_completed():
 		concept = 'portal_completed'
+	var sf: SpriteFrames
 	if self.warp:
 		concept = 'warp'
 		$AnimatedSprite.offset = Vector2.ZERO
-	var sf = SpriteFramesFactory.get_for_concept(concept, false, 'portals')
+		sf = SpriteFramesFactory.get_for_concept(concept, false, 'portals', 5)
+	else:
+		sf = SpriteFramesFactory.get_for_concept(concept, false, 'portals')
 	$AnimatedSprite.frames = sf
 	$AnimatedSprite.animation = get_animation_name()
 	$AnimatedSprite.visible = (
@@ -340,6 +343,8 @@ func update_sprite(refresh_frames := true) -> void:
 	)
 	# Use a pretty but _expensive_ spirograph, only in desktop linux/windows/mac builds
 	if (
+		false  # dev toggle to disable the spirograph for now
+		and
 		self.warp
 		and
 		not Engine.is_editor_hint()

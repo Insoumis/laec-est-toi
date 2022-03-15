@@ -99,23 +99,29 @@ func find_color_for_concept(
 func get_for_concept(
 	concept: String,
 	is_text := false,
-	subdir := 'items'
+	subdir := 'items',
+	shiver_length_override : int = 0
 ) -> SpriteFrames:
 	
 	var h = __hash_for_cache(concept, is_text, subdir)
 	if not self.__cache.has(h):
-		self.__cache[h] = make_for_concept(concept, is_text, subdir)
+		self.__cache[h] = make_for_concept(concept, is_text, subdir, shiver_length_override)
 	return self.__cache[h]
 
 
 func make_for_concept(
 	concept: String,
 	is_text := false,
-	subdir := 'items'
+	subdir := 'items',
+	shiver_length_override : int = 0
 ) -> SpriteFrames:
 	
 	var sf := SpriteFrames.new()
 	concept = __serialize(concept, is_text)
+	
+	var actual_shiver_length = self.shiver_length
+	if shiver_length_override:
+		actual_shiver_length = shiver_length_override
 	
 	for direction in Directions.STRINGS.values():
 		var more := true  # ざわ…
@@ -125,7 +131,7 @@ func make_for_concept(
 			
 			sf.add_animation(animation)
 			
-			for shiver in range(self.shiver_length):
+			for shiver in range(actual_shiver_length):
 				var found_it := false
 				var flip_x := false
 				

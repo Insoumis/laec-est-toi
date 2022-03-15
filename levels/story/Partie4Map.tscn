@@ -57,7 +57,7 @@ position = Vector2( 0, 83.3232 )
 cell_position = Vector2( -1, 2 )
 tile_position = Vector2( 0, 2 )
 level_path = "res://levels/story/Partie4/1RepubliqueContreRacisme57.tscn"
-title = "Chapitre 9"
+title = "Contre le Racisme"
 
 [node name="Portal4" parent="Items" index="5" instance=ExtResource( 5 )]
 position = Vector2( 256, 174.221 )
@@ -72,11 +72,11 @@ position = Vector2( -64, -7.57484 )
 cell_position = Vector2( -1, 0 )
 tile_position = Vector2( -1, 0 )
 level_path = "res://levels/story/Partie4/2SportsLibereArgent62.tscn"
-title = "Chapitre 10"
+title = "Sports & Argent"
 
 [node name="Portal3" parent="Items" index="7" instance=ExtResource( 5 )]
 position = Vector2( -128, -98.4729 )
 cell_position = Vector2( -1, -2 )
 tile_position = Vector2( -2, -2 )
 level_path = "res://levels/story/Partie4/3ReconstruireEcoleGlobale65.tscn"
-title = "Chapitre 11"
+title = "Reconstruire l'École"

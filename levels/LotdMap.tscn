@@ -62,7 +62,7 @@ cell_position = Vector2( -2, 2 )
 tile_position = Vector2( -1, 2 )
 level_path = "res://levels/lotd/Lotd20220317.tscn"
 daily = true
-title = "Niveau du 17 Mars 2022"
+title = "Niveau du 17 Mars"
 
 [node name="Portal4" parent="Items" index="5" instance=ExtResource( 2 )]
 position = Vector2( -32, 128.772 )
@@ -78,7 +78,7 @@ cell_position = Vector2( -1, 3 )
 tile_position = Vector2( 0, 3 )
 level_path = "res://levels/lotd/Lotd20220319.tscn"
 daily = true
-title = "level.Lotd20220319.title"
+title = "Niveau du 19 Mars"
 
 [node name="Portal6" parent="Items" index="7" instance=ExtResource( 2 )]
 position = Vector2( 96, 128.772 )
@@ -89,15 +89,16 @@ daily = true
 title = "Gestion des déchets"
 
 [node name="Portal7" parent="Items" index="8" instance=ExtResource( 2 )]
-position = Vector2( 160, 219.67 )
-cell_position = Vector2( 0, 5 )
-tile_position = Vector2( 2, 5 )
+position = Vector2( 128, 174.221 )
+cell_position = Vector2( 0, 4 )
+tile_position = Vector2( 2, 4 )
+level_path = "res://levels/lotd/Lotd20220321.tscn"
 daily = true
 
 [node name="Portal8" parent="Items" index="9" instance=ExtResource( 2 )]
-position = Vector2( 192, 174.221 )
-cell_position = Vector2( 1, 4 )
-tile_position = Vector2( 3, 4 )
+position = Vector2( 224, 219.67 )
+cell_position = Vector2( 1, 5 )
+tile_position = Vector2( 3, 5 )
 daily = true
 
 [node name="Portal9" parent="Items" index="10" instance=ExtResource( 2 )]
@@ -260,18 +261,18 @@ contents = "Un nouveau niveau se
 débloque chaque jour !"
 
 [node name="Sign2" parent="Items" index="36" instance=ExtResource( 5 )]
-position = Vector2( 128, 174.221 )
-cell_position = Vector2( 0, 4 )
-tile_position = Vector2( 2, 4 )
+position = Vector2( 192, 174.221 )
+cell_position = Vector2( 1, 4 )
+tile_position = Vector2( 3, 4 )
 contents = "Travaux en Cours
 ---
 Retéléchargez le jeu
 plus tard."
 
 [node name="Sign3" parent="Items" index="37" instance=ExtResource( 5 )]
-position = Vector2( -217, -39 )
-cell_position = Vector2( 0, 4 )
-tile_position = Vector2( 2, 4 )
+position = Vector2( -224, -53.0239 )
+cell_position = Vector2( -3, -1 )
+tile_position = Vector2( -4, -1 )
 contents = "Rejoignez-nous sur Discord
 Pour publier vos créations"
 url = "https://discord-insoumis.fr/"
