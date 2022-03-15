@@ -75,6 +75,9 @@ func play_playlist(playlist):
 
 func play_by_name(playlist_name):
 	var playlist := get_playlist_by_name(playlist_name)
+	if not playlist:
+		printerr("Jukebox: playlist `%s' was not found." % [playlist_name])
+		return
 	if __current_playlist != playlist:
 		stop()
 		do_play(playlist)
@@ -112,6 +115,8 @@ func get_first_playlist() -> Playlist:
 
 
 func get_playlist_by_name(playlist_name) -> Playlist:
+	if not __playlists_by_name.has(playlist_name):
+		return null
 	var playlist = __playlists_by_name[playlist_name]
 	assert(playlist, "Define at least one Playlist as child.")
 	return playlist

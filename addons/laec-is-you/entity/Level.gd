@@ -73,6 +73,11 @@ export(Resource) var achievement_c
 # see https://github.com/godotengine/godot-proposals/issues/18
 
 
+# Name of a playlist to launch when we enter this level
+# See the Jukebox scene singleton for available names.
+export(String) var playlist_name := ""
+
+
 # Forward level this level leads to when complete.
 # If not set, will go back up in scene ancestry.
 export(String, FILE, "*.tscn") var forward_level_path: String
@@ -202,11 +207,6 @@ func ready():
 	if self.is_ready:
 		return
 	
-	# This initial turn would handle the initial
-	# setting of item flags from the rules.
-	# But we don't want this.  Hence the ItemWizard.
-	#spend_turn()
-	
 	if Engine.is_editor_hint():
 		fix_gui_locks()
 		rename_root_node()
@@ -217,12 +217,21 @@ func ready():
 	if is_editor_preview():
 		set_process(false)  # _process() still happens eventually… weird
 	
+	if not is_dummy_run() and Jukebox:
+		if self.playlist_name:
+			# Jukebox should be resilient to invalid playlist names
+			Jukebox.play_by_name(self.playlist_name)
+	
 	# Color palettes can be set per-level
 	setup_palettes()
 	
 	# We're bypassing localization with `xxx_custom` props,
 	# but it's there and working.
 	setup_l10n()
+	
+	# This initial turn would handle the initial setting of item flags from the rules.
+	# But we don't want this.  Hence the ItemWizard.
+	#spend_turn()
 	
 	# We need to register the Items, it's like a cache
 	# so we don't look at the scene tree all the time. (it's super slow)
