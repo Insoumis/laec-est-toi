@@ -4,10 +4,11 @@
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=2]
 
 [node name="1RepubliqueContreRacisme57" instance=ExtResource( 2 )]
+contribute_to_completion_score = true
 title = "level.1RepubliqueContreRacisme57.title"
 excerpt = "level.1RepubliqueContreRacisme57.excerpt"
 link = "level.1RepubliqueContreRacisme57.link"
-title_custom = "Chapitre 9"
+title_custom = "Contre le Racisme"
 excerpt_custom = "Félicitations ! Tu as fait triompher l'égalité ! 
 Femmes et hommes sont payés autant à qualification égale ! Cette seule mesure génère assez de cotisations pour financer la retraite à 60 ans !
 En outre, 1 milliard d’euros donnent à la lutte contre les violences sexistes et sexuelles, l'envergure demandée par les associations.

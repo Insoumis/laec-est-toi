@@ -4,10 +4,11 @@
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 
 [node name="3BanquesInteretGeneral47" instance=ExtResource( 1 )]
+contribute_to_completion_score = true
 title = "level.3BanquesInteretGeneral47.title"
 excerpt = "level.3BanquesInteretGeneral47.excerpt"
 link = "level.3BanquesInteretGeneral47.link"
-title_custom = "Chapitre 8"
+title_custom = "Intérêt Général"
 excerpt_custom = "Bravo ! Tu viens d'éradiquer la précarité : plus personne sous le seuil de pauvreté (1063 €/mois) !
 La France est un pays riche : redistribuer cette richesse est devenu une nécessité...
 L'impôt sur la fortune (ISF) est rétabli et le montant des héritages plafonné à 12 millions d'euros. L'impôt est aussi rendu plus progressif, en passant de 5 à 14 tranches : les revenus inférieurs à 4000 €/mois payent moins de taxes ! 

@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=2]
-[ext_resource path="res://addons/laec-is-you/entity/Item.gd" type="Script" id=3]
 
 [node name="2IndependanceFrance71" instance=ExtResource( 1 )]
+contribute_to_completion_score = true
 title = "level.2IndependanceFrance71.title"
 excerpt = "level.2IndependanceFrance71.excerpt"
 link = "level.2IndependanceFrance71.link"
-title_custom = "Chapitre 13"
+title_custom = "France Indépendante"
 solution_a = "666660007466366636669"
 
 [node name="Camera2D" parent="." index="0"]
@@ -27,9 +27,8 @@ cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 [node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="Waste" type="Node2D" parent="Items" index="0" instance=ExtResource( 2 )]
+[node name="Waste" parent="Items" index="0" instance=ExtResource( 2 )]
 position = Vector2( 0, -189.371 )
-script = ExtResource( 3 )
 concept_name = "waste"
 cell_position = Vector2( 2, -4 )
 tile_position = Vector2( 0, -4 )
@@ -84,42 +83,37 @@ tile_position = Vector2( 4, 0 )
 is_sink = true
 is_boom = true
 
-[node name="Waste2" type="Node2D" parent="Items" index="7" instance=ExtResource( 2 )]
+[node name="Waste2" parent="Items" index="7" instance=ExtResource( 2 )]
 position = Vector2( 0, 174.221 )
-script = ExtResource( 3 )
 concept_name = "waste"
 cell_position = Vector2( -2, 4 )
 tile_position = Vector2( 0, 4 )
 is_sink = true
 is_boom = true
 
-[node name="Europe" type="Node2D" parent="Items" index="8" instance=ExtResource( 2 )]
+[node name="Europe" parent="Items" index="8" instance=ExtResource( 2 )]
 position = Vector2( -320, 174.231 )
-script = ExtResource( 3 )
 concept_name = "europe"
 cell_position = Vector2( -7, 4 )
 tile_position = Vector2( -5, 4 )
 is_you = true
 
-[node name="France" type="Node2D" parent="Items" index="9" instance=ExtResource( 2 )]
+[node name="France" parent="Items" index="9" instance=ExtResource( 2 )]
 position = Vector2( -320, -280.259 )
-script = ExtResource( 3 )
 concept_name = "france"
 cell_position = Vector2( -2, -6 )
 tile_position = Vector2( -5, -6 )
 is_you = true
 
-[node name="Lobby" type="Node2D" parent="Items" index="10" instance=ExtResource( 2 )]
+[node name="Lobby" parent="Items" index="10" instance=ExtResource( 2 )]
 position = Vector2( -320, -189.361 )
-script = ExtResource( 3 )
 concept_name = "lobby"
 cell_position = Vector2( -3, -4 )
 tile_position = Vector2( -5, -4 )
 is_you = true
 
-[node name="WasteText" type="Node2D" parent="Items" index="11" instance=ExtResource( 2 )]
+[node name="WasteText" parent="Items" index="11" instance=ExtResource( 2 )]
 position = Vector2( 256, 174.221 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "waste"
 cell_position = Vector2( 2, 4 )
@@ -132,9 +126,8 @@ concept_name = "waste"
 cell_position = Vector2( 6, -4 )
 tile_position = Vector2( 4, -4 )
 
-[node name="IsText" type="Node2D" parent="Items" index="13" instance=ExtResource( 2 )]
+[node name="IsText" parent="Items" index="13" instance=ExtResource( 2 )]
 position = Vector2( 320, 174.221 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 3, 4 )
@@ -147,9 +140,8 @@ concept_name = "is"
 cell_position = Vector2( 7, -4 )
 tile_position = Vector2( 5, -4 )
 
-[node name="BoomText" type="Node2D" parent="Items" index="15" instance=ExtResource( 2 )]
+[node name="BoomText" parent="Items" index="15" instance=ExtResource( 2 )]
 position = Vector2( 384, 174.221 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "boom"
 cell_position = Vector2( 4, 4 )
@@ -162,33 +154,29 @@ concept_name = "sink"
 cell_position = Vector2( 8, -4 )
 tile_position = Vector2( 6, -4 )
 
-[node name="EuropeText" type="Node2D" parent="Items" index="17" instance=ExtResource( 2 )]
+[node name="EuropeText" parent="Items" index="17" instance=ExtResource( 2 )]
 position = Vector2( -352, -143.922 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "europe"
 cell_position = Vector2( -4, -3 )
 tile_position = Vector2( -6, -3 )
 
-[node name="IsText2" type="Node2D" parent="Items" index="18" instance=ExtResource( 2 )]
+[node name="IsText2" parent="Items" index="18" instance=ExtResource( 2 )]
 position = Vector2( -320, -98.4729 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( -4, -2 )
 tile_position = Vector2( -5, -2 )
 
-[node name="YouText" type="Node2D" parent="Items" index="19" instance=ExtResource( 2 )]
+[node name="YouText" parent="Items" index="19" instance=ExtResource( 2 )]
 position = Vector2( -288, -53.0239 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "you"
 cell_position = Vector2( -4, -1 )
 tile_position = Vector2( -5, -1 )
 
-[node name="FranceText" type="Node2D" parent="Items" index="20" instance=ExtResource( 2 )]
+[node name="FranceText" parent="Items" index="20" instance=ExtResource( 2 )]
 position = Vector2( -96, -143.922 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "france"
 cell_position = Vector2( 0, -3 )
@@ -201,9 +189,8 @@ concept_name = "lobby"
 cell_position = Vector2( -2, -3 )
 tile_position = Vector2( -4, -3 )
 
-[node name="IsText3" type="Node2D" parent="Items" index="22" instance=ExtResource( 2 )]
+[node name="IsText3" parent="Items" index="22" instance=ExtResource( 2 )]
 position = Vector2( -64, -98.4729 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 0, -2 )
@@ -216,9 +203,8 @@ concept_name = "is"
 cell_position = Vector2( -2, -2 )
 tile_position = Vector2( -3, -2 )
 
-[node name="YouText2" type="Node2D" parent="Items" index="24" instance=ExtResource( 2 )]
+[node name="YouText2" parent="Items" index="24" instance=ExtResource( 2 )]
 position = Vector2( -32, -53.0239 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "you"
 cell_position = Vector2( 0, -1 )
@@ -231,16 +217,14 @@ concept_name = "you"
 cell_position = Vector2( -2, -1 )
 tile_position = Vector2( -3, -1 )
 
-[node name="Love" type="Node2D" parent="Items" index="26" instance=ExtResource( 2 )]
+[node name="Love" parent="Items" index="26" instance=ExtResource( 2 )]
 position = Vector2( 320, -7.57484 )
-script = ExtResource( 3 )
 concept_name = "love"
 cell_position = Vector2( 5, 0 )
 tile_position = Vector2( 5, 0 )
 
-[node name="People" type="Node2D" parent="Items" index="27" instance=ExtResource( 2 )]
+[node name="People" parent="Items" index="27" instance=ExtResource( 2 )]
 position = Vector2( 288, -53.0239 )
-script = ExtResource( 3 )
 concept_name = "people"
 cell_position = Vector2( 5, -1 )
 tile_position = Vector2( 4, -1 )
@@ -281,63 +265,56 @@ concept_name = "people"
 cell_position = Vector2( 5, 1 )
 tile_position = Vector2( 5, 1 )
 
-[node name="LoveText" type="Node2D" parent="Items" index="34" instance=ExtResource( 2 )]
+[node name="LoveText" parent="Items" index="34" instance=ExtResource( 2 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( 64, -280.269 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "love"
 cell_position = Vector2( 4, -6 )
 tile_position = Vector2( 1, -6 )
 is_lit = false
 
-[node name="IsText5" type="Node2D" parent="Items" index="35" instance=ExtResource( 2 )]
+[node name="IsText5" parent="Items" index="35" instance=ExtResource( 2 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( 192, -280.269 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 6, -6 )
 tile_position = Vector2( 3, -6 )
 is_lit = false
 
-[node name="WinText" type="Node2D" parent="Items" index="36" instance=ExtResource( 2 )]
+[node name="WinText" parent="Items" index="36" instance=ExtResource( 2 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( 256, -280.269 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "win"
 cell_position = Vector2( 7, -6 )
 tile_position = Vector2( 4, -6 )
 is_lit = false
 
-[node name="LaecText" type="Node2D" parent="Items" index="37" instance=ExtResource( 2 )]
+[node name="LaecText" parent="Items" index="37" instance=ExtResource( 2 )]
 position = Vector2( 256, 83.3232 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "laec"
 cell_position = Vector2( 3, 2 )
 tile_position = Vector2( 4, 2 )
 
-[node name="IsText7" type="Node2D" parent="Items" index="38" instance=ExtResource( 2 )]
+[node name="IsText7" parent="Items" index="38" instance=ExtResource( 2 )]
 position = Vector2( 320, 83.3232 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 4, 2 )
 tile_position = Vector2( 5, 2 )
 
-[node name="YouText4" type="Node2D" parent="Items" index="39" instance=ExtResource( 2 )]
+[node name="YouText4" parent="Items" index="39" instance=ExtResource( 2 )]
 position = Vector2( 384, 83.3232 )
-script = ExtResource( 3 )
 is_text = true
 concept_name = "you"
 cell_position = Vector2( 5, 2 )
 tile_position = Vector2( 6, 2 )
 
-[node name="Laec" type="Node2D" parent="Items" index="40" instance=ExtResource( 2 )]
+[node name="Laec" parent="Items" index="40" instance=ExtResource( 2 )]
 position = Vector2( -320, -7.56484 )
-script = ExtResource( 3 )
 concept_name = "laec"
 cell_position = Vector2( -5, 0 )
 tile_position = Vector2( -5, 0 )

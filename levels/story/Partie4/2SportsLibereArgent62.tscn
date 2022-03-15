@@ -4,10 +4,11 @@
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 
 [node name="2SportsLibereArgent62" instance=ExtResource( 1 )]
+contribute_to_completion_score = true
 title = "level.2SportsLibereArgent62.title"
 excerpt = "level.2SportsLibereArgent62.excerpt"
 link = "level.2SportsLibereArgent62.link"
-title_custom = "Chapitre 10"
+title_custom = "Sports & Argent"
 solution_a = "6666696344444433149967714444444"
 
 [node name="Camera2D" parent="." index="0"]

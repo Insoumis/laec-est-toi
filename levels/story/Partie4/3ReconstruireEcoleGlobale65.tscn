@@ -4,10 +4,11 @@
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 
 [node name="3ReconstruireEcoleGlobale65" instance=ExtResource( 1 )]
+contribute_to_completion_score = true
 title = "level.3ReconstruireEcoleGlobale65.title"
 excerpt = "level.3ReconstruireEcoleGlobale65.excerpt"
 link = "level.3ReconstruireEcoleGlobale65.link"
-title_custom = "Chapitre 11"
+title_custom = "Reconstruire l'École"
 solution_a = "1337799796661313133969661344764439669337799774997441416393991497666333336"
 
 [node name="Camera2D" parent="." index="0"]

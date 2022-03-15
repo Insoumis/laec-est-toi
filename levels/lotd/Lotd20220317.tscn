@@ -11,14 +11,14 @@ trigger_on_turn_if = "2 people"
 trigger_on_victory_if = ""
 image = ExtResource( 4 )
 snake_identifier = "friend"
-title = ""
+title = "level.Lotd20220317.friend.title"
 title_custom = "M6R (recommence !)"
 
 [node name="Lotd20220317" instance=ExtResource( 1 )]
 title = "level.Lotd20220317.title"
 excerpt = "level.Lotd20220317.excerpt"
 link = "level.Lotd20220317.link"
-title_custom = "Niveau du 17 Mars 2022"
+title_custom = "Niveau du 17 Mars"
 excerpt_custom = "La domination économique
 Ne cèdera rien à l'envol démocratique.
 

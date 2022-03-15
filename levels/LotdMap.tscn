@@ -36,8 +36,9 @@ title = "Fin du monde"
 position = Vector2( -288, 219.67 )
 cell_position = Vector2( -7, 5 )
 tile_position = Vector2( -5, 5 )
+level_path = "res://levels/lotd/Lotd20220228.tscn"
 daily = true
-title = "level.Lotd20220212.title"
+title = "Justice est Clef"
 
 [node name="Portal" parent="Items" index="2" instance=ExtResource( 2 )]
 position = Vector2( -160, 128.772 )
@@ -45,7 +46,7 @@ cell_position = Vector2( -4, 3 )
 tile_position = Vector2( -3, 3 )
 level_path = "res://levels/lotd/Lotd20220315.tscn"
 daily = true
-title = "NIveau du 15 Mars"
+title = "Niveau du 15 Mars"
 
 [node name="Portal2" parent="Items" index="3" instance=ExtResource( 2 )]
 position = Vector2( -128, 83.3232 )
@@ -266,6 +267,14 @@ contents = "Travaux en Cours
 ---
 Retéléchargez le jeu
 plus tard."
+
+[node name="Sign3" parent="Items" index="37" instance=ExtResource( 5 )]
+position = Vector2( -217, -39 )
+cell_position = Vector2( 0, 4 )
+tile_position = Vector2( 2, 4 )
+contents = "Rejoignez-nous sur Discord
+Pour publier vos créations"
+url = "https://discord-insoumis.fr/"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="GuiLayer" index="4"]
 visible = false

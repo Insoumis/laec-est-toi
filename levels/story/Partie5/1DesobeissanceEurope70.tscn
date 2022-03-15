@@ -3,11 +3,12 @@
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=2]
 
-[node name="1MiidDesobeissanceEurope70" instance=ExtResource( 2 )]
-title = "level.1MiidDesobeissanceEurope70.title"
-excerpt = "level.1MiidDesobeissanceEurope70.excerpt"
-link = "level.1MiidDesobeissanceEurope70.link"
-title_custom = "Chapitre 12"
+[node name="1DesobeissanceEurope70" instance=ExtResource( 2 )]
+contribute_to_completion_score = true
+title = "level.1DesobeissanceEurope70.title"
+excerpt = "level.1DesobeissanceEurope70.excerpt"
+link = "level.1DesobeissanceEurope70.link"
+title_custom = "Désobéissance Civique"
 solution_a = "977741114416969977796339744331143363499977776664444133361436347779979666663636"
 
 [node name="Camera2D" parent="." index="0"]
