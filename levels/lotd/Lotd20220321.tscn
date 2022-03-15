@@ -12,14 +12,14 @@ trigger_on_turn_if = ""
 trigger_on_victory_if = "not 1 lobby"
 image = ExtResource( 5 )
 snake_identifier = "save_bees"
-title = "level.Lotd20220301.save_bees.title"
+title = "level.Lotd20220321.save_bees.title"
 title_custom = "On fait les choses bien !"
 
-[node name="Lotd20220301" instance=ExtResource( 2 )]
-title = "level.Lotd20220301.title"
-excerpt = "level.Lotd20220301.excerpt"
-link = "level.Lotd20220301.link"
-title_custom = "Débat à l'Assermblée"
+[node name="Lotd20220321" instance=ExtResource( 2 )]
+title = "level.Lotd20220321.title"
+excerpt = "level.Lotd20220321.excerpt"
+link = "level.Lotd20220321.link"
+title_custom = "Débat à l'Assemblée"
 excerpt_custom = "Néonicotinoïdes, sucres, choix irresponsables et coûts irrécupérables...
 
 La mort des abeilles nous tuera.

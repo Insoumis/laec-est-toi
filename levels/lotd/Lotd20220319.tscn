@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
-[ext_resource path="res://addons/laec-is-you/entity/Item.gd" type="Script" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://core/Achievement.gd" type="Script" id=4]
 [ext_resource path="res://sprites/items/peace_0.png" type="Texture" id=5]
@@ -12,7 +11,7 @@ trigger_on_turn_if = ""
 trigger_on_victory_if = "peace is win"
 image = ExtResource( 5 )
 snake_identifier = "paix"
-title = ""
+title = "level.Lotd20220319.paix.title"
 title_custom = "Victoire de la Paix"
 
 [sub_resource type="Resource" id=2]
@@ -20,7 +19,7 @@ script = ExtResource( 4 )
 trigger_on_turn_if = ""
 trigger_on_victory_if = "people is win"
 snake_identifier = "cheater"
-title = ""
+title = "level.Lotd20220319.cheater.title"
 title_custom = "Victoire du Peuple"
 
 [node name="Lotd20220319" instance=ExtResource( 1 )]
@@ -51,9 +50,8 @@ cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 [node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="PeaceText" type="Node2D" parent="Items" index="0" instance=ExtResource( 3 )]
+[node name="PeaceText" parent="Items" index="0" instance=ExtResource( 3 )]
 position = Vector2( 256, -7.57484 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "peace"
 cell_position = Vector2( 4, 0 )
@@ -106,25 +104,22 @@ concept_name = "love"
 cell_position = Vector2( -3, -3 )
 tile_position = Vector2( -5, -3 )
 
-[node name="IsText" type="Node2D" parent="Items" index="7" instance=ExtResource( 3 )]
+[node name="IsText" parent="Items" index="7" instance=ExtResource( 3 )]
 position = Vector2( -128, -189.371 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 0, -4 )
 tile_position = Vector2( -2, -4 )
 
-[node name="YouText" type="Node2D" parent="Items" index="8" instance=ExtResource( 3 )]
+[node name="YouText" parent="Items" index="8" instance=ExtResource( 3 )]
 position = Vector2( -64, -189.371 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "you"
 cell_position = Vector2( 1, -4 )
 tile_position = Vector2( -1, -4 )
 
-[node name="FranceText" type="Node2D" parent="Items" index="9" instance=ExtResource( 3 )]
+[node name="FranceText" parent="Items" index="9" instance=ExtResource( 3 )]
 position = Vector2( -192, -189.371 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "france"
 cell_position = Vector2( -1, -4 )
@@ -151,41 +146,36 @@ concept_name = "france"
 cell_position = Vector2( -1, 1 )
 tile_position = Vector2( -1, 1 )
 
-[node name="IsText2" type="Node2D" parent="Items" index="13" instance=ExtResource( 3 )]
+[node name="IsText2" parent="Items" index="13" instance=ExtResource( 3 )]
 position = Vector2( 320, -7.57484 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( 5, 0 )
 tile_position = Vector2( 5, 0 )
 
-[node name="WinText" type="Node2D" parent="Items" index="14" instance=ExtResource( 3 )]
+[node name="WinText" parent="Items" index="14" instance=ExtResource( 3 )]
 position = Vector2( 384, -7.57484 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "win"
 cell_position = Vector2( 6, 0 )
 tile_position = Vector2( 6, 0 )
 
-[node name="PeopleText2" type="Node2D" parent="Items" index="15" instance=ExtResource( 3 )]
+[node name="PeopleText2" parent="Items" index="15" instance=ExtResource( 3 )]
 position = Vector2( -256, 174.221 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "people"
 cell_position = Vector2( -6, 4 )
 tile_position = Vector2( -4, 4 )
 
-[node name="IsText4" type="Node2D" parent="Items" index="16" instance=ExtResource( 3 )]
+[node name="IsText4" parent="Items" index="16" instance=ExtResource( 3 )]
 position = Vector2( -192, 174.221 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( -5, 4 )
 tile_position = Vector2( -3, 4 )
 
-[node name="PushText" type="Node2D" parent="Items" index="17" instance=ExtResource( 3 )]
+[node name="PushText" parent="Items" index="17" instance=ExtResource( 3 )]
 position = Vector2( -128, 174.221 )
-script = ExtResource( 2 )
 is_text = true
 concept_name = "push"
 cell_position = Vector2( -4, 4 )

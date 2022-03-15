@@ -133,7 +133,8 @@ func load_cache_from_file() -> int:
 
 
 func clear():
-	self.cache.clear()
+	if self.cache:
+		self.cache.clear()
 
 
 func reindex_levels(refresh_existing := true):
