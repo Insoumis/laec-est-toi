@@ -18,7 +18,7 @@ class_name FinderClass # class
 # ## Pitfall
 #
 # Make sure you include `*.cfg` or `finder.cfg` in your export configuration !
-#
+# Rewrite this to use prettified JSON instead of CFG
 #
 # ## Rationale
 #
