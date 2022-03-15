@@ -202,6 +202,14 @@ func rename() -> void:
 	pass  # leave the portals' names alone for now
 
 
+var warp_rotation_speed := 0.06
+
+
+func _process(_delta):
+	if self.warp:
+		$AnimatedSprite.rotate(_delta * TAU * -1 * self.warp_rotation_speed)
+
+
 #  _                    _
 # | |                  | |
 # | |     _____   _____| |
