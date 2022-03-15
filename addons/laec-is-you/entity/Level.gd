@@ -2520,6 +2520,9 @@ func is_item_matching_subject(
 	else:
 		matches_concept = (subject.concept_name == item.concept_name)
 	
+	if not matches_concept:
+		return false  # huge optimization to return now
+	
 	# quick 'n dirty → refactor to use one class per word
 	var matches_epithets := true
 	if subject.has_epithet(Words.EPITHET_PREFIX_LONELY):
@@ -2530,6 +2533,7 @@ func is_item_matching_subject(
 		else:
 			matches_epithets = not is_item_lonely
 	
+	# Same : this is the easiest to refactor, I think
 	var matches_attributes := true
 	for attribute in subject.attributes:
 		var matches_attribute := false
@@ -2593,6 +2597,7 @@ func is_item_matching_subject(
 	
 	# Can/should we negate matches_subject somehow?
 	# If not, we can optimize by using additional return statements.
+	# Let's do that ; the WITH preposition is too expensive otherwise.
 	
 	return matches_subject
 
