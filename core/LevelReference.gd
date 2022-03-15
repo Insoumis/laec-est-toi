@@ -64,8 +64,12 @@ func instantiate_scene():
 		return null
 	
 	if self.level_filepath.ends_with('tscn'):
-		var level_packed_scene = ResourceLoader.load(self.level_filepath)
-		var level_scene = level_packed_scene.instance()
+		var level_scene_packed = ResourceLoader.load(self.level_filepath)
+		if not level_scene_packed.can_instance():
+			printerr("Level `%s' appears empty." % [self.level_filepath])
+			breakpoint  # Q: what happened?   A: …
+			return null
+		var level_scene = level_scene_packed.instance()
 		var LevelScene = load("res://addons/laec-is-you/entity/Level.gd")
 		if not (level_scene is LevelScene):
 			printerr("Scene `%s' is not a Level." % [self.level_filepath])
@@ -79,6 +83,10 @@ func instantiate_scene():
 			printerr("Level `%s' could not be loaded as phiu." % [self.level_filepath])
 			return null
 		var level_scene_packed = load("res://core/Level.tscn")
+		if not level_scene_packed.can_instance():
+			printerr("Level `%s' appears empty." % [self.level_filepath])
+			return null
+		
 		var level_scene = level_scene_packed.instance()
 		level_scene.load_from_pickle(self.pickle)
 		return level_scene

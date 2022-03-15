@@ -249,18 +249,14 @@ func add_level(filepath: String, refresh_existing := true):
 	#level_instance.register_all_items()
 	level_instance.reindex_lattice()
 	
-
 	level.is_in_score = level_instance.contribute_to_completion_score
 	level.title = level_instance.get_title_displayed()
-	
 	
 	for portal_scene in level_instance.get_portals():
 		var portal = PortalResource.new()
 		portal.target_level_path = portal_scene.level_path
 		level.portals.append(portal)
 	
-#	level_instance.free()
-#	return
 	
 	# … grab more data from the level here, such as available concepts, their tallies, etc.
 
