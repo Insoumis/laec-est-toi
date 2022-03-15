@@ -3,11 +3,12 @@
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=2]
 
-[node name="2SanteDAbord32" instance=ExtResource( 2 )]
-title = "level.2SanteDAbord32.title"
-excerpt = "level.2SanteDAbord32.excerpt"
-link = "level.2SanteDAbord32.link"
-title_custom = "Chapitre 6"
+[node name="2ReduireTempsTravail36" instance=ExtResource( 2 )]
+contribute_to_completion_score = true
+title = "level.2ReduireTempsTravail36.title"
+excerpt = "level.2ReduireTempsTravail36.excerpt"
+link = "level.2ReduireTempsTravail36.link"
+title_custom = "Réduire le Temps de Travail"
 excerpt_custom = "Face aux crises, la solidarité et l'organisation sont maintenant au coeur de l'action de l’Etat : prix bloqués, SMIC et minima sociaux revalorisés... Chacun doit vivre dignement !
 
 Grâce à une meilleure organisation (création de stocks stratégiques, société de roulement, réquisition des entreprises essentielles...), la France peut faire face aux épidémies tout en supprimant les états d’urgence et passes (peu) sanitaires.

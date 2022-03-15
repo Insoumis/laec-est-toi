@@ -65,7 +65,14 @@ tile_position = Vector2( 3, 4 )
 level_path = "res://levels/story/Partie3/3BanquesInteretGeneral47.tscn"
 title = "Intérêt Général"
 
-[node name="Portal3" parent="Items" index="6" instance=ExtResource( 5 )]
+[node name="Portal4" parent="Items" index="6" instance=ExtResource( 5 )]
+position = Vector2( 64, 174.221 )
+cell_position = Vector2( -1, 4 )
+tile_position = Vector2( 1, 4 )
+level_path = "res://levels/story/Partie3/2ReduireTempsTravail36.tscn"
+title = "Intérêt Général"
+
+[node name="Portal3" parent="Items" index="7" instance=ExtResource( 5 )]
 position = Vector2( 320, 174.221 )
 cell_position = Vector2( 3, 4 )
 tile_position = Vector2( 5, 4 )
