@@ -8,7 +8,7 @@
 title = "level.Partie3Map.title"
 excerpt = "level.Partie3Map.excerpt"
 link = "level.Partie3Map.link"
-title_custom = "Planification Écologique"
+title_custom = "Bien Vivre"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
@@ -58,24 +58,27 @@ tile_position = Vector2( -1, 4 )
 level_path = "res://levels/story/Partie3/1SanteDAbord32.tscn"
 title = "Santé d'Abord"
 
-[node name="Portal2" parent="Items" index="5" instance=ExtResource( 5 )]
-position = Vector2( 192, 174.221 )
-cell_position = Vector2( 1, 4 )
-tile_position = Vector2( 3, 4 )
-level_path = "res://levels/story/Partie3/3BanquesInteretGeneral47.tscn"
-title = "Intérêt Général"
-
-[node name="Portal4" parent="Items" index="6" instance=ExtResource( 5 )]
+[node name="Portal4" parent="Items" index="5" instance=ExtResource( 5 )]
 position = Vector2( 64, 174.221 )
 cell_position = Vector2( -1, 4 )
 tile_position = Vector2( 1, 4 )
 level_path = "res://levels/story/Partie3/2ReduireTempsTravail36.tscn"
+dependency_a = NodePath("../Portal")
+title = "Réduire le Temps de Travail"
+
+[node name="Portal5" parent="Items" index="6" instance=ExtResource( 5 )]
+position = Vector2( 192, 174.221 )
+cell_position = Vector2( 1, 4 )
+tile_position = Vector2( 3, 4 )
+level_path = "res://levels/story/Partie3/3BanquesInteretGeneral47.tscn"
+dependency_a = NodePath("../Portal4")
 title = "Intérêt Général"
 
-[node name="Portal3" parent="Items" index="7" instance=ExtResource( 5 )]
+[node name="Warp" parent="Items" index="7" instance=ExtResource( 5 )]
 position = Vector2( 320, 174.221 )
 cell_position = Vector2( 3, 4 )
 tile_position = Vector2( 5, 4 )
 warp = true
 level_path = "res://levels/story/Partie4Map.tscn"
-title = "Bifurcation Écologique"
+dependency_a = NodePath("../Portal5")
+title = "Humaniser la Société"

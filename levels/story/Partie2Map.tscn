@@ -8,7 +8,7 @@
 title = "level.Partie2Map.title"
 excerpt = "level.Partie2Map.excerpt"
 link = "level.Partie2Map.link"
-title_custom = "Sûreté & Justice"
+title_custom = "Planification Écologique"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
@@ -74,10 +74,11 @@ concept_name = "you"
 cell_position = Vector2( 5, 1 )
 tile_position = Vector2( 5, 1 )
 
-[node name="Portal4" parent="Items" index="7" instance=ExtResource( 3 )]
+[node name="Warp" parent="Items" index="7" instance=ExtResource( 3 )]
 position = Vector2( 192, 174.221 )
 cell_position = Vector2( 1, 4 )
 tile_position = Vector2( 3, 4 )
 warp = true
 level_path = "res://levels/story/Partie3Map.tscn"
-title = "Planification Écologique"
+dependency_a = NodePath("../Portal3")
+title = "Bien Vivre"

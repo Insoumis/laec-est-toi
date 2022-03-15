@@ -8,7 +8,7 @@
 title = "level.Partie4Map.title"
 excerpt = "level.Partie4Map.excerpt"
 link = "level.Partie4Map.link"
-title_custom = "Bifurcation Écologique"
+title_custom = "Humaniser la Société"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
@@ -59,24 +59,27 @@ tile_position = Vector2( 0, 2 )
 level_path = "res://levels/story/Partie4/1RepubliqueContreRacisme57.tscn"
 title = "Contre le Racisme"
 
-[node name="Portal4" parent="Items" index="5" instance=ExtResource( 5 )]
+[node name="Portal2" parent="Items" index="5" instance=ExtResource( 5 )]
+position = Vector2( -64, -7.57484 )
+cell_position = Vector2( -1, 0 )
+tile_position = Vector2( -1, 0 )
+level_path = "res://levels/story/Partie4/2SportsLibereArgent62.tscn"
+dependency_a = NodePath("../Portal")
+title = "Sports & Argent"
+
+[node name="Portal3" parent="Items" index="6" instance=ExtResource( 5 )]
+position = Vector2( -128, -98.4729 )
+cell_position = Vector2( -1, -2 )
+tile_position = Vector2( -2, -2 )
+level_path = "res://levels/story/Partie4/3ReconstruireEcoleGlobale65.tscn"
+dependency_a = NodePath("../Portal2")
+title = "Reconstruire l'École"
+
+[node name="Warp" parent="Items" index="7" instance=ExtResource( 5 )]
 position = Vector2( 256, 174.221 )
 cell_position = Vector2( 2, 4 )
 tile_position = Vector2( 4, 4 )
 warp = true
 level_path = "res://levels/story/Partie5Map.tscn"
-title = "Biens Communs"
-
-[node name="Portal2" parent="Items" index="6" instance=ExtResource( 5 )]
-position = Vector2( -64, -7.57484 )
-cell_position = Vector2( -1, 0 )
-tile_position = Vector2( -1, 0 )
-level_path = "res://levels/story/Partie4/2SportsLibereArgent62.tscn"
-title = "Sports & Argent"
-
-[node name="Portal3" parent="Items" index="7" instance=ExtResource( 5 )]
-position = Vector2( -128, -98.4729 )
-cell_position = Vector2( -1, -2 )
-tile_position = Vector2( -2, -2 )
-level_path = "res://levels/story/Partie4/3ReconstruireEcoleGlobale65.tscn"
-title = "Reconstruire l'École"
+dependency_a = NodePath("../Portal3")
+title = "Ordonner le Monde"
