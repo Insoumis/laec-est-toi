@@ -236,6 +236,7 @@ func add_level(filepath: String, refresh_existing := true):
 	if not is_level_file_valid:
 		return
 	
+	
 	var level_instance = level.instantiate_scene()
 	if not level_instance:
 		print("%s: Skipping wannabe level `%s'." % [self.name, filepath])
@@ -247,14 +248,19 @@ func add_level(filepath: String, refresh_existing := true):
 	
 	#level_instance.register_all_items()
 	level_instance.reindex_lattice()
+	
 
 	level.is_in_score = level_instance.contribute_to_completion_score
 	level.title = level_instance.get_title_displayed()
+	
 	
 	for portal_scene in level_instance.get_portals():
 		var portal = PortalResource.new()
 		portal.target_level_path = portal_scene.level_path
 		level.portals.append(portal)
+	
+#	level_instance.free()
+#	return
 	
 	# … grab more data from the level here, such as available concepts, their tallies, etc.
 
@@ -330,7 +336,8 @@ func reindex_orphanness():
 		for portal in parent_level.portals:
 			if not portal.has_a_target_defined():
 				continue
-			assert(self.cache.levels.has(portal.target_level_path))
+			# Happens when we delete level files ; portals' targets go missing
+			#assert(self.cache.levels.has(portal.target_level_path))
 			if not self.cache.levels.has(portal.target_level_path):
 				# Portal target level path is probably messed up.
 				printerr("%s: Portal targets a level not in the level pool (%s)" % [
