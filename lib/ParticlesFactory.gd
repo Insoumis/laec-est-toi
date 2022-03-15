@@ -44,7 +44,7 @@ func emit(at_position: Vector2):
 		return
 	var emitter = find_most_available_emitter()
 	emitter.set_position(at_position)
-	emitter.one_shot = true
+	#emitter.one_shot = true
 	emitter.emitting = true
 
 
