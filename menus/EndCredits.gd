@@ -26,9 +26,25 @@ enum ROLES {
 	SPECIAL_THANKS
 }
 
+var role_names = {
+	ROLES.CODER : tr("Coder"),
+	ROLES.TOOLS : tr("Tool developper"),
+	ROLES.GAME_DESIGNER : tr("Game designer"),
+	ROLES.LEVEL_DESIGNER : tr("Level designer"),
+	ROLES.MUSIC_COMPOSER : tr("Music composer"),
+	ROLES.MUSIC_PERFORMER : tr("Music performer"),
+	ROLES.GRAPHIC_DESIGNER : tr("Graphic designer"),
+	ROLES.TECHNICAL_ARTIST : tr("Technical artist"),
+	ROLES.SOUND_DESIGNER : tr("Sound designer"),
+	ROLES.ORGANIZER : tr("Organizer"),
+	ROLES.REVIEWER : tr("Reviewer"),
+	ROLES.TESTER : tr("Tester"),
+	ROLES.THANKS : tr("Thanks"),
+	ROLES.SPECIAL_THANKS : tr("Special Thanks"),
+}
+
 
 var people := [
-	
 	{
 		"name": "Fanelia",
 		"roles": [ROLES.THANKS],
@@ -146,17 +162,20 @@ func build_credit_controls(people_per_role : Dictionary):
 	credits_vbox.anchor_bottom = 1.0
 	credits_holder.add_child(credits_vbox)
 	for role in people_per_role.keys():
-		var role_label = Label.new()
-		role_label.align = Label.ALIGN_CENTER
-		role_label.text = "\n" + ROLES.keys()[role] + "\n"
-		role_label.set("custom_fonts/font", $ProRoleLabel.get("custom_fonts/font"))
-		credits_vbox.add_child(role_label)
-		for person in people_per_role[role]:
-			var person_label = Label.new()
-			person_label.align = Label.ALIGN_CENTER
-			person_label.text = person.name
-			person_label.set("custom_fonts/font", $ProPersonLabel.get("custom_fonts/font"))
-			credits_vbox.add_child(person_label)
+		if people_per_role[role].size() > 0:
+			var role_label = $ProRoleLabel.duplicate()
+			role_label.align = Label.ALIGN_CENTER
+			var role_name = role_names[role].to_upper()
+			print(role_name)
+			role_label.text = "\n" + role_name + "\n"
+			role_label.set("custom_fonts/font", $ProRoleLabel.get("custom_fonts/font"))
+			credits_vbox.add_child(role_label)
+			for person in people_per_role[role]:
+				var person_label = $ProPersonLabel.duplicate()
+				person_label.align = Label.ALIGN_CENTER
+				person_label.text = person.name
+				person_label.set("custom_fonts/font", $ProPersonLabel.get("custom_fonts/font"))
+				credits_vbox.add_child(person_label)
 	return credits_holder
 	
 

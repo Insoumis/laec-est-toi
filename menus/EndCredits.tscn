@@ -5,7 +5,7 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 43
-outline_size = 1
+outline_size = 3
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -23,6 +23,7 @@ __meta__ = {
 [node name="ProRoleLabel" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "ROLE"
 __meta__ = {
