@@ -100,7 +100,7 @@ func launch():
 					"minimum": 0,
 					"maximum": 100,
 					"step": 1,
-					"default": 40,
+					"default": 55,
 					"initialize": true,
 				},
 				"music": {

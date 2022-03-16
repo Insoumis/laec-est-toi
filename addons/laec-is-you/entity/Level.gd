@@ -1210,7 +1210,7 @@ func handle_mouse_inputs_on_process(delta) -> void:
 			
 			mark_direction_in_mouse_gui(direction)
 			
-			if is_cooling_down_between_actions(-1, 5*(100-AppSettings.get_setting("controls", "dragstick", "speed"))):
+			if is_cooling_down_between_actions(-1, get_dragstick_delay()):
 				return
 			
 			var _has_moved = try_move(direction)
@@ -1247,6 +1247,9 @@ func add_to_mouse_gui_pressure_gauge(how_much:float) -> void:
 		)
 	)
 
+func get_dragstick_delay() -> float:
+	return 5.0 * (100.0 - AppSettings.get_setting("controls", "dragstick", "speed"))
+
 
 #       _                             _
 #      | |                           | |
@@ -1258,13 +1261,13 @@ func add_to_mouse_gui_pressure_gauge(how_much:float) -> void:
 #               |___/|_|
 
 
-var joy_controls_deadzone = 0.7
+var joy_controls_deadzone := 0.7
 
 func handle_joypad_inputs_on_process(delta) -> void:
 	
 	if not is_accepting_inputs():
 		return
-	if is_cooling_down_between_actions():
+	if is_cooling_down_between_actions(-1, get_dragstick_delay()):
 		return
 	
 	var can_move : bool = not is_in_limbo()
@@ -1279,8 +1282,8 @@ func handle_joypad_inputs_on_process(delta) -> void:
 				Input.get_joy_axis(joypad_index, JOY_AXIS_0),
 				Input.get_joy_axis(joypad_index, JOY_AXIS_1)
 			)
-			
-			if direction_vector.length_squared() > self.joy_controls_deadzone:
+			var direction_intensity = direction_vector.length_squared()
+			if direction_intensity > self.joy_controls_deadzone:
 				var direction = Directions.get_joystick_direction_from_vector(direction_vector)
 				has_tried_to_move = true
 				has_moved = try_move(direction)
