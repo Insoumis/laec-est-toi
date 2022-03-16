@@ -1171,7 +1171,12 @@ func is_hovering_undo_button(mouse_position) -> bool:
 	if self.undo_button and self.undo_button.visible:
 		var view_size = get_viewport().get_visible_rect().size
 		var btn_rect = self.undo_button.get_global_rect()
-		if btn_rect.has_point(mouse_position-Vector2(0, view_size.y)):
+		
+		#view_size (1024, 600)
+		#btn_rect (148.748993, 452, 148, 148)
+		if btn_rect.has_point(mouse_position + Vector2(btn_rect.position.x, 0.0)):
+#		if btn_rect.has_point(mouse_position):
+#		if btn_rect.has_point(mouse_position-Vector2(0, view_size.y)):
 			return true
 	
 	return false
@@ -1185,6 +1190,7 @@ func handle_mouse_inputs_on_process(delta) -> void:
 	var mouse_position = get_tree().get_root().get_mouse_position()
 	
 	if is_hovering_undo_button(mouse_position):
+		print("hover")
 		stop_using_drag_joystick()
 		return
 	
@@ -1884,6 +1890,7 @@ func apply_alchemical_sentences_to_item(sentences:Array, item:Item) -> void:
 				continue
 			if complement.concept_name == item.concept_name:
 				is_item_locked_to_identity = true
+	
 	
 	if is_item_locked_to_identity:
 		return
