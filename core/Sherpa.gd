@@ -13,14 +13,15 @@ extends AnimatedSprite
 # Disappears when the solution is not followed anymore.
 
 # Exports (once we have figured out sane defaults)
-var dampen := 0.001
-var strength := 0.15
-var vivacity := 1.0
-var buzzness := Vector2(20.0, 10.0)
-var maximum_speed := 3.0
-var uturn_intent := 1.38
-var swirly_strength := 0.06
-var swirly_spin := 1.9  # turns per second
+export var guide_through_solution := true
+export var dampen := 0.001
+export var strength := 0.15
+export var vivacity := 1.0
+export var buzzness := Vector2(20.0, 10.0)
+export var maximum_speed := 3.0
+export var uturn_intent := 1.38
+export var swirly_strength := 0.06
+export var swirly_spin := 1.9  # turns per second
 
 # aka "speed" and "mass" in one messy variable
 var inertia := Vector2.ZERO
@@ -46,11 +47,12 @@ var target_position: Vector2
 
 func _ready():
 	self.level = find_parent_level()
-	# We don't really need all of these, the last one is enough
-#	self.level.connect("after_action_moved", self, "on_moved")
-#	self.level.connect("after_action_passed", self, "on_passed")
-#	self.level.connect("after_action_undoed", self, "on_undoed")
-	self.level.connect("after_action_executed", self, "on_actioned")
+	if self.guide_through_solution:
+		# We don't really need all of these, the last one is enough, right?
+#		self.level.connect("after_action_moved", self, "on_moved")
+#		self.level.connect("after_action_passed", self, "on_passed")
+#		self.level.connect("after_action_undoed", self, "on_undoed")
+		self.level.connect("after_action_executed", self, "on_actioned")
 	update_position()
 
 

@@ -184,6 +184,13 @@ script = ExtResource( 22 )
 particles_emitter_scene_path = "res://effects/AlchemyParticles.tscn"
 max_concurrent_emitters = 20
 
+[node name="BoomParticles" type="Node" parent="Effects"]
+script = ExtResource( 22 )
+__meta__ = {
+"_editor_description_": "Particles we use with the BOOM quality"
+}
+particles_emitter_scene_path = "res://effects/BoomBlastParticles.tscn"
+
 [node name="Hud" parent="." instance=ExtResource( 3 )]
 
 [node name="Dialogs" type="Control" parent="."]

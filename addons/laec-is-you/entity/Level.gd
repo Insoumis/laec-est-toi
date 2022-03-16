@@ -1904,7 +1904,7 @@ func apply_alchemical_sentences_to_item(sentences:Array, item:Item) -> void:
 		
 		if things_to_become:
 			item.transmute(things_to_become.pop_front())
-			$Effects/AlchemyParticles.emit(item.position)
+			$Effects/AlchemyParticles.emit_once(item.position)
 		if things_to_become:
 			for thing_to_become in things_to_become:
 				var created_item = spawn_item(item, {
@@ -3229,6 +3229,7 @@ func destroy_item(item: Item):
 	if item.has_quality(Words.QUALITY_BOOM):
 		if not self.destruction_queue.has(item):
 			self.destruction_queue.append(item)
+		$Effects/BoomParticles.emit_once(item.position)
 		var cells = self.cell_lattice.get_adjacent_cells_positions(item.cell_position)
 		cells.append(item.cell_position)
 		for cell in cells:

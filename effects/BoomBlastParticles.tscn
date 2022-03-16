@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/particles/boom_blast.png" type="Texture" id=1]
+
+[sub_resource type="Curve" id=1]
+max_value = 3.0
+_data = [ Vector2( 0, 0 ), 0.0, 2.8, 0, 0, Vector2( 0.730097, 1.71591 ), 2.2177, 2.2177, 0, 0, Vector2( 1, 2.31818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.560976, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.954448, 0.954448, 0.954448, 1, 1, 1, 1, 0 )
+
+[node name="BoomBlastParticles" type="CPUParticles2D"]
+amount = 1
+lifetime = 0.4
+preprocess = 0.05
+texture = ExtResource( 1 )
+gravity = Vector2( 0, 0 )
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
