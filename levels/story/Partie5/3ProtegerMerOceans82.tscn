@@ -13,8 +13,7 @@ excerpt_custom = "Des mots à la pelle
 Et des mots en foire
 Que la France appelle
 À écrire l'histoire."
-forward_level_path = "res://levels/story/Partie1Map.tscn"
-solution_a = "6663966"
+solution_a = "7799671136699974741111999744147666661339477444433333313666666933333114479777779444446613179444669666666999993333477131139931669997977433314139477444"
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.4, 1.4 )

@@ -17,11 +17,11 @@ Enfin, la dette publique, qui asphyxie notre démocratie, est annulée : grâce 
 solution_a = "7714444431113666444711163366644441793333634674166666963914"
 
 [node name="Camera2D" parent="." index="0"]
-zoom = Vector2( 1.4, 1.4 )
+zoom = Vector2( 1.5, 1.5 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
-tile_data = PoolIntArray( -393218, 27, 0, -393217, 27, 0, -458752, 27, 0, -458751, 27, 0, -458750, 27, 0, -458749, 36, 0, -458748, 36, 0, -327682, 27, 0, -327681, 27, 0, -393216, 27, 0, -393215, 27, 0, -393214, 27, 0, -393213, 27, 0, -393212, 36, 0, -393211, 36, 0, -262147, 27, 0, -262146, 27, 0, -327676, 31, 0, -327675, 36, 0, -196611, 27, 0, -196610, 27, 0, -262139, 36, 0, -262138, 36, 0, -131076, 27, 0, -131075, 27, 0, -65541, 34, 0, -65540, 34, 0, -65539, 34, 0, -65538, 34, 0, -65537, 34, 0, -131072, 34, 0, -131071, 34, 0, -131070, 34, 0, -131069, 34, 0, -131068, 34, 0, -6, 34, 0, -5, 34, 0, -4, 34, 0, -3, 34, 0, -2, 34, 0, -1, 30, 0, -65536, 30, 0, -65535, 34, 0, -65534, 34, 0, -65533, 34, 0, 65532, 27, 0, 65533, 27, 0, 65534, 27, 0, 131067, 27, 0, 131068, 27, 0, 131069, 27, 0, 196603, 34, 0, 196604, 34, 0, 196605, 34, 0, 196606, 34, 0, 196607, 34, 0, 131072, 34, 0, 131073, 34, 0, 131074, 34, 0, 131075, 34, 0, 131076, 34, 0, 262138, 34, 0, 262139, 34, 0, 262140, 34, 0, 262141, 34, 0, 262142, 34, 0, 262143, 30, 0, 196608, 30, 0, 196609, 34, 0, 196610, 34, 0, 196611, 34, 0, 327676, 27, 0, 327677, 27, 0, 262149, 36, 0, 262150, 36, 0, 393212, 27, 0, 393213, 27, 0, 327684, 37, 0, 327685, 36, 0, 458749, 27, 0, 458750, 27, 0, 458751, 27, 0, 393219, 27, 0, 393220, 37, 0, 393221, 30, 0, 524285, 27, 0, 524286, 27, 0, 524287, 27, 0, 458752, 27, 0, 458753, 27, 0, 458754, 27, 0, 458755, 27, 0, 458756, 30, 0, 589823, 27, 0, 524288, 27, 0, 524289, 27, 0, 524290, 27, 0, 524291, 27, 0 )
+tile_data = PoolIntArray( -393218, 27, 0, -393217, 27, 0, -458752, 27, 0, -458751, 27, 0, -458750, 27, 0, -458749, 36, 0, -458748, 36, 0, -327682, 27, 0, -327681, 27, 0, -393216, 27, 0, -393215, 27, 0, -393214, 27, 0, -393213, 27, 0, -393212, 36, 0, -393211, 36, 0, -262147, 27, 0, -262146, 27, 0, -327676, 31, 0, -327675, 36, 0, -196611, 27, 0, -196610, 27, 0, -262139, 36, 0, -262138, 36, 0, -131076, 27, 0, -131075, 27, 0, -65541, 34, 0, -65540, 34, 0, -65539, 34, 0, -65538, 34, 0, -65537, 34, 0, -131072, 34, 0, -131071, 34, 0, -131070, 34, 0, -131069, 34, 0, -131068, 34, 0, -6, 34, 0, -5, 34, 0, -4, 34, 0, -3, 34, 0, -2, 34, 0, -1, 30, 0, -65536, 30, 0, -65535, 34, 0, -65534, 34, 0, -65533, 34, 0, 65532, 27, 0, 65533, 27, 0, 65534, 27, 0, 131067, 27, 0, 131068, 27, 0, 131069, 27, 0, 196603, 34, 0, 196604, 34, 0, 196605, 34, 0, 196606, 34, 0, 196607, 34, 0, 131072, 34, 0, 131073, 34, 0, 131074, 34, 0, 131075, 34, 0, 131076, 34, 0, 262138, 34, 0, 262139, 34, 0, 262140, 34, 0, 262141, 34, 0, 262142, 34, 0, 262143, 30, 0, 196608, 30, 0, 196609, 34, 0, 196610, 34, 0, 196611, 34, 0, 327676, 27, 0, 327677, 27, 0, 262149, 36, 0, 262150, 36, 0, 393212, 27, 0, 393213, 27, 0, 327684, 37, 0, 327685, 30, 0, 458749, 27, 0, 458750, 27, 0, 458751, 27, 0, 393219, 27, 0, 393220, 37, 0, 393221, 30, 0, 524285, 27, 0, 524286, 27, 0, 524287, 27, 0, 458752, 27, 0, 458753, 27, 0, 458754, 27, 0, 458755, 27, 0, 458756, 36, 0, 589823, 27, 0, 524288, 27, 0, 524289, 27, 0, 524290, 27, 0, 524291, 27, 0 )
 
 [node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
@@ -34,60 +34,60 @@ tile_data = PoolIntArray( -3866627, 29, 0, -3735548, 30, 0, -3735542, 10, 0, -37
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
-position = Vector2( 480, -234.82 )
+position = Vector2( -416, -325.718 )
 is_text = true
 concept_name = "laec"
-cell_position = Vector2( 10, -5 )
-tile_position = Vector2( 7, -5 )
+cell_position = Vector2( -3, -7 )
+tile_position = Vector2( -7, -7 )
 
 [node name="LawText3" parent="Items" index="1" instance=ExtResource( 3 )]
-position = Vector2( 320, -7.57484 )
+position = Vector2( 352, 37.8742 )
 is_text = true
 concept_name = "law"
-cell_position = Vector2( 5, 0 )
-tile_position = Vector2( 5, 0 )
+cell_position = Vector2( 5, 1 )
+tile_position = Vector2( 5, 1 )
 
 [node name="NotText" parent="Items" index="2" instance=ExtResource( 3 )]
-position = Vector2( 384, -7.57484 )
+position = Vector2( 416, 37.8742 )
 is_text = true
 concept_name = "not"
-cell_position = Vector2( 6, 0 )
-tile_position = Vector2( 6, 0 )
+cell_position = Vector2( 6, 1 )
+tile_position = Vector2( 6, 1 )
 
 [node name="WithText" parent="Items" index="3" instance=ExtResource( 3 )]
-position = Vector2( 448, -7.57484 )
+position = Vector2( 480, 37.8742 )
 is_text = true
 concept_name = "with"
-cell_position = Vector2( 7, 0 )
-tile_position = Vector2( 7, 0 )
+cell_position = Vector2( 7, 1 )
+tile_position = Vector2( 7, 1 )
 
 [node name="DeluxeText3" parent="Items" index="4" instance=ExtResource( 3 )]
-position = Vector2( 512, -7.57484 )
+position = Vector2( 544, 37.8742 )
 is_text = true
 concept_name = "deluxe"
-cell_position = Vector2( 8, 0 )
-tile_position = Vector2( 8, 0 )
+cell_position = Vector2( 8, 1 )
+tile_position = Vector2( 8, 1 )
 
 [node name="IsText" parent="Items" index="5" instance=ExtResource( 3 )]
-position = Vector2( 544, -234.82 )
+position = Vector2( -352, -325.718 )
 is_text = true
 concept_name = "is"
-cell_position = Vector2( 11, -5 )
-tile_position = Vector2( 8, -5 )
+cell_position = Vector2( -2, -7 )
+tile_position = Vector2( -6, -7 )
 
 [node name="YouText" parent="Items" index="6" instance=ExtResource( 3 )]
-position = Vector2( 608, -234.82 )
+position = Vector2( -288, -325.718 )
 is_text = true
 concept_name = "you"
-cell_position = Vector2( 12, -5 )
-tile_position = Vector2( 9, -5 )
+cell_position = Vector2( -1, -7 )
+tile_position = Vector2( -5, -7 )
 
 [node name="LawText" parent="Items" index="7" instance=ExtResource( 3 )]
-position = Vector2( 320, 265.119 )
+position = Vector2( 352, 219.67 )
 is_text = true
 concept_name = "law"
-cell_position = Vector2( 2, 6 )
-tile_position = Vector2( 5, 6 )
+cell_position = Vector2( 3, 5 )
+tile_position = Vector2( 5, 5 )
 
 [node name="LawText2" parent="Items" index="8" instance=ExtResource( 3 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
@@ -99,46 +99,46 @@ tile_position = Vector2( 0, -1 )
 is_lit = false
 
 [node name="AndText" parent="Items" index="9" instance=ExtResource( 3 )]
-position = Vector2( 512, 265.119 )
+position = Vector2( 544, 219.67 )
 is_text = true
 concept_name = "and"
-cell_position = Vector2( 5, 6 )
-tile_position = Vector2( 8, 6 )
+cell_position = Vector2( 6, 5 )
+tile_position = Vector2( 8, 5 )
 
 [node name="IsText2" parent="Items" index="10" instance=ExtResource( 3 )]
-position = Vector2( 384, 265.119 )
+position = Vector2( 416, 219.67 )
 is_text = true
 concept_name = "is"
-cell_position = Vector2( 3, 6 )
-tile_position = Vector2( 6, 6 )
+cell_position = Vector2( 4, 5 )
+tile_position = Vector2( 6, 5 )
 
 [node name="IsText3" parent="Items" index="11" instance=ExtResource( 3 )]
-position = Vector2( 576, -7.57484 )
+position = Vector2( 608, 37.8742 )
 is_text = true
 concept_name = "is"
-cell_position = Vector2( 9, 0 )
-tile_position = Vector2( 9, 0 )
+cell_position = Vector2( 9, 1 )
+tile_position = Vector2( 9, 1 )
 
 [node name="PullText" parent="Items" index="12" instance=ExtResource( 3 )]
-position = Vector2( 448, 265.119 )
+position = Vector2( 480, 219.67 )
 is_text = true
 concept_name = "pull"
-cell_position = Vector2( 4, 6 )
-tile_position = Vector2( 7, 6 )
+cell_position = Vector2( 5, 5 )
+tile_position = Vector2( 7, 5 )
 
 [node name="PushText" parent="Items" index="13" instance=ExtResource( 3 )]
-position = Vector2( 576, 265.119 )
+position = Vector2( 608, 219.67 )
 is_text = true
 concept_name = "push"
-cell_position = Vector2( 6, 6 )
-tile_position = Vector2( 9, 6 )
+cell_position = Vector2( 7, 5 )
+tile_position = Vector2( 9, 5 )
 
 [node name="WinText" parent="Items" index="14" instance=ExtResource( 3 )]
-position = Vector2( 640, -7.57484 )
+position = Vector2( 672, 37.8742 )
 is_text = true
 concept_name = "win"
-cell_position = Vector2( 10, 0 )
-tile_position = Vector2( 10, 0 )
+cell_position = Vector2( 10, 1 )
+tile_position = Vector2( 10, 1 )
 
 [node name="Laec" parent="Items" index="15" instance=ExtResource( 3 )]
 position = Vector2( 288, -234.81 )
@@ -211,11 +211,11 @@ tile_position = Vector2( 0, 3 )
 is_lit = false
 
 [node name="DeluxeText2" parent="Items" index="24" instance=ExtResource( 3 )]
-position = Vector2( -480, 310.568 )
+position = Vector2( -416, 310.568 )
 is_text = true
 concept_name = "deluxe"
-cell_position = Vector2( -11, 7 )
-tile_position = Vector2( -8, 7 )
+cell_position = Vector2( -10, 7 )
+tile_position = Vector2( -7, 7 )
 
 [node name="IsText5" parent="Items" index="25" instance=ExtResource( 3 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
@@ -227,11 +227,11 @@ tile_position = Vector2( 1, 3 )
 is_lit = false
 
 [node name="IsText6" parent="Items" index="26" instance=ExtResource( 3 )]
-position = Vector2( -416, 310.568 )
+position = Vector2( -352, 310.568 )
 is_text = true
 concept_name = "is"
-cell_position = Vector2( -10, 7 )
-tile_position = Vector2( -7, 7 )
+cell_position = Vector2( -9, 7 )
+tile_position = Vector2( -6, 7 )
 
 [node name="MeltText" parent="Items" index="27" instance=ExtResource( 3 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
@@ -243,29 +243,8 @@ tile_position = Vector2( 3, 3 )
 is_lit = false
 
 [node name="DefeatText" parent="Items" index="28" instance=ExtResource( 3 )]
-position = Vector2( -352, 310.568 )
+position = Vector2( -288, 310.568 )
 is_text = true
 concept_name = "defeat"
-cell_position = Vector2( -9, 7 )
-tile_position = Vector2( -6, 7 )
-
-[node name="DeluxeText4" parent="Items" index="29" instance=ExtResource( 3 )]
-position = Vector2( -608, 219.67 )
-is_text = true
-concept_name = "deluxe"
-cell_position = Vector2( -12, 5 )
-tile_position = Vector2( -10, 5 )
-
-[node name="HasText" parent="Items" index="30" instance=ExtResource( 3 )]
-position = Vector2( -544, 219.67 )
-is_text = true
-concept_name = "has"
-cell_position = Vector2( -11, 5 )
-tile_position = Vector2( -9, 5 )
-
-[node name="MoneyText" parent="Items" index="31" instance=ExtResource( 3 )]
-position = Vector2( -480, 219.67 )
-is_text = true
-concept_name = "money"
-cell_position = Vector2( -10, 5 )
-tile_position = Vector2( -8, 5 )
+cell_position = Vector2( -8, 7 )
+tile_position = Vector2( -5, 7 )

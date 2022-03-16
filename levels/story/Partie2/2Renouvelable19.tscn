@@ -17,14 +17,14 @@ La police est refondée sur la base d’une police de proximité, qui créée un
 Grâce à la légalisation du cannabis, l’État encadre la consommation, la production et la vente à des fins récréatives, dans des conditions qui luttent contre l’addiction. La police est ainsi libérée du poids d’une politique répressive inefficace.
 Enfin, la lutte antiterroriste est améliorée et ses moyens sont augmentés."
 link_custom = "https://laec.fr/section/3/une-republique-permettant-l-intervention-populaire"
-solution_a = "6666663339991394113647777477996336637977963"
+solution_a = "6666663136364799913914147477799966663911379777663"
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.2, 1.2 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
-tile_data = PoolIntArray( -458749, 34, 0, -458748, 34, 0, -393215, 34, 0, -393214, 34, 0, -393213, 34, 0, -393211, 34, 0, -327679, 34, 0, -327677, 34, 0, -327675, 34, 0, -196612, 34, 0, -196611, 34, 0, -196610, 34, 0, -196609, 34, 0, -262144, 34, 0, -262143, 34, 0, -262142, 34, 0, -262141, 34, 0, -262140, 29, 0, -262139, 29, 0, -131077, 34, 0, -131075, 34, 0, -131073, 34, 0, -196606, 34, 0, -196605, 29, 0, -196604, 29, 0, -196602, 27, 0, -65540, 34, 0, -65539, 34, 0, -65537, 34, 0, -131072, 34, 0, -131071, 34, 0, -131070, 34, 0, -131067, 27, 0, -131066, 27, 0, -131065, 27, 0, -8, 31, 0, -7, 31, 0, -4, 29, 0, -3, 29, 0, -65536, 34, 0, -65534, 34, 0, -65532, 27, 0, -65531, 27, 0, -65530, 27, 0, -65529, 27, 0, 65528, 31, 0, 65529, 31, 0, 65530, 31, 0, 65531, 35, 0, 65532, 29, 0, 65533, 29, 0, 65534, 29, 0, 65535, 34, 0, 2, 34, 0, 3, 29, 0, 5, 27, 0, 6, 27, 0, 7, 27, 0, 8, 27, 0, 131064, 31, 0, 131065, 31, 0, 131068, 29, 0, 131069, 29, 0, 131071, 34, 0, 65537, 34, 0, 65538, 29, 0, 65539, 29, 0, 65540, 27, 0, 65541, 27, 0, 65542, 27, 0, 65543, 27, 0, 65544, 27, 0, 196605, 34, 0, 196606, 34, 0, 196607, 34, 0, 131072, 34, 0, 131073, 34, 0, 131074, 34, 0, 131076, 27, 0, 131077, 27, 0, 131078, 27, 0, 131079, 27, 0, 131080, 27, 0, 262141, 34, 0, 262143, 34, 0, 196608, 34, 0, 196612, 27, 0, 196613, 27, 0, 196614, 27, 0, 196615, 27, 0, 196616, 27, 0, 327678, 34, 0, 262144, 34, 0, 262145, 34, 0, 262146, 34, 0, 262147, 29, 0, 262148, 29, 0, 262149, 27, 0, 262150, 27, 0, 262151, 27, 0, 262152, 27, 0, 393214, 34, 0, 393215, 34, 0, 327680, 34, 0 )
+tile_data = PoolIntArray( -458749, 34, 0, -458748, 34, 0, -393215, 34, 0, -393214, 34, 0, -393213, 34, 0, -393211, 34, 0, -327679, 34, 0, -327677, 34, 0, -327675, 34, 0, -196612, 34, 0, -196611, 34, 0, -196610, 34, 0, -196609, 34, 0, -262144, 34, 0, -262143, 34, 0, -262142, 34, 0, -262141, 34, 0, -262140, 29, 0, -262139, 29, 0, -131077, 34, 0, -131075, 34, 0, -131073, 34, 0, -196606, 34, 0, -196605, 29, 0, -196604, 29, 0, -196602, 27, 0, -65540, 34, 0, -65539, 34, 0, -65537, 34, 0, -131072, 34, 0, -131071, 34, 0, -131070, 34, 0, -131067, 27, 0, -131066, 27, 0, -131065, 27, 0, -8, 31, 0, -7, 31, 0, -4, 29, 0, -3, 29, 0, -65536, 34, 0, -65534, 34, 0, -65532, 27, 0, -65531, 27, 0, -65530, 27, 0, -65529, 27, 0, 65528, 31, 0, 65529, 31, 0, 65530, 31, 0, 65531, 35, 0, 65532, 29, 0, 65533, 29, 0, 65534, 29, 0, 65535, 34, 0, 2, 34, 0, 3, 29, 0, 5, 27, 0, 6, 27, 0, 7, 27, 0, 8, 27, 0, 131064, 31, 0, 131065, 31, 0, 131068, 29, 0, 131069, 29, 0, 131071, 34, 0, 65537, 34, 0, 65538, 29, 0, 65539, 29, 0, 65540, 27, 0, 65541, 27, 0, 65542, 27, 0, 65543, 27, 0, 65544, 27, 0, 196605, 34, 0, 196606, 34, 0, 196607, 34, 0, 131073, 34, 0, 131074, 34, 0, 131076, 27, 0, 131077, 27, 0, 131078, 27, 0, 131079, 27, 0, 131080, 27, 0, 262141, 34, 0, 262143, 34, 0, 196608, 34, 0, 196612, 27, 0, 196613, 27, 0, 196614, 27, 0, 196615, 27, 0, 196616, 27, 0, 327678, 34, 0, 262144, 34, 0, 262145, 34, 0, 262146, 34, 0, 262147, 29, 0, 262148, 29, 0, 262149, 27, 0, 262150, 27, 0, 262151, 27, 0, 262152, 27, 0, 393214, 34, 0, 393215, 34, 0, 327680, 34, 0, 589824, 34, 0 )
 
 [node name="HexagonalGridLines" parent="." index="3"]
 texture = ExtResource( 3 )
@@ -41,11 +41,11 @@ cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 tile_data = PoolIntArray( 917554, 16, 0 )
 
 [node name="PeopleText" parent="Items" index="0" instance=ExtResource( 2 )]
-position = Vector2( -512, 265.119 )
+position = Vector2( -512, -280.269 )
 is_text = true
 concept_name = "people"
-cell_position = Vector2( -11, 6 )
-tile_position = Vector2( -8, 6 )
+cell_position = Vector2( -5, -6 )
+tile_position = Vector2( -8, -6 )
 
 [node name="PeopleText2" parent="Items" index="1" instance=ExtResource( 2 )]
 position = Vector2( -512, -189.371 )
@@ -62,25 +62,25 @@ tile_position = Vector2( -7, 0 )
 is_you = true
 
 [node name="NotText" parent="Items" index="3" instance=ExtResource( 2 )]
-position = Vector2( -448, 265.119 )
+position = Vector2( -448, -280.269 )
 is_text = true
 concept_name = "not"
-cell_position = Vector2( -10, 6 )
-tile_position = Vector2( -7, 6 )
+cell_position = Vector2( -4, -6 )
+tile_position = Vector2( -7, -6 )
 
 [node name="WithText" parent="Items" index="4" instance=ExtResource( 2 )]
-position = Vector2( -384, 265.119 )
+position = Vector2( -384, -280.269 )
 is_text = true
 concept_name = "with"
-cell_position = Vector2( -9, 6 )
-tile_position = Vector2( -6, 6 )
+cell_position = Vector2( -3, -6 )
+tile_position = Vector2( -6, -6 )
 
 [node name="WasteText" parent="Items" index="5" instance=ExtResource( 2 )]
-position = Vector2( -320, 265.119 )
+position = Vector2( -320, -280.269 )
 is_text = true
 concept_name = "waste"
-cell_position = Vector2( -8, 6 )
-tile_position = Vector2( -5, 6 )
+cell_position = Vector2( -2, -6 )
+tile_position = Vector2( -5, -6 )
 
 [node name="Wall" parent="Items" index="6" instance=ExtResource( 2 )]
 position = Vector2( -320, -7.57474 )
@@ -104,10 +104,10 @@ tile_position = Vector2( 2, 1 )
 is_push = true
 
 [node name="Wall6" parent="Items" index="9" instance=ExtResource( 2 )]
-position = Vector2( 224, -234.82 )
+position = Vector2( 192, -189.371 )
 concept_name = "wall"
-cell_position = Vector2( 6, -5 )
-tile_position = Vector2( 3, -5 )
+cell_position = Vector2( 5, -4 )
+tile_position = Vector2( 3, -4 )
 is_push = true
 
 [node name="Wall7" parent="Items" index="10" instance=ExtResource( 2 )]
@@ -178,53 +178,53 @@ is_sink = true
 is_boom = true
 
 [node name="WinText" parent="Items" index="19" instance=ExtResource( 2 )]
-position = Vector2( -192, 265.119 )
+position = Vector2( -192, -280.269 )
 is_text = true
 concept_name = "win"
-cell_position = Vector2( -6, 6 )
-tile_position = Vector2( -3, 6 )
+cell_position = Vector2( 0, -6 )
+tile_position = Vector2( -3, -6 )
 
 [node name="IsText" parent="Items" index="20" instance=ExtResource( 2 )]
-position = Vector2( -256, 265.119 )
-is_text = true
-concept_name = "is"
-cell_position = Vector2( -7, 6 )
-tile_position = Vector2( -4, 6 )
-
-[node name="WasteText2" parent="Items" index="21" instance=ExtResource( 2 )]
-position = Vector2( -512, -280.269 )
-is_text = true
-concept_name = "waste"
-cell_position = Vector2( -5, -6 )
-tile_position = Vector2( -8, -6 )
-
-[node name="BoomText" parent="Items" index="22" instance=ExtResource( 2 )]
-position = Vector2( -384, -280.269 )
-is_text = true
-concept_name = "boom"
-cell_position = Vector2( -3, -6 )
-tile_position = Vector2( -6, -6 )
-
-[node name="IsText2" parent="Items" index="23" instance=ExtResource( 2 )]
-position = Vector2( -448, -280.269 )
-is_text = true
-concept_name = "is"
-cell_position = Vector2( -4, -6 )
-tile_position = Vector2( -7, -6 )
-
-[node name="SinkText" parent="Items" index="24" instance=ExtResource( 2 )]
 position = Vector2( -256, -280.269 )
 is_text = true
-concept_name = "sink"
+concept_name = "is"
 cell_position = Vector2( -1, -6 )
 tile_position = Vector2( -4, -6 )
 
+[node name="WasteText2" parent="Items" index="21" instance=ExtResource( 2 )]
+position = Vector2( -448, 265.119 )
+is_text = true
+concept_name = "waste"
+cell_position = Vector2( -10, 6 )
+tile_position = Vector2( -7, 6 )
+
+[node name="BoomText" parent="Items" index="22" instance=ExtResource( 2 )]
+position = Vector2( -320, 265.119 )
+is_text = true
+concept_name = "boom"
+cell_position = Vector2( -8, 6 )
+tile_position = Vector2( -5, 6 )
+
+[node name="IsText2" parent="Items" index="23" instance=ExtResource( 2 )]
+position = Vector2( -384, 265.119 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -9, 6 )
+tile_position = Vector2( -6, 6 )
+
+[node name="SinkText" parent="Items" index="24" instance=ExtResource( 2 )]
+position = Vector2( -192, 265.119 )
+is_text = true
+concept_name = "sink"
+cell_position = Vector2( -6, 6 )
+tile_position = Vector2( -3, 6 )
+
 [node name="AndText" parent="Items" index="25" instance=ExtResource( 2 )]
-position = Vector2( -320, -280.269 )
+position = Vector2( -256, 265.119 )
 is_text = true
 concept_name = "and"
-cell_position = Vector2( -2, -6 )
-tile_position = Vector2( -5, -6 )
+cell_position = Vector2( -7, 6 )
+tile_position = Vector2( -4, 6 )
 
 [node name="WallText" parent="Items" index="26" instance=ExtResource( 2 )]
 position = Vector2( -512, 174.221 )
