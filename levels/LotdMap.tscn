@@ -13,7 +13,17 @@ link = "level.LotdMap.link"
 playlist_name = "StartMenu"
 
 [node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -196610, 4, 0, -196609, 4, 0, -262144, 4, 0, -262143, 4, 0, -262142, 4, 0, -262141, 4, 0, -131076, 4, 0, -131075, 4, 0, -196605, 4, 0, -65540, 4, 0, -65539, 4, 0, -65538, 4, 0, -131071, 4, 0, -131070, 4, 0, -131069, 4, 0, -4, 4, 0, -3, 4, 0, -65536, 4, 0, 0, 4, 0, 2, 4, 0, 3, 4, 0, 65536, 4, 0, 65537, 4, 0, 65539, 4, 0, 196606, 4, 0, 196607, 4, 0, 131076, 4, 0, 262140, 4, 0, 262141, 4, 0, 262143, 4, 0, 196608, 4, 0, 196609, 4, 0, 196611, 4, 0, 327674, 0, 0, 327676, 22, 0, 327677, 33, 0, 262146, 4, 0, 262147, 4, 0, 393210, 0, 0, 393211, 0, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="Portal31" parent="Items" index="0" instance=ExtResource( 2 )]
 position = Vector2( -352, 219.67 )
@@ -85,18 +95,20 @@ cell_position = Vector2( 0, 4 )
 tile_position = Vector2( 2, 4 )
 level_path = "res://levels/lotd/Lotd20220321.tscn"
 daily = true
-title = "Débat à l'Assermblée"
+title = "Débat à l'Assemblée"
 
 [node name="Portal8" parent="Items" index="9" instance=ExtResource( 2 )]
-position = Vector2( 224, 219.67 )
-cell_position = Vector2( 1, 5 )
-tile_position = Vector2( 3, 5 )
+position = Vector2( 192, 174.221 )
+cell_position = Vector2( 1, 4 )
+tile_position = Vector2( 3, 4 )
+level_path = "res://levels/lotd/Lotd20220322.tscn"
 daily = true
+title = "Garde Rapprochée"
 
 [node name="Portal9" parent="Items" index="10" instance=ExtResource( 2 )]
-position = Vector2( 224, 128.772 )
-cell_position = Vector2( 2, 3 )
-tile_position = Vector2( 3, 3 )
+position = Vector2( 384, 174.221 )
+cell_position = Vector2( 4, 4 )
+tile_position = Vector2( 6, 4 )
 daily = true
 
 [node name="Portal10" parent="Items" index="11" instance=ExtResource( 2 )]
@@ -253,9 +265,9 @@ contents = "Un nouveau niveau se
 débloque chaque jour !"
 
 [node name="Sign2" parent="Items" index="36" instance=ExtResource( 5 )]
-position = Vector2( 192, 174.221 )
-cell_position = Vector2( 1, 4 )
-tile_position = Vector2( 3, 4 )
+position = Vector2( 224, 128.772 )
+cell_position = Vector2( 2, 3 )
+tile_position = Vector2( 3, 3 )
 contents = "Travaux en Cours
 ---
 Retéléchargez le jeu
@@ -266,7 +278,7 @@ position = Vector2( -224, -53.0239 )
 cell_position = Vector2( -3, -1 )
 tile_position = Vector2( -4, -1 )
 contents = "Rejoignez-nous sur Discord
-Pour publier vos créations"
+Pour publier vos créations."
 url = "https://discord-insoumis.fr/"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="GuiLayer" index="4"]
