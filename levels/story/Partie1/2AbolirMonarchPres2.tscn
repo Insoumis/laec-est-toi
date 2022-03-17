@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/laec-is-you/ide/editor_grid.png" type="Texture" id=3]
-[ext_resource path="res://core/Sign.gd" type="Script" id=4]
 [ext_resource path="res://core/Sign.tscn" type="PackedScene" id=5]
 
 [node name="2AbolirMonarchPres2" instance=ExtResource( 2 )]
@@ -12,26 +11,34 @@ title = "level.2AbolirMonarchPres2.title"
 excerpt = "level.2AbolirMonarchPres2.excerpt"
 link = "level.2AbolirMonarchPres2.link"
 title_custom = "Abolir la Monarchie"
-excerpt_custom = "Bien joué ! Un nouveau grand chantier s’ouvert : la Justice !
-Chacun a désormais accès à la Justice grâce à une aide juridictionnelle augmentée et aux tribunaux de proximité !
-Sont renforcées :  la lutte contre la délinquance financière, la justice pénale environnementale, la protection de l’enfance, mais aussi la lutte contre les violences sexistes et sexuelles.
-La police est refondée sur la base d’une police de proximité, qui créée une relation de confiance avec la population, pour une action plus efficace.  
-Grâce à la légalisation du cannabis, l’État encadre la consommation, la production et la vente à des fins récréatives, dans des conditions qui luttent contre l’addiction. La police est ainsi libérée du poids d’une politique répressive inefficace.
-Enfin, la lutte antiterroriste est améliorée et ses moyens sont augmentés."
+excerpt_custom = "Enfin !
+
+Le vote blanc est reconnu et le droit de vote ramené à 16 ans.
+Les médias sont enfin remis entre les mains des citoyen.ne.s : fini la mainmise de quelques milliardaires !
+
+Envie de continuer à changer les règles ? C’est parti !"
 link_custom = "https://laec.fr/section/3/une-republique-permettant-l-intervention-populaire"
-solution_a = "663997933331666777776133336636777476696699"
+solution_a = "66399793333166677777613333663677747669699"
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.2, 1.2 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
-tile_data = PoolIntArray( -327674, 43, 0, -327673, 43, 0, -262138, 43, 0, -262137, 43, 0, -262136, 43, 0, -131076, 27, 0, -131075, 27, 0, -131074, 34, 0, -131073, 27, 0, -196608, 27, 0, -196607, 27, 0, -196606, 27, 0, -196602, 43, 0, -196601, 43, 0, -65540, 27, 0, -65539, 27, 0, -65538, 27, 0, -65537, 26, 0, -131072, 26, 0, -131071, 26, 0, -131070, 26, 0, -131068, 43, 0, -131067, 43, 0, -131066, 43, 0, -8, 31, 0, -7, 31, 0, -5, 27, 0, -4, 27, 0, -3, 27, 0, -2, 27, 0, -1, 34, 0, -65536, 26, 0, -65535, 26, 0, -65534, 26, 0, -65533, 30, 0, 65528, 31, 0, 65529, 31, 0, 65530, 31, 0, 65531, 30, 0, 65532, 27, 0, 65533, 27, 0, 65534, 27, 0, 65535, 27, 0, 0, 26, 0, 1, 26, 0, 2, 34, 0, 3, 26, 0, 131064, 31, 0, 131065, 31, 0, 131067, 27, 0, 131068, 27, 0, 131069, 27, 0, 131070, 27, 0, 131071, 26, 0, 65536, 26, 0, 65537, 26, 0, 65538, 26, 0, 65539, 26, 0, 196604, 27, 0, 196605, 27, 0, 196606, 27, 0, 196607, 34, 0, 131072, 26, 0, 131073, 34, 0, 131074, 34, 0, 131075, 26, 0, 131076, 34, 0, 262140, 27, 0, 262141, 27, 0, 262142, 26, 0, 262143, 26, 0, 196608, 26, 0, 196609, 26, 0, 196610, 34, 0, 196611, 26, 0, 196612, 26, 0 )
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -327675, 43, 0, -327674, 43, 0, -262139, 43, 0, -262138, 43, 0, -262137, 43, 0, -131076, 27, 0, -131075, 27, 0, -131074, 34, 0, -131073, 27, 0, -196608, 27, 0, -196607, 27, 0, -196606, 27, 0, -196603, 43, 0, -196602, 43, 0, -65540, 27, 0, -65539, 27, 0, -65538, 27, 0, -65537, 26, 0, -131072, 26, 0, -131071, 26, 0, -131070, 26, 0, -131068, 43, 0, -131067, 43, 0, -131066, 43, 0, -8, 31, 0, -7, 31, 0, -5, 27, 0, -4, 27, 0, -3, 27, 0, -2, 27, 0, -1, 34, 0, -65536, 26, 0, -65535, 26, 0, -65534, 26, 0, -65533, 30, 0, 65528, 31, 0, 65529, 31, 0, 65530, 31, 0, 65531, 30, 0, 65532, 27, 0, 65533, 27, 0, 65534, 27, 0, 65535, 27, 0, 0, 26, 0, 1, 26, 0, 2, 34, 0, 3, 26, 0, 131064, 31, 0, 131065, 31, 0, 131067, 27, 0, 131068, 27, 0, 131069, 27, 0, 131070, 27, 0, 131071, 26, 0, 65536, 26, 0, 65537, 26, 0, 65538, 26, 0, 65539, 26, 0, 196604, 27, 0, 196605, 27, 0, 196606, 27, 0, 196607, 34, 0, 131072, 26, 0, 131073, 34, 0, 131074, 34, 0, 131075, 26, 0, 131076, 34, 0, 262140, 27, 0, 262141, 27, 0, 262142, 26, 0, 262143, 26, 0, 196608, 26, 0, 196609, 26, 0, 196610, 34, 0, 196611, 26, 0, 196612, 26, 0 )
 
 [node name="HexagonalGridLines" parent="." index="3"]
 texture = ExtResource( 3 )
 
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
 [node name="DecorTileMap" parent="." index="5"]
-tile_data = PoolIntArray( -2621386, 12, 0, -2555845, 17, 0, -2228174, 12, 0, -2228160, 12, 0, -2031558, 12, 0, -1900532, 8, 0, -1769499, 29, 0, -1703943, 8, 0, -1769471, 10, 0, -1769468, 8, 0, -1703884, 12, 0, -1572894, 29, 0, -1572868, 30, 0, -1572867, 10, 0, -1638398, 30, 0, -1638392, 30, 0, -1638386, 10, 0, -1638342, 12, 0, -1572852, 31, 0, -1507324, 10, 0, -1507317, 8, 0, -1245216, 29, 0, -1310673, 12, 0, -1245151, 12, 0, -983074, 29, 0, -983069, 8, 0, -983064, 31, 0, -1048538, 12, 0, -655421, 3, 0, -655380, 29, 0, -524340, 3, 0, -458780, 31, 0, -458774, 29, 0, -524260, 33, 0, -327698, 8, 0, -262202, 3, 0, -131125, 3, 0, -131119, 3, 0, -131104, 29, 0, -63, 3, 0, 65502, 29, 0, 65520, 31, 0, 131022, 3, 0, 196566, 34, 0, 262112, 9, 0, 458695, 3, 0, 524275, 30, 0, 589773, 3, 0, 589788, 31, 0, 589796, 30, 0, 655299, 3, 0, 1048544, 30, 0, 1048559, 30, 0, 1245166, 9, 0, 1638380, 31, 0 )
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+tile_data = PoolIntArray( -2686934, 12, 0, -2621386, 12, 0, -2228174, 12, 0, -2031576, 12, 0, -1900532, 8, 0, -1769499, 29, 0, -1703943, 8, 0, -1769471, 10, 0, -1769468, 8, 0, -1703884, 12, 0, -1572894, 29, 0, -1572868, 30, 0, -1572867, 10, 0, -1638398, 30, 0, -1638392, 30, 0, -1638386, 10, 0, -1572852, 31, 0, -1507324, 10, 0, -1507317, 8, 0, -1245216, 29, 0, -1310673, 12, 0, -1245151, 12, 0, -983074, 29, 0, -983069, 8, 0, -983064, 31, 0, -1048538, 12, 0, -655421, 3, 0, -655380, 29, 0, -524340, 3, 0, -458780, 31, 0, -458774, 29, 0, -524260, 33, 0, -327698, 8, 0, -262202, 3, 0, -131125, 3, 0, -131119, 3, 0, -131104, 29, 0, -63, 3, 0, 65502, 29, 0, 65520, 31, 0, 131022, 3, 0, 196566, 34, 0, 262112, 9, 0, 458695, 3, 0, 524275, 30, 0, 589773, 3, 0, 589788, 31, 0, 589796, 30, 0, 655299, 3, 0, 1048544, 30, 0, 1048559, 30, 0, 1245166, 9, 0, 1638380, 31, 0 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="JlmText" parent="Items" index="0" instance=ExtResource( 1 )]
 position = Vector2( -512, -280.269 )
@@ -230,10 +237,10 @@ cell_position = Vector2( 1, 6 )
 tile_position = Vector2( 4, 6 )
 
 [node name="6 Eme" parent="Items" index="28" instance=ExtResource( 1 )]
-position = Vector2( 448, -189.371 )
+position = Vector2( 384, -189.371 )
 concept_name = "6eme"
-cell_position = Vector2( 9, -4 )
-tile_position = Vector2( 7, -4 )
+cell_position = Vector2( 8, -4 )
+tile_position = Vector2( 6, -4 )
 
 [node name="6 EmeText" parent="Items" index="29" instance=ExtResource( 1 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
@@ -304,9 +311,8 @@ concept_name = "sink"
 cell_position = Vector2( -4, 6 )
 tile_position = Vector2( -1, 6 )
 
-[node name="Sign" type="Node2D" parent="Items" index="38" instance=ExtResource( 5 )]
+[node name="Sign" parent="Items" index="38" instance=ExtResource( 5 )]
 position = Vector2( -160, 128.772 )
-script = ExtResource( 4 )
 cell_position = Vector2( -4, 3 )
 tile_position = Vector2( -3, 3 )
 contents = "MONARC n'est pas une coquille.

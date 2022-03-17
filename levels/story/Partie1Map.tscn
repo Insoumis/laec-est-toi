@@ -68,7 +68,7 @@ cell_position = Vector2( 2, -4 )
 tile_position = Vector2( 0, -4 )
 level_path = "res://levels/story/Partie1/3Convoquer6emeRep1.tscn"
 dependency_a = NodePath("../PortalTwo")
-title = "Conquer une Constitutante"
+title = "Convoquer une Constituante"
 
 [node name="PortalFour" parent="Items" index="6" instance=ExtResource( 5 )]
 position = Vector2( 160, -53.0239 )

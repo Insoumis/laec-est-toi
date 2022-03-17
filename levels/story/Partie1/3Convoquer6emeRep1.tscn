@@ -10,12 +10,12 @@ contribute_to_completion_score = true
 title = "level.3Convoquer6emeRep1.title"
 excerpt = "level.3Convoquer6emeRep1.excerpt"
 link = "level.3Convoquer6emeRep1.link"
-title_custom = "Conquer une Constitutante"
-excerpt_custom = "Félicitations ! Tu as commencé à changer les règles : la 6e République est sur les rails !
-Dérives autoritaires, abstention, corruption, lobbying… Maintenant ça suffit !
-Le pouvoir du Peuple est renforcé grâce au Référendum d’Initiative Populaire (RIC) et à une Assemblée nationale plus forte et plus représentative. Le vote blanc est reconnu et le droit de vote ramené à 16 ans.
-Les médias sont enfin remis entre les mains des citoyens : fini la mainmise de quelques milliardaires ! 
-Envie de continuer à changer les règles ? C’est parti !"
+title_custom = "Convoquer une Constituante"
+excerpt_custom = "Bien joué !
+
+Un nouveau grand chantier s'ouvre : la Justice !
+
+Plus accessible (aide juridictionnelle augmentée, tribunaux de proximité...), la Justice renforce son action contre la délinquance financière, les écocides ou encore les violences sexistes et sexuelles."
 link_custom = "https://laec.fr/section/1/reunir-une-assemblee-constituante"
 solution_a = "6666669966111447761114477"
 
