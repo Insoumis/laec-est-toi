@@ -9,7 +9,7 @@ onready var name_background = $Logo/NameBackground
 onready var red_light_color_rect = $Logo/RedLight
 onready var logo = $Logo
 
-func _process(delta):
+func _process(_delta):
 	# TURN ON
 	if timer.time_left > timer.wait_time * 5.0 * time_slice:
 		var max_time_elapsed = timer.wait_time * time_slice
@@ -29,7 +29,6 @@ func _process(delta):
 			source_granted_sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			var max_time_elapsed = timer.wait_time * time_slice
 			var time_elapsed = timer.wait_time - timer.time_left - timer.wait_time * time_slice * 2.0
-			var max_margin_left_offset = 166
 			var romcheck_progress = source_granted_sprite.get_node("RomcheckProgress")
 			romcheck_progress.margin_left = -38 + (166 * (time_elapsed / max_time_elapsed))
 	# REMOVE ROMCHECK
