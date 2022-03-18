@@ -26,7 +26,7 @@ var attributes := Array()  # of Attribute
 var is_thing : bool setget set_is_thing, get_is_thing
 
 
-func set_is_thing(value: bool):
+func set_is_thing(_value: bool):
 	printerr("Sentence.is_thing is READ ONLY")
 	breakpoint
 
