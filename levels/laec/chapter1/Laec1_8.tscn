@@ -4,7 +4,6 @@
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=2]
 
 [node name="Laec1_8" instance=ExtResource( 2 )]
-contribute_to_completion_score = true
 title = "level.Laec1_8.title"
 excerpt = "level.Laec1_8.excerpt"
 link = "level.Laec1_8.link"
@@ -17,13 +16,13 @@ solution_a = "114441496999"
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -262139, 20, 0, -262138, 20, 0, -131078, 11, 0, -131077, 11, 0, -131076, 11, 0, -131075, 11, 0, -131074, 3, 0, -131073, 3, 0, -196608, 3, 0, -196607, 3, 0, -196604, 20, 0, -196603, 20, 0, -196602, 20, 0, -65542, 11, 0, -65541, 11, 0, -65540, 11, 0, -65539, 11, 0, -65538, 3, 0, -65537, 3, 0, -131072, 3, 0, -131071, 3, 0, -131070, 3, 0, -131067, 20, 0, -131066, 20, 0, -7, 11, 0, -6, 11, 0, -5, 11, 0, -4, 11, 0, -3, 3, 0, -2, 3, 0, -1, 9, 0, -65536, 9, 0, -65535, 3, 0, -65534, 3, 0, -65532, 20, 0, 65529, 11, 0, 65530, 11, 0, 65531, 11, 0, 65532, 11, 0, 65533, 3, 0, 65534, 3, 0, 65535, 9, 0, 0, 9, 0, 1, 9, 0, 2, 3, 0, 3, 20, 0, 4, 20, 0, 131065, 11, 0, 131066, 11, 0, 131067, 1, 0, 131068, 11, 0, 131069, 3, 0, 131070, 3, 0, 131071, 9, 0, 65536, 9, 0, 65537, 3, 0, 65538, 3, 0, 196602, 11, 0, 196603, 11, 0, 196604, 11, 0, 196605, 11, 0, 196606, 3, 0, 196607, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 262138, 11, 0, 262139, 11, 0, 262140, 11, 0, 262141, 11, 0, 262142, 3, 0, 262143, 3, 0, 196608, 3, 0, 196609, 3, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="6 Eme" parent="Items" index="0" instance=ExtResource( 1 )]

@@ -4,7 +4,6 @@
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=2]
 
 [node name="Laec1_10" instance=ExtResource( 2 )]
-contribute_to_completion_score = true
 title = "level.Laec1_10.title"
 excerpt = "level.Laec1_10.excerpt"
 link = "level.Laec1_10.link"
@@ -17,13 +16,13 @@ solution_a = "66636669947933169374444"
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -65540, 22, 0, -65539, 22, 0, -65538, 22, 0, -65537, 22, 0, -131072, 22, 0, -131071, 22, 0, -131070, 22, 0, -131069, 22, 0, -131068, 3, 0, -5, 3, 0, -4, 3, 0, -3, 3, 0, -2, 3, 0, -1, 20, 0, -65536, 20, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, 65531, 9, 0, 65532, 9, 0, 65533, 3, 0, 65534, 3, 0, 65535, 20, 0, 0, 20, 0, 1, 20, 0, 2, 3, 0, 3, 3, 0, 4, 11, 0, 5, 11, 0, 131066, 9, 0, 131067, 9, 0, 131068, 9, 0, 131069, 3, 0, 131070, 3, 0, 131071, 20, 0, 65536, 20, 0, 65537, 3, 0, 65538, 3, 0, 65539, 11, 0, 65540, 11, 0, 65541, 11, 0, 196603, 9, 0, 196604, 9, 0, 196605, 3, 0, 196606, 3, 0, 196607, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="Justice" parent="Items" index="0" instance=ExtResource( 1 )]

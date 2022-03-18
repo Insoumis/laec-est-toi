@@ -108,7 +108,7 @@ __meta__ = {
 }
 
 [node name="TextDockPanel" type="PanelContainer" parent="TextDock"]
-self_modulate = Color( 1, 1, 1, 0.729412 )
+self_modulate = Color( 1, 1, 1, 0.929412 )
 material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
