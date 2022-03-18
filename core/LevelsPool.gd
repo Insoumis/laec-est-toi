@@ -311,6 +311,18 @@ func get_user_levels() -> Array:
 	return user_levels
 
 
+func get_levels_contributing_to_score() -> Array:
+	assert(self.cache, "Call init() or init_full() first.")
+	
+	var score_levels := Array()
+	for level_filepath in self.cache.levels:
+		var level = self.cache.levels[level_filepath]
+#		if level_filepath.begins_with("user://"):
+		if level.is_in_score:
+			score_levels.append(level)
+	return score_levels
+
+
 func find_orphans_paths() -> Array:
 	assert(self.cache, "Call init() or init_full() first.")
 	

@@ -742,19 +742,21 @@ func get_completion_score() -> float:  # between 0.0 and 1.0
 	if not LevelsPool:
 		breakpoint
 		return 0.0
-#	if not LevelsPool.packed_levels:
-#		breakpoint
-#		return 0.0
+	
 	var amount_of_levels_to_complete := 0.0  # yes, float (division!)
 	var amount_of_levels_completed := 0.0
 	
-	var completion_score_levels = FileStorage.get_value(
-		"LevelsPool", "completion_score_levels", Array()
-	)
-	for filepath in completion_score_levels:
-		
+	# We don't need to use this cached value anymore
+	# (it is not even set anymore, I think)
+#	var completion_score_levels = FileStorage.get_value(
+#		"LevelsPool", "completion_score_levels", Array()
+#	)
+	# Instead, we ask the LevelsPool, which handles its own cache
+	var completion_score_levels = LevelsPool.get_levels_contributing_to_score()
+	
+	for level in completion_score_levels:
 		amount_of_levels_to_complete += 1.0
-		if is_level_complete(filepath):
+		if is_level_complete(level.level_filepath):
 			amount_of_levels_completed += 1.0
 	
 	if 0.0 == amount_of_levels_to_complete:
