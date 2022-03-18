@@ -23,7 +23,7 @@ title = "level.1InterventionPopulaire4.title"
 excerpt = "level.1InterventionPopulaire4.excerpt"
 link = "level.1InterventionPopulaire4.link"
 title_custom = "Intervention Populaire"
-excerpt_custom = "LAEC s'est défait de l'emprise des lobbies qui empêchent l'intervention populaire dans la vie publique.
+excerpt_custom = "LAEC s'est défait de l'emprise des lobbies qui empêchaient l'intervention populaire dans la vie publique.
 
 Félicitations ! Tu as commencé à changer les règles : la 6e République est sur les rails !
 
@@ -188,9 +188,9 @@ cell_position = Vector2( -4, -1 )
 tile_position = Vector2( -5, -1 )
 contents = "Vous ne trouvez pas
 la solution à un niveau ?
-1. Recommencer (R)
-2. Passer son tour (ESPACE)
-3. Suivre l'abeille (BZZZ)"
+1. Recommencez (R)
+2. Passez votre tour (ESPACE)
+3. Suivez l'abeille (BZZZ)"
 
 [node name="Sherpa" type="AnimatedSprite" parent="Items/Sign" index="13"]
 scale = Vector2( 0.2, 0.2 )

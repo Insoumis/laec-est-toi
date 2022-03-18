@@ -228,10 +228,8 @@ title = "level.Tutorial01Level.title"
 excerpt = "level.Tutorial01Level.excerpt"
 link = "level.Tutorial01Level.link"
 title_custom = "Tutoriel A"
-excerpt_custom = "« LAEC » de L'Avenir En Commun l'abréviation
-S'est dirigé vers la victoire.
-Nous avons trouvé un nouveau champion
-A vous maintenant d'écrire l'histoire."
+excerpt_custom = "LAEC ( L'Avenir En Commun ) s'avance vers la victoire.
+Nous avons trouvé un nouveau champion ! À vous maintenant d'écrire l'Histoire."
 forward_level_path = "res://levels/tutorial/ButtonCheckUpLeft.tscn"
 solution_a = "6666"
 
