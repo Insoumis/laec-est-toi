@@ -21,8 +21,10 @@ title = "level.5JusticeAuNomDuPeuple7.title"
 excerpt = "level.5JusticeAuNomDuPeuple7.excerpt"
 link = "level.5JusticeAuNomDuPeuple7.link"
 title_custom = "Justice au nom du Peuple"
-excerpt_custom = "Comme le disait Jean Jaurès, « la grande Révolution a rendu les Français rois dans la cité et les a laissés serfs dans l'entreprise ». Le contrat de travail étant le seul contrat de subordination dans notre pays, il est temps de faire rentrer la citoyenneté dans l'entreprise."
-link_custom = "https://laec.fr/section/10/reconnaitre-la-citoyennete-dans-l-entreprise-et-des-droits-nouveaux-aux-salaries"
+excerpt_custom = "LAEC a libéré la justice de l'emprise des lobbies en les transformant en peuple.
+
+La République a besoin d’une justice, mais également d’une police qui lui soit loyale, et qui soit attachée aux principes de l’état de droit."
+link_custom = "https://laec.fr/s7"
 achievement_a = SubResource( 1 )
 solution_a = "66636699377933169374444"
 

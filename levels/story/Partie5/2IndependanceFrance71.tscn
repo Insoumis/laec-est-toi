@@ -9,6 +9,10 @@ title = "level.2IndependanceFrance71.title"
 excerpt = "level.2IndependanceFrance71.excerpt"
 link = "level.2IndependanceFrance71.link"
 title_custom = "France Indépendante"
+excerpt_custom = "La France a assumé un non allignement face à l'OTAN et aux lobbies ce a permis de terminer le niveau sans explosions.
+
+Nous avons engagé le retrait progressif de l’OTAN et nous formons dès lors d’une nouvelle alliance altermondialiste, qui réaffirme la place de l’ONU comme seul organe légitime pour le maintien de la paix et la sauvegarde de l’environnement."
+link_custom = "https://laec.fr/s71"
 solution_a = "933666696666"
 
 [node name="Camera2D" parent="." index="0"]

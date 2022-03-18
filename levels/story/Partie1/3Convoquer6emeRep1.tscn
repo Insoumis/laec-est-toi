@@ -11,12 +11,10 @@ title = "level.3Convoquer6emeRep1.title"
 excerpt = "level.3Convoquer6emeRep1.excerpt"
 link = "level.3Convoquer6emeRep1.link"
 title_custom = "Convoquer une Constituante"
-excerpt_custom = "Bien joué !
+excerpt_custom = "LAEC s'est transformé en peuple et lui laisse le pouvoir de décision sur la 6ème République.
 
-Un nouveau grand chantier s'ouvre : la Justice !
-
-Plus accessible (aide juridictionnelle augmentée, tribunaux de proximité...), la Justice renforce son action contre la délinquance financière, les écocides ou encore les violences sexistes et sexuelles."
-link_custom = "https://laec.fr/section/1/reunir-une-assemblee-constituante"
+Nous proposons que les Français se dotent d’une nouvelle Constitution rédigée par une Assemblée constituante."
+link_custom = "https://laec.fr/s1"
 solution_a = "6666669966111447761114477"
 
 [node name="Camera2D" parent="." index="0"]

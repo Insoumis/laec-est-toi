@@ -2,11 +2,15 @@
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 
-[node name="3ProtegerMerOceans82" instance=ExtResource( 1 )]
-title = "level.3ProtegerMerOceans82.title"
-excerpt = "level.3ProtegerMerOceans82.excerpt"
-link = "level.3ProtegerMerOceans82.link"
+[node name="DessinsHub" instance=ExtResource( 1 )]
+title = "level.DessinsHub.title"
+excerpt = "level.DessinsHub.excerpt"
+link = "level.DessinsHub.link"
 title_custom = "Chapitre 14"
+excerpt_custom = "Des mots à la pelle
+Et des mots en foire
+Que la France appelle
+À écrire l'histoire."
 solution_a = "331677777793747696744396699414476767433699347"
 
 [node name="HexagonalTileMap" parent="." index="2"]

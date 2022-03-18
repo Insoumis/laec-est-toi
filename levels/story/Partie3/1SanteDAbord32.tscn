@@ -9,11 +9,10 @@ title = "level.1SanteDAbord32.title"
 excerpt = "level.1SanteDAbord32.excerpt"
 link = "level.1SanteDAbord32.link"
 title_custom = "Santé d'Abord"
-excerpt_custom = "Face aux crises, la solidarité et l'organisation sont maintenant au coeur de l'action de l’Etat : prix bloqués, SMIC et minima sociaux revalorisés... Chacun doit vivre dignement !
+excerpt_custom = "Le peuple s'est servi de LAEC et de la loi pour débloquer de l'argent pour les hopitaux.
 
-Grâce à une meilleure organisation (création de stocks stratégiques, société de roulement, réquisition des entreprises essentielles...), la France peut faire face aux épidémies tout en supprimant les états d’urgence et passes (peu) sanitaires.
-
-La Santé redevient une priorité : plus de lits d’hôpitaux, plus de postes, meilleurs salaires, fin des déserts médicaux... Les soins prescrits sont remboursés à 100% par la Sécurité Sociale."
+La Santé redevient une priorité : plus de lits d’hôpitaux, plus de postes, meilleurs salaires, fin des déserts médicaux... Avec des soins prescrits 100% remboursés par la Sécu !"
+link_custom = "https://laec.fr/s32"
 solution_a = "63363631144997744444"
 
 [node name="Camera2D" parent="." index="0"]

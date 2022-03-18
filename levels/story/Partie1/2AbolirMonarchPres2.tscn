@@ -11,13 +11,10 @@ title = "level.2AbolirMonarchPres2.title"
 excerpt = "level.2AbolirMonarchPres2.excerpt"
 link = "level.2AbolirMonarchPres2.link"
 title_custom = "Abolir la Monarchie"
-excerpt_custom = "Enfin !
+excerpt_custom = "Malgré les obstacles, JLM s'est servi de LAEC pour se débarasser du monarque qui bloquait l'accès à la 6ème République.
 
-Le vote blanc est reconnu et le droit de vote ramené à 16 ans.
-Les médias sont enfin remis entre les mains des citoyen.ne.s : fini la mainmise de quelques milliardaires !
-
-Envie de continuer à changer les règles ? C’est parti !"
-link_custom = "https://laec.fr/section/3/une-republique-permettant-l-intervention-populaire"
+Dérives autoritaires, lois imposées, intérets personnels, lobbying... Le président de la République concentre beaucoup trop de pouvoirs : tout le pays est entraîné par sa seule volonté. Maintenant ça suffit !"
+link_custom = "https://laec.fr/s2"
 solution_a = "66399793333166677777613333663677747669699"
 
 [node name="Camera2D" parent="." index="0"]

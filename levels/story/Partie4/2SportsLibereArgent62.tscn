@@ -9,6 +9,10 @@ title = "level.2SportsLibereArgent62.title"
 excerpt = "level.2SportsLibereArgent62.excerpt"
 link = "level.2SportsLibereArgent62.link"
 title_custom = "Sports & Argent"
+excerpt_custom = "LAEC s'est débarassé de l'argent et des lobbies qui dénaturent le sport.
+
+Mettons fin au sport business et développons le service public du sport : il est urgent de mettre des moyens au service de l’intérêt général pour un sport émancipateur et libéré de l’argent."
+link_custom = "https://laec.fr/s62"
 solution_a = "6666696344444433149967714444444"
 
 [node name="Camera2D" parent="." index="0"]

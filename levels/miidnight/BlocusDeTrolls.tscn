@@ -9,6 +9,10 @@ title = "level.BlocusDeTrolls.title"
 excerpt = "level.BlocusDeTrolls.excerpt"
 link = "level.BlocusDeTrolls.link"
 title_custom = "Blocus de Trolls"
+excerpt_custom = "De petits pas pour de petits pions
+LAEC est allé sur la victoire
+Nous avons trouvé un nouveau champion
+A vous maintenant d'écrire votre histoire"
 solution_a = "611114444111179741639996666666697774444713444466333477674333363177749999999994"
 
 [node name="Camera2D" parent="." index="0"]

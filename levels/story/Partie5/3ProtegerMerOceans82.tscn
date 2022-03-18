@@ -30,27 +30,31 @@ title = "level.3ProtegerMerOceans82.title"
 excerpt = "level.3ProtegerMerOceans82.excerpt"
 link = "level.3ProtegerMerOceans82.link"
 title_custom = "Protéger les Océans"
-excerpt_custom = "Des mots à la pelle
-Et des mots en foire
-Que la France appelle
-À écrire l'histoire."
+excerpt_custom = "LAEC a stoppé la prolifération des déchets en mer puis grâce à l'école, l'éducation et la recherche l'a nettoyée.
+
+La biodiversité marine se dégrade, du fait de la surpêche et de la pollution plastique. Il est urgent de protéger les mers et océans du pillage de leurs ressources et des tensions militaires. Il est nécessaire de sanctuariser les écosystèmes marins."
+link_custom = "https://laec.fr/s82"
 achievement_a = SubResource( 1 )
 achievement_b = SubResource( 2 )
-solution_a = "7799671136699974741111999744147666661339477444433333313666666933333114479777779444446613179444669666666999993333477131139931669997977433314139477444"
+solution_a = "779969171144777766143337799666111143316666669333333114479777794441797413694434466966669669999333369977433331114994777133317179774"
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.4, 1.4 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
-tile_data = PoolIntArray( -458754, 23, 0, -393224, 25, 0, -393223, 23, 0, -393222, 23, 0, -393221, 25, 0, -393220, 25, 0, -393219, 23, 0, -393218, 25, 0, -327687, 25, 0, -327686, 26, 0, -327683, 26, 0, -327681, 23, 0, -393216, 23, 0, -262151, 23, 0, -262150, 23, 0, -262148, 23, 0, -262147, 23, 0, -262146, 23, 0, -327680, 23, 0, -196614, 23, 0, -196612, 23, 0, -196611, 25, 0, -196610, 23, 0, -262144, 25, 0, -131078, 25, 0, -131077, 23, 0, -131076, 25, 0, -131073, 27, 0, -196608, 27, 0, -196606, 37, 0, -196605, 35, 0, -196604, 43, 0, -196603, 43, 0, -196602, 43, 0, -196601, 43, 0, -196600, 43, 0, -65541, 27, 0, -65540, 27, 0, -65539, 27, 0, -65538, 27, 0, -65537, 27, 0, -131072, 27, 0, -131071, 27, 0, -131070, 27, 0, -131069, 37, 0, -131068, 43, 0, -131067, 43, 0, -131066, 43, 0, -131065, 43, 0, -131064, 43, 0, -131063, 43, 0, -9, 27, 0, -8, 27, 0, -7, 27, 0, -6, 27, 0, -5, 27, 0, -4, 31, 0, -3, 31, 0, -2, 27, 0, -1, 27, 0, -65536, 27, 0, -65535, 27, 0, -65534, 37, 0, -65533, 43, 0, -65532, 43, 0, -65531, 43, 0, -65530, 43, 0, -65529, 43, 0, -65528, 43, 0, -65527, 43, 0, 65527, 27, 0, 65528, 27, 0, 65529, 27, 0, 65530, 27, 0, 65531, 27, 0, 65532, 31, 0, 65533, 31, 0, 65534, 31, 0, 65535, 27, 0, 0, 27, 0, 1, 27, 0, 2, 27, 0, 3, 37, 0, 4, 43, 0, 5, 43, 0, 6, 43, 0, 7, 43, 0, 8, 43, 0, 9, 43, 0, 131062, 27, 0, 131063, 27, 0, 131064, 27, 0, 131065, 27, 0, 131066, 27, 0, 131067, 27, 0, 131068, 31, 0, 131069, 31, 0, 131070, 27, 0, 131071, 27, 0, 65536, 27, 0, 65537, 27, 0, 65538, 37, 0, 65539, 43, 0, 65540, 43, 0, 65541, 43, 0, 65542, 43, 0, 65543, 43, 0, 65544, 43, 0, 65545, 43, 0, 196599, 27, 0, 196600, 27, 0, 196601, 27, 0, 196602, 27, 0, 196603, 27, 0, 196604, 27, 0, 196605, 27, 0, 196606, 27, 0, 196607, 27, 0, 131072, 27, 0, 131073, 27, 0, 131074, 27, 0, 131075, 37, 0, 131076, 43, 0, 131077, 43, 0, 131078, 43, 0, 131079, 43, 0, 131080, 43, 0, 131081, 43, 0, 262135, 27, 0, 262136, 27, 0, 262137, 27, 0, 262138, 27, 0, 262139, 27, 0, 262140, 27, 0, 262141, 27, 0, 262142, 27, 0, 262143, 27, 0, 196608, 44, 0, 196610, 37, 0, 196611, 43, 0, 196612, 43, 0, 196613, 43, 0, 196614, 43, 0, 196615, 43, 0, 196616, 43, 0, 262145, 44, 0, 262148, 43, 0, 262149, 43, 0, 262150, 43, 0, 262151, 43, 0, 262152, 43, 0, 327681, 44, 0, 327684, 38, 0, 458743, 38, 0, 458744, 38, 0, 458745, 38, 0, 458746, 38, 0, 458747, 38, 0, 458748, 38, 0, 458749, 38, 0, 458750, 38, 0, 458751, 38, 0, 393216, 38, 0, 393217, 38, 0, 393219, 39, 0, 393220, 39, 0, 393221, 39, 0, 524278, 38, 0, 524279, 33, 0, 524280, 38, 0, 524281, 33, 0, 524282, 39, 0, 524283, 33, 0, 524284, 39, 0, 524285, 33, 0, 524286, 39, 0, 524287, 33, 0, 458752, 39, 0, 458753, 33, 0, 458754, 38, 0, 458755, 33, 0, 458756, 38, 0 )
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -393224, 25, 0, -393223, 23, 0, -393222, 23, 0, -393221, 25, 0, -393220, 25, 0, -393219, 23, 0, -393218, 25, 0, -327687, 25, 0, -327686, 26, 0, -327683, 26, 0, -327681, 23, 0, -393216, 23, 0, -262151, 23, 0, -262150, 23, 0, -262148, 23, 0, -262147, 23, 0, -262146, 23, 0, -327680, 23, 0, -196614, 23, 0, -196612, 23, 0, -196611, 25, 0, -196610, 23, 0, -262144, 25, 0, -131078, 25, 0, -131077, 23, 0, -131076, 25, 0, -131073, 27, 0, -196608, 27, 0, -196606, 37, 0, -196605, 35, 0, -196604, 43, 0, -196603, 43, 0, -196602, 43, 0, -196601, 43, 0, -196600, 43, 0, -65541, 27, 0, -65540, 27, 0, -65539, 27, 0, -65538, 27, 0, -65537, 27, 0, -131072, 27, 0, -131071, 27, 0, -131070, 27, 0, -131069, 37, 0, -131068, 43, 0, -131067, 43, 0, -131066, 43, 0, -131065, 43, 0, -131064, 43, 0, -131063, 43, 0, -9, 27, 0, -8, 27, 0, -7, 27, 0, -6, 27, 0, -5, 27, 0, -4, 31, 0, -3, 31, 0, -2, 27, 0, -1, 27, 0, -65536, 27, 0, -65535, 27, 0, -65534, 37, 0, -65533, 43, 0, -65532, 43, 0, -65531, 43, 0, -65530, 43, 0, -65529, 43, 0, -65528, 43, 0, -65527, 43, 0, 65527, 27, 0, 65528, 27, 0, 65529, 27, 0, 65530, 27, 0, 65531, 27, 0, 65532, 31, 0, 65533, 31, 0, 65534, 31, 0, 65535, 27, 0, 0, 27, 0, 1, 27, 0, 2, 27, 0, 3, 37, 0, 4, 43, 0, 5, 43, 0, 6, 43, 0, 7, 43, 0, 8, 43, 0, 9, 43, 0, 131062, 27, 0, 131063, 27, 0, 131064, 27, 0, 131065, 27, 0, 131066, 27, 0, 131067, 27, 0, 131068, 31, 0, 131069, 31, 0, 131070, 27, 0, 131071, 27, 0, 65536, 27, 0, 65537, 27, 0, 65538, 37, 0, 65539, 43, 0, 65540, 43, 0, 65541, 43, 0, 65542, 43, 0, 65543, 43, 0, 65544, 43, 0, 65545, 43, 0, 196599, 27, 0, 196600, 27, 0, 196601, 27, 0, 196602, 27, 0, 196603, 27, 0, 196604, 27, 0, 196605, 27, 0, 196606, 27, 0, 196607, 27, 0, 131072, 27, 0, 131073, 27, 0, 131074, 27, 0, 131075, 37, 0, 131076, 43, 0, 131077, 43, 0, 131078, 43, 0, 131079, 43, 0, 131080, 43, 0, 131081, 43, 0, 262135, 27, 0, 262136, 27, 0, 262137, 27, 0, 262138, 27, 0, 262139, 27, 0, 262140, 27, 0, 262141, 27, 0, 262142, 27, 0, 262143, 27, 0, 196608, 44, 0, 196610, 37, 0, 196611, 43, 0, 196612, 43, 0, 196613, 43, 0, 196614, 43, 0, 196615, 43, 0, 196616, 43, 0, 262145, 44, 0, 262148, 43, 0, 262149, 43, 0, 262150, 43, 0, 262151, 43, 0, 262152, 43, 0, 327681, 44, 0, 327684, 38, 0, 458743, 38, 0, 458744, 38, 0, 458745, 38, 0, 458746, 38, 0, 458747, 38, 0, 458748, 38, 0, 458749, 38, 0, 458750, 38, 0, 458751, 38, 0, 393216, 38, 0, 393217, 38, 0, 393219, 39, 0, 393220, 39, 0, 393221, 39, 0, 524278, 38, 0, 524279, 33, 0, 524280, 38, 0, 524281, 33, 0, 524282, 39, 0, 524283, 33, 0, 524284, 39, 0, 524285, 33, 0, 524286, 39, 0, 524287, 33, 0, 458752, 39, 0, 458753, 33, 0, 458754, 38, 0, 458755, 33, 0, 458756, 38, 0 )
 
 [node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 tile_data = PoolIntArray( 327638, 16, 0, 851952, 16, 0 )
 
 [node name="DecorTileMap" parent="." index="5"]
-tile_data = PoolIntArray( -4194321, 27, 0, -3866651, 1, 0, -3801141, 1, 0, -3670077, 0, 0, -3604524, 28, 0, -3604515, 1, 0, -3604501, 0, 0, -3604493, 1, 0, -3342383, 1, 0, -3276856, 1, 0, -3080193, 27, 0, -2818090, 0, 0, -2687002, 1, 0, -2686989, 0, 0, -2621459, 1, 0, -2686972, 0, 0, -2490420, 0, 0, -2031646, 1, 0, -2031640, 28, 0, -2031632, 1, 0, -2097152, 30, 0, -1966128, 1, 0, -1769516, 29, 0, -1638436, 0, 0, -1703901, 12, 0, -1703871, 12, 0, -1572869, 30, 0, -1507364, 31, 0, -1507356, 30, 0, -1572860, 31, 0, -1572836, 22, 0, -1572820, 12, 0, -1441837, 29, 0, -1441793, 7, 0, -1507271, 12, 0, -1245208, 29, 0, -1179674, 8, 0, -1245152, 12, 0, -1114144, 9, 0, -1179632, 9, 0, -1179580, 12, 0, -1048603, 29, 0, -1048598, 29, 0, -1048593, 30, 0, -1048578, 30, 0, -1114109, 30, 0, -1114104, 30, 0, -983080, 31, 0, -983072, 31, 0, -983048, 31, 0, -1048560, 31, 0, -1048535, 12, 0, -917507, 9, 0, -982988, 12, 0, -851983, 10, 0, -917497, 8, 0, -786474, 10, 0, -720924, 3, 0, -786402, 12, 0, -655411, 24, 0, -720833, 12, 0, -524357, 30, 0, -524333, 30, 0, -524313, 3, 0, -524308, 3, 0, -524292, 30, 0, -589813, 30, 0, -589750, 12, 0, -458812, 31, 0, -458804, 30, 0, -458788, 16, 0, -458764, 31, 0, -524284, 31, 0, -524251, 12, 0, -458707, 12, 0, -327727, 7, 0, -327717, 29, 0, -327709, 3, 0, -327688, 9, 0, -327686, 29, 0, -393161, 12, 0, -262197, 8, 0, -196646, 8, 0, -262134, 10, 0, -262112, 12, 0, -262075, 12, 0, -131141, 9, 0, -131124, 14, 0, -65578, 14, 0, -65575, 30, 0, -65560, 3, 0, -65554, 3, 0, -65540, 10, 0, -64, 30, 0, -33, 3, 0, -9, 30, 0, -65529, 30, 0, 65464, 30, 0, 65481, 31, 0, 65488, 30, 0, 65522, 3, 0, 1, 31, 0, 16, 31, 0, 51, 12, 0, 65574, 12, 0, 196548, 8, 0, 196569, 30, 0, 196580, 3, 0, 262098, 14, 0, 196668, 12, 0, 196680, 12, 0, 327621, 29, 0, 327632, 9, 0, 327636, 29, 0, 327645, 29, 0, 327661, 3, 0, 262150, 9, 0, 327710, 12, 0, 458703, 16, 0, 524252, 9, 0, 524263, 3, 0, 458756, 30, 0, 589748, 30, 0, 589756, 31, 0, 589778, 29, 0, 589788, 30, 0, 589812, 31, 0, 589820, 31, 0, 524300, 31, 0, 655298, 29, 0, 655307, 30, 0, 655321, 14, 0, 655330, 3, 0, 589859, 12, 0, 589876, 12, 0, 589890, 12, 0, 720876, 3, 0, 720885, 8, 0, 655404, 12, 0, 786385, 7, 0, 786430, 9, 0, 720897, 29, 0, 851912, 29, 0, 786444, 8, 0, 982988, 8, 0, 983010, 9, 0, 917562, 12, 0, 1048508, 10, 0, 1048527, 30, 0, 1048536, 30, 0, 1048561, 30, 0, 1048568, 30, 0, 983047, 30, 0, 983052, 29, 0, 983056, 30, 0, 1114039, 30, 0, 1114048, 30, 0, 1114052, 9, 0, 1114054, 29, 0, 1114063, 24, 0, 1114069, 10, 0, 1114081, 31, 0, 1114088, 16, 0, 1114094, 29, 0, 1048576, 30, 0, 1048608, 12, 0, 1048625, 12, 0, 1048647, 12, 0, 1179614, 24, 0, 1179637, 29, 0, 1245159, 29, 0, 1179686, 12, 0, 1441724, 29, 0, 1441768, 8, 0, 1441784, 10, 0, 1441837, 12, 0, 1441846, 12, 0, 1441857, 12, 0, 1572799, 9, 0, 1572804, 31, 0, 1572812, 30, 0, 1572836, 30, 0, 1572851, 30, 0, 1507356, 12, 0, 1638330, 29, 0, 1638347, 9, 0, 1638364, 31, 0, 1638380, 31, 0, 1703932, 31, 0, 1703975, 12, 0, 1769523, 12, 0, 1966144, 15, 0, 2031676, 12, 0, 2097196, 12, 0, 2162720, 12, 0 )
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+tile_data = PoolIntArray( -3866651, 1, 0, -3801141, 1, 0, -3670077, 0, 0, -3604524, 28, 0, -3604515, 1, 0, -3604501, 0, 0, -3604493, 1, 0, -3342383, 1, 0, -3276856, 1, 0, -3080193, 27, 0, -2818090, 0, 0, -2687002, 1, 0, -2686989, 0, 0, -2621459, 1, 0, -2686972, 0, 0, -2490420, 0, 0, -2031646, 1, 0, -2031640, 28, 0, -2031632, 1, 0, -2097152, 30, 0, -1966128, 1, 0, -1769516, 29, 0, -1638436, 0, 0, -1703901, 12, 0, -1703871, 12, 0, -1572869, 30, 0, -1507364, 31, 0, -1507356, 30, 0, -1572860, 31, 0, -1572836, 22, 0, -1572820, 12, 0, -1441837, 29, 0, -1441793, 7, 0, -1507271, 12, 0, -1245208, 29, 0, -1179674, 8, 0, -1245152, 12, 0, -1114144, 9, 0, -1179632, 9, 0, -1179580, 12, 0, -1048603, 29, 0, -1048598, 29, 0, -1048593, 30, 0, -1048578, 30, 0, -1114109, 30, 0, -1114104, 30, 0, -983080, 31, 0, -983072, 31, 0, -983048, 31, 0, -1048560, 31, 0, -1048535, 12, 0, -917507, 9, 0, -982988, 12, 0, -851983, 10, 0, -917497, 8, 0, -786474, 10, 0, -720924, 3, 0, -786402, 12, 0, -655411, 24, 0, -720833, 12, 0, -524357, 30, 0, -524333, 30, 0, -524313, 3, 0, -524308, 3, 0, -524292, 30, 0, -589813, 30, 0, -589750, 12, 0, -458812, 31, 0, -458804, 30, 0, -458788, 16, 0, -458764, 31, 0, -524284, 31, 0, -524251, 12, 0, -458707, 12, 0, -327727, 7, 0, -327717, 29, 0, -327709, 3, 0, -327688, 9, 0, -327686, 29, 0, -393161, 12, 0, -262197, 8, 0, -196646, 8, 0, -262134, 10, 0, -262112, 12, 0, -262075, 12, 0, -131141, 9, 0, -131124, 14, 0, -65578, 14, 0, -65575, 30, 0, -65560, 3, 0, -65554, 3, 0, -65540, 10, 0, -64, 30, 0, -33, 3, 0, -9, 30, 0, -65529, 30, 0, 65464, 30, 0, 65481, 31, 0, 65488, 30, 0, 65522, 3, 0, 1, 31, 0, 16, 31, 0, 51, 12, 0, 65574, 12, 0, 196548, 8, 0, 196569, 30, 0, 196580, 3, 0, 262098, 14, 0, 196668, 12, 0, 196680, 12, 0, 327621, 29, 0, 327632, 9, 0, 327636, 29, 0, 327645, 29, 0, 327661, 3, 0, 262150, 9, 0, 327710, 12, 0, 458703, 16, 0, 524252, 9, 0, 524263, 3, 0, 458756, 30, 0, 589748, 30, 0, 589756, 31, 0, 589778, 29, 0, 589788, 30, 0, 589812, 31, 0, 589820, 31, 0, 524300, 31, 0, 655298, 29, 0, 655307, 30, 0, 655321, 14, 0, 655330, 3, 0, 589859, 12, 0, 589876, 12, 0, 589890, 12, 0, 720876, 3, 0, 720885, 8, 0, 655404, 12, 0, 786385, 7, 0, 786430, 9, 0, 720897, 29, 0, 851912, 29, 0, 786444, 8, 0, 982988, 8, 0, 983010, 9, 0, 917562, 12, 0, 1048508, 10, 0, 1048527, 30, 0, 1048536, 30, 0, 1048561, 30, 0, 1048568, 30, 0, 983047, 30, 0, 983052, 29, 0, 983056, 30, 0, 1114039, 30, 0, 1114048, 30, 0, 1114052, 9, 0, 1114054, 29, 0, 1114063, 24, 0, 1114069, 10, 0, 1114081, 31, 0, 1114088, 16, 0, 1114094, 29, 0, 1048576, 30, 0, 1048608, 12, 0, 1048625, 12, 0, 1048647, 12, 0, 1179614, 24, 0, 1179637, 29, 0, 1245159, 29, 0, 1179686, 12, 0, 1441724, 29, 0, 1441768, 8, 0, 1441784, 10, 0, 1441837, 12, 0, 1441846, 12, 0, 1441857, 12, 0, 1572799, 9, 0, 1572804, 31, 0, 1572812, 30, 0, 1572836, 30, 0, 1572851, 30, 0, 1507356, 12, 0, 1638330, 29, 0, 1638347, 9, 0, 1638364, 31, 0, 1638380, 31, 0, 1703932, 31, 0, 1703975, 12, 0, 1769523, 12, 0, 1966144, 15, 0, 2031676, 12, 0, 2097196, 12, 0, 2162720, 12, 0 )
 
 [node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 tile_data = PoolIntArray( -2621460, 27, 0, -2424851, 27, 0, -2424839, 28, 0, -1179685, 28, 0, 524318, 15, 0, 983066, 15, 0, 1179704, 15, 0 )
 
 [node name="LaecText" parent="Items" index="0" instance=ExtResource( 1 )]
@@ -143,10 +147,11 @@ tile_position = Vector2( 8, 0 )
 is_lit = false
 
 [node name="Waste" parent="Items" index="13" instance=ExtResource( 1 )]
-position = Vector2( 384, -7.57464 )
+position = Vector2( 384, -7.57454 )
 concept_name = "waste"
 cell_position = Vector2( 6, 0 )
 tile_position = Vector2( 6, 0 )
+is_defeat = true
 is_sink = true
 is_more = true
 
@@ -164,28 +169,49 @@ concept_name = "sink"
 cell_position = Vector2( 2, -5 )
 tile_position = Vector2( -1, -5 )
 
-[node name="WasteText3" parent="Items" index="16" instance=ExtResource( 1 )]
+[node name="WasteText4" parent="Items" index="16" instance=ExtResource( 1 )]
+position = Vector2( 192, -280.269 )
+is_text = true
+concept_name = "waste"
+cell_position = Vector2( 6, -6 )
+tile_position = Vector2( 3, -6 )
+
+[node name="IsText5" parent="Items" index="17" instance=ExtResource( 1 )]
+position = Vector2( 256, -280.269 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 7, -6 )
+tile_position = Vector2( 4, -6 )
+
+[node name="DefeatText" parent="Items" index="18" instance=ExtResource( 1 )]
+position = Vector2( 320, -280.269 )
+is_text = true
+concept_name = "defeat"
+cell_position = Vector2( 8, -6 )
+tile_position = Vector2( 5, -6 )
+
+[node name="WasteText3" parent="Items" index="19" instance=ExtResource( 1 )]
 position = Vector2( -416, -325.718 )
 is_text = true
 concept_name = "waste"
 cell_position = Vector2( -3, -7 )
 tile_position = Vector2( -7, -7 )
 
-[node name="IsText4" parent="Items" index="17" instance=ExtResource( 1 )]
+[node name="IsText4" parent="Items" index="20" instance=ExtResource( 1 )]
 position = Vector2( -384, -280.269 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( -3, -6 )
 tile_position = Vector2( -6, -6 )
 
-[node name="MoreText" parent="Items" index="18" instance=ExtResource( 1 )]
+[node name="MoreText" parent="Items" index="21" instance=ExtResource( 1 )]
 position = Vector2( -352, -234.82 )
 is_text = true
 concept_name = "more"
 cell_position = Vector2( -3, -5 )
 tile_position = Vector2( -6, -5 )
 
-[node name="SchoolText" parent="Items" index="19" instance=ExtResource( 1 )]
+[node name="SchoolText" parent="Items" index="22" instance=ExtResource( 1 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( -544, -53.0239 )
 is_text = true
@@ -194,7 +220,7 @@ cell_position = Vector2( -8, -1 )
 tile_position = Vector2( -9, -1 )
 is_lit = false
 
-[node name="SchoolText2" parent="Items" index="20" instance=ExtResource( 1 )]
+[node name="SchoolText2" parent="Items" index="23" instance=ExtResource( 1 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( 32, 128.772 )
 is_text = true
@@ -203,7 +229,7 @@ cell_position = Vector2( -1, 3 )
 tile_position = Vector2( 0, 3 )
 is_lit = false
 
-[node name="HasText" parent="Items" index="21" instance=ExtResource( 1 )]
+[node name="HasText" parent="Items" index="24" instance=ExtResource( 1 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( -480, -53.0239 )
 is_text = true
@@ -212,37 +238,37 @@ cell_position = Vector2( -7, -1 )
 tile_position = Vector2( -8, -1 )
 is_lit = false
 
-[node name="Tree" parent="Items" index="22" instance=ExtResource( 1 )]
+[node name="Tree" parent="Items" index="25" instance=ExtResource( 1 )]
 position = Vector2( 256, 265.119 )
 concept_name = "tree"
 cell_position = Vector2( 1, 6 )
 tile_position = Vector2( 4, 6 )
 
-[node name="Tree2" parent="Items" index="23" instance=ExtResource( 1 )]
+[node name="Tree2" parent="Items" index="26" instance=ExtResource( 1 )]
 position = Vector2( 320, 265.119 )
 concept_name = "tree"
 cell_position = Vector2( 2, 6 )
 tile_position = Vector2( 5, 6 )
 
-[node name="Energy" parent="Items" index="24" instance=ExtResource( 1 )]
+[node name="Energy" parent="Items" index="27" instance=ExtResource( 1 )]
 position = Vector2( -416, 310.568 )
 concept_name = "energy"
 cell_position = Vector2( -10, 7 )
 tile_position = Vector2( -7, 7 )
 
-[node name="People" parent="Items" index="25" instance=ExtResource( 1 )]
+[node name="People" parent="Items" index="28" instance=ExtResource( 1 )]
 position = Vector2( -32, 310.568 )
 concept_name = "people"
 cell_position = Vector2( -4, 7 )
 tile_position = Vector2( -1, 7 )
 
-[node name="School" parent="Items" index="26" instance=ExtResource( 1 )]
+[node name="School" parent="Items" index="29" instance=ExtResource( 1 )]
 position = Vector2( -352, 128.772 )
 concept_name = "school"
 cell_position = Vector2( -7, 3 )
 tile_position = Vector2( -6, 3 )
 
-[node name="FranceText" parent="Items" index="27" instance=ExtResource( 1 )]
+[node name="FranceText" parent="Items" index="30" instance=ExtResource( 1 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( 384, -189.371 )
 is_text = true
@@ -251,61 +277,61 @@ cell_position = Vector2( 8, -4 )
 tile_position = Vector2( 6, -4 )
 is_lit = false
 
-[node name="France" parent="Items" index="28" instance=ExtResource( 1 )]
+[node name="France" parent="Items" index="31" instance=ExtResource( 1 )]
 position = Vector2( 192, -7.57484 )
 concept_name = "france"
 cell_position = Vector2( 3, 0 )
 tile_position = Vector2( 3, 0 )
 
-[node name="Wave" parent="Items" index="29" instance=ExtResource( 1 )]
+[node name="Wave" parent="Items" index="32" instance=ExtResource( 1 )]
 position = Vector2( 288, -143.922 )
 concept_name = "wave"
 cell_position = Vector2( 6, -3 )
 tile_position = Vector2( 4, -3 )
 
-[node name="Wave2" parent="Items" index="30" instance=ExtResource( 1 )]
+[node name="Wave2" parent="Items" index="33" instance=ExtResource( 1 )]
 position = Vector2( 256, -98.4729 )
 concept_name = "wave"
 cell_position = Vector2( 5, -2 )
 tile_position = Vector2( 4, -2 )
 
-[node name="Wave3" parent="Items" index="31" instance=ExtResource( 1 )]
+[node name="Wave3" parent="Items" index="34" instance=ExtResource( 1 )]
 position = Vector2( 224, -53.0239 )
 concept_name = "wave"
 cell_position = Vector2( 4, -1 )
 tile_position = Vector2( 3, -1 )
 
-[node name="Wave4" parent="Items" index="32" instance=ExtResource( 1 )]
+[node name="Wave4" parent="Items" index="35" instance=ExtResource( 1 )]
 position = Vector2( 256, -7.57484 )
 concept_name = "wave"
 cell_position = Vector2( 4, 0 )
 tile_position = Vector2( 4, 0 )
 
-[node name="Wave5" parent="Items" index="33" instance=ExtResource( 1 )]
+[node name="Wave5" parent="Items" index="36" instance=ExtResource( 1 )]
 position = Vector2( 224, 37.8742 )
 concept_name = "wave"
 cell_position = Vector2( 3, 1 )
 tile_position = Vector2( 3, 1 )
 
-[node name="Wave6" parent="Items" index="34" instance=ExtResource( 1 )]
+[node name="Wave6" parent="Items" index="37" instance=ExtResource( 1 )]
 position = Vector2( 256, 83.3232 )
 concept_name = "wave"
 cell_position = Vector2( 3, 2 )
 tile_position = Vector2( 4, 2 )
 
-[node name="Wave7" parent="Items" index="35" instance=ExtResource( 1 )]
+[node name="Wave7" parent="Items" index="38" instance=ExtResource( 1 )]
 position = Vector2( 224, 128.772 )
 concept_name = "wave"
 cell_position = Vector2( 2, 3 )
 tile_position = Vector2( 3, 3 )
 
-[node name="Wave8" parent="Items" index="36" instance=ExtResource( 1 )]
+[node name="Wave8" parent="Items" index="39" instance=ExtResource( 1 )]
 position = Vector2( 256, 174.221 )
 concept_name = "wave"
 cell_position = Vector2( 2, 4 )
 tile_position = Vector2( 4, 4 )
 
-[node name="WithText" parent="Items" index="37" instance=ExtResource( 1 )]
+[node name="WithText" parent="Items" index="40" instance=ExtResource( 1 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( 448, -98.4729 )
 is_text = true
@@ -314,7 +340,7 @@ cell_position = Vector2( 8, -2 )
 tile_position = Vector2( 7, -2 )
 is_lit = false
 
-[node name="NotText" parent="Items" index="38" instance=ExtResource( 1 )]
+[node name="NotText" parent="Items" index="41" instance=ExtResource( 1 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( 416, -143.922 )
 is_text = true
@@ -323,7 +349,7 @@ cell_position = Vector2( 8, -3 )
 tile_position = Vector2( 6, -3 )
 is_lit = false
 
-[node name="WinText" parent="Items" index="39" instance=ExtResource( 1 )]
+[node name="WinText" parent="Items" index="42" instance=ExtResource( 1 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( 512, 83.3232 )
 is_text = true

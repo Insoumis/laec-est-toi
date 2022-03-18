@@ -9,10 +9,10 @@ title = "level.Tutorial02Level.title"
 excerpt = "level.Tutorial02Level.excerpt"
 link = "level.Tutorial02Level.link"
 title_custom = "Tutoriel B"
-excerpt_custom = "Des mots à la pelle
-Et des mots en foire
-Que la France appelle
-À écrire l'histoire."
+excerpt_custom = "LAEC vous livre la trame
+D'un monde plus juste, respectueux
+Et pour en suivre le programme
+Changer maintenant les règles du jeu"
 forward_level_path = "res://levels/story/Partie1Map.tscn"
 solution_a = "6663966"
 

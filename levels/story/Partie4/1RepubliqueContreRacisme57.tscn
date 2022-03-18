@@ -9,11 +9,11 @@ title = "level.1RepubliqueContreRacisme57.title"
 excerpt = "level.1RepubliqueContreRacisme57.excerpt"
 link = "level.1RepubliqueContreRacisme57.link"
 title_custom = "Contre le Racisme"
-excerpt_custom = "Félicitations ! Tu as fait triompher l'égalité ! 
-Femmes et hommes sont payés autant à qualification égale ! Cette seule mesure génère assez de cotisations pour financer la retraite à 60 ans !
-En outre, 1 milliard d’euros donnent à la lutte contre les violences sexistes et sexuelles, l'envergure demandée par les associations.
-Un Commissariat à l'égalité pilote un grand plan contre les discriminations. La loi liberticide dite \"contre le séparatisme\" est abrogée ; le récépissé de contrôle d'identité empêche le contrôle au faciès.
-Enfin, grâce à L'AEC, l'autonomie financière des personnes en situation de handicap est assurée avec une Allocation Adulte Handicapée indépendante des revenus du conjoint."
+excerpt_custom = "Les peuples se sont retrouvés et unis pour avancer ensemble vers la France.
+
+Nous lançons un grand plan contre les discriminations comme la création du récépissé de contrôle d’identité pour lutter contre le contrôle au faciès.
+De plus, la lutte contre les violences sexistes et sexuelles bénéficie d’un milliard d’euros."
+link_custom = "https://laec.fr/s57"
 solution_a = "6944114131413131619633114766669799367777979"
 
 [node name="Camera2D" parent="." index="0"]

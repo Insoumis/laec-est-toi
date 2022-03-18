@@ -23,16 +23,13 @@ title = "level.1InterventionPopulaire4.title"
 excerpt = "level.1InterventionPopulaire4.excerpt"
 link = "level.1InterventionPopulaire4.link"
 title_custom = "Intervention Populaire"
-excerpt_custom = "Félicitations !
+excerpt_custom = "LAEC s'est défait de l'emprise des lobbies qui empêchent l'intervention populaire dans la vie publique.
 
-Tu as commencé à changer les règles : la 6e République est sur les rails.
+Félicitations ! Tu as commencé à changer les règles : la 6e République est sur les rails !
 
-Dérives autoritaires, abstention, corruption, lobbying…
-Maintenant ça suffit !
-
-Nous renforçons le pouvoir du Peuple grâce au Référendum d’Initiative Populaire (RIC) et à une Assemblée nationale plus forte et plus représentative."
-link_custom = "https://laec.fr/section/3/une-republique-permettant-l-intervention-populaire"
-solution_a = "6693331666777777633333366367777996699"
+Nous renforçons le pouvoir du Peuple grâce au Référendum d’Initiative Citoyenne (RIC) et à une Assemblée nationale plus forte et plus représentative."
+link_custom = "https://laec.fr/s4"
+solution_a = "666369777633333366367777996699"
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.2, 1.2 )
@@ -189,7 +186,8 @@ is_lit = false
 position = Vector2( -288, -53.0239 )
 cell_position = Vector2( -4, -1 )
 tile_position = Vector2( -5, -1 )
-contents = "Perdu ?
+contents = "Vous ne trouvez pas
+la solution à un niveau ?
 1. Recommencer (R)
 2. Passer son tour (ESPACE)
 3. Suivre l'abeille (BZZZ)"
