@@ -3644,7 +3644,10 @@ func perhaps_trigger_achievements_on_victory() -> void:
 
 # class_name is still broken on some machines on Godot 3.4
 #func trigger_achievement(achievement: Achievement) -> void:
+# perhaps this has been solved ; let's try it out again later
 func trigger_achievement(achievement) -> void:
+	if Game.is_achievement_unlocked(achievement):
+		return
 	SoundFx.play("success")
 	Game.unlock_achievement(achievement)
 

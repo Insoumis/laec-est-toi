@@ -799,7 +799,31 @@ func setup_achievements_layer():
 	add_child(self.achievements_layer)
 
 
-func unlock_achievement(achievement:Achievement):
+func is_achievement_unlocked(achievement: Achievement) -> bool:
+	var current_scene_path : String = self.current_scene.filename
+	if not self.current_save_data or not (self.current_save_data is Dictionary):
+		return false
+	if not self.current_save_data.has('levels'):
+		return false
+	if not self.current_save_data['levels'].has(current_scene_path):
+		return false
+	if not self.current_save_data['levels'][current_scene_path].has('achievements'):
+		return false
+	
+	var achs = self.current_save_data['levels'][current_scene_path]['achievements']
+	var ach_id = achievement.snake_identifier
+	
+	if not (achs is Dictionary):
+		return false
+	if not achs.has(ach_id):
+		return false
+	if not achs[ach_id].has('complete'):
+		return false
+	
+	return achs[ach_id]['complete']
+
+
+func unlock_achievement(achievement: Achievement):
 	var current_scene_path = self.current_scene.filename
 	if not self.current_save_data.has('levels'):
 		self.current_save_data['levels'] = Dictionary()
