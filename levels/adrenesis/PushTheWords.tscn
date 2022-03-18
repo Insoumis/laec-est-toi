@@ -11,7 +11,6 @@ link = "level.PushTheWords.link"
 achievement_a = ExtResource( 3 )
 solution_a = "36666311136957977666363331"
 solution_b = "633966664444139766666633331"
-autoplay_b = true
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.1, 1.1 )
