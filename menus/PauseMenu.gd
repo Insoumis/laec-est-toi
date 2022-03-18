@@ -22,22 +22,6 @@ onready var sentences_container := find_node("SentencesContainer")
 var level: LevelScene
 
 
-func initialize(for_level: LevelScene):
-	assert(for_level)
-	self.level = for_level
-
-func update_background(viewport : Viewport):
-	# Retrieve the captured image.
-	var img = viewport.get_texture().get_data()
-	# restore the previous value, as some part wont redraw after...
-
-	# Flip it on the y-axis (because it's flipped).
-	img.flip_y()
-	var tex = ImageTexture.new()
-	tex.create_from_image(img)
-	get_node("Background").texture = tex
-
-
 func _ready():
 	find_node('ResumeButton').grab_focus()
 	
@@ -56,6 +40,21 @@ func _input(_event):
 		if Game:
 			Game.emit_signal("game_resumed")
 			var _gone = Game.go_back(false)
+
+
+# Called by Game or Level when creating this scene, I think
+func initialize(for_level: LevelScene):
+	assert(for_level)
+	self.level = for_level
+
+
+# Captures a frame of the game, and sets it as background
+func update_background(viewport: Viewport):
+	var img = viewport.get_texture().get_data()
+	img.flip_y()  # usual screen XY convention woes
+	var tex = ImageTexture.new()
+	tex.create_from_image(img)
+	get_node("Background").texture = tex
 
 
 func _on_ResumeButton_pressed():
