@@ -7,6 +7,10 @@ assignees: ''
 
 ---
 
+<!-- Le texte dans les balises comme celles-ci sera caché.  -->
+<!-- Vous n'avez pas beoin de le suprimer, mais vous pouvez. -->
+
+
 **Description du problème**
 Une description concise du problème.
 
@@ -20,27 +24,34 @@ Une description concise du problème.
 
 
 **Comportement attendu**
-A clear and concise description of what you expected to happen.
+Une description concise de ce que vous vous attendiez à vivre.
 
 
 **Captures d'écran**
-Si c'est possible et pertinent, des captures d'écran aident grandement.
+<!-- Si c'est possible et pertinent, des captures d'écran aident grandement. -->
+<!-- Vous pouvez glisser-déposer des images dans le champ de texte. -->
 
 
 **Numéro de version du jeu**
-Affichée dans le menu principal, en bas.  ex: `0.5.1`
+<!-- Affichée dans le menu principal, en bas. -->
 
-**Architecture du jeu (cochez)**
-- [ ] Windows
-- [ ] Linux
-- [ ] Mac
-- [ ] Android
-- [ ] HTML5
+`0.5.1`
+
+
+**Architecture(s) du jeu**
+<!-- Supprimez les lignes non-concernées. -->
+
+- Windows
+- Linux
+- Mac
+- Android
+- HTML5
+
 
 **Système**
- - _Nom complet du sysème d'exploitation_:   …
+ - _Nom complet du sysème d'exploitation (OS)_:   …
  - _Navigateur internet (si HTML5)_:   Firefox / Safari / Chrome / Opera / Iceweasel / …
 
 
-**Additional context**
-Add any other context about the problem here.
+**Informations Supplémentaires**
+<!-- Ajoutez des informations par rapport au contexte, si besoin -->
