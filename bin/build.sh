@@ -281,10 +281,10 @@ if [ "${BUILD_TARGET}" != "source" ]; then
     # We need a CI that checks the output of Godot.
     echo -e "${Green}Do not panic about the errors above…${Off}"
 
-    if [ "${BUILD_TARGET}" = "linux64" ]; then
-        echo -e "${Green}Packing the linux binary to reduce its size…${Off}"
-        upx -9 -v ${BUILD_PATH}/${BINARY_NAME}
-    fi
+#    if [ "${BUILD_TARGET}" = "linux64" ]; then
+#        echo -e "${Green}Packing the linux binary to reduce its size…${Off}"
+#        upx -9 -v ${BUILD_PATH}/${BINARY_NAME}
+#    fi
 
 fi
 
