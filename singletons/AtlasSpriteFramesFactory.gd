@@ -83,7 +83,8 @@ func initialize():
 
 func initialize_late():
 	print("%s: Initializing late…" % [get_name()])
-	regenerate_if_missing()
+	if Engine.is_editor_hint():
+		regenerate_if_missing()
 	print("%s: Loading…" % [get_name()])
 	load_from_files()
 
