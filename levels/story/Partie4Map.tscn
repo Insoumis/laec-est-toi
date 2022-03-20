@@ -85,3 +85,12 @@ warp = true
 level_path = "res://levels/story/Partie5Map.tscn"
 dependency_a = NodePath("../Portal3")
 title = "Ordonner le Monde"
+
+[node name="Warp2" parent="Items" index="8" instance=ExtResource( 5 )]
+position = Vector2( -448, 174.221 )
+cell_position = Vector2( -9, 4 )
+tile_position = Vector2( -7, 4 )
+warp = true
+level_path = "res://levels/story/Partie3Map.tscn"
+title = "Ordonner le Monde"
+title_override = "Précédent"
