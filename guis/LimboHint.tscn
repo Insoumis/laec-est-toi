@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://guis/RestartKeyboardHint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://guis/LimboHint.gd" type="Script" id=2]
 [ext_resource path="res://guis/UndoHint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://lib/BlinkingCanvasItem.gd" type="Script" id=4]
+[ext_resource path="res://guis/GamepadHint.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Appear"
@@ -41,7 +43,6 @@ tracks/2/keys = {
 }
 
 [node name="LimboHint" type="Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -56,8 +57,32 @@ anims/Appear = SubResource( 1 )
 [node name="LimboInputHints" type="Node2D" parent="."]
 position = Vector2( 1.68179, -269.087 )
 
-[node name="UndoHint" parent="LimboInputHints" instance=ExtResource( 3 )]
+[node name="UndoMouseHint" parent="LimboInputHints" instance=ExtResource( 3 )]
 position = Vector2( 316.461, 79.1758 )
 
 [node name="RestartKeyboardHint" parent="LimboInputHints" instance=ExtResource( 1 )]
 position = Vector2( 688.676, 81.4133 )
+
+[node name="GamepadHint" parent="LimboInputHints" instance=ExtResource( 5 )]
+position = Vector2( 494.648, 107.358 )
+scale = Vector2( 0.62, 0.62 )
+
+[node name="ColorRect" type="ColorRect" parent="LimboInputHints/GamepadHint"]
+margin_left = 65.0
+margin_top = -64.0
+margin_right = 79.0
+margin_bottom = -49.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="LimboInputHints/GamepadHint"]
+margin_left = 81.0
+margin_top = -47.0
+margin_right = 96.0
+margin_bottom = -32.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
