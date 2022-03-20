@@ -37,12 +37,44 @@ bus = "Music"
 stream = ExtResource( 2 )
 bus = "Music"
 
-[node name="04" type="AudioStreamPlayer" parent="Story"]
+[node name="05" type="AudioStreamPlayer" parent="Story"]
+stream = ExtResource( 3 )
+bus = "Music"
+
+[node name="07" type="AudioStreamPlayer" parent="Story"]
+stream = ExtResource( 9 )
+bus = "Music"
+
+[node name="StoryAll" type="Node" parent="."]
+script = ExtResource( 1 )
+play_at_random = true
+
+[node name="01" type="AudioStreamPlayer" parent="StoryAll"]
+stream = ExtResource( 6 )
+bus = "Music"
+
+[node name="02" type="AudioStreamPlayer" parent="StoryAll"]
+stream = ExtResource( 7 )
+bus = "Music"
+
+[node name="03" type="AudioStreamPlayer" parent="StoryAll"]
+stream = ExtResource( 2 )
+bus = "Music"
+
+[node name="04" type="AudioStreamPlayer" parent="StoryAll"]
 stream = ExtResource( 5 )
 bus = "Music"
 
-[node name="05" type="AudioStreamPlayer" parent="Story"]
+[node name="05" type="AudioStreamPlayer" parent="StoryAll"]
 stream = ExtResource( 3 )
+bus = "Music"
+
+[node name="06" type="AudioStreamPlayer" parent="StoryAll"]
+stream = ExtResource( 8 )
+bus = "Music"
+
+[node name="07" type="AudioStreamPlayer" parent="StoryAll"]
+stream = ExtResource( 9 )
 bus = "Music"
 
 [node name="Everything" type="Node" parent="."]
@@ -75,4 +107,8 @@ bus = "Music"
 
 [node name="07" type="AudioStreamPlayer" parent="Everything"]
 stream = ExtResource( 9 )
+bus = "Music"
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="Everything"]
+stream = ExtResource( 10 )
 bus = "Music"
