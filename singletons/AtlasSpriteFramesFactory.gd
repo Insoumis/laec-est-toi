@@ -96,13 +96,11 @@ func regenerate_if_missing():
 		self.text_atlas_path,
 		self.atlas_data_path,
 	]
-	var file_tool := File.new()
 	for required_file in required_files:
-		if not file_tool.file_exists(required_file):
+		if not ResourceLoader.exists(required_file):
 			are_file_requirements_satisfied = false
 			print("Required file `%s' was not found." % required_file)
 	
-	# Forcing re-regen for now
 	if not are_file_requirements_satisfied:
 		print("Re-generating concepts atlasses and region data.")
 		generate_spriteframes(collect_items())
