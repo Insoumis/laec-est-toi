@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 <!-- Le texte dans les balises comme celles-ci sera caché.  -->
-<!-- Vous n'avez pas beoin de le suprimer, mais vous pouvez. -->
+<!-- Vous n'avez pas besoin de le supprimer, mais vous pouvez. -->
 
 
 **Description du problème**
