@@ -12,4 +12,4 @@ func refresh():
 		printerr("%s needs singleton `Game`." % self.name)
 		return
 	var score = Game.get_completion_score()
-	$Label.text = "%3.0f%%" % [score * 100.0]
+	$Label.text = tr("Completion: %3.0f%%") % [score * 100.0]

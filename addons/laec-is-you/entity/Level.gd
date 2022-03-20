@@ -2537,8 +2537,7 @@ func is_item_matching_subject(
 	var matches_epithets := true
 	if subject.has_epithet(Words.EPITHET_PREFIX_LONELY):
 		var is_item_lonely := get_items_piled_with(item).size() > 0
-		if subject.prefix_negated:
-#		if subject.has_epithet_negated(Words.EPITHET_PREFIX_LONELY):
+		if subject.has_epithet_negated(Words.EPITHET_PREFIX_LONELY):
 			matches_epithets = is_item_lonely
 		else:
 			matches_epithets = not is_item_lonely

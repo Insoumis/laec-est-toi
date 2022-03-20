@@ -15,8 +15,8 @@ var epithets_prefixes := Array()  # of Epithet
 #var epithets_suffixes := Array()  # of Epithet
 
 # deprecated, use epithets above instead
-var prefix : String = ''  # eg: lonely
-var prefix_negated : bool = false
+#var prefix : String = ''  # eg: lonely
+#var prefix_negated : bool = false
 ############
 
 # Eg: WITH XXXX
@@ -36,11 +36,16 @@ func get_is_thing() -> bool:
 
 
 func has_epithet(epithet_concept: String) -> bool:
-	if self.prefix == epithet_concept:
-		return true
 	for epithet in self.epithets_prefixes:
 		if epithet.concept == epithet_concept:
 			return true  # negation does not matter here
+	return false
+
+
+func has_epithet_negated(epithet_concept: String) -> bool:
+	for epithet in self.epithets_prefixes:
+		if epithet.concept == epithet_concept:
+			return epithet.negated
 	return false
 
 
@@ -52,7 +57,7 @@ func _to_string() -> String:  # for debugging purposes
 	]
 
 
-func to_pretty_string() -> String:
+func to_pretty_string(uppercase := true) -> String:
 	var ps := ""
 	for epithet in self.epithets_prefixes:
 		ps += "%s " % [epithet.to_pretty_string()]
@@ -60,12 +65,5 @@ func to_pretty_string() -> String:
 	ps += "%s" % [self.concept_name]
 	for attribute in self.attributes:
 		ps += " %s" % [attribute.to_pretty_string()]
-	
-	return ps.to_upper()
-#	return ("%s%s%s%s" % [
-#		'not ' if self.prefix_negated else '',
-#		self.prefix + (' ' if self.prefix else ''),
-#		'not ' if self.negated else '',
-#		self.concept_name,
-#	]).to_upper()
+	return ps.to_upper() if uppercase else ps
 

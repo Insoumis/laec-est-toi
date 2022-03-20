@@ -370,8 +370,8 @@ func consume_subject_epithet_prefix(items:Array, subject:Subject) -> Consumption
 		epithet.negated = was_negated
 		subject.epithets_prefixes.append(epithet)
 		### DEPRECATED #
-		subject.prefix_negated = was_negated
-		subject.prefix = item_concept
+		#subject.prefix_negated = was_negated
+		#subject.prefix = item_concept
 		################
 		has_epithet = true
 	
