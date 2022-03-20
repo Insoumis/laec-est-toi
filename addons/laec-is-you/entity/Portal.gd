@@ -385,18 +385,21 @@ func update_sprite(refresh_frames := true) -> void:
 # And the science gets done, and you make a neat game,
 # For the people who are still alive.
 
+
+# This must be safe to spam
 func perhaps_open() -> bool:
 	if not is_available():
 		return false
 	if not is_piled_with_you():
 		return false
 	
-	print("Opening Portal `%s'…" % self.name)
 	if not Game:
 		printerr("Singleton `Game' is not defined.")
 		return false
 	
-	Game.enter_level(self.level_path)
+	if not Game.is_switching_scenes():
+		print("Opening Portal `%s'…" % self.name)
+		Game.enter_level(self.level_path)
 	return true
 
 

@@ -250,6 +250,7 @@ func switch_to_scene(
 	)
 	
 	if self.__is_currently_switching:
+		print("%s cancelled switch because it is already switching.")
 		return false
 	self.__is_currently_switching = true
 
@@ -280,6 +281,10 @@ func switch_to_scene(
 		self.__is_currently_switching = false
 	emit_scene_signals(current_scene, scene_instance)
 	return true
+
+
+func is_switching_scenes():
+	return self.__is_currently_switching
 
 
 func transition_ended():
