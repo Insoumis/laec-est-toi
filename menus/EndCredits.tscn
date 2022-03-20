@@ -19,6 +19,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+forward_scene_path = "res://menus/StartMenu.tscn"
 
 [node name="ProRoleLabel" type="Label" parent="."]
 margin_right = 40.0
@@ -27,7 +28,8 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "ROLE"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": "Those are templates we duplicate during UI generation."
 }
 
 [node name="ProPersonLabel" type="Label" parent="."]
@@ -38,5 +40,6 @@ margin_bottom = 94.0
 custom_fonts/font = SubResource( 2 )
 text = "person"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": "Those are templates we duplicate during UI generation."
 }

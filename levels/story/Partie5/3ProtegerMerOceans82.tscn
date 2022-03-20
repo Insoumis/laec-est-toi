@@ -36,6 +36,7 @@ La biodiversité marine se dégrade, du fait de la surpêche et de la pollution 
 link_custom = "https://laec.fr/s82"
 achievement_a = SubResource( 1 )
 achievement_b = SubResource( 2 )
+forward_level_path = "res://menus/EndCredits.tscn"
 solution_a = "779969171144777766143337799666111143316666669333333114479777794441797413694434466966669669999333369977433331114994777133317179774"
 
 [node name="Camera2D" parent="." index="0"]

@@ -67,7 +67,7 @@ position = Vector2( 96, -143.922 )
 cell_position = Vector2( 3, -3 )
 tile_position = Vector2( 1, -3 )
 level_path = "res://levels/story/Partie5/2IndependanceFrance71.tscn"
-dependency_a = NodePath(".")
+dependency_a = NodePath("../Portal")
 title = "France Indépendante"
 
 [node name="Portal3" parent="Items" index="6" instance=ExtResource( 7 )]
@@ -94,4 +94,12 @@ tile_position = Vector2( 0, 5 )
 contents = "Rejoignez le grand concert
 des niveaux de la communauté
 sur Discord, jusqu'au 3 Avril !"
+url = "https://discord-insoumis.fr"
+
+[node name="Sign2" parent="Items" index="9" instance=ExtResource( 5 )]
+position = Vector2( -224, -53.0239 )
+cell_position = Vector2( -3, -1 )
+tile_position = Vector2( -4, -1 )
+contents = "Vous en voulez plus ?
+Visitez l'Arcade !"
 url = "https://discord-insoumis.fr"

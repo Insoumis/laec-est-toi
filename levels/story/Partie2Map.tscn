@@ -57,10 +57,10 @@ cell_position = Vector2( -3, -5 )
 tile_position = Vector2( -6, -5 )
 
 [node name="Laec" parent="Items" index="4" instance=ExtResource( 5 )]
-position = Vector2( -127, 175 )
+position = Vector2( -128, 174.231 )
 concept_name = "laec"
-cell_position = Vector2( -6, 6 )
-tile_position = Vector2( -3, 6 )
+cell_position = Vector2( -4, 4 )
+tile_position = Vector2( -2, 4 )
 is_you = true
 
 [node name="IsText" parent="Items" index="5" instance=ExtResource( 5 )]
@@ -87,10 +87,10 @@ dependency_a = NodePath("../Portal3")
 title = "Bien Vivre"
 
 [node name="Warp2" parent="Items" index="8" instance=ExtResource( 3 )]
-position = Vector2( -189, 264 )
-cell_position = Vector2( 0, 4 )
-tile_position = Vector2( 2, 4 )
+position = Vector2( -192, 265.119 )
+cell_position = Vector2( -6, 6 )
+tile_position = Vector2( -3, 6 )
 warp = true
 level_path = "res://levels/story/Partie1Map.tscn"
-title = "Bien Vivre"
+title = "Démocratie"
 title_override = "Précédent"
