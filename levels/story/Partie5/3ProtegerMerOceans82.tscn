@@ -30,9 +30,9 @@ title = "level.3ProtegerMerOceans82.title"
 excerpt = "level.3ProtegerMerOceans82.excerpt"
 link = "level.3ProtegerMerOceans82.link"
 title_custom = "Protéger les Océans"
-excerpt_custom = "LAEC a stoppé la prolifération des déchets en mer puis grâce à l'école, l'éducation et la recherche l'a nettoyée.
+excerpt_custom = "LAEC a stoppé la prolifération des déchets en mer pour reconstruire un écosytème marin durable grâce à l'école, l'éducation et la recherche.
 
-La biodiversité marine se dégrade, du fait de la surpêche et de la pollution plastique. Il est urgent de protéger les mers et océans du pillage de leurs ressources et des tensions militaires. Il est nécessaire de sanctuariser les écosystèmes marins."
+La biodiversité marine se dégrade, du fait de la surpêche et de la pollution plastique. Il est urgent de protéger les mers et océans du pillage de leurs ressources et des tensions militaires. Il est vital de sanctuariser les écosystèmes marins !"
 link_custom = "https://laec.fr/s82"
 achievement_a = SubResource( 1 )
 achievement_b = SubResource( 2 )

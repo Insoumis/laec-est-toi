@@ -9,8 +9,8 @@ title = "level.Tutorial02Level.title"
 excerpt = "level.Tutorial02Level.excerpt"
 link = "level.Tutorial02Level.link"
 title_custom = "Tutoriel B"
-excerpt_custom = "LAEC vous livre la trame d'un monde plus juste et vertueux
-À vous de vous en inspirer pour changer les règles du jeu !"
+excerpt_custom = "LAEC propose la trame d'un monde plus juste et vertueux...
+À toi de t'en inspirer pour changer les règles du jeu !"
 forward_level_path = "res://levels/story/Partie1Map.tscn"
 solution_a = "6663966"
 
