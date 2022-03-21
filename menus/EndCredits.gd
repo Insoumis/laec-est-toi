@@ -3,6 +3,7 @@ extends Control
 
 
 enum ROLES {
+	ACE
 	CODER
 	TOOLS
 #	GAME_MASTER
@@ -33,6 +34,7 @@ var role_names = {
 	ROLES.TECHNICAL_ARTIST : tr("Technical artist"),
 	ROLES.SOUND_DESIGNER : tr("Sound designer"),
 	ROLES.ORGANIZER : tr("Organizer"),
+	ROLES.ACE : tr("Ace"),
 	ROLES.REVIEWER : tr("Reviewer"),
 	ROLES.TESTER : tr("Tester"),
 	ROLES.THANKS : tr("Thanks"),
@@ -116,6 +118,10 @@ var people := [
 	{
 		"name": "Saccharose4965",
 		"roles": [ROLES.TESTER],
+	},
+	{
+		"name": "Ista",
+		"roles": [ROLES.ACE],
 	}
 ]
 
