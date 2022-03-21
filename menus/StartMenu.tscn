@@ -1,9 +1,9 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://menus/StartMenu.gd" type="Script" id=1]
 [ext_resource path="res://addons/version/version_label.gd" type="Script" id=2]
 [ext_resource path="res://guis/VanityCard.tscn" type="PackedScene" id=3]
-[ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=4]
+[ext_resource path="res://guis/PrettyMenuTheme.tres" type="Theme" id=4]
 [ext_resource path="res://effects/background_shader.shader" type="Shader" id=5]
 [ext_resource path="res://fonts/KenneyBlocks.tres" type="DynamicFont" id=6]
 [ext_resource path="res://sprites/items/text_is_1.png" type="Texture" id=7]
@@ -23,6 +23,7 @@
 [ext_resource path="res://sprites/background/people3.png" type="Texture" id=21]
 [ext_resource path="res://sprites/background/victory.png" type="Texture" id=22]
 [ext_resource path="res://effects/WinParticles.tscn" type="PackedScene" id=23]
+[ext_resource path="res://fonts/Bujov5_small.tres" type="DynamicFont" id=24]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
@@ -99,23 +100,23 @@ __meta__ = {
 }
 
 [node name="MenuButtonsContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 433.0
-margin_top = 98.0
-margin_right = 591.0
-margin_bottom = 502.0
+margin_left = 435.0
+margin_top = 167.0
+margin_right = 589.0
+margin_bottom = 433.0
 
 [node name="PlayStoryButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_right = 158.0
-margin_bottom = 48.0
+margin_right = 154.0
+margin_bottom = 41.0
 focus_neighbour_top = NodePath("../ExitButton")
 mouse_default_cursor_shape = 2
 shortcut_in_tooltip = false
 text = "Play"
 
 [node name="PlayTutosButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 52.0
-margin_right = 158.0
-margin_bottom = 100.0
+margin_top = 45.0
+margin_right = 154.0
+margin_bottom = 86.0
 mouse_default_cursor_shape = 2
 shortcut_in_tooltip = false
 text = "Tutorial"
@@ -125,9 +126,9 @@ __meta__ = {
 }
 
 [node name="PlayExtrasButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 104.0
-margin_right = 158.0
-margin_bottom = 152.0
+margin_top = 90.0
+margin_right = 154.0
+margin_bottom = 131.0
 mouse_default_cursor_shape = 2
 shortcut_in_tooltip = false
 text = "Arcade"
@@ -137,18 +138,18 @@ __meta__ = {
 }
 
 [node name="ControlsButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 156.0
-margin_right = 158.0
-margin_bottom = 204.0
+margin_top = 135.0
+margin_right = 154.0
+margin_bottom = 176.0
 mouse_default_cursor_shape = 2
 shortcut_in_tooltip = false
 text = "Controls"
 flat = true
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 208.0
-margin_right = 158.0
-margin_bottom = 256.0
+margin_top = 180.0
+margin_right = 154.0
+margin_bottom = 221.0
 mouse_default_cursor_shape = 2
 shortcut_in_tooltip = false
 text = "Settings"
@@ -158,41 +159,22 @@ __meta__ = {
 }
 
 [node name="ExitButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 260.0
-margin_right = 158.0
-margin_bottom = 308.0
+margin_top = 225.0
+margin_right = 154.0
+margin_bottom = 266.0
 focus_neighbour_bottom = NodePath("../PlayStoryButton")
 mouse_default_cursor_shape = 2
 shortcut_in_tooltip = false
 text = "Exit"
 
 [node name="HSeparator" type="HSeparator" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 312.0
-margin_right = 158.0
-margin_bottom = 316.0
-
-[node name="VersionLabel" type="Label" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 320.0
-margin_right = 158.0
-margin_bottom = 360.0
-custom_fonts/font = ExtResource( 6 )
-text = "0.4.4"
-align = 1
-script = ExtResource( 2 )
-
-[node name="BetaLabel" type="Label" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 364.0
-margin_right = 158.0
-margin_bottom = 404.0
-custom_fonts/font = ExtResource( 6 )
-text = "Beta"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+visible = false
+margin_top = 270.0
+margin_right = 154.0
+margin_bottom = 274.0
 
 [node name="CursorAnimatedSprite" type="AnimatedSprite" parent="CenterContainer"]
-position = Vector2( 622.482, 106.886 )
+position = Vector2( 637.942, 155.643 )
 frames = SubResource( 5 )
 frame = 1
 playing = true
@@ -233,6 +215,52 @@ __meta__ = {
 [node name="SecretEditorParticles" parent="Title/YouAnimatedSprite" instance=ExtResource( 23 )]
 visible = false
 emitting = true
+
+[node name="DisclaimerLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -501.701
+margin_top = -45.2378
+margin_right = 555.299
+margin_bottom = -4.23779
+custom_fonts/normal_font = ExtResource( 24 )
+bbcode_enabled = true
+bbcode_text = "[color=#e17478]LAEC[/color] est le programme de [color=#e17478]L'Avenir En Commun[/color] porté par Jean-Luc Mélanchon"
+text = "LAEC est le programme de L'Avenir En Commun porté par Jean-Luc Mélanchon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VersionLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -155.979
+margin_top = 1.37025
+margin_right = -1.97949
+margin_bottom = 41.3702
+custom_fonts/font = ExtResource( 6 )
+text = "0.5.0"
+align = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BetaLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -155.979
+margin_top = 45.3702
+margin_right = -1.97949
+margin_bottom = 85.3702
+custom_fonts/font = ExtResource( 6 )
+text = "Beta"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_left = 1.0
