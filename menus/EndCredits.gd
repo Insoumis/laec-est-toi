@@ -1,6 +1,8 @@
 extends Control
 
-
+# TODO:
+# BABA IS YOU (HEMPULI)
+# KENNEY
 
 enum ROLES {
 	ACE
@@ -68,8 +70,8 @@ var people := [
 		"roles": [ROLES.LEVEL_DESIGNER],
 	},
 	{
-		"name": "Bogoss69",
-		"roles": [ROLES.THANKS],
+		"name": "Cyril M.",
+		"roles": [ROLES.THANKS, ROLES.SPECIAL_THANKS],
 	},
 	{
 		"name": "Roipoussiere",
@@ -127,6 +129,7 @@ var people := [
 
 
 export var scroll_speed := 50.0
+export var playlist := "EndCredits"
 
 
 # The scene (Start Menu) these End Credits redirect to once they're done
@@ -139,17 +142,9 @@ var scroll_limit := 1000
 # Computed and set during ready, from contents' size
 
 
-func _process(delta):
-	self.credits_holder.margin_top -= delta * self.scroll_speed
-	if self.credits_holder.margin_top < -1 * self.scroll_limit:
-		set_process(false)
-		if self.forward_scene_path:
-			Game.go_back_to_first()
-			# todo
-			#Game.go_back_to_scene_path(self.forward_scene_path)
-
-
 func _ready():
+	if Jukebox and self.playlist:
+		Jukebox.play_by_name(self.playlist)
 	self.credits_holder = build_credit_controls(get_people_per_role())
 	add_child(self.credits_holder)
 	# Disable the nodes used as templates during building above
@@ -158,6 +153,16 @@ func _ready():
 	# Position the credits below the screen (they'll scroll up)
 	self.credits_holder.margin_top = get_viewport().size.y
 	self.scroll_limit = self.credits_holder.find_node("CreditsVBox", true, false).rect_size.y
+
+
+func _process(delta):
+	self.credits_holder.margin_top -= delta * self.scroll_speed
+	if self.credits_holder.margin_top < -1 * self.scroll_limit:
+		set_process(false)
+		if self.forward_scene_path:
+			Game.go_back_to_first()
+			# todo
+			#Game.go_back_to_scene_path(self.forward_scene_path)
 
 
 func get_people_per_role():
@@ -204,5 +209,4 @@ func build_credit_controls(people_per_role : Dictionary):
 				person_label.set("custom_fonts/font", $ProPersonLabel.get("custom_fonts/font"))
 				credits_vbox.add_child(person_label)
 	return wrapper
-	
 
