@@ -395,7 +395,7 @@ func emit_scene_signals(current, target):
 
 func setup_levels_pool():
 	assert(LevelsPool)
-	# This takes a looong time (0.3s) and it will grow with levels
+	LevelsPool.should_use_exclusion = false
 	LevelsPool.init()
 
 

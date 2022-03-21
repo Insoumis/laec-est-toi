@@ -50,6 +50,7 @@ export var excluded_level_path_regex := \
 var __excluded_level_path_regex : RegEx
 
 # All files whose path matches this regex will be considered maps.
+# NOT IMPLEMENTED
 export var should_match_maps := true
 export var map_path_regex := \
 	"/([^/]+/|)*[^/]+Map[.](tscn|phiu|png)" \
@@ -90,7 +91,7 @@ func init(invalidate_cache := false):
 		var saved := save_cache_to_file()
 		if saved != OK:
 			printerr("Cannot write the levels' cache to file.")
-			breakpoint
+			#breakpoint
 
 
 func should_rebuild_cache():
@@ -102,24 +103,32 @@ func should_rebuild_cache():
 func save_cache_to_file() -> int:
 	if not self.cache:
 		return ERR_CANT_ACQUIRE_RESOURCE
-	self.cache.take_over_path(self.cache_file_path)
+	#self.cache.take_over_path(self.cache_file_path)
+	print("%s: writing cache to file `%s'…" % [get_name(), self.cache_file_path])
+	#var remover := Directory.new()
+	#remover.remove(self.cache_file_path)
+#	breakpoint
 	var saved = ResourceSaver.save(
 		self.cache_file_path,
 		self.cache,
 		0
-#		||
-#		ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS
-#		||
-#		ResourceSaver.FLAG_CHANGE_PATH
+#		+
+#		ResourceSaver.FLAG_COMPRESS
+		+
+		ResourceSaver.FLAG_OMIT_EDITOR_PROPERTIES
+		+
+		ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS
+		+
+		ResourceSaver.FLAG_CHANGE_PATH
 	)
 	if saved != OK:
+		printerr("%s: failed to write cache file (error %d)" % [get_name(), saved])
 		return saved
 	return OK
 
 
 func load_cache_from_file() -> int:
-	var file := File.new()
-	if not file.file_exists(self.cache_file_path):
+	if not ResourceLoader.exists(self.cache_file_path):
 		return ERR_FILE_CANT_OPEN
 	self.cache = ResourceLoader.load(
 		self.cache_file_path,
@@ -127,7 +136,7 @@ func load_cache_from_file() -> int:
 		false # read file, not cache
 	)
 	if not self.cache:
-		breakpoint  # corruption?
+		breakpoint  # corruption? save failure?
 		return ERR_CANT_ACQUIRE_RESOURCE
 	return OK
 
@@ -143,7 +152,10 @@ func reindex_levels(refresh_existing := true):
 	This parameter is basically equivalent to `invalidate_cache`, I believe.
 	"""
 	if refresh_existing:
-		self.cache = LevelsPoolCache.new()
+		if self.cache:
+			self.cache.clear()
+		else:
+			self.cache = LevelsPoolCache.new()
 	
 	for source_directory in self.source_directories:
 		add_levels_in_directory(
@@ -208,7 +220,7 @@ func add_level(filepath: String, refresh_existing := true):
 			return
 		is_level_file_valid = true
 
-	if filepath.ends_with(".png"):
+	elif filepath.ends_with(".png"):
 		var image := Image.new()
 		var load_err := image.load(filepath)
 
@@ -257,7 +269,6 @@ func add_level(filepath: String, refresh_existing := true):
 		var portal = PortalResource.new()
 		portal.target_level_path = portal_scene.level_path
 		level.portals.append(portal)
-	
 	
 	# … grab more data from the level here, such as available concepts, their tallies, etc.
 
@@ -312,8 +323,9 @@ func get_user_levels() -> Array:
 
 
 func get_levels_contributing_to_score() -> Array:
-	assert(self.cache, "Call init() or init_full() first.")
-	
+	if not self.cache:
+		printerr("Call init() or init_full() first.")
+		return Array()
 	var score_levels := Array()
 	for level_filepath in self.cache.levels:
 		var level = self.cache.levels[level_filepath]
@@ -338,7 +350,7 @@ func reindex_orphanness():
 	
 	for level_filepath in self.cache.levels:
 		var level = self.cache.levels[level_filepath]
-		level.parents.clear()
+		level.parents_filepaths.clear()
 	
 	for parent_filepath in self.cache.levels:
 		var parent_level = self.cache.levels[parent_filepath]
@@ -353,7 +365,9 @@ func reindex_orphanness():
 					self.name, portal.target_level_path,
 				])
 				continue
-			self.cache.levels[portal.target_level_path].parents.append(parent_level)
+			self.cache.levels[portal.target_level_path].parents_filepaths.append(
+				parent_level.level_filepath
+			)
 
 
 ## REGEXES #####################################################################

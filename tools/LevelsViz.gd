@@ -19,8 +19,28 @@ extends Node2D
 onready var levels_table: DataTable = find_node("LevelsTable")
 
 
+# Indexation takes a long time, so we thread it.
+# We have crashes when we try to write the tres cache
+# whether we're in thread or not.
+var thread: Thread
+
+
 func _ready():
-	start()
+	thread = Thread.new()
+	var started = thread.start(self, "start")
+	if OK != started:
+		printerr("Cannot start indexation thread.")
+	# or start it on the main thread:
+#	start()
+
+
+func _process(_delta):
+	if thread and thread.is_active():
+		if thread.is_alive():
+			return
+		thread.wait_to_finish()
+		thread = null
+		build_table()
 
 
 func _input(_event):
@@ -28,28 +48,20 @@ func _input(_event):
 		var _gone = Game.go_back()
 
 
-#func _exit_tree():
-#	breakpoint
-#	self.levels_pool.clear()
-#	self.levels_pool.queue_free()
-
-#func free():
-#	breakpoint
-#	.free()
-
-
 func start():
-	
 	prints("Starting Levels Viz…")
 	
 	Chronometer.start()
 	# We could also use the singleton LevelsPool, probably
 #	self.levels_pool = LevelsPoolClass.new()
 	LevelsPool.should_use_exclusion = false
-	LevelsPool.init_full()
+#	LevelsPool.init()
+	LevelsPool.init_full()  # FIXME crashes when writing cache to disk
 	prints("LevelsPool#init_full():", Chronometer.stop(), "s")
 	# LevelsPool#init_full(): 1.640474 s
-	
+
+
+func build_table():
 	var header_row = [
 		tr("Action"),
 		tr("Filepath"),
@@ -73,7 +85,7 @@ func start():
 			level.title,
 			bool_to_human(level.is_in_score),
 #			bool_to_human(level.is_orphan),
-			level.parents,
+			level.parents_filepaths,
 			level.portals.size(),  # incorrect, since it also counts "invalid" portals
 		])
 

@@ -26,10 +26,15 @@ export var level_filepath: String
 # These are expensive to hydrate, since we need to instantiate the level.
 # Do not assume they are set.   See hydrate_from_instance()
 export var title: String
-export var portals: Array  # of PortalResource
-export var parents: Array  # of LevelResource (self)
-#export var children: Array  # of LevelResource (self) TODO?
 export var is_in_score: bool
+# Ok so long PortalResource does not refrence this class (save l∞ps)
+export var portals: Array  # of PortalResource
+
+export var parents_filepaths: Array  # of String
+
+# NO !   save l∞ps !
+#export var parents: Array  # of LevelResource (self)
+#export var children: Array  # of LevelResource (self) TODO?
 
 var is_orphan: bool setget set_is_orphan, get_is_orphan
 
@@ -43,7 +48,7 @@ func set_is_orphan(_value):
 	assert("READ ONLY.  Use `parents' property instead.")
 
 func get_is_orphan():
-	return self.parents.empty()
+	return self.parents_filepaths.empty()
 
 
 #func hydrate_from_instance() -> int:
