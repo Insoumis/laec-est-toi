@@ -137,34 +137,34 @@ __meta__ = {
 position = Vector2( 886, 420 )
 
 [node name="Input" parent="GuiLayer/MoveHint" index="0"]
-frame = 2
+frame = 0
 
 [node name="Arrows" parent="GuiLayer/MoveHint" index="1"]
 material = SubResource( 1 )
-frame = 2
+frame = 0
 
 [node name="ArrowLeft" parent="GuiLayer/MoveHint" index="2"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="ArrowRight" parent="GuiLayer/MoveHint" index="3"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="ArrowTopLeft" parent="GuiLayer/MoveHint" index="4"]
-frame = 0
+frame = 1
 
 [node name="ArrowBottomLeft" parent="GuiLayer/MoveHint" index="5"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="ArrowBottomRight" parent="GuiLayer/MoveHint" index="6"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="ArrowTopRight" parent="GuiLayer/MoveHint" index="7"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="GamepadHint" parent="GuiLayer" index="6" instance=ExtResource( 8 )]
 position = Vector2( 734, 129 )
@@ -198,48 +198,41 @@ position = Vector2( -53, -56 )
 
 [node name="Input" parent="GuiLayer/GamepadHint/MoveHint" index="0"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="Arrows" parent="GuiLayer/GamepadHint/MoveHint" index="1"]
 material = SubResource( 2 )
 position = Vector2( 0, 32 )
-frame = 2
-
-[node name="ArrowLeft" parent="GuiLayer/GamepadHint/MoveHint" index="2"]
-frame = 2
-
-[node name="ArrowRight" parent="GuiLayer/GamepadHint/MoveHint" index="3"]
-frame = 2
-
-[node name="ArrowTopLeft" parent="GuiLayer/GamepadHint/MoveHint" index="4"]
 frame = 0
 
+[node name="ArrowLeft" parent="GuiLayer/GamepadHint/MoveHint" index="2"]
+frame = 0
+
+[node name="ArrowRight" parent="GuiLayer/GamepadHint/MoveHint" index="3"]
+frame = 0
+
+[node name="ArrowTopLeft" parent="GuiLayer/GamepadHint/MoveHint" index="4"]
+frame = 1
+
 [node name="ArrowBottomLeft" parent="GuiLayer/GamepadHint/MoveHint" index="5"]
-frame = 2
+frame = 0
 
 [node name="ArrowBottomRight" parent="GuiLayer/GamepadHint/MoveHint" index="6"]
-frame = 2
+frame = 0
 
 [node name="ArrowTopRight" parent="GuiLayer/GamepadHint/MoveHint" index="7"]
-frame = 2
-
-[node name="Input" parent="GuiLayer/GamepadHint" index="3"]
-frame = 2
+frame = 0
 
 [node name="AnimatedSprite" parent="GuiLayer/GamepadHint/Input" index="0"]
 visible = true
 scale = Vector2( 1.271, 1.208 )
-frame = 2
-
-[node name="AnimatedSprite4" parent="GuiLayer/GamepadHint/Input" index="1"]
-frame = 2
 
 [node name="AnimatedSprite2" parent="GuiLayer/GamepadHint/Input" index="2"]
 visible = false
-frame = 1
+frame = 2
 
 [node name="AnimatedSprite3" parent="GuiLayer/GamepadHint/Input" index="3"]
-frame = 1
+frame = 2
 
 [editable path="GuiLayer/MoveHint"]
 [editable path="GuiLayer/GamepadHint"]

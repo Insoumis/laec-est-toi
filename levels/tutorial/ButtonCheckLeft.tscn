@@ -99,7 +99,7 @@ tile_position = Vector2( -4, 3 )
 
 [node name="KeyboardArrowsHint" parent="GuiLayer" index="4" instance=ExtResource( 2 )]
 position = Vector2( 152, 105 )
-frame = 1
+frame = 2
 
 [node name="PressHint" type="Control" parent="GuiLayer/KeyboardArrowsHint" index="0"]
 show_behind_parent = true

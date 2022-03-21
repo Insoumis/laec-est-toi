@@ -355,7 +355,6 @@ visible = false
 [node name="KeyboardArrowsHint" parent="Hud" index="3" instance=ExtResource( 8 )]
 position = Vector2( 356.154, 174.215 )
 scale = Vector2( 0.618, 0.618 )
-frame = 2
 
 [node name="PressHint" type="Control" parent="Hud/KeyboardArrowsHint" index="0"]
 show_behind_parent = true
