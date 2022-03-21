@@ -36,13 +36,13 @@ solution_b = "4777963111993457995777"
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -196610, 22, 0, -262144, 22, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 4, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 4, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 4, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 4, 0, 5, 8, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 4, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 4, 0, 262142, 2, 0, 262143, 22, 0, 196608, 22, 0, 196609, 2, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="3"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="4"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="5"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="MousePassHint" parent="." index="7" instance=ExtResource( 1 )]

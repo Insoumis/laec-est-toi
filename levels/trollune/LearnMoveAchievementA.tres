@@ -9,5 +9,5 @@ trigger_on_turn_if = "not 2 laec"
 trigger_on_victory_if = ""
 image = ExtResource( 2 )
 snake_identifier = "troll_fed"
-title = "level.LearnMove.no_troll_fed.title"
+title = "level.LearnMove.troll_fed.title"
 title_custom = "Nourrir les trolls...  -_-"

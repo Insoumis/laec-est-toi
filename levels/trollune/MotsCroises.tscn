@@ -13,17 +13,17 @@ excerpt_custom = "\"Si l'on ne croit pas à la liberté d'expression pour les ge
 -- Noam Chomsky"
 solution_a = "77997944774411111314999976969631"
 
-[node name="HexagonalTileMap" parent="." index="1"]
+[node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -196610, 6, 0, -196609, 6, 0, -262144, 7, 0, -262143, 7, 0, -262142, 6, 0, -262141, 6, 0, -131076, 6, 0, -131075, 6, 0, -131074, 8, 0, -131073, 8, 0, -196607, 7, 0, -196606, 8, 0, -196605, 6, 0, -196604, 6, 0, -65541, 6, 0, -65540, 6, 0, -65539, 8, 0, -65538, 8, 0, -65537, 8, 0, -131072, 9, 0, -131071, 9, 0, -131070, 6, 0, -131069, 8, 0, -131068, 8, 0, -131067, 6, 0, -6, 6, 0, -5, 9, 0, -4, 9, 0, -3, 8, 0, -2, 8, 0, -1, 8, 0, -65536, 8, 0, -65534, 8, 0, -65533, 8, 0, -65532, 8, 0, -65531, 6, 0, 65530, 6, 0, 65531, 9, 0, 65532, 8, 0, 65533, 8, 0, 65534, 8, 0, 0, 9, 0, 1, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 6, 6, 0, 131066, 6, 0, 131067, 9, 0, 131068, 8, 0, 131069, 8, 0, 131070, 8, 0, 65536, 9, 0, 65538, 8, 0, 65539, 8, 0, 65540, 8, 0, 65541, 6, 0, 196603, 6, 0, 196604, 8, 0, 196605, 8, 0, 196606, 8, 0, 196607, 9, 0, 131072, 9, 0, 131074, 8, 0, 131075, 8, 0, 131076, 8, 0, 131077, 6, 0, 262139, 6, 0, 262140, 8, 0, 262141, 8, 0, 262143, 6, 0, 196610, 8, 0, 196611, 8, 0, 196612, 6, 0, 327676, 6, 0, 327677, 6, 0, 327678, 6, 0, 262144, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 17, 0 )
 
-[node name="MiniDecorFarTileMap" parent="." index="2"]
+[node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="DecorTileMap" parent="." index="3"]
+[node name="DecorTileMap" parent="." index="5"]
 cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 
-[node name="MiniDecorNearTileMap" parent="." index="4"]
+[node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
