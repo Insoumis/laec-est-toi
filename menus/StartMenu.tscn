@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://menus/StartMenu.gd" type="Script" id=1]
 [ext_resource path="res://addons/version/version_label.gd" type="Script" id=2]
@@ -24,6 +24,27 @@
 [ext_resource path="res://sprites/background/victory.png" type="Texture" id=22]
 [ext_resource path="res://effects/WinParticles.tscn" type="PackedScene" id=23]
 [ext_resource path="res://fonts/Bujov5_small.tres" type="DynamicFont" id=24]
+[ext_resource path="res://sprites/vendors/0_gradient.png" type="Texture" id=25]
+[ext_resource path="res://sprites/vendors/3_foule.png" type="Texture" id=26]
+[ext_resource path="res://sprites/vendors/1_bleu.png" type="Texture" id=27]
+[ext_resource path="res://sprites/vendors/2_jaune.png" type="Texture" id=28]
+[ext_resource path="res://effects/background_glow_shader.shader" type="Shader" id=29]
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 29 )
+shader_param/swirl_wobble_speed = 0.5
+shader_param/swirl_amplitude_a = 0.015
+shader_param/swirl_speed_a = 1.5
+shader_param/swirl_amplitude_b = 0.007
+shader_param/swirl_speed_b = -2.5
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 29 )
+shader_param/swirl_wobble_speed = 0.5
+shader_param/swirl_amplitude_a = 0.011
+shader_param/swirl_speed_a = 1.0
+shader_param/swirl_amplitude_b = 0.003
+shader_param/swirl_speed_b = -3.0
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
@@ -82,7 +103,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GradientBackground" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 25 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="WindmillBackground" type="TextureRect" parent="."]
+material = SubResource( 7 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 27 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SpaceBackground" type="TextureRect" parent="."]
+material = SubResource( 6 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 28 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CrowdBackground" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 26 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="BackgroundColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -176,29 +240,28 @@ margin_bottom = 274.0
 [node name="CursorAnimatedSprite" type="AnimatedSprite" parent="CenterContainer"]
 position = Vector2( 637.942, 155.643 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
 
 [node name="Title" type="Node2D" parent="."]
-position = Vector2( 58.4561, 259.287 )
+position = Vector2( 372, 38 )
 
 [node name="LaecAnimatedSprite" type="AnimatedSprite" parent="Title"]
-position = Vector2( 63.5687, 32.3649 )
+position = Vector2( 68.5687, 34.3649 )
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="Title"]
-position = Vector2( 127.272, 33.0721 )
+position = Vector2( 132.272, 35.0721 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="Title"]
-position = Vector2( 204.99, 32.3649 )
+position = Vector2( 209.99, 34.3649 )
 frames = SubResource( 4 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="SecretButton" type="Button" parent="Title/YouAnimatedSprite"]
@@ -209,7 +272,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 mouse_default_cursor_shape = 2
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="SecretEditorParticles" parent="Title/YouAnimatedSprite" instance=ExtResource( 23 )]
@@ -221,14 +284,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -501.701
-margin_top = -45.2378
-margin_right = 555.299
-margin_bottom = -4.23779
+margin_left = -492.0
+margin_top = -33.0
+margin_right = 565.0
+margin_bottom = 8.0
+rect_scale = Vector2( 0.9, 0.9 )
 custom_fonts/normal_font = ExtResource( 24 )
 bbcode_enabled = true
-bbcode_text = "[color=#e17478]LAEC[/color] est le programme de [color=#e17478]L'Avenir En Commun[/color] porté par Jean-Luc Mélanchon"
-text = "LAEC est le programme de L'Avenir En Commun porté par Jean-Luc Mélanchon"
+bbcode_text = "[color=#e17478]LAEC[/color] est le programme de [color=#e17478]L'Avenir En Commun[/color] porté par [color=#e17478]Jean-Luc Mélenchon[/color]"
+text = "LAEC est le programme de L'Avenir En Commun porté par Jean-Luc Mélenchon"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -273,6 +337,7 @@ __meta__ = {
 }
 
 [node name="PhiSprite" parent="MarginContainer" instance=ExtResource( 3 )]
+position = Vector2( -44, -44 )
 
 [node name="MouseFocusBinder" type="Node" parent="."]
 
