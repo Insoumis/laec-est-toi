@@ -150,9 +150,17 @@ func _ready():
 	# Disable the nodes used as templates during building above
 	$ProRoleLabel.visible = false
 	$ProPersonLabel.visible = false
+	
 	# Position the credits below the screen (they'll scroll up)
 	self.credits_holder.margin_top = get_viewport().size.y
+	#prints("credits margin top", self.credits_holder.margin_top)
+	# 600, but in some cases more, like 1125
+	# Perhaps due to camera zoom on level, even though this ain't a level at all.
+	# So we hotfix this with a constant (J±0 !)
+	self.credits_holder.margin_top = 600
+	
 	self.scroll_limit = self.credits_holder.find_node("CreditsVBox", true, false).rect_size.y
+	set_process(true)
 
 
 func _process(delta):
