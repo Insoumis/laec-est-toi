@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/text_monarc_1.png-4f9eefdb15546f505c8c97800980a1f3.stex"
+path="res://.import/text_monarc_4_1.png-df3075adee03f47fe9f5eb6d06f76411.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/text_monarc_1.png"
-dest_files=[ "res://.import/text_monarc_1.png-4f9eefdb15546f505c8c97800980a1f3.stex" ]
+source_file="res://sprites/items/text_monarc_4_1.png"
+dest_files=[ "res://.import/text_monarc_4_1.png-df3075adee03f47fe9f5eb6d06f76411.stex" ]
 
 [params]
 
