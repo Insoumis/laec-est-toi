@@ -100,6 +100,7 @@ url = "https://discord-insoumis.fr"
 position = Vector2( -224, -53.0239 )
 cell_position = Vector2( -3, -1 )
 tile_position = Vector2( -4, -1 )
-contents = "Vous en voulez plus ?
-Visitez l'Arcade !"
+contents = "Trop facile ?
+Visitez l'ARCADE,
+dans le menu principal."
 url = "https://discord-insoumis.fr"

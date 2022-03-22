@@ -180,6 +180,11 @@ _global_script_classes=[ {
 "path": "res://core/behaviors/PhiuClipboardMirrorBehavior.gd"
 }, {
 "base": "Node",
+"class": "PlatformCondition",
+"language": "GDScript",
+"path": "res://core/behaviors/PlatformCondition.gd"
+}, {
+"base": "Node",
 "class": "Playlist",
 "language": "GDScript",
 "path": "res://core/Playlist.gd"
@@ -284,6 +289,7 @@ _global_script_class_icons={
 "ParticlesFactory": "",
 "PassAction": "",
 "PhiuClipboardMirrorBehavior": "",
+"PlatformCondition": "",
 "Playlist": "",
 "PortalResource": "",
 "Quantifier": "",

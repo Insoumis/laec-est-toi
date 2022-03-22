@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Sign.gd" type="Script" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Sign.tscn" type="PackedScene" id=4]
 [ext_resource path="res://core/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://core/behaviors/PlatformCondition.gd" type="Script" id=6]
 
 [node name="Partie3Map" instance=ExtResource( 1 )]
 title = "level.Partie3Map.title"
@@ -92,4 +95,20 @@ cell_position = Vector2( -7, 1 )
 tile_position = Vector2( -7, 1 )
 warp = true
 level_path = "res://levels/story/Partie2Map.tscn"
+title = "Planification Écologique"
 title_override = "Précédent"
+
+[node name="Sign" type="Node2D" parent="Items" index="9" instance=ExtResource( 4 )]
+position = Vector2( 0, 83.3232 )
+script = ExtResource( 2 )
+cell_position = Vector2( -1, 2 )
+tile_position = Vector2( 0, 2 )
+contents = "En vrai, cette version HTML5 du jeu,
+Elle plante au bout d'un moment.
+
+-- ton amie algomancienne"
+
+[node name="PlatformCondition" type="Node" parent="Items/Sign" index="13"]
+script = ExtResource( 6 )
+hide_by_default = true
+show_if_html5 = true
