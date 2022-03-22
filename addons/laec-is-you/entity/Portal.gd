@@ -38,6 +38,9 @@ export var secret := false
 # Warps don't have a completion status ; they show an animated epicycloïd
 export var warp := false
 
+# Triggers a go_back() instead of forwarding to the target level path
+export var go_back := false
+
 # Target level this portal leads to
 export(String, FILE, "*.tscn") var level_path : String
 
@@ -191,6 +194,8 @@ func _input(event) -> void:
 
 
 func _get_configuration_warning() -> String:
+	if self.go_back:
+		return ''
 	if not self.level_path:
 		return tr("You must define a target level for this Portal.")
 	if not ResourceLoader.exists(self.level_path):
@@ -250,6 +255,9 @@ const MAX_RECURSION_DEPTH := 16
 
 
 func is_available(loop_index := 0) -> bool:
+	
+	if self.go_back:
+		return true
 	
 	if not self.level_path:
 		# Skip portal without target level, useful for LotD
@@ -398,8 +406,12 @@ func perhaps_open() -> bool:
 		return false
 	
 	if not Game.is_switching_scenes():
-		print("Opening Portal `%s'…" % self.name)
-		Game.enter_level(self.level_path)
+		if self.go_back:
+			print("Going back to Portal `%s'…" % self.name)
+			var _gone = Game.go_back()
+		else:
+			print("Opening Portal `%s'…" % self.name)
+			Game.enter_level(self.level_path)
 	return true
 
 

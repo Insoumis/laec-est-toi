@@ -24,7 +24,17 @@ visible = true
 texture = ExtResource( 2 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -262146, 30, 0, -327679, 30, 0, -196610, 30, 0, -196609, 30, 0, -262143, 30, 0, -262142, 30, 0, -131075, 30, 0, -131073, 30, 0, -196608, 30, 0, -196606, 30, 0, -65539, 30, 0, -131072, 30, 0, -131069, 30, 0, -4, 30, 0, -2, 41, 0, -65533, 30, 0, 65533, 30, 0, 65534, 41, 0, 65535, 41, 0, 1, 41, 0, 3, 30, 0, 131065, 41, 0, 131066, 41, 0, 131067, 41, 0, 131068, 41, 0, 131069, 41, 0, 131071, 41, 0, 65536, 41, 0, 65537, 41, 0, 65538, 41, 0, 65539, 41, 0, 65540, 41, 0, 65541, 41, 0, 65542, 41, 0, 196606, 30, 0, 131072, 41, 0, 131074, 30, 0, 262142, 30, 0, 196609, 30, 0, 327679, 30, 0, 262145, 30, 0, 393215, 30, 0, 327680, 30, 0, 393216, 30, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
 position = Vector2( -416, -234.82 )
@@ -91,7 +101,7 @@ position = Vector2( -416, 37.8742 )
 cell_position = Vector2( -7, 1 )
 tile_position = Vector2( -7, 1 )
 warp = true
-level_path = "res://levels/story/Partie2Map.tscn"
+go_back = true
 title = "Planification Écologique"
 title_override = "Précédent"
 
