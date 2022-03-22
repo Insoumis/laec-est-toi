@@ -101,7 +101,7 @@ position = Vector2( -448, 174.221 )
 cell_position = Vector2( -9, 4 )
 tile_position = Vector2( -7, 4 )
 warp = true
-level_path = "res://levels/story/Partie3Map.tscn"
+go_back = true
 title = "Bien Vivre"
 title_override = "Précédent"
 

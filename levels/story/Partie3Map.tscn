@@ -101,7 +101,7 @@ position = Vector2( -416, 37.8742 )
 cell_position = Vector2( -7, 1 )
 tile_position = Vector2( -7, 1 )
 warp = true
-level_path = "res://levels/story/Partie2Map.tscn"
+go_back = true
 title = "Planification Écologique"
 title_override = "Précédent"
 

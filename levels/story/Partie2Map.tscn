@@ -99,7 +99,7 @@ position = Vector2( -192, 265.119 )
 cell_position = Vector2( -6, 6 )
 tile_position = Vector2( -3, 6 )
 warp = true
-level_path = "res://levels/story/Partie1Map.tscn"
+go_back = true
 title = "Démocratie"
 title_override = "Précédent"
 

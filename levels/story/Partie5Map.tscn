@@ -91,7 +91,7 @@ position = Vector2( 32, -53.0239 )
 cell_position = Vector2( 1, -1 )
 tile_position = Vector2( 0, -1 )
 warp = true
-level_path = "res://levels/story/Partie4Map.tscn"
+go_back = true
 title = "Humaniser la Société"
 title_override = "Précédent"
 
