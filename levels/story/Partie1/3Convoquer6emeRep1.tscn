@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://guis/RestartKeyboardHint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/laec-is-you/ide/editor_grid.png" type="Texture" id=4]
+[ext_resource path="res://sprites/background/bg_story_democracy.png" type="Texture" id=5]
 
 [node name="3Convoquer6emeRep1" instance=ExtResource( 1 )]
 contribute_to_completion_score = true
@@ -19,6 +20,13 @@ solution_a = "6666669966111447761114477"
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.2, 1.2 )
+
+[node name="GemClusterBackground" parent="BackgroundLayer" index="0"]
+visible = false
+
+[node name="StoryBackground" parent="BackgroundLayer" index="1"]
+visible = true
+texture = ExtResource( 5 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )

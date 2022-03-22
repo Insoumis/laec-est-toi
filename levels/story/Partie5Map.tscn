@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/background/bg_story_elegance.png" type="Texture" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://core/Sign.tscn" type="PackedScene" id=5]
 [ext_resource path="res://core/Portal.tscn" type="PackedScene" id=7]
@@ -10,6 +11,13 @@ title = "level.Partie5Map.title"
 excerpt = "level.Partie5Map.excerpt"
 link = "level.Partie5Map.link"
 title_custom = "Ordonner le Monde"
+
+[node name="GemClusterBackground" parent="BackgroundLayer" index="0"]
+visible = false
+
+[node name="StoryBackground" parent="BackgroundLayer" index="1"]
+visible = true
+texture = ExtResource( 2 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
