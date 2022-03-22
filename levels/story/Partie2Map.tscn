@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
-[ext_resource path="res://core/Sign.gd" type="Script" id=2]
 [ext_resource path="res://core/Portal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://core/Sign.tscn" type="PackedScene" id=4]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=5]
@@ -16,18 +15,14 @@ title_custom = "Planification Écologique"
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.2, 1.2 )
 
+[node name="GemClusterBackground" parent="BackgroundLayer" index="0"]
+visible = false
+
+[node name="StoryBackground" parent="BackgroundLayer" index="1"]
+visible = true
+
 [node name="HexagonalTileMap" parent="." index="2"]
-cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -393213, 28, 0, -327678, 28, 0, -262143, 28, 0, -262142, 28, 0, -262141, 28, 0, -131074, 28, 0, -131073, 28, 0, -196608, 28, 0, -196607, 28, 0, -196606, 28, 0, -65538, 28, 0, -65537, 28, 0, -131072, 28, 0, -131071, 28, 0, -131070, 28, 0, -131069, 28, 0, -3, 28, 0, -2, 28, 0, -1, 28, 0, -65536, 28, 0, -65535, 26, 0, -65534, 28, 0, 65533, 28, 0, 65534, 28, 0, 65535, 28, 0, 0, 26, 0, 1, 26, 0, 2, 28, 0, 3, 28, 0, 131068, 28, 0, 131069, 28, 0, 131070, 28, 0, 131071, 26, 0, 65536, 28, 0, 65537, 28, 0, 65538, 28, 0, 196605, 28, 0, 196606, 28, 0, 196607, 26, 0, 131072, 28, 0, 131073, 28, 0, 131074, 28, 0, 131075, 28, 0, 262141, 28, 0, 262142, 26, 0, 262143, 28, 0, 196608, 28, 0, 196609, 28, 0, 196610, 28, 0, 327678, 26, 0, 327679, 28, 0, 262144, 28, 0, 262145, 28, 0, 262146, 28, 0, 393213, 26, 0, 458749, 26, 0 )
-
-[node name="MiniDecorFarTileMap" parent="." index="4"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
-
-[node name="DecorTileMap" parent="." index="5"]
-cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
-
-[node name="MiniDecorNearTileMap" parent="." index="6"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="Portal" parent="Items" index="0" instance=ExtResource( 3 )]
 position = Vector2( -64, 83.3232 )
@@ -98,9 +93,8 @@ level_path = "res://levels/story/Partie1Map.tscn"
 title = "Démocratie"
 title_override = "Précédent"
 
-[node name="Sign" type="Node2D" parent="Items" index="9" instance=ExtResource( 4 )]
+[node name="Sign" parent="Items" index="9" instance=ExtResource( 4 )]
 position = Vector2( -160, 128.772 )
-script = ExtResource( 2 )
 cell_position = Vector2( -4, 3 )
 tile_position = Vector2( -3, 3 )
 contents = "Hey !  Ça fait 15 minutes que tu joues.

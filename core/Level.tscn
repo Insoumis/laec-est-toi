@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://addons/laec-is-you/node/HexagonalTileMap.gd" type="Script" id=1]
 [ext_resource path="res://addons/laec-is-you/entity/Level.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://sprites/gui/hexagonal_grid_lines_0.png" type="Texture" id=20]
 [ext_resource path="res://addons/laec-is-you/node/LevelChronometer.gd" type="Script" id=21]
 [ext_resource path="res://lib/ParticlesFactory.gd" type="Script" id=22]
+[ext_resource path="res://sprites/background/bg_story_climate.png" type="Texture" id=23]
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 14 )
@@ -69,6 +70,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 texture = ExtResource( 11 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="StoryBackground" type="TextureRect" parent="BackgroundLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 23 )
 expand = true
 stretch_mode = 7
 __meta__ = {

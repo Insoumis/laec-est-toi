@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
-[ext_resource path="res://core/Sign.gd" type="Script" id=2]
+[ext_resource path="res://sprites/background/bg_story_welfare.png" type="Texture" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://core/Sign.tscn" type="PackedScene" id=4]
 [ext_resource path="res://core/Portal.tscn" type="PackedScene" id=5]
@@ -16,18 +16,15 @@ title_custom = "Bien Vivre"
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.2, 1.2 )
 
+[node name="GemClusterBackground" parent="BackgroundLayer" index="0"]
+visible = false
+
+[node name="StoryBackground" parent="BackgroundLayer" index="1"]
+visible = true
+texture = ExtResource( 2 )
+
 [node name="HexagonalTileMap" parent="." index="2"]
-cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -262146, 30, 0, -327679, 30, 0, -196610, 30, 0, -196609, 30, 0, -262143, 30, 0, -262142, 30, 0, -131075, 30, 0, -131073, 30, 0, -196608, 30, 0, -196606, 30, 0, -65539, 30, 0, -131072, 30, 0, -131069, 30, 0, -4, 30, 0, -2, 41, 0, -65533, 30, 0, 65533, 30, 0, 65534, 41, 0, 65535, 41, 0, 1, 41, 0, 3, 30, 0, 131065, 41, 0, 131066, 41, 0, 131067, 41, 0, 131068, 41, 0, 131069, 41, 0, 131071, 41, 0, 65536, 41, 0, 65537, 41, 0, 65538, 41, 0, 65539, 41, 0, 65540, 41, 0, 65541, 41, 0, 65542, 41, 0, 196606, 30, 0, 131072, 41, 0, 131074, 30, 0, 262142, 30, 0, 196609, 30, 0, 327679, 30, 0, 262145, 30, 0, 393215, 30, 0, 327680, 30, 0, 393216, 30, 0 )
-
-[node name="MiniDecorFarTileMap" parent="." index="4"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
-
-[node name="DecorTileMap" parent="." index="5"]
-cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
-
-[node name="MiniDecorNearTileMap" parent="." index="6"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
 position = Vector2( -416, -234.82 )
@@ -98,9 +95,8 @@ level_path = "res://levels/story/Partie2Map.tscn"
 title = "Planification Écologique"
 title_override = "Précédent"
 
-[node name="Sign" type="Node2D" parent="Items" index="9" instance=ExtResource( 4 )]
+[node name="Sign" parent="Items" index="9" instance=ExtResource( 4 )]
 position = Vector2( 0, 83.3232 )
-script = ExtResource( 2 )
 cell_position = Vector2( -1, 2 )
 tile_position = Vector2( 0, 2 )
 contents = "En vrai, cette version HTML5 du jeu,
