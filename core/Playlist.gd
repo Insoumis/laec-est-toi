@@ -59,27 +59,43 @@ func play_song(song):
 func connect_to_current_song():
 	if not self.__current_song:
 		return
-	
-	var _connected = self.__current_song.connect(
-		"finished", 
-		self, 'on_song_finished'
-	)
-	if OK != _connected:
-		printerr("Jukebox Playlist: failed to connect to the current song")
+	if OS.has_feature("HTML5"):
+		# WHYYYYYYYY, the audioEnd signal takes a lot of time to come back and is fired when stopping songs,
+		# therefore we manually wait the time until the next song...
+		yield(get_tree().create_timer(202.0), "timeout")
+		on_song_finished()
+#		var _connected = AudioManager.connect("audioEnd",self,"on_song_finished")
+#		if OK != _connected:
+#			printerr("Jukebox Playlist: failed to connect to the current song")
+	else:
+		var _connected = self.__current_song.connect(
+			"finished", 
+			self, 'on_song_finished'
+		)
+		if OK != _connected:
+			printerr("Jukebox Playlist: failed to connect to the current song")
 
 
 func disconnect_from_current_song():
 	if not self.__current_song:
 		return
-	if self.__current_song.is_connected("finished", self, 'on_song_finished'):
-		self.__current_song.disconnect("finished", self, 'on_song_finished')
+	if OS.has_feature("HTML5"):
+		if AudioManager.is_connected("audioEnd",self,"on_song_finished"):
+			AudioManager.disconnect("audioEnd",self,"on_song_finished")
+	else:
+		if self.__current_song.is_connected("finished", self, 'on_song_finished'):
+			self.__current_song.disconnect("finished", self, 'on_song_finished')
 
 
-func on_song_finished():
+func on_song_finished(_a = null):
 	yield(get_tree().create_timer(pause_duration), "timeout")
-	var next_song = get_next_song()
-	if next_song:
-		play_song(next_song)
+	if Jukebox.__current_playlist == self:
+#		print(_a)
+#		print("self", self)
+#		print("current playlist", Jukebox.__current_playlist)
+		var next_song = get_next_song()
+		if next_song:
+			play_song(next_song)
 
 
 func get_next_song() -> AudioStreamPlayer:
@@ -95,11 +111,20 @@ func get_next_song() -> AudioStreamPlayer:
 
 
 func fade_song_out(song:AudioStreamPlayer):
-	song.stop()
+	if OS.has_feature("HTML5"):
+		var song_name = song.stream.resource_path.replace("res://sounds/music/precheurius/", "")
+		if AudioManager.get_audios_playing_on_group("ogg").find(song_name) != -1:
+			AudioManager.stop(song_name)
+	else:
+		song.stop()
 
 
 func fade_song_in(song:AudioStreamPlayer):
-	song.play()
+	if OS.has_feature("HTML5"):
+		AudioManager.play(song.stream.resource_path.replace("res://sounds/music/precheurius/", ""), {})
+	else:
+		song.play()
+	
 
 
 func get_first_song() -> AudioStreamPlayer:

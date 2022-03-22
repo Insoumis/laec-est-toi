@@ -38,7 +38,32 @@ func _ready():
 		_c = Game.connect("main_menu_entered", self, "on_main_menu_entered")
 		_c = Game.connect("game_paused", self, "on_game_paused")
 		_c = Game.connect("game_resumed", self, "on_game_resumed")
+		
+
 	collect_playlists()
+	if Game and OS.has_feature("HTML5"):
+		AudioManager.connect("updateProgressLoad",self,"updateProgress")
+		AudioManager.connect("loadedAllAudios",self,"audioLoaded")
+		AudioManager._audioMotorPath = ["res://howler.min.js","res://audioEngine.js"]
+		print("STARTING JUKEBOX")
+		for playlist in get_playlists():
+			var song_name_list = Array()
+			var path = "ogg"
+			for song in playlist.get_songs():
+				song_name_list.append(song.stream.resource_path.replace("res://sounds/music/precheurius/", ""))
+				print_debug("LOAD AUDIO: " + str(song.name)+" on path " + song.stream.resource_path)
+			AudioManager.loadAudios(song_name_list, path, {})
+		
+		
+
+func updateProgress(_progress):
+#	print(_progress)
+	pass
+
+func audioLoaded():
+	var value = (AppSettings.get_setting("audio", "volume", "music")/100.0 - 1.0) * 34.5
+	AudioManager.update_config({'volume': str(value)}, "ogg")
+	pass
 
 
 func on_level_entered(_level_name):
