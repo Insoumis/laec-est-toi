@@ -1533,7 +1533,7 @@ func do_move_item(item, next_cell, direction):
 	item.tile_position = HexagonalLattice.tile_from_cell(next_cell)
 	if item.direction != direction:
 		item.direction = direction
-	item.advance_animation()
+	#item.advance_animation()
 	item.update_sprite(false)
 	item.raise_dust()
 	item.reposition(false)
@@ -1681,10 +1681,14 @@ func spend_turn(in_editor := false):
 	# I. Reset qualities and stuff, sentences will be re-applied
 	reset_qualities_and_stuff()
 	
+	# I.a Advance the animation counter of all items
+	for item in get_all_items():
+		item.advance_animation(true)
+	
 	# II. Find all the possible sentences
 	var sentences = get_possible_sentences()
 	
-	# II.d Log things
+	# II.a Log things
 	var msg_log = "Turn %03d" % [history.size()]
 	if not sentences.empty():
 		msg_log += ' — '
@@ -1696,7 +1700,7 @@ func spend_turn(in_editor := false):
 	if not self.is_dummy_run():
 		print(msg_log)
 
-	# IV. Apply sentences
+	# II.b Apply sentences
 	for item in get_all_items():
 		apply_qualifying_sentences_to_item(sentences, item)
 	if not in_editor:
@@ -1716,7 +1720,7 @@ func spend_turn(in_editor := false):
 	for sentence in sentences:
 		for item in sentence.items_used:
 			item.is_lit = true
-		
+	
 	# III. Identity (THING IS THING) has utmost priority
 	var things_locked = get_things_locked_to_identity(sentences)
 	for sentence_object in sentences:
@@ -1812,6 +1816,7 @@ func spend_turn(in_editor := false):
 	# Update the items aesthetics from their new flags
 	for item in get_all_items():
 #		item.update_aesthetics()
+#		item.advance_animation()
 		item.update_particles()
 #		item.update_z_salience()
 

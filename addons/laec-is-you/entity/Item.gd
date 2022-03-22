@@ -545,7 +545,7 @@ func update_aesthetics() -> void:
 func update_sprite(refresh_frames := true) -> void:
 	var concept = get_concept_name()
 	var sprite = get_sprite()
-	var current_animation_frame = sprite.get_frame()
+	var current_shiver_frame = sprite.get_frame()
 	var flip_h = false
 	if refresh_frames:
 #		var sf = SpriteFramesFactory.get_for_concept(concept, self.is_text)
@@ -564,7 +564,7 @@ func update_sprite(refresh_frames := true) -> void:
 	if not sprite.get_sprite_frames().has_animation(animation_name):
 		printerr("No animation `%s' found for item `%s'" % [animation_name, concept])
 	sprite.play(animation_name)
-	sprite.set_frame(current_animation_frame)  # what if it's too big?
+	sprite.set_frame(current_shiver_frame)  # what if it's too big?
 	sprite.flip_h = flip_h
 	
 	if not self.level:
@@ -641,12 +641,16 @@ func get_sprite_frame_animation_name() -> String:
 	return animation_name
 
 
-func advance_animation() -> void:
+func advance_animation(and_update := false) -> void:
+	var old_animation_state = self.animation_state
 	self.animation_state = (self.animation_state + 1)
 	if not get_sprite().get_sprite_frames().has_animation(
 			get_sprite_frame_animation_name() + "_" + str(self.animation_state)
 		):
 		self.animation_state = 0
+	if self.animation_state != old_animation_state and and_update:
+		update_sprite()
+		
 
 
 func animate_spawn(apparition_delay:=0.0) -> void:
