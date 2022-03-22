@@ -49,6 +49,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/open-hexes.appsettings/types/VolumeRangeInputField.gd"
 }, {
+"base": "Node",
+"class": "AudioManage",
+"language": "GDScript",
+"path": "res://addons/WebAudioExternal/AudioManager.gd"
+}, {
+"base": "Node2D",
+"class": "AudioSpacial2D",
+"language": "GDScript",
+"path": "res://addons/WebAudioExternal/AudioSpacial2D.gd"
+}, {
 "base": "ColorRect",
 "class": "BlinkingColorRect",
 "language": "GDScript",
@@ -123,6 +133,11 @@ _global_script_classes=[ {
 "class": "ItemsPalette",
 "language": "GDScript",
 "path": "res://core/ItemsPalette.gd"
+}, {
+"base": "Node",
+"class": "JavascriptManage",
+"language": "GDScript",
+"path": "res://addons/WebAudioExternal/JavascriptManager.gd"
 }, {
 "base": "Resource",
 "class": "LevelReference",
@@ -258,6 +273,8 @@ _global_script_class_icons={
 "AppSettingsRangeInput": "",
 "AppSettingsSelectInput": "",
 "AppSettingsVolumeRangeInput": "",
+"AudioManage": "",
+"AudioSpacial2D": "",
 "BlinkingColorRect": "",
 "CheapTrigo": "",
 "ClipboardMirrorBehavior": "",
@@ -273,6 +290,7 @@ _global_script_class_icons={
 "HexagonalGridLines": "",
 "HexagonalLattice": "",
 "ItemsPalette": "",
+"JavascriptManage": "",
 "LevelReference": "",
 "LevelsPoolCache": "",
 "LevelsPoolClass": "",
@@ -340,6 +358,8 @@ InputMapper="*res://addons/input-map-helper/InputMapper.gd"
 AppSettings="*res://addons/open-hexes.appsettings/singletons/AppSettings.gd"
 ItemsPool="*res://singletons/ItemsPool.gd"
 AtlasSpriteFramesFactory="*res://singletons/AtlasSpriteFramesFactory.gd"
+JavascriptManager="*res://addons/WebAudioExternal/JavascriptManager.gd"
+AudioManager="*res://addons/WebAudioExternal/AudioManager.gd"
 
 [debug]
 
@@ -353,7 +373,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/imrp/plugin.cfg", "res://addons/input-map-helper/plugin.cfg", "res://addons/laec-is-you-main-screen/plugin.cfg", "res://addons/laec-is-you/plugin.cfg", "res://addons/laec.chronometer/plugin.cfg", "res://addons/open-hexes.appsettings/plugin.cfg", "res://addons/version/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/WebAudioExternal/plugin.cfg", "res://addons/imrp/plugin.cfg", "res://addons/input-map-helper/plugin.cfg", "res://addons/laec-is-you-main-screen/plugin.cfg", "res://addons/laec-is-you/plugin.cfg", "res://addons/laec.chronometer/plugin.cfg", "res://addons/open-hexes.appsettings/plugin.cfg", "res://addons/version/plugin.cfg" )
 
 [gui]
 
