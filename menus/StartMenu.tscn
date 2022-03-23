@@ -1,11 +1,11 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://menus/StartMenu.gd" type="Script" id=1]
 [ext_resource path="res://addons/version/version_label.gd" type="Script" id=2]
 [ext_resource path="res://guis/VanityCard.tscn" type="PackedScene" id=3]
 [ext_resource path="res://guis/PrettyMenuTheme.tres" type="Theme" id=4]
 [ext_resource path="res://effects/background_shader.shader" type="Shader" id=5]
-[ext_resource path="res://fonts/KenneyBlocks.tres" type="DynamicFont" id=6]
+[ext_resource path="res://sprites/vendors/discord_insoumis.png" type="Texture" id=6]
 [ext_resource path="res://sprites/items/text_is_1.png" type="Texture" id=7]
 [ext_resource path="res://sprites/items/text_laec_0.png" type="Texture" id=8]
 [ext_resource path="res://sprites/vendors/logo1.png" type="Texture" id=9]
@@ -113,6 +113,21 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=11]
+size = 26
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 40 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 26
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 40 )
 
 [node name="StartMenu" type="Control"]
 anchor_right = 1.0
@@ -486,7 +501,7 @@ margin_bottom = 274.0
 [node name="CursorAnimatedSprite" type="AnimatedSprite" parent="CenterContainer"]
 position = Vector2( 637.942, 155.643 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 centered = false
 
@@ -497,12 +512,14 @@ position = Vector2( 351, 38 )
 visible = false
 position = Vector2( 68.5687, 34.3649 )
 frames = SubResource( 2 )
+frame = 2
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="Title"]
 visible = false
 position = Vector2( 132.272, 35.0721 )
 frames = SubResource( 3 )
+frame = 2
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="Title"]
@@ -533,8 +550,18 @@ emitting = true
 position = Vector2( 151, 45 )
 scale = Vector2( 0.557062, 0.557062 )
 frames = SubResource( 10 )
-frame = 2
 playing = true
+
+[node name="DiscordInsoumis" type="TextureRect" parent="."]
+margin_left = 16.0
+margin_top = 15.0
+margin_right = 1219.0
+margin_bottom = 411.0
+rect_scale = Vector2( 0.12185, 0.12185 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DisclaimerLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.5
@@ -562,11 +589,11 @@ url_to_open = "https://laec.fr"
 [node name="VersionLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -155.979
-margin_top = 1.37025
-margin_right = -1.97949
-margin_bottom = 41.3702
-custom_fonts/font = ExtResource( 6 )
+margin_left = -153.0
+margin_top = 23.0
+margin_right = 0.999512
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 11 )
 text = "0.5.3"
 align = 1
 script = ExtResource( 2 )
@@ -577,12 +604,12 @@ __meta__ = {
 [node name="BetaLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -155.979
-margin_top = 45.3702
-margin_right = -1.97949
-margin_bottom = 85.3702
-custom_fonts/font = ExtResource( 6 )
-text = "Beta"
+margin_left = -209.0
+margin_top = 23.0
+margin_right = -55.0005
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 12 )
+text = "Beta v"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
