@@ -1,9 +1,12 @@
 extends Control
 
+
 # Shows the percentage of completion of the game.
+
 
 func _ready():
 	refresh()
+
 
 func refresh():
 	# has_singleton() returns false somehow?
@@ -12,4 +15,6 @@ func refresh():
 		printerr("%s needs singleton `Game`." % self.name)
 		return
 	var score = Game.get_completion_score()
-	$Label.text = tr("Completion: %3.0f%%") % [score * 100.0]
+#	$Label.text = tr("Completion: %3.0f%%") % [score * 100.0]
+	$Label.text = "%3.0f%%" % [score * 100.0]
+
