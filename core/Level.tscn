@@ -186,7 +186,7 @@ __meta__ = {
 
 [node name="Sherpa" type="AnimatedSprite" parent="Effects"]
 visible = false
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 4 )
 script = ExtResource( 18 )
 __meta__ = {

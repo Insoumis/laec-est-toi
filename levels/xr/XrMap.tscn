@@ -14,17 +14,7 @@ link = "level.XrMap.link"
 zoom = Vector2( 1.2, 1.2 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
-cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -262147, 4, 0, -262146, 4, 0, -262145, 4, 0, -327680, 4, 0, -327679, 4, 0, -327678, 4, 0, -196611, 10, 0, -196610, 4, 0, -262142, 4, 0, -262141, 10, 0, -131076, 10, 0, -131074, 4, 0, -196607, 4, 0, -196605, 10, 0, -65540, 10, 0, -65537, 4, 0, -131071, 4, 0, -131068, 10, 0, -5, 10, 0, -1, 19, 0, -65536, 19, 0, -65532, 10, 0, 65532, 10, 0, 0, 19, 0, 4, 10, 0, 131067, 10, 0, 131071, 19, 0, 65536, 19, 0, 65540, 10, 0, 196604, 10, 0, 196607, 4, 0, 131073, 4, 0, 131076, 10, 0, 262140, 10, 0, 262142, 4, 0, 196609, 4, 0, 196611, 10, 0, 327677, 10, 0, 327678, 4, 0, 262146, 4, 0, 262147, 10, 0, 393213, 4, 0, 393214, 4, 0, 393215, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0 )
-
-[node name="MiniDecorFarTileMap" parent="." index="3"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
-
-[node name="DecorTileMap" parent="." index="4"]
-cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
-
-[node name="MiniDecorNearTileMap" parent="." index="5"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
 position = Vector2( -512, -7.57484 )
@@ -71,9 +61,9 @@ position = Vector2( -96, -143.922 )
 cell_position = Vector2( 0, -3 )
 tile_position = Vector2( -2, -3 )
 level_path = "res://levels/xr/Extinction03Level.tscn"
-title = "level.Extinction03Level.title"
+title = "Déchets Dangereux"
 
-[node name="Undefined" parent="Items" index="7" instance=ExtResource( 2 )]
+[node name="Sign" parent="Items" index="7" instance=ExtResource( 2 )]
 position = Vector2( -256, -7.57484 )
 cell_position = Vector2( -4, 0 )
 tile_position = Vector2( -4, 0 )
@@ -81,3 +71,11 @@ contents = "/!\\  EN TRAVAUX  /!\\
 
 Venez résister avec nous,
 et ajouter votre propre niveau !"
+
+[node name="Portal4" parent="Items" index="8" instance=ExtResource( 4 )]
+position = Vector2( 32, 37.8742 )
+cell_position = Vector2( 0, 1 )
+tile_position = Vector2( 0, 1 )
+warp = true
+go_back = true
+title_override = "Précédent"

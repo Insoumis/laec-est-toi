@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://menus/StartMenu.gd" type="Script" id=1]
 [ext_resource path="res://addons/version/version_label.gd" type="Script" id=2]
@@ -29,22 +29,29 @@
 [ext_resource path="res://sprites/vendors/1_bleu.png" type="Texture" id=27]
 [ext_resource path="res://sprites/vendors/2_jaune.png" type="Texture" id=28]
 [ext_resource path="res://effects/background_glow_shader.shader" type="Shader" id=29]
+[ext_resource path="res://effects/background_crowd.shader" type="Shader" id=30]
+[ext_resource path="res://core/behaviors/ClickableControlBehavior.gd" type="Script" id=31]
 
 [sub_resource type="ShaderMaterial" id=7]
 shader = ExtResource( 29 )
 shader_param/swirl_wobble_speed = 0.5
-shader_param/swirl_amplitude_a = 0.015
+shader_param/swirl_amplitude_a = 0.001
 shader_param/swirl_speed_a = 1.5
-shader_param/swirl_amplitude_b = 0.007
+shader_param/swirl_amplitude_b = 0.002
 shader_param/swirl_speed_b = -2.5
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 29 )
 shader_param/swirl_wobble_speed = 0.5
-shader_param/swirl_amplitude_a = 0.011
+shader_param/swirl_amplitude_a = 0.001
 shader_param/swirl_speed_a = 1.0
-shader_param/swirl_amplitude_b = 0.003
+shader_param/swirl_amplitude_b = 0.002
 shader_param/swirl_speed_b = -3.0
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 30 )
+shader_param/hop_amplitude = 0.004
+shader_param/hop_speed = 1.1
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
@@ -136,6 +143,7 @@ __meta__ = {
 }
 
 [node name="CrowdBackground" type="TextureRect" parent="."]
+material = SubResource( 8 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 26 )
@@ -145,7 +153,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackgroundColorRect" type="ColorRect" parent="."]
+[node name="OldBackground" type="ColorRect" parent="."]
 visible = false
 material = SubResource( 1 )
 anchor_right = 1.0
@@ -284,11 +292,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -492.0
-margin_top = -33.0
-margin_right = 565.0
-margin_bottom = 8.0
+margin_left = -405.275
+margin_top = -25.614
+margin_right = 503.725
+margin_bottom = 15.386
 rect_scale = Vector2( 0.9, 0.9 )
+mouse_default_cursor_shape = 2
 custom_fonts/normal_font = ExtResource( 24 )
 bbcode_enabled = true
 bbcode_text = "[color=#e17478]LAEC[/color] est le programme de [color=#e17478]L'Avenir En Commun[/color] porté par [color=#e17478]Jean-Luc Mélenchon[/color]"
@@ -296,6 +305,10 @@ text = "LAEC est le programme de L'Avenir En Commun porté par Jean-Luc Mélench
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ClickableControlBehavior" type="Node" parent="DisclaimerLabel"]
+script = ExtResource( 31 )
+url_to_open = "https://laec.fr"
 
 [node name="VersionLabel" type="Label" parent="."]
 anchor_left = 1.0
@@ -305,7 +318,7 @@ margin_top = 1.37025
 margin_right = -1.97949
 margin_bottom = 41.3702
 custom_fonts/font = ExtResource( 6 )
-text = "0.5.0"
+text = "0.5.3"
 align = 1
 script = ExtResource( 2 )
 __meta__ = {

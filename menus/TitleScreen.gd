@@ -1,7 +1,7 @@
 extends Control
 
 const TITLE_ANIMATION_COOLDOWN = 0.3
-const PRESS_START_COOLDOWN = 0.6
+const PRESS_START_COOLDOWN = 1.2
 var current_cooldown = TITLE_ANIMATION_COOLDOWN
 var current_press_start_cooldown = PRESS_START_COOLDOWN
 const IDLE_MENU_COOLDOWN = 7.0

@@ -60,6 +60,11 @@ _global_script_classes=[ {
 "path": "res://addons/bootstrap/math/CheapTrigo.gd"
 }, {
 "base": "Node",
+"class": "ClickableControlBehavior",
+"language": "GDScript",
+"path": "res://core/behaviors/ClickableControlBehavior.gd"
+}, {
+"base": "Node",
 "class": "ClipboardMirrorBehavior",
 "language": "GDScript",
 "path": "res://lib/ClipboardMirrorBehavior.gd"
@@ -265,6 +270,7 @@ _global_script_class_icons={
 "AppSettingsVolumeRangeInput": "",
 "BlinkingColorRect": "",
 "CheapTrigo": "",
+"ClickableControlBehavior": "",
 "ClipboardMirrorBehavior": "",
 "Complement": "",
 "Condition": "",
