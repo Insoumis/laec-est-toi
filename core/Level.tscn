@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://addons/laec-is-you/node/HexagonalTileMap.gd" type="Script" id=1]
 [ext_resource path="res://addons/laec-is-you/entity/Level.gd" type="Script" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://addons/laec-is-you/node/LevelChronometer.gd" type="Script" id=21]
 [ext_resource path="res://lib/ParticlesFactory.gd" type="Script" id=22]
 [ext_resource path="res://sprites/background/bg_story_climate.png" type="Texture" id=23]
+[ext_resource path="res://effects/level_story_bg.shader" type="Shader" id=24]
+[ext_resource path="res://sprites/vendors/0_gradient.png" type="Texture" id=25]
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 14 )
@@ -33,6 +35,15 @@ shader_param/strength_offset = 0.692
 shader_param/strength_multiplier = 0.2
 shader_param/blurry_multiplier_texture = ExtResource( 13 )
 shader_param/multiplier_texture = ExtResource( 12 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 24 )
+shader_param/enable_zoom_effect = false
+shader_param/zoom_scale_a = 9.0
+shader_param/zoom_speed_a = 1.0
+shader_param/zoom_duration_a = 60.0
+shader_param/enable_glow = false
+shader_param/glow_texture = ExtResource( 25 )
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 9 )
@@ -79,6 +90,7 @@ __meta__ = {
 
 [node name="StoryBackground" type="TextureRect" parent="BackgroundLayer"]
 visible = false
+material = SubResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
