@@ -216,7 +216,8 @@ var __is_currently_switching := false
 func switch_to_story_mode(free_current_scene := false):
 	if is_level_complete(entrypoint_tutos_level_scene_path):
 		enter_level(entrypoint_story_level_scene_path, free_current_scene)
-	enter_level(entrypoint_tutos_level_scene_path, free_current_scene)
+	else:
+		enter_level(entrypoint_tutos_level_scene_path, free_current_scene)
 
 
 # Somewhat deprecated
@@ -241,10 +242,15 @@ func switch_to_scene_path(
 		scene_pack = preload("res://levels/PhiMap.tscn")
 	var scene_instance = scene_pack.instance()
 	assert(scene_instance, "Failed to instantiate scene at `%s'." % [scene_path])
-	print("%s switching to scene %s" % [self.name, scene_path])
+	print("%s switching to scene `%s'" % [get_name(), scene_path])
 	switch_to_scene(scene_instance, free_current, append_ancestry, animate_transition)
 
 
+# This whole thing needs to be rethought and redone properly.
+# - Threading
+# - Signalling
+# - Interacting
+# - Decoupling
 func switch_to_scene(
 		scene_instance,
 		free_current := false,
@@ -258,7 +264,9 @@ func switch_to_scene(
 	)
 	
 	if self.__is_currently_switching:
-		print("%s cancelled switch because it is already switching.")
+		print("%s cancelled switch to `%s' because it is already switching." % [
+			get_name(), scene_instance.filename,
+		])
 		return false
 	self.__is_currently_switching = true
 
@@ -283,8 +291,7 @@ func switch_to_scene(
 
 	if animate_transition:
 		start_transition_effect(self.transitions_duration, true)
-		transition_timer.start(	
-			self.transitions_duration)
+		transition_timer.start(self.transitions_duration)
 	else:
 		self.__is_currently_switching = false
 	emit_scene_signals(current_scene, scene_instance)
