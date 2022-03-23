@@ -3274,7 +3274,7 @@ msgstr "Quitter le Jeu"
 
 #: menus/SettingsMenu.tscn:70 menus/StartMenu.tscn:146
 msgid "Controls"
-msgstr "Contrôles"
+msgstr "Controles"
 
 #: menus/SettingsMenu.tscn:79
 msgid "Open Settings Directory"
