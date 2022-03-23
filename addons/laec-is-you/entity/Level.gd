@@ -822,16 +822,27 @@ func is_accepting_inputs() -> bool:
 	)
 
 
-func enable_inputs_after_delay():
+func enable_inputs_after_delay() -> void:
 	
 	if self.is_test_run:
 		start_accepting_inputs()  # why?
 	else:
 		# best connect to a signal here instead of yielding
-		yield(get_tree().create_timer(0.8), "timeout")
-		start_accepting_inputs()
+		#yield(get_tree().create_timer(0.8), "timeout")
+		#start_accepting_inputs()
 		# like so?
-#		get_tree().create_timer(0.8).connect("timeout", self, "start_accepting_inputs")
+		var scene_tree := get_tree()
+		if not scene_tree:
+			printerr("%s: failed to access the scene tree to create a timer to start accepting inputs" % [get_name()])
+			return  # perhaps create our own Timer instead of GTFO?
+		var timer: SceneTreeTimer = scene_tree.create_timer(1.2)
+		if not timer:
+			printerr("%s: failed to create a timer to start accepting inputs" % [get_name()])
+			return  # perhaps create our own Timer instead of GTFO?
+		var c := timer.connect("timeout", self, "start_accepting_inputs")
+		if c != OK:
+			printerr("%s: failed to connect to a timer to start accepting inputs" % [get_name()])
+			return
 
 
 func is_cooling_down_between_actions(now_ms:=-1, extra_cooldown_ms:=0) -> bool:
