@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://core/Playlist.gd" type="Script" id=1]
 [ext_resource path="res://sounds/music/precheurius/03.ogg" type="AudioStream" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://sounds/music/precheurius/07.ogg" type="AudioStream" id=9]
 [ext_resource path="res://sounds/music/precheurius/start_menu.ogg" type="AudioStream" id=10]
 [ext_resource path="res://sounds/music/precheurius/credits.ogg" type="AudioStream" id=11]
+[ext_resource path="res://sounds/music/precheurius/12.ogg" type="AudioStream" id=12]
+[ext_resource path="res://sounds/music/precheurius/13.ogg" type="AudioStream" id=13]
+[ext_resource path="res://sounds/music/precheurius/11.ogg" type="AudioStream" id=14]
 
 [node name="Jukebox" type="Node"]
 script = ExtResource( 4 )
@@ -115,6 +118,18 @@ bus = "Music"
 
 [node name="07" type="AudioStreamPlayer" parent="Everything"]
 stream = ExtResource( 9 )
+bus = "Music"
+
+[node name="11" type="AudioStreamPlayer" parent="Everything"]
+stream = ExtResource( 14 )
+bus = "Music"
+
+[node name="12" type="AudioStreamPlayer" parent="Everything"]
+stream = ExtResource( 12 )
+bus = "Music"
+
+[node name="13" type="AudioStreamPlayer" parent="Everything"]
+stream = ExtResource( 13 )
 bus = "Music"
 
 [node name="MainTheme" type="AudioStreamPlayer" parent="Everything"]
