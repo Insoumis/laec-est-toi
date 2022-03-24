@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/background/bg_story_respect.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://core/Sign.tscn" type="PackedScene" id=4]
 [ext_resource path="res://core/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://core/behaviors/PlatformCondition.gd" type="Script" id=6]
+[ext_resource path="res://fonts/Bujov5_small.tres" type="DynamicFont" id=7]
 
 [node name="Partie4Map" instance=ExtResource( 1 )]
 title = "level.Partie4Map.title"
@@ -20,21 +21,14 @@ zoom = Vector2( 1.2, 1.2 )
 visible = false
 
 [node name="StoryBackground" parent="BackgroundLayer" index="1"]
+texture = ExtResource( 2 )
+
+[node name="StoryMapBackground" parent="BackgroundLayer" index="2"]
 visible = true
 texture = ExtResource( 2 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
-cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -262145, 31, 0, -327680, 31, 0, -327679, 31, 0, -196609, 31, 0, -262142, 31, 0, -131078, 34, 0, -131077, 34, 0, -131074, 31, 0, -131073, 43, 0, -196607, 43, 0, -196606, 31, 0, -196603, 34, 0, -196602, 34, 0, -65542, 34, 0, -65540, 34, 0, -65538, 31, 0, -131069, 31, 0, -131067, 34, 0, -131065, 34, 0, -7, 34, 0, -4, 34, 0, -2, 31, 0, -65534, 31, 0, -65532, 34, 0, -65529, 34, 0, 65530, 34, 0, 65532, 34, 0, 65535, 31, 0, 2, 31, 0, 5, 34, 0, 7, 34, 0, 131066, 34, 0, 131067, 34, 0, 131071, 31, 0, 65536, 31, 0, 65537, 31, 0, 65541, 34, 0, 65542, 34, 0, 196602, 34, 0, 196604, 34, 0, 196606, 31, 0, 196607, 31, 0, 131074, 31, 0, 131075, 31, 0, 131077, 34, 0, 131079, 34, 0, 262137, 34, 0, 262140, 34, 0, 262141, 31, 0, 196611, 31, 0, 196612, 34, 0, 196615, 34, 0, 327673, 34, 0, 327677, 31, 0, 262148, 31, 0, 262152, 34, 0, 393212, 31, 0, 327684, 31, 0 )
-
-[node name="MiniDecorFarTileMap" parent="." index="4"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
-
-[node name="DecorTileMap" parent="." index="5"]
-cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
-
-[node name="MiniDecorNearTileMap" parent="." index="6"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
 [node name="LaecText" parent="Items" index="0" instance=ExtResource( 3 )]
 position = Vector2( -352, -234.82 )
@@ -118,3 +112,19 @@ Télécharge le vrai jeu, camarade !"
 script = ExtResource( 6 )
 hide_by_default = true
 show_if_html5 = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogs" index="0"]
+margin_left = -25.0
+margin_top = 176.0
+margin_right = 182.0
+margin_bottom = 266.0
+custom_colors/default_color = Color( 0.717466, 0.530148, 0.904785, 1 )
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "humaniser
+la société"
+text = "humaniser
+la société"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -38,11 +38,11 @@ shader_param/multiplier_texture = ExtResource( 12 )
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 24 )
-shader_param/enable_zoom_effect = false
+shader_param/enable_zoom_effect = true
 shader_param/zoom_scale_a = 9.0
 shader_param/zoom_speed_a = 1.0
-shader_param/zoom_duration_a = 60.0
-shader_param/enable_glow = false
+shader_param/zoom_duration_a = 120.0
+shader_param/enable_glow = true
 shader_param/glow_texture = ExtResource( 25 )
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -89,6 +89,19 @@ __meta__ = {
 }
 
 [node name="StoryBackground" type="TextureRect" parent="BackgroundLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 23 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="StoryMapBackground" type="TextureRect" parent="BackgroundLayer"]
 visible = false
 material = SubResource( 5 )
 anchor_right = 1.0

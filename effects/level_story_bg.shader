@@ -43,10 +43,10 @@ void fragment() {
 	}
 	
 	if (enable_glow) {
-		pixel = mix(pixel, texture(glow_texture, UV), 1.0-length(pixel.rgb)*4.0);
+		vec4 glow_pixel = texture(glow_texture, UV);
+		glow_pixel = mix(glow_pixel, vec4(0.0), 0.3);
+		pixel = mix(pixel, glow_pixel, 1.0 - length(pixel.rgb) * 4.0);
 //		pixel.a = length(pixel.rgb)*8.0;
-//		if (pixel.rgb == vec3(0.0, 0.0, 0.0)) {
-//		}
 	}
 	
 	COLOR = pixel;
