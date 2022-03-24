@@ -480,7 +480,7 @@ func has_quality(quality: String) -> bool:
 #
 #
 
-func rename() -> void:
+func rename() -> void:  # updates the name of the Node in the scene tree
 	self.name = (
 		get_concept_name().capitalize()
 		+
@@ -502,9 +502,11 @@ func get_concept_name() -> String:
 #                                        __/ |
 #                                       |___/
 # 
-# Perhaps a wiser transmutation would be to destroy the 
+# Transmute items
 # 
-func qualify(quality_name):
+func qualify(quality_name) -> void:
+	# qualities as properties yields weird reflection like this
+	# we need to benchmark, see how/if we can/should refactor this
 	var n = "is_%s" % quality_name
 	assert(n in self, "The quality `%s` is undefined in Item." % [quality_name])
 	if n in self:
@@ -543,16 +545,16 @@ func update_aesthetics() -> void:
 
 
 func update_sprite(refresh_frames := true) -> void:
-	var concept = get_concept_name()
-	var sprite = get_sprite()
-	var current_shiver_frame = sprite.get_frame()
-	var flip_h = false
+	var concept := get_concept_name()
+	var sprite := get_sprite()
+	var current_shiver_frame := sprite.get_frame()
+	var flip_h := false
 	if refresh_frames:
-#		var sf = SpriteFramesFactory.get_for_concept(concept, self.is_text)
-		var sf = AtlasSpriteFramesFactory.get_for_concept(concept, self.is_text)
+#		var sf := SpriteFramesFactory.get_for_concept(concept, self.is_text)
+		var sf: SpriteFrames = AtlasSpriteFramesFactory.get_for_concept(concept, self.is_text)
 		sprite.set_sprite_frames(sf)
-	var animation_name_raw = get_sprite_frame_animation_name()
-	var animation_name = animation_name_raw
+	var animation_name_raw := get_sprite_frame_animation_name()
+	var animation_name := animation_name_raw
 	if (animation_name.find("right") >= 0) and (direction.find("left") >= 0):
 		flip_h = true
 	if (animation_name.find("left") >= 0) and (direction.find("right") >= 0):
@@ -563,10 +565,16 @@ func update_sprite(refresh_frames := true) -> void:
 		animation_name = "%s_0" % [animation_name_raw]
 	if not sprite.get_sprite_frames().has_animation(animation_name):
 		printerr("No animation `%s' found for item `%s'" % [animation_name, concept])
+	
+	if animation_name != sprite.animation:
+		current_shiver_frame = (current_shiver_frame + 1) % sprite.frames.get_frame_count(animation_name)
+	
 	sprite.play(animation_name)
-	sprite.set_frame(current_shiver_frame)  # what if it's too big?
+	
+	sprite.set_frame(current_shiver_frame)  # what happens if it's too big?
 	sprite.flip_h = flip_h
 	
+	# refacto into update_color()  ?   #jambalai
 	if not self.level:
 		return
 	if not self.level.is_ready:
@@ -585,13 +593,13 @@ func update_salience(is_increase=null) -> void:
 	if is_increase:
 		self.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	else:
-		var darker = 0.9
+		var darker := 0.9
 		self.modulate = Color(darker, darker, darker, 0.7)
 
 
 func raise_dust() -> void:
 #	yield(get_tree().create_timer(0.08), "timeout")
-	get_tree().create_timer(0.08).connect(
+	var _c = get_tree().create_timer(0.08).connect(
 		"timeout", self, "__raise_dust"
 	)
 
@@ -602,6 +610,9 @@ func __raise_dust() -> void:
 	# than to make our own particle emitter.
 	# Refactor at will (especially for water movement customization!)
 	# A good idea would be to extend the CpuParticlesEmitter.
+	# --- (months go by) ---
+	# We now have at least two factories for particles to refactor this with.
+	# #jambalai
 	var emittor = $MoveParticles1
 	if emittor.emitting:
 		emittor = $MoveParticles2
@@ -623,7 +634,7 @@ func animate_destruction() -> void:
 
 
 func get_animation_name(flip_h = false) -> String:
-	# probably deprecated
+	# probably deprecated, see get_sprite_frame_animation_name()
 	var dir: String = self.direction
 	if flip_h:
 		if dir.find("left") >= 0:
@@ -650,7 +661,6 @@ func advance_animation(and_update := false) -> void:
 		self.animation_state = 0
 	if self.animation_state != old_animation_state and and_update:
 		update_sprite()
-		
 
 
 func animate_spawn(apparition_delay:=0.0) -> void:
