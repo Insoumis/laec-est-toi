@@ -2,6 +2,9 @@ tool
 extends Label
 
 
+export var template := "%s"
+
+
 func _enter_tree():
 	# Trying to access Version fails when it is not autoloadded yet.
 #	if Version:
@@ -16,5 +19,5 @@ func _enter_tree():
 		printerr('Version singleton is not defined.')
 		return
 	
-	set_text(__Version.get_full())
+	set_text(self.template % [__Version.get_full()])
 
