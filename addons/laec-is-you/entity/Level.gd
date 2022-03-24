@@ -1201,7 +1201,6 @@ func handle_mouse_inputs_on_process(delta) -> void:
 	var mouse_position = get_tree().get_root().get_mouse_position()
 	
 	if is_hovering_undo_button(mouse_position):
-		print("hover")
 		stop_using_drag_joystick()
 		return
 	
