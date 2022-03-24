@@ -1,20 +1,20 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://menus/StartMenu.gd" type="Script" id=1]
 [ext_resource path="res://addons/version/version_label.gd" type="Script" id=2]
 [ext_resource path="res://guis/VanityCard.tscn" type="PackedScene" id=3]
 [ext_resource path="res://guis/PrettyMenuTheme.tres" type="Theme" id=4]
 [ext_resource path="res://effects/background_shader.shader" type="Shader" id=5]
-[ext_resource path="res://fonts/KenneyBlocks.tres" type="DynamicFont" id=6]
+[ext_resource path="res://sprites/vendors/discord_insoumis.png" type="Texture" id=6]
 [ext_resource path="res://sprites/items/text_is_1.png" type="Texture" id=7]
 [ext_resource path="res://sprites/items/text_laec_0.png" type="Texture" id=8]
-[ext_resource path="res://sprites/items/text_you_2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/vendors/logo1.png" type="Texture" id=9]
 [ext_resource path="res://sprites/items/text_is_0.png" type="Texture" id=10]
-[ext_resource path="res://sprites/items/text_you_0.png" type="Texture" id=11]
+[ext_resource path="res://sprites/vendors/logo3.png" type="Texture" id=11]
 [ext_resource path="res://sprites/items/text_is_2.png" type="Texture" id=12]
 [ext_resource path="res://sprites/items/text_laec_1.png" type="Texture" id=13]
 [ext_resource path="res://sprites/items/text_laec_2.png" type="Texture" id=14]
-[ext_resource path="res://sprites/items/text_you_1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/vendors/logo2.png" type="Texture" id=15]
 [ext_resource path="res://sprites/items/laec_1.png" type="Texture" id=16]
 [ext_resource path="res://sprites/items/laec_0.png" type="Texture" id=17]
 [ext_resource path="res://sprites/items/laec_2.png" type="Texture" id=18]
@@ -31,6 +31,15 @@
 [ext_resource path="res://effects/background_glow_shader.shader" type="Shader" id=29]
 [ext_resource path="res://effects/background_crowd.shader" type="Shader" id=30]
 [ext_resource path="res://core/behaviors/ClickableControlBehavior.gd" type="Script" id=31]
+[ext_resource path="res://sprites/gui/quitter32.png" type="Texture" id=32]
+[ext_resource path="res://sprites/gui/config32.png" type="Texture" id=33]
+[ext_resource path="res://sprites/gui/arcade32.png" type="Texture" id=34]
+[ext_resource path="res://sprites/gui/jouer32.png" type="Texture" id=35]
+[ext_resource path="res://sprites/gui/commandes32.png" type="Texture" id=36]
+[ext_resource path="res://sprites/gui/tuto32.png" type="Texture" id=37]
+[ext_resource path="res://menus/VisibleOnHoverBehaviour.gd" type="Script" id=38]
+[ext_resource path="res://menus/GrowByOnVisiblityDisabled.gd" type="Script" id=39]
+[ext_resource path="res://fonts/Draxel.ttf" type="DynamicFontData" id=40]
 
 [sub_resource type="ShaderMaterial" id=7]
 shader = ExtResource( 29 )
@@ -68,6 +77,11 @@ shader_param/secondary_texture = ExtResource( 19 )
 shader_param/ternary_texture = ExtResource( 22 )
 shader_param/quaternary_texture = ExtResource( 20 )
 
+[sub_resource type="DynamicFont" id=9]
+size = 35
+extra_spacing_top = 4
+font_data = ExtResource( 40 )
+
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 16 ) ],
@@ -92,13 +106,28 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 15 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=11]
+size = 26
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 40 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 26
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 40 )
 
 [node name="StartMenu" type="Control"]
 anchor_right = 1.0
@@ -163,33 +192,107 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
 [node name="MenuButtonsContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 435.0
-margin_top = 167.0
-margin_right = 589.0
-margin_bottom = 433.0
+margin_left = 339.0
+margin_top = 177.0
+margin_right = 629.0
+margin_bottom = 449.0
+custom_constants/separation = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="PlayStoryButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_right = 154.0
-margin_bottom = 41.0
-focus_neighbour_top = NodePath("../ExitButton")
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/MenuButtonsContainer"]
+margin_right = 290.0
+margin_bottom = 38.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/MenuButtonsContainer/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 38.0
+grow_vertical = 2
+rect_min_size = Vector2( 0, 32 )
+texture = ExtResource( 35 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VisibleOnHoverBehaviour" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer/TextureRect"]
+script = ExtResource( 38 )
+button = NodePath("../../PlayStoryButton")
+
+[node name="Control" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer"]
+margin_left = 36.0
+margin_right = 56.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 20, 0 )
+script = ExtResource( 39 )
+target = NodePath("../TextureRect")
+grow_amount = Vector2( 16, 0 )
+original_value = Vector2( 20, 0 )
+
+[node name="PlayStoryButton" type="Button" parent="CenterContainer/MenuButtonsContainer/HBoxContainer"]
+margin_left = 60.0
+margin_right = 290.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 230, 38 )
+focus_neighbour_top = NodePath("../../HBoxContainer6/ExitButton")
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0.423529 )
+custom_fonts/font = SubResource( 9 )
 shortcut_in_tooltip = false
 text = "Play"
+flat = true
 
-[node name="PlayTutosButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 45.0
-margin_right = 154.0
-margin_bottom = 86.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 39.0
+margin_right = 290.0
+margin_bottom = 77.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/MenuButtonsContainer/HBoxContainer2"]
+visible = false
+margin_right = 32.0
+margin_bottom = 41.0
+grow_vertical = 2
+rect_min_size = Vector2( 0, 32 )
+texture = ExtResource( 37 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VisibleOnHoverBehaviour2" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer2/TextureRect"]
+script = ExtResource( 38 )
+button = NodePath("../../PlayTutosButton")
+
+[node name="Control3" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer2"]
+margin_right = 56.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 56, 0 )
+script = ExtResource( 39 )
+target = NodePath("../TextureRect")
+grow_amount = Vector2( 16, 0 )
+original_value = Vector2( 20, 0 )
+
+[node name="PlayTutosButton" type="Button" parent="CenterContainer/MenuButtonsContainer/HBoxContainer2"]
+margin_left = 60.0
+margin_right = 290.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 230, 38 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0.423529 )
+custom_fonts/font = SubResource( 9 )
 shortcut_in_tooltip = false
 text = "Tutorial"
 flat = true
@@ -197,11 +300,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayExtrasButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 90.0
-margin_right = 154.0
-margin_bottom = 131.0
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 78.0
+margin_right = 290.0
+margin_bottom = 116.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/MenuButtonsContainer/HBoxContainer3"]
+visible = false
+margin_right = 32.0
+margin_bottom = 41.0
+grow_vertical = 2
+rect_min_size = Vector2( 0, 32 )
+texture = ExtResource( 34 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VisibleOnHoverBehaviour3" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer3/TextureRect"]
+script = ExtResource( 38 )
+button = NodePath("../../PlayExtrasButton")
+
+[node name="Control2" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer3"]
+margin_right = 56.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 56, 0 )
+script = ExtResource( 39 )
+target = NodePath("../TextureRect")
+grow_amount = Vector2( 16, 0 )
+original_value = Vector2( 20, 0 )
+
+[node name="PlayExtrasButton" type="Button" parent="CenterContainer/MenuButtonsContainer/HBoxContainer3"]
+margin_left = 60.0
+margin_right = 290.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 230, 38 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0.423529 )
+custom_fonts/font = SubResource( 9 )
 shortcut_in_tooltip = false
 text = "Arcade"
 flat = true
@@ -209,20 +347,96 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ControlsButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 135.0
-margin_right = 154.0
-margin_bottom = 176.0
+[node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 117.0
+margin_right = 290.0
+margin_bottom = 155.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/MenuButtonsContainer/HBoxContainer4"]
+visible = false
+margin_right = 32.0
+margin_bottom = 41.0
+grow_vertical = 2
+rect_min_size = Vector2( 0, 32 )
+texture = ExtResource( 36 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VisibleOnHoverBehaviour4" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer4/TextureRect"]
+script = ExtResource( 38 )
+button = NodePath("../../ControlsButton")
+
+[node name="Control2" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer4"]
+margin_right = 56.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 56, 0 )
+script = ExtResource( 39 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+target = NodePath("../TextureRect")
+grow_amount = Vector2( 16, 0 )
+original_value = Vector2( 20, 0 )
+
+[node name="ControlsButton" type="Button" parent="CenterContainer/MenuButtonsContainer/HBoxContainer4"]
+margin_left = 60.0
+margin_right = 290.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 230, 38 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0.423529 )
+custom_fonts/font = SubResource( 9 )
 shortcut_in_tooltip = false
 text = "Controls"
 flat = true
 
-[node name="SettingsButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 180.0
-margin_right = 154.0
-margin_bottom = 221.0
+[node name="HBoxContainer5" type="HBoxContainer" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 156.0
+margin_right = 290.0
+margin_bottom = 194.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/MenuButtonsContainer/HBoxContainer5"]
+visible = false
+margin_right = 32.0
+margin_bottom = 41.0
+grow_vertical = 2
+rect_min_size = Vector2( 0, 32 )
+texture = ExtResource( 33 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VisibleOnHoverBehaviour5" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer5/TextureRect"]
+script = ExtResource( 38 )
+button = NodePath("../../SettingsButton")
+
+[node name="Control3" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer5"]
+margin_right = 56.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 56, 0 )
+script = ExtResource( 39 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+target = NodePath("../TextureRect")
+grow_amount = Vector2( 16, 0 )
+original_value = Vector2( 20, 0 )
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/MenuButtonsContainer/HBoxContainer5"]
+margin_left = 60.0
+margin_right = 290.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 230, 38 )
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0.423529 )
+custom_fonts/font = SubResource( 9 )
 shortcut_in_tooltip = false
 text = "Settings"
 flat = true
@@ -230,14 +444,53 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ExitButton" type="Button" parent="CenterContainer/MenuButtonsContainer"]
-margin_top = 225.0
-margin_right = 154.0
-margin_bottom = 266.0
-focus_neighbour_bottom = NodePath("../PlayStoryButton")
+[node name="HBoxContainer6" type="HBoxContainer" parent="CenterContainer/MenuButtonsContainer"]
+margin_top = 195.0
+margin_right = 290.0
+margin_bottom = 233.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/MenuButtonsContainer/HBoxContainer6"]
+visible = false
+margin_right = 32.0
+margin_bottom = 41.0
+grow_vertical = 2
+rect_min_size = Vector2( 0, 32 )
+texture = ExtResource( 32 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VisibleOnHoverBehaviour6" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer6/TextureRect"]
+script = ExtResource( 38 )
+button = NodePath("../../ExitButton")
+
+[node name="Control4" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer6"]
+margin_right = 56.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 56, 0 )
+script = ExtResource( 39 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+target = NodePath("../TextureRect")
+grow_amount = Vector2( 16, 0 )
+original_value = Vector2( 20, 0 )
+
+[node name="ExitButton" type="Button" parent="CenterContainer/MenuButtonsContainer/HBoxContainer6"]
+margin_left = 60.0
+margin_right = 290.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 230, 38 )
+focus_neighbour_bottom = NodePath("../../HBoxContainer/PlayStoryButton")
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0.423529 )
+custom_fonts/font = SubResource( 9 )
 shortcut_in_tooltip = false
 text = "Exit"
+flat = true
 
 [node name="HSeparator" type="HSeparator" parent="CenterContainer/MenuButtonsContainer"]
 visible = false
@@ -248,28 +501,29 @@ margin_bottom = 274.0
 [node name="CursorAnimatedSprite" type="AnimatedSprite" parent="CenterContainer"]
 position = Vector2( 637.942, 155.643 )
 frames = SubResource( 5 )
+frame = 1
 playing = true
 centered = false
 
 [node name="Title" type="Node2D" parent="."]
-position = Vector2( 372, 38 )
+position = Vector2( 351, 38 )
 
 [node name="LaecAnimatedSprite" type="AnimatedSprite" parent="Title"]
+visible = false
 position = Vector2( 68.5687, 34.3649 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="Title"]
+visible = false
 position = Vector2( 132.272, 35.0721 )
 frames = SubResource( 3 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="Title"]
-position = Vector2( 209.99, 34.3649 )
-frames = SubResource( 4 )
-frame = 1
+position = Vector2( 283, 46 )
 playing = true
 
 [node name="SecretButton" type="Button" parent="Title/YouAnimatedSprite"]
@@ -278,14 +532,36 @@ anchor_left = -0.5
 anchor_top = -0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+margin_left = -22.0
+margin_top = -10.0
+margin_right = 28.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 50, 0 )
 mouse_default_cursor_shape = 2
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="SecretEditorParticles" parent="Title/YouAnimatedSprite" instance=ExtResource( 23 )]
-visible = false
+position = Vector2( 3, 9 )
 emitting = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Title"]
+position = Vector2( 151, 45 )
+scale = Vector2( 0.557062, 0.557062 )
+frames = SubResource( 10 )
+playing = true
+
+[node name="DiscordInsoumis" type="TextureRect" parent="."]
+margin_left = 16.0
+margin_top = 15.0
+margin_right = 1219.0
+margin_bottom = 411.0
+rect_scale = Vector2( 0.12185, 0.12185 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DisclaimerLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.5
@@ -313,11 +589,11 @@ url_to_open = "https://laec.fr"
 [node name="VersionLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -155.979
-margin_top = 1.37025
-margin_right = -1.97949
-margin_bottom = 41.3702
-custom_fonts/font = ExtResource( 6 )
+margin_left = -153.0
+margin_top = 23.0
+margin_right = 0.999512
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 11 )
 text = "0.5.3"
 align = 1
 script = ExtResource( 2 )
@@ -328,12 +604,12 @@ __meta__ = {
 [node name="BetaLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -155.979
-margin_top = 45.3702
-margin_right = -1.97949
-margin_bottom = 85.3702
-custom_fonts/font = ExtResource( 6 )
-text = "Beta"
+margin_left = -209.0
+margin_top = 23.0
+margin_right = -55.0005
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 12 )
+text = "Beta v"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -355,10 +631,10 @@ position = Vector2( -44, -44 )
 [node name="MouseFocusBinder" type="Node" parent="."]
 
 [connection signal="visibility_changed" from="." to="." method="_on_StartMenu_visibility_changed"]
-[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/PlayStoryButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/PlayTutosButton" to="." method="_on_PlayTutosButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/PlayExtrasButton" to="." method="_on_PlayExtrasButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/ControlsButton" to="." method="_on_ControlsButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/HBoxContainer/PlayStoryButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/HBoxContainer2/PlayTutosButton" to="." method="_on_PlayTutosButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/HBoxContainer3/PlayExtrasButton" to="." method="_on_PlayExtrasButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/HBoxContainer4/ControlsButton" to="." method="_on_ControlsButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/HBoxContainer5/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtonsContainer/HBoxContainer6/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="Title/YouAnimatedSprite/SecretButton" to="." method="_on_SecretButton_pressed"]

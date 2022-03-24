@@ -70,9 +70,11 @@ func focus_play_button():
 
 func connect_cursor_to_buttons():
 	var buttons := Array()
-	for child in self.menu_buttons_container.get_children():
-		if child.name.ends_with("Button") and (child is Button):
-			buttons.push_back(child)
+	for hbox in self.menu_buttons_container.get_children():
+		if hbox is HBoxContainer:
+			for child in hbox.get_children():
+				if child.name.ends_with("Button") and (child is Button):
+					buttons.push_back(child)
 	var _c
 	for button in buttons:
 		_c = button.connect("focus_entered", self, '_on_Menu_Button_focused', [button])
@@ -98,8 +100,9 @@ func _on_Menu_Button_focused(button: Button, silent := false):
 		return
 	if not button.has_focus():
 		button.grab_focus()
-	self.cursor.position.y = button.margin_top + menu_buttons_container.margin_top - 5
-	self.cursor.position.x = button.margin_right + menu_buttons_container.margin_left + 2
+	print(button)
+	self.cursor.position.y = button.get_parent().margin_top + menu_buttons_container.margin_top - 10
+	self.cursor.position.x = button.get_parent().margin_right + menu_buttons_container.margin_left + 2
 	if not silent:  # ineffective because of our deferred shenanigans, no time to untangle this
 		#SoundFx.play('gui_pouic')
 		SoundFx.play('gui_move')
