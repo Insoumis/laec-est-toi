@@ -491,9 +491,9 @@ margin_right = 154.0
 margin_bottom = 274.0
 
 [node name="CursorAnimatedSprite" type="AnimatedSprite" parent="CenterContainer"]
+visible = false
 position = Vector2( 637.942, 155.643 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
 
@@ -504,14 +504,14 @@ position = Vector2( 351, 38 )
 visible = false
 position = Vector2( 68.5687, 34.3649 )
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="Title"]
 visible = false
 position = Vector2( 132.272, 35.0721 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="Title"]
@@ -524,27 +524,32 @@ anchor_left = -0.5
 anchor_top = -0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -22.0
-margin_top = -10.0
-margin_right = 28.0
-margin_bottom = 31.0
-rect_min_size = Vector2( 50, 0 )
+margin_left = -15.5429
+margin_top = -31.8911
+margin_right = 64.4571
+margin_bottom = 28.1089
+rect_min_size = Vector2( 80, 60 )
 mouse_default_cursor_shape = 2
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="SecretEditorParticles" parent="Title/YouAnimatedSprite" instance=ExtResource( 23 )]
-position = Vector2( 3, 9 )
+position = Vector2( 28.1984, -1.07938 )
 emitting = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Title"]
 position = Vector2( 151, 45 )
 scale = Vector2( 0.557062, 0.557062 )
 frames = SubResource( 10 )
+frame = 2
 playing = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="DiscordInsoumis" type="TextureRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0.537255 )
 margin_left = 16.0
 margin_top = 15.0
 margin_right = 1219.0
@@ -579,6 +584,7 @@ script = ExtResource( 31 )
 url_to_open = "https://laec.fr"
 
 [node name="VersionLabel" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0.521569 )
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -153.0
@@ -586,7 +592,7 @@ margin_top = 23.0
 margin_right = 0.999512
 margin_bottom = 63.0
 custom_fonts/font = SubResource( 11 )
-text = "Beta v0.5.4"
+text = "Beta v0.5.5"
 align = 1
 script = ExtResource( 2 )
 __meta__ = {
@@ -605,6 +611,7 @@ __meta__ = {
 }
 
 [node name="PhiSprite" parent="MarginContainer" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( -44, -44 )
 
 [node name="MouseFocusBinder" type="Node" parent="."]
