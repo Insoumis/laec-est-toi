@@ -12,6 +12,8 @@ title = "level.Partie5Map.title"
 excerpt = "level.Partie5Map.excerpt"
 link = "level.Partie5Map.link"
 title_custom = "Ordonner le Monde"
+excerpt_custom = "Baba yetu..."
+playlist_name = "Everything"
 
 [node name="GemClusterBackground" parent="BackgroundLayer" index="0"]
 visible = false
