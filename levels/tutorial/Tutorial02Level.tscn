@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Portal.tscn" type="PackedScene" id=4]
 
 [node name="Tutorial02Level" instance=ExtResource( 3 )]
 contribute_to_completion_score = true
@@ -94,3 +95,11 @@ concept_name = "win"
 cell_position = Vector2( -1, 2 )
 tile_position = Vector2( 0, 2 )
 is_lit = false
+
+[node name="Portal" parent="Items" index="9" instance=ExtResource( 4 )]
+position = Vector2( 224, -143.922 )
+cell_position = Vector2( 5, -3 )
+tile_position = Vector2( 3, -3 )
+secret = true
+level_path = "res://levels/tutorial/Tutorial02SecretLevel.tscn"
+title = "Promenade"
