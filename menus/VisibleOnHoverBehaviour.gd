@@ -1,7 +1,9 @@
 extends Node
 
+
 # Button/Control whose focus we're following
 export var button : NodePath
+
 # Helps when focus_exited event was not triggered
 # All behaviors under this node will receive a call to on_focus_exited()
 # Make sure on_focus_exited() is idempotent, it may be ran twice,

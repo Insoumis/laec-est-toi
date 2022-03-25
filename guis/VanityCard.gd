@@ -17,3 +17,4 @@ func _input(event):
 			if start_menu:
 				var oldies = start_menu.find_node('OldBackground')
 				oldies.visible = true
+				self.visible = true
