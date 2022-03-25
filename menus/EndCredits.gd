@@ -1,8 +1,6 @@
 extends Control
 
-# TODO:
-# BABA IS YOU (HEMPULI)
-# KENNEY
+# This game was made by stardust, for stardust.   Enjoy!
 
 enum ROLES {
 	ACE
@@ -202,6 +200,14 @@ var people := [
 	{
 		"name": "Delphou",
 		"roles": [ROLES.THANKS],
+	},
+	{
+		"name": "Copeau",
+		"roles": [ROLES.LEVEL_DESIGNER],
+	},
+	{
+		"name": "Mattéo & Gianni",
+		"roles": [ROLES.TESTER],
 	},
 ]
 

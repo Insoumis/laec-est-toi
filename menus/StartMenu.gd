@@ -99,8 +99,8 @@ func _on_Menu_Button_focused(button: Button, silent := false):
 	if not button.is_inside_tree():
 		return
 	if not button.has_focus():
-		button.grab_focus()
-	print(button)
+		button.grab_focus()  # re-triggers _on_Menu_Button_focused
+		return
 	self.cursor.position.y = button.get_parent().margin_top + menu_buttons_container.margin_top - 10
 	self.cursor.position.x = button.get_parent().margin_right + menu_buttons_container.margin_left + 2
 	if not silent:  # ineffective because of our deferred shenanigans, no time to untangle this
