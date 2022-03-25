@@ -23,7 +23,7 @@ extends Node
 # - Sets buses of songs (todo)
 
 
-var __is_playing := false
+var __is_playing := false  # careful, the value in here is unreliable for now
 var __playlists_by_name := Dictionary()
 var __playlists := Array()
 
@@ -99,11 +99,16 @@ func play_by_name(playlist_name):
 
 
 func stop():
-	for playlist in __playlists:
+	debug("%s: stopping all playlists (was playing: %s)" % [get_name(), __is_playing])
+	for playlist in get_playlists():
 		playlist.stop_song()
+	self.__is_playing = false
 
 
 func do_play(playlist: Playlist):
+	debug("%s: starting playlist `%s' (was playing: %s)" % [
+		get_name(), playlist.get_name(), __is_playing,
+	])
 	self.__is_playing = true
 	playlist.play()
 
@@ -123,7 +128,8 @@ func get_playlist_by_name(playlist_name) -> Playlist:
 
 
 func get_playlists() -> Array:
-	collect_playlists()  # optimize later
+	if not self.__playlists:
+		collect_playlists()
 	return self.__playlists
 
 
@@ -136,4 +142,47 @@ func collect_playlists():
 			__playlists_by_name[playlist.name] = playlist
 			__playlists.append(playlist)
 
+
+
+
+#  _                       _
+# | |                     (_)
+# | |     ___   __ _  __ _ _ _ __   __ _
+# | |    / _ \ / _` |/ _` | | '_ \ / _` |
+# | |___| (_) | (_| | (_| | | | | | (_| |
+# |______\___/ \__, |\__, |_|_| |_|\__, |
+#               __/ | __/ |         __/ |
+#              |___/ |___/         |___/
+# Logging Trait v0.0.0
+
+const LOG_LEVEL_DEBUG := 'debug'
+const LOG_LEVEL_INFO := 'info'
+const LOG_LEVEL_WARN := 'warn'
+const LOG_LEVEL_ERROR := 'error'
+const LOG_LEVEL_SILENT := 'silent'  # risky!
+
+export(String, 'debug', 'info', 'warn', 'error', 'silent') var log_level \
+	:= LOG_LEVEL_DEBUG
+
+func debug(msg:String):
+	if self.log_level == LOG_LEVEL_DEBUG:
+		print(msg)
+
+func info(msg:String):
+	inform(msg)
+
+func inform(msg:String):
+	if self.log_level == LOG_LEVEL_DEBUG || self.log_level == LOG_LEVEL_INFO:
+		print(msg)
+
+func warn(msg:String):
+	if self.log_level != LOG_LEVEL_ERROR && self.log_level != LOG_LEVEL_SILENT:
+		printerr(msg)
+
+func error(msg:String):
+	shout(msg)
+
+func shout(msg:String):
+	if self.log_level != LOG_LEVEL_SILENT:
+		printerr(msg)
 

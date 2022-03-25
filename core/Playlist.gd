@@ -15,12 +15,15 @@ class_name Playlist
 export var play_at_random := false
 var random_seed := 42  # export once implemented
 
-# Pause betwwen tracks
-var pause_duration := 11.0
+# Pause betwwen tracks, in seconds
+export var pause_duration := 11.0
 
+# Awkward double underscore convention for
+# @private
 var __current_song : AudioStreamPlayer
 var __songs := Array()
 var __songs_by_name := Dictionary()
+var __silence_timer: SceneTreeTimer
 
 
 func _ready():
@@ -30,14 +33,7 @@ func _ready():
 
 func play():
 	var next_song = get_first_song()
-#	next_song.play()
 	play_song(next_song)
-
-
-func stop_song():
-	disconnect_from_current_song()
-	for other_song in get_songs():
-		fade_song_out(other_song)
 
 
 func play_song(song):
@@ -47,51 +43,28 @@ func play_song(song):
 		else:
 			assert(false, "Not Implemented")
 	
-	disconnect_from_current_song()
+#	disconnect_from_current_song()
+#	for other_song in get_songs():
+#		fade_song_out(other_song)
+	stop_song()
 	
-	for other_song in get_songs():
-		fade_song_out(other_song)
 	fade_song_in(song)
 	self.__current_song = song
 	connect_to_current_song()
 
 
-func connect_to_current_song():
-	if not self.__current_song:
-		return
-	
-	var _connected = self.__current_song.connect(
-		"finished", 
-		self, 'on_song_finished'
-	)
-	if OK != _connected:
-		printerr("Jukebox Playlist: failed to connect to the current song")
-
-
-func disconnect_from_current_song():
-	if not self.__current_song:
-		return
-	if self.__current_song.is_connected("finished", self, 'on_song_finished'):
-		self.__current_song.disconnect("finished", self, 'on_song_finished')
-
-
-func on_song_finished():
-	yield(get_tree().create_timer(pause_duration), "timeout")
+func play_next_song():
 	var next_song = get_next_song()
 	if next_song:
 		play_song(next_song)
 
 
-func get_next_song() -> AudioStreamPlayer:
-	if not self.__current_song:
-		if self.__songs.empty():
-			return null
-		return self.__songs[0]
-	var i = self.__songs.find(self.__current_song)
-	assert(i >= 0, "what?")
-	i = (i + 1) % (self.__songs.size())  # loop !
-	
-	return self.__songs[i]
+func stop_song():
+	disconnect_from_current_song()
+	for any_song in get_songs():
+		fade_song_out(any_song)
+	if self.__silence_timer and is_instance_valid(self.__silence_timer):
+		self.__silence_timer.disconnect("timeout", self, "play_next_song")
 
 
 func fade_song_out(song:AudioStreamPlayer):
@@ -108,6 +81,18 @@ func get_first_song() -> AudioStreamPlayer:
 	return songs[0]
 
 
+func get_next_song() -> AudioStreamPlayer:
+	if not self.__current_song:
+		if self.__songs.empty():
+			return null
+		return self.__songs[0]
+	var i = self.__songs.find(self.__current_song)
+	assert(i >= 0, "what?")
+	i = (i + 1) % (self.__songs.size())  # loop !
+	
+	return self.__songs[i]
+
+
 func get_song_by_name(song_name:String) -> AudioStreamPlayer:
 	collect_songs()
 	assert(
@@ -120,7 +105,8 @@ func get_song_by_name(song_name:String) -> AudioStreamPlayer:
 
 
 func get_songs() -> Array:
-	collect_songs()
+	if not self.__songs:
+		collect_songs(true)
 	return self.__songs
 
 
@@ -158,3 +144,30 @@ func is_song(node: Node) -> bool:
 		and
 		node.stream
 	)
+
+
+func connect_to_current_song():
+	if not self.__current_song:
+		return
+	
+	var connected = self.__current_song.connect(
+		"finished", 
+		self, 'on_song_finished'
+	)
+	if OK != connected:
+		printerr("Jukebox Playlist: failed to connect to the current song")
+
+
+func disconnect_from_current_song():
+	if not self.__current_song:
+		return
+	if self.__current_song.is_connected("finished", self, 'on_song_finished'):
+		self.__current_song.disconnect("finished", self, 'on_song_finished')
+
+
+func on_song_finished():
+	self.__silence_timer = get_tree().create_timer(pause_duration)
+	var connected = self.__silence_timer.connect("timeout", self, "play_next_song")
+	if connected != OK:
+		printerr("Jukebox Playlist: failed to connect silence between tracks")
+
