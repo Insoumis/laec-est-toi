@@ -60,7 +60,7 @@ var people := [
 		"roles": [ROLES.CODER, ROLES.TOOLS, ROLES.TECHNICAL_ARTIST, ROLES.LEVEL_DESIGNER, ROLES.GRAPHIC_DESIGNER, ROLES.GAME_DESIGNER, ROLES.TRAILER],
 	},
 	{
-		"name": "Precheurius",
+		"name": "Precheurius Studio CK Project",
 		"roles": [ROLES.MUSIC_COMPOSER, ROLES.MUSIC_PERFORMER, ROLES.TRAILER, ROLES.ORGANIZER],
 	},
 	{
@@ -69,7 +69,7 @@ var people := [
 	},
 	{
 		"name": "Miidnight",
-		"roles": [ROLES.ORGANIZER, ROLES.LEVEL_DESIGNER, ROLES.GRAPHIC_DESIGNER, ROLES.WEBSITE, ROLES.TRAILER, ROLES.COMMUNICATION],
+		"roles": [ROLES.ORGANIZER, ROLES.LEVEL_DESIGNER, ROLES.GRAPHIC_DESIGNER, ROLES.WEBSITE, ROLES.COMMUNICATION],
 	},
 	{
 		"name": "Dazo",
@@ -137,11 +137,11 @@ var people := [
 	},
 	{
 		"name": "Ista",
-		"roles": [ROLES.ACE, ROLES.TRAILER],
+		"roles": [ROLES.THANKS, ROLES.TRAILER],
 	},
 	{
 		"name": "Zegueux",
-		"roles": [ROLES.GRAPHIC_DESIGNER, ROLES.TRAILER],
+		"roles": [ROLES.GRAPHIC_DESIGNER, ROLES.TRAILER, ROLES.COMMUNICATION],
 	},
 	{
 		"name": "Aikru",
@@ -165,10 +165,10 @@ var people := [
 	},
 	{
 		"name": "Da_Schtroumpf",
-		"roles": [ROLES.COMMUNICATION],
+		"roles": [ROLES.GRAPHIC_DESIGNER, ROLES.COMMUNICATION],
 	},
 	{
-		"name": "Mahjinel",
+		"name": "Majhinell",
 		"roles": [ROLES.COMMUNICATION],
 	},
 	{
@@ -186,6 +186,22 @@ var people := [
 	{
 		"name": "Le Bon Sens",
 		"roles": [ROLES.SPECIAL_THANKS],
+	},
+	{
+		"name": "AlphaXIII Studio CK Project",
+		"roles": [ROLES.MUSIC_COMPOSER],
+	},
+	{
+		"name": "Sno",
+		"roles": [ROLES.THANKS],
+	},
+	{
+		"name": "NightGlow",
+		"roles": [ROLES.THANKS, ROLES.TESTER],
+	},
+	{
+		"name": "Delphou",
+		"roles": [ROLES.THANKS],
 	},
 ]
 

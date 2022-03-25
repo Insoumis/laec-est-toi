@@ -3146,55 +3146,55 @@ msgstr "https://laec.fr/section/13/garantir-la-securite-et-la-surete"
 
 #: menus/EndCredits.gd:29
 msgid "Coder"
-msgstr "Codeur⋅e"
+msgstr "Développeurs"
 
 #: menus/EndCredits.gd:30
 msgid "Tool developer"
-msgstr "Outillage"
+msgstr "Développeurs d'outils"
 
 #: menus/EndCredits.gd:31
 msgid "Game designer"
-msgstr "Concepts de Jeu"
+msgstr "Concepts de jeu"
 
 #: menus/EndCredits.gd:32
 msgid "Level designer"
-msgstr "Maître de Jeu"
+msgstr "Conception de niveau"
 
 #: menus/EndCredits.gd:33
 msgid "Music composer"
-msgstr "Compositeur⋅e"
+msgstr "Composition musicale"
 
 #: menus/EndCredits.gd:34
 msgid "Music performer"
-msgstr "Musicien⋅ne"
+msgstr "Performance musicale"
 
 #: menus/EndCredits.gd:35
 msgid "Graphic designer"
-msgstr "Graphiste"
+msgstr "Graphistes"
 
 #: menus/EndCredits.gd:36
 msgid "Technical artist"
-msgstr "Arts Techniques"
+msgstr "Artistes technique"
 
 #: menus/EndCredits.gd:37
 msgid "Sound designer"
-msgstr "Ingé Son"
+msgstr "Bruitages"
 
 #: menus/EndCredits.gd:38
 msgid "Organizer"
-msgstr "Organisateur⋅e"
+msgstr "Organisation"
 
 #: menus/EndCredits.gd:39
 msgid "Ace"
-msgstr "As"
+msgstr "Joker"
 
 #: menus/EndCredits.gd:40
 msgid "Reviewer"
-msgstr "Relecteur⋅e"
+msgstr "Vérification"
 
 #: menus/EndCredits.gd:41
 msgid "Tester"
-msgstr "Testeur⋅e"
+msgstr "Testeur⋅es"
 
 #: menus/EndCredits.gd:42
 msgid "Thanks"
@@ -3202,7 +3202,7 @@ msgstr "Remerciements"
 
 #: menus/EndCredits.gd:43
 msgid "Special Thanks"
-msgstr "Remerciements Spéciaux"
+msgstr "Remerciements spéciaux"
 
 #: menus/EndCredits.tscn:29
 msgid "ROLE"
