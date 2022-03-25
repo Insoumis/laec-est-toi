@@ -19,6 +19,9 @@ enum ROLES {
 	ORGANIZER
 	REVIEWER
 	TESTER
+	TRAILER
+	WEBSITE
+	COMMUNICATION
 	THANKS
 	SPECIAL_THANKS
 }
@@ -39,7 +42,10 @@ var role_names = {
 	ROLES.ACE : tr("Ace"),
 	ROLES.REVIEWER : tr("Reviewer"),
 	ROLES.TESTER : tr("Tester"),
+	ROLES.TRAILER : tr("Trailer"),
+	ROLES.WEBSITE : tr("Website"),
 	ROLES.THANKS : tr("Thanks"),
+	ROLES.COMMUNICATION : tr("Communication"),
 	ROLES.SPECIAL_THANKS : tr("Special Thanks"),
 }
 
@@ -51,11 +57,11 @@ var people := [
 	},
 	{
 		"name": "Trollune",
-		"roles": [ROLES.CODER, ROLES.TOOLS, ROLES.TECHNICAL_ARTIST, ROLES.LEVEL_DESIGNER, ROLES.GRAPHIC_DESIGNER, ROLES.GAME_DESIGNER],
+		"roles": [ROLES.CODER, ROLES.TOOLS, ROLES.TECHNICAL_ARTIST, ROLES.LEVEL_DESIGNER, ROLES.GRAPHIC_DESIGNER, ROLES.GAME_DESIGNER, ROLES.TRAILER],
 	},
 	{
 		"name": "Precheurius",
-		"roles": [ROLES.MUSIC_COMPOSER, ROLES.MUSIC_PERFORMER],
+		"roles": [ROLES.MUSIC_COMPOSER, ROLES.MUSIC_PERFORMER, ROLES.TRAILER, ROLES.ORGANIZER],
 	},
 	{
 		"name": "Adrenesis",
@@ -63,15 +69,15 @@ var people := [
 	},
 	{
 		"name": "Miidnight",
-		"roles": [ROLES.ORGANIZER, ROLES.LEVEL_DESIGNER],
+		"roles": [ROLES.ORGANIZER, ROLES.LEVEL_DESIGNER, ROLES.GRAPHIC_DESIGNER, ROLES.WEBSITE, ROLES.TRAILER, ROLES.COMMUNICATION],
 	},
 	{
 		"name": "Dazo",
-		"roles": [ROLES.LEVEL_DESIGNER],
+		"roles": [ROLES.LEVEL_DESIGNER, ROLES.TRAILER, ROLES.COMMUNICATION],
 	},
 	{
 		"name": "Cyril M.",
-		"roles": [ROLES.THANKS, ROLES.SPECIAL_THANKS],
+		"roles": [ROLES.THANKS, ROLES.SPECIAL_THANKS, ROLES.GAME_DESIGNER],
 	},
 	{
 		"name": "Roipoussiere",
@@ -110,6 +116,14 @@ var people := [
 		"roles": [ROLES.GRAPHIC_DESIGNER],
 	},
 	{
+		"name": "Koten",
+		"roles": [ROLES.LEVEL_DESIGNER, ROLES.GRAPHIC_DESIGNER, ROLES.REVIEWER],
+	},
+	{
+		"name": "Wilfried",
+		"roles": [ROLES.SOUND_DESIGNER],
+	},
+	{
 		"name": "Gobz",
 		"roles": [ROLES.THANKS],
 	},
@@ -123,12 +137,60 @@ var people := [
 	},
 	{
 		"name": "Ista",
-		"roles": [ROLES.ACE],
-	}
+		"roles": [ROLES.ACE, ROLES.TRAILER],
+	},
+	{
+		"name": "Zegueux",
+		"roles": [ROLES.GRAPHIC_DESIGNER, ROLES.TRAILER],
+	},
+	{
+		"name": "Aikru",
+		"roles": [ROLES.WEBSITE],
+	},
+	{
+		"name": "Natte Lafeuille",
+		"roles": [ROLES.WEBSITE],
+	},
+	{
+		"name": "DanLo",
+		"roles": [ROLES.TESTER],
+	},
+	{
+		"name": "anthony",
+		"roles": [ROLES.TESTER, ROLES.LEVEL_DESIGNER],
+	},
+	{
+		"name": "Manda G",
+		"roles": [ROLES.GRAPHIC_DESIGNER],
+	},
+	{
+		"name": "Da_Schtroumpf",
+		"roles": [ROLES.COMMUNICATION],
+	},
+	{
+		"name": "Mahjinel",
+		"roles": [ROLES.COMMUNICATION],
+	},
+	{
+		"name": "Herastodes",
+		"roles": [ROLES.SPECIAL_THANKS],
+	},
+	{
+		"name": "Kenney",
+		"roles": [ROLES.SPECIAL_THANKS],
+	},
+	{
+		"name": "BABA IS YOU",
+		"roles": [ROLES.SPECIAL_THANKS],
+	},
+	{
+		"name": "Le Bon Sens",
+		"roles": [ROLES.SPECIAL_THANKS],
+	},
 ]
 
 
-export var scroll_speed := 50.0
+export var scroll_speed := 75.0
 export var playlist := "EndCredits"
 
 
