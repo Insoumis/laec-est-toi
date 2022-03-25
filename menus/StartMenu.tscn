@@ -219,6 +219,7 @@ __meta__ = {
 [node name="VisibleOnHoverBehaviour" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer/TextureRect"]
 script = ExtResource( 38 )
 button = NodePath("../../PlayStoryButton")
+exclusive_under = NodePath("../../..")
 
 [node name="Control" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer"]
 margin_left = 36.0
@@ -265,6 +266,7 @@ __meta__ = {
 [node name="VisibleOnHoverBehaviour2" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer2/TextureRect"]
 script = ExtResource( 38 )
 button = NodePath("../../PlayTutosButton")
+exclusive_under = NodePath("../../..")
 
 [node name="Control3" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer2"]
 margin_right = 56.0
@@ -312,6 +314,7 @@ __meta__ = {
 [node name="VisibleOnHoverBehaviour3" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer3/TextureRect"]
 script = ExtResource( 38 )
 button = NodePath("../../PlayExtrasButton")
+exclusive_under = NodePath("../../..")
 
 [node name="Control2" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer3"]
 margin_right = 56.0
@@ -359,6 +362,7 @@ __meta__ = {
 [node name="VisibleOnHoverBehaviour4" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer4/TextureRect"]
 script = ExtResource( 38 )
 button = NodePath("../../ControlsButton")
+exclusive_under = NodePath("../../..")
 
 [node name="Control2" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer4"]
 margin_right = 56.0
@@ -406,6 +410,7 @@ __meta__ = {
 [node name="VisibleOnHoverBehaviour5" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer5/TextureRect"]
 script = ExtResource( 38 )
 button = NodePath("../../SettingsButton")
+exclusive_under = NodePath("../../..")
 
 [node name="Control3" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer5"]
 margin_right = 56.0
@@ -456,6 +461,7 @@ __meta__ = {
 [node name="VisibleOnHoverBehaviour6" type="Node" parent="CenterContainer/MenuButtonsContainer/HBoxContainer6/TextureRect"]
 script = ExtResource( 38 )
 button = NodePath("../../ExitButton")
+exclusive_under = NodePath("../../..")
 
 [node name="Control4" type="Control" parent="CenterContainer/MenuButtonsContainer/HBoxContainer6"]
 margin_right = 56.0
@@ -494,6 +500,7 @@ margin_bottom = 274.0
 visible = false
 position = Vector2( 637.942, 155.643 )
 frames = SubResource( 5 )
+frame = 1
 playing = true
 centered = false
 
@@ -504,14 +511,14 @@ position = Vector2( 351, 38 )
 visible = false
 position = Vector2( 68.5687, 34.3649 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="Title"]
 visible = false
 position = Vector2( 132.272, 35.0721 )
 frames = SubResource( 3 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="Title"]
@@ -542,7 +549,6 @@ emitting = true
 position = Vector2( 151, 45 )
 scale = Vector2( 0.557062, 0.557062 )
 frames = SubResource( 10 )
-frame = 2
 playing = true
 __meta__ = {
 "_edit_lock_": true
