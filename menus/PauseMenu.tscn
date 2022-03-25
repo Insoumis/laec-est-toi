@@ -4,7 +4,6 @@
 [ext_resource path="res://menus/PauseMenu.gd" type="Script" id=2]
 [ext_resource path="res://guis/CompletionScore.tscn" type="PackedScene" id=3]
 [ext_resource path="res://guis/CodeTheme.tres" type="Theme" id=4]
-[ext_resource path="res://guis/MobileThemeNoBackground.tres" type="Theme" id=5]
 [ext_resource path="res://effects/PauseMenuPanelMaterial.tres" type="Material" id=6]
 [ext_resource path="res://sprites/background/people.png" type="Texture" id=7]
 [ext_resource path="res://core/behaviors/MouseFocusBinder.gd" type="Script" id=8]
@@ -17,6 +16,7 @@
 [ext_resource path="res://sprites/items/text_is_0.png" type="Texture" id=15]
 [ext_resource path="res://sprites/items/text_is_1.png" type="Texture" id=16]
 [ext_resource path="res://sprites/items/text_laec_1.png" type="Texture" id=17]
+[ext_resource path="res://guis/PrettyMenuTheme.tres" type="Theme" id=18]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -66,7 +66,7 @@ animations = [ {
 [node name="PauseMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 1 )
+theme = ExtResource( 18 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -127,7 +127,6 @@ margin_top = 145.0
 margin_right = 712.0
 margin_bottom = 495.0
 rect_min_size = Vector2( 400, 350 )
-theme = ExtResource( 5 )
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true,
@@ -163,16 +162,19 @@ position = Vector2( -20.4472, -11.5496 )
 [node name="LaecAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 68.5687, 34.3649 )
 frames = SubResource( 4 )
+frame = 2
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 123.272, 35.0721 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 193.99, 34.3649 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Control" type="Control" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer"]
