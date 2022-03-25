@@ -330,8 +330,6 @@ func __deferred_switch_to_scene(scene_instance, free_current):
 	# Make it compatible with the SceneTree.change_scene() API.
 	get_tree().set_current_scene(self.current_scene)
 
-	
-
 
 func delete_scene(scene_instance) -> void:
 	call_deferred("__deferred_delete_scene", scene_instance)

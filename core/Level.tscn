@@ -61,9 +61,32 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
+contribute_to_completion_score = false
+items_palette = null
 title = "level.Level.title"
 excerpt = "level.Level.excerpt"
 link = "level.Level.link"
+title_custom = ""
+excerpt_custom = ""
+link_custom = ""
+achievement_a = null
+achievement_b = null
+achievement_c = null
+playlist_name = ""
+forward_level_path = ""
+editor_preview_no_interaction = false
+no_interaction = false
+skip_victory_screen = false
+lattice_hex_size = 64.0
+lattice_aspect_ratio = 0.82
+lattice_kenney = true
+solution_a = ""
+autoplay_a = false
+solution_b = ""
+autoplay_b = false
+solution_c = ""
+autoplay_c = false
+log_level = "debug"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
