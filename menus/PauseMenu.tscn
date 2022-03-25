@@ -1,6 +1,5 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://guis/MobileTheme.tres" type="Theme" id=1]
 [ext_resource path="res://menus/PauseMenu.gd" type="Script" id=2]
 [ext_resource path="res://guis/CompletionScore.tscn" type="PackedScene" id=3]
 [ext_resource path="res://guis/CodeTheme.tres" type="Theme" id=4]
@@ -143,7 +142,6 @@ anchor_right = 0.9
 margin_bottom = 310.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource( 1 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -153,8 +151,9 @@ __meta__ = {
 script = ExtResource( 8 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
+margin_top = 17.0
 margin_right = 320.0
-margin_bottom = 50.0
+margin_bottom = 67.0
 
 [node name="Title" type="Node2D" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer"]
 position = Vector2( -20.4472, -11.5496 )
@@ -162,19 +161,19 @@ position = Vector2( -20.4472, -11.5496 )
 [node name="LaecAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 68.5687, 34.3649 )
 frames = SubResource( 4 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 123.272, 35.0721 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 193.99, 34.3649 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Control" type="Control" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer"]
@@ -196,34 +195,34 @@ rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 
 [node name="ResumeButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
-margin_top = 54.0
+margin_top = 71.0
 margin_right = 320.0
-margin_bottom = 102.0
+margin_bottom = 112.0
 focus_neighbour_top = NodePath("../BackToMenuButton")
 text = "Resume"
 
 [node name="RestartButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
-margin_top = 106.0
+margin_top = 116.0
 margin_right = 320.0
-margin_bottom = 154.0
+margin_bottom = 157.0
 text = "Restart Level"
 
 [node name="ExitLevelButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
-margin_top = 158.0
+margin_top = 161.0
 margin_right = 320.0
-margin_bottom = 206.0
+margin_bottom = 202.0
 text = "Exit Level"
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
-margin_top = 210.0
+margin_top = 206.0
 margin_right = 320.0
-margin_bottom = 258.0
+margin_bottom = 247.0
 text = "Settings"
 
 [node name="BackToMenuButton" type="Button" parent="CenterContainer/PanelContainer/Control/VBoxContainer"]
-margin_top = 262.0
+margin_top = 251.0
 margin_right = 320.0
-margin_bottom = 310.0
+margin_bottom = 292.0
 focus_neighbour_bottom = NodePath("../ResumeButton")
 text = "Back to Menu"
 

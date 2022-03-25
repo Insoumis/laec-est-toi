@@ -5,9 +5,9 @@
 
 [resource]
 shader = ExtResource( 2 )
-shader_param/primary_color = Color( 0.27451, 0.27451, 0.27451, 1 )
-shader_param/secondary_color = Color( 1, 0, 0.117647, 1 )
-shader_param/ternary_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+shader_param/primary_color = Color( 0.545098, 0.792157, 1, 1 )
+shader_param/secondary_color = Color( 0, 0, 0, 1 )
+shader_param/ternary_color = Color( 0.921569, 0.784314, 0.462745, 1 )
 shader_param/primary_limit = 0.33
 shader_param/primary_speed = 0.8
 shader_param/primary_amplitude = 0.1
