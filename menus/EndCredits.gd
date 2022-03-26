@@ -211,6 +211,10 @@ var people := [
 		"name": "Mattéo & Gianni",
 		"roles": [ROLES.TESTER],
 	},
+	{
+		"name": "BenjiFunky",
+		"roles": [ROLES.TESTER],
+	},
 ]
 
 
