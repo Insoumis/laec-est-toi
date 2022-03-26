@@ -20,6 +20,7 @@ enum ROLES {
 	TRAILER
 	WEBSITE
 	COMMUNICATION
+	REDACTION
 	THANKS
 	SPECIAL_THANKS
 }
@@ -42,6 +43,7 @@ var role_names = {
 	ROLES.TESTER : tr("Tester"),
 	ROLES.TRAILER : tr("Trailer"),
 	ROLES.WEBSITE : tr("Website"),
+	ROLES.REDACTION : tr("Redaction"),
 	ROLES.THANKS : tr("Thanks"),
 	ROLES.COMMUNICATION : tr("Communication"),
 	ROLES.SPECIAL_THANKS : tr("Special Thanks"),
@@ -63,11 +65,11 @@ var people := [
 	},
 	{
 		"name": "Miidnight",
-		"roles": [ROLES.ORGANIZER, ROLES.LEVEL_DESIGNER, ROLES.GRAPHIC_DESIGNER, ROLES.WEBSITE, ROLES.COMMUNICATION],
+		"roles": [ROLES.ORGANIZER, ROLES.LEVEL_DESIGNER, ROLES.GRAPHIC_DESIGNER, ROLES.WEBSITE, ROLES.COMMUNICATION, ROLES.REDACTION],
 	},
 	{
 		"name": "Dazo",
-		"roles": [ROLES.LEVEL_DESIGNER, ROLES.TRAILER, ROLES.COMMUNICATION],
+		"roles": [ROLES.LEVEL_DESIGNER, ROLES.TRAILER, ROLES.COMMUNICATION, ROLES.REDACTION],
 	},
 	{
 		"name": "Precheurius Studio CK Project",
@@ -127,7 +129,7 @@ var people := [
 	},
 	{
 		"name": "JeanSebastienBachOfficiel",
-		"roles": [ROLES.TESTER],
+		"roles": [ROLES.TESTER, ROLES.REDACTION],
 	},
 	{
 		"name": "Saccharose4965",
@@ -199,7 +201,7 @@ var people := [
 	},
 	{
 		"name": "Delphou",
-		"roles": [ROLES.THANKS],
+		"roles": [ROLES.THANKS, ROLES.REDACTION],
 	},
 	{
 		"name": "Copeau",

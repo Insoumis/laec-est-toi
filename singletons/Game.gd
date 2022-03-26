@@ -308,6 +308,7 @@ func transition_ended():
 #	print(self.__is_currently_switching)
 	self.__is_currently_switching = false
 
+
 func __deferred_switch_to_scene(scene_instance, free_current):
 	if not scene_instance:
 		printerr("There is no scene to switch to.")
