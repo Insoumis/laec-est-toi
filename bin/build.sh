@@ -15,8 +15,10 @@
 # INTERNAL CONFIG #############################################################
 
 # Game name (mandatory) and author (for itch)
-GAME_NAME=${GAME_NAME:-"laec-est-vous"}
+ITCH_GAME_NAME=${GAME_NAME:-"laec-est-vous"}
+GAME_NAME=${GAME_NAME:-"laec-est-toi"}
 GAME_AUTHOR=${GAME_AUTHOR:-"discord-insoumis"}
+WEBSITE_DOMAIN_NAME=${WEBSITE_DOMAIN_NAME:-"laec-est-toi.fr"}
 
 # Godot executable (make sure it's 3.x)
 GODOT=${GODOT:-"godot"}
@@ -179,6 +181,7 @@ BUILD_PARENT_PATH="${BUILD_ROOT_PATH}/${BUILD_TARGET}"
 VERSION=${VERSION:-`bash bin/get_version.sh`}
 VERSION_NO_DOT=$(echo ${VERSION} | sed -E 's/[.]/-/g')
 BUILD_NAME="${GAME_NAME}_${VERSION_NO_DOT}_${BUILD_TARGET}"
+BUILD_LATEST_NAME="${GAME_NAME}_${BUILD_TARGET}"
 
 BUILD_PATH="${BUILD_PARENT_PATH}/${BUILD_NAME}"
 
@@ -383,14 +386,28 @@ if [ ${SHOULD_UPLOAD} -eq 1 ] ; then
         if [ "${BUILD_TARGET}" = "linux64" ]; then
             # We try to trick itch into leaving our file alone, and not produce a zip by itself of it.
             # We want a tarball !
-            butler push $DIST_PATH ${GAME_AUTHOR}/${GAME_NAME}:${BUILD_TARGET} --userversion ${VERSION}
+            butler push $DIST_PATH ${GAME_AUTHOR}/${ITCH_GAME_NAME}:${BUILD_TARGET} --userversion ${VERSION}
         else
-            butler push $DOWNLOAD_FILEPATH ${GAME_AUTHOR}/${GAME_NAME}:${BUILD_TARGET} --userversion ${VERSION}
+            butler push $DOWNLOAD_FILEPATH ${GAME_AUTHOR}/${ITCH_GAME_NAME}:${BUILD_TARGET} --userversion ${VERSION}
         fi
     else
-        butler push $DOWNLOAD_FILEPATH ${GAME_AUTHOR}/${GAME_NAME}:${BUILD_TARGET} --userversion ${VERSION}
+        butler push $DOWNLOAD_FILEPATH ${GAME_AUTHOR}/${ITCH_GAME_NAME}:${BUILD_TARGET} --userversion ${VERSION}
     fi
 fi
+
+if [ ${SHOULD_UPLOAD} -eq 1 ] ; then
+    echo -e "Pushing $DOWNLOAD_FILEPATH to ${WEBSITE_DOMAIN_NAME}…"
+
+    DISTANT_DIR=/home/laec-est-toi/downloads
+    #DISTANT_DIR=/home/laec-est-toi/downloads/${VERSION}/
+    
+    rsync -Pav ${DOWNLOAD_FILEPATH} ${WEBSITE_DOMAIN_NAME}:${DISTANT_DIR}/${VERSION}/
+    
+    
+    echo "Create symbolic link for latest"
+    ssh laec-est-toi.fr "ln -sf ${DISTANT_DIR}/${VERSION}/${BUILD_NAME}${EXTENSION} ${DISTANT_DIR}/latest/${BUILD_LATEST_NAME}${EXTENSION}" 
+fi
+
 
 rm -R "$DIST_PATH"
 
