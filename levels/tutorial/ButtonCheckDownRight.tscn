@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://guis/KeyboardArrowsHint.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://guis/MouseMoveHintMaskShader.tres" type="Shader" id=7]
 [ext_resource path="res://guis/GamepadHint.tscn" type="PackedScene" id=8]
 [ext_resource path="res://addons/laec-is-you/ide/editor_grid.png" type="Texture" id=9]
+[ext_resource path="res://sprites/background/bg_tuto.png" type="Texture" id=10]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 7 )
@@ -26,6 +27,13 @@ excerpt = "level.ButtonCheckDownRight.excerpt"
 link = "level.ButtonCheckDownRight.link"
 forward_level_path = "res://levels/TutorialMap.tscn"
 skip_victory_screen = true
+
+[node name="GemClusterBackground" parent="BackgroundLayer" index="0"]
+visible = false
+
+[node name="StoryBackground" parent="BackgroundLayer" index="1"]
+visible = true
+texture = ExtResource( 10 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
@@ -99,7 +107,6 @@ tile_position = Vector2( -4, 2 )
 
 [node name="KeyboardArrowsHint" parent="GuiLayer" index="4" instance=ExtResource( 2 )]
 position = Vector2( 159, 109 )
-frame = 2
 
 [node name="PressHint" type="Control" parent="GuiLayer/KeyboardArrowsHint" index="0"]
 show_behind_parent = true
@@ -137,34 +144,34 @@ __meta__ = {
 position = Vector2( 886, 420 )
 
 [node name="Input" parent="GuiLayer/MoveHint" index="0"]
-frame = 2
+frame = 0
 
 [node name="Arrows" parent="GuiLayer/MoveHint" index="1"]
 material = SubResource( 1 )
-frame = 2
+frame = 0
 
 [node name="ArrowLeft" parent="GuiLayer/MoveHint" index="2"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="ArrowRight" parent="GuiLayer/MoveHint" index="3"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="ArrowTopLeft" parent="GuiLayer/MoveHint" index="4"]
 visible = false
-frame = 0
+frame = 1
 
 [node name="ArrowBottomLeft" parent="GuiLayer/MoveHint" index="5"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="ArrowBottomRight" parent="GuiLayer/MoveHint" index="6"]
-frame = 2
+frame = 0
 
 [node name="ArrowTopRight" parent="GuiLayer/MoveHint" index="7"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="GamepadHint" parent="GuiLayer" index="6" instance=ExtResource( 8 )]
 position = Vector2( 734, 129 )
@@ -195,40 +202,43 @@ position = Vector2( -66, -62 )
 
 [node name="Input" parent="GuiLayer/GamepadHint/MoveHint" index="0"]
 visible = false
-frame = 2
+frame = 0
 
 [node name="Arrows" parent="GuiLayer/GamepadHint/MoveHint" index="1"]
 material = SubResource( 2 )
-frame = 2
-
-[node name="ArrowLeft" parent="GuiLayer/GamepadHint/MoveHint" index="2"]
-frame = 2
-
-[node name="ArrowRight" parent="GuiLayer/GamepadHint/MoveHint" index="3"]
-frame = 2
-
-[node name="ArrowTopLeft" parent="GuiLayer/GamepadHint/MoveHint" index="4"]
 frame = 0
 
+[node name="ArrowLeft" parent="GuiLayer/GamepadHint/MoveHint" index="2"]
+frame = 0
+
+[node name="ArrowRight" parent="GuiLayer/GamepadHint/MoveHint" index="3"]
+frame = 0
+
+[node name="ArrowTopLeft" parent="GuiLayer/GamepadHint/MoveHint" index="4"]
+frame = 1
+
 [node name="ArrowBottomLeft" parent="GuiLayer/GamepadHint/MoveHint" index="5"]
-frame = 2
+frame = 0
 
 [node name="ArrowBottomRight" parent="GuiLayer/GamepadHint/MoveHint" index="6"]
-frame = 2
+frame = 0
 
 [node name="ArrowTopRight" parent="GuiLayer/GamepadHint/MoveHint" index="7"]
-frame = 2
+frame = 0
+
+[node name="Input" parent="GuiLayer/GamepadHint" index="3"]
+frame = 1
 
 [node name="AnimatedSprite" parent="GuiLayer/GamepadHint/Input" index="0"]
 visible = true
 scale = Vector2( -1.271, -1.208 )
+frame = 1
+
+[node name="AnimatedSprite4" parent="GuiLayer/GamepadHint/Input" index="1"]
+frame = 1
 
 [node name="AnimatedSprite2" parent="GuiLayer/GamepadHint/Input" index="2"]
 visible = false
-frame = 2
-
-[node name="AnimatedSprite3" parent="GuiLayer/GamepadHint/Input" index="3"]
-frame = 2
 
 [editable path="GuiLayer/MoveHint"]
 [editable path="GuiLayer/GamepadHint"]
