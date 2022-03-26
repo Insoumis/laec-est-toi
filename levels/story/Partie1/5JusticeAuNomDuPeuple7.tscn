@@ -182,20 +182,20 @@ tile_position = Vector2( 6, -4 )
 
 [node name="LobbyText" parent="Items" index="19" instance=ExtResource( 2 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
-position = Vector2( 164, -57 )
+position = Vector2( 160, -53.0239 )
 is_text = true
 concept_name = "lobby"
-cell_position = Vector2( 2, 1 )
-tile_position = Vector2( 2, 1 )
+cell_position = Vector2( 3, -1 )
+tile_position = Vector2( 2, -1 )
 is_lit = false
 
 [node name="PeopleText" parent="Items" index="20" instance=ExtResource( 2 )]
 modulate = Color( 0.9, 0.9, 0.9, 0.7 )
-position = Vector2( 156, 38 )
+position = Vector2( 160, 37.8742 )
 is_text = true
 concept_name = "people"
-cell_position = Vector2( 3, -1 )
-tile_position = Vector2( 2, -1 )
+cell_position = Vector2( 2, 1 )
+tile_position = Vector2( 2, 1 )
 is_lit = false
 
 [node name="PeopleText2" parent="Items" index="21" instance=ExtResource( 2 )]
