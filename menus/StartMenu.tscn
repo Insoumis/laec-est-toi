@@ -500,7 +500,6 @@ margin_bottom = 274.0
 visible = false
 position = Vector2( 637.942, 155.643 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
 
@@ -511,14 +510,14 @@ position = Vector2( 351, 38 )
 visible = false
 position = Vector2( 68.5687, 34.3649 )
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="Title"]
 visible = false
 position = Vector2( 132.272, 35.0721 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="Title"]
@@ -549,6 +548,7 @@ emitting = true
 position = Vector2( 151, 45 )
 scale = Vector2( 0.557062, 0.557062 )
 frames = SubResource( 10 )
+frame = 2
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -598,7 +598,7 @@ margin_top = 23.0
 margin_right = 0.999512
 margin_bottom = 63.0
 custom_fonts/font = SubResource( 11 )
-text = "Beta v0.5.5"
+text = "Beta v0.5.6"
 align = 1
 script = ExtResource( 2 )
 __meta__ = {

@@ -10,6 +10,9 @@ extends Control
 #                  |___/
 
 
+export var text_speed := 48
+
+
 # Level this Level Victory Screen is about.
 # Injected in prepare() by the factory.
 # It will be freed later when calling level.go_forward()
@@ -36,7 +39,7 @@ func _ready():
 		var excerpt_lines : Array = self.level.get_excerpt_displayed().split("\n")
 		for line in excerpt_lines:
 			if line:
-				self.excerpt_label.add_text(line, 25)
+				self.excerpt_label.add_text(line, self.text_speed)
 			self.excerpt_label.add_newline()
 #		self.excerpt_label.add_text(self.level.get_excerpt_displayed(), 25)
 		

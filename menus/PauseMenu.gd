@@ -61,34 +61,40 @@ func _on_ResumeButton_pressed():
 	if not Game:
 		return
 	Game.emit_signal("game_resumed")
+	SoundFx.play("gui_select")
 	var _gone = Game.go_back(false)
 
 
 func _on_RestartButton_pressed():
 	if not Game:
 		return
+	SoundFx.play("gui_select")
 	Game.go_back_and_reset()
 
 
 func _on_ExitLevelButton_pressed():
 	if not Game:
 		return
+	SoundFx.play("gui_select")
 	Game.go_back_twice()
 
 
 func _on_SettingsButton_pressed():
 	if not Game:
 		return
+	SoundFx.play("gui_select")
 	Game.switch_to_scene_path("res://menus/SettingsMenu.tscn")
 
 
 func _on_BackToMenuButton_pressed():
 	if not Game:
 		return
+	SoundFx.play("gui_select")
 	Game.go_back_to_main_menu()
 
 
 func _on_ExitGameButton_pressed():
 	if not App:
 		return
+	SoundFx.play("gui_select")
 	App.exit()
