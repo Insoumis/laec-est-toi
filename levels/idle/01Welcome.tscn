@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/background/bg_idle.png" type="Texture" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 
 [node name="01Welcome" instance=ExtResource( 1 )]
@@ -10,6 +11,13 @@ link = "level.01Welcome.link"
 title_custom = "Bienvenue"
 excerpt_custom = "Celle qui lit ceci est une génie."
 solution_a = "7457595956535656554479796665313556963136311"
+
+[node name="GemClusterBackground" parent="BackgroundLayer" index="0"]
+visible = false
+
+[node name="StoryBackground" parent="BackgroundLayer" index="1"]
+visible = true
+texture = ExtResource( 2 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )

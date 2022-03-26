@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/background/bg_idle.png" type="Texture" id=3]
 
 [node name="05SeekSolutions" instance=ExtResource( 2 )]
-title = "level.05.SeekSolutions.title"
-excerpt = "level.05.SeekSolutions.excerpt"
-link = "level.05.SeekSolutions.link"
+title = "level.05SeekSolutions.title"
+excerpt = "level.05SeekSolutions.excerpt"
+link = "level.05SeekSolutions.link"
 title_custom = "Chercher des Solutions"
 excerpt_custom = "La monarchie présidentielle actuelle marginalise le Parlement. Le président peut dissoudre l'Assemblée, mais celle-ci ne peut le renverser. Conséquence : les députés agissent plus souvent comme des godillots, obligés du monarque, que comme représentants du peuple souverain. Ce système est une anomalie démocratique."
 link_custom = "https://laec.fr/section/4/abolir-la-monarchie-presidentielle"
@@ -14,6 +15,13 @@ solution_a = "554545151535155444414756565656565653657575755314445577755477979636
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1.35, 1.25 )
+
+[node name="GemClusterBackground" parent="BackgroundLayer" index="0"]
+visible = false
+
+[node name="StoryBackground" parent="BackgroundLayer" index="1"]
+visible = true
+texture = ExtResource( 3 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
