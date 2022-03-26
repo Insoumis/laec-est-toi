@@ -45,7 +45,7 @@ __meta__ = {
 margin_top = 26.0
 margin_right = 614.0
 margin_bottom = 57.0
-text = "Vous avez démarré la version HTML5 de LAEC IS YOU.  Cette version expérimentale contient plus de bogues que la version Windows ou Linux du jeu, elle sert de démo au projet."
+text = "Vous avez démarré la version navigateur du jeu. Pour une expérience optimale nous vous invitons à le télécharger."
 align = 1
 autowrap = true
 __meta__ = {
@@ -55,7 +55,7 @@ __meta__ = {
 [node name="OKButton" type="Button" parent="DisclaimerPanel/VBoxContainer"]
 margin_top = 61.0
 margin_right = 614.0
-margin_bottom = 75.0
-text = "J'ai compris"
+margin_bottom = 81.0
+text = "ACCEPTER"
 
 [connection signal="pressed" from="DisclaimerPanel/VBoxContainer/OKButton" to="." method="_on_OKButton_pressed"]

@@ -58,10 +58,6 @@ var people := [
 		"roles": [ROLES.CODER, ROLES.TOOLS, ROLES.TECHNICAL_ARTIST, ROLES.LEVEL_DESIGNER, ROLES.GRAPHIC_DESIGNER, ROLES.GAME_DESIGNER, ROLES.TRAILER],
 	},
 	{
-		"name": "Precheurius Studio CK Project",
-		"roles": [ROLES.MUSIC_COMPOSER, ROLES.MUSIC_PERFORMER, ROLES.TRAILER, ROLES.ORGANIZER],
-	},
-	{
 		"name": "Adrenesis",
 		"roles": [ROLES.CODER, ROLES.TOOLS, ROLES.TECHNICAL_ARTIST],
 	},
@@ -72,6 +68,10 @@ var people := [
 	{
 		"name": "Dazo",
 		"roles": [ROLES.LEVEL_DESIGNER, ROLES.TRAILER, ROLES.COMMUNICATION],
+	},
+	{
+		"name": "Precheurius Studio CK Project",
+		"roles": [ROLES.MUSIC_COMPOSER, ROLES.MUSIC_PERFORMER, ROLES.TRAILER, ROLES.ORGANIZER],
 	},
 	{
 		"name": "Cyril M.",
