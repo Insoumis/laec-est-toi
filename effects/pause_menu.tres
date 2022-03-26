@@ -4,6 +4,7 @@
 code = "shader_type canvas_item;
 
 uniform sampler2D primary_texture;
+uniform sampler2D glow_texture;
 
 uniform vec4 primary_color: hint_color = vec4(1.0, 0.0, 0.0, 1.0);
 uniform vec4 secondary_color: hint_color = vec4(0.0, 1.0, 0.0, 1.0);
@@ -30,9 +31,9 @@ void fragment() {
 			vec4 texture_color = texture(primary_texture, vec2(UV.x+secondary_threshold, UV.y+TIME*-0.07));
 			COLOR = mix(ternary_color, texture_color, 0.1);
 //			COLOR = ternary_color;
-			
 		}
-		
 	}
+	
+	COLOR = mix(COLOR, texture(glow_texture, UV), 0.5);
 	
 }"

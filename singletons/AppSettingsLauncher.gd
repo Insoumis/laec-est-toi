@@ -100,7 +100,7 @@ func launch():
 					"minimum": 0,
 					"maximum": 100,
 					"step": 1,
-					"default": 70,
+					"default": 75,
 					"initialize": true,
 				},
 				"music": {
@@ -109,7 +109,7 @@ func launch():
 					"minimum": 0,
 					"maximum": 100,
 					"step": 1,
-					"default": 70,
+					"default": 75,
 					"initialize": true,
 				},
 #				"interface": {
@@ -126,7 +126,7 @@ func launch():
 					"minimum": 0,
 					"maximum": 100,
 					"step": 1,
-					"default": 70,
+					"default": 75,
 					"initialize": true,
 				},
 			},

@@ -161,19 +161,16 @@ position = Vector2( -20.4472, -11.5496 )
 [node name="LaecAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 68.5687, 34.3649 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 123.272, 35.0721 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 193.99, 34.3649 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Control" type="Control" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer"]
