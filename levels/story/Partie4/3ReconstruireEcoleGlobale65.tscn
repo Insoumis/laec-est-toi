@@ -1,8 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/background/bg_story_respect.png" type="Texture" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=4]
+[ext_resource path="res://sprites/items/text_love_1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/items/text_justice_1.png" type="Texture" id=6]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+trigger_on_turn_if = "2 love"
+trigger_on_victory_if = ""
+image = ExtResource( 5 )
+snake_identifier = "juste"
+title = ""
+title_custom = "Deux fois plus d'amour"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+trigger_on_turn_if = "2 justice"
+trigger_on_victory_if = ""
+image = ExtResource( 6 )
+snake_identifier = "nope"
+title = ""
+title_custom = "Deux fois plus de peine"
 
 [node name="3ReconstruireEcoleGlobale65" instance=ExtResource( 1 )]
 contribute_to_completion_score = true
@@ -14,6 +35,8 @@ excerpt_custom = "LAEC a utilisé l'argent, l'amour et la justice pour retirer a
 
 L'école est une priorité : gratuité réelle (cantines, activités périscolaires...), réduction des effectifs par classe, embauches et revalorisation des salaires des personnels enseignants etc. Un grand plan de financement de l’enseignement universitaire est également lancé."
 link_custom = "https://laec.fr/s65"
+achievement_a = SubResource( 1 )
+achievement_b = SubResource( 2 )
 solution_a = "13377997966613131339931666937471177477997663669911499741139976633113666"
 
 [node name="Camera2D" parent="." index="0"]

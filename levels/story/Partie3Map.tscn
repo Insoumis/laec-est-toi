@@ -133,4 +133,5 @@ Télécharge le maintenant ? :)"
 
 [node name="PlatformCondition" type="Node" parent="Items/Sign" index="13"]
 script = ExtResource( 6 )
+hide_by_default = true
 show_if_html5 = true

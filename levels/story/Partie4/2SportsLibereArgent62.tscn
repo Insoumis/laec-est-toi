@@ -1,8 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/background/bg_story_respect.png" type="Texture" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=4]
+[ext_resource path="res://sprites/items/people_2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/items/lobby_right_1.png" type="Texture" id=6]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+trigger_on_turn_if = "lobby is weak"
+trigger_on_victory_if = ""
+image = ExtResource( 6 )
+snake_identifier = "lobby_faible"
+title = ""
+title_custom = "Bien tenté !  Mac Kinsey te regarde..."
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+trigger_on_turn_if = "2 people"
+trigger_on_victory_if = ""
+image = ExtResource( 5 )
+snake_identifier = "people"
+title = ""
+title_custom = "Paye donc tes impôts, Mac Kinsey !"
 
 [node name="2SportsLibereArgent62" instance=ExtResource( 1 )]
 contribute_to_completion_score = true
@@ -14,6 +35,8 @@ excerpt_custom = "LAEC s'est débarassé de l'argent et des lobbies qui dénatur
 
 Mettons fin au sport business et développons le service public du sport : il est urgent de mettre des moyens au service de l’intérêt général pour un sport émancipateur et libéré de l’argent."
 link_custom = "https://laec.fr/s62"
+achievement_a = SubResource( 1 )
+achievement_b = SubResource( 2 )
 solution_a = "6666696344444433149967714444444"
 
 [node name="Camera2D" parent="." index="0"]

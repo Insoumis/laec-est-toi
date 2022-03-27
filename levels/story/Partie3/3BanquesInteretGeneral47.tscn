@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/background/bg_story_welfare.png" type="Texture" id=2]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=4]
+[ext_resource path="res://sprites/items/law_2.png" type="Texture" id=5]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+trigger_on_turn_if = "5 law"
+trigger_on_victory_if = ""
+image = ExtResource( 5 )
+snake_identifier = "luckyluke"
+title = ""
+title_custom = "Au nom de la loi !"
 
 [node name="3BanquesInteretGeneral47" instance=ExtResource( 1 )]
 contribute_to_completion_score = true
@@ -14,6 +25,7 @@ excerpt_custom = "LAEC utilise la loi pour faire fondre les profits excessifs qu
 
 L'Impôt sur la Fortune (ISF) est rétabli et le montant des héritages plafonné à 12 millions d'euros. L'impôt devient aussi plus progressif, en passant de 5 à 14 tranches : toute personne en dessous de 4000 euros net par mois paie moins d'impôts."
 link_custom = "https://laec.fr/s47"
+achievement_a = SubResource( 1 )
 solution_a = "7714444431111666644441116366664477443333363467416666669691"
 
 [node name="Camera2D" parent="." index="0"]

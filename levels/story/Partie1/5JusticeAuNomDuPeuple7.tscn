@@ -12,7 +12,7 @@ script = ExtResource( 3 )
 trigger_on_turn_if = "not 1 people"
 trigger_on_victory_if = ""
 image = ExtResource( 5 )
-snake_identifier = "default_achievement"
+snake_identifier = "macroniste"
 title = "level.5JusticeAuNomDuPeuple7.default_achievement.title"
 title_custom = "Macroniste authentique"
 
@@ -27,7 +27,7 @@ excerpt_custom = "LAEC a libéré la justice de l'emprise des lobbies en les tra
 La République a besoin d’une justice indépendante et attachée aux principes de l’état de droit."
 link_custom = "https://laec.fr/s7"
 achievement_a = SubResource( 1 )
-solution_a = "66636699377933169374444"
+solution_a = "995331666696697575453614369377575454451136971"
 
 [node name="GemClusterBackground" parent="BackgroundLayer" index="0"]
 visible = false

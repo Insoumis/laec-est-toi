@@ -1,8 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/background/bg_story_welfare.png" type="Texture" id=3]
+[ext_resource path="res://sprites/items/laec_1.png" type="Texture" id=4]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=5]
+[ext_resource path="res://sprites/items/text_genie_1.png" type="Texture" id=6]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 5 )
+trigger_on_turn_if = "2 laec"
+trigger_on_victory_if = ""
+image = ExtResource( 4 )
+snake_identifier = "proselyt"
+title = ""
+title_custom = "Conscription républicaine"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 5 )
+trigger_on_turn_if = "people is you & laec is you"
+trigger_on_victory_if = ""
+image = ExtResource( 6 )
+snake_identifier = "conscrit"
+title = ""
+title_custom = "L'Avenir En Commun, c'est VOUS. <3"
 
 [node name="1SanteDAbord32" instance=ExtResource( 1 )]
 contribute_to_completion_score = true
@@ -14,6 +35,8 @@ excerpt_custom = "La volontée du peuple s'incarne dans LAEC et utilise la loi p
 
 La Santé redevient une priorité : plus de lits d’hôpitaux, plus de postes, meilleurs salaires, fin des déserts médicaux... Avec des soins prescrits 100% remboursés par la Sécu !"
 link_custom = "https://laec.fr/s32"
+achievement_a = SubResource( 1 )
+achievement_b = SubResource( 2 )
 solution_a = "63363631144997744444"
 
 [node name="Camera2D" parent="." index="0"]
