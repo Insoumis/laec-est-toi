@@ -161,16 +161,19 @@ position = Vector2( -20.4472, -11.5496 )
 [node name="LaecAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 68.5687, 34.3649 )
 frames = SubResource( 4 )
+frame = 2
 playing = true
 
 [node name="IsAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 123.272, 35.0721 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="YouAnimatedSprite" type="AnimatedSprite" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer/Title"]
 position = Vector2( 193.99, 34.3649 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Control" type="Control" parent="CenterContainer/PanelContainer/Control/VBoxContainer/HBoxContainer"]
@@ -237,6 +240,7 @@ margin_right = 274.0
 margin_bottom = 348.0
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/Control/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="tree_entered" from="CenterContainer/PanelContainer/Control/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_tree_entered"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/Control/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/Control/VBoxContainer/ExitLevelButton" to="." method="_on_ExitLevelButton_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/Control/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]

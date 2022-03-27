@@ -23,8 +23,6 @@ var level: LevelScene
 
 
 func _ready():
-	find_node('ResumeButton').grab_focus()
-	
 	if level:
 		for sentence in level.get_possible_sentences():
 			var sentence_label = Label.new()
@@ -98,3 +96,11 @@ func _on_ExitGameButton_pressed():
 		return
 	SoundFx.play("gui_select")
 	App.exit()
+
+
+# Nah, child node may not be in tree yet.
+#func _enter_tree():
+#	find_node('ResumeButton').grab_focus()
+# So we hook the child node's enter_tree, it works.
+func _on_ResumeButton_tree_entered():
+	find_node('ResumeButton').grab_focus()
