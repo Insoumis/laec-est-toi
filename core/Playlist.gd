@@ -64,7 +64,8 @@ func stop_song():
 	for any_song in get_songs():
 		fade_song_out(any_song)
 	if self.__silence_timer and is_instance_valid(self.__silence_timer):
-		self.__silence_timer.disconnect("timeout", self, "play_next_song")
+		if self.__silence_timer.is_connected("timeout", self, "play_next_song"):
+			self.__silence_timer.disconnect("timeout", self, "play_next_song")
 
 
 func fade_song_out(song:AudioStreamPlayer):
