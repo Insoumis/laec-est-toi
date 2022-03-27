@@ -18,6 +18,7 @@
 
 [node name="Jukebox" type="Node"]
 script = ExtResource( 4 )
+log_level = "warn"
 
 [node name="StartMenu" type="Node" parent="."]
 script = ExtResource( 1 )
