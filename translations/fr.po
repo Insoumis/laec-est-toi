@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2022-03-22 03:36+0100\n"
-"PO-Revision-Date: 2022-03-22 03:46+0100\n"
+"PO-Revision-Date: 2022-03-27 08:31+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -3146,11 +3146,11 @@ msgstr "https://laec.fr/section/13/garantir-la-securite-et-la-surete"
 
 #: menus/EndCredits.gd:29
 msgid "Coder"
-msgstr "Développeurs"
+msgstr "Développement"
 
 #: menus/EndCredits.gd:30
 msgid "Tool developer"
-msgstr "Développeurs d'outils"
+msgstr "Développement d'outils"
 
 #: menus/EndCredits.gd:31
 msgid "Game designer"
@@ -3170,11 +3170,11 @@ msgstr "Performance musicale"
 
 #: menus/EndCredits.gd:35
 msgid "Graphic designer"
-msgstr "Graphistes"
+msgstr "Graphismes"
 
 #: menus/EndCredits.gd:36
 msgid "Technical artist"
-msgstr "Artistes technique"
+msgstr "Arts techniques"
 
 #: menus/EndCredits.gd:37
 msgid "Sound designer"
