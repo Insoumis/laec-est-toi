@@ -32,6 +32,8 @@ signal portal_completed()
 #                          |___/
 # 
 
+export var boss := false
+
 # Secret portals do not show up, but can be activated
 export var secret := false
 
@@ -337,10 +339,17 @@ func is_completed() -> bool:
 
 func update_sprite(refresh_frames := true) -> void:
 	var concept := 'portal'
+	var on_its_head := false
 	if Engine.is_editor_hint():
 		concept = 'portal'
 	elif is_completed():
 		concept = 'portal_completed'
+	if self.boss:
+		concept = 'boss'
+		$AnimatedSprite.offset = Vector2.ZERO
+		$AnimatedSprite.modulate = Color('')
+		if not Engine.is_editor_hint() and is_completed():
+			on_its_head = true
 	var sf: SpriteFrames
 	if self.warp:
 		concept = 'warp'
@@ -350,6 +359,7 @@ func update_sprite(refresh_frames := true) -> void:
 		sf = SpriteFramesFactory.get_for_concept(concept, false, 'portals')
 	$AnimatedSprite.frames = sf
 	$AnimatedSprite.animation = get_animation_name()
+	$AnimatedSprite.flip_v = on_its_head
 	$AnimatedSprite.visible = (
 		not is_secret()
 		or
