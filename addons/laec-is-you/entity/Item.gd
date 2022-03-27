@@ -759,12 +759,15 @@ func pretend_to_move(direction):
 	target_position = self.position + (target_position - self.position) * 0.5
 	tween_position(target_position)
 
+
 func stop_tween_position():
 	$Tween.stop(self, 'position')
+
 
 func tween_position_change(target_position):
 	# deprecated
 	return tween_position(target_position)
+
 
 func tween_position(target_position):
 	$Tween.interpolate_property(
