@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/boss_0.png-662c14c9f67bd5e47375a9818c32fe28.res"
+group_file="res://sprites/portals/atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://sprites/portals/boss_0.png"
+dest_files=[ "res://.import/boss_0.png-662c14c9f67bd5e47375a9818c32fe28.res" ]
+
+[params]
+
+atlas_file="res://sprites/portals/atlas.png"
+import_mode=0
+crop_to_region=false
