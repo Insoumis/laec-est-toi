@@ -29,8 +29,10 @@ func on_focus_entered():
 	for other in others:
 		other.on_focus_exited()
 
+
 func on_focus_exited():
 	get_parent().visible = false
+
 
 func list_other_behaviors() -> Array:
 	var others := Array()
@@ -47,6 +49,7 @@ func list_other_behaviors() -> Array:
 	others.erase(self)  # we want the OTHER behaviors
 	
 	return others
+
 
 func collect_behaviors_under(under_node: Node) -> Array:
 	var behaviors := Array()
