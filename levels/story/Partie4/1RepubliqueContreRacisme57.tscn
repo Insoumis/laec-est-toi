@@ -8,12 +8,12 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 4 )
-trigger_on_turn_if = "88 love"
+trigger_on_turn_if = "69 love"
 trigger_on_victory_if = ""
 image = ExtResource( 5 )
 snake_identifier = "too_much_love"
-title = ""
-title_custom = "Amour ubiquitaire"
+title = "level.1RepubliqueContreRacisme57.too_much_love.title"
+title_custom = "Avalanche de bisous"
 
 [node name="1RepubliqueContreRacisme57" instance=ExtResource( 2 )]
 contribute_to_completion_score = true
