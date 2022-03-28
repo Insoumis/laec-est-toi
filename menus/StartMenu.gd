@@ -18,6 +18,7 @@ func _ready():
 	if OS.has_feature("HTML5"):
 		self.exit_button.hide()
 		self.settings_button.focus_neighbour_bottom = "./PlayStoryButton"
+		
 		var html5_disclaimer = load(Game.html5_disclaimer_scene_path).instance()
 		add_child(html5_disclaimer)
 	connect_cursor_to_buttons()
@@ -86,7 +87,6 @@ func start_idle_demo():
 	
 	var idle_demo = idle_demo_scene.instance()
 	Game.switch_to_scene(idle_demo, false, true, false)
-#	add_child(idle_demo)
 
 
 func reveal_secret_editor_perhaps():
