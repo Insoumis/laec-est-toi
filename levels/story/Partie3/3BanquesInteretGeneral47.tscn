@@ -12,7 +12,7 @@ trigger_on_turn_if = "5 law"
 trigger_on_victory_if = ""
 image = ExtResource( 5 )
 snake_identifier = "luckyluke"
-title = ""
+title = "level.3BanquesInteretGeneral47.luckyluke.title"
 title_custom = "Au nom de la loi !"
 
 [node name="3BanquesInteretGeneral47" instance=ExtResource( 1 )]

@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://core/Level.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/background/bg_story_respect.png" type="Texture" id=3]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=4]
+[ext_resource path="res://sprites/items/love_2.png" type="Texture" id=5]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+trigger_on_turn_if = "88 love"
+trigger_on_victory_if = ""
+image = ExtResource( 5 )
+snake_identifier = "too_much_love"
+title = ""
+title_custom = "Amour ubiquitaire"
 
 [node name="1RepubliqueContreRacisme57" instance=ExtResource( 2 )]
 contribute_to_completion_score = true
@@ -14,6 +25,7 @@ excerpt_custom = "Le peuple a dépassé ses divergences et s'est réuni pour fai
 
 Nous mettons en œuvre un plan d’action global contre les discriminations (emploi, logement, éducation, santé...). Nous créons un récépissé de contrôle d’identité pour lutter contre le contrôle au faciès."
 link_custom = "https://laec.fr/s57"
+achievement_a = SubResource( 1 )
 solution_a = "6944114131413131619633114766669799367777979"
 
 [node name="Camera2D" parent="." index="0"]

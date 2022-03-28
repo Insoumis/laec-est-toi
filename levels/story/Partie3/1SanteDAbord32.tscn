@@ -13,7 +13,7 @@ trigger_on_turn_if = "2 laec"
 trigger_on_victory_if = ""
 image = ExtResource( 4 )
 snake_identifier = "proselyt"
-title = ""
+title = "level.1SanteDAbord32.proselyt.title"
 title_custom = "Conscription républicaine"
 
 [sub_resource type="Resource" id=2]
@@ -22,7 +22,7 @@ trigger_on_turn_if = "people is you & laec is you"
 trigger_on_victory_if = ""
 image = ExtResource( 6 )
 snake_identifier = "conscrit"
-title = ""
+title = "level.1SanteDAbord32.conscrit.title"
 title_custom = "L'Avenir En Commun, c'est VOUS. <3"
 
 [node name="1SanteDAbord32" instance=ExtResource( 1 )]
