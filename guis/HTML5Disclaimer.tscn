@@ -55,7 +55,7 @@ __meta__ = {
 [node name="OKButton" type="Button" parent="DisclaimerPanel/VBoxContainer"]
 margin_top = 61.0
 margin_right = 614.0
-margin_bottom = 81.0
-text = "ACCEPTER"
+margin_bottom = 75.0
+text = "J'ai compris"
 
 [connection signal="pressed" from="DisclaimerPanel/VBoxContainer/OKButton" to="." method="_on_OKButton_pressed"]
