@@ -4,13 +4,13 @@
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 
 [node name="06FindFriends" instance=ExtResource( 1 )]
-title = "level.06.FindFriends.title"
-excerpt = "level.06.FindFriends.excerpt"
-link = "level.06.FindFriends.link"
+title = "level.06FindFriends.title"
+excerpt = "level.06FindFriends.excerpt"
+link = "level.06FindFriends.link"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
-tile_data = PoolIntArray( -1, 23, 0, -65536, 23, 0, -65535, 23, 0, 65534, 23, 0, 65535, 23, 0, 0, 23, 0, 1, 23, 0, 2, 23, 0, 131069, 23, 0, 131070, 23, 0, 131071, 23, 0, 65536, 23, 0, 65537, 23, 0, 196607, 23, 0, 131072, 23, 0, 131073, 23, 0 )
+tile_data = PoolIntArray( -262144, 24, 0, -262143, 24, 0, -262142, 24, 0, -131074, 24, 0, -131073, 24, 0, -196608, 24, 0, -196607, 24, 0, -196606, 24, 0, -196605, 24, 0, -65538, 24, 0, -65537, 24, 0, -131069, 24, 0, -131068, 24, 0, -3, 24, 0, -2, 24, 0, -65536, 23, 0, -65535, 23, 0, -65533, 24, 0, -65532, 24, 0, 65533, 24, 0, 65534, 24, 0, 0, 23, 0, 1, 23, 0, 2, 24, 0, 3, 24, 0, 4, 24, 0, 131068, 24, 0, 131069, 23, 0, 131071, 23, 0, 65536, 23, 0, 65537, 24, 0, 65538, 24, 0, 65539, 24, 0, 196604, 24, 0, 196605, 24, 0, 196606, 24, 0, 131074, 24, 0, 131075, 24, 0, 262140, 24, 0, 262141, 24, 0, 262142, 24, 0, 262143, 24, 0, 196608, 24, 0, 196609, 24, 0, 196610, 24, 0, 327678, 24, 0, 327679, 24, 0, 262144, 24, 0, 262145, 24, 0 )
 
 [node name="MiniDecorFarTileMap" parent="." index="4"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
@@ -21,33 +21,33 @@ cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 [node name="MiniDecorNearTileMap" parent="." index="6"]
 cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 
-[node name="MonarcText" parent="Items" index="0" instance=ExtResource( 3 )]
-position = Vector2( -32, -53.0239 )
+[node name="MoneyText" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( -416, -143.922 )
 is_text = true
-concept_name = "monarc"
-cell_position = Vector2( 0, -1 )
-tile_position = Vector2( -1, -1 )
+concept_name = "money"
+cell_position = Vector2( -5, -3 )
+tile_position = Vector2( -7, -3 )
 
 [node name="IsText" parent="Items" index="1" instance=ExtResource( 3 )]
-position = Vector2( 32, -53.0239 )
+position = Vector2( -352, -143.922 )
 is_text = true
 concept_name = "is"
-cell_position = Vector2( 1, -1 )
-tile_position = Vector2( 0, -1 )
+cell_position = Vector2( -4, -3 )
+tile_position = Vector2( -6, -3 )
 
 [node name="DefeatText" parent="Items" index="2" instance=ExtResource( 3 )]
-position = Vector2( 96, -53.0239 )
+position = Vector2( -288, -143.922 )
 is_text = true
 concept_name = "defeat"
-cell_position = Vector2( 2, -1 )
-tile_position = Vector2( 1, -1 )
+cell_position = Vector2( -3, -3 )
+tile_position = Vector2( -5, -3 )
 
 [node name="LaecText" parent="Items" index="3" instance=ExtResource( 3 )]
-position = Vector2( -192, 174.221 )
+position = Vector2( -416, -234.82 )
 is_text = true
 concept_name = "laec"
-cell_position = Vector2( -5, 4 )
-tile_position = Vector2( -3, 4 )
+cell_position = Vector2( -4, -5 )
+tile_position = Vector2( -7, -5 )
 
 [node name="Laec" parent="Items" index="4" instance=ExtResource( 3 )]
 position = Vector2( 96, 37.8842 )
@@ -56,16 +56,31 @@ cell_position = Vector2( 1, 1 )
 tile_position = Vector2( 1, 1 )
 is_you = true
 
-[node name="IsText2" parent="Items" index="5" instance=ExtResource( 3 )]
-position = Vector2( -128, 174.221 )
+[node name="Lae" parent="Items" index="5" instance=ExtResource( 3 )]
+position = Vector2( 32, -53.0239 )
+concept_name = "lae"
+cell_position = Vector2( 1, -1 )
+tile_position = Vector2( 0, -1 )
+
+[node name="LaeText" parent="Items" index="6" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 96, -53.0239 )
+is_text = true
+concept_name = "lae"
+cell_position = Vector2( 2, -1 )
+tile_position = Vector2( 1, -1 )
+is_lit = false
+
+[node name="IsText2" parent="Items" index="7" instance=ExtResource( 3 )]
+position = Vector2( -352, -234.82 )
 is_text = true
 concept_name = "is"
-cell_position = Vector2( -4, 4 )
-tile_position = Vector2( -2, 4 )
+cell_position = Vector2( -3, -5 )
+tile_position = Vector2( -6, -5 )
 
-[node name="YouText" parent="Items" index="6" instance=ExtResource( 3 )]
-position = Vector2( -64, 174.221 )
+[node name="YouText" parent="Items" index="8" instance=ExtResource( 3 )]
+position = Vector2( -288, -234.82 )
 is_text = true
 concept_name = "you"
-cell_position = Vector2( -3, 4 )
-tile_position = Vector2( -1, 4 )
+cell_position = Vector2( -2, -5 )
+tile_position = Vector2( -5, -5 )

@@ -129,3 +129,11 @@ concept_name = "laec"
 cell_position = Vector2( -1, -2 )
 tile_position = Vector2( -2, -2 )
 is_you = true
+
+[node name="Portal11" parent="Items" index="14" instance=ExtResource( 3 )]
+position = Vector2( -192, -7.57484 )
+cell_position = Vector2( -3, 0 )
+tile_position = Vector2( -3, 0 )
+warp = true
+go_back = true
+title_override = "Précédent"
