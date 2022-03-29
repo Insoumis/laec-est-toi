@@ -220,6 +220,10 @@ func generate_spriteframes(items: Array):  # of PoolItem[]
 #	var destination_rect = Rect2(Vector2(0.0, 0.0), Vector2(float(QUADRANT_SIZE), float(QUADRANT_SIZE)))
 
 	for item in items:
+		
+		if item.concept == 'undefined':
+			print_debug("AM HERE")
+		
 		for direction in item.animations:
 			var animation = item.animations[direction]
 			

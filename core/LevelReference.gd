@@ -1,6 +1,6 @@
 extends Resource
 class_name LevelReference
-#class_name LevelResource  # todo
+#class_name LevelResource  # todo #jambalai
 
 # Kind of like a pointer to a Level.
 # Does not hold all the level data, but should hold enough to invoke it.
@@ -52,7 +52,6 @@ func get_is_orphan():
 
 
 #func hydrate_from_instance() -> int:
-#	pass
 #	return OK
 
 func _to_string() -> String:

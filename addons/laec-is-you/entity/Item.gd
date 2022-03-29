@@ -565,11 +565,15 @@ func update_sprite(refresh_frames := true) -> void:
 		animation_name = "%s_0" % [animation_name_raw]
 	if not sprite.get_sprite_frames().has_animation(animation_name):
 		printerr("No animation `%s' found for item `%s'" % [animation_name, concept])
-	
-	if animation_name != sprite.animation:
-		current_shiver_frame = (current_shiver_frame + 1) % sprite.frames.get_frame_count(animation_name)
-	
-	sprite.play(animation_name)
+	else:
+		if animation_name != sprite.animation:
+			# During replays, stuff like text MONARC appears frozen, since it changes anims.
+			# Now it's shivering a little bit faster, rather than freezing, which is ok.
+			var max_shiver_frames := sprite.frames.get_frame_count(animation_name)
+			if max_shiver_frames > 0:
+				current_shiver_frame = (current_shiver_frame + 1) % max_shiver_frames
+		
+		sprite.play(animation_name)
 	
 	sprite.set_frame(current_shiver_frame)  # what happens if it's too big?
 	sprite.flip_h = flip_h
