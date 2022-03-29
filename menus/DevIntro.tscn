@@ -13,6 +13,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 next_scene_path = "res://menus/StartMenu.tscn"
+next_scene_path_if_html5 = "res://guis/HTML5Disclaimer.tscn"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.5

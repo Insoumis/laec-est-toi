@@ -494,6 +494,7 @@ func go_back_to_main_menu() -> void:
 		var previous_scene = self.scenes_ancestry.pop_back()
 		if previous_scene is StartMenu:
 			found_menu = previous_scene
+			#breakpoint
 			break
 		delete_scene(previous_scene)
 	

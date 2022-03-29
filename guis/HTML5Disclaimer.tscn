@@ -1,21 +1,26 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://guis/HTML5Disclaimer.gd" type="Script" id=1]
+[ext_resource path="res://guis/PrettyMenuTheme.tres" type="Theme" id=2]
 
 [node name="DarkColorRect" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+theme = ExtResource( 2 )
 color = Color( 0, 0, 0, 0.819608 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+next_scene_path = "res://menus/StartMenu.tscn"
 
 [node name="DisclaimerPanel" type="Panel" parent="."]
-anchor_left = 0.2
-anchor_top = 0.15
-anchor_right = 0.8
-anchor_bottom = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -28,24 +33,30 @@ __meta__ = {
 }
 
 [node name="WelcomeLabel" type="Label" parent="DisclaimerPanel/VBoxContainer"]
-margin_right = 614.0
+visible = false
+margin_right = 1008.0
 margin_bottom = 14.0
 text = "Bienvenue dans LAEC IS YOU"
 align = 1
 
 [node name="HSeparator" type="HSeparator" parent="DisclaimerPanel/VBoxContainer"]
-margin_top = 18.0
-margin_right = 614.0
-margin_bottom = 22.0
+visible = false
+margin_right = 1008.0
+margin_bottom = 4.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="DisclaimerLabel" type="Label" parent="DisclaimerPanel/VBoxContainer"]
-margin_top = 26.0
-margin_right = 614.0
-margin_bottom = 57.0
-text = "Vous avez démarré la version navigateur du jeu. Pour une expérience optimale nous vous invitons à le télécharger."
+margin_right = 1004.0
+margin_bottom = 525.0
+text = "Bienvenue dans LAEC EST TOI
+
+Vous avez démarré la version navigateur du jeu.
+Pour une expérience optimale, nous vous invitons à le télécharger.
+
+Ce jeu est open-source et libre (sauf les musiques) et a été développé spontanément et entièrement par des bénévoles du Discord Insoumis.
+Il s'inspire du jeu BABA IS YOU.  Cependant il n'y est pas affilié et ne reflète en rien les opinions de son créateur."
 align = 1
 autowrap = true
 __meta__ = {
@@ -53,9 +64,9 @@ __meta__ = {
 }
 
 [node name="OKButton" type="Button" parent="DisclaimerPanel/VBoxContainer"]
-margin_top = 61.0
-margin_right = 614.0
-margin_bottom = 75.0
+margin_top = 529.0
+margin_right = 1004.0
+margin_bottom = 570.0
 text = "J'ai compris"
 
 [connection signal="pressed" from="DisclaimerPanel/VBoxContainer/OKButton" to="." method="_on_OKButton_pressed"]
