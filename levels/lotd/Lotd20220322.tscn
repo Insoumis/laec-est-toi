@@ -38,6 +38,7 @@ De même, la légalisation du cannabis permet son encadrement, tout en luttant c
 La police est ainsi libérée d’une politique répressive inefficace."
 achievement_a = SubResource( 1 )
 achievement_b = SubResource( 2 )
+solution_a = "699793636144433"
 
 [node name="HexagonalTileMap" parent="." index="2"]
 cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )

@@ -1,0 +1,203 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/laec-is-you/entity/Item.gd" type="Script" id=2]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=4]
+[ext_resource path="res://sprites/items/lobby_right_1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/items/culture_right_1.png" type="Texture" id=6]
+[ext_resource path="res://core/Sign.gd" type="Script" id=7]
+[ext_resource path="res://core/Sign.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+trigger_on_turn_if = "lobby is win"
+trigger_on_victory_if = ""
+image = ExtResource( 5 )
+snake_identifier = "humpeli"
+title = ""
+title_custom = "Corruption de l'esprit indie"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+trigger_on_turn_if = "not 1 culture"
+trigger_on_victory_if = ""
+image = ExtResource( 6 )
+snake_identifier = "no_culture"
+title = ""
+title_custom = "Oblitérateur de fangames"
+
+[node name="Lotd20220329" instance=ExtResource( 1 )]
+title = "level.Lotd20220329.title"
+excerpt = "level.Lotd20220329.excerpt"
+link = "level.Lotd20220329.link"
+title_custom = "Consentement Brisé"
+excerpt_custom = "Le consentement qu'on croyait acquis
+D'un seul tweet est repris
+Et dans un silence de mort
+Le Soin fane et déplore."
+achievement_a = SubResource( 1 )
+achievement_b = SubResource( 2 )
+solution_a = "44174113399634417997436317974196346366697134447131313631"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -196611, 31, 0, -196610, 31, 0, -262143, 31, 0, -262142, 31, 0, -131076, 31, 0, -131075, 31, 0, -131074, 31, 0, -196608, 31, 0, -196607, 31, 0, -196606, 31, 0, -65540, 31, 0, -65539, 31, 0, -65538, 31, 0, -65537, 31, 0, -131072, 31, 0, -131071, 31, 0, -131070, 31, 0, -131069, 31, 0, -4, 31, 0, -3, 31, 0, -2, 31, 0, -1, 31, 0, -65536, 31, 0, 65533, 31, 0, 65534, 31, 0, 3, 33, 0, 131070, 31, 0, 131071, 31, 0, 65536, 31, 0, 65537, 31, 0, 196606, 31, 0, 196607, 31, 0, 131072, 31, 0, 131073, 31, 0, 262142, 31, 0, 262143, 31, 0, 196608, 31, 0, 327679, 31, 0, 262144, 31, 0, 393215, 31, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+tile_data = PoolIntArray( -327670, 20, 0, -327665, 20, 0 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+tile_data = PoolIntArray( -524317, 536870944, 0, -196585, 3, 0, 131099, 8, 0 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+tile_data = PoolIntArray( -589814, 8, 0, -327665, 8, 0, 65557, 8, 0, 327670, 32, 0 )
+
+[node name="BeeText" type="Node2D" parent="Items" index="0" instance=ExtResource( 3 )]
+position = Vector2( -416, -234.82 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "bee"
+cell_position = Vector2( -4, -5 )
+tile_position = Vector2( -7, -5 )
+
+[node name="Bee" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( 192, -98.4629 )
+concept_name = "bee"
+cell_position = Vector2( 4, -2 )
+tile_position = Vector2( 3, -2 )
+direction = "left"
+is_you = true
+
+[node name="IsText" type="Node2D" parent="Items" index="2" instance=ExtResource( 3 )]
+position = Vector2( -352, -234.82 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, -5 )
+tile_position = Vector2( -6, -5 )
+
+[node name="YouText" type="Node2D" parent="Items" index="3" instance=ExtResource( 3 )]
+position = Vector2( -288, -234.82 )
+script = ExtResource( 2 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( -2, -5 )
+tile_position = Vector2( -5, -5 )
+
+[node name="CultureText" parent="Items" index="4" instance=ExtResource( 3 )]
+position = Vector2( -224, 128.772 )
+is_text = true
+concept_name = "culture"
+cell_position = Vector2( -5, 3 )
+tile_position = Vector2( -4, 3 )
+
+[node name="Culture" parent="Items" index="5" instance=ExtResource( 3 )]
+position = Vector2( -32, 219.67 )
+concept_name = "culture"
+cell_position = Vector2( -3, 5 )
+tile_position = Vector2( -1, 5 )
+is_weak = true
+
+[node name="Culture2" parent="Items" index="6" instance=ExtResource( 3 )]
+position = Vector2( 0, 174.221 )
+concept_name = "culture"
+cell_position = Vector2( -2, 4 )
+tile_position = Vector2( 0, 4 )
+is_weak = true
+
+[node name="Culture3" parent="Items" index="7" instance=ExtResource( 3 )]
+position = Vector2( 32, 128.772 )
+concept_name = "culture"
+cell_position = Vector2( -1, 3 )
+tile_position = Vector2( 0, 3 )
+is_weak = true
+
+[node name="Culture4" parent="Items" index="8" instance=ExtResource( 3 )]
+position = Vector2( 64, 83.3233 )
+concept_name = "culture"
+cell_position = Vector2( 0, 2 )
+tile_position = Vector2( 1, 2 )
+is_weak = true
+
+[node name="Lobby" parent="Items" index="9" instance=ExtResource( 3 )]
+position = Vector2( -96, 37.8743 )
+concept_name = "lobby"
+cell_position = Vector2( -2, 1 )
+tile_position = Vector2( -2, 1 )
+direction = "left"
+is_stop = true
+
+[node name="LobbyText" parent="Items" index="10" instance=ExtResource( 3 )]
+position = Vector2( -256, -98.4729 )
+is_text = true
+concept_name = "lobby"
+cell_position = Vector2( -3, -2 )
+tile_position = Vector2( -4, -2 )
+
+[node name="IsText2" parent="Items" index="11" instance=ExtResource( 3 )]
+position = Vector2( -160, 128.772 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, 3 )
+tile_position = Vector2( -3, 3 )
+
+[node name="WinText" parent="Items" index="12" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( 96, -143.922 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( 3, -3 )
+tile_position = Vector2( 1, -3 )
+is_lit = false
+
+[node name="CultureText2" parent="Items" index="13" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -160, -143.922 )
+is_text = true
+concept_name = "culture"
+cell_position = Vector2( -1, -3 )
+tile_position = Vector2( -3, -3 )
+is_lit = false
+
+[node name="IsText3" parent="Items" index="14" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -32, -53.0239 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 0, -1 )
+tile_position = Vector2( -1, -1 )
+is_lit = false
+
+[node name="WeakText" parent="Items" index="15" instance=ExtResource( 3 )]
+position = Vector2( -96, 128.772 )
+is_text = true
+concept_name = "weak"
+cell_position = Vector2( -3, 3 )
+tile_position = Vector2( -2, 3 )
+
+[node name="IsText4" parent="Items" index="16" instance=ExtResource( 3 )]
+position = Vector2( -224, -53.0239 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -3, -1 )
+tile_position = Vector2( -4, -1 )
+
+[node name="StopText" parent="Items" index="17" instance=ExtResource( 3 )]
+position = Vector2( -192, -7.57484 )
+is_text = true
+concept_name = "stop"
+cell_position = Vector2( -3, 0 )
+tile_position = Vector2( -3, 0 )
+
+[node name="Sign" type="Node2D" parent="Items" index="18" instance=ExtResource( 8 )]
+position = Vector2( 96, 37.8742 )
+script = ExtResource( 7 )
+cell_position = Vector2( 1, 1 )
+tile_position = Vector2( 1, 1 )
+contents = "Rester neutre face à une injustice,
+C'est choisir le camp de l'oppresseur.
+-- Desmond Tutu"
