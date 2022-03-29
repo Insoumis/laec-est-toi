@@ -14,14 +14,11 @@ var current_idle_demo_cooldown := idle_demo_cooldown
 
 
 func _ready():
+	print("Start Menu is getting ready…")
 	TranslationServer.set_locale('fr')
-	if OS.has_feature("HTML5") or true:
-		print("Start Menu is getting ready for HTML5...")
+	if OS.has_feature("HTML5"):
 		self.exit_button.hide()
 		self.settings_button.focus_neighbour_bottom = "./PlayStoryButton"
-#		var html5_disclaimer = load(Game.html5_disclaimer_scene_path).instance()
-#		add_child(html5_disclaimer)
-#		html5_disclaimer.popup_centered()
 	connect_cursor_to_buttons()
 	start_idle_demo()
 

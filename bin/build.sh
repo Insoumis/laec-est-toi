@@ -284,6 +284,7 @@ if [ "${BUILD_TARGET}" != "source" ]; then
     # We need a CI that checks the output of Godot.
     echo -e "${Green}Do not panic about the errors above…${Off}"
 
+    # Not packing, since it makes the game unplayable on some builds
 #    if [ "${BUILD_TARGET}" = "linux64" ]; then
 #        echo -e "${Green}Packing the linux binary to reduce its size…${Off}"
 #        upx -9 -v ${BUILD_PATH}/${BINARY_NAME}
@@ -405,7 +406,8 @@ if [ ${SHOULD_UPLOAD} -eq 1 ] ; then
     
     
     echo "Create symbolic link for latest"
-    ssh laec-est-toi.fr "ln -sf ${DISTANT_DIR}/${VERSION}/${BUILD_NAME}${EXTENSION} ${DISTANT_DIR}/latest/${BUILD_LATEST_NAME}${EXTENSION}" 
+    ssh laec-est-toi.fr "unlink ${DISTANT_DIR}/latest/${BUILD_LATEST_NAME}${EXTENSION}"
+    ssh laec-est-toi.fr "ln -sf ${DISTANT_DIR}/${VERSION}/${BUILD_NAME}${EXTENSION} ${DISTANT_DIR}/latest/${BUILD_LATEST_NAME}${EXTENSION}"
 fi
 
 
