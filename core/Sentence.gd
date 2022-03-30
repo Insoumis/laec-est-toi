@@ -361,9 +361,12 @@ func consume_subject_epithet_prefix(items:Array, subject:Subject) -> Consumption
 	if nots_consumption.has_happened():
 		was_negated = nots_consumption.has_consumed_odd_amount()
 	
+	if not nots_consumption.items_after:
+		return consumption
+	
 	var has_epithet := false
 	var cursor := 0
-	var item_concept : String = items[cursor].get_concept_name()
+	var item_concept: String = nots_consumption.items_after[cursor].get_concept_name()
 	if item_concept in Words.EPITHET_PREFIXES:
 		var epithet = Epithet.new()
 		epithet.concept = item_concept
