@@ -279,6 +279,7 @@ func is_available(loop_index := 0) -> bool:
 	var available := true
 	
 	# fixme: use a for loop and some reflection, we can afford it here
+	# or perhaps implement a more complete dependency system
 	if self.dependency_a:
 		var dep = get_node_or_null(self.dependency_a)
 		if not dep:
@@ -299,7 +300,7 @@ func is_available(loop_index := 0) -> bool:
 	
 	if self.daily and available:
 		var date = DateUtils.extract_date(self.level_path)
-		available = DateUtils.date_a_before_b(date, OS.get_date())
+		available = DateUtils.date_a_before_b_or_equal(date, OS.get_date())
 	
 	return available
 

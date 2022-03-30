@@ -112,6 +112,12 @@ static func date_a_before_b(date_obj_a, date_obj_b) -> bool:
 	return ord_a < ord_b
 
 
+static func date_a_before_b_or_equal(date_obj_a, date_obj_b) -> bool:
+	var ord_a = _date_to_ord(date_obj_a)
+	var ord_b = _date_to_ord(date_obj_b)
+	return ord_a <= ord_b
+
+
 static func extract_date(string_with_date: String) -> Dictionary:
 	var date_regex = RegEx.new()
 	var compiled = date_regex.compile("(?<year>[0-9]{4,})(?<month>[0-9]{2})(?<day>[0-9]{2})")
@@ -135,7 +141,7 @@ static func extract_date(string_with_date: String) -> Dictionary:
 static func _is_leapyear(year):
 	return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
 
-static func _date_to_ord(date_obj):
+static func _date_to_ord(date_obj) -> int:
 	# Converts a valid date object to days since Jan 1, year 1 (which is day 0).
 	var month = int(date_obj["month"])
 	var year = int(date_obj["year"])
