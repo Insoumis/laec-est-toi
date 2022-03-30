@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 # This is a test, a draft, a PoC?  (Piece of Caca)
 # Looks like a lot of work to get what I want.
@@ -17,6 +17,7 @@ extends Node2D
 
 
 onready var levels_table: DataTable = find_node("LevelsTable")
+onready var loading_label: Label = find_node("LoadingWaitLabel")
 
 
 # Indexation takes a long time, so we thread it.
@@ -26,11 +27,12 @@ var thread: Thread
 
 
 func _ready():
+	# Threaded works, but takes a very long while (30s)
 	thread = Thread.new()
 	var started = thread.start(self, "start")
 	if OK != started:
 		printerr("Cannot start indexation thread.")
-	# or start it on the main thread:
+	# or start it on the main thread, but it will be blocked for a few seconds
 #	start()
 
 
@@ -40,6 +42,7 @@ func _process(_delta):
 			return
 		thread.wait_to_finish()
 		thread = null
+		hide_spinner()
 		build_table()
 
 
@@ -52,13 +55,14 @@ func start():
 	prints("Starting Levels Viz…")
 	
 	Chronometer.start()
-	# We could also use the singleton LevelsPool, probably
-#	self.levels_pool = LevelsPoolClass.new()
 	LevelsPool.should_use_exclusion = false
-#	LevelsPool.init()
-	LevelsPool.init_full()  # FIXME crashes when writing cache to disk
-	prints("LevelsPool#init_full():", Chronometer.stop(), "s")
+	LevelsPool.init_full()
+	prints("LevelsPool#init_full() took", Chronometer.stop(), "s")
 	# LevelsPool#init_full(): 1.640474 s
+
+
+func hide_spinner() -> void:
+	self.loading_label.visible = false
 
 
 func build_table():

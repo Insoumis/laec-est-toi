@@ -2,43 +2,46 @@
 
 [ext_resource path="res://tools/LevelsViz.gd" type="Script" id=1]
 [ext_resource path="res://tools/DataTable.gd" type="Script" id=2]
+[ext_resource path="res://guis/PrettyMenuTheme.tres" type="Theme" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 800, 100 )
-
-[node name="LevelsViz" type="Node2D"]
+[node name="LevelsViz" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+[node name="LoadingWaitLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -218.378
+margin_top = -46.1626
+margin_right = 216.622
+margin_bottom = 46.8374
+theme = ExtResource( 3 )
+text = "PATIENCE IS VIRTUE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="LevelsTable" type="GridContainer" parent="CanvasLayer/ScrollContainer"]
+[node name="LevelsTable" type="GridContainer" parent="ScrollContainer"]
 script = ExtResource( 2 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-
-[node name="LinksLayer" type="Node2D" parent="."]
-visible = false
-
-[node name="PortalsLayer" type="Node2D" parent="."]
-visible = false
-
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-current = true
-
-[node name="Floor" type="StaticBody2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2( -6.01965, 386.65 )
-shape = SubResource( 1 )
-
-[node name="Viewport" type="Viewport" parent="."]
