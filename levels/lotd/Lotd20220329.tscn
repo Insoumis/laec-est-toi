@@ -5,7 +5,7 @@
 [ext_resource path="res://core/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://core/Achievement.gd" type="Script" id=4]
 [ext_resource path="res://sprites/items/lobby_right_1.png" type="Texture" id=5]
-[ext_resource path="res://sprites/items/culture_right_1.png" type="Texture" id=6]
+[ext_resource path="res://sprites/items/culture_left_1.png" type="Texture" id=6]
 [ext_resource path="res://core/Sign.gd" type="Script" id=7]
 [ext_resource path="res://core/Sign.tscn" type="PackedScene" id=8]
 
