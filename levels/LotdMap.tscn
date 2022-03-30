@@ -141,15 +141,17 @@ daily = true
 title = "Consentement Brisé"
 
 [node name="Portal12" parent="Items" index="14" instance=ExtResource( 2 )]
-position = Vector2( 320, -98.4729 )
-cell_position = Vector2( 6, -2 )
-tile_position = Vector2( 5, -2 )
+position = Vector2( 192, -7.57484 )
+cell_position = Vector2( 3, 0 )
+tile_position = Vector2( 3, 0 )
+level_path = "res://levels/lotd/Lotd20220330.tscn"
 daily = true
+title = "30 Mars 2022"
 
 [node name="Portal13" parent="Items" index="15" instance=ExtResource( 2 )]
-position = Vector2( 128, -7.57484 )
-cell_position = Vector2( 2, 0 )
-tile_position = Vector2( 2, 0 )
+position = Vector2( 160, -53.0239 )
+cell_position = Vector2( 3, -1 )
+tile_position = Vector2( 2, -1 )
 daily = true
 
 [node name="Portal14" parent="Items" index="16" instance=ExtResource( 2 )]
@@ -282,9 +284,9 @@ contents = "Un nouveau niveau se
 débloque chaque jour !"
 
 [node name="Sign2" parent="Items" index="37" instance=ExtResource( 5 )]
-position = Vector2( 192, -7.57484 )
-cell_position = Vector2( 3, 0 )
-tile_position = Vector2( 3, 0 )
+position = Vector2( 128, -7.57484 )
+cell_position = Vector2( 2, 0 )
+tile_position = Vector2( 2, 0 )
 contents = "Travaux en Cours
 ---
 Retéléchargez le jeu

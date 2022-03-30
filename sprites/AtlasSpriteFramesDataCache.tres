@@ -26,7 +26,7 @@ item_sprite_frames_dictionary = {
 }, {
 "region": Rect2( 576, 0, 72, 72 )
 } ],
-"culture_right_0": [ {
+"culture_left_0": [ {
 "region": Rect2( 648, 0, 72, 72 )
 }, {
 "region": Rect2( 720, 0, 72, 72 )
