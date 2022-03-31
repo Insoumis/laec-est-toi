@@ -28,7 +28,9 @@ onready var excerpt_label = find_node("LaecExcerptRtlQueue")
 #onready var level_preview = find_node("Replay/*/Level")  # ? why null
 onready var level_preview = find_node("Level")
 onready var time_field = find_node("TimeField")
+onready var best_time_field = find_node("BestTime")
 onready var moves_field = find_node("MovesField")
+onready var best_moves_field = find_node("BestMoves")
 
 
 func _ready():
@@ -45,6 +47,24 @@ func _ready():
 		
 		self.time_field.text = "%.1f s" % self.level.get_level_time()
 		self.moves_field.text = "%d" % len(self.level.recorded_solution)
+		
+		var level_save = Game.get_level_save(self.level.filename)
+		if not level_save:
+			self.best_moves_field.visible = false
+			self.best_time_field.visible = false
+		else:
+			if level_save.has('recorded_solution'):
+				self.best_moves_field.visible = true
+				self.best_moves_field.text = "%s: %d" % [
+					tr("best"),
+					len(level_save['recorded_solution']),
+				]
+			if level_save.has('time_spent'):
+				self.best_time_field.visible = true
+				self.best_time_field.text = "%s: %.1f s" % [
+					tr("best"),
+					level_save['time_spent'],
+				]
 		
 		self.level_preview.replay_run = true
 		self.level_preview.items_palette = self.level.items_palette
@@ -105,3 +125,4 @@ func _on_MoreButton_pressed():
 		var link = self.level.get_link_displayed()
 		if link:
 			var _opened = OS.shell_open(link)
+

@@ -715,6 +715,19 @@ func register_victory(on_level):
 		):
 			datum['recorded_solution'] = on_level.recorded_solution
 	
+	var time_spent: float = on_level.get_level_time()
+	if time_spent:
+		if (
+			(not self.current_save_data['levels'][current_scene_path].has('time_spent'))
+			or
+			(
+				self.current_save_data['levels'][current_scene_path]['time_spent']
+				>=
+				time_spent
+			)
+		):
+			datum['time_spent'] = time_spent
+	
 	for key in datum:
 		self.current_save_data['levels'][current_scene_path][key] = datum[key]
 	
@@ -756,6 +769,15 @@ func is_level_complete(level_path):
 		and self.current_save_data['levels'][level_path].has('complete')
 		and self.current_save_data['levels'][level_path]['complete']
 	)
+
+
+func get_level_save(level_path):
+	if (
+		self.current_save_data.has('levels')
+		and self.current_save_data['levels'].has(level_path)
+	):
+		return self.current_save_data['levels'][level_path]
+	return null
 
 
 func get_completion_score() -> float:  # between 0.0 and 1.0
