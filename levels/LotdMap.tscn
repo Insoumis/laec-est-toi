@@ -149,15 +149,17 @@ daily = true
 title = "30 Mars 2022"
 
 [node name="Portal13" parent="Items" index="15" instance=ExtResource( 2 )]
-position = Vector2( 160, -53.0239 )
-cell_position = Vector2( 3, -1 )
-tile_position = Vector2( 2, -1 )
+position = Vector2( 128, -7.57484 )
+cell_position = Vector2( 2, 0 )
+tile_position = Vector2( 2, 0 )
+level_path = "res://levels/lotd/Lotd20220331.tscn"
 daily = true
+title = "31 Mars 2022"
 
 [node name="Portal14" parent="Items" index="16" instance=ExtResource( 2 )]
-position = Vector2( 96, 37.8742 )
-cell_position = Vector2( 1, 1 )
-tile_position = Vector2( 1, 1 )
+position = Vector2( 64, -7.57484 )
+cell_position = Vector2( 1, 0 )
+tile_position = Vector2( 1, 0 )
 daily = true
 
 [node name="Portal15" parent="Items" index="17" instance=ExtResource( 2 )]
@@ -284,9 +286,9 @@ contents = "Un nouveau niveau se
 débloque chaque jour !"
 
 [node name="Sign2" parent="Items" index="37" instance=ExtResource( 5 )]
-position = Vector2( 128, -7.57484 )
-cell_position = Vector2( 2, 0 )
-tile_position = Vector2( 2, 0 )
+position = Vector2( 96, 37.8742 )
+cell_position = Vector2( 1, 1 )
+tile_position = Vector2( 1, 1 )
 contents = "Travaux en Cours
 ---
 Retéléchargez le jeu
