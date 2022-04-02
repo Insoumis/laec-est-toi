@@ -92,6 +92,7 @@ position = Vector2( 64, -98.4728 )
 concept_name = "lobby"
 cell_position = Vector2( 2, -2 )
 tile_position = Vector2( 1, -2 )
+direction = "left"
 is_defeat = true
 
 [node name="Lobby3" parent="Items" index="5" instance=ExtResource( 2 )]
@@ -106,6 +107,7 @@ position = Vector2( 64, -7.57474 )
 concept_name = "lobby"
 cell_position = Vector2( 1, 0 )
 tile_position = Vector2( 1, 0 )
+direction = "left"
 is_defeat = true
 
 [node name="Lobby5" parent="Items" index="7" instance=ExtResource( 2 )]
@@ -120,6 +122,7 @@ position = Vector2( 64, 83.3233 )
 concept_name = "lobby"
 cell_position = Vector2( 0, 2 )
 tile_position = Vector2( 1, 2 )
+direction = "left"
 is_defeat = true
 
 [node name="Lobby7" parent="Items" index="9" instance=ExtResource( 2 )]
