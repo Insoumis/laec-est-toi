@@ -60,16 +60,17 @@ cell_position = Vector2( -2, -5 )
 tile_position = Vector2( -5, -5 )
 
 [node name="PortalOne" parent="Items" index="3" instance=ExtResource( 5 )]
-position = Vector2( -96, 128.772 )
-cell_position = Vector2( -3, 3 )
-tile_position = Vector2( -2, 3 )
+position = Vector2( -224, 128.772 )
+cell_position = Vector2( -5, 3 )
+tile_position = Vector2( -4, 3 )
 level_path = "res://levels/story/Partie1/1InterventionPopulaire4.tscn"
 title = "Intervention Populaire"
+title_override = "Intervention Populaire (ENTRÉE)"
 
 [node name="PortalTwo" parent="Items" index="4" instance=ExtResource( 5 )]
-position = Vector2( -192, -7.57484 )
-cell_position = Vector2( -3, 0 )
-tile_position = Vector2( -3, 0 )
+position = Vector2( -160, -53.0239 )
+cell_position = Vector2( -2, -1 )
+tile_position = Vector2( -3, -1 )
 level_path = "res://levels/story/Partie1/2AbolirMonarchPres2.tscn"
 dependency_a = NodePath("../PortalOne")
 title = "Abolir la Monarchie"
