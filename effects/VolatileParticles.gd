@@ -67,7 +67,8 @@ func restart_with_properties(extra_props := {}):
 		# We can't attach to parent or grandparent, so let's GTFO
 		.restart()
 	elif self.__is_ephemereal:
-		if get_tree():
+#		if get_tree():
+		if is_inside_tree():
 			self.__lifespan_timer = get_tree().create_timer(self.lifetime)
 			var _connected = self.__lifespan_timer.connect(
 				"timeout", self, "__exit_gracefully"
@@ -75,7 +76,8 @@ func restart_with_properties(extra_props := {}):
 			.restart()
 	else:
 		# We're going to make another ephemereal emitter and start it
-		if get_tree():
+#		if get_tree():
+		if is_inside_tree():
 			self.__delay_timer = get_tree().create_timer(ephemereal_delay)
 			var _connected = self.__delay_timer.connect(
 				"timeout", self, "__make_ephemereal", [extra_props]
