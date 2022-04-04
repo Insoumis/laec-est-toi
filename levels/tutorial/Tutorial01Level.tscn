@@ -345,24 +345,39 @@ scale = Vector2( 0.618, 0.618 )
 position = Vector2( -219.656, 160.966 )
 scale = Vector2( 0.8, 0.8 )
 
+[node name="Input" parent="Hud/MoveHint" index="0"]
+frame = 0
+
+[node name="Arrows" parent="Hud/MoveHint" index="1"]
+frame = 0
+
 [node name="ArrowLeft" parent="Hud/MoveHint" index="2"]
 visible = false
+frame = 0
+
+[node name="ArrowRight" parent="Hud/MoveHint" index="3"]
+frame = 0
 
 [node name="ArrowTopLeft" parent="Hud/MoveHint" index="4"]
 visible = false
+frame = 1
 
 [node name="ArrowBottomLeft" parent="Hud/MoveHint" index="5"]
 visible = false
+frame = 0
 
 [node name="ArrowBottomRight" parent="Hud/MoveHint" index="6"]
 visible = false
+frame = 0
 
 [node name="ArrowTopRight" parent="Hud/MoveHint" index="7"]
 visible = false
+frame = 0
 
 [node name="KeyboardArrowsHint" parent="Hud" index="3" instance=ExtResource( 8 )]
 position = Vector2( 356.154, 174.215 )
 scale = Vector2( 0.618, 0.618 )
+frame = 2
 
 [node name="PressHint" type="Control" parent="Hud/KeyboardArrowsHint" index="0"]
 show_behind_parent = true
@@ -407,49 +422,44 @@ position = Vector2( -66, -62 )
 
 [node name="Input" parent="Hud/GamepadHint/MoveHint" index="0"]
 visible = false
-frame = 0
+frame = 2
 
 [node name="Arrows" parent="Hud/GamepadHint/MoveHint" index="1"]
 material = SubResource( 2 )
 position = Vector2( -1, 21 )
-frame = 0
+frame = 2
 
 [node name="ArrowLeft" parent="Hud/GamepadHint/MoveHint" index="2"]
-frame = 0
+frame = 2
 
 [node name="ArrowRight" parent="Hud/GamepadHint/MoveHint" index="3"]
-frame = 0
+frame = 2
 
 [node name="ArrowTopLeft" parent="Hud/GamepadHint/MoveHint" index="4"]
-frame = 1
+frame = 0
 
 [node name="ArrowBottomLeft" parent="Hud/GamepadHint/MoveHint" index="5"]
-frame = 0
+frame = 2
 
 [node name="ArrowBottomRight" parent="Hud/GamepadHint/MoveHint" index="6"]
-frame = 0
+frame = 2
 
 [node name="ArrowTopRight" parent="Hud/GamepadHint/MoveHint" index="7"]
-frame = 0
+frame = 2
 
 [node name="Input" parent="Hud/GamepadHint" index="2"]
-frame = 2
+frame = 1
 
 [node name="AnimatedSprite" parent="Hud/GamepadHint/Input" index="0"]
 scale = Vector2( -1.271, -1.208 )
-frame = 2
+frame = 1
 
 [node name="AnimatedSprite4" parent="Hud/GamepadHint/Input" index="1"]
 visible = true
 scale = Vector2( -1.271, 1.208 )
-frame = 1
 
 [node name="AnimatedSprite2" parent="Hud/GamepadHint/Input" index="2"]
 visible = false
-frame = 1
-
-[node name="AnimatedSprite3" parent="Hud/GamepadHint/Input" index="3"]
-frame = 1
 
 [editable path="Hud/MoveHint"]
 [editable path="Hud/GamepadHint"]
