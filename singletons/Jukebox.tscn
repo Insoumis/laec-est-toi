@@ -50,12 +50,36 @@ bus = "Music"
 stream = ExtResource( 2 )
 bus = "Music"
 
+[node name="04" type="AudioStreamPlayer" parent="Story"]
+stream = ExtResource( 5 )
+bus = "Music"
+
+[node name="06" type="AudioStreamPlayer" parent="Story"]
+stream = ExtResource( 3 )
+bus = "Music"
+
 [node name="05" type="AudioStreamPlayer" parent="Story"]
 stream = ExtResource( 3 )
 bus = "Music"
 
 [node name="07" type="AudioStreamPlayer" parent="Story"]
 stream = ExtResource( 9 )
+bus = "Music"
+
+[node name="11" type="AudioStreamPlayer" parent="Story"]
+stream = ExtResource( 14 )
+bus = "Music"
+
+[node name="12" type="AudioStreamPlayer" parent="Story"]
+stream = ExtResource( 12 )
+bus = "Music"
+
+[node name="13" type="AudioStreamPlayer" parent="Story"]
+stream = ExtResource( 13 )
+bus = "Music"
+
+[node name="14" type="AudioStreamPlayer" parent="Story"]
+stream = ExtResource( 15 )
 bus = "Music"
 
 [node name="StoryAll" type="Node" parent="."]
