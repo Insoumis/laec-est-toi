@@ -413,7 +413,7 @@ func reset_level():
 			"`switch_to_level(…)' was never called."
 		)
 		return
-	self.switch_to_level(current_scene_path, true, false)
+	switch_to_level(current_scene_path, true, false)
 
 
 func enter_level(level_path, free_current_scene := false):
