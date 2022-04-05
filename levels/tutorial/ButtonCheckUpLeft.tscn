@@ -25,8 +25,9 @@ shader_param/mask = ExtResource( 7 )
 title = "level.ButtonCheckUpLeft.title"
 excerpt = "level.ButtonCheckUpLeft.excerpt"
 link = "level.ButtonCheckUpLeft.link"
-forward_level_path = "res://levels/tutorial/ButtonCheckUpRight.tscn"
+forward_level_path = "res://levels/tutorial/Tutorial02Level.tscn"
 skip_victory_screen = true
+solution_a = "774996"
 
 [node name="GemClusterBackground" parent="BackgroundLayer" index="0"]
 visible = false
@@ -36,74 +37,78 @@ visible = true
 texture = ExtResource( 10 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
-cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
-tile_data = PoolIntArray( -65537, 27, 0, -131072, 27, 0, -131071, 26, 0, -2, 27, 0, -1, 27, 0, -65536, 26, 0, -65535, 23, 0, 65534, 27, 0, 65535, 27, 0, 0, 26, 0, 1, 23, 0, 2, 26, 0, 131070, 26, 0, 131071, 26, 0, 65536, 23, 0, 65537, 27, 0, 196607, 26, 0, 131072, 23, 0, 131073, 23, 0 )
+tile_data = PoolIntArray( -65537, 27, 0, -131072, 27, 0, -131071, 26, 0, -1, 27, 0, -65536, 26, 0, -65535, 23, 0, 65534, 27, 0, 65535, 27, 0, 0, 26, 0, 131070, 26, 0, 131071, 26, 0, 65536, 23, 0, 65537, 27, 0, 196607, 26, 0, 131072, 23, 0, 131073, 23, 0 )
 
 [node name="HexagonalGridLines" parent="." index="3"]
 texture = ExtResource( 9 )
 
 [node name="MiniDecorFarTileMap" parent="." index="4"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+tile_data = PoolIntArray( -196612, 7, 0 )
 
 [node name="DecorTileMap" parent="." index="5"]
-cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
-
-[node name="MiniDecorNearTileMap" parent="." index="6"]
-cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+tile_data = PoolIntArray( -65542, 7, 0, 131059, 6, 0 )
 
 [node name="Laec" parent="Items" index="0" instance=ExtResource( 3 )]
-position = Vector2( 0, -7.56484 )
+position = Vector2( 64, -98.4729 )
 concept_name = "laec"
+cell_position = Vector2( 2, -2 )
+tile_position = Vector2( 1, -2 )
+
+[node name="Gamer" parent="Items" index="1" instance=ExtResource( 3 )]
+position = Vector2( 64, 83.3332 )
+concept_name = "gamer"
+cell_position = Vector2( 0, 2 )
+tile_position = Vector2( 1, 2 )
+direction = "top_left"
 is_you = true
 
-[node name="Tree" parent="Items" index="1" instance=ExtResource( 3 )]
-position = Vector2( -64, -98.4728 )
-concept_name = "tree"
-cell_position = Vector2( 0, -2 )
-tile_position = Vector2( -1, -2 )
-is_win = true
+[node name="LaecText" parent="Items" index="2" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -64, -7.57484 )
+is_text = true
+concept_name = "laec"
+cell_position = Vector2( -1, 0 )
+tile_position = Vector2( -1, 0 )
+is_lit = false
 
-[node name="TreeText" parent="Items" index="2" instance=ExtResource( 3 )]
+[node name="IsText" parent="Items" index="3" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -96, 37.8742 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -2, 1 )
+tile_position = Vector2( -2, 1 )
+is_lit = false
+
+[node name="WinText" parent="Items" index="4" instance=ExtResource( 3 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -64, 83.3232 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( -2, 2 )
+tile_position = Vector2( -1, 2 )
+is_lit = false
+
+[node name="GamerText" parent="Items" index="5" instance=ExtResource( 3 )]
 position = Vector2( -384, -7.57484 )
 is_text = true
-concept_name = "tree"
+concept_name = "gamer"
 cell_position = Vector2( -6, 0 )
 tile_position = Vector2( -6, 0 )
 
-[node name="IsText" parent="Items" index="3" instance=ExtResource( 3 )]
+[node name="IsText2" parent="Items" index="6" instance=ExtResource( 3 )]
 position = Vector2( -320, -7.57484 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( -5, 0 )
 tile_position = Vector2( -5, 0 )
 
-[node name="WinText" parent="Items" index="4" instance=ExtResource( 3 )]
+[node name="YouText" parent="Items" index="7" instance=ExtResource( 3 )]
 position = Vector2( -256, -7.57484 )
 is_text = true
-concept_name = "win"
+concept_name = "you"
 cell_position = Vector2( -4, 0 )
 tile_position = Vector2( -4, 0 )
-
-[node name="LaecText" parent="Items" index="5" instance=ExtResource( 3 )]
-position = Vector2( -32, 219.67 )
-is_text = true
-concept_name = "laec"
-cell_position = Vector2( -3, 5 )
-tile_position = Vector2( -1, 5 )
-
-[node name="IsText2" parent="Items" index="6" instance=ExtResource( 3 )]
-position = Vector2( 32, 219.67 )
-is_text = true
-concept_name = "is"
-cell_position = Vector2( -2, 5 )
-tile_position = Vector2( 0, 5 )
-
-[node name="YouText" parent="Items" index="7" instance=ExtResource( 3 )]
-position = Vector2( 96, 219.67 )
-is_text = true
-concept_name = "you"
-cell_position = Vector2( -1, 5 )
-tile_position = Vector2( 1, 5 )
 
 [node name="KeyboardArrowsHint" parent="GuiLayer" index="4" instance=ExtResource( 2 )]
 position = Vector2( 156, 96 )
@@ -143,35 +148,23 @@ __meta__ = {
 [node name="MoveHint" parent="GuiLayer" index="5" instance=ExtResource( 5 )]
 position = Vector2( 886, 420 )
 
-[node name="Input" parent="GuiLayer/MoveHint" index="0"]
-frame = 2
-
 [node name="Arrows" parent="GuiLayer/MoveHint" index="1"]
 material = SubResource( 1 )
-frame = 2
 
 [node name="ArrowLeft" parent="GuiLayer/MoveHint" index="2"]
 visible = false
-frame = 2
 
 [node name="ArrowRight" parent="GuiLayer/MoveHint" index="3"]
 visible = false
-frame = 2
-
-[node name="ArrowTopLeft" parent="GuiLayer/MoveHint" index="4"]
-frame = 0
 
 [node name="ArrowBottomLeft" parent="GuiLayer/MoveHint" index="5"]
 visible = false
-frame = 2
 
 [node name="ArrowBottomRight" parent="GuiLayer/MoveHint" index="6"]
 visible = false
-frame = 2
 
 [node name="ArrowTopRight" parent="GuiLayer/MoveHint" index="7"]
 visible = false
-frame = 2
 
 [node name="GamepadHint" parent="GuiLayer" index="6" instance=ExtResource( 8 )]
 position = Vector2( 734, 129 )
@@ -205,48 +198,24 @@ position = Vector2( -53, -56 )
 
 [node name="Input" parent="GuiLayer/GamepadHint/MoveHint" index="0"]
 visible = false
-frame = 2
 
 [node name="Arrows" parent="GuiLayer/GamepadHint/MoveHint" index="1"]
 material = SubResource( 2 )
 position = Vector2( 0, 32 )
-frame = 2
-
-[node name="ArrowLeft" parent="GuiLayer/GamepadHint/MoveHint" index="2"]
-frame = 2
-
-[node name="ArrowRight" parent="GuiLayer/GamepadHint/MoveHint" index="3"]
-frame = 2
-
-[node name="ArrowTopLeft" parent="GuiLayer/GamepadHint/MoveHint" index="4"]
-frame = 0
-
-[node name="ArrowBottomLeft" parent="GuiLayer/GamepadHint/MoveHint" index="5"]
-frame = 2
-
-[node name="ArrowBottomRight" parent="GuiLayer/GamepadHint/MoveHint" index="6"]
-frame = 2
-
-[node name="ArrowTopRight" parent="GuiLayer/GamepadHint/MoveHint" index="7"]
-frame = 2
 
 [node name="Input" parent="GuiLayer/GamepadHint" index="3"]
-frame = 2
+frame = 1
 
 [node name="AnimatedSprite" parent="GuiLayer/GamepadHint/Input" index="0"]
 visible = true
 scale = Vector2( 1.271, 1.208 )
-frame = 2
+frame = 1
 
 [node name="AnimatedSprite4" parent="GuiLayer/GamepadHint/Input" index="1"]
-frame = 2
+frame = 1
 
 [node name="AnimatedSprite2" parent="GuiLayer/GamepadHint/Input" index="2"]
 visible = false
-frame = 1
-
-[node name="AnimatedSprite3" parent="GuiLayer/GamepadHint/Input" index="3"]
-frame = 1
 
 [editable path="GuiLayer/MoveHint"]
 [editable path="GuiLayer/GamepadHint"]

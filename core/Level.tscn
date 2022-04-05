@@ -40,8 +40,11 @@ shader_param/multiplier_texture = ExtResource( 12 )
 shader = ExtResource( 24 )
 shader_param/enable_zoom_effect = true
 shader_param/zoom_scale_a = 9.0
+shader_param/zoom_scale_b = 9.0
 shader_param/zoom_speed_a = 1.0
+shader_param/zoom_speed_b = 1.0
 shader_param/zoom_duration_a = 120.0
+shader_param/zoom_duration_b = 120.0
 shader_param/enable_glow = true
 shader_param/glow_texture = ExtResource( 25 )
 
@@ -61,32 +64,9 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
-contribute_to_completion_score = false
-items_palette = null
 title = "level.Level.title"
 excerpt = "level.Level.excerpt"
 link = "level.Level.link"
-title_custom = ""
-excerpt_custom = ""
-link_custom = ""
-achievement_a = null
-achievement_b = null
-achievement_c = null
-playlist_name = ""
-forward_level_path = ""
-editor_preview_no_interaction = false
-no_interaction = false
-skip_victory_screen = false
-lattice_hex_size = 64.0
-lattice_aspect_ratio = 0.82
-lattice_kenney = true
-solution_a = ""
-autoplay_a = false
-solution_b = ""
-autoplay_b = false
-solution_c = ""
-autoplay_c = false
-log_level = "debug"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
