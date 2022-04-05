@@ -575,6 +575,7 @@ func go_to_pause_menu(from_level) -> void:
 	pause_menu.update_background(get_viewport())
 	get_viewport().set_clear_mode(old_clear_mode)
 	switch_to_scene(pause_menu, false, true, false)
+	
 
 
 #  _______                  _ _   _

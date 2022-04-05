@@ -271,7 +271,8 @@ func handle_process_inputs(delta):
 func enter_tree():
 	if is_editor_preview():
 		return
-	enable_inputs_after_delay()
+	start_accepting_inputs()
+	enable_inputs_after_delay()  # hmmm… why do we want this?
 
 
 func exit_tree():
