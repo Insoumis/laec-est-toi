@@ -116,7 +116,7 @@ func _on_OpenButton_pressed():
 
 
 func _on_ExitButton_pressed():
-	Game.go_back()
+	var _gone := Game.go_back()
 
 
 func _on_Open_file_selected(filepath):

@@ -1,10 +1,10 @@
 extends Label
 
 func _ready():
-	get_level_editor().connect("level_saved", self, "_on_level_saved")
+	var _c = get_level_editor().connect("level_saved", self, "_on_level_saved")
 
 
-func _on_level_saved(filepath):
+func _on_level_saved(_filepath):
 	$AnimationPlayer.play("flash")
 
 
