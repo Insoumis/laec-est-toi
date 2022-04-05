@@ -2425,6 +2425,8 @@ func perhaps_open_a_portal() -> void:
 func get_selected_portals() -> Array:
 	var selected_portals := Array()
 	for portal in get_all_portals():
+		if not portal.is_available():
+			continue
 		var piled_with_portal := get_items_piled_with(portal, false)
 		for item in piled_with_portal:
 			if item.is_you:
@@ -2435,9 +2437,10 @@ func get_selected_portals() -> Array:
 func get_selected_portal():
 	var selected_portals := get_selected_portals()
 	if selected_portals:
-		for portal in selected_portals:
-			if portal.is_available():
-				return portal
+		return selected_portals[0]
+#		for portal in selected_portals:
+#			if portal.is_available():  # redundant now
+#				return portal
 	return null
 
 

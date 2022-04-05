@@ -1,0 +1,267 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://core/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://core/Item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/items/science_left_1.png" type="Texture" id=3]
+[ext_resource path="res://core/Achievement.gd" type="Script" id=4]
+[ext_resource path="res://sprites/items/love_1.png" type="Texture" id=5]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+trigger_on_turn_if = ""
+trigger_on_victory_if = "7 love"
+image = ExtResource( 5 )
+snake_identifier = "love_intact"
+title = "level.Lotd20220405.love_intact.title"
+title_custom = "Je t'aime, toi qui lis ceci, et tu sais très bien pourquoi."
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+trigger_on_turn_if = ""
+trigger_on_victory_if = "2 science"
+image = ExtResource( 3 )
+snake_identifier = "science"
+title = ""
+title_custom = "Harry Potter et les Méthodes de la Rationalité"
+
+[node name="Lotd20220405" instance=ExtResource( 1 )]
+title = "level.Lotd20220405.title"
+excerpt = "level.Lotd20220405.excerpt"
+link = "level.Lotd20220405.link"
+title_custom = "5 Avril 2022 : Embuscade"
+excerpt_custom = "À créer de bout en bout
+La culture consomme beaucoup
+De ressources et de bagout.
+"
+achievement_a = SubResource( 1 )
+achievement_b = SubResource( 2 )
+solution_a = "11533664677779433333694517779411165551414554"
+
+[node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
+tile_data = PoolIntArray( -196610, 24, 0, -196609, 24, 0, -262144, 24, 0, -131075, 24, 0, -131074, 24, 0, -131073, 24, 0, -196608, 24, 0, -65539, 24, 0, -65538, 24, 0, -65537, 27, 0, -131072, 27, 0, -131071, 24, 0, -4, 24, 0, -3, 24, 0, -2, 27, 0, -1, 30, 0, -65536, 27, 0, -65535, 24, 0, -65533, 26, 0, 65533, 24, 0, 65534, 27, 0, 65535, 24, 0, 0, 27, 0, 1, 24, 0, 2, 24, 0, 4, 26, 0, 5, 26, 0, 131069, 24, 0, 131070, 27, 0, 131071, 24, 0, 65537, 24, 0, 65538, 24, 0, 65539, 27, 0, 196605, 24, 0, 196606, 24, 0, 196607, 27, 0, 131072, 24, 0, 131073, 24, 0, 131074, 24, 0, 131075, 27, 0, 131076, 27, 0, 262136, 43, 0, 262138, 43, 0, 262139, 43, 0, 262140, 27, 0, 262141, 27, 0, 262142, 27, 0, 262143, 27, 0, 196608, 27, 0, 196609, 27, 0, 196610, 27, 0, 196611, 27, 0, 327676, 43, 0 )
+
+[node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
+
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
+[node name="PeaceText" parent="Items" index="0" instance=ExtResource( 2 )]
+position = Vector2( -128, -189.371 )
+is_text = true
+concept_name = "peace"
+cell_position = Vector2( 0, -4 )
+tile_position = Vector2( -2, -4 )
+
+[node name="Culture" parent="Items" index="1" instance=ExtResource( 2 )]
+position = Vector2( 224, 128.772 )
+concept_name = "culture"
+cell_position = Vector2( 2, 3 )
+tile_position = Vector2( 3, 3 )
+direction = "left"
+is_move = true
+is_poet = true
+
+[node name="Culture2" parent="Items" index="2" instance=ExtResource( 2 )]
+position = Vector2( -64, 83.3234 )
+concept_name = "culture"
+cell_position = Vector2( -2, 2 )
+tile_position = Vector2( -1, 2 )
+direction = "left"
+is_move = true
+is_poet = true
+
+[node name="Culture4" parent="Items" index="3" instance=ExtResource( 2 )]
+position = Vector2( -192, 83.3234 )
+concept_name = "culture"
+cell_position = Vector2( -4, 2 )
+tile_position = Vector2( -3, 2 )
+direction = "left"
+is_move = true
+is_poet = true
+
+[node name="CultureText" parent="Items" index="4" instance=ExtResource( 2 )]
+modulate = Color( 0.9, 0.9, 0.9, 0.7 )
+position = Vector2( -256, 174.221 )
+is_text = true
+concept_name = "culture"
+cell_position = Vector2( -6, 4 )
+tile_position = Vector2( -4, 4 )
+direction = "top_left"
+is_lit = false
+
+[node name="Culture5" parent="Items" index="5" instance=ExtResource( 2 )]
+position = Vector2( 64, 83.3234 )
+concept_name = "culture"
+cell_position = Vector2( 0, 2 )
+tile_position = Vector2( 1, 2 )
+direction = "left"
+is_move = true
+is_poet = true
+
+[node name="Culture3" parent="Items" index="6" instance=ExtResource( 2 )]
+position = Vector2( 192, 83.3234 )
+concept_name = "culture"
+cell_position = Vector2( 2, 2 )
+tile_position = Vector2( 3, 2 )
+direction = "left"
+is_move = true
+is_poet = true
+
+[node name="Love" parent="Items" index="7" instance=ExtResource( 2 )]
+position = Vector2( 32, 128.772 )
+concept_name = "love"
+cell_position = Vector2( -1, 3 )
+tile_position = Vector2( 0, 3 )
+
+[node name="Love5" parent="Items" index="8" instance=ExtResource( 2 )]
+position = Vector2( 96, 128.772 )
+concept_name = "love"
+cell_position = Vector2( 0, 3 )
+tile_position = Vector2( 1, 3 )
+
+[node name="Love6" parent="Items" index="9" instance=ExtResource( 2 )]
+position = Vector2( -224, 128.772 )
+concept_name = "love"
+cell_position = Vector2( -5, 3 )
+tile_position = Vector2( -4, 3 )
+
+[node name="Love7" parent="Items" index="10" instance=ExtResource( 2 )]
+position = Vector2( 160, 128.772 )
+concept_name = "love"
+cell_position = Vector2( 1, 3 )
+tile_position = Vector2( 2, 3 )
+
+[node name="Love2" parent="Items" index="11" instance=ExtResource( 2 )]
+position = Vector2( -32, 128.772 )
+concept_name = "love"
+cell_position = Vector2( -2, 3 )
+tile_position = Vector2( -1, 3 )
+
+[node name="Love3" parent="Items" index="12" instance=ExtResource( 2 )]
+position = Vector2( -96, 128.772 )
+concept_name = "love"
+cell_position = Vector2( -3, 3 )
+tile_position = Vector2( -2, 3 )
+
+[node name="Love4" parent="Items" index="13" instance=ExtResource( 2 )]
+position = Vector2( -160, 128.772 )
+concept_name = "love"
+cell_position = Vector2( -4, 3 )
+tile_position = Vector2( -3, 3 )
+
+[node name="Peace" parent="Items" index="14" instance=ExtResource( 2 )]
+position = Vector2( 0, -98.4629 )
+concept_name = "peace"
+cell_position = Vector2( 1, -2 )
+tile_position = Vector2( 0, -2 )
+is_you = true
+
+[node name="Science" parent="Items" index="15" instance=ExtResource( 2 )]
+position = Vector2( -352, 128.772 )
+concept_name = "science"
+cell_position = Vector2( -7, 3 )
+tile_position = Vector2( -6, 3 )
+is_genie = true
+
+[node name="IsText" parent="Items" index="16" instance=ExtResource( 2 )]
+position = Vector2( -64, -189.371 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 1, -4 )
+tile_position = Vector2( -1, -4 )
+
+[node name="YouText" parent="Items" index="17" instance=ExtResource( 2 )]
+position = Vector2( 0, -189.371 )
+is_text = true
+concept_name = "you"
+cell_position = Vector2( 2, -4 )
+tile_position = Vector2( 0, -4 )
+
+[node name="ScienceText" parent="Items" index="18" instance=ExtResource( 2 )]
+position = Vector2( 32, 37.8742 )
+is_text = true
+concept_name = "science"
+cell_position = Vector2( 0, 1 )
+tile_position = Vector2( 0, 1 )
+
+[node name="IsText3" parent="Items" index="19" instance=ExtResource( 2 )]
+position = Vector2( 96, 37.8742 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 1, 1 )
+tile_position = Vector2( 1, 1 )
+
+[node name="GenieText" parent="Items" index="20" instance=ExtResource( 2 )]
+position = Vector2( 160, 37.8742 )
+is_text = true
+concept_name = "genie"
+cell_position = Vector2( 2, 1 )
+tile_position = Vector2( 2, 1 )
+
+[node name="AndText" parent="Items" index="21" instance=ExtResource( 2 )]
+position = Vector2( 352, -143.922 )
+is_text = true
+concept_name = "and"
+cell_position = Vector2( 7, -3 )
+tile_position = Vector2( 5, -3 )
+
+[node name="PoetText" parent="Items" index="22" instance=ExtResource( 2 )]
+position = Vector2( 416, -143.922 )
+is_text = true
+concept_name = "poet"
+cell_position = Vector2( 8, -3 )
+tile_position = Vector2( 6, -3 )
+
+[node name="CultureText2" parent="Items" index="23" instance=ExtResource( 2 )]
+position = Vector2( 160, -143.922 )
+is_text = true
+concept_name = "culture"
+cell_position = Vector2( 4, -3 )
+tile_position = Vector2( 2, -3 )
+
+[node name="IsText4" parent="Items" index="24" instance=ExtResource( 2 )]
+position = Vector2( 224, -143.922 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( 5, -3 )
+tile_position = Vector2( 3, -3 )
+
+[node name="MoveText" parent="Items" index="25" instance=ExtResource( 2 )]
+position = Vector2( 288, -143.922 )
+is_text = true
+concept_name = "move"
+cell_position = Vector2( 6, -3 )
+tile_position = Vector2( 4, -3 )
+
+[node name="FranceText" parent="Items" index="26" instance=ExtResource( 2 )]
+position = Vector2( -416, -143.922 )
+is_text = true
+concept_name = "france"
+cell_position = Vector2( -5, -3 )
+tile_position = Vector2( -7, -3 )
+
+[node name="France" parent="Items" index="27" instance=ExtResource( 2 )]
+position = Vector2( -288, 128.772 )
+concept_name = "france"
+cell_position = Vector2( -6, 3 )
+tile_position = Vector2( -5, 3 )
+is_win = true
+
+[node name="IsText2" parent="Items" index="28" instance=ExtResource( 2 )]
+position = Vector2( -352, -143.922 )
+is_text = true
+concept_name = "is"
+cell_position = Vector2( -4, -3 )
+tile_position = Vector2( -6, -3 )
+
+[node name="WinText" parent="Items" index="29" instance=ExtResource( 2 )]
+position = Vector2( -288, -143.922 )
+is_text = true
+concept_name = "win"
+cell_position = Vector2( -3, -3 )
+tile_position = Vector2( -5, -3 )
