@@ -22,6 +22,8 @@ export var maximum_speed := 3.0
 export var uturn_intent := 1.38
 export var swirly_strength := 0.06
 export var swirly_spin := 1.9  # turns per second
+export var autostart_warmup := 2.5  # seconds
+
 
 # aka "speed" and "mass" in one messy variable
 var inertia := Vector2.ZERO
@@ -53,6 +55,7 @@ func _ready():
 #		self.level.connect("after_action_passed", self, "on_passed")
 #		self.level.connect("after_action_undoed", self, "on_undoed")
 		self.level.connect("after_action_executed", self, "on_actioned")
+		var _c = get_tree().create_timer(self.autostart_warmup).connect("timeout", self, "on_warmup")
 	update_position()
 
 
@@ -122,6 +125,12 @@ func update_position():
 		hint_undo()
 	else:
 		breakpoint  # unrecognized char?   PoM
+
+
+func find_solution_to_follow():
+	if not self.level:
+		return null
+	return self.level.solution_a  # or perhaps fallbacks
 
 
 func find_first_item_that_is_you():
@@ -214,10 +223,14 @@ func is_shown() -> bool:
 
 
 func on_actioned(action):
+	var solution_to_follow = find_solution_to_follow()
+	if not solution_to_follow:
+		return
+	
 	if self.following_solution_step < 0:
 		return
 	
-	if self.following_solution_step >= self.level.solution_a.length():
+	if self.following_solution_step >= solution_to_follow.length():
 		return
 	
 	if (
@@ -231,7 +244,7 @@ func on_actioned(action):
 		update_position()
 		return
 	
-	if action.to_string() == self.level.solution_a[self.following_solution_step]:
+	if action.to_string() == solution_to_follow[self.following_solution_step]:
 		self.following_solution_step += 1
 	else:
 		#print("Stopped following the sherpa.")
@@ -251,6 +264,17 @@ func on_actioned(action):
 #
 #func on_undoed():
 #	pass
+
+
+func on_warmup():
+	if (
+		not is_shown()
+		and self.following_solution_step == 0
+		and find_solution_to_follow()
+		and not self.level.is_dummy_run()
+	):
+		appear()
+		update_position()
 
 
 func find_parent_level():
