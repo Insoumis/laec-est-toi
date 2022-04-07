@@ -220,7 +220,8 @@ func to_pickle():
 		'is_lit': self.is_lit,
 		'is_text': self.is_text,
 		
-		'stuffing': self.stuffing,
+		# Duplication is important, or array will be shared between items
+		'stuffing': self.stuffing.duplicate(),
 		
 		'concept_name': self.concept_name,
 		
@@ -261,6 +262,9 @@ func ready():
 	if Engine.editor_hint:
 		snap_to_grid()
 	reposition()
+	# hmmm... not working as expected
+	#get_sprite().frame = int((abs(cell_position.x)+abs(cell_position.y)+abs(-cell_position.y-cell_position.x))/2.0) % 3
+	# using random for now
 	get_sprite().frame = randi() % 3
 	update_sprite()
 	update_particles()

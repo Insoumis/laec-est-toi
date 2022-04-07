@@ -1712,6 +1712,7 @@ func spend_turn(in_editor := false):
 		print(msg_log)
 
 	# II.b Apply sentences
+	# Perhaps we don't need two stuffing passes ; tweak at will
 	for item in get_all_items():
 		apply_qualifying_sentences_to_item(sentences, item)
 	if not in_editor:
@@ -1721,11 +1722,16 @@ func spend_turn(in_editor := false):
 			apply_alchemical_sentences_to_item(sentences, item)
 		for item in get_all_items():
 			apply_maker_sentences_to_item(sentences, item)
-			
-		for item in get_all_items():  # another stuffin pass, for created items
+		
+		for item in get_all_items():  # another stuffing pass, for created items
 			apply_stuffing_sentences_to_item(sentences, item)
 		for item in get_all_items():  # another qualifying pass, for created items?
 			apply_qualifying_sentences_to_item(sentences, item)
+	
+	
+#	for item in get_all_items():
+#		if item.concept_full == 'jlm':
+#			breakpoint
 	
 	# II.c Light up the words of the sentences
 	for sentence in sentences:
@@ -1933,11 +1939,15 @@ func apply_alchemical_sentences_to_item(sentences:Array, item:Item) -> void:
 				var created_item = spawn_item(item, {
 					'concept_name': thing_to_become,
 				})
+				register_item(created_item)
 
 
 func apply_stuffing_sentences_to_item(sentences:Array, item:Item) -> void:
 	item.reset_stuffing()
 	var applicable_sentences = get_applicable_sentences(sentences, item)
+	if not applicable_sentences:
+		return
+	#debug("Found %d applicable sentences to item %s" % [applicable_sentences.size(), item])
 	for sentence in applicable_sentences:
 		if not sentence.verb.is_word(Words.VERB_HAS):
 			continue
@@ -1991,6 +2001,7 @@ func apply_maker_sentences_to_item(sentences:Array, item:Item) -> void:
 			var spawned_item = spawn_item(item, {
 				'concept_name': concept_name,
 			})
+			register_item(spawned_item)
 			spawned_item.animate_spawn(
 				get_action_cooldown() * 0.95
 			)
@@ -2478,8 +2489,7 @@ func spawn_item(item_to_copy=null, extra_properties:Dictionary={}):
 		Takes the form of a pickled item, basically.
 		Has priority over the item to copy and defaults.
 	"""
-	var items_layer = self.items_layer
-	if not items_layer:
+	if not self.items_layer:
 		printerr("No items layer into which spawn an Item.")
 		breakpoint
 		return
@@ -2490,9 +2500,10 @@ func spawn_item(item_to_copy=null, extra_properties:Dictionary={}):
 	for prop in extra_properties:
 		item.set(prop, extra_properties[prop])
 	
-	items_layer.add_child(item)
-	item.set_owner(items_layer.get_owner())
-	cell_lattice.add_thing_on_cell(item, item.cell_position)
+	self.items_layer.add_child(item)
+	item.rename()
+	item.set_owner(self.items_layer.get_owner())
+	self.cell_lattice.add_thing_on_cell(item, item.cell_position)
 	
 	# and emit a signal (todo)
 	
@@ -3176,6 +3187,7 @@ func apply_more_effect(sentences := Array()) -> bool:
 			var item = spawn_item(cloner, {
 				'tile_position': adjacent_tile,
 			})
+			register_item(item)
 			apply_qualifying_sentences_to_item(sentences, item)
 #			item.update_aesthetics()
 		
@@ -3267,15 +3279,15 @@ func destroy_item(item: Item):
 				self.destruction_queue.erase(victim)
 		self.destruction_queue.erase(item)
 	############################################################################
-	
 	## THING HAS THING #########################################################
 	var sentences = get_possible_sentences()
-	var remains = Array()
+	var remains := Array()
 	var stuff_names = item.stuffing
 	for remaining_thing_name in stuff_names:
 		var remaining_thing = spawn_item(item, {
 			'concept_name': remaining_thing_name
 		})
+		register_item(remaining_thing)
 		remains.append(remaining_thing)
 	reindex_lattice()  # expensive!
 	for thing in remains:
@@ -3284,6 +3296,7 @@ func destroy_item(item: Item):
 		# …
 		# Let's try applying qualities at least
 		apply_qualifying_sentences_to_item(sentences, thing)
+		#apply_stuffing_sentences_to_item(sentences, thing)
 	############################################################################
 	
 	#ParticlesFx.emit("destruction", self.position)
@@ -3319,6 +3332,7 @@ func annihilate_item(item: Item):
 	remove_item_from_scene(item)
 	deregister_item(item)
 	item.queue_free()
+
 
 func update_items_z_salience():
 	pass
