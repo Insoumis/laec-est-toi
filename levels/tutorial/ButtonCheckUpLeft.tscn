@@ -37,22 +37,29 @@ visible = true
 texture = ExtResource( 10 )
 
 [node name="HexagonalTileMap" parent="." index="2"]
+cell_custom_transform = Transform2D( 64, 0, 0, 45.449, -32, -22.7245 )
 tile_data = PoolIntArray( -65537, 27, 0, -131072, 27, 0, -131071, 26, 0, -1, 27, 0, -65536, 26, 0, -65535, 23, 0, 65534, 27, 0, 65535, 27, 0, 0, 26, 0, 131070, 26, 0, 131071, 26, 0, 65536, 23, 0, 65537, 27, 0, 196607, 26, 0, 131072, 23, 0, 131073, 23, 0 )
 
 [node name="HexagonalGridLines" parent="." index="3"]
 texture = ExtResource( 9 )
 
 [node name="MiniDecorFarTileMap" parent="." index="4"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
 tile_data = PoolIntArray( -196612, 7, 0 )
 
 [node name="DecorTileMap" parent="." index="5"]
+cell_custom_transform = Transform2D( 8, 0, 0, 5.68113, -4, -2.84056 )
 tile_data = PoolIntArray( -65542, 7, 0, 131059, 6, 0 )
 
+[node name="MiniDecorNearTileMap" parent="." index="6"]
+cell_custom_transform = Transform2D( 16, 0, 0, 11.3623, -8, -5.68113 )
+
 [node name="Laec" parent="Items" index="0" instance=ExtResource( 3 )]
-position = Vector2( 64, -98.4729 )
+position = Vector2( 64, -98.4728 )
 concept_name = "laec"
 cell_position = Vector2( 2, -2 )
 tile_position = Vector2( 1, -2 )
+is_win = true
 
 [node name="Gamer" parent="Items" index="1" instance=ExtResource( 3 )]
 position = Vector2( 64, 83.3332 )
@@ -63,31 +70,25 @@ direction = "top_left"
 is_you = true
 
 [node name="LaecText" parent="Items" index="2" instance=ExtResource( 3 )]
-modulate = Color( 0.9, 0.9, 0.9, 0.7 )
-position = Vector2( -64, -7.57484 )
+position = Vector2( -128, -7.57484 )
 is_text = true
 concept_name = "laec"
-cell_position = Vector2( -1, 0 )
-tile_position = Vector2( -1, 0 )
-is_lit = false
+cell_position = Vector2( -2, 0 )
+tile_position = Vector2( -2, 0 )
 
 [node name="IsText" parent="Items" index="3" instance=ExtResource( 3 )]
-modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( -96, 37.8742 )
 is_text = true
 concept_name = "is"
 cell_position = Vector2( -2, 1 )
 tile_position = Vector2( -2, 1 )
-is_lit = false
 
 [node name="WinText" parent="Items" index="4" instance=ExtResource( 3 )]
-modulate = Color( 0.9, 0.9, 0.9, 0.7 )
 position = Vector2( -64, 83.3232 )
 is_text = true
 concept_name = "win"
 cell_position = Vector2( -2, 2 )
 tile_position = Vector2( -1, 2 )
-is_lit = false
 
 [node name="GamerText" parent="Items" index="5" instance=ExtResource( 3 )]
 position = Vector2( -384, -7.57484 )
@@ -112,6 +113,7 @@ tile_position = Vector2( -4, 0 )
 
 [node name="KeyboardArrowsHint" parent="GuiLayer" index="4" instance=ExtResource( 2 )]
 position = Vector2( 156, 96 )
+frame = 2
 
 [node name="PressHint" type="Control" parent="GuiLayer/KeyboardArrowsHint" index="0"]
 show_behind_parent = true
