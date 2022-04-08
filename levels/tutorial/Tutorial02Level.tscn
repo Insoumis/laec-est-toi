@@ -14,7 +14,7 @@ link = "level.Tutorial02Level.link"
 title_custom = "Tutoriel B"
 excerpt_custom = "LAEC propose la trame d'un monde plus juste et vertueux...
 À toi de t'en inspirer pour changer les règles du jeu !"
-forward_level_path = "res://levels/tutorial/Tutorial03Level.tscn"
+forward_level_path = "res://levels/story/Partie1Map.tscn"
 solution_a = "69333699"
 
 [node name="GemClusterBackground" parent="BackgroundLayer" index="0"]

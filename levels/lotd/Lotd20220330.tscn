@@ -12,7 +12,7 @@ trigger_on_turn_if = "not 1 culture is you"
 trigger_on_victory_if = ""
 image = ExtResource( 4 )
 snake_identifier = "no_culture"
-title = ""
+title = "level.Lotd20220330.no_culture.title"
 title_custom = "La culture n'existe que grâce à ses vecteurs"
 
 [sub_resource type="Resource" id=2]
@@ -21,7 +21,7 @@ trigger_on_turn_if = "money"
 trigger_on_victory_if = ""
 image = ExtResource( 5 )
 snake_identifier = "love_is_money"
-title = ""
+title = "level.Lotd20220330.love_is_money.title"
 title_custom = "Bravo, tu as fait de l'argent !  Et maintenant ?"
 
 [node name="Lotd20220330" instance=ExtResource( 1 )]
@@ -36,7 +36,7 @@ Ce jeu ne serait rien sans toi, noble manant.
 Merci."
 achievement_a = SubResource( 1 )
 achievement_b = SubResource( 2 )
-solution_a = "6663341476666334146966663"
+solution_a = "666336347414766663344666996333"
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 0.62, 0.62 )

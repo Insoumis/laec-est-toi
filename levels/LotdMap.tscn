@@ -162,16 +162,20 @@ cell_position = Vector2( 1, 1 )
 tile_position = Vector2( 1, 1 )
 level_path = "res://levels/lotd/Lotd20220405.tscn"
 daily = true
-title = "5 Avril 2022\\nEmbuscade"
+title = "5 Avril 2022 : Embuscade"
 
 [node name="Portal15" parent="Items" index="17" instance=ExtResource( 2 )]
+position = Vector2( 32, 37.8742 )
+cell_position = Vector2( 0, 1 )
+tile_position = Vector2( 0, 1 )
+level_path = "res://levels/lotd/Lotd20220406.tscn"
+daily = true
+title = "6 Avril 2022 : Hologrammes"
+
+[node name="Portal16" parent="Items" index="18" instance=ExtResource( 2 )]
 position = Vector2( -64, -7.57484 )
 cell_position = Vector2( -1, 0 )
 tile_position = Vector2( -1, 0 )
-daily = true
-
-[node name="Portal16" parent="Items" index="18" instance=ExtResource( 2 )]
-position = Vector2( 0, -7.57484 )
 daily = true
 
 [node name="Portal17" parent="Items" index="19" instance=ExtResource( 2 )]
@@ -288,9 +292,7 @@ contents = "Un nouveau niveau se
 débloque chaque jour !"
 
 [node name="Sign2" parent="Items" index="37" instance=ExtResource( 5 )]
-position = Vector2( 32, 37.8742 )
-cell_position = Vector2( 0, 1 )
-tile_position = Vector2( 0, 1 )
+position = Vector2( 0, -7.57484 )
 contents = "Travaux en Cours
 ---
 Retéléchargez le jeu

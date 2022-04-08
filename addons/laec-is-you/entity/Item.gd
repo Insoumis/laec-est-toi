@@ -551,6 +551,8 @@ func update_aesthetics() -> void:
 func update_sprite(refresh_frames := true) -> void:
 	var concept := get_concept_name()
 	var sprite := get_sprite()
+	if not sprite:
+		return
 	var current_shiver_frame := sprite.get_frame()
 	var flip_h := false
 	if refresh_frames:
